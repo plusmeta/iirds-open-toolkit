@@ -47,6 +47,9 @@ const getters = {
     getLogo: (state, getters) => {
         const mode = (getters.isDarkTheme) ? "dark" : "light";
         return state.settings.theme?.logo[mode] || "dark";
+    },
+    getLogoForTheme: (state, getters) => (theme) => {
+        return state.settings.theme?.logo[theme] || "dark";
     }
 };
 

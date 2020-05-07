@@ -2,8 +2,8 @@
     "theme":{
         "dark": true,
         "logo": {
-            "dark": "/images/iiRDS.jpg",
-            "light": "/images/iiRDS.jpg"
+            "dark": "/images/iiRDS_white.svg",
+            "light": "/images/iiRDS_darkgrey_bluedots.svg"
         },
         "themes": {
             "dark": {

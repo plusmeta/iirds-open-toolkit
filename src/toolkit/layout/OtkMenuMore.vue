@@ -24,8 +24,11 @@
         </v-btn>
       </template>
       <v-list v-if="isReady">
-        <v-list-item>
-          <v-list-item-icon id="logoicon" class="mr-4">
+        <v-list-item
+          href="https://iirds.org"
+          target="_blank"
+        >
+          <v-list-item-icon class="mr-4">
             <v-img
               :src="getLogo"
               width="75px"
@@ -33,7 +36,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title class="subtitle-1 mb-0">
+            <v-list-item-title class="overline">
               Open Toolkit {{ version }}
             </v-list-item-title>
           </v-list-item-content>

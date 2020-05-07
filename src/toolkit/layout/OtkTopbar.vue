@@ -13,14 +13,14 @@
   >
     <v-toolbar-title>
       <v-img
-        :src="getLogo"
+        :src="getLogoForTheme('dark')"
         alt="Open Toolkit"
         title="Open Toolkit"
-        width="100px"
-        class="ml-6 mr-2"
+        width="75px"
+        class="ml-6 mr-4"
       />
     </v-toolbar-title>
-    <v-toolbar-title class="headline">
+    <v-toolbar-title class="overline" style="font-size:20px !important">
       Open Toolkit
     </v-toolbar-title>
 
@@ -63,7 +63,7 @@ export default {
             }
         },
         ...mapGetters("settings", [
-            "getLogo",
+            "getLogoForTheme",
             "getSetting"
         ]),
         ...mapGetters("workflows", [
