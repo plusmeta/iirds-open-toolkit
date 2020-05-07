@@ -1,0 +1,27 @@
+version: 0.2
+    
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - npm install @vue/cli -g --quiet
+      # - npm install @sentry/cli -g --unsafe-perm
+  pre_build:
+    commands:
+      - chmod +x ./script/git.helper.sh
+      # - chmod +x ./script/sentry.release.sh
+      # - chmod +x ./script/sentry.deploy.sh
+      - npm install --no-shrinkwrap
+  build:
+    commands:
+      - ./script/git.helper.sh develop
+      - npm run-script build
+      # - ./script/sentry.release.sh
+  post_build:
+    commands:
+      # - ./script/sentry.deploy.sh staging
+artifacts:
+    files:
+      - '**/*'
+    base-directory: 'dist'

@@ -1,0 +1,94 @@
+{
+  "Actions": {
+    "addMetadata": "Add metadata",
+    "addObject": "Add object",
+    "cancel": "Cancel",
+    "createEntry": "Create entry",
+    "deleteObject": "Delete object",
+    "deleteObjectInfo": "Do you really want to delete the object? This action can not be reverted.",
+    "deleteObjectsInfo": "Do you really want to delete the selected objects? This action can not be reverted.",
+    "deleteRefObjectInfo": "...",
+    "openSettings": "Open settings",
+    "restoreSettings": "Reset settings",
+    "showShortcuts": "Show shortcuts",
+    "useDarkMode": "Dark mode",
+    "deleteSelectedObjects": "Delete selected objects",
+    "downloadMetadata": "Download metadata"
+  },
+  "App": {
+    "filesTooLarge": "Memory limit reached. No new files can be added.",
+    "help": "Help",
+    "helpcenter": "User portal",
+    "license": "License information",
+    "licenses": "Licenses of used software",
+    "maxMemory": "Maximum memory limit reached. Object will not be imported.",
+    "pageHelp": "Help page",
+    "siteNotFound": "The requested site was not found"
+  },
+  "Common": {
+    "actions": "Actions",
+    "columns": "No columns | {n} column | {n} columns",
+    "false": "No",
+    "filter": "Filter",
+    "more": "and no more | and one more | and {n} more",
+    "name": "Name",
+    "noEmptyInput": "Input must not be empty",
+    "preview": "Preview",
+    "ruleExplainer": "To continue you must fulfill all conditions",
+    "ruleViolation": "Previous workflow rules were violated. Please jump back to the last valid step.",
+    "search": "Search",
+    "searchFor": "Search for",
+    "true": "Yes",
+    "unknown": "Unknown",
+    "view": "View",
+    "workflow": "Workflow"
+  },
+  "Notification": {
+    "deletionFailed": "Deletion failed",
+    "objectDeleted": "Object deleted",
+    "openedProject": "Set project status to open",
+    "permissionDenied": "Permission denied",
+    "propertyCreated": "Property created"
+  },
+  "Objects": {
+    "all": "All objects",
+    "delete": "Delete object",
+    "download": "Download",
+    "dropFilesToAdd": "Drop files here to add them to the package",
+    "filesize": "File size",
+    "label": "Object label",
+    "log": "Protocol",
+    "metadata": "Metadata",
+    "noAssociatedFile": "No associated source file",
+    "none": "No objects available",
+    "noObjectsExplainer": "You haven't created or imported any objects yet. Click on the green button to create or import an object.",
+    "objectUsedInOtherProjects": "...",
+    "rerun": "Restart process",
+    "sourceName": "Source file name",
+    "sourceType": "Source file type",
+    "type": "Object type"
+  },
+  "Packages": {
+    "generate": "Generate iiRDS package",
+    "packaging": "Packaging content",
+    "progress": "Progress"
+  },
+  "Plus": {
+    "elapsedTime": "Elapsed time",
+    "forAnalysis": "for processing",
+    "objects": "Total",
+    "objectsCount": "Objects count",
+    "processed": "Processed"
+  },
+  "Otk": {
+    "downloadPackage": "Download",
+    "retry": "Do you like to generate a new package?",
+    "startNewPackage": "New package",
+    "thankYou": "Thank you!",
+    "thankYouExplainer": "Your iiRDS-Package is now ready for downloading."
+  },
+  "Metadata": {
+    "confidence": "Confidence",
+    "approved": "Approved"
+  }
+}

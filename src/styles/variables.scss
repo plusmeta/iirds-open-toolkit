@@ -1,0 +1,27 @@
+/*! 
+ * Copyright 2020 plusmeta GmbH
+ * License: MIT
+ */
+
+$body-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$heading-font-family: "Ubuntu", "Segoe UI", sans-serif;
+
+$material-dark: (
+        'app-bar': #212121,
+        'background': #303030,
+        'bg-color':  #303030,
+        'cards': #424242,
+        'toolbar': #424242
+);
+
+$material-light: (
+        'app-bar': #666,
+        'background':  #e8f1f7,
+        'bg-color':  #e8f1f7,
+        'cards':#d5dae7,
+        'toolbar': #5cc5f225
+);
+
+@import "vuetify.fix.scss";
+@import "animations.scss";
+@import "plusmeta.scss";

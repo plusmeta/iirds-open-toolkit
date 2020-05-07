@@ -1,0 +1,94 @@
+{
+  "Actions": {
+    "addMetadata": "Metadaten hinzufügen",
+    "addObject": "Objekt hinzufügen",
+    "cancel": "Abbrechen",
+    "createEntry": "Eintrag erstellen",
+    "deleteObject": "Objekt löschen",
+    "deleteObjectInfo": "Wollen Sie das Objekt wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden.",
+    "deleteObjectsInfo": "Wollen Sie die ausgewählten Objekte wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden.",
+    "deleteRefObjectInfo": "...",
+    "deleteSelectedObjects": "Ausgewählte Objekte löschen",
+    "downloadMetadata": "Metadaten herunterladen",
+    "openSettings": "Einstellungen öffnen",
+    "restoreSettings": "Einstellungen zurücksetzen",
+    "showShortcuts": "Zeige Tastenkürzel",
+    "useDarkMode": "Dunkles Farbschema"
+  },
+  "App": {
+    "filesTooLarge": "Speicherlimit erreicht. Es können keine Dateien mehr hinzugefügt werden.",
+    "help": "Hilfe",
+    "helpcenter": "Anwenderportal",
+    "license": "Lizenzinformationen",
+    "licenses": "Lizenzen verwendeter Software",
+    "maxMemory": "Maximale Speichergrenze erreicht. Objekt wird nicht importiert.",
+    "pageHelp": "Hilfeseite",
+    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden"
+  },
+  "Common": {
+    "actions": "Aktionen",
+    "columns": "Keine Spalten | {n} Spalte | {n} Spalten",
+    "false": "Nein",
+    "filter": "Filter",
+    "more": "und keine weiteren | und ein weiteres | und {n} weitere",
+    "name": "Name",
+    "noEmptyInput": "Eingabe darf nicht leer sein",
+    "preview": "Vorschau",
+    "ruleExplainer": "Zum Fortfahren müssen alle Bedingungen erfüllt sein",
+    "ruleViolation": "Vorgänger-Bedingungen wurden verletzt. Bitte springen Sie zum letzten validen Schritt.",
+    "search": "Suche",
+    "searchFor": "Suche nach",
+    "true": "Ja",
+    "unknown": "Unbekannt",
+    "view": "Anzeige",
+    "workflow": "Workflow"
+  },
+  "Notification": {
+    "deletionFailed": "Löschen fehlgeschlagen",
+    "objectDeleted": "Objekt gelöscht",
+    "openedProject": "Neues OpenToolkit-Projekt gestartet",
+    "permissionDenied": "Zugang verweigert",
+    "propertyCreated": "Eigenschaft erstellt"
+  },
+  "Objects": {
+    "all": "Alle Objekte",
+    "delete": "Objekt löschen",
+    "download": "Herunterladen",
+    "dropFilesToAdd": "Dateien hier ablegen, um sie zum Paket hinzuzufügen",
+    "filesize": "Dateigröße",
+    "label": "Anzeigename",
+    "log": "Protokoll",
+    "metadata": "Metadaten",
+    "noAssociatedFile": "Keine zugeordnete Quelldatei",
+    "none": "Keine Objekte",
+    "noObjectsExplainer": "Fügen Sie neue Objekte über die grüne Schaltfläche oder per Drag&Drop hinzu.",
+    "objectUsedInOtherProjects": "...",
+    "rerun": "Erneut ausführen",
+    "sourceName": "Name der Quelldatei",
+    "sourceType": "Typ der Quelldatei",
+    "type": "Objekttyp"
+  },
+  "Packages": {
+    "generate": "Paket generieren",
+    "packaging": "Inhalte packen",
+    "progress": "Fortschritt"
+  },
+  "Plus": {
+    "elapsedTime": "Dauer",
+    "forAnalysis": "der Verarbeitung",
+    "objects": "Gesamt",
+    "objectsCount": "Anzahl Objekte",
+    "processed": "Verarbeitet"
+  },
+  "Otk": {
+    "downloadPackage": "Download",
+    "retry": "Möchten Sie ein weiteres iiRDS-Paket erstellen?",
+    "startNewPackage": "Neues Paket",
+    "thankYou": "Vielen Dank!",
+    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Download bereit."
+  },
+  "Metadata": {
+    "confidence": "Konfidenz",
+    "approved": "Abgenommen"
+  }
+}

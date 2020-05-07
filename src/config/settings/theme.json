@@ -1,0 +1,31 @@
+{
+    "theme":{
+        "dark": true,
+        "logo": {
+            "dark": "/images/iiRDS.jpg",
+            "light": "/images/iiRDS.jpg"
+        },
+        "themes": {
+            "dark": {
+                "primary": "#dec88e",
+                "secondary": "#424242",
+                "accent": "#5cc5f2",
+                "error": "#FF5252",
+                "info": "#5cc5f2",
+                "success": "#4CAF50",
+                "warning": "#FFC107",
+                "anchor": "#c4c4c4"
+            },
+            "light": {
+                "primary": "#5cc5f2",
+                "secondary": "#eeeeee",
+                "accent": "#5cc5f2",
+                "error": "#FF5252",
+                "info": "#5cc5f2",
+                "success": "#4CAF50",
+                "warning": "#FFC107",
+                "anchor": "#c4c4c4"
+            }
+        }
+    }
+}

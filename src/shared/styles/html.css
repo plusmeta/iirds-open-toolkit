@@ -1,0 +1,147 @@
+/*! 
+ * Copyright 2020 plusmeta GmbH
+ * License: MIT
+ */
+
+.html {
+    color: #424242 !important;
+    background-color: #e0e0e0;
+    padding: 10px;
+}
+.html h1
+, .html h2
+, .html ol
+, .html ul {
+    margin-bottom: 10px;
+}
+.html h1 {
+    font-size: 32px;
+    line-height: 36px;
+}
+.html div h1
+, .html div section h1 {
+    font-size: 24px;
+    line-height: 28px;
+}
+.html div div h1
+, .html section section h1
+, .html h2 {
+    font-size: 18px;
+    line-height: 22px;
+}
+.html a {
+    cursor: not-allowed;
+    font-weight: bold;
+    text-decoration: underline;
+    color: slateblue
+}
+.html table {
+    table-layout: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 10px;
+}
+.html table td
+, .html table th {
+    color: #424242;
+    font-size: 12px;
+    border: 2px solid #424242;
+    padding: 10px;
+}
+.html table.warning_table 
+, .html table.warning_table td
+, .html table.danger_table 
+, .html table.danger_table td 
+, .html table.caution_table 
+, .html table.caution_table td 
+, .html table.notice_table 
+, .html table.notice_table td {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.html .safety h1
+, .html li p {
+    margin-bottom: 0px;
+}
+.html li {
+    line-height: 180%;
+}
+.html div[data-role="caution"]
+, .html div[data-role="notice"]
+, .html div[data-role="warning"]
+, .html div[data-role="danger"]
+, .html table.warning_table
+, .html table.danger_table
+, .html table.caution_table
+, .html table.notice_table
+, .html .safetyadvice
+, .html .safety {
+    display: block;
+    border: 5px solid dimgray;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.html div[data-role="signalword-panel"]
+, .html p.signalword
+, .html table.warning_table p.warning_signal_word
+, .html table.danger_table p.danger_signal_word
+, .html table.caution_table p.caution_signal_word
+, .html table.notice_table p.notice_signal_word
+, .html .safety h1 
+, .html .safety-cause {
+    display: block;
+    background: lightsalmon;
+    border-bottom: 2px solid dimgray;
+    padding: 5px 20px;
+}
+.html div[data-role="message-panel"]
+, .html .safetyadvice p.cause
+, .html table.warning_table tbody
+, .html table.danger_table tbody
+, .html table.caution_table tbody
+, .html table.notice_table tbody
+, .html .safety_content {
+    padding: 10px;
+    background: lightgoldenrodyellow;
+    border-bottom: 2px solid dimgray;
+    font-size: 16px;
+    line-height: 20px;
+    color: #424242;
+}
+.html p[data-role="signalword"]
+, .html p.signalword 
+, .html table.warning_table p.warning_signal_word a
+, .html table.danger_table p.danger_signal_word a
+, .html table.caution_table p.caution_signal_word a
+, .html table.notice_table p.notice_signal_word a
+, .html .safety h1 
+, .html .safety-consequence {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #424242;
+    text-decoration: none;
+    padding: 5px;
+}
+.html table.warning_table td.td_infotext_right h1
+, .html table.danger_table td.td_infotext_right h1
+, .html table.caution_table td.td_infotext_right h1
+, .html table.notice_table td.td_infotext_right h1 {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 5px 20px;
+}
+
+.html table.warning_table td.td_infotext_right p
+, .html table.danger_table td.td_infotext_right p
+, .html table.caution_table td.td_infotext_right p
+, .html table.notice_table td.td_infotext_right p {
+    padding: 5px 20px;
+}
+.html div[data-role="symbol-panel"] {
+    display: none;
+}
+.html div.clear {
+    clear: both;
+}

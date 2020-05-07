@@ -1,0 +1,22 @@
+[
+    {
+        "key": "start.welcome",
+        "link": "Welcome",
+        "title": "Welcome"
+    },
+    {
+        "key": "workflow.addObjects",
+        "text": "To be done",
+        "title": "Add objects"
+    },
+    {
+        "key": "workflow.assignMetadata",
+        "text": "To be done",
+        "title": "Assign metadata"
+    },
+    {
+        "key": "workflow.generateIirds",
+        "text": "To be done",
+        "title": "Generate iiRDS package"
+    }
+]

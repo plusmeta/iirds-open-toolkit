@@ -1,0 +1,724 @@
+[
+    {
+        "subClassOf": "plus:Root",
+        "identifier": "plus:Root",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Basis",
+            "en": "Base"
+        }
+    },
+    {
+        "subClassOf": "plus:Root",
+        "identifier": "plus:Meta",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Metadaten",
+            "en": "Metadata"
+        }
+    },
+    {
+        "subClassOf": "plus:System",
+        "identifier": "plus:Datatype",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Datentyp",
+            "en": "Data type"
+        }
+    },
+    {
+        "subClassOf": "plus:System",
+        "identifier": "plus:Icon",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Symbol",
+            "en": "Icon"
+        }
+    },
+    {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:Class",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Klasse",
+            "en": "Class"
+        }
+    },
+    {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:Boolean",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Wahrheitswert",
+            "en": "Boolean value"
+        }
+    },
+    {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:Instance",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Listenwert",
+            "en": "List value"
+        }
+    },
+    {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:String",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Zeichenkette",
+            "en": "String value"
+        }
+    },
+    {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:Number",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Zahl",
+            "en": "Number"
+        }
+    },
+    {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:Timestamp",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Zeitstempel",
+            "en": "Timestamp"
+        }
+    },
+    {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:Relation",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Beziehung",
+            "en": "Relation"
+        }
+    },
+    {
+        "subClassOf": "plus:System",
+        "identifier": "plus:Objecttype",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Objekttyp",
+            "en": "Object type"
+        }
+    },
+    {
+        "subClassOf": "plus:Objecttype",
+        "identifier": "plus:GenericObject",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Generisches Objekt",
+            "en": "Generic object"
+        },
+        "rels": {
+            "plus:has-icons": [
+                "mdi:file-question-outline"
+            ]
+        }
+    },
+    {
+        "subClassOf": "plus:Objecttype",
+        "identifier": "plus:Document",
+        "datatype": "plus:Instance",
+        "rels": {
+            "plus:has-icons": [
+                "mdi:note-text-outline"
+            ]
+        },
+        "label": {
+            "de": "Dokument",
+            "en": "Document"
+        },
+        "indicators": ["application/pdf"]
+    },
+    {
+        "subClassOf": "plus:Objecttype",
+        "identifier": "plus:Fragment",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Fragment",
+            "en": "Fragment"
+        },
+        "rels": {
+            "plus:has-icons": [
+                "mdi:text-short"
+            ]
+        }
+    },
+    {
+        "subClassOf": "plus:Objecttype",
+        "identifier": "plus:Text",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Textobjekt",
+            "en": "Text object"
+        }
+    },
+    {
+        "subClassOf": "plus:Objecttype",
+        "identifier": "plus:Component",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Topic",
+            "en": "Topic"
+        },
+        "rels": {
+            "plus:has-icons": [
+                "mdi:text-subject"
+            ]
+        },
+        "indicators": ["text/html"]
+    },
+    {
+        "subClassOf": "plus:System",
+        "identifier": "plus:SystemLanguage",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Oberflächensprache",
+            "en": "Interface language"
+        }
+    },
+    {
+        "subClassOf": "plus:SystemLanguage",
+        "identifier": "plus:German",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Deutsch",
+            "en": "German"
+        },
+        "rels": {
+            "plus:refers-to-language": ["de-DE"]
+        }
+    },
+    {
+        "subClassOf": "plus:SystemLanguage",
+        "identifier": "plus:English",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Englisch",
+            "en": "English"
+        },
+        "rels": {
+            "plus:refers-to-language": ["en-US"]
+        }
+    },
+    {
+        "subClassOf": "plus:Relation",
+        "identifier": "plus:refers-to-language",
+        "datatype": "plus:Relation",
+        "label": {
+            "de": "entspricht Sprache",
+            "en": "refers to language"
+        }
+    },
+    {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:ProjectRelation",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Projekt-Beziehung",
+            "en": "Project relation"
+        }
+    },
+    {
+        "subClassOf": "plus:ProjectRelation",
+        "identifier": "plus:created-by-project",
+        "datatype": "plus:ProjectRelation",
+        "label": {
+            "de": "von Projekt erstellt",
+            "en": "created by project"
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:System",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Systemmetadaten",
+            "en": "System metadata"
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:OriginalFileName",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Dateiname bei Import",
+            "en": "Import file name"
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:LastMetadataEdit",
+        "datatype": "plus:Timestamp",
+        "label": {
+            "de": "Letzte Metadatenänderung",
+            "en": "Last metadata edit"
+        }
+    },
+    {
+        "subClassOf": "plus:System",
+        "identifier": "plus:SystemRole",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Systemrolle",
+            "en": "System role"
+        }
+    },
+    {
+        "subClassOf": "plus:SystemRole",
+        "identifier": "plus:AssignableMetadata",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Zuweisbare Eigenschaft",
+            "en": "Assignable property"
+        }
+    },
+    {
+        "subClassOf": "plus:SystemRole",
+        "identifier": "plus:RequiredMetadata",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Pflichtmetadatum",
+            "en": "Required metadata"
+        }
+    },
+    {
+        "subClassOf": "plus:SystemRole",
+        "identifier": "plus:CustomMetadata",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Eigenes Metadatum",
+            "en": "Custom metadata"
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:Language",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Sprache",
+            "en": "Language"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata",
+                "plus:RequiredMetadata"
+            ],
+            "plus:has-icons": [
+                "mdi:web"
+            ],
+            "plus:has-relations": [
+                "iirds:language"
+            ]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:Title",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Titel",
+            "en": "Title"
+        },
+        "rels": {
+            "plus:has-roles": ["plus:AssignableMetadata", "plus:RequiredMetadata"],
+            "plus:has-icons": ["mdi:format-title"],
+            "plus:has-relations": ["iirds:title"]
+        }
+    },
+    {
+        "subClassOf": "plus:Root",
+        "identifier": "plus:Product",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Produkt",
+            "en": "Product"
+        }
+    },
+    {
+        "subClassOf": "plus:Product",
+        "identifier": "plus:EmptyProduct",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Leeres Produkt",
+            "en": "Empty Product"
+        }
+    },
+    {
+        "subClassOf": "plus:Root",
+        "identifier": "plus:SupplierPart",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Zulieferteil",
+            "en": "Supplier part"
+        }
+    },
+    {
+        "subClassOf": "plus:Root",
+        "identifier": "plus:Actor",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Akteur",
+            "en": "Actor"
+        }
+    },
+    {
+        "subClassOf": "plus:Relation",
+        "identifier": "plus:has-roles",
+        "datatype": "plus:Relation",
+        "label": {
+            "de": "hat Rollen",
+            "en": "has roles"
+        }
+    },
+    {
+        "subClassOf": "plus:Relation",
+        "identifier": "plus:has-icons",
+        "datatype": "plus:Relation",
+        "label": {
+            "de": "hat Symbole",
+            "en": "has icons"
+        }
+    },
+    {
+        "subClassOf": "plus:Relation",
+        "identifier": "plus:has-relations",
+        "datatype": "plus:Relation",
+        "label": {
+            "de": "hat zugeordnete Beziehungsarten",
+            "en": "has associated relation types"
+        }
+    },
+    {
+        "subClassOf": "plus:Relation",
+        "identifier": "plus:manufactured-by",
+        "datatype": "plus:Relation",
+        "label": {
+            "de": "hergestellt von",
+            "en": "manufactured by"
+        }
+    },
+    {
+        "subClassOf": "plus:Relation",
+        "identifier": "plus:relates-to-manufacturer",
+        "datatype": "plus:Relation",
+        "label": {
+            "de": "bezieht sich auf Hersteller",
+            "en": "relates to manufacturer"
+        }
+    },
+    {
+        "subClassOf": "plus:Relation",
+        "identifier": "plus:has-parts",
+        "datatype": "plus:Relation",
+        "label": {
+            "de": "hat Teile",
+            "en": "has parts"
+        }
+    },
+    {
+        "subClassOf": "plus:System",
+        "identifier": "plus:MimeType",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Medientyp",
+            "en": "Mimetype"
+        }
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "application/pdf",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "PDF-Dokument",
+            "en": "PDF document"
+        }
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "text/html",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "HTML-Datei",
+            "en": "HTML file"
+        },
+        "indicators": ["application/html", "application/xhtml+xml", "xhtml"]
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "application/xml",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "XML-Datei",
+            "en": "XML file"
+        },
+        "indicators": ["application/rdf+xml"]
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "application/iirds+zip",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "iiRDS-Paket",
+            "en": "iiRDS package"
+        },
+        "indicators": ["application/iirds", "iirds"]
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "application/zip",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "ZIP-Container",
+            "en": "ZIP container"
+        }
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "text/plain",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Text",
+            "en": "Plain text"
+        },
+        "indicators": ["text/*"]
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Microsoft Excel Arbeitsmappe",
+            "en": "Microsoft Excel Workbook"
+        },
+        "indicators": ["xlsx"]
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:HTML",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "HTML-Metadaten",
+            "en": "HTML metadata"
+        }
+    },
+    {
+        "subClassOf": "plus:HTML",
+        "identifier": "html:id",
+        "datatype": "plus:String",
+        "label": {
+            "de": "HTML-ID",
+            "en": "HTML ID"
+        }
+    },
+    {
+        "subClassOf": "plus:HTML",
+        "identifier": "html:generator",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Erzeuger (HTML)",
+            "en": "Generator (HTML)"
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:CreationDate",
+        "datatype": "plus:Timestamp",
+        "label": {
+            "de": "Erstellungsdatum",
+            "en": "Creation date"
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:PDF",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "PDF-Metadaten",
+            "en": "PDF metadata"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:Keywords",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Schlagworte",
+            "en": "Keywords"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:Subject",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Thema (PDF)",
+            "en": "Subject (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:Creator",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Ersteller (PDF)",
+            "en": "Creator (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:Author",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Autor (PDF)",
+            "en": "Author (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:Title",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Titel (PDF)",
+            "en": "Title (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:IsLinearized",
+        "datatype": "plus:Boolean",
+        "label": {
+            "de": "Schnelle Webanzeige (PDF)",
+            "en": "Optimized for web (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:IsAcroFormPresent",
+        "datatype": "plus:Boolean",
+        "label": {
+            "de": "Enthaltenes Acrobat-Formular (PDF)",
+            "en": "Embedded Acrobat form (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:IsXFAPresent",
+        "datatype": "plus:Boolean",
+        "label": {
+            "de": "Enthaltenes XFA-Formular (PDF)",
+            "en": "Embedded XFA form (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:Producer",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Formatproduzent (PDF-Software)",
+            "en": "Format producer (PDF software)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:CreationDate",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Erstellungsdatum (PDF)",
+            "en": "Creation date (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "pdf:createdByProject",
+        "datatype": "plus:Relation",
+        "label": {
+            "de": "von Projekt erstellt",
+            "en": "created by project"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:ModDate",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Zuletzt geändert (PDF)",
+            "en": "Last modified (PDF)"
+        }
+    },
+    {
+        "subClassOf": "plus:PDF",
+        "identifier": "pdf:PDFFormatVersion",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Version des PDF-Formats",
+            "en": "PDF format version"
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:convert-to-object",
+        "datatype": "plus:String",
+        "label": {
+            "de": "wird zu Objekt konvertiert",
+            "en": "is converted to object"
+        }
+    },
+    {
+        "identifier": "https://data.plusmeta.de/metadata#",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Namespace",
+        "rels": {},
+        "label": {
+            "de": "plusmeta-Namensraum",
+            "en": "plusmeta namespace"
+        },
+        "indicators": [
+            "plus"
+        ]
+    },
+    {
+        "identifier": "https://materialdesignicons.com/icon/",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Namespace",
+        "rels": {},
+        "label": {
+            "de": "Icon-Namensraum",
+            "en": "Icon namespace"
+        },
+        "indicators": [
+            "mdi"
+        ]
+    },
+    {
+        "identifier": "application/json",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:MimeType",
+        "rels": {},
+        "label": {
+            "de": "JSON-Datei",
+            "en": "JSON file"
+        },
+        "indicators": [
+            "json"
+        ]
+    },
+    {
+        "identifier": "plus:Configuration",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Objecttype",
+        "rels": {},
+        "label": {
+            "de": "Konfigurationsobjekt",
+            "en": "Configuration object"
+        },
+        "indicators": ["application/json"]
+    }
+]

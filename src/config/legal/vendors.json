@@ -1,0 +1,152 @@
+{
+    "@sentry/browser": {
+        "licenses": "BSD-3-Clause",
+        "repository": "https://github.com/getsentry/sentry-javascript",
+        "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "@sentry/integrations": {
+        "licenses": "BSD-3-Clause",
+        "repository": "https://github.com/getsentry/sentry-javascript",
+        "licenseUrl": "https://github.com/getsentry/sentry-javascript/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "core-js": {
+        "licenses": "MIT",
+        "repository": "https://github.com/zloirock/core-js",
+        "licenseUrl": "https://github.com/zloirock/core-js/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "jszip": {
+        "licenses": "(MIT OR GPL-3.0)",
+        "repository": "https://github.com/Stuk/jszip",
+        "licenseUrl": "https://github.com/Stuk/jszip/raw/master/LICENSE.markdown",
+        "parents": "iirds-open-toolkit"
+    },
+    "numeral": {
+        "licenses": "MIT",
+        "repository": "https://github.com/adamwdraper/Numeral-js",
+        "licenseUrl": "https://github.com/adamwdraper/Numeral-js/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "pdfjs-dist": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/mozilla/pdfjs-dist",
+        "licenseUrl": "https://github.com/mozilla/pdfjs-dist/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "regenerator-runtime": {
+        "licenses": "MIT",
+        "repository": "https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime",
+        "licenseUrl": "https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "rxjs": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/reactivex/rxjs",
+        "licenseUrl": "https://github.com/reactivex/rxjs/raw/master/LICENSE.txt",
+        "parents": "iirds-open-toolkit"
+    },
+    "sanitize-html": {
+        "licenses": "MIT",
+        "repository": "https://github.com/apostrophecms/sanitize-html",
+        "licenseUrl": "https://github.com/apostrophecms/sanitize-html/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "typeface-ubuntu-mono": {
+        "licenses": "MIT",
+        "repository": "https://github.com/KyleAMathews/typefaces/tree/master/packages/ubuntu-mono",
+        "licenseUrl": "https://github.com/KyleAMathews/typefaces/tree/master/packages/ubuntu-mono",
+        "parents": "iirds-open-toolkit"
+    },
+    "typeface-ubuntu": {
+        "licenses": "MIT",
+        "repository": "https://github.com/KyleAMathews/typefaces/tree/master/packages/ubuntu",
+        "licenseUrl": "https://github.com/KyleAMathews/typefaces/tree/master/packages/ubuntu",
+        "parents": "iirds-open-toolkit"
+    },
+    "uuid": {
+        "licenses": "MIT",
+        "repository": "https://github.com/uuidjs/uuid",
+        "licenseUrl": "https://github.com/uuidjs/uuid/raw/master/LICENSE.md",
+        "parents": "iirds-open-toolkit"
+    },
+    "vue-country-flag": {
+        "licenses": "MIT",
+        "repository": "https://github.com/P3trur0/vue-country-flag",
+        "licenseUrl": "https://github.com/P3trur0/vue-country-flag/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "vue-i18n": {
+        "licenses": "MIT",
+        "repository": "https://github.com/kazupon/vue-i18n",
+        "licenseUrl": "https://github.com/kazupon/vue-i18n/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "vue-json-pretty": {
+        "licenses": "MIT",
+        "repository": "https://github.com/leezng/vue-json-pretty",
+        "licenseUrl": "https://github.com/leezng/vue-json-pretty",
+        "parents": "iirds-open-toolkit"
+    },
+    "vue-router": {
+        "licenses": "MIT",
+        "repository": "https://github.com/vuejs/vue-router",
+        "licenseUrl": "https://github.com/vuejs/vue-router/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "vue-rx": {
+        "licenses": "MIT",
+        "repository": "https://github.com/vuejs/vue-rx",
+        "licenseUrl": "https://github.com/vuejs/vue-rx/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "vue-shortkey": {
+        "licenses": "MIT",
+        "repository": "https://github.com/iFgR/vue-shortkey",
+        "licenseUrl": "https://github.com/iFgR/vue-shortkey/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "vue": {
+        "licenses": "MIT",
+        "repository": "https://github.com/vuejs/vue",
+        "licenseUrl": "https://github.com/vuejs/vue/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "vuetify": {
+        "licenses": "MIT",
+        "repository": "https://github.com/vuetifyjs/vuetify",
+        "licenseUrl": "https://github.com/vuetifyjs/vuetify/raw/master/LICENSE.md",
+        "parents": "iirds-open-toolkit"
+    },
+    "vuex-persist": {
+        "licenses": "MIT",
+        "repository": "https://github.com/championswimmer/vuex-persist",
+        "licenseUrl": "https://github.com/championswimmer/vuex-persist/raw/master/LICENSE.md",
+        "parents": "iirds-open-toolkit"
+    },
+    "vuex": {
+        "licenses": "MIT",
+        "repository": "https://github.com/vuejs/vuex",
+        "licenseUrl": "https://github.com/vuejs/vuex/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "whatwg-fetch": {
+        "licenses": "MIT",
+        "repository": "https://github.com/github/fetch",
+        "licenseUrl": "https://github.com/github/fetch/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "xlsx": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/SheetJS/js-xlsx",
+        "licenseUrl": "https://github.com/SheetJS/js-xlsx/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
+    "xmlbuilder": {
+        "licenses": "MIT",
+        "repository": "https://github.com/oozcitak/xmlbuilder-js",
+        "licenseUrl": "https://github.com/oozcitak/xmlbuilder-js/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    }
+}

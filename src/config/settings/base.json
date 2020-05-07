@@ -1,0 +1,13 @@
+{
+    "locale": "de",
+    "ui_shortcuts": true,
+    "ui_assign_preview": true,
+    "ui_assign_filter": null,
+    "ui_addobjects_filter": null,
+    "ui_addobjects_columns": [
+        "name",
+        "sourcetype",
+        "size",
+        "actions"
+    ]
+}

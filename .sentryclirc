@@ -1,0 +1,7 @@
+[defaults]
+url=https://diagnosis.iirds.org
+project=iirds-open-toolkit
+org=tekom
+
+[auth]
+token=

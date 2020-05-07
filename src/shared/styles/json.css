@@ -1,0 +1,36 @@
+/*! 
+ * Copyright 2020 plusmeta GmbH
+ * License: MIT
+ */
+
+ .vjs-tree {
+    font-family: "Ubuntu Mono", "Monaco", monospace;
+    color: #ddd;
+}
+
+.vjs-tree.is-selectable {
+    cursor: pointer;
+}
+.vjs-tree.is-highlight-selected {
+    background-color: #5755d9;
+}
+
+.vjs-tree__brackets {
+    color: #aaa;
+}
+
+.vjs-value {
+    font-weight: bold;
+}
+
+.vjs-value.vjs-value__boolean {
+    color: #FF5252; /* error */
+}
+
+.vjs-value.vjs-value__number {
+    color: #FFC107; /* warning */
+}
+
+.vjs-value.vjs-value__string {
+    color: #4CAF50; /* success */
+}

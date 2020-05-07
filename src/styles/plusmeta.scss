@@ -1,0 +1,120 @@
+/*! 
+ * Copyright 2020 plusmeta GmbH
+ * License: MIT
+ */
+
+html {
+  overflow: auto !important;
+  background-color: map-get($material-dark, 'background');
+}
+
+#logotext {
+  font-family: "Ubuntu", "Segoe UI", sans-serif !important;
+}
+
+#logoicon:hover, #logotext:hover {
+  cursor: pointer;
+}
+
+.hidden-input-60 {
+  opacity: 0.6
+} 
+
+.table-link {
+  text-decoration: none;
+  color: #ffffff !important;
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.font-monospace, kbd, code {
+  font-family: "Ubuntu Mono", "Monaco", "Consolas", monospace !important;
+  font-weight: 400 !important;
+  font-size: 100% !important;
+}
+
+.font-monospace-input input[type=text] {
+  font-family: "Ubuntu Mono", "Monaco", "Consolas", monospace !important;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.font-monospace-textare div[contenteditable] {
+  font-family: "Ubuntu Mono", "Monaco", "Consolas", monospace !important;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.drop-overlay {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.truncate-300 {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 300px;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.truncate-200 {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 200px;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.truncate-100 {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100px;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.truncate-50 {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 50px;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.drop-overlay-container {
+    position: relative;
+}
+
+.drop-overlay-inner {
+  position: absolute;
+  z-index: 2;
+}
+
+.drop-overlay-item {
+  background-color: #424242;
+  opacity: 0.85;
+  z-index: 2;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+// Fix vue-country-flag:2.0.1 
+// https://github.com/plusmeta/app/issues/623
+.flag.small-flag {
+  margin: -5px -20px;
+} 
+
+.flag.normal-flag {
+  margin: -10px -16px;
+} 
