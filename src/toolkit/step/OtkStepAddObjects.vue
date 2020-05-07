@@ -442,8 +442,7 @@ export default {
             return Number(this.getActiveSourceMbs) > Number(config.maxObjectMemory);
         },
         ...mapGetters("settings", [
-            "getSetting",
-            "getCurrentLocale"
+            "getSetting"
         ]),
         ...mapGetters("projects", [
             "getCurrentProjectUuid"

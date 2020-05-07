@@ -528,11 +528,6 @@
         "identifier": "iirds:OperatingInstructions",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-02"
-            ]
-        },
         "label": {
             "de": "Betriebsanleitung",
             "en": "Operating instructions"
@@ -543,11 +538,6 @@
         "identifier": "iirds:Specification",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:02-01"
-            ]
-        },
         "label": {
             "de": "Spezifikation",
             "en": "Specification"
@@ -1679,11 +1669,6 @@
         "identifier": "iirds:MaintenanceInstructions",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-04"
-            ]
-        },
         "label": {
             "de": "Wartungsanleitung",
             "en": "Maintenance instructions"
@@ -1716,11 +1701,6 @@
         "identifier": "iirds:SafetyInstructions",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-03"
-            ]
-        },
         "label": {
             "de": "Sicherheitsanleitung",
             "en": "Safety instruction"
@@ -1731,11 +1711,6 @@
         "identifier": "iirds:AssemblyInstructions",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-01"
-            ]
-        },
         "label": {
             "de": "Montageanleitung",
             "en": "Assembly instructions"
@@ -1855,11 +1830,6 @@
         "identifier": "iirds:QuickGuide",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-01"
-            ]
-        },
         "label": {
             "de": "Kurzanleitung",
             "en": "Quick reference guide"
@@ -1905,11 +1875,6 @@
         "identifier": "iirds:IdentificationDocument",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:01-01"
-            ]
-        },
         "label": {
             "de": "Identifikationsdokument",
             "en": "Identification document"
@@ -1920,11 +1885,6 @@
         "identifier": "iirds:ElectronicIdentificationPlate",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:01-01"
-            ]
-        },
         "label": {
             "de": "Elektronisches Typenschild",
             "en": "Electronic Identification Plate"
@@ -1935,11 +1895,6 @@
         "identifier": "iirds:CEDeclarationOfConformity",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:02-04"
-            ]
-        },
         "label": {
             "de": "CE-Konformitätserklärung",
             "en": "CE declaration of conformity"
@@ -1950,11 +1905,6 @@
         "identifier": "iirds:TransportInstructions",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-01"
-            ]
-        },
         "label": {
             "de": "Transportanleitung",
             "en": "Transport instructions"
@@ -1965,11 +1915,6 @@
         "identifier": "iirds:BillOfMaterials",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:02-03"
-            ]
-        },
         "label": {
             "de": "Materialliste",
             "en": "Bill of Materials"
@@ -1980,11 +1925,6 @@
         "identifier": "iirds:RepairInstructions",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-05"
-            ]
-        },
         "label": {
             "de": "Reparaturanleitung",
             "en": "Repair instructions"
@@ -1995,11 +1935,6 @@
         "identifier": "iirds:TechnicalDrawingDiagram",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:02-02"
-            ]
-        },
         "label": {
             "de": "Technische Zeichnung",
             "en": "Technical drawing/diagram"
@@ -2010,11 +1945,6 @@
         "identifier": "iirds:Plan",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:02-02"
-            ]
-        },
         "label": {
             "de": "Plan",
             "en": "Plan"
@@ -2025,11 +1955,6 @@
         "identifier": "iirds:AdministratorGuide",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-02"
-            ]
-        },
         "label": {
             "de": "Administrationsanleitung",
             "en": "Administrator guide"
@@ -2040,11 +1965,6 @@
         "identifier": "iirds:SalesCatalog",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:04-01"
-            ]
-        },
         "label": {
             "de": "Verkaufskatalog",
             "en": "Sales catalog"
@@ -2055,11 +1975,6 @@
         "identifier": "iirds:InstallationInstructions",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-01"
-            ]
-        },
         "label": {
             "de": "Installationsanleitung",
             "en": "Installation instructions"
@@ -2070,11 +1985,6 @@
         "identifier": "iirds:Certificate",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:02-04"
-            ]
-        },
         "label": {
             "de": "Zertifikat",
             "en": "Certificate"
@@ -2085,11 +1995,6 @@
         "identifier": "iirds:PartsCatalog",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:03-06"
-            ]
-        },
         "label": {
             "de": "Teilekatalog",
             "en": "Parts catalog"
@@ -2100,11 +2005,6 @@
         "identifier": "iirds:ContractualDocument",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DocumentType",
-        "rels": {
-            "plus:equivalent-to": [
-                "vdi:ClassId:04-01"
-            ]
-        },
         "label": {
             "de": "Vertragliches Dokument",
             "en": "Contractual document"
