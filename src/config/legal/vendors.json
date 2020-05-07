@@ -137,12 +137,6 @@
         "licenseUrl": "https://github.com/github/fetch/raw/master/LICENSE",
         "parents": "iirds-open-toolkit"
     },
-    "xlsx": {
-        "licenses": "Apache-2.0",
-        "repository": "https://github.com/SheetJS/js-xlsx",
-        "licenseUrl": "https://github.com/SheetJS/js-xlsx/raw/master/LICENSE",
-        "parents": "iirds-open-toolkit"
-    },
     "xmlbuilder": {
         "licenses": "MIT",
         "repository": "https://github.com/oozcitak/xmlbuilder-js",
