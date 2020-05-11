@@ -26,7 +26,7 @@ export default {
         },
         rules: [
             store => store.getters["storage/countCurrentObjectsByType"]
-            (["plus:Document", "plus:Component", "plus:Fragment", "plus:GenericObject"]) > 0
+            (["plus:Document", "plus:Component", "plus:Fragment"]) > 0
         ],
         ruleExpl: {
             de: "Mindestens ein Inhaltsobjekt wurde hinzugefügt",
@@ -43,7 +43,7 @@ export default {
             en: "Assign metadata"
         },
         props: {
-            objecttype: ["plus:Document", "plus:Component", "plus:Fragment", "plus:GenericObject"]
+            objecttype: ["plus:Document", "plus:Component", "plus:Fragment"]
         },
         component: () => import(/* webpackChunkName: "StepBulkAssignMetadata.step" */"@/toolkit/step/OtkStepBulkAssignMetadata")
     },

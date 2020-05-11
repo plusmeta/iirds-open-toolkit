@@ -109,20 +109,6 @@
     },
     {
         "subClassOf": "plus:Objecttype",
-        "identifier": "plus:GenericObject",
-        "datatype": "plus:Instance",
-        "label": {
-            "de": "Generisches Objekt",
-            "en": "Generic object"
-        },
-        "rels": {
-            "plus:has-icons": [
-                "mdi:file-question-outline"
-            ]
-        }
-    },
-    {
-        "subClassOf": "plus:Objecttype",
         "identifier": "plus:Document",
         "datatype": "plus:Instance",
         "rels": {

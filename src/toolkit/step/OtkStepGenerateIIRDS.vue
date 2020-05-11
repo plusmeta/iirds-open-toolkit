@@ -9,7 +9,7 @@
     ref="status"
     :title="$t('Packages.generate')"
     :processed-objects="processed"
-    :objecttype="['plus:Document', 'plus:Component', 'plus:Fragment', 'plus:GenericObject']"
+    :objecttype="['plus:Document', 'plus:Component', 'plus:Fragment']"
     result-object-type="iirds:Container"
     :show-rerun="true"
     :show-download="true"
@@ -62,8 +62,7 @@ export default {
             return this.getCurrentObjectsByType([
                 "plus:Document",
                 "plus:Component",
-                "plus:Fragment",
-                "plus:GenericObject"
+                "plus:Fragment"
             ]);
         },
         ...mapGetters("storage", [
@@ -304,7 +303,6 @@ export default {
             */
 
             const iirdsMapping = {
-                "plus:GenericObject": "iirds:Document",
                 "plus:Document": "iirds:Document",
                 "plus:Component": "iirds:Topic",
                 "plus:Fragment": "iirds:Fragment"

@@ -13,7 +13,9 @@
     "openSettings": "Einstellungen öffnen",
     "restoreSettings": "Einstellungen zurücksetzen",
     "showShortcuts": "Zeige Tastenkürzel",
-    "useDarkMode": "Dunkles Farbschema"
+    "useDarkMode": "Dunkles Farbschema",
+    "uploadMetadata": "Metadatenwerte importieren",
+    "giveFeedback": "Feedback geben"
   },
   "App": {
     "filesTooLarge": "Speicherlimit erreicht. Es können keine Dateien mehr hinzugefügt werden.",

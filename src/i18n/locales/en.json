@@ -13,7 +13,9 @@
     "showShortcuts": "Show shortcuts",
     "useDarkMode": "Dark mode",
     "deleteSelectedObjects": "Delete selected objects",
-    "downloadMetadata": "Download metadata"
+    "downloadMetadata": "Download metadata",
+    "uploadMetadata": "Import metadata values",
+    "giveFeedback": "Give feedback"
   },
   "App": {
     "filesTooLarge": "Memory limit reached. No new files can be added.",
