@@ -23,6 +23,7 @@
     "typeface-ubuntu": "0.0.65",
     "typeface-ubuntu-mono": "0.0.72",
     "uuid": "^7.0.3",
+    "v-xml-tree": "^1.0.0",
     "vue": "^2.6.11",
     "vue-country-flag": "^2.0.0",
     "vue-i18n": "^8.17.3",

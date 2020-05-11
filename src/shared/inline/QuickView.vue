@@ -65,10 +65,10 @@
             <PreviewPDF :file="getObject" />
           </v-card-text>
           <v-card-text
-            v-if="objectType === 'plus:Text' || sourceType === 'text/xml'"
+            v-if="sourceType && sourceType === 'text/xml'"
             class="pa-0"
           >
-            <PreviewText :text="getObject.text" />
+            <PreviewXML :file="getObject" />
           </v-card-text>
           <v-card-text
             v-if="objectType === 'plus:Configuration'"
@@ -90,10 +90,16 @@ import PreviewConfig from "@/shared/block/PreviewConfig";
 import PreviewText from "@/shared/block/PreviewText";
 import PreviewPDF from "@/shared/block/PreviewPDF";
 import PreviewHTML from "@/shared/block/PreviewHTML";
+import PreviewXML from "@/shared/block/PreviewXML";
 
 export default {
     name: "QuickView",
-    components: { PreviewPDF, PreviewHTML, PreviewText, PreviewConfig },
+    components: {
+        PreviewPDF,
+        PreviewHTML,
+        PreviewXML,
+        PreviewConfig
+    },
     props: {
         uuid: {
             type: String,
