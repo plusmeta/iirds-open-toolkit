@@ -85,7 +85,9 @@
     "retry": "Do you like to generate a new package?",
     "startNewPackage": "New package",
     "thankYou": "Thank you!",
-    "thankYouExplainer": "Your iiRDS-Package is now ready for downloading."
+    "thankYouExplainer": "Your iiRDS-Package is now ready for downloading.",
+    "settingsRestored": "Restored default settings",
+    "metadataDownloaded": "Downloaded metadata"
   },
   "Metadata": {
     "confidence": "Confidence",

@@ -68,7 +68,7 @@
           </v-list-item-action>
           <v-list-item-title>{{ $t('Actions.useDarkMode') }}</v-list-item-title>
           <v-list-item-action>
-            <v-icon class="mr-5">
+            <v-icon>
               mdi-theme-light-dark
             </v-icon>
           </v-list-item-action>
@@ -93,7 +93,7 @@
 
         <v-list-item
           class="py-2"
-          @click="resetSettings(true)"
+          @click="restoreSettings"
         >
           <v-list-item-action>
             <v-icon>
@@ -167,6 +167,11 @@ export default {
     methods: {
         downloadMetadata() {
             util.downloadJSON(this.customMetadata, "iiRDS-OT-Custom-Metadata.json");
+            this.$notify.send(this.$t("Otk.metadataDownloaded"), "success", 2);
+        },
+        restoreSettings() {
+            this.resetSettings(true);
+            this.$notify.send(this.$t("Otk.settingsRestored"), "success", 2);
         },
         ...mapActions("settings", [
             "setLocalSetting",

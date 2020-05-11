@@ -85,7 +85,9 @@
     "retry": "Möchten Sie ein weiteres iiRDS-Paket erstellen?",
     "startNewPackage": "Neues Paket",
     "thankYou": "Vielen Dank!",
-    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Download bereit."
+    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Download bereit.",
+    "settingsRestored": "Auf Standardeinstellungen zurückgesetzt",
+    "metadataDownloaded": "Metadaten heruntergeladen"
   },
   "Metadata": {
     "confidence": "Konfidenz",
