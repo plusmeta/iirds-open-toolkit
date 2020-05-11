@@ -6,6 +6,16 @@
 
 <template>
   <div>
+    <form ref="menuForm">
+      <input
+        ref="menuInput"
+        style="display:none;"
+        type="file"
+        accept=".rdf, application/rdf+xml"
+        @change="uploadMetadata($refs.menuInput.files)"
+      >
+    </form>
+
     <v-menu
       eager
       offset-y
@@ -77,12 +87,11 @@
         <v-divider />
 
         <v-list-item
-          :disabled="!isMetadataAvailable"
           class="py-2"
-          @click="downloadMetadata"
+          @click="$refs.menuInput.click()"
         >
           <v-list-item-action>
-            <v-icon :disabled="!isMetadataAvailable">
+            <v-icon>
               mdi-tag-multiple
             </v-icon>
           </v-list-item-action>
@@ -146,7 +155,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import util from "@/util";
+import meta from "@/util/import/meta";
 
 import LicenseInfoDialog from "@/shared/dialog/LicenseInfoDialog";
 
@@ -167,12 +176,6 @@ export default {
         getFeedbackLink() {
             return `mailto:${this.feebdackAddress}?subject=${this.feedbackSubject}`;
         },
-        customMetadata() {
-            return this.getPropertiesByRole("plus:CustomMetadata");
-        },
-        isMetadataAvailable() {
-            return !!this.customMetadata.length;
-        },
         ...mapGetters("settings", [
             "isReady",
             "getLogo",
@@ -184,8 +187,15 @@ export default {
         ])
     },
     methods: {
-        downloadMetadata() {
-            util.downloadJSON(this.customMetadata, "iiRDS-OT-Custom-Metadata.json");
+        async uploadMetadata(uploadedFile) {
+            try {
+                await meta.analyze(uploadedFile[0], this.$store);
+                this.$notify.send(this.$t("Notification.importedMetadata"), "success", 5);
+            } catch (error) {
+                this.$notify.send(this.$t("Notification.importFailed"), "error", 5);
+            } finally {
+                this.$refs.menuForm.reset();
+            }
         },
         ...mapActions("settings", [
             "setLocalSetting",

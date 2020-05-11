@@ -1,49 +1,82 @@
 /*!
+ * iiRDS Open Toolkit
  * Copyright 2020 plusmeta GmbH
  * License: MIT
  */
 
 import util from "@/util";
-import { NotifyService } from "@/services/notify-service";
 import template from "@/store/properties/template";
 
+const IMPORTABLE = {
+    // assignable iiRDS properties
+    "Component": "iirds:Component",
+    "ContentLifeCycleStatusValue": "iirds:ContentLifeCycleStatusValue",
+    "ProductLifeCyclePhase": "iirds:ProductLifeCyclePhase",
+    "DocumentType": "iirds:DocumentType",
+    "Event": "iirds:Event",
+    "InformationSubject": "iirds:InformationSubject",
+    "ProductFeature": "iirds:ProductFeature",
+    "ProductVariant": "iirds:ProductVariant",
+    "Role": "iirds:Role",
+    "Supply": "iirds:Supply",
+    "TopicType": "iirds:TopicType",
+    // special plusmeta properties
+    "Organization": "plus:Organization",
+    "Language": "plus:Language"
+};
+
 export default {
-    async analyze (projectUuid, objectUuid, objectData, objectFilename, store) {
+    async analyze (objectData, store) {
         const textContent = await util.readFile(objectData, "text");
+        const xmlParser = new DOMParser();
 
-        let parsedData = [];
+        const metadataDoc = xmlParser.parseFromString(textContent, "application/xml");
+        if (!metadataDoc) throw Error("Malformed XML file");
 
-        try {
-            parsedData = JSON.parse(textContent);
-            if (!Array.isArray(parsedData)) throw Error("Metadata must be array");
-            if (!parsedData.every(item => !!item.identifier)) throw Error("Metadata must be valid");
-        } catch (error) {
-            this.log(error);
-        }
+        const instanceSelector = Object.keys(IMPORTABLE).join(", ");
+        const knownInstances = metadataDoc.querySelectorAll(instanceSelector);
+        if (!knownInstances.length) throw Error("No known instances to import");
 
-        // import properties
-        for (let item of parsedData) {
-            if (!item.subClassOf) return;
-            if (!item.datatype) return;
+        for (let instance of knownInstances) {
+            const propClass = IMPORTABLE[instance.localName];
+            const propId = instance.getAttribute("rdf:about") || ":no-id";
 
-            let property = template(item);
+            let propLabel = undefined;
+            const labels = instance.querySelectorAll("label");
+
+            // one label = language neutral
+            if (labels.length === 1) {
+                propLabel = labels.item(0).textContent;
+                // multiple labels
+            } else if (labels.length > 1) {
+                // multiple language-specific labels
+                if ([...labels].every(l => l.hasAttribute("xml:lang"))) {
+                    propLabel = {};
+                    for (let languageSpecificLabel of labels) {
+                        let locale = languageSpecificLabel.getAttribute("xml:lang");
+                        if (!!locale) propLabel[locale] = languageSpecificLabel.textContent;
+                    }
+                    // multiple language-neutral labels
+                } else {
+                    propLabel = [];
+                    for (let languageNeutralLabel of labels) {
+                        propLabel.push(languageNeutralLabel.textContent);
+                    }
+                    propLabel = propLabel.filter(Boolean).join(" - ");
+                }
+                // fallback label derived from Class + ID
+            } else {
+                propLabel = propClass.split(":")?.pop() + "-" + propId.split(/[:\/]/)?.pop();
+            }
+
+            let property = template({
+                subClassOf: propClass,
+                datatype: "plus:Instance",
+                identifier: propId,
+                label: propLabel
+            });
+
             store.dispatch("properties/addProperty", property);
         }
-
-        await store.dispatch("storage/saveObjectLocal", {
-            uuid: objectUuid,
-            type: "plus:Configuration",
-            text: JSON.stringify(parsedData)
-        });
-
-        // remove object from project after import of properties
-        // store.dispatch("storage/deleteObject", objectUuid);
-        // store.dispatch("projects/deleteObjectsFromProject", {projectUuid, objectUuids: [objectUuid]});
-
-        NotifyService.instance.send("Erfolgreich importiert", "success", 5);
-    },
-    log(msg) {
-        // eslint-disable-next-line no-console
-        if (VERBOSE) console.log(msg);
     }
 };

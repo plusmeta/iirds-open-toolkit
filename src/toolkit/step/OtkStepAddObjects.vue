@@ -326,7 +326,6 @@ import config from "@/config";
 import pdf from "@/util/import/pdf";
 import html from "@/util/import/html";
 import xml from "@/util/import/xml";
-import meta from "@/util/import/meta";
 
 export default {
     name: "OtkStepAddObjects",
@@ -528,10 +527,6 @@ export default {
 
             case "text/xml":
                 await xml.analyze(...analyzePayload);
-                break;
-
-            case "application/json":
-                await meta.analyze(...analyzePayload);
                 break;
 
             default:

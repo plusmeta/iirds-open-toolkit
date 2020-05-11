@@ -50,7 +50,9 @@
     "objectDeleted": "Objekt gelöscht",
     "openedProject": "Neues OpenToolkit-Projekt gestartet",
     "permissionDenied": "Zugang verweigert",
-    "propertyCreated": "Eigenschaft erstellt"
+    "propertyCreated": "Eigenschaft erstellt",
+    "importedMetadata": "Metadaten erfolgreich importiert",
+    "importFailed": "Import fehlgeschlagen"
   },
   "Objects": {
     "all": "Alle Objekte",

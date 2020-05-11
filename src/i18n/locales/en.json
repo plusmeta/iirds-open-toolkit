@@ -50,7 +50,9 @@
     "objectDeleted": "Object deleted",
     "openedProject": "Set project status to open",
     "permissionDenied": "Permission denied",
-    "propertyCreated": "Property created"
+    "propertyCreated": "Property created",
+    "importedMetadata": "Imported metadata successfully",
+    "importFailed": "Import failed"
   },
   "Objects": {
     "all": "All objects",
