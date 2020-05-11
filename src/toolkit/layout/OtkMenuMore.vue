@@ -87,7 +87,7 @@
             </v-icon>
           </v-list-item-action>
           <v-list-item-title>
-            {{ $t("Actions.downloadMetadata") }}
+            {{ $t("Actions.uploadMetadata") }}
           </v-list-item-title>
         </v-list-item>
 
@@ -102,6 +102,22 @@
           </v-list-item-action>
           <v-list-item-title>
             {{ $t("Actions.restoreSettings") }}
+          </v-list-item-title>
+        </v-list-item>
+
+        <v-divider />
+
+        <v-list-item
+          :href="getFeedbackLink"
+          class="py-2"
+        >
+          <v-list-item-action>
+            <v-icon>
+              mdi-mail
+            </v-icon>
+          </v-list-item-action>
+          <v-list-item-title>
+            {{ $t("Actions.giveFeedback") }}
           </v-list-item-title>
         </v-list-item>
 
@@ -142,12 +158,15 @@ export default {
     data() {
         return {
             showLicenseDialog: false,
-            version: `v${process.env.VUE_APP_VERSION}`,
-            env: process.env.NODE_ENV,
-            name: process.env.VUE_APP_NAME,
+            feebdackAddress: "info@iirds.org",
+            feedbackSubject: "[iiRDS-OT] Feedback",
+            version: `v${process.env.VUE_APP_VERSION}`
         };
     },
     computed: {
+        getFeedbackLink() {
+            return `mailto:${this.feebdackAddress}?subject=${this.feedbackSubject}`;
+        },
         customMetadata() {
             return this.getPropertiesByRole("plus:CustomMetadata");
         },
