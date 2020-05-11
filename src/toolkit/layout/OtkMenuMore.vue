@@ -6,6 +6,16 @@
 
 <template>
   <div>
+    <form ref="menuForm">
+      <input
+        ref="menuInput"
+        style="display:none;"
+        type="file"
+        accept=".rdf, application/rdf+xml"
+        @change="uploadMetadata($refs.menuInput.files)"
+      >
+    </form>
+
     <v-menu
       eager
       offset-y
@@ -77,17 +87,16 @@
         <v-divider />
 
         <v-list-item
-          :disabled="!isMetadataAvailable"
           class="py-2"
-          @click="downloadMetadata"
+          @click="$refs.menuInput.click()"
         >
           <v-list-item-action>
-            <v-icon :disabled="!isMetadataAvailable">
+            <v-icon>
               mdi-tag-multiple
             </v-icon>
           </v-list-item-action>
           <v-list-item-title>
-            {{ $t("Actions.downloadMetadata") }}
+            {{ $t("Actions.uploadMetadata") }}
           </v-list-item-title>
         </v-list-item>
 
@@ -102,6 +111,22 @@
           </v-list-item-action>
           <v-list-item-title>
             {{ $t("Actions.restoreSettings") }}
+          </v-list-item-title>
+        </v-list-item>
+
+        <v-divider />
+
+        <v-list-item
+          :href="getFeedbackLink"
+          class="py-2"
+        >
+          <v-list-item-action>
+            <v-icon>
+              mdi-mail
+            </v-icon>
+          </v-list-item-action>
+          <v-list-item-title>
+            {{ $t("Actions.giveFeedback") }}
           </v-list-item-title>
         </v-list-item>
 
@@ -130,7 +155,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import util from "@/util";
+import meta from "@/util/import/meta";
 
 import LicenseInfoDialog from "@/shared/dialog/LicenseInfoDialog";
 
@@ -142,36 +167,36 @@ export default {
     data() {
         return {
             showLicenseDialog: false,
-            version: `v${process.env.VUE_APP_VERSION}`,
-            env: process.env.NODE_ENV,
-            name: process.env.VUE_APP_NAME,
+            feebdackAddress: "info@iirds.org",
+            feedbackSubject: "[iiRDS-OT] Feedback",
+            version: `v${process.env.VUE_APP_VERSION}`
         };
     },
     computed: {
-        customMetadata() {
-            return this.getPropertiesByRole("plus:CustomMetadata");
-        },
-        isMetadataAvailable() {
-            return !!this.customMetadata.length;
+        getFeedbackLink() {
+            return `mailto:${this.feebdackAddress}?subject=${this.feedbackSubject}`;
         },
         ...mapGetters("settings", [
             "isReady",
             "getLogo",
             "getSetting",
             "isDarkTheme"
-        ]),
-        ...mapGetters("properties", [
-            "getPropertiesByRole",
         ])
     },
     methods: {
-        downloadMetadata() {
-            util.downloadJSON(this.customMetadata, "iiRDS-OT-Custom-Metadata.json");
-            this.$notify.send(this.$t("Otk.metadataDownloaded"), "success", 2);
-        },
         restoreSettings() {
             this.resetSettings(true);
             this.$notify.send(this.$t("Otk.settingsRestored"), "success", 2);
+        },
+        async uploadMetadata(uploadedFile) {
+            try {
+                await meta.analyze(uploadedFile[0], this.$store);
+                this.$notify.send(this.$t("Notification.importedMetadata"), "success", 5);
+            } catch (error) {
+                this.$notify.send(this.$t("Notification.importFailed"), "error", 5);
+            } finally {
+                this.$refs.menuForm.reset();
+            }
         },
         ...mapActions("settings", [
             "setLocalSetting",

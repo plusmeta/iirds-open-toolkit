@@ -9,7 +9,7 @@
     ref="status"
     :title="$t('Packages.generate')"
     :processed-objects="processed"
-    :objecttype="['plus:Document', 'plus:Component', 'plus:Fragment', 'plus:GenericObject']"
+    :objecttype="['plus:Document', 'plus:Component', 'plus:Fragment']"
     result-object-type="iirds:Container"
     :show-rerun="true"
     :show-download="true"
@@ -62,8 +62,7 @@ export default {
             return this.getCurrentObjectsByType([
                 "plus:Document",
                 "plus:Component",
-                "plus:Fragment",
-                "plus:GenericObject"
+                "plus:Fragment"
             ]);
         },
         ...mapGetters("storage", [
@@ -183,16 +182,24 @@ export default {
             return (Array.isArray(value)) ? value[0] : value;
         },
         generateRDF(content) {
+            const DEFAULT_NAMESPACES = {
+                "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+            };
+
+            const configuredNamespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");
+
+            let namespaceConfig = configuredNamespaces.reduce((config, ns) => {
+                ns.indicators?.forEach((prefix) => {
+                    config[`@xmlns:${prefix}`] = ns.identifier;
+                });
+                return config;
+            }, DEFAULT_NAMESPACES);
+
             const root = XMLbuilder.create({
-                "rdf:RDF": {
-                    "@xmlns:dcterms": "http://purl.org/dc/terms/",
-                    "@xmlns:iirds": "http://iirds.tekom.de/iirds#",
-                    "@xmlns:iirdsMch": "http://iirds.tekom.de/iirds/domain/machinery#",
-                    "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                    "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-                    "@xmlns:vcard": "http://www.w3.org/2006/vcard/ns#"
-                }
+                "rdf:RDF": namespaceConfig
             });
+
 
             /*
                 General and Package information
@@ -304,7 +311,6 @@ export default {
             */
 
             const iirdsMapping = {
-                "plus:GenericObject": "iirds:Document",
                 "plus:Document": "iirds:Document",
                 "plus:Component": "iirds:Topic",
                 "plus:Fragment": "iirds:Fragment"

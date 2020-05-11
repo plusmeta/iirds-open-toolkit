@@ -10,7 +10,7 @@ export default {
         let template = {
             uuid: uuid(),
             externalId: undefined,
-            type: "plus:GenericObject",
+            type: "plus:Document",
             name: undefined,
             text: undefined,
             meta: {},

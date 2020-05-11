@@ -13,7 +13,9 @@
     "openSettings": "Einstellungen öffnen",
     "restoreSettings": "Einstellungen zurücksetzen",
     "showShortcuts": "Zeige Tastenkürzel",
-    "useDarkMode": "Dunkles Farbschema"
+    "useDarkMode": "Dunkles Farbschema",
+    "uploadMetadata": "Metadatenwerte importieren",
+    "giveFeedback": "Feedback geben"
   },
   "App": {
     "filesTooLarge": "Speicherlimit erreicht. Es können keine Dateien mehr hinzugefügt werden.",
@@ -48,7 +50,9 @@
     "objectDeleted": "Objekt gelöscht",
     "openedProject": "Neues OpenToolkit-Projekt gestartet",
     "permissionDenied": "Zugang verweigert",
-    "propertyCreated": "Eigenschaft erstellt"
+    "propertyCreated": "Eigenschaft erstellt",
+    "importedMetadata": "Metadaten erfolgreich importiert",
+    "importFailed": "Import fehlgeschlagen"
   },
   "Objects": {
     "all": "Alle Objekte",
