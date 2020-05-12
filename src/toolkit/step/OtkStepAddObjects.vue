@@ -22,6 +22,8 @@
       >
     </form>
 
+    <HelpView helpkey="workflow.addObjects" />
+
     <v-container fluid class="drop-overlay drop-overlay-container">
       <v-fade-transition>
         <v-container
@@ -43,8 +45,6 @@
           </v-row>
         </v-container>
       </v-fade-transition>
-
-      <HelpView helpkey="workflow.addObjects" />
 
       <v-card :outlined="!$vuetify.theme.dark">
         <v-data-table
