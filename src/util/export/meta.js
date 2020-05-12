@@ -6,11 +6,6 @@
 
 import XMLbuilder from "xmlbuilder";
 
-const DEFAULT_NAMESPACES = {
-    "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema"
-};
-
 export default {
     export (metadata, $store) {
         const configuredNamespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");
@@ -20,7 +15,7 @@ export default {
                 config[`@xmlns:${prefix}`] = ns.identifier;
             });
             return config;
-        }, DEFAULT_NAMESPACES);
+        }, {});
 
         const root = XMLbuilder.create({
             "rdf:RDF": namespaceConfig

@@ -76,6 +76,7 @@ export default {
         ]),
         ...mapGetters("properties", [
             "getPropertyById",
+            "getPropertiesByClass",
             "getPropertyLabelById",
             "getPropertyRelationById"
         ]),
@@ -182,19 +183,14 @@ export default {
             return (Array.isArray(value)) ? value[0] : value;
         },
         generateRDF(content) {
-            const DEFAULT_NAMESPACES = {
-                "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#"
-            };
-
-            const configuredNamespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");
+            const configuredNamespaces = this.getPropertiesByClass("plus:Namespace");
 
             let namespaceConfig = configuredNamespaces.reduce((config, ns) => {
                 ns.indicators?.forEach((prefix) => {
                     config[`@xmlns:${prefix}`] = ns.identifier;
                 });
                 return config;
-            }, DEFAULT_NAMESPACES);
+            }, {});
 
             const root = XMLbuilder.create({
                 "rdf:RDF": namespaceConfig

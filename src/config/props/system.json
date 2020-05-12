@@ -445,7 +445,7 @@
             "de": "XML-Datei",
             "en": "XML file"
         },
-        "indicators": ["application/rdf+xml"]
+        "indicators": ["text/xml", "application/rdf+xml", "xml"]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -464,7 +464,8 @@
         "label": {
             "de": "ZIP-Container",
             "en": "ZIP container"
-        }
+        },
+        "indicators": ["zip"]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -485,6 +486,36 @@
             "en": "Microsoft Excel Workbook"
         },
         "indicators": ["xlsx"]
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Microsoft Word Dokument",
+            "en": "Microsoft Word Document"
+        },
+        "indicators": ["docx"]
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Microsoft PowerPoint Präsentation",
+            "en": "Microsoft PowerPoint Presentation"
+        },
+        "indicators": ["pptx"]
+    },
+    {
+        "subClassOf": "plus:MimeType",
+        "identifier": "application/rtf",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Rich Text Format (RTF)",
+            "en": "Rich Text Format (RTF)"
+        },
+        "indicators": ["rtf", "text/rtf"]
     },
     {
         "subClassOf": "plus:Meta",
@@ -671,6 +702,32 @@
         ]
     },
     {
+        "identifier": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Namespace",
+        "rels": {},
+        "label": {
+            "de": "RDF-Namensraum",
+            "en": "RDF namespace"
+        },
+        "indicators": [
+            "rdf"
+        ]
+    },
+    {
+        "identifier": "http://www.w3.org/2000/01/rdf-schema",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Namespace",
+        "rels": {},
+        "label": {
+            "de": "RDFS-Namensraum",
+            "en": "RDFS namespace"
+        },
+        "indicators": [
+            "rdfs"
+        ]
+    },
+    {
         "identifier": "https://materialdesignicons.com/icon/",
         "datatype": "plus:Instance",
         "subClassOf": "plus:Namespace",
@@ -695,16 +752,5 @@
         "indicators": [
             "json"
         ]
-    },
-    {
-        "identifier": "plus:Configuration",
-        "datatype": "plus:Instance",
-        "subClassOf": "plus:Objecttype",
-        "rels": {},
-        "label": {
-            "de": "Konfigurationsobjekt",
-            "en": "Configuration object"
-        },
-        "indicators": ["application/json"]
     }
 ]
