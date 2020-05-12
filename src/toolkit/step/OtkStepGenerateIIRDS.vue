@@ -18,7 +18,7 @@
   >
     <template>
       <v-flex xs3>
-        <v-card class="pa-0 flex-grow-1 text-center" color="info">
+        <v-card class="pa-0 flex-grow-1 text-center" color="primary">
           <v-card-text class="display-3 white--text pb-0">
             {{ percent }} %
           </v-card-text>
