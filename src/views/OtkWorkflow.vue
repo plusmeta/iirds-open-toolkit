@@ -12,7 +12,7 @@
     class="elevation-0"
     @change="checkRoute"
   >
-    <v-toolbar class="elevation-4">
+    <v-toolbar :class="{'elevation-0': !$vuetify.theme.dark}">
       <v-stepper-header class="elevation-0" style="width: 100%; height: 64px;">
         <template v-for="(step, index) in getSteps">
           <v-stepper-step
@@ -30,6 +30,7 @@
         </template>
       </v-stepper-header>
     </v-toolbar>
+    <v-divider v-if="!$vuetify.theme.dark" />
 
     <v-stepper-items>
       <template v-for="(step, index) in getSteps">

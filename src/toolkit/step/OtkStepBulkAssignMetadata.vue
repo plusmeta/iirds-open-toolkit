@@ -119,10 +119,10 @@
           <v-card
             v-for="(item, index) in items"
             :key="item.uuid"
-            :outlined="!$vuetify.theme.dark"
+            flat
             tile
           >
-            <v-divider v-if="$vuetify.theme.dark" />
+            <v-divider />
             <v-list class="pa-0">
               <v-list-item
                 :id="`item-${index}`"
@@ -154,6 +154,7 @@
               <AssignMetadata :object="item" />
             </v-card-text>
           </v-card>
+          <v-divider />
         </template>
       </v-data-iterator>
       <v-container

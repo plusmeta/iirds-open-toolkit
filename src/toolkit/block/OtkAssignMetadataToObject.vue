@@ -51,14 +51,16 @@
             :items="getObjectTypes"
             :label="$t('Objects.type')"
             class="mr-6"
-            solo-inverted
+            filled
             @change="setObjectType"
           />
-          <AddMetadata
-            :object="object.uuid"
-            :visible="getVisibleMetadata.map(m => m.value)"
-            @metadata="addObjectMetadataField"
-          />
+          <div class="pt-2 pr-2">
+            <AddMetadata
+              :object="object.uuid"
+              :visible="getVisibleMetadata.map(m => m.value)"
+              @metadata="addObjectMetadataField"
+            />
+          </div>
         </v-layout>
 
         <ChooseCreateTitle
