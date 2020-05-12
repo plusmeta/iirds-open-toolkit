@@ -7,7 +7,8 @@
 <template>
   <v-card
     v-if="showHelpView"
-    class="mb-6 elevation-4"
+    class="mb-6"
+    :outlined="!$vuetify.theme.dark"
   >
     <v-card-title primary-title>
       <span class="title">

@@ -16,10 +16,14 @@ $material-dark: (
 
 $material-light: (
         'app-bar': #666,
-        'background':  #e8f1f7,
-        'bg-color':  #e8f1f7,
-        'cards':#d5dae7,
-        'toolbar': #5cc5f225
+        'text-color': #333,
+        'text': (
+                'primary': #333
+        ),
+        'background':  #fff,
+        'bg-color':  #fff,
+        'cards':#fff,
+        'toolbar': #eee
 );
 
 @import "vuetify.fix.scss";

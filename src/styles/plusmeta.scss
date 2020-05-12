@@ -100,7 +100,13 @@ html {
 }
 
 .drop-overlay-item {
-  background-color: #424242;
+  background-color: map-get($material-dark, 'cards');
+  opacity: 0.85;
+  z-index: 2;
+}
+
+.theme--light .drop-overlay-item {
+  background-color: map-get($material-light, 'background');
   opacity: 0.85;
   z-index: 2;
 }

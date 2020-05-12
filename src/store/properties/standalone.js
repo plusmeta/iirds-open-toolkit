@@ -182,6 +182,16 @@ const actions = {
     addProperty ({ commit }, property) {
         commit("ADD_PROPERTY", property);
     },
+    changePropertyId ({ commit, getters, state }, {oldId, newId}) {
+        let index = getters.indexByIdentifier[oldId];
+        let property = state.properties[index];
+        property.identifier = newId;
+        if (index) commit("CHANGE_PROPERTY_ID", {index, property});
+    },
+    deleteProperty ({ commit, getters }, propId) {
+        let index = getters.indexByIdentifier[propId];
+        if (index) commit("DELETE_PROPERTY", index);
+    },
     createProperty ({ commit, getters }, properties) {
         properties = (Array.isArray(properties)) ? properties : [properties];
         properties.forEach((property) => {
@@ -200,8 +210,14 @@ const mutations = {
     INIT_PROPERTIES (state, properties) {
         state.properties = properties;
     },
-    ADD_PROPERTY (state, payload) {
-        state.properties.push(payload);
+    ADD_PROPERTY (state, property) {
+        state.properties.push(property);
+    },
+    DELETE_PROPERTY (state, index) {
+        state.properties.splice(index, 1);
+    },
+    CHANGE_PROPERTY_ID (state, {index, property}) {
+        state.properties[index] = property;
     },
     UPDATE_PROPERTY (state, [old, update]) {
         Object.assign(old, update);

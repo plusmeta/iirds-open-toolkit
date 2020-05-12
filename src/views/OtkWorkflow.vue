@@ -176,7 +176,7 @@ export default {
             } else if (this.getCurrentProgress === 0) {
                 await this.setCurrentProgressLocal(1);
                 await this.updateProjectStatus({projectUuid: this.getCurrentProjectUuid, status: 1});
-                this.$notify.send(this.$t("Notification.openedProject", ), "info");
+                // this.$notify.send(this.$t("Notification.openedProject", ), "info");
             } else {
                 await this.setCurrentStep(this.getCurrentProgress);
             }

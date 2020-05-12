@@ -7,7 +7,8 @@
   <div>
     <v-layout wrap>
       <v-flex
-        xs12 class="text-center"
+        xs12
+        class="text-center"
         style="overflow-x: auto;"
       >
         <canvas

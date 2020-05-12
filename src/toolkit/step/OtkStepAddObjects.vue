@@ -46,240 +46,242 @@
 
       <HelpView helpkey="workflow.addObjects" />
 
-      <v-data-table
-        v-model="selected"
-        :hide-default-header="!items.length"
-        :hide-default-footer="!items.length"
-        :headers="itemsHeaders"
-        :items="items"
-        :search="search"
-        item-key="uuid"
-        :loading="loading"
-        show-select
-      >
-        <template v-slot:top>
-          <v-toolbar
-            class="elevation-4 pt-2"
-            min-height="80"
-          >
-            <v-flex
-              v-shortkey.once="['t']"
-              class="pb-2"
-              @shortkey="$refs.type.focus()"
+      <v-card :outlined="!$vuetify.theme.dark">
+        <v-data-table
+          v-model="selected"
+          :hide-default-header="!items.length"
+          :hide-default-footer="!items.length"
+          :headers="itemsHeaders"
+          :items="items"
+          :search="search"
+          item-key="uuid"
+          :loading="loading"
+          show-select
+        >
+          <template v-slot:top>
+            <v-toolbar
+              :class="{'elevation-0': !$vuetify.theme.dark, 'pt-2': true}"
+              min-height="80"
             >
-              <v-autocomplete
-                v-show="!!items.length"
-                ref="type"
-                :value="getSetting('ui_addobjects_filter')"
-                :items="getObjectTypeFilterValues"
-                :label="$t('Objects.all')"
-                prepend-icon="mdi-filter"
-                single-line
-                hide-details
-                clearable
-                @change="setLocalSetting({key: 'ui_addobjects_filter', value: $event})"
+              <v-flex
+                v-shortkey.once="['t']"
+                class="pb-2"
+                @shortkey="$refs.type.focus()"
               >
-                <template v-slot:item="{ item }">
-                  <span>{{ item.text }} </span>
-                  <v-spacer />
-                  <v-chip small color="accent">
-                    {{ item.count }}
-                  </v-chip>
-                </template>
-              </v-autocomplete>
-            </v-flex>
-
-            <v-spacer />
-
-            <v-flex
-              v-shortkey.once="['f']"
-              class="pb-2"
-              @shortkey="$refs.search.focus()"
-            >
-              <v-text-field
-                v-show="!!items.length"
-                ref="search"
-                v-model="search"
-                prepend-icon="mdi-magnify"
-                :disabled="loading"
-                :label="$t('Common.search')"
-                single-line
-                hide-details
-                clearable
-              />
-            </v-flex>
-
-            <v-spacer />
-
-            <v-tooltip top>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  v-if="isMaxMemory"
-                  icon
-                  v-on="on"
+                <v-autocomplete
+                  v-show="!!items.length"
+                  ref="type"
+                  :value="getSetting('ui_addobjects_filter')"
+                  :items="getObjectTypeFilterValues"
+                  :label="$t('Objects.all')"
+                  prepend-icon="mdi-filter"
+                  single-line
+                  hide-details
+                  clearable
+                  @change="setLocalSetting({key: 'ui_addobjects_filter', value: $event})"
                 >
-                  <v-icon color="warning">
-                    mdi-alert
-                  </v-icon>
-                </v-btn>
-              </template>
-              <span>{{ $t("App.maxMemory") }}</span>
-            </v-tooltip>
+                  <template v-slot:item="{ item }">
+                    <span>{{ item.text }} </span>
+                    <v-spacer />
+                    <v-chip small color="accent">
+                      {{ item.count }}
+                    </v-chip>
+                  </template>
+                </v-autocomplete>
+              </v-flex>
 
-            <div
-              v-shortkey.once="['s']"
-              @shortkey="showSettingsMenu = !showSettingsMenu"
-            >
-              <v-menu
-                v-model="showSettingsMenu"
-                left
-                offset-y
-                :min-width="350"
-                :close-on-content-click="false"
+              <v-spacer />
+
+              <v-flex
+                v-shortkey.once="['f']"
+                class="pb-2"
+                @shortkey="$refs.search.focus()"
               >
+                <v-text-field
+                  v-show="!!items.length"
+                  ref="search"
+                  v-model="search"
+                  prepend-icon="mdi-magnify"
+                  :disabled="loading"
+                  :label="$t('Common.search')"
+                  single-line
+                  hide-details
+                  clearable
+                />
+              </v-flex>
+
+              <v-spacer />
+
+              <v-tooltip top>
                 <template v-slot:activator="{ on }">
                   <v-btn
+                    v-if="isMaxMemory"
                     icon
-                    class="mr-4"
                     v-on="on"
                   >
-                    <v-icon :class="{turn: showSettingsMenu}">
-                      mdi-cog
+                    <v-icon color="warning">
+                      mdi-alert
                     </v-icon>
                   </v-btn>
                 </template>
-                <v-list>
-                  <v-subheader>
-                    {{ $t('Common.view') }}
-                    <v-divider />
-                  </v-subheader>
+                <span>{{ $t("App.maxMemory") }}</span>
+              </v-tooltip>
 
-                  <v-list-item>
-                    <v-list-item-icon>
-                      <v-icon>
-                        mdi-table-eye
-                      </v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-title>
-                      <v-autocomplete
-                        :value="getSetting('ui_addobjects_columns')"
-                        :items="allColumnHeaders"
-                        small
-                        multiple
-                        @change="setLocalSetting({key: 'ui_addobjects_columns', value: uniqueValues($event)})"
-                      >
-                        <template v-slot:selection="{ item, parent, index }">
-                          <span v-if="!index">
-                            {{ $tc('Common.columns', getSetting('ui_addobjects_columns').length) }}
-                          </span>
-                        </template>
-                      </v-autocomplete>
-                    </v-list-item-title>
-                  </v-list-item>
-                </v-list>
-              </v-menu>
-            </div>
-
-            <template>
-              <v-tooltip top>
-                <template v-slot:activator="{ on }">
-                  <v-fab-transition>
+              <div
+                v-shortkey.once="['s']"
+                @shortkey="showSettingsMenu = !showSettingsMenu"
+              >
+                <v-menu
+                  v-model="showSettingsMenu"
+                  left
+                  offset-y
+                  :min-width="350"
+                  :close-on-content-click="false"
+                >
+                  <template v-slot:activator="{ on }">
                     <v-btn
-                      v-show="selected.length"
-                      color="error"
-                      class="elevation-0 mr-4"
-                      fab
-                      small
+                      icon
+                      class="mr-4"
                       v-on="on"
-                      @click="deleteSelectedObjects"
                     >
-                      <v-icon>
-                        mdi-delete
+                      <v-icon :class="{turn: showSettingsMenu}">
+                        mdi-cog
                       </v-icon>
                     </v-btn>
-                  </v-fab-transition>
-                </template>
-                <span>{{ $t("Actions.deleteSelectedObjects") }}</span>
-              </v-tooltip>
-            </template>
+                  </template>
+                  <v-list>
+                    <v-subheader>
+                      {{ $t('Common.view') }}
+                      <v-divider />
+                    </v-subheader>
 
-            <v-tooltip top>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  color="success"
-                  class="elevation-0"
-                  fab
-                  :disabled="isMaxMemory"
-                  v-on="on"
-                  @click="$refs.fileInput.click()"
-                >
-                  <v-icon large>
-                    mdi-plus
-                  </v-icon>
-                </v-btn>
-              </template>
-              <span>{{ $t("Actions.addObject") }}</span>
-            </v-tooltip>
-          </v-toolbar>
-        </template>
-
-        <template v-slot:item.name="{ item }">
-          <v-progress-circular
-            v-if="processing.includes(item.uuid)"
-            indeterminate
-            class="ml-1 mr-5"
-            color="grey"
-            :size="20"
-          />
-          <QuickView
-            v-if="!processing.includes(item.uuid)"
-            :uuid="item.uuid"
-            :source-type="(item.source || {}).type"
-            :source-name="(item.source || {}).name"
-            :object-type="item.type"
-          />
-          <span :class="{'grey--text': processing.includes(item.uuid)}">{{ item.name }}</span>
-        </template>
-
-        <template v-slot:item.size="{ item }">
-          <span :class="{'grey--text': processing.includes(item.uuid)}">
-            {{ $numeral(item.size).format("0.00 b") }}
-          </span>
-        </template>
-
-        <template v-slot:item.actions="{ item }">
-          <DeleteObject :uuid="item.uuid" />
-        </template>
-
-        <template v-slot:no-data>
-          <v-container
-            fluid
-            class="pa-5"
-          >
-            <div
-              class="pa-5 mb-5"
-              style="border: 3px dashed grey;"
-              @click="$refs.fileInput.click()"
-            >
-              <div class="my-5" style="font-size: 96px">
-                {{ $t('Objects.none') }}
+                    <v-list-item>
+                      <v-list-item-icon>
+                        <v-icon>
+                          mdi-table-eye
+                        </v-icon>
+                      </v-list-item-icon>
+                      <v-list-item-title>
+                        <v-autocomplete
+                          :value="getSetting('ui_addobjects_columns')"
+                          :items="allColumnHeaders"
+                          small
+                          multiple
+                          @change="setLocalSetting({key: 'ui_addobjects_columns', value: uniqueValues($event)})"
+                        >
+                          <template v-slot:selection="{ item, parent, index }">
+                            <span v-if="!index">
+                              {{ $tc('Common.columns', getSetting('ui_addobjects_columns').length) }}
+                            </span>
+                          </template>
+                        </v-autocomplete>
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
               </div>
-              <v-icon :size="96" color="grey">
-                mdi-cloud-upload-outline
-              </v-icon>
-              <p class="my-5" style="font-size: 24px">
-                {{ $t('Objects.noObjectsExplainer') }}
-              </p>
-            </div>
-          </v-container>
-        </template>
 
-        <template v-slot:no-results>
-          <p class="pa-5">
-            {{ $t('Objects.none') }} [{{ $t('Common.searchFor') }}: {{ search }}]
-          </p>
-        </template>
-      </v-data-table>
+              <template>
+                <v-tooltip top>
+                  <template v-slot:activator="{ on }">
+                    <v-fab-transition>
+                      <v-btn
+                        v-show="selected.length"
+                        color="error"
+                        class="elevation-0 mr-4"
+                        fab
+                        small
+                        v-on="on"
+                        @click="deleteSelectedObjects"
+                      >
+                        <v-icon>
+                          mdi-delete
+                        </v-icon>
+                      </v-btn>
+                    </v-fab-transition>
+                  </template>
+                  <span>{{ $t("Actions.deleteSelectedObjects") }}</span>
+                </v-tooltip>
+              </template>
+
+              <v-tooltip top>
+                <template v-slot:activator="{ on }">
+                  <v-btn
+                    color="success"
+                    class="elevation-0"
+                    fab
+                    :disabled="isMaxMemory"
+                    v-on="on"
+                    @click="$refs.fileInput.click()"
+                  >
+                    <v-icon large>
+                      mdi-plus
+                    </v-icon>
+                  </v-btn>
+                </template>
+                <span>{{ $t("Actions.addObject") }}</span>
+              </v-tooltip>
+            </v-toolbar>
+          </template>
+
+          <template v-slot:item.name="{ item }">
+            <v-progress-circular
+              v-if="processing.includes(item.uuid)"
+              indeterminate
+              class="ml-1 mr-5"
+              color="grey"
+              :size="20"
+            />
+            <QuickView
+              v-if="!processing.includes(item.uuid)"
+              :uuid="item.uuid"
+              :source-type="(item.source || {}).type"
+              :source-name="(item.source || {}).name"
+              :object-type="item.type"
+            />
+            <span :class="{'grey--text': processing.includes(item.uuid)}">{{ item.name }}</span>
+          </template>
+
+          <template v-slot:item.size="{ item }">
+            <span :class="{'grey--text': processing.includes(item.uuid)}">
+              {{ $numeral(item.size).format("0.00 b") }}
+            </span>
+          </template>
+
+          <template v-slot:item.actions="{ item }">
+            <DeleteObject :uuid="item.uuid" />
+          </template>
+
+          <template v-slot:no-data>
+            <v-container
+              fluid
+              class="pa-5"
+            >
+              <div
+                class="pa-5 mb-5"
+                style="border: 3px dashed grey;"
+                @click="$refs.fileInput.click()"
+              >
+                <div class="my-5" style="font-size: 96px">
+                  {{ $t('Objects.none') }}
+                </div>
+                <v-icon :size="96" color="grey">
+                  mdi-cloud-upload-outline
+                </v-icon>
+                <p class="my-5" style="font-size: 24px">
+                  {{ $t('Objects.noObjectsExplainer') }}
+                </p>
+              </div>
+            </v-container>
+          </template>
+
+          <template v-slot:no-results>
+            <p class="pa-5">
+              {{ $t('Objects.none') }} [{{ $t('Common.searchFor') }}: {{ search }}]
+            </p>
+          </template>
+        </v-data-table>
+      </v-card>
     </v-container>
 
     <v-container

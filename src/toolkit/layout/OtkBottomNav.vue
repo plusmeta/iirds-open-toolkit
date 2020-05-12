@@ -7,7 +7,9 @@
 <template>
   <v-footer
     app
+    dark
     inset
+    min-height="32"
     padless
     :color="getFooterColor"
   >
@@ -21,7 +23,7 @@
         left
         :color="arePreviousRulesValid ? 'secondary' : 'accent'"
         large
-        class="mb-8"
+        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
         @click="previousStep()"
       >
         <v-icon large>
@@ -64,7 +66,7 @@
         absolute
         bottom
         right
-        class="mb-8"
+        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
         large
         color="accent"
         @click="nextStep()"
@@ -82,7 +84,7 @@
       :color="(isExplainerView) ? 'info' : 'default'"
       @click="showExplainer = !showExplainer"
     >
-      <v-icon color="white">
+      <v-icon>
         {{ isExplainerView ? "mdi-close" : "mdi-information-outline" }}
       </v-icon>
     </v-btn>
@@ -93,7 +95,7 @@
       icon
       @click="previousStep()"
     >
-      <v-icon color="white">
+      <v-icon>
         mdi-alert-outline
       </v-icon>
     </v-btn>
@@ -106,7 +108,7 @@
         absolute
         bottom
         right
-        class="mb-8"
+        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
         large
         color="accent"
         @click="closeProject()"

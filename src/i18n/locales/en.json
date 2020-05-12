@@ -52,7 +52,8 @@
     "permissionDenied": "Permission denied",
     "propertyCreated": "Property created",
     "importedMetadata": "Imported metadata successfully",
-    "importFailed": "Import failed"
+    "importFailed": "Import failed",
+    "propertyDeleted": "Deleted metadata value"
   },
   "Objects": {
     "all": "All objects",
@@ -91,10 +92,7 @@
     "thankYou": "Thank you!",
     "thankYouExplainer": "Your iiRDS-Package is now ready for downloading.",
     "settingsRestored": "Restored default settings",
-    "metadataDownloaded": "Downloaded metadata"
-  },
-  "Metadata": {
-    "confidence": "Confidence",
-    "approved": "Approved"
+    "metadataDownloaded": "Downloaded metadata",
+    "changeIRI": "Change IRI"
   }
 }

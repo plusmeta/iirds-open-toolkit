@@ -52,7 +52,8 @@
     "permissionDenied": "Zugang verweigert",
     "propertyCreated": "Eigenschaft erstellt",
     "importedMetadata": "Metadaten erfolgreich importiert",
-    "importFailed": "Import fehlgeschlagen"
+    "importFailed": "Import fehlgeschlagen",
+    "propertyDeleted": "Metadatenwert gelöscht"
   },
   "Objects": {
     "all": "Alle Objekte",
@@ -91,10 +92,7 @@
     "thankYou": "Vielen Dank!",
     "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Download bereit.",
     "settingsRestored": "Auf Standardeinstellungen zurückgesetzt",
-    "metadataDownloaded": "Metadaten heruntergeladen"
-  },
-  "Metadata": {
-    "confidence": "Konfidenz",
-    "approved": "Abgenommen"
+    "metadataDownloaded": "Metadaten heruntergeladen",
+    "changeIRI": "IRI ändern"
   }
 }
