@@ -25,7 +25,8 @@
     "licenses": "Lizenzen verwendeter Software",
     "maxMemory": "Maximale Speichergrenze erreicht. Objekt wird nicht importiert.",
     "pageHelp": "Hilfeseite",
-    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden"
+    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden",
+    "backToStart": "Zurück zum Start"
   },
   "Common": {
     "actions": "Aktionen",

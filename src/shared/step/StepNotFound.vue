@@ -10,7 +10,6 @@
     class="pa-6 skeleton-container"
   >
     <v-sheet
-      color="secondary"
       class="notfound pt-12"
       style="margin:auto; text-align:center"
     >
@@ -19,13 +18,20 @@
         alt="404"
         style="max-height: 400px"
       >
-      <div class="my-6 headline" style="font-size: 42px !important; font-weight: 100">
+      <div class="my-6 headline" style="font-size: 36px !important; font-weight: 100">
         {{ $t("App.siteNotFound") }}
       </div>
-      <p class="my-6 font-monospace" style="color: lightgrey">
+      <p class="my-6 font-monospace">
         <!-- Show user full path of wrong route to allow for screenshot analysis -->
         Error: {{ $route.fullPath }}
       </p>
+      <v-btn
+        color="info"
+        class="mt-8"
+        :to="{path: '/'}"
+      >
+        {{ $t('App.backToStart') }}
+      </v-btn>
     </v-sheet>
   </v-container>
 </template>
