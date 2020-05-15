@@ -9,7 +9,7 @@
     app
     dark
     inset
-    min-height="32"
+    min-height="36"
     padless
     :color="getFooterColor"
   >

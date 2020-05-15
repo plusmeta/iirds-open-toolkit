@@ -74,3 +74,12 @@ export default {
     }
 };
 </script>
+
+<style>
+  .light-bg {
+      background-image: url('/images/iiRDS_curve.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+  }
+</style>

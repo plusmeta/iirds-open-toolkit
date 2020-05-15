@@ -8,7 +8,7 @@
   <v-stepper
     v-if="getSteps.length"
     v-model="currentProgress"
-    style="border-radius:0"
+    style="border-radius:0; min-height: 100%"
     class="elevation-0"
     @change="checkRoute"
   >
@@ -32,7 +32,7 @@
     </v-toolbar>
     <v-divider v-if="!$vuetify.theme.dark" />
 
-    <v-stepper-items>
+    <v-stepper-items style="min-height: 100%" :class="{'light-bg': !$vuetify.theme.dark}">
       <template v-for="(step, index) in getSteps">
         <v-stepper-content
           :key="`item-${index}`"
