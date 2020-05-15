@@ -31,6 +31,13 @@ const RDF = {
         // eslint-disable-next-line no-console
         console.warn("Deprecation Warning. Use rdf.collapse() instead");
     },
+    isPrefixed(str) {
+        return !!String(str).trim().match(/^(\w+):(\w+)$/);
+    },
+    getKnownPrefixes($store) {
+        const namespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");
+        return namespaces.flatMap(ns => ns.indicators);
+    },
     expand(uri, $store) {
         const namespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");
 

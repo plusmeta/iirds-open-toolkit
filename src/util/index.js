@@ -4,6 +4,26 @@
  */
 
 export default {
+    castString(str) {
+        if (typeof str === "string") {
+            if (!str.length) return undefined;
+            const safeForJSON = /(^null$)|(^true$)|(^false$)|(^[\d\.e]+$)|(^\[.*\]$)|(^\{.*\}$)/;
+            let safe = str.match(safeForJSON);
+            if (!safe) return String(str);
+            let complex = !!safe[5] || !!safe[6];
+            if (complex) str = str.replace(/('(.+?)'(?=[,\s|\]|:])){1,}/g, "\"$2\"");
+            try {
+                let parsed = JSON.parse(str);
+                return parsed;
+            } catch (error) {
+                return String(str);
+            }
+        } else if (!!str) {
+            return String(str);
+        } else {
+            return undefined;
+        }
+    },
     waitForUI() {
         return new Promise((resolve, reject) => {
             requestAnimationFrame(() => {

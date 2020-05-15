@@ -4,6 +4,7 @@
  * License: MIT
  */
 
+
 import util from "@/util";
 
 const maxWords = 500;
@@ -31,7 +32,7 @@ export default {
                         uri: (key.includes(":")) ? key : `pdf:${key}`,
                         value: obj[key],
                         provenance: prov,
-                        generator: "AnalyzePDF"
+                        generator: "PDF"
                     }
                 });
             }
@@ -40,21 +41,21 @@ export default {
         // Check for standard PDF metadata
         if (pdfMetadata.info !== null) {
             for (let key of Object.keys(pdfMetadata.info)) {
-                await generateMetadata(pdfMetadata.info, key, "pdfFileInfo");
+                await generateMetadata(pdfMetadata.info, key, "File");
             }
         }
 
         // Check for embedded RDF metadata
         if (pdfMetadata.metadata !== null) {
             for (let key of Object.keys(pdfMetadata.metadata)) {
-                await generateMetadata(pdfMetadata.metadata, key, "pdfFileRDF");
+                await generateMetadata(pdfMetadata.metadata, key, "File");
             };
         }
 
         // Check for hidden metadata
         if (pdfMetadata.info.hasOwnProperty("_metadata")) {
             for (let key of Object.keys(pdfMetadata.info._metadata)) {
-                await generateMetadata(pdfMetadata.info._metadata, key, "hiddenPDFFileRDF");
+                await generateMetadata(pdfMetadata.info._metadata, key, "File");
             };
         }
 
@@ -77,7 +78,12 @@ export default {
 
         if (simpleTitleExtract && simpleTitleExtract.length) {
             await store.dispatch("storage/addMetadata", {
-                objectUuid, objectMeta: { uri: "plus:SimplePDFTitle", value: simpleTitleExtract }
+                objectUuid, objectMeta: {
+                    uri: "plus:SimplePDFTitle",
+                    value: simpleTitleExtract,
+                    provenance: "System",
+                    generator: "HE"
+                }
             });
         }
 
@@ -85,16 +91,20 @@ export default {
         let cleanFileName = this.cleanFileName(objectFilename);
 
         await store.dispatch("storage/addMetadata", {
-            objectUuid, objectMeta: { uri: "plus:CleanFileName", value: cleanFileName }
+            objectUuid, objectMeta: {
+                uri: "plus:CleanFileName",
+                value: cleanFileName,
+                provenance: "File",
+                generator: "PDF"
+            }
         });
 
         // better name?
         let titleFromPDF = store.getters["storage/getMetadataValueByURI"](objectUuid, "pdf:Title");
-        titleFromPDF = (typeof titleFromPDF === "string") ? titleFromPDF.trim() : "";
 
         await store.dispatch("storage/saveObjectLocal", {
             uuid: objectUuid,
-            name: titleFromPDF || objectFilename,
+            name: titleFromPDF ?? objectFilename,
             text: totalText.trim(),
             source: { arrayBuffer }
         });
@@ -102,7 +112,12 @@ export default {
         await store.dispatch("storage/uploadSource", { projectUuid, objectUuid });
 
         await store.dispatch("storage/addMetadata", {
-            objectUuid, objectMeta: { uri: "plus:AnalysisCompleted", value: Date.now() }
+            objectUuid, objectMeta: {
+                uri: "plus:AnalysisCompleted",
+                value: Date.now(),
+                provenance: "System",
+                generator: "PDF"
+            }
         });
     },
 
@@ -152,6 +167,7 @@ export default {
         canvas.width = canvas.height = thumbSize;
         const scale = Math.min(canvas.width / viewport.width, canvas.height / viewport.height);
 
+        // FIXME
         canvas.width = Math.min(canvas.width, viewport.width * scale);
         canvas.height = Math.min(canvas.height, viewport.height * scale);
 
@@ -194,7 +210,7 @@ export default {
                 uri: "pdf:totalPages",
                 value: totalPages,
                 provenance: "System",
-                generator: "AnalyzePDF"
+                generator: "PDF"
             }
         });
     }
