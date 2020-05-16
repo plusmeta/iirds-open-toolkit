@@ -32,7 +32,7 @@
     </v-toolbar>
     <v-divider v-if="!$vuetify.theme.dark" />
 
-    <v-stepper-items style="min-height: 100%" :class="{'light-bg': !$vuetify.theme.dark}">
+    <v-stepper-items style="min-height: 100%">
       <template v-for="(step, index) in getSteps">
         <v-stepper-content
           :key="`item-${index}`"

@@ -15,22 +15,22 @@
     >
       <v-layout row>
         <v-flex
-          xs6
-          offset-xs3
+          xs9
+          offset-xs2
           class="my-6 headline"
           style="font-size: 48px !important; font-weight: 100"
         >
-          Willkommen beim iiRDS Open Toolkit
+          Willkommen beim iiRDS Open Toolkit!
         </v-flex>
         <v-flex
-          xs6
-          offset-xs3
+          xs9
+          offset-xs2
         >
           Mit dem iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.
         </v-flex>
         <v-flex
-          xs2
-          offset-xs4
+          xs9
+          offset-xs2
           class="mt-12"
         >
           Akzeptieren Sie die Nutzungsbedingungen zum Fortfahren.
@@ -41,11 +41,6 @@
           />
         </v-flex>
       </v-layout>
-      <img
-        src="/images/OTK_triangle.svg"
-        height="400px"
-        style="position: relative; left: 0; bottom: 0; margin-bottom: -6px"
-      >
     </v-sheet>
   </v-container>
 </template>
@@ -67,7 +62,10 @@ export default {
   }
   .welcome {
     width: 100% !important;
-    height: 90% !important;
-    min-height: 550px;
+    min-height: 100% !important;
+    background-image: url('/images/OTK_triangle.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
   }
 </style>

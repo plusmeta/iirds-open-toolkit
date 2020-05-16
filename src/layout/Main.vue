@@ -15,7 +15,9 @@
         style="position: absolute"
       />
       <v-fade-transition mode="out-in">
-        <router-view v-if="isReady" />
+        <div :class="{'light-bg': !$vuetify.theme.dark}">
+          <router-view v-if="isReady" />
+        </div>
       </v-fade-transition>
     </v-content>
     <BottomNav v-if="isReady" />
