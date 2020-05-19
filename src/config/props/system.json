@@ -741,6 +741,45 @@
         ]
     },
     {
+        "identifier": "http://www.w3.org/1999/xhtml",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Namespace",
+        "rels": {},
+        "label": {
+            "de": "HTML-Namensraum",
+            "en": "HTML namespace"
+        },
+        "indicators": [
+            "html"
+        ]
+    },
+    {
+        "identifier": "http://www.w3.org/XML/1998/namespace",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Namespace",
+        "rels": {},
+        "label": {
+            "de": "XML-Namensraum",
+            "en": "XML namespace"
+        },
+        "indicators": [
+            "xml"
+        ]
+    },
+    {
+        "identifier": "http://www.aiim.org/pdfa/ns/id/",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Namespace",
+        "rels": {},
+        "label": {
+            "de": "PDF/A-Namensraum",
+            "en": "PDF/A namespace"
+        },
+        "indicators": [
+            "pdf"
+        ]
+    },
+    {
         "identifier": "application/json",
         "datatype": "plus:Instance",
         "subClassOf": "plus:MimeType",
