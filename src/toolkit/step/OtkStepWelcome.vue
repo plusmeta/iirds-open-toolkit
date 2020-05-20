@@ -9,39 +9,67 @@
     fill-height
     class="skeleton-container"
   >
-    <v-sheet
-      class="welcome pt-12 mx-12"
+    <v-card
+      class="welcome pt-12"
       align-content-center
     >
-      <v-layout row>
+      <v-layout>
         <v-flex
-          xs9
-          offset-xs2
-          class="my-6 headline"
-          style="font-size: 48px !important; font-weight: 100"
+          xs7
+          offset-xs5
         >
-          Willkommen beim iiRDS Open Toolkit!
-        </v-flex>
-        <v-flex
-          xs9
-          offset-xs2
-        >
-          Mit dem iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.
-        </v-flex>
-        <v-flex
-          xs9
-          offset-xs2
-          class="mt-12"
-        >
-          Akzeptieren Sie die Nutzungsbedingungen zum Fortfahren.
-          <v-checkbox
-            label="Nutzungsbedingungen akzeptiert"
-            :input-value="getSetting('user_eula')"
-            @change="setLocalSetting({key: 'user_eula', value: !!$event})"
-          />
+          <v-card
+            tile
+            dark
+            color="info"
+            class="display-3 pa-6"
+          >
+            Willkommen beim iiRDS Open Toolkit!
+          </v-card>
         </v-flex>
       </v-layout>
-    </v-sheet>
+      <v-layout>
+        <v-flex
+          xs5
+          offset-xs7
+        >
+          <v-card
+            tile
+            dark
+            color="info darken-3"
+            class="headline mt-6 px-6 py-3"
+          >
+            Mit dem kostenlosen iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.
+          </v-card>
+        </v-flex>
+      </v-layout>
+      <v-layout>
+        <v-flex
+          xs4
+          offset-xs8
+        >
+          <v-card
+            flat
+            outlined
+            class="mt-6 px-6 py-3"
+          >
+            <v-card-title>Nutzungsbedingungen & Datenschutz</v-card-title>
+            <v-card-subtitle>
+              Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffs- und Fehler&shy;analyse ein.
+              Dateien, die im iiRDS Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.
+              Bitte Akzeptieren Sie unsere <a href="#">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.
+            </v-card-subtitle>
+            <v-card-actions>
+              <v-switch
+                label="Nutzungsbedingungen akzeptiert"
+                :input-value="getSetting('user_eula')"
+                @change="setLocalSetting({key: 'user_eula', value: !!$event})"
+              />
+            </v-card-actions>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-card>
   </v-container>
 </template>
 
@@ -62,10 +90,11 @@ export default {
   }
   .welcome {
     width: 100% !important;
-    min-height: 100% !important;
-    background-image: url('/images/OTK_triangle.jpg');
+    height: 600px !important;
+    margin-top: 50px;
+    background-image: url('/images/OTK_triangle.svg');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: top center;
+    background-position: bottom left;
   }
 </style>

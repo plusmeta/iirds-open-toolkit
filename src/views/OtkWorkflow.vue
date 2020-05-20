@@ -7,8 +7,8 @@
 <template>
   <v-stepper
     v-if="getSteps.length"
+    id="workflowSteps"
     v-model="currentProgress"
-    style="border-radius:0; min-height: 100%"
     class="elevation-0"
     @change="checkRoute"
   >
@@ -192,3 +192,10 @@ export default {
     }
 };
 </script>
+
+<style>
+#workflowSteps {
+    min-height: 100%;
+    background: none;
+}
+</style>

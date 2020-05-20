@@ -45,15 +45,14 @@
       </span>
     </div>
 
-    <span v-if="!isExplainerView && !isRuleViolation" class="caption">
-      iiRDS Open Toolkit
+    <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
+      © 2020 plusmeta GmbH
       &bull;
-      <a
-        href="https:/iirds.org"
-        target="_blank"
-      >
-        iirds.org
-      </a>
+      iiRDS licensed under CC BY – ND 4.0
+      &bull;
+      all rights by tekom
+      &bull;
+      <a href="https:/iirds.org" target="_blank">iirds.org </a>
     </span>
 
     <v-spacer />

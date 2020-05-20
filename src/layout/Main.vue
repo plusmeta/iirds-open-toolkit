@@ -83,5 +83,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: top center;
+      min-height: 100%;
+      position: relative;
   }
 </style>
