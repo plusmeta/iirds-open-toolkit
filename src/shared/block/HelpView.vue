@@ -8,6 +8,7 @@
   <v-card
     v-if="showHelpView"
     class="mb-6"
+    :class="{'pm-transparent': !$vuetify.theme.dark}"
     :outlined="!$vuetify.theme.dark"
   >
     <v-card-title primary-title>

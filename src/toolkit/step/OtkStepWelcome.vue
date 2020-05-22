@@ -10,19 +10,20 @@
     class="skeleton-container"
   >
     <v-card
-      class="welcome pt-12"
+      class="welcome"
+      :class="{'pm-transparent': !$vuetify.theme.dark}"
       align-content-center
     >
       <v-layout>
         <v-flex
-          xs7
-          offset-xs5
+          xs8
+          offset-xs2
         >
           <v-card
-            tile
+            shaped
             dark
             color="info"
-            class="display-3 pa-6"
+            class="display-2 mt-6 pa-6"
           >
             Willkommen beim iiRDS Open Toolkit!
           </v-card>
@@ -30,11 +31,11 @@
       </v-layout>
       <v-layout>
         <v-flex
-          xs5
-          offset-xs7
+          xs7
+          offset-xs4
         >
           <v-card
-            tile
+            shaped
             dark
             color="info darken-3"
             class="headline mt-6 px-6 py-3"
@@ -45,16 +46,16 @@
       </v-layout>
       <v-layout>
         <v-flex
-          xs4
-          offset-xs8
+          xs6
+          offset-xs6
         >
           <v-card
-            flat
+            tile
             outlined
-            class="mt-6 px-6 py-3"
+            class="my-6 pa-4"
           >
             <v-card-title>Nutzungsbedingungen & Datenschutz</v-card-title>
-            <v-card-subtitle>
+            <v-card-subtitle class="caption">
               Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffs- und Fehler&shy;analyse ein.
               Dateien, die im iiRDS Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.
               Bitte Akzeptieren Sie unsere <a href="#">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.
@@ -69,6 +70,13 @@
           </v-card>
         </v-flex>
       </v-layout>
+      <!-- <v-layout>
+        <v-flex xs12>
+          <v-btn color="info" class="float-right">
+            Start
+          </v-btn>
+        </v-flex>
+      </v-layout> -->
     </v-card>
   </v-container>
 </template>
@@ -88,10 +96,10 @@ export default {
     height: 100%;
     min-height: 100%;
   }
+
   .welcome {
     width: 100% !important;
-    height: 600px !important;
-    margin-top: 50px;
+    margin-top: 10px;
     background-image: url('/images/OTK_triangle.svg');
     background-repeat: no-repeat;
     background-size: contain;
