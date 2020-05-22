@@ -6,24 +6,7 @@
 
 import util from "@/util";
 import template from "@/store/properties/template";
-
-const IMPORTABLE = {
-    // assignable iiRDS properties
-    "Component": "iirds:Component",
-    "ContentLifeCycleStatusValue": "iirds:ContentLifeCycleStatusValue",
-    "ProductLifeCyclePhase": "iirds:ProductLifeCyclePhase",
-    "DocumentType": "iirds:DocumentType",
-    "Event": "iirds:Event",
-    "InformationSubject": "iirds:InformationSubject",
-    "ProductFeature": "iirds:ProductFeature",
-    "ProductVariant": "iirds:ProductVariant",
-    "Role": "iirds:Role",
-    "Supply": "iirds:Supply",
-    "TopicType": "iirds:TopicType",
-    // special plusmeta properties
-    "Organization": "plus:Organization",
-    "Language": "plus:Language"
-};
+import importable from "@/config/iirds/import";
 
 export default {
     async analyze (objectData, store) {
@@ -33,12 +16,12 @@ export default {
         const metadataDoc = xmlParser.parseFromString(textContent, "application/xml");
         if (!metadataDoc) throw Error("Malformed XML file");
 
-        const instanceSelector = Object.keys(IMPORTABLE).join(", ");
+        const instanceSelector = Object.keys(importable).join(", ");
         const knownInstances = metadataDoc.querySelectorAll(instanceSelector);
         if (!knownInstances.length) throw Error("No known instances to import");
 
         for (let instance of knownInstances) {
-            const propClass = IMPORTABLE[instance.localName];
+            const propClass = importable[instance.localName];
             const propId = instance.getAttribute("rdf:about") || ":no-id";
 
             let propLabel = undefined;
