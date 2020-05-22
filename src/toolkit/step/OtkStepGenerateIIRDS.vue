@@ -210,6 +210,8 @@ export default {
             pack.ele("iirds:title", {}, this.getCurrentProjectName);
             pack.ele("iirds:iiRDSVersion", "1.0.1");
 
+            let roles = new Set();
+            let events = new Set();
             let products = new Set();
             let components = new Set();
             let manufacturers = new Set();
@@ -217,50 +219,34 @@ export default {
             let customInfoSubjects = new Set();
 
             this.getContentObjects.forEach((object) => {
+                // All values are custom
                 let currentProducts = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-product-variant") || [];
-                let productsAsArray = Array.isArray(currentProducts) ? currentProducts : [currentProducts];
-                productsAsArray.forEach(product => products.add(product));
+                currentProducts.forEach(product => products.add(product));
 
                 let currentComponents = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-component") || [];
-                let componentsAsArray = Array.isArray(currentComponents) ? currentComponents : [currentComponents];
-                componentsAsArray.forEach(component => components.add(component));
+                currentComponents.forEach(component => components.add(component));
 
+                let currentEvents = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-event") || [];
+                currentEvents.forEach(event => events.add(event));
+
+                let currentRoles = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-qualification") || [];
+                currentRoles.forEach(role => roles.add(role));
+
+                // some values are custom
                 let currentTopicTypes = this.getMetadataValueByURI(object.uuid, "iirds:has-topic-type") || [];
                 currentTopicTypes.forEach((type) => {
-                    if (!type.includes("iirds:")) customTopicTypes.add(type);
+                    if (!rdf.isKnownPrefixed(type)) customTopicTypes.add(type);
                 });
 
                 let currentInfoSubjects = this.getMetadataValueByURI(object.uuid, "iirds:has-subject") || [];
-                let infoSubjectsAsArray = Array.isArray(currentInfoSubjects) ? currentInfoSubjects : [currentInfoSubjects];
-                infoSubjectsAsArray.forEach((subject) => {
-                    if (!subject.includes("iirds:")) customInfoSubjects.add(subject);
+                currentInfoSubjects.forEach((subject) => {
+                    if (!rdf.isKnownPrefixed(type)) customInfoSubjects.add(subject);
                 });
             });
 
             /*
                 Product Metadata Instances
             */
-
-            let cacheManufacturers = [];
-
-            const addManufacturer = (product, instance) => {
-                let manufacturers = this.getPropertyRelationById(product, "plus:manufactured-by");
-                if (manufacturers && manufacturers.length) {
-                    manufacturers.forEach((manufacturer) => {
-                        if (cacheManufacturers.includes(manufacturer)) {
-                            return instance.ele("iirds:relates-to-party", {"rdf:resource": `${manufacturer}/manufacturer`});
-                        } else {
-                            cacheManufacturers.push(manufacturer);
-                            return instance.ele("iirds:relates-to-party")
-                                .ele("iirds:Party", {"rdf:about": `${manufacturer}/manufacturer`})
-                                .ele("iirds:has-party-role", {"rdf:resource": rdf.expand("iirds:Manufacturer", this.$store)}).up()
-                                .ele("iirds:relates-to-vcard")
-                                .ele("vcard:Organization", {"rdf:about": manufacturer})
-                                .ele("vcard:fn", this.getPropertyLabelById(manufacturer));
-                        }
-                    });
-                }
-            };
 
             const addLabels = (prop, instance) => {
                 let property = this.getPropertyById(prop);
@@ -280,14 +266,24 @@ export default {
                 const productEl = root.ele("iirds:ProductVariant",
                     {"rdf:about": product});
                 addLabels(product, productEl);
-                addManufacturer(product, productEl);
             });
 
             [...components].forEach((component) => {
                 const componentEl = root.ele("iirds:Component",
                     {"rdf:about": component});
                 addLabels(component, componentEl);
-                addManufacturer(component, componentEl);
+            });
+
+            [...events].forEach((event) => {
+                const eventEl = root.ele("iirds:Event",
+                    {"rdf:about": event});
+                addLabels(event, eventEl);
+            });
+
+            [...roles].forEach((role) => {
+                const roleEl = root.ele("iirds:Role",
+                    {"rdf:about": role});
+                addLabels(role, roleEl);
             });
 
             [...customTopicTypes].forEach((type) => {

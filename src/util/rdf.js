@@ -23,20 +23,19 @@ const RDF = {
     uuidFromObject(object) {
         return this.uuidFromString(JSON.stringify(object));
     },
-    s2f() {
-        // eslint-disable-next-line no-console
-        console.warn("Deprecation Warning. Use rdf.expand() instead");
-    },
-    f2s() {
-        // eslint-disable-next-line no-console
-        console.warn("Deprecation Warning. Use rdf.collapse() instead");
-    },
     isPrefixed(str) {
         return !!String(str).trim().match(/^(\w+):(\w+)$/);
     },
     getKnownPrefixes($store) {
         const namespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");
         return namespaces.flatMap(ns => ns.indicators);
+    },
+    isKnownPrefixed(str) {
+        let parsed = String(str).trim().match(/^(\w+):(\w+)$/);
+        if (parsed && parsed.length === 3) {
+            let assignedPrefix = parsed[1];
+            return this.getKnownPrefixes.includes(assignedPrefix);
+        } else return false;
     },
     expand(uri, $store) {
         const namespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");
