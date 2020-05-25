@@ -81,6 +81,7 @@
       class="mr-4"
       icon
       :color="(isExplainerView) ? 'info' : 'default'"
+      :disabled="isInternetExplorer"
       @click="showExplainer = !showExplainer"
     >
       <v-icon>
@@ -122,6 +123,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import util from "@/util";
 
 export default {
     name: "OtkBottomNav",
@@ -133,6 +135,9 @@ export default {
     computed: {
         isWorkflowStarted() {
             return this.getCurrentProgress > 0;
+        },
+        isInternetExplorer() {
+            return util.isIE();
         },
         isInActiveWorkflow() {
             return this.isWorkflowStarted &&

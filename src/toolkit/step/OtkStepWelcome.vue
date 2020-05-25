@@ -51,11 +51,26 @@
           offset-xs7
         >
           <v-card
+            v-if="isIE()"
+            dark
+            color="error"
+            class="my-8 py-4 pl-4 pr-8"
+          >
+            <v-card-title class="headline">
+              <v-icon left large>
+                mdi-alert-outline
+              </v-icon>
+              {{ $t("Otk.browserWarning") }}
+            </v-card-title>
+            <v-card-subtitle v-html="$t('Otk.browserWarningText')" />
+          </v-card>
+          <v-card
+            v-else
             tile
             outlined
             class="my-6 py-2 pl-4 pr-8"
           >
-            <v-card-title>{{ $t("Okt.dataProtectionTitle") }}</v-card-title>
+            <v-card-title>{{ $t("Otk.dataProtectionTitle") }}</v-card-title>
             <v-card-subtitle class="caption" v-html="$t('Otk.dataProtectionText')" />
             <v-card-actions>
               <v-switch
@@ -73,11 +88,15 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import util from "@/util";
 
 export default {
     name: "StepWelcome",
     computed: mapGetters("settings", ["getSetting"]),
-    methods: mapActions("settings", ["setLocalSetting"])
+    methods: {
+        ...util, // for isIE()
+        ...mapActions("settings", ["setLocalSetting"])
+    }
 };
 </script>
 
