@@ -1,24 +1,21 @@
-[
-    {
-        "key": "start.welcome",
+{
+    "workflow.welcome": {
         "link": "Willkommen",
-        "title": "Willkommen"
+        "title": "Willkommen",
+        "page": "Quickstart"
     },
-    {
-        "key": "workflow.addObjects",
+    "workflow.addObjects" : {
         "text": "Noch <b>zu</b><br> <i>erstellen</i>",
         "link": "Objekte_hinzufuegen",
         "title": "Objekte hinzufügen"
     },
-    {
-        "key": "workflow.assignMetadata",
+    "workflow.assignMetadata": {
         "text": "Noch zu erstellen",
         "link": "Metadaten_pruefen",
         "title": "Metadaten vergeben"
     },
-    {
-        "key": "workflow.generateIirds",
+    "workflow.generateIirds": {
         "text": "Noch zu erstellen",
         "title": "iiRDS-Paket generieren"
     }
-]
+}

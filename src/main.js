@@ -19,7 +19,6 @@ import i18n from "@/i18n";
 import VueRx from "vue-rx";
 import VueAuth from "@/plugins/auth";
 import VueSecurity from "@/plugins/security";
-import VueHelp from "@/plugins/help";
 import VueNotify from "@/plugins/notify";
 import VueConfirm from "@/plugins/confirm";
 import VueShortKey from "@/plugins/shortkey";
@@ -46,11 +45,9 @@ const store = Auth.store;
 import { SecurityService as Security } from "@/services/security-service";
 import { NotifyService } from "@/services/notify-service";
 import { ConfirmService } from "@/services/confirm-service";
-import { HelpService } from "@/services/help-service";
 
 Vue.use(VueAuth, Auth.instance);
 Vue.use(VueSecurity, Security.instance);
-Vue.use(VueHelp, HelpService.instance);
 Vue.use(VueNotify, NotifyService.instance);
 Vue.use(VueConfirm, ConfirmService.instance);
 

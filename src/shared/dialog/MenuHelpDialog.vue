@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import config from "@/config";
+import { mapGetters } from "vuex";
 
 export default {
     name: "MenuHelpDialog",
@@ -94,20 +94,27 @@ export default {
     },
     computed: {
         isHelpPortal() {
-            return config.helpPortal && helpPortal !== "";
+            return !!this.getBaseUrl;
         },
         getHelpPortalURL() {
-            return config.helpPortal;
+            return this.getBaseUrl;
         },
         getCurrentPageTitle() {
-            return this.$help.getHelpTitle(this.helpkey);
+            return this.getHelpTitle(this.helpkey);
         },
         getCurrentPageHelp() {
-            return this.$help.getContextHelp(this.helpkey);
+            return this.getHelp(this.helpkey);
         },
         getCurrentHelpLink () {
-            return this.$help.getHelpLink(this.helpkey);
-        }
+            return this.getHelpLink(this.helpkey);
+        },
+        ...mapGetters("help", [
+            "getBaseUrl",
+            "getHelp",
+            "getHelpText",
+            "getHelpTitle",
+            "getHelpLink"
+        ])
     }
 };
 </script>

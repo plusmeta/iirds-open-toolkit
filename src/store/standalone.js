@@ -11,6 +11,7 @@ import settings from "@/store/settings/standalone";
 import properties from "@/store/properties/standalone";
 import projects from "@/store/projects/standalone";
 import storage from "@/store/storage/standalone";
+import help from "@/store/help";
 import workflows from "@/store/workflows";
 
 Vue.use(Vuex);
@@ -31,7 +32,8 @@ const store = new Vuex.Store({
         storage,
         settings,
         properties,
-        workflows
+        workflows,
+        help
     },
     plugins: [vuexLocal.plugin]
 });
