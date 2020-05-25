@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <!--
   Copyright 2020 plusmeta GmbH
   License: MIT
@@ -25,14 +26,14 @@
             color="info"
             class="display-2 mt-6 pa-6"
           >
-            Willkommen beim iiRDS Open Toolkit!
+            {{ $t("Otk.welcomeTitle") }}
           </v-card>
         </v-flex>
       </v-layout>
       <v-layout>
         <v-flex
-          xs7
-          offset-xs4
+          xs6
+          offset-xs5
         >
           <v-card
             shaped
@@ -40,29 +41,25 @@
             color="info darken-3"
             class="headline mt-6 px-6 py-3"
           >
-            Mit dem kostenlosen iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.
+            {{ $t("Otk.welcomeSubtitle") }}
           </v-card>
         </v-flex>
       </v-layout>
       <v-layout>
         <v-flex
-          xs6
-          offset-xs6
+          xs5
+          offset-xs7
         >
           <v-card
             tile
             outlined
-            class="my-6 pa-4"
+            class="my-6 py-2 pl-4 pr-8"
           >
-            <v-card-title>Nutzungsbedingungen & Datenschutz</v-card-title>
-            <v-card-subtitle class="caption">
-              Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffs- und Fehler&shy;analyse ein.
-              Dateien, die im iiRDS Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.
-              Bitte Akzeptieren Sie unsere <a href="#">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.
-            </v-card-subtitle>
+            <v-card-title>{{ $t("Okt.dataProtectionTitle") }}</v-card-title>
+            <v-card-subtitle class="caption" v-html="$t('Otk.dataProtectionText')" />
             <v-card-actions>
               <v-switch
-                label="Nutzungsbedingungen akzeptiert"
+                :label="$t('Otk.acceptUsageAgreement')"
                 :input-value="getSetting('user_eula')"
                 @change="setLocalSetting({key: 'user_eula', value: !!$event})"
               />
@@ -70,13 +67,6 @@
           </v-card>
         </v-flex>
       </v-layout>
-      <!-- <v-layout>
-        <v-flex xs12>
-          <v-btn color="info" class="float-right">
-            Start
-          </v-btn>
-        </v-flex>
-      </v-layout> -->
     </v-card>
   </v-container>
 </template>
