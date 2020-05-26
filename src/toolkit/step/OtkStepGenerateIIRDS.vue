@@ -5,33 +5,37 @@
 -->
 
 <template>
-  <process-objects
-    ref="status"
-    :title="$t('Packages.generate')"
-    :processed-objects="processed"
-    :objecttype="getIirdsObjectTypes"
-    result-object-type="iirds:Container"
-    :show-rerun="true"
-    :show-download="true"
-    @rerun="generatePackage"
-    @download="downloadPackage"
-  >
-    <template>
-      <v-flex xs3>
-        <v-card class="pa-0 flex-grow-1 text-center" color="primary">
-          <v-card-text class="display-3 white--text pb-0">
-            {{ percent }} %
-          </v-card-text>
-          <v-card-text class="title white--text pb-0">
-            {{ $t('Packages.progress') }}
-          </v-card-text>
-          <v-card-text class="subtitle-1 white--text pt-0">
-            {{ $t('Packages.packaging') }}
-          </v-card-text>
-        </v-card>
-      </v-flex>
-    </template>
-  </process-objects>
+  <v-container fluid class="pa-0">
+    <HelpView helpkey="workflow.generateIirds" />
+
+    <ProcessObjects
+      ref="status"
+      :title="$t('Packages.generate')"
+      :processed-objects="processed"
+      :objecttype="getIirdsObjectTypes"
+      result-object-type="iirds:Container"
+      :show-rerun="true"
+      :show-download="true"
+      @rerun="generatePackage"
+      @download="downloadPackage"
+    >
+      <template>
+        <v-flex xs3>
+          <v-card class="pa-0 flex-grow-1 text-center" color="primary">
+            <v-card-text class="display-3 white--text pb-0">
+              {{ percent }} %
+            </v-card-text>
+            <v-card-text class="title white--text pb-0">
+              {{ $t('Packages.progress') }}
+            </v-card-text>
+            <v-card-text class="subtitle-1 white--text pt-0">
+              {{ $t('Packages.packaging') }}
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </template>
+    </ProcessObjects>
+  </v-container>
 </template>
 
 <script>
@@ -47,11 +51,13 @@ import exportConfig from "@/config/iirds/export";
 import iirdsMapping from "@/config/iirds/plusmeta";
 
 import ProcessObjects from "@/shared/block/ProcessObjects";
+import HelpView from "@/shared/block/HelpView";
 
 export default {
     name: "OtkStepGenerateIIRDS",
     components: {
-        ProcessObjects
+        ProcessObjects,
+        HelpView
     },
     data() {
         return {

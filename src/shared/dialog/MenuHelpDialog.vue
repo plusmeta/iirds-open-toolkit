@@ -72,6 +72,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import config from "@/config";
 
 export default {
     name: "MenuHelpDialog",
@@ -95,10 +96,10 @@ export default {
     },
     computed: {
         isHelpPortal() {
-            return !!this.getBaseUrl;
+            return !!config.helpPortal;
         },
         getHelpPortalURL() {
-            return this.getBaseUrl;
+            return config.helpPortal;
         },
         getCurrentPageTitle() {
             return this.getHelpTitle(this.helpkey);

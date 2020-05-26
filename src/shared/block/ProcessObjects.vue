@@ -4,7 +4,7 @@
 -->
 
 <template>
-  <v-container fluid>
+  <v-container fluid class="pa-0">
     <v-toolbar
       :class="{'elevation-0': !$vuetify.theme.dark, 'pt-2': true}"
       min-height="80"
