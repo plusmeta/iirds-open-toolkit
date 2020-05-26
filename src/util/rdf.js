@@ -23,13 +23,9 @@ const RDF = {
     uuidFromObject(object) {
         return this.uuidFromString(JSON.stringify(object));
     },
-    s2f() {
-        // eslint-disable-next-line no-console
-        console.warn("Deprecation Warning. Use rdf.expand() instead");
-    },
-    f2s() {
-        // eslint-disable-next-line no-console
-        console.warn("Deprecation Warning. Use rdf.collapse() instead");
+    isValidLanguageTag(str) {
+        const pattern = /^[A-Za-z]{2,4}([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$/;
+        return !!str.match(pattern);
     },
     isPrefixed(str) {
         return !!String(str).trim().match(/^(\w+):(\w+)$/);
@@ -37,6 +33,14 @@ const RDF = {
     getKnownPrefixes($store) {
         const namespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");
         return namespaces.flatMap(ns => ns.indicators);
+    },
+    isKnownPrefixed(str, $store) {
+        const known = this.getKnownPrefixes($store);
+        let parsed = String(str).trim().match(/^(\w+):(\w+)$/);
+        if (parsed && parsed.length === 3) {
+            let assignedPrefix = parsed[1];
+            return known.includes(assignedPrefix);
+        } else return false;
     },
     expand(uri, $store) {
         const namespaces = $store.getters["properties/getPropertiesByClass"]("plus:Namespace");

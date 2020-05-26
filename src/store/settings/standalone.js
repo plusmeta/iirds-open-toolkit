@@ -64,17 +64,19 @@ const actions = {
     changeTheme({ commit, getters, dispatch }, dark) {
         commit("CHANGE_THEME", dark);
     },
-    changeLanguageLocal({ commit, getters, dispatch }, locale) {
+    async changeLanguageLocal({ commit, getters, dispatch }, locale) {
+        await dispatch("help/setLocale", locale, { root: true });
         commit("CHANGE_LANGUAGE", locale);
     },
     setCurrentProjectLocal({ commit, getters, dispatch, rootGetters }, projectUuid) {
         commit("SET_CURRENT_PROJECT", projectUuid);
     },
-    resetSettings({ commit, getters }, override = false) {
+    resetSettings({ commit, getters, dispatch }, override = false) {
         if (override || !Object.keys(getters.getSettings).length) {
             window.localStorage.removeItem("settings");
             commit("RESET_LOCAL_SETTINGS");
         }
+        dispatch("changeLanguageLocal", getters.getCurrentLocale);
     }
 };
 

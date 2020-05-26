@@ -9,7 +9,7 @@
     ref="status"
     :title="$t('Packages.generate')"
     :processed-objects="processed"
-    :objecttype="['plus:Document', 'plus:Component', 'plus:Fragment']"
+    :objecttype="getIirdsObjectTypes"
     result-object-type="iirds:Container"
     :show-rerun="true"
     :show-download="true"
@@ -43,6 +43,9 @@ import template from "@/store/storage/template";
 import util from "@/util";
 import rdf from "@/util/rdf";
 
+import exportConfig from "@/config/iirds/export";
+import iirdsMapping from "@/config/iirds/plusmeta";
+
 import ProcessObjects from "@/shared/block/ProcessObjects";
 
 export default {
@@ -53,17 +56,15 @@ export default {
     data() {
         return {
             processed: 0,
-            percent: 0,
-            projectUuid: ""
+            percent: 0
         };
     },
     computed: {
+        getIirdsObjectTypes() {
+            return Object.keys(iirdsMapping);
+        },
         getContentObjects() {
-            return this.getCurrentObjectsByType([
-                "plus:Document",
-                "plus:Component",
-                "plus:Fragment"
-            ]);
+            return this.getCurrentObjectsByType(this.getIirdsObjectTypes);
         },
         ...mapGetters("storage", [
             "getCurrentObjectsByType",
@@ -71,14 +72,11 @@ export default {
             "getMetadataValueByURI"
         ]),
         ...mapGetters("projects", [
-            "getCurrentProjectName",
             "getCurrentProjectRelationById"
         ]),
         ...mapGetters("properties", [
             "getPropertyById",
-            "getPropertiesByClass",
-            "getPropertyLabelById",
-            "getPropertyRelationById"
+            "getPropertiesByClass"
         ]),
         ...mapGetters("settings", [
             "getCurrentProjectUuid"
@@ -100,8 +98,7 @@ export default {
     methods: {
         ...mapActions("storage", [
             "saveObjectLocal",
-            "fetchSource",
-            "addMetadata"
+            "fetchSource"
         ]),
         ...mapActions("projects", [
             "addObjectsToProject",
@@ -114,7 +111,6 @@ export default {
         },
         async addToStorage(blob) {
             let name = `iiRDS-OT-${Date.now()}`;
-
             let object = template.object({
                 type: "iirds:Container",
                 name: name,
@@ -127,7 +123,7 @@ export default {
             });
 
             this.saveObjectLocal(object);
-            await this.addObjectsToProject({ projectUuid: this.projectUuid, objectUuids: [object.uuid] });
+            await this.addObjectsToProject({ projectUuid: this.getCurrentProjectUuid, objectUuids: [object.uuid] });
 
             return object.uuid;
         },
@@ -135,13 +131,11 @@ export default {
             if (this.getCurrentProjectRelationById("plus:relates-to-iirds-package").length > 0) {
                 let packageObjectUuid = this.getCurrentProjectRelationById("plus:relates-to-iirds-package")[0];
                 let packageObject = this.getObjectByUuid(packageObjectUuid);
-
                 util.downloadBlob(await this.fetchSource(packageObjectUuid), packageObject.source.name);
             }
         },
         async generateiiRDS() {
             this.progress = 0;
-            this.projectUuid = this.getCurrentProjectUuid;
             let zip = new JSzip();
 
             // iiRDS Container Skeleton
@@ -155,9 +149,7 @@ export default {
 
             // content files
             for (let object of this.getContentObjects) {
-                if (object.source.data &&
-                    !this.getMetadataValueByURI(object.uuid, "plus:parentTopic")
-                ) {
+                if (object.source.data) {
                     let filename = object.source.name || object.source.data.name;
                     content.file(filename, await this.fetchSource(object.uuid));
                 }
@@ -183,9 +175,13 @@ export default {
             return (Array.isArray(value)) ? value[0] : value;
         },
         generateRDF(content) {
-            const configuredNamespaces = this.getPropertiesByClass("plus:Namespace");
+            const namespaces = this.getPropertiesByClass("plus:Namespace");
+            const globalInstances = {};
 
-            let namespaceConfig = configuredNamespaces.reduce((config, ns) => {
+            /*
+                Define namespaces and root element
+            */
+            let namespaceConfig = namespaces.reduce((config, ns) => {
                 ns.indicators?.forEach((prefix) => {
                     config[`@xmlns:${prefix}`] = ns.identifier;
                 });
@@ -196,7 +192,6 @@ export default {
                 "rdf:RDF": namespaceConfig
             });
 
-
             /*
                 General and Package information
             */
@@ -204,64 +199,15 @@ export default {
             root.com(`*** iiRDS Open Toolkit (v${process.env.VUE_APP_VERSION}) ***`);
             root.com(`*** generated on ${now.toLocaleString()} ***`);
 
-            let pid = `${rdf.urn(this.projectUuid)}/package`;
+            let pid = `${rdf.urn(this.getCurrentProjectUuid)}/package`;
             let pack = root.ele("iirds:Package", { "rdf:about": pid });
 
-            pack.ele("iirds:title", {}, this.getCurrentProjectName);
+            pack.ele("iirds:title", {}, "iiRDS Open Toolkit Export");
             pack.ele("iirds:iiRDSVersion", "1.0.1");
 
-            let products = new Set();
-            let components = new Set();
-            let manufacturers = new Set();
-            let customTopicTypes = new Set();
-            let customInfoSubjects = new Set();
-
-            this.getContentObjects.forEach((object) => {
-                let currentProducts = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-product-variant") || [];
-                let productsAsArray = Array.isArray(currentProducts) ? currentProducts : [currentProducts];
-                productsAsArray.forEach(product => products.add(product));
-
-                let currentComponents = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-component") || [];
-                let componentsAsArray = Array.isArray(currentComponents) ? currentComponents : [currentComponents];
-                componentsAsArray.forEach(component => components.add(component));
-
-                let currentTopicTypes = this.getMetadataValueByURI(object.uuid, "iirds:has-topic-type") || [];
-                currentTopicTypes.forEach((type) => {
-                    if (!type.includes("iirds:")) customTopicTypes.add(type);
-                });
-
-                let currentInfoSubjects = this.getMetadataValueByURI(object.uuid, "iirds:has-subject") || [];
-                let infoSubjectsAsArray = Array.isArray(currentInfoSubjects) ? currentInfoSubjects : [currentInfoSubjects];
-                infoSubjectsAsArray.forEach((subject) => {
-                    if (!subject.includes("iirds:")) customInfoSubjects.add(subject);
-                });
-            });
-
             /*
-                Product Metadata Instances
+                Generic Labeling function
             */
-
-            let cacheManufacturers = [];
-
-            const addManufacturer = (product, instance) => {
-                let manufacturers = this.getPropertyRelationById(product, "plus:manufactured-by");
-                if (manufacturers && manufacturers.length) {
-                    manufacturers.forEach((manufacturer) => {
-                        if (cacheManufacturers.includes(manufacturer)) {
-                            return instance.ele("iirds:relates-to-party", {"rdf:resource": `${manufacturer}/manufacturer`});
-                        } else {
-                            cacheManufacturers.push(manufacturer);
-                            return instance.ele("iirds:relates-to-party")
-                                .ele("iirds:Party", {"rdf:about": `${manufacturer}/manufacturer`})
-                                .ele("iirds:has-party-role", {"rdf:resource": rdf.expand("iirds:Manufacturer", this.$store)}).up()
-                                .ele("iirds:relates-to-vcard")
-                                .ele("vcard:Organization", {"rdf:about": manufacturer})
-                                .ele("vcard:fn", this.getPropertyLabelById(manufacturer));
-                        }
-                    });
-                }
-            };
-
             const addLabels = (prop, instance) => {
                 let property = this.getPropertyById(prop);
                 if (property) {
@@ -276,140 +222,74 @@ export default {
                 }
             };
 
-            [...products].forEach((product) => {
-                const productEl = root.ele("iirds:ProductVariant",
-                    {"rdf:about": product});
-                addLabels(product, productEl);
-                addManufacturer(product, productEl);
+            /*
+                Collect custom assigend instances (non-standard iiRDS instances)
+            */
+            this.getContentObjects.forEach((object) => {
+                Object.keys(exportConfig).forEach((relation) => {
+                    if (!globalInstances.hasOwnProperty(relation)) {
+                        globalInstances[relation] = new Set();
+                    }
+                    let assigned = this.getMetadataValueByURI(object.uuid, relation) || [];
+                    assigned.forEach((value) => {
+                        if (!rdf.isKnownPrefixed(value, this.$store)) {
+                            globalInstances[relation].add(value);
+                        }
+                    });
+                });
             });
 
-            [...components].forEach((component) => {
-                const componentEl = root.ele("iirds:Component",
-                    {"rdf:about": component});
-                addLabels(component, componentEl);
-                addManufacturer(component, componentEl);
-            });
-
-            [...customTopicTypes].forEach((type) => {
-                const topicTypeEl = root.ele("iirds:TopicType",
-                    {"rdf:about": type});
-                addLabels(type, topicTypeEl);
-            });
-
-            [...customInfoSubjects].forEach((subject) => {
-                const subjectEl = root.ele("iirds:InformationSubject",
-                    {"rdf:about": subject});
-                addLabels(subject, subjectEl);
+            Object.keys(globalInstances).forEach((relation) => {
+                let instances = globalInstances[relation];
+                [...instances].forEach((instance) => {
+                    const element = root.ele(exportConfig[relation],
+                        {"rdf:about": instance});
+                    addLabels(instance, element);
+                });
             });
 
             /*
                 Metadata Relations
             */
-
-            const iirdsMapping = {
-                "plus:Document": "iirds:Document",
-                "plus:Component": "iirds:Topic",
-                "plus:Fragment": "iirds:Fragment"
-            };
-
             this.getContentObjects.forEach((object) => {
-                let did = rdf.urn(object.uuid);
-                let type = iirdsMapping[object.type];
+                const URI = rdf.urn(object.uuid);
+                const TYPE = iirdsMapping[object.type];
 
-                let doc = root.ele(type, {"rdf:about": did});
+                let IU = root.ele(TYPE, {"rdf:about": URI});
 
+                // get title string and set proeprty
                 let title = this.getString(object.uuid, "iirds:title");
-                if (!!title) {
-                    doc.ele("iirds:title", title);
-                }
-                doc.ele("iirds:is-part-of-package", {"rdf:resource": pid});
+                if (!!title) IU.ele("iirds:title", title);
 
+                IU.ele("iirds:is-part-of-package", {"rdf:resource": pid});
+
+                // get assigned languages and create properties for each
                 let languages = this.getMetadataValueByURI(object.uuid, "iirds:language");
                 if (languages !== null && Array.isArray(languages)) {
                     languages.forEach((language) => {
-                        doc.ele("iirds:language", language);
+                        if (rdf.isValidLanguageTag(language)) {
+                            IU.ele("iirds:language", language);
+                        }
                     });
                 }
 
-                switch (type) {
-                case "iirds:Document":
-                    let doctypes = this.getMetadataValueByURI(object.uuid, "iirds:has-document-type");
-                    if (doctypes !== null && Array.isArray(doctypes)) {
-                        doctypes.forEach((doctype) => {
-                            doc.ele("iirds:has-document-type", {"rdf:resource": rdf.expand(doctype, this.$store)});
+                // get configured exportable relations and assign them
+                Object.keys(exportConfig).forEach((relation) => {
+                    let assigned = this.getMetadataValueByURI(object.uuid, relation) || [];
+                    if (assigned !== null && Array.isArray(assigned)) {
+                        assigned.forEach((value) => {
+                            IU.ele(relation, {"rdf:resource": rdf.expand(value, this.$store)});
                         });
                     }
-                    break;
-                case  "iirds:Topic":
-                    let topictypes = this.getMetadataValueByURI(object.uuid, "iirds:has-topic-type");
-                    if (topictypes !== null && Array.isArray(topictypes)) {
-                        topictypes.forEach((topictype) => {
-                            doc.ele("iirds:has-topic-type", {"rdf:resource": rdf.expand(topictype, this.$store)});
-                        });
-                    }
-                    let adoctypes = this.getMetadataValueByURI(object.uuid, "iirds:is-applicable-for-document-type");
-                    if (adoctypes !== null && Array.isArray(adoctypes)) {
-                        adoctypes.forEach((adoctype) => {
-                            doc.ele("iirds:is-applicable-for-document-type", {"rdf:resource": rdf.expand(adoctype, this.$store)});
-                        });
-                    }
-                    break;
-                }
-
-                let infosubjects = this.getMetadataValueByURI(object.uuid, "iirds:has-subject");
-                if (infosubjects !== null && Array.isArray(infosubjects)) {
-                    infosubjects.forEach((infosubject) => {
-                        doc.ele("iirds:has-subject", {"rdf:resource": rdf.expand(infosubject, this.$store)});
-                    });
-                }
-
-                let plcp = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-product-lifecycle-phase");
-                if (plcp !== null && Array.isArray(plcp)) {
-                    plcp.forEach((phase) => {
-                        doc.ele("iirds:relates-to-product-lifecycle-phase", {"rdf:resource": rdf.expand(phase, this.$store)});
-                    });
-                }
-
-                let comps = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-component");
-                if (comps !== null && Array.isArray(comps)) {
-                    comps.forEach((comp) => {
-                        doc.ele("iirds:relates-to-component", {"rdf:resource": comp});
-                    });
-                }
-
-                let products = this.getMetadataValueByURI(object.uuid, "iirds:relates-to-product-variant");
-                if (products !== null && Array.isArray(products)) {
-                    products.forEach((product) => {
-                        doc.ele("iirds:relates-to-product-variant", {"rdf:resource": product});
-                    });
-                }
+                });
 
                 /*
                     Renditions
                 */
-
-                let parentTopicId = this.getMetadataValueByURI(object.uuid, "plus:parentTopic");
-                if (type === "iirds:Fragment" &&
-                    parentTopicId &&
-                    this.getObjectByUuid(parentTopicId)
-                ) {
-                    let parentObject = this.getObjectByUuid(parentTopicId);
-                    let parentFileName = parentObject.source.name || parentObject.source.data.name;
-                    doc.ele("iirds:has-rendition")
-                        .ele("iirds:Rendition", {"rdf:about": `${did}/rendition/${parentFileName}`})
-                        .ele("iirds:format", parentObject.source.type).up()
-                        .ele("iirds:source", `CONTENT/${parentObject.source.name}`).up()
-                        .ele("iirds:has-selector")
-                        .ele("iirds:FragmentSelector")
-                        .ele("dcterms:conformsTo", {"rdf:resource": "http://tools.ietf.org/rfc/rfc3236" }).up()
-                        .ele("rdf:value", object.uuid);
-                } else if (object.hasOwnProperty("source") &&
-                    object.source.data instanceof Blob &&
-                    !!object.source.type
-                ) {
+                if (object.source && object.source.data instanceof Blob && !!object.source.type) {
                     let filename = object.source.name || object.source.data.name;
-                    doc.ele("iirds:has-rendition")
-                        .ele("iirds:Rendition", {"rdf:about": `${did}/rendition/${filename}`})
+                    IU.ele("iirds:has-rendition")
+                        .ele("iirds:Rendition", {"rdf:about": `${URI}/rendition/${filename}`})
                         .ele("iirds:format", object.source.type).up()
                         .ele("iirds:source", `CONTENT/${object.source.name}`);
                 }
