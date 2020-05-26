@@ -115,6 +115,10 @@ html {
   opacity: 0;
 }
 
+.pm-transparent {
+  background-color: rgba(255,255,255,0.6) !important;
+}
+
 // Fix vue-country-flag:2.0.1 
 // https://github.com/plusmeta/app/issues/623
 .flag.small-flag {

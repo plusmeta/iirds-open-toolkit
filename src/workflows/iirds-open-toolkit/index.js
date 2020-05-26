@@ -17,6 +17,23 @@ export default {
     },
     publishable: true,
     steps: [{
+        id: "start",
+        editable: true,
+        helpkey: "workflow.welcome",
+        name: {
+            de: "Willkommen",
+            en: "Welcome"
+        },
+        rules: [
+            store => store.getters["settings/getSetting"]("user_eula")
+        ],
+        ruleExpl: {
+            de: "Sie müssen die Nutzungsbedingungen akzeptieren",
+            en: "You have to accept the end user license agreement"
+        },
+        component: () => import(/* webpackChunkName: "StepWelcome.step" */ "@/toolkit/step/OtkStepWelcome")
+    },
+    {
         id: "add-content",
         editable: true,
         helpkey: "workflow.addObjects",

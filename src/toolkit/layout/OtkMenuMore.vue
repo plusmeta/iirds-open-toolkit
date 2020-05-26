@@ -20,6 +20,7 @@
       eager
       offset-y
       nudge-left
+      min-width="350"
       :close-on-content-click="false"
     >
       <template v-slot:activator="{ on }">
@@ -39,10 +40,11 @@
           target="_blank"
         >
           <v-list-item-icon class="mr-4">
-            <v-img
+            <img
               :src="getLogo"
               width="75px"
-            />
+              height="25px"
+            >
           </v-list-item-icon>
 
           <v-list-item-content>
@@ -59,6 +61,7 @@
             <v-switch
               :input-value="getSetting('ui_shortcuts')"
               color="primary"
+              :disabled="isInternetExplorer"
               @change="setLocalSetting({key: 'ui_shortcuts', value: !!$event})"
             />
           </v-list-item-action>
@@ -88,6 +91,7 @@
 
         <v-list-item
           class="py-2"
+          :disabled="isInternetExplorer"
           @click="$refs.menuInput.click()"
         >
           <v-list-item-action>
@@ -102,6 +106,7 @@
 
         <v-list-item
           class="py-2"
+          :disabled="isInternetExplorer"
           @click="restoreSettings"
         >
           <v-list-item-action>
@@ -156,6 +161,7 @@
 import { mapGetters, mapActions } from "vuex";
 
 import meta from "@/util/import/meta";
+import util from "@/util";
 
 import LicenseInfoDialog from "@/shared/dialog/LicenseInfoDialog";
 
@@ -175,6 +181,9 @@ export default {
     computed: {
         getFeedbackLink() {
             return `mailto:${this.feebdackAddress}?subject=${this.feedbackSubject}`;
+        },
+        isInternetExplorer() {
+            return util.isIE();
         },
         ...mapGetters("settings", [
             "isReady",

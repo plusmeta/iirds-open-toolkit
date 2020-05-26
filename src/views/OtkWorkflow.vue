@@ -7,8 +7,8 @@
 <template>
   <v-stepper
     v-if="getSteps.length"
+    id="workflowSteps"
     v-model="currentProgress"
-    style="border-radius:0"
     class="elevation-0"
     @change="checkRoute"
   >
@@ -32,7 +32,7 @@
     </v-toolbar>
     <v-divider v-if="!$vuetify.theme.dark" />
 
-    <v-stepper-items>
+    <v-stepper-items style="min-height: 100%">
       <template v-for="(step, index) in getSteps">
         <v-stepper-content
           :key="`item-${index}`"
@@ -192,3 +192,10 @@ export default {
     }
 };
 </script>
+
+<style>
+#workflowSteps {
+    min-height: 100%;
+    background: none;
+}
+</style>

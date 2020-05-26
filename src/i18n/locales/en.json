@@ -94,6 +94,15 @@
     "thankYouExplainer": "Your iiRDS-Package is now ready for downloading.",
     "settingsRestored": "Restored default settings",
     "metadataDownloaded": "Downloaded metadata",
-    "changeIRI": "Change IRI"
+    "changeIRI": "Change IRI",
+    "welcomeTitle": "Welcome to the iiRDS Open Toolkit!",
+    "welcomeSubtitle": "With the free iiRDS Open Toolkit you can generate iiRDS packages with your own content in just a few steps",
+    "dataProtectionTitle": "Usage agreement & data protection",
+    "dataProtectionText": "For a better user experience, we use usage and error analytics software. All files used in the iiRDS Open Toolkit do not leave your computer.\nPlease accept our <a href=\"#\">Data protection agreement</a> to continue.",
+    "acceptUsageAgreement": "Accept usage agreement",
+    "licenseInfo": "iiRDS licensed under",
+    "rightsInfo": "All rights by tekom",
+    "browserWarning": "Browser warning",
+    "browserWarningText": "For an optimal user experience please use a <b>modern browser</b><br> (e.g. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox)."
   }
 }
