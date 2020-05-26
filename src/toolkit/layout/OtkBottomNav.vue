@@ -48,9 +48,9 @@
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
       © 2020 plusmeta GmbH
       &bull;
-      iiRDS licensed under CC BY – ND 4.0
+      {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
       &bull;
-      all rights by tekom
+      {{ $t("Otk.rightsInfo") }}
       &bull;
       <a href="https:/iirds.org" target="_blank">iirds.org </a>
     </span>
@@ -81,6 +81,7 @@
       class="mr-4"
       icon
       :color="(isExplainerView) ? 'info' : 'default'"
+      :disabled="isInternetExplorer"
       @click="showExplainer = !showExplainer"
     >
       <v-icon>
@@ -122,6 +123,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import util from "@/util";
 
 export default {
     name: "OtkBottomNav",
@@ -133,6 +135,9 @@ export default {
     computed: {
         isWorkflowStarted() {
             return this.getCurrentProgress > 0;
+        },
+        isInternetExplorer() {
+            return util.isIE();
         },
         isInActiveWorkflow() {
             return this.isWorkflowStarted &&

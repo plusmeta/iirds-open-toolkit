@@ -9,6 +9,7 @@
       <v-menu
         offset-y
         nudge-right
+        min-width="200"
       >
         <template v-slot:activator="{ on: menu }">
           <v-btn

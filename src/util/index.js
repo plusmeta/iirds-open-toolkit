@@ -180,6 +180,9 @@ export default {
 
         return os;
     },
+    isIE() {
+        return navigator.userAgent.includes("MSIE") || navigator.appVersion.includes("Trident/");
+    },
     parseBoolean(value) {
         const truthy = [true, "true", "yes", "on", "1"];
         const falsy = [false, "false", "no", "none", "off", "0", "-1", 0, -1];

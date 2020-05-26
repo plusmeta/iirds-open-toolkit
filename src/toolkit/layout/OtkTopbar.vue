@@ -12,13 +12,14 @@
     app
   >
     <v-toolbar-title>
-      <v-img
+      <img
         :src="getLogoForTheme('dark')"
         alt="Open Toolkit"
         title="Open Toolkit"
         width="75px"
-        class="ml-6 mr-4"
-      />
+        height="25px"
+        class="ml-6 mr-4 mt-2"
+      >
     </v-toolbar-title>
     <v-toolbar-title class="overline" style="font-size:20px !important">
       Open Toolkit
