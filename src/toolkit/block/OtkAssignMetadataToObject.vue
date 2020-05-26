@@ -157,7 +157,8 @@ export default {
                         rel: relation,
                         icon: (icon) ? icon.replace(":", "-") : undefined
                     };
-                });
+                })
+                .sort((a,b) => (a.required) ? -1 : 1); // Pflichtmetadaten vorne sortieren
         },
         getObjectTypes() {
             return ["plus:Document", "plus:Component", "plus:Fragment"].map((type) => {

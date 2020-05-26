@@ -67,6 +67,7 @@ export default {
     {
         id: "generate-iirds",
         editable: false,
+        helpkey: "workflow.generateIirds",
         name: {
             de: "iiRDS-Paket generieren",
             en: "Generate iiRDS package"

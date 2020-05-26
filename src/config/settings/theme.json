@@ -1,6 +1,6 @@
 {
     "theme":{
-        "dark": true,
+        "dark": false,
         "logo": {
             "dark": "/images/iiRDS_white.svg",
             "light": "/images/iiRDS_darkgrey_bluedots.svg"

@@ -1,17 +1,17 @@
 {
     "workflow.welcome": {
-        "link": "Willkommen",
-        "title": "Akzeptieren Sie die Nutzungsbedingungen um zu starten. Anschließend erscheint unten rechts in der Ecke ein blauer Pfeil, über den Sie zum nächsten Schritt gelangen.",
+        "title": "Schnellstart",
+        "text": "Akzeptieren Sie die Nutzungsbedingungen um zu starten. Anschließend erscheint unten rechts in der Ecke ein blauer Pfeil, über den Sie zum nächsten Schritt gelangen.",
         "page": "Quickstart"
     },
     "workflow.addObjects" : {
         "text": "Ein oder mehrere Objekte (i.d.R. Dateien) können per Drag & Drop oder über die Hinzufügen-Schaltfläche hinzugefügt werden. <ul><li><b>Drag & Drop:</b> Datei(en) im Dateimanager Ihres Betriebssystems auswählen (markieren), über die Objekt-Tabelle im Browserfenster ziehen (Drag) und fallenlassen (Drop).</li> <li><b>Hinzufügen-Schaltfläche:</b> Auf das grüne Plus (Hinzufügen-Schaltfläche) klicken. Der Dateimanager Ihres Betriebssystems öffnet sich. Datei(en) auswählen und die Auswahl bestätigen.</li></ul> <br/>Nachdem Sie Objekte hinzugefügt haben, werden Ihnen diese in einer Tabelle angezeigt. Hier haben Sie weitere Möglichkeiten: <ul><li><b>Spalten ändern:</b> Über die Einstellungen (Zahnrad) können Sie Spalten ausblenden und zusätzliche Spalten einblenden.</li> <li><b>Ansicht einschränken:</b> Über die Suche und die Filterfunktion können Sie einschränken, welche Objekte Ihnen angezeigt werden.</li> <li><b>Objekte löschen:</b> Einzelne Objekte löschen Sie über die Papierkorb-Schaltfläche in der Objektzeile. Mehrere Objekte löschen Sie, indem Sie sie zuerst über die Checkbox auswählen und anschließend auf die rote Papierkorb-Schaltfläche oben in der Tabelle klicken.</li> <li><b>Vorschau anzeigen:</b> Über die Dateivorschau-Schaltfläche (Auge) können Sie sich für PDF- und HTML-Dateien eine Vorschau anzeigen lassen.</li></ul></br>Um zum nächsten Schritt zu gelangen, auf den blauen Pfeil unten rechts klicken. ",
-        "link": "Objekte_hinzufuegen",
+        "page": "Objekte_hinzufuegen",
         "title": "Objekte hinzufügen"
     },
     "workflow.assignMetadata": {
         "text": "In diesem Schritt können Sie Ihre Objekte mit iiRDS-Metadaten klassifizieren. </br></br> <b>Ansicht:</b> <ul> <li>Über die Suche und die Filterfunktion können Sie einschränken, welche Objekte Ihnen angezeigt werden.</li> <li>Klicken Sie auf ein Objekt, um die Detailansicht zu öffnen.</li> </ul> </br><b>Metadaten vergeben:</b> Ihnen werden bereits einige Metadaten angezeigt, denen Sie Werte zuordnen können. <ul> <li><b>Vordefinierte Metadatenwerte:</b> Auf ein Metadatum klicken. Eine Drop-Down-Liste mit möglichen Metadatenwerten wird aufgeklappt. Den oder die korrekten Werte auswählen.</li> <li><b>Eigene Metadatenwerte:</b> Den gewünschten Metadatenwert (bspw. die Produktvariante) direkt in das Metadatenfeld schreiben, anschließend mit ENTER bestätigen.</li> <li><b>Pflichtmetadaten:</b> Pflichtmetadaten erkennen Sie am Stern (*) hinter dem Metadatum. Diese sollten Sie immer vergeben.</li> <li><b>Weitere Metadaten hinzufügen:</b> Auf die Hinzufügen-Schaltfläche (grünes Plus) klicken. Aus der Drop-Down-Liste <b>Zuweisbare Eigenschaften</b> das gewünschte iiRDS-Metadatum auswählen. Mit <b>METADATEN HINZUFÜGEN</b> bestätigen.</li> </ul> </br>Um zum nächsten Schritt zu gelangen, auf den blauen Pfeil unten rechts klicken.",
-        "link": "Metadaten_pruefen",
+        "page": "Metadaten_pruefen",
         "title": "Metadaten vergeben"
     },
     "workflow.generateIirds": {
