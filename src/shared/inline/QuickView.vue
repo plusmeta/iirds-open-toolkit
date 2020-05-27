@@ -65,13 +65,13 @@
             <PreviewPDF :file="getObject" />
           </v-card-text>
           <v-card-text
-            v-if="sourceType && sourceType === 'text/xml'"
+            v-if="sourceType && sourceType === 'application/xml'"
             class="pa-0"
           >
             <PreviewXML :file="getObject" />
           </v-card-text>
           <v-card-text
-            v-if="objectType === 'plus:Configuration'"
+            v-if="sourceType && sourceType === 'application/json'"
             class="pa-0"
           >
             <PreviewConfig :config="getObject.text" />
@@ -132,8 +132,7 @@ export default {
     },
     computed: {
         isPreviewable() {
-            return ["plus:Text", "plus:Configuration"].includes(this.objectType) ||
-            ["application/pdf", "text/html", "text/xml"].includes(this.sourceType);
+            return ["application/pdf", "text/html", "application/xml"].includes(this.sourceType);
         },
         getIcon() {
             if (this.peek && this.isPreviewable) {
