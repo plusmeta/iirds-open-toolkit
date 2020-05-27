@@ -65,13 +65,13 @@
             <PreviewPDF :file="getObject" />
           </v-card-text>
           <v-card-text
-            v-if="objectType === 'plus:Text' || sourceType === 'text/xml'"
+            v-if="sourceType && sourceType === 'application/xml'"
             class="pa-0"
           >
-            <PreviewText :text="getObject.text" />
+            <PreviewXML :file="getObject" />
           </v-card-text>
           <v-card-text
-            v-if="objectType === 'plus:Configuration'"
+            v-if="sourceType && sourceType === 'application/json'"
             class="pa-0"
           >
             <PreviewConfig :config="getObject.text" />
@@ -90,10 +90,16 @@ import PreviewConfig from "@/shared/block/PreviewConfig";
 import PreviewText from "@/shared/block/PreviewText";
 import PreviewPDF from "@/shared/block/PreviewPDF";
 import PreviewHTML from "@/shared/block/PreviewHTML";
+import PreviewXML from "@/shared/block/PreviewXML";
 
 export default {
     name: "QuickView",
-    components: { PreviewPDF, PreviewHTML, PreviewText, PreviewConfig },
+    components: {
+        PreviewPDF,
+        PreviewHTML,
+        PreviewXML,
+        PreviewConfig
+    },
     props: {
         uuid: {
             type: String,
@@ -126,8 +132,7 @@ export default {
     },
     computed: {
         isPreviewable() {
-            return ["plus:Text", "plus:Configuration"].includes(this.objectType) ||
-            ["application/pdf", "text/html", "text/xml"].includes(this.sourceType);
+            return ["application/pdf", "text/html", "application/xml"].includes(this.sourceType);
         },
         getIcon() {
             if (this.peek && this.isPreviewable) {
