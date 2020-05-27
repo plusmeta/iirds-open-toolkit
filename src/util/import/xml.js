@@ -31,10 +31,12 @@ export default {
         });
 
         await store.dispatch("storage/addMetadata", {
-            objectUuid, objectMeta: template.metadata({
+            objectUuid, objectMeta: {
                 uri: "plus:AnalysisCompleted",
-                value: Date.now()
-            })
+                value: Date.now(),
+                provenance: "System",
+                generator: "XML"
+            }
         });
     },
     textExtract (xml) {

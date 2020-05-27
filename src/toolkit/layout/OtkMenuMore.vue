@@ -6,10 +6,21 @@
 
 <template>
   <div>
+    <form ref="menuForm">
+      <input
+        ref="menuInput"
+        style="display:none;"
+        type="file"
+        accept=".rdf, application/rdf+xml"
+        @change="uploadMetadata($refs.menuInput.files)"
+      >
+    </form>
+
     <v-menu
       eager
       offset-y
       nudge-left
+      min-width="350"
       :close-on-content-click="false"
     >
       <template v-slot:activator="{ on }">
@@ -29,10 +40,11 @@
           target="_blank"
         >
           <v-list-item-icon class="mr-4">
-            <v-img
+            <img
               :src="getLogo"
               width="75px"
-            />
+              height="25px"
+            >
           </v-list-item-icon>
 
           <v-list-item-content>
@@ -49,6 +61,7 @@
             <v-switch
               :input-value="getSetting('ui_shortcuts')"
               color="primary"
+              :disabled="isInternetExplorer"
               @change="setLocalSetting({key: 'ui_shortcuts', value: !!$event})"
             />
           </v-list-item-action>
@@ -68,7 +81,7 @@
           </v-list-item-action>
           <v-list-item-title>{{ $t('Actions.useDarkMode') }}</v-list-item-title>
           <v-list-item-action>
-            <v-icon class="mr-5">
+            <v-icon>
               mdi-theme-light-dark
             </v-icon>
           </v-list-item-action>
@@ -77,23 +90,24 @@
         <v-divider />
 
         <v-list-item
-          :disabled="!isMetadataAvailable"
           class="py-2"
-          @click="downloadMetadata"
+          :disabled="isInternetExplorer"
+          @click="$refs.menuInput.click()"
         >
           <v-list-item-action>
-            <v-icon :disabled="!isMetadataAvailable">
+            <v-icon>
               mdi-tag-multiple
             </v-icon>
           </v-list-item-action>
           <v-list-item-title>
-            {{ $t("Actions.downloadMetadata") }}
+            {{ $t("Actions.uploadMetadata") }}
           </v-list-item-title>
         </v-list-item>
 
         <v-list-item
           class="py-2"
-          @click="resetSettings(true)"
+          :disabled="isInternetExplorer"
+          @click="restoreSettings"
         >
           <v-list-item-action>
             <v-icon>
@@ -102,6 +116,22 @@
           </v-list-item-action>
           <v-list-item-title>
             {{ $t("Actions.restoreSettings") }}
+          </v-list-item-title>
+        </v-list-item>
+
+        <v-divider />
+
+        <v-list-item
+          :href="getFeedbackLink"
+          class="py-2"
+        >
+          <v-list-item-action>
+            <v-icon>
+              mdi-mail
+            </v-icon>
+          </v-list-item-action>
+          <v-list-item-title>
+            {{ $t("Actions.giveFeedback") }}
           </v-list-item-title>
         </v-list-item>
 
@@ -130,6 +160,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
+import meta from "@/util/import/meta";
 import util from "@/util";
 
 import LicenseInfoDialog from "@/shared/dialog/LicenseInfoDialog";
@@ -142,31 +173,39 @@ export default {
     data() {
         return {
             showLicenseDialog: false,
-            version: `v${process.env.VUE_APP_VERSION}`,
-            env: process.env.NODE_ENV,
-            name: process.env.VUE_APP_NAME,
+            feebdackAddress: "info@iirds.org",
+            feedbackSubject: "[iiRDS-OT] Feedback",
+            version: `v${process.env.VUE_APP_VERSION}`
         };
     },
     computed: {
-        customMetadata() {
-            return this.getPropertiesByRole("plus:CustomMetadata");
+        getFeedbackLink() {
+            return `mailto:${this.feebdackAddress}?subject=${this.feedbackSubject}`;
         },
-        isMetadataAvailable() {
-            return !!this.customMetadata.length;
+        isInternetExplorer() {
+            return util.isIE();
         },
         ...mapGetters("settings", [
             "isReady",
             "getLogo",
             "getSetting",
             "isDarkTheme"
-        ]),
-        ...mapGetters("properties", [
-            "getPropertiesByRole",
         ])
     },
     methods: {
-        downloadMetadata() {
-            util.downloadJSON(this.customMetadata, "iiRDS-OT-Custom-Metadata.json");
+        restoreSettings() {
+            this.resetSettings(true);
+            this.$notify.send(this.$t("Otk.settingsRestored"), "success", 2);
+        },
+        async uploadMetadata(uploadedFile) {
+            try {
+                await meta.analyze(uploadedFile[0], this.$store);
+                this.$notify.send(this.$t("Notification.importedMetadata"), "success", 5);
+            } catch (error) {
+                this.$notify.send(this.$t("Notification.importFailed"), "error", 5);
+            } finally {
+                this.$refs.menuForm.reset();
+            }
         },
         ...mapActions("settings", [
             "setLocalSetting",

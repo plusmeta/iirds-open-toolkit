@@ -42,7 +42,7 @@ export default {
             return types.find(type => !!type.indicators && type.indicators.includes(mimeType)).identifier;
         }
 
-        return "plus:GenericObject";
+        return "plus:Document";
     },
     language(store, locale) {
         const languages = store.getters["properties/getPropertiesByClass"]("plus:Language");

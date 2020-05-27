@@ -18,10 +18,8 @@
         class="pt-6"
         :return-object="false"
         prepend-icon="mdi-format-title"
-        append-icon="mdi-refresh"
         :rules="[checkRequired]"
         @change="selectTitle"
-        @click:append="guessTitle"
       >
         <template v-slot:no-data>
           <v-list-item class="py-0" dense>

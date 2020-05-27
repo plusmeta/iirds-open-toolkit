@@ -2,6 +2,27 @@
 
 ![iiRDS Logo](https://iirds.tekom.de/fileadmin/iiRDS_specification/20190712-1.0.1-release/images/logos/iiRDS.jpg)
 
+## Verwendete Libraries und nützliche Links
+
+### Webanwendung
+
+- UI: [Vue.js v2](https://vuejs.org/v2/guide/)
+- Komponenten: [Vuetify](https://vuetifyjs.com/en/components/lists/)
+- Icons: [Material Design Icons](https://materialdesignicons.com/)
+- Plattform: [plusmeta](https://help.plusmeta.de/de/Willkommen/)
+
+### iiRDS-Generierung
+
+- Zip: [JSZip](https://stuk.github.io/jszip/)
+- RDF/XML: [xmlbuilder-js](https://github.com/oozcitak/xmlbuilder-js)
+
+### Backend
+
+- Build: [Vue CLI / Webpack](https://cli.vuejs.org/)
+- Linting: [ESLint](https://eslint.org/)
+- Transpiling: [Babel](https://babeljs.io/)
+- Fehlerreporting: [Sentry (nicht aktiviert)](https://sentry.io/_/open-source/)
+
 ## Entwicklungsumgebung
 
 ### Voraussetzungen

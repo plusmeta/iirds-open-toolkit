@@ -7,6 +7,7 @@
     "build-prod": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "reset": "npm install --no-shrinkwrap",
+    "report": "node ./script/i18n.report.js",
     "prebuild": "node ./script/git.version.js && node ./script/vendors.generate.js",
     "prebuild-prod": "node ./script/git.version.js && node ./script/vendors.generate.js"
   },
@@ -31,7 +32,7 @@
     "vue-router": "^3.1.6",
     "vue-rx": "^6.2.0",
     "vue-shortkey": "^3.1.7",
-    "vuetify": "^2.2.23",
+    "vuetify": "^2.2.28",
     "vuex": "^3.2.0",
     "vuex-persist": "^2.2.0",
     "whatwg-fetch": "^3.0.0",

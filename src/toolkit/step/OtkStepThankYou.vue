@@ -67,7 +67,9 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+
 import util from "@/util";
+import meta from "@/util/export/meta";
 
 export default {
     name: "OtkStepGenerateIIRDS",
@@ -96,7 +98,13 @@ export default {
     },
     methods: {
         downloadMetadata() {
-            util.downloadJSON(this.customMetadata, "iiRDS-OT-Custom-Metadata.json");
+            let fileContent = meta.export(this.customMetadata, this.$store);
+            let metadataFile = new File(
+                [fileContent],
+                "iiRDS-OT-Custom-Metadata.rdf",
+                {type: "application/rdf+xml"}
+            );
+            util.downloadBlob(metadataFile);
         },
         async downloadPackage() {
             if (this.getCurrentProjectRelationById("plus:relates-to-iirds-package").length > 0) {

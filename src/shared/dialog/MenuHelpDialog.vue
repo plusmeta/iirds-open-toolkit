@@ -9,6 +9,7 @@
       <v-menu
         offset-y
         nudge-right
+        min-width="200"
       >
         <template v-slot:activator="{ on: menu }">
           <v-btn
@@ -70,6 +71,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import config from "@/config";
 
 export default {
@@ -94,20 +96,27 @@ export default {
     },
     computed: {
         isHelpPortal() {
-            return config.helpPortal && helpPortal !== "";
+            return !!config.helpPortal;
         },
         getHelpPortalURL() {
             return config.helpPortal;
         },
         getCurrentPageTitle() {
-            return this.$help.getHelpTitle(this.helpkey);
+            return this.getHelpTitle(this.helpkey);
         },
         getCurrentPageHelp() {
-            return this.$help.getContextHelp(this.helpkey);
+            return this.getHelp(this.helpkey);
         },
         getCurrentHelpLink () {
-            return this.$help.getHelpLink(this.helpkey);
-        }
+            return this.getHelpLink(this.helpkey);
+        },
+        ...mapGetters("help", [
+            "getBaseUrl",
+            "getHelp",
+            "getHelpText",
+            "getHelpTitle",
+            "getHelpLink"
+        ])
     }
 };
 </script>

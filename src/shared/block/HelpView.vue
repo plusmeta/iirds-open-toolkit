@@ -7,11 +7,13 @@
 <template>
   <v-card
     v-if="showHelpView"
-    class="mb-6 elevation-4"
+    class="mb-6"
+    :class="{'pm-transparent': !$vuetify.theme.dark}"
+    :outlined="!$vuetify.theme.dark"
   >
     <v-card-title primary-title>
       <span class="title">
-        {{ $help.getHelpTitle(helpkey) }}
+        {{ helpTitle }}
       </span>
       <v-spacer />
       <v-btn
@@ -22,7 +24,7 @@
       </v-btn>
     </v-card-title>
     <v-card-text class="subtitle-2">
-      <div v-html="$help.getHelpText(helpkey)" />
+      <div v-html="helpText" />
     </v-card-text>
   </v-card>
 </template>
@@ -41,11 +43,22 @@ export default {
     computed: {
         showHelpView() {
             return !this.getSetting("ui_helpview_" + this.helpkey) &&
-              this.$help.getContextHelp(this.helpkey);
+              this.getHelp(this.helpkey);
+        },
+        helpTitle() {
+            return this.getHelpTitle(this.helpkey);
+        },
+        helpText() {
+            return this.getHelpText(this.helpkey);
         },
         ...mapGetters("settings", [
             "getSetting"
         ]),
+        ...mapGetters("help", [
+            "getHelp",
+            "getHelpText",
+            "getHelpTitle"
+        ])
     },
     methods: {
         hideView() {

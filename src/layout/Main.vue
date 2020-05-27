@@ -15,7 +15,9 @@
         style="position: absolute"
       />
       <v-fade-transition mode="out-in">
-        <router-view v-if="isReady" />
+        <div :class="{'light-bg': !$vuetify.theme.dark}">
+          <router-view v-if="isReady" />
+        </div>
       </v-fade-transition>
     </v-content>
     <BottomNav v-if="isReady" />
@@ -74,3 +76,14 @@ export default {
     }
 };
 </script>
+
+<style>
+  .light-bg {
+      background-image: url('/images/iiRDS_curve.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      min-height: 100%;
+      position: relative;
+  }
+</style>

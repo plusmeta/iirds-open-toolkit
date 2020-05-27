@@ -2,9 +2,8 @@
  * Copyright 2020 plusmeta GmbH
  * License: MIT
  */
-
-$body-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-$heading-font-family: "Ubuntu", "Segoe UI", sans-serif;
+ $body-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+ $heading-font-family: "Ubuntu", "Segoe UI", sans-serif;
 
 $material-dark: (
         'app-bar': #212121,
@@ -16,10 +15,14 @@ $material-dark: (
 
 $material-light: (
         'app-bar': #666,
-        'background':  #e8f1f7,
-        'bg-color':  #e8f1f7,
-        'cards':#d5dae7,
-        'toolbar': #5cc5f225
+        'text-color': #222,
+        'text': (
+                'primary': #444
+        ),
+        'background':  rgba(255, 255, 255, 1),
+        'bg-color':  rgba(255, 255, 255, 1),
+        'cards': rgba(255, 255, 255, 1),
+        'toolbar': #eee
 );
 
 @import "vuetify.fix.scss";

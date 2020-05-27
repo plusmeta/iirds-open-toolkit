@@ -51,14 +51,16 @@
             :items="getObjectTypes"
             :label="$t('Objects.type')"
             class="mr-6"
-            solo-inverted
+            filled
             @change="setObjectType"
           />
-          <AddMetadata
-            :object="object.uuid"
-            :visible="getVisibleMetadata.map(m => m.value)"
-            @metadata="addObjectMetadataField"
-          />
+          <div class="pt-2 pr-2">
+            <AddMetadata
+              :object="object.uuid"
+              :visible="getVisibleMetadata.map(m => m.value)"
+              @metadata="addObjectMetadataField"
+            />
+          </div>
         </v-layout>
 
         <ChooseCreateTitle
@@ -155,7 +157,8 @@ export default {
                         rel: relation,
                         icon: (icon) ? icon.replace(":", "-") : undefined
                     };
-                });
+                })
+                .sort((a,b) => (a.required) ? -1 : 1); // Pflichtmetadaten vorne sortieren
         },
         getObjectTypes() {
             return ["plus:Document", "plus:Component", "plus:Fragment"].map((type) => {

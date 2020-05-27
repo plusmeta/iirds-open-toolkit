@@ -7,12 +7,12 @@
 <template>
   <v-stepper
     v-if="getSteps.length"
+    id="workflowSteps"
     v-model="currentProgress"
-    style="border-radius:0"
     class="elevation-0"
     @change="checkRoute"
   >
-    <v-toolbar class="elevation-4">
+    <v-toolbar :class="{'elevation-0': !$vuetify.theme.dark}">
       <v-stepper-header class="elevation-0" style="width: 100%; height: 64px;">
         <template v-for="(step, index) in getSteps">
           <v-stepper-step
@@ -30,8 +30,9 @@
         </template>
       </v-stepper-header>
     </v-toolbar>
+    <v-divider v-if="!$vuetify.theme.dark" />
 
-    <v-stepper-items>
+    <v-stepper-items style="min-height: 100%">
       <template v-for="(step, index) in getSteps">
         <v-stepper-content
           :key="`item-${index}`"
@@ -176,7 +177,7 @@ export default {
             } else if (this.getCurrentProgress === 0) {
                 await this.setCurrentProgressLocal(1);
                 await this.updateProjectStatus({projectUuid: this.getCurrentProjectUuid, status: 1});
-                this.$notify.send(this.$t("Notification.openedProject", ), "info");
+                // this.$notify.send(this.$t("Notification.openedProject", ), "info");
             } else {
                 await this.setCurrentStep(this.getCurrentProgress);
             }
@@ -191,3 +192,10 @@ export default {
     }
 };
 </script>
+
+<style>
+#workflowSteps {
+    min-height: 100%;
+    background: none;
+}
+</style>

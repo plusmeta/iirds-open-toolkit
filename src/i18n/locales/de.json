@@ -13,7 +13,9 @@
     "openSettings": "Einstellungen öffnen",
     "restoreSettings": "Einstellungen zurücksetzen",
     "showShortcuts": "Zeige Tastenkürzel",
-    "useDarkMode": "Dunkles Farbschema"
+    "useDarkMode": "Dunkles Farbschema",
+    "uploadMetadata": "Metadatenwerte importieren",
+    "giveFeedback": "Feedback geben"
   },
   "App": {
     "filesTooLarge": "Speicherlimit erreicht. Es können keine Dateien mehr hinzugefügt werden.",
@@ -23,7 +25,8 @@
     "licenses": "Lizenzen verwendeter Software",
     "maxMemory": "Maximale Speichergrenze erreicht. Objekt wird nicht importiert.",
     "pageHelp": "Hilfeseite",
-    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden"
+    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden",
+    "backToStart": "Zurück zum Start"
   },
   "Common": {
     "actions": "Aktionen",
@@ -48,7 +51,10 @@
     "objectDeleted": "Objekt gelöscht",
     "openedProject": "Neues OpenToolkit-Projekt gestartet",
     "permissionDenied": "Zugang verweigert",
-    "propertyCreated": "Eigenschaft erstellt"
+    "propertyCreated": "Eigenschaft erstellt",
+    "importedMetadata": "Metadaten erfolgreich importiert",
+    "importFailed": "Import fehlgeschlagen",
+    "propertyDeleted": "Metadatenwert gelöscht"
   },
   "Objects": {
     "all": "Alle Objekte",
@@ -85,10 +91,18 @@
     "retry": "Möchten Sie ein weiteres iiRDS-Paket erstellen?",
     "startNewPackage": "Neues Paket",
     "thankYou": "Vielen Dank!",
-    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Download bereit."
-  },
-  "Metadata": {
-    "confidence": "Konfidenz",
-    "approved": "Abgenommen"
+    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Download bereit.",
+    "settingsRestored": "Auf Standardeinstellungen zurückgesetzt",
+    "metadataDownloaded": "Metadaten heruntergeladen",
+    "changeIRI": "IRI ändern",
+    "welcomeTitle": "Willkommen beim iiRDS Open Toolkit!",
+    "welcomeSubtitle": "Mit dem kostenlosen iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.",
+    "dataProtectionTitle": "Nutzungsbedingungen & Datenschutz",
+    "dataProtectionText": "Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffs- und Fehleranalyse ein. Dateien, die im iiRDS Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.\nBitte Akzeptieren Sie unsere <a href=\"#\">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.",
+    "acceptUsageAgreement": "Nutzungsbedingungen akzeptieren",
+    "licenseInfo": "iiRDS lizenziert unter",
+    "rightsInfo": "Alle Rechte tekom",
+    "browserWarning": "Browser-Warnung",
+    "browserWarningText": "Verwenden Sir für ein optimales Benutzererlebnis einen <b>modernen Browser</b><br> (z.B. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox)."
   }
 }

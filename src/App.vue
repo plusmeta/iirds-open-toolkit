@@ -47,9 +47,7 @@ export default {
         async getCurrentLocale() {
             const locale = this.getCurrentLocale;
             const messages = await this.getMessageFile(locale);
-            const helpContext = await this.loadHelpContext(locale);
 
-            this.$help.setHelpLocale(locale, helpContext.default);
             this.$i18n.setLocaleMessage(locale, messages);
             this.$i18n.locale = locale;
             this.$vuetify.lang.current = locale;
@@ -64,12 +62,8 @@ export default {
             immediate: true
         }
     },
-    async created() {
+    created() {
         document.title = util.createTitle(undefined, "tekom");
-
-        let helpContext = await this.loadHelpContext(this.getCurrentLocale);
-        this.$help.setHelpLocale(this.getCurrentLocale, helpContext.default);
-
         this.$auth.initEventBus(this);
     },
     mounted() {
@@ -100,16 +94,6 @@ export default {
                 return await import(/* webpackChunkName: "en.locale" */ "@/i18n/locales/en.json");
             default:
                 return await import(/* webpackChunkName: "de.locale" */ "@/i18n/locales/de.json");
-            }
-        },
-        async loadHelpContext(locale) {
-            switch (locale) {
-            case "de":
-                return await import(/* webpackChunkName: "help" */ "@/i18n/help/de.json");
-            case "en":
-                return await import(/* webpackChunkName: "help" */ "@/i18n/help/en.json");
-            default:
-                return await import(/* webpackChunkName: "help" */ "@/i18n/help/de.json");
             }
         }
     }

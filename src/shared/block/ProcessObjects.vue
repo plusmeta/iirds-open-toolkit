@@ -4,9 +4,9 @@
 -->
 
 <template>
-  <v-container fluid>
+  <v-container fluid class="pa-0">
     <v-toolbar
-      class="pb-4 pt-2"
+      :class="{'elevation-0': !$vuetify.theme.dark, 'pt-2': true}"
       min-height="80"
     >
       <v-toolbar-title>{{ title }}</v-toolbar-title>
@@ -104,7 +104,10 @@
     >
       <v-layout wrap>
         <v-flex xs3 d-flex>
-          <v-card class="pa-0 flex-grow-1 text-center" color="accent">
+          <v-card
+            class="pa-0 flex-grow-1 text-center" :outlined="!$vuetify.theme.dark"
+            color="accent"
+          >
             <v-card-text class="display-3 white--text pb-0">
               {{ $numeral(getTotal).format() }}
             </v-card-text>
@@ -118,7 +121,10 @@
         </v-flex>
 
         <v-flex xs3>
-          <v-card class="pa-0 flex-grow-1 text-center" color="success">
+          <v-card
+            class="pa-0 flex-grow-1 text-center" :outlined="!$vuetify.theme.dark"
+            color="success"
+          >
             <v-card-text class="display-3 white--text pb-0">
               <!-- prevent processed number to be higher than total number -->
               {{ $numeral(Math.min(getTotal, processedObjects)).format() }}
@@ -135,7 +141,10 @@
         <slot />
 
         <v-flex xs3>
-          <v-card class="pa-0 flex-grow-1 text-center" color="warning">
+          <v-card
+            class="pa-0 flex-grow-1 text-center" :outlined="!$vuetify.theme.dark"
+            color="warning"
+          >
             <v-card-text class="display-3 white--text pb-0">
               {{ $numeral(elapsedTime).format("00:00") }}
             </v-card-text>

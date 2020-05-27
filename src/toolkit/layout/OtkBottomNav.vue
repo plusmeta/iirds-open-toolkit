@@ -7,7 +7,9 @@
 <template>
   <v-footer
     app
+    dark
     inset
+    min-height="36"
     padless
     :color="getFooterColor"
   >
@@ -21,7 +23,7 @@
         left
         :color="arePreviousRulesValid ? 'secondary' : 'accent'"
         large
-        class="mb-8"
+        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
         @click="previousStep()"
       >
         <v-icon large>
@@ -43,15 +45,14 @@
       </span>
     </div>
 
-    <span v-if="!isExplainerView && !isRuleViolation" class="caption">
-      iiRDS Open Toolkit
+    <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
+      © 2020 plusmeta GmbH
       &bull;
-      <a
-        href="https:/iirds.org"
-        target="_blank"
-      >
-        iirds.org
-      </a>
+      {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
+      &bull;
+      {{ $t("Otk.rightsInfo") }}
+      &bull;
+      <a href="https:/iirds.org" target="_blank">iirds.org </a>
     </span>
 
     <v-spacer />
@@ -64,7 +65,7 @@
         absolute
         bottom
         right
-        class="mb-8"
+        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
         large
         color="accent"
         @click="nextStep()"
@@ -80,9 +81,10 @@
       class="mr-4"
       icon
       :color="(isExplainerView) ? 'info' : 'default'"
+      :disabled="isInternetExplorer"
       @click="showExplainer = !showExplainer"
     >
-      <v-icon color="white">
+      <v-icon>
         {{ isExplainerView ? "mdi-close" : "mdi-information-outline" }}
       </v-icon>
     </v-btn>
@@ -93,7 +95,7 @@
       icon
       @click="previousStep()"
     >
-      <v-icon color="white">
+      <v-icon>
         mdi-alert-outline
       </v-icon>
     </v-btn>
@@ -106,7 +108,7 @@
         absolute
         bottom
         right
-        class="mb-8"
+        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
         large
         color="accent"
         @click="closeProject()"
@@ -121,6 +123,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import util from "@/util";
 
 export default {
     name: "OtkBottomNav",
@@ -132,6 +135,9 @@ export default {
     computed: {
         isWorkflowStarted() {
             return this.getCurrentProgress > 0;
+        },
+        isInternetExplorer() {
+            return util.isIE();
         },
         isInActiveWorkflow() {
             return this.isWorkflowStarted &&

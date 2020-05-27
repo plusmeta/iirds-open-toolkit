@@ -1,6 +1,6 @@
 {
     "theme":{
-        "dark": true,
+        "dark": false,
         "logo": {
             "dark": "/images/iiRDS_white.svg",
             "light": "/images/iiRDS_darkgrey_bluedots.svg"
@@ -8,7 +8,7 @@
         "themes": {
             "dark": {
                 "primary": "#dec88e",
-                "secondary": "#424242",
+                "secondary": "#636363",
                 "accent": "#5cc5f2",
                 "error": "#FF5252",
                 "info": "#5cc5f2",
@@ -17,8 +17,8 @@
                 "anchor": "#c4c4c4"
             },
             "light": {
-                "primary": "#5cc5f2",
-                "secondary": "#eeeeee",
+                "primary": "#00769f",
+                "secondary": "#9c9c9c",
                 "accent": "#5cc5f2",
                 "error": "#FF5252",
                 "info": "#5cc5f2",
