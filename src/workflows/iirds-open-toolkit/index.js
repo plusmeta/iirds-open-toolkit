@@ -18,7 +18,7 @@ export default {
     publishable: true,
     steps: [{
         id: "start",
-        editable: true,
+        editable: false,
         helpkey: "workflow.welcome",
         name: {
             de: "Willkommen",
@@ -35,7 +35,7 @@ export default {
     },
     {
         id: "add-content",
-        editable: true,
+        editable: false,
         helpkey: "workflow.addObjects",
         name: {
             de: "Inhalte hinzufügen",
@@ -53,7 +53,7 @@ export default {
     },
     {
         id: "assign-metadata",
-        editable: true,
+        editable: false,
         helpkey: "workflow.assignMetadata",
         name: {
             de: "Metadaten vergeben",
