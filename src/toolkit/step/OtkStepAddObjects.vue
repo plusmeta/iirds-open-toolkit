@@ -328,6 +328,7 @@ import config from "@/config";
 import pdf from "@/util/import/pdf";
 import html from "@/util/import/html";
 import xml from "@/util/import/xml";
+import zip from "@/util/import/zip";
 
 export default {
     name: "OtkStepAddObjects",
@@ -529,6 +530,10 @@ export default {
 
             case "text/xml":
                 await xml.analyze(...analyzePayload);
+                break;
+
+            case "application/zip":
+                await zip.analyze(...analyzePayload);
                 break;
 
             default:
