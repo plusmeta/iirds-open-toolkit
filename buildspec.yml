@@ -10,7 +10,7 @@ phases:
       - npm ci
   build:
     commands:
-      - ./script/git.helper.sh develop
+      - ./script/git.helper.sh master
       - npm run-script build
 artifacts:
     files:
