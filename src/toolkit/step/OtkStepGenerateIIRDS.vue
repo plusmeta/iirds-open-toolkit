@@ -153,9 +153,17 @@ export default {
             let metadataRDF = await this.generateRDF(content);
             metadata.file("metadata.rdf", metadataRDF);
 
+            // check for media archives
+            let archives = this.getCurrentObjectsByType("plus:MediaArchive");
+            for (let archive of archives) {
+                if (archive.source.data) {
+                    await content.loadAsync(archive.source.data);
+                }
+            }
+
             // content files
             for (let object of this.getContentObjects) {
-                if (object.source.data) {
+                if (!object.externalId && object.source.data) {
                     let filename = object.source.name || object.source.data.name;
                     content.file(filename, await this.fetchSource(object.uuid));
                 }
@@ -293,11 +301,11 @@ export default {
                     Renditions
                 */
                 if (object.source && object.source.data instanceof Blob && !!object.source.type) {
-                    let filename = object.source.name || object.source.data.name;
+                    let filename = object.externalId || object.source.name || object.source.data.name;
                     IU.ele("iirds:has-rendition")
                         .ele("iirds:Rendition", {"rdf:about": `${URI}/rendition/${filename}`})
                         .ele("iirds:format", object.source.type).up()
-                        .ele("iirds:source", `CONTENT/${object.source.name}`);
+                        .ele("iirds:source", `CONTENT/${filename}`);
                 }
             });
 
