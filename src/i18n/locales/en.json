@@ -3,7 +3,7 @@
     "addMetadata": "Add metadata",
     "addObject": "Add object",
     "cancel": "Cancel",
-    "createEntry": "Create entry",
+    "createEntry": "Press Enter to create new entry",
     "deleteObject": "Delete object",
     "deleteObjectInfo": "Do you really want to delete the object? This action can not be reverted.",
     "deleteObjectsInfo": "Do you really want to delete the selected objects? This action can not be reverted.",
