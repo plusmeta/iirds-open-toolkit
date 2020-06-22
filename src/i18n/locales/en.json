@@ -98,7 +98,7 @@
     "welcomeTitle": "Welcome to the iiRDS Open Toolkit!",
     "welcomeSubtitle": "With the free iiRDS Open Toolkit you can generate iiRDS packages with your own content in just a few steps",
     "dataProtectionTitle": "Usage agreement & data protection",
-    "dataProtectionText": "For a better user experience, we use usage and error analytics software. All files used in the iiRDS Open Toolkit do not leave your computer.\nPlease accept our <a href=\"#\">Data protection agreement</a> to continue.",
+    "dataProtectionText": "For a better user experience, we use analytics software. All files used in the iiRDS Open Toolkit do not leave your computer.\nPlease accept our <a href=\"https://iirds.org/privacy-policy/\">Data protection agreement</a> to continue.",
     "acceptUsageAgreement": "Accept usage agreement and data protection",
     "licenseInfo": "iiRDS licensed under",
     "rightsInfo": "All rights by tekom",
