@@ -179,17 +179,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericDesignAndRealization",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:DesignAndRealization",
-        "rels": {},
-        "label": {
-            "de": "Produktentstehung (generisch)",
-            "en": "Design and realization (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:RequirementAnalysis",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:DesignAndRealization",
@@ -260,17 +249,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericPuttingToUse",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:PuttingToUse",
-        "rels": {},
-        "label": {
-            "de": "In Nutzung nehmen (generisch)",
-            "en": "Putting to use (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:Configuration",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:PuttingToUse",
@@ -304,17 +282,6 @@
         "label": {
             "de": "Nutzung",
             "en": "Use"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericUse",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Use",
-        "rels": {},
-        "label": {
-            "de": "Nutzung (generisch)",
-            "en": "Use (generic)"
         },
         "indicators": []
     },
@@ -407,17 +374,6 @@
         "label": {
             "de": "Nutzungsende",
             "en": "After use"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericAfterUse",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:AfterUse",
-        "rels": {},
-        "label": {
-            "de": "Nutzungsende (generisch)",
-            "en": "After use (generic)"
         },
         "indicators": []
     },
@@ -571,17 +527,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericConcept",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Concept",
-        "rels": {},
-        "label": {
-            "de": "Beschreibung (generisch)",
-            "en": "Concept (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:Task",
         "datatype": "plus:Class",
         "subClassOf": "iirds:TopicType",
@@ -593,17 +538,6 @@
         "label": {
             "de": "Aufgabe",
             "en": "Task"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericTask",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Task",
-        "rels": {},
-        "label": {
-            "de": "Aufgabe (generisch)",
-            "en": "Task (generic)"
         },
         "indicators": []
     },
@@ -623,17 +557,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericReference",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Reference",
-        "rels": {},
-        "label": {
-            "de": "Referenz (generisch)",
-            "en": "Reference (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:Learning",
         "datatype": "plus:Class",
         "subClassOf": "iirds:TopicType",
@@ -645,17 +568,6 @@
         "label": {
             "de": "Lernen",
             "en": "Learning"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericLearning",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Learning",
-        "rels": {},
-        "label": {
-            "de": "Lernen (generisch)",
-            "en": "Learning (generic)"
         },
         "indicators": []
     },
@@ -675,17 +587,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericForm",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Form",
-        "rels": {},
-        "label": {
-            "de": "Formular (generisch)",
-            "en": "Form (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:Troubleshooting",
         "datatype": "plus:Class",
         "subClassOf": "iirds:TopicType",
@@ -697,17 +598,6 @@
         "label": {
             "de": "Störungsbeseitigung",
             "en": "Troubleshooting"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericTroubleshooting",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Troubleshooting",
-        "rels": {},
-        "label": {
-            "de": "Störungsbeseitigung (generisch)",
-            "en": "Troubleshooting (generic)"
         },
         "indicators": []
     },
@@ -755,17 +645,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericEvent",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Event",
-        "rels": {},
-        "label": {
-            "de": "Ereignis (generisch)",
-            "en": "Event (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:relates-to-event",
         "datatype": "plus:Relation",
         "subClassOf": "iirds:relates-to-functional-metadata",
@@ -784,17 +663,6 @@
         "label": {
             "de": "bezieht sich auf Hilfsmittel",
             "en": "relates to supply"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericSupply",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Supply",
-        "rels": {},
-        "label": {
-            "de": "Hilfsmittel (generisch)",
-            "en": "Supply (generic)"
         },
         "indicators": []
     },
@@ -821,17 +689,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericPlanningTime",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:PlanningTime",
-        "rels": {},
-        "label": {
-            "de": "Planzeit (generisch)",
-            "en": "Planning time (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:WorkingTime",
         "datatype": "plus:Class",
         "subClassOf": "iirds:PlanningTime",
@@ -839,17 +696,6 @@
         "label": {
             "de": "Arbeitszeit",
             "en": "Working time"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericWorkingTime",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:WorkingTime",
-        "rels": {},
-        "label": {
-            "de": "Arbeitszeit (generisch)",
-            "en": "Working time (generic)"
         },
         "indicators": []
     },
@@ -865,17 +711,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericDownTime",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:DownTime",
-        "rels": {},
-        "label": {
-            "de": "Stillstandzeit (generisch)",
-            "en": "Down time (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:MaintenanceInterval",
         "datatype": "plus:Class",
         "subClassOf": "iirds:PlanningTime",
@@ -883,17 +718,6 @@
         "label": {
             "de": "Wartungsinterval",
             "en": "Maintenance interval"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericMaintenanceInterval",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:MaintenanceInterval",
-        "rels": {},
-        "label": {
-            "de": "Wartungsinterval (generisch)",
-            "en": "Maintenance interval (generic)"
         },
         "indicators": []
     },
@@ -952,17 +776,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericRole",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Role",
-        "rels": {},
-        "label": {
-            "de": "Rolle (generisch)",
-            "en": "Role (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:has-subject",
         "datatype": "plus:Relation",
         "subClassOf": "iirds:has-information-type",
@@ -981,17 +794,6 @@
         "label": {
             "de": "Formalität",
             "en": "Formality"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericFormality",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Formality",
-        "rels": {},
-        "label": {
-            "de": "Formalität (generisch)",
-            "en": "Formality (generic)"
         },
         "indicators": []
     },
@@ -1095,17 +897,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericFunctionality",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Functionality",
-        "rels": {},
-        "label": {
-            "de": "Funktionalität (generisch)",
-            "en": "Functionality (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:Conformity",
         "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
@@ -1113,17 +904,6 @@
         "label": {
             "de": "Konformität",
             "en": "Conformity"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericConformity",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Conformity",
-        "rels": {},
-        "label": {
-            "de": "Konformität (generisch)",
-            "en": "Conformity (generic)"
         },
         "indicators": []
     },
@@ -1183,17 +963,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericProcess",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Process",
-        "rels": {},
-        "label": {
-            "de": "Prozess (generisch)",
-            "en": "Process (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:Collection",
         "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
@@ -1205,17 +974,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericCollection",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Collection",
-        "rels": {},
-        "label": {
-            "de": "Sammlung (generisch)",
-            "en": "Collection (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:Safety",
         "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
@@ -1223,17 +981,6 @@
         "label": {
             "de": "Sicherheit",
             "en": "Safety"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericSafety",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:Safety",
-        "rels": {},
-        "label": {
-            "de": "Sicherheit (generisch)",
-            "en": "Safety (generic)"
         },
         "indicators": []
     },
@@ -1293,17 +1040,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericWarningMessage",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:WarningMessage",
-        "rels": {},
-        "label": {
-            "de": "Warnhinweis (generisch)",
-            "en": "Warning message (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:WarningMessageNotice",
         "datatype": "plus:Instance",
         "subClassOf": "iirds:WarningMessage",
@@ -1359,17 +1095,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericTechnicalData",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:TechnicalData",
-        "rels": {},
-        "label": {
-            "de": "Technische Daten (generisch)",
-            "en": "Technical data (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:TechnicalOverview",
         "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
@@ -1377,17 +1102,6 @@
         "label": {
             "de": "Technische Übersicht",
             "en": "Technical overview"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericTechnicalOverview",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:TechnicalOverview",
-        "rels": {},
-        "label": {
-            "de": "Technische Übersicht (generisch)",
-            "en": "Technical overview (generic)"
         },
         "indicators": []
     },
@@ -1512,17 +1226,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericProductFeature",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:ProductFeature",
-        "rels": {},
-        "label": {
-            "de": "Produktmerkmal (generisch)",
-            "en": "Product feature (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:relates-to-product-feature",
         "datatype": "plus:Relation",
         "subClassOf": "iirds:relates-to-product-metadata",
@@ -1545,17 +1248,6 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:GenericProductProperty",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:ProductProperty",
-        "rels": {},
-        "label": {
-            "de": "Produkteigenschaft (generisch)",
-            "en": "Product property (generic)"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "iirds:ProductFunction",
         "datatype": "plus:Class",
         "subClassOf": "iirds:ProductFeature",
@@ -1563,17 +1255,6 @@
         "label": {
             "de": "Produktfunktion",
             "en": "Product function"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericProductFunction",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:ProductFunction",
-        "rels": {},
-        "label": {
-            "de": "Produktfunktion (generisch)",
-            "en": "Product function (generic)"
         },
         "indicators": []
     },
@@ -2033,17 +1714,6 @@
         "label": {
             "de": "Topictyp",
             "en": "Topic type"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "iirds:GenericSkillLevel",
-        "datatype": "plus:Instance",
-        "subClassOf": "iirds:SkillLevel",
-        "rels": {},
-        "label": {
-            "de": "Kenntnisstufe (generisch)",
-            "en": "Skill level (generic)"
         },
         "indicators": []
     },
