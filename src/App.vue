@@ -6,20 +6,21 @@
 
 <template>
   <v-app>
-    <div class="snack-box">
-      <v-snackbar
-        v-for="(notification, key) of notifications"
-        :key="key"
-        v-model="notification.visible"
-        :color="notification.color"
-        :timeout="notification.timeout"
-      >
-        {{ notification.text }}
-        <v-btn icon @click="notification.visible = false">
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-      </v-snackbar>
-    </div>
+    <v-snackbar
+      v-for="(notification, key) of notifications"
+      :key="key"
+      v-model="notification.visible"
+      bottom
+      right
+      auto-height
+      :color="notification.color"
+      :timeout="notification.timeout"
+    >
+      {{ notification.text }}
+      <v-btn icon @click="notification.visible = false">
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+    </v-snackbar>
     <router-view />
     <ConfirmDialog ref="confirm" />
   </v-app>
@@ -45,15 +46,7 @@ export default {
     },
     watch: {
         async getCurrentLocale() {
-            const locale = this.getCurrentLocale;
-            const messages = await this.getMessageFile(locale);
-
-            this.$i18n.setLocaleMessage(locale, messages);
-            this.$i18n.locale = locale;
-            this.$vuetify.lang.current = locale;
-            this.$numeral.locale(locale);
-            this.$auth.changeLocale(locale);
-            document.querySelector("html").setAttribute("lang", locale);
+            await this.updateLocale();
         },
         isDarkTheme: {
             handler() {
@@ -65,6 +58,7 @@ export default {
     created() {
         document.title = util.createTitle(undefined, "tekom");
         this.$auth.initEventBus(this);
+        this.updateLocale();
     },
     mounted() {
         this.$confirm.register(this.$refs?.confirm);
@@ -86,6 +80,17 @@ export default {
         };
     },
     methods: {
+        async updateLocale() {
+            const locale = this.getCurrentLocale;
+            const messages = await this.getMessageFile(locale);
+
+            this.$i18n.setLocaleMessage(locale, messages);
+            this.$i18n.locale = locale;
+            this.$vuetify.lang.current = locale;
+            this.$numeral.locale(locale);
+            this.$auth.changeLocale(locale);
+            document.querySelector("html").setAttribute("lang", locale);
+        },
         async getMessageFile(locale) {
             switch (locale) {
             case "de":
@@ -99,11 +104,3 @@ export default {
     }
 };
 </script>
-<style>
-    .snack-box {
-        z-index: 999;
-        position: fixed;
-        bottom: 40px;
-        right: 10px;
-    }
-</style>

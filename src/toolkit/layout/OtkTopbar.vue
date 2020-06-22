@@ -29,10 +29,6 @@
     <v-spacer />
 
     <!-- Right-hand Menus -->
-    <MenuHelp
-      :helpkey="getStepKey"
-      :show-tooltip="false"
-    />
     <MenuLanguage />
     <MenuMore />
   </v-app-bar>
@@ -43,11 +39,10 @@ import { mapGetters, mapActions } from "vuex";
 
 import MenuLanguage from "@/toolkit/layout/OtkMenuLanguage";
 import MenuMore from "@/toolkit/layout/OtkMenuMore";
-import MenuHelp from "@/shared/dialog/MenuHelpDialog";
 
 export default {
     name: "OtkTopbar",
-    components: { MenuLanguage, MenuMore, MenuHelp },
+    components: { MenuLanguage, MenuMore },
     data() {
         return {
             initital: false
