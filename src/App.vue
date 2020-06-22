@@ -45,15 +45,7 @@ export default {
     },
     watch: {
         async getCurrentLocale() {
-            const locale = this.getCurrentLocale;
-            const messages = await this.getMessageFile(locale);
-
-            this.$i18n.setLocaleMessage(locale, messages);
-            this.$i18n.locale = locale;
-            this.$vuetify.lang.current = locale;
-            this.$numeral.locale(locale);
-            this.$auth.changeLocale(locale);
-            document.querySelector("html").setAttribute("lang", locale);
+            await this.updateLocale();
         },
         isDarkTheme: {
             handler() {
@@ -65,6 +57,7 @@ export default {
     created() {
         document.title = util.createTitle(undefined, "tekom");
         this.$auth.initEventBus(this);
+        this.updateLocale();
     },
     mounted() {
         this.$confirm.register(this.$refs?.confirm);
@@ -86,6 +79,17 @@ export default {
         };
     },
     methods: {
+        async updateLocale() {
+            const locale = this.getCurrentLocale;
+            const messages = await this.getMessageFile(locale);
+
+            this.$i18n.setLocaleMessage(locale, messages);
+            this.$i18n.locale = locale;
+            this.$vuetify.lang.current = locale;
+            this.$numeral.locale(locale);
+            this.$auth.changeLocale(locale);
+            document.querySelector("html").setAttribute("lang", locale);
+        },
         async getMessageFile(locale) {
             switch (locale) {
             case "de":
