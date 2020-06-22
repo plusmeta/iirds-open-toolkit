@@ -73,7 +73,10 @@
       @keydown.right="nextPage('preview', previewScale)"
       @keydown.esc="closePreview"
     >
-      <v-card class="pa-0 flex-container">
+      <v-card
+        v-if="showPreview"
+        class="pa-0 flex-container"
+      >
         <v-card-title class="py-0">
           {{ $t("Common.preview") }}: {{ file.name }}
           <v-spacer />
@@ -116,14 +119,12 @@
           color="primary"
           :indeterminate="!ready"
         />
-        <v-card-text class="pdf-viewer-container">
-          <div style="position: absolute;">
-            <div :style="`margin:auto; width: unset; margin-top: 50px; min-height: ${preview.height}px`">
-              <canvas
-                v-show="ready"
-                ref="preview"
-              />
-            </div>
+        <v-card-text class="pdf-viewer-container fullheight">
+          <div class="pdf-viewer-inner">
+            <canvas
+              v-show="ready"
+              ref="preview"
+            />
           </div>
         </v-card-text>
         <v-card-actions>
@@ -217,6 +218,10 @@ export default {
         ...mapGetters("storage", ["getMetadataValueByURI"])
     },
     async mounted() {
+        let diff = window.innerHeight - this.preview.height;
+        if (diff <= 200 && window.innerHeight > 300) {
+            this.previewScale = (window.innerHeight - 300) / this.preview.height;
+        }
         let source = this.file?.source;
         if (source?.thumbnailUri) {
             this.imageDataURL = await this.$auth.getFile(this.file.source.thumbnailUri, false);
@@ -337,6 +342,14 @@ export default {
         justify-content: center;
         align-items: center;
         overflow: auto;
+    }
+    .pdf-viewer-container.fullheight {
+        flex: 1 0 0;
+    }
+    .pdf-viewer-inner {
+        margin: auto;
+        width: unset;
+        margin-top: 50px;
     }
     #thumbnail { cursor: pointer; }
 </style>
