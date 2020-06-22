@@ -77,6 +77,12 @@
         "licenseUrl": "https://github.com/P3trur0/vue-country-flag/raw/master/LICENSE",
         "parents": "iirds-open-toolkit"
     },
+    "vue-doc-preview": {
+        "licenses": "MIT",
+        "repository": "https://github.com/cainsyake/vue-doc-preview",
+        "licenseUrl": "https://github.com/cainsyake/vue-doc-preview/raw/master/LICENSE",
+        "parents": "iirds-open-toolkit"
+    },
     "vue-i18n": {
         "licenses": "MIT",
         "repository": "https://github.com/kazupon/vue-i18n",

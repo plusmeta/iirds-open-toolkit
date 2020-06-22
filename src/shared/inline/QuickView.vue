@@ -70,12 +70,6 @@
           >
             <PreviewXML :file="getObject" />
           </v-card-text>
-          <v-card-text
-            v-if="sourceType && sourceType === 'application/json'"
-            class="pa-0"
-          >
-            <PreviewConfig :config="getObject.text" />
-          </v-card-text>
         </v-card>
       </v-menu>
     </template>
@@ -85,8 +79,8 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import VueDocPreview from "vue-doc-preview";
 
-import PreviewConfig from "@/shared/block/PreviewConfig";
 import PreviewText from "@/shared/block/PreviewText";
 import PreviewPDF from "@/shared/block/PreviewPDF";
 import PreviewHTML from "@/shared/block/PreviewHTML";
@@ -97,8 +91,7 @@ export default {
     components: {
         PreviewPDF,
         PreviewHTML,
-        PreviewXML,
-        PreviewConfig
+        PreviewXML
     },
     props: {
         uuid: {
@@ -132,7 +125,7 @@ export default {
     },
     computed: {
         isPreviewable() {
-            return ["application/pdf", "text/html", "application/xml"].includes(this.sourceType);
+            return ["application/pdf", "text/html", "application/xml"].includes(this.sourceType) || this.isOffice;
         },
         getIcon() {
             if (this.peek && this.isPreviewable) {

@@ -1,15 +1,14 @@
 {
   "name": "iirds-open-toolkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --mode development",
-    "build-prod": "vue-cli-service build --mode production",
+    "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "reset": "npm install --no-shrinkwrap",
     "report": "node ./script/i18n.report.js",
-    "prebuild": "node ./script/git.version.js && node ./script/vendors.generate.js",
-    "prebuild-prod": "node ./script/git.version.js && node ./script/vendors.generate.js"
+    "prebuild": "node ./script/git.version.js && node ./script/vendors.generate.js"
   },
   "dependencies": {
     "@sentry/browser": "^5.15.5",
@@ -24,9 +23,9 @@
     "typeface-ubuntu": "0.0.65",
     "typeface-ubuntu-mono": "0.0.72",
     "uuid": "^7.0.3",
-    "v-xml-tree": "^1.0.0",
     "vue": "^2.6.11",
     "vue-country-flag": "^2.0.0",
+    "vue-doc-preview": "^0.3.2",
     "vue-i18n": "^8.17.3",
     "vue-json-pretty": "^1.6.3",
     "vue-router": "^3.1.6",
@@ -45,8 +44,6 @@
     "@babel/preset-env": "^7.9.5",
     "@intlify/vue-i18n-loader": "^1.0.0",
     "@mdi/font": "^5.1.45",
-    "@sentry/cli": "^1.52.3",
-    "@sentry/webpack-plugin": "^1.11.1",
     "@vue/babel-preset-app": "^4.3.1",
     "@vue/cli-plugin-babel": "^4.3.1",
     "@vue/cli-plugin-eslint": "^4.3.1",

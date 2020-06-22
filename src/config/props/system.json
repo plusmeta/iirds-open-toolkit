@@ -161,6 +161,16 @@
         "indicators": ["text/html"]
     },
     {
+        "subClassOf": "plus:Objecttype",
+        "identifier": "plus:MediaArchive",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Medienarchiv",
+            "en": "Media archive"
+        },
+        "indicators": ["application/zip"]
+    },
+    {
         "subClassOf": "plus:System",
         "identifier": "plus:SystemLanguage",
         "datatype": "plus:Class",
