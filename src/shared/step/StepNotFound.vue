@@ -10,7 +10,7 @@
     class="pa-6 skeleton-container"
   >
     <v-sheet
-      class="notfound pt-12"
+      class="notfound py-12"
       style="margin:auto; text-align:center"
     >
       <img

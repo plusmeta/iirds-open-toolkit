@@ -33,8 +33,9 @@ html {
   font-family: "Ubuntu Mono", "Monaco", "Consolas", monospace !important;
   font-weight: 400 !important;
   font-size: 100% !important;
-  
-  // Fix vuetify 2.3.0
+}
+
+kbd {
   background: #616161 !important;
   color: #FFFFFF !important;
 }
