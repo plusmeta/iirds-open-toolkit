@@ -7,7 +7,7 @@
 <template>
   <v-app>
     <Topbar />
-    <v-content>
+    <v-main>
       <v-progress-linear
         v-if="!isReady"
         indeterminate
@@ -19,7 +19,7 @@
           <router-view v-if="isReady" />
         </div>
       </v-fade-transition>
-    </v-content>
+    </v-main>
     <BottomNav v-if="isReady" />
   </v-app>
 </template>
