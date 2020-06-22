@@ -14,7 +14,6 @@
       <v-card-title class="title">
         {{ title }}
         <v-spacer />
-        <MenuHelpDialog :helpkey="options.helpkey" />
       </v-card-title>
       <v-card-text v-show="!!message" class="pl-6 pr-6 pt-1 pb-2">
         {{ message }}
@@ -39,11 +38,9 @@
 </template>
 
 <script>
-import MenuHelpDialog from "@/shared/dialog/MenuHelpDialog";
 
 export default {
     name: "ConfirmDialog",
-    components: { MenuHelpDialog },
     data: () => ({
         dialog: false,
         resolve: null,

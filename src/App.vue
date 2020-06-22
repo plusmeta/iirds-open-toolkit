@@ -6,20 +6,21 @@
 
 <template>
   <v-app>
-    <div class="snack-box">
-      <v-snackbar
-        v-for="(notification, key) of notifications"
-        :key="key"
-        v-model="notification.visible"
-        :color="notification.color"
-        :timeout="notification.timeout"
-      >
-        {{ notification.text }}
-        <v-btn icon @click="notification.visible = false">
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-      </v-snackbar>
-    </div>
+    <v-snackbar
+      v-for="(notification, key) of notifications"
+      :key="key"
+      v-model="notification.visible"
+      bottom
+      right
+      auto-height
+      :color="notification.color"
+      :timeout="notification.timeout"
+    >
+      {{ notification.text }}
+      <v-btn icon @click="notification.visible = false">
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+    </v-snackbar>
     <router-view />
     <ConfirmDialog ref="confirm" />
   </v-app>
@@ -103,11 +104,3 @@ export default {
     }
 };
 </script>
-<style>
-    .snack-box {
-        z-index: 999;
-        position: fixed;
-        bottom: 40px;
-        right: 10px;
-    }
-</style>
