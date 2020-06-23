@@ -12,14 +12,16 @@
       v-model="notification.visible"
       bottom
       right
-      auto-height
+      app
       :color="notification.color"
       :timeout="notification.timeout"
     >
       {{ notification.text }}
-      <v-btn icon @click="notification.visible = false">
-        <v-icon>mdi-close</v-icon>
-      </v-btn>
+      <template v-slot:action>
+        <v-btn icon @click="notification.visible = false">
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+      </template>
     </v-snackbar>
     <router-view />
     <ConfirmDialog ref="confirm" />
