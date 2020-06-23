@@ -193,9 +193,14 @@ export default {
         ])
     },
     methods: {
-        restoreSettings() {
-            this.resetSettings(true);
-            this.$notify.send(this.$t("Otk.settingsRestored"), "success", 2);
+        async restoreSettings() {
+            if (await this.$confirm.open(
+                this.$t("Actions.restoreSettings"),
+                this.$t("Actions.restoreSettingsInfo"))) {
+                this.setCurrentProgressLocal(1);
+                this.resetSettings(true);
+                this.$notify.send(this.$t("Otk.settingsRestored"), "success", 2);
+            }
         },
         async uploadMetadata(uploadedFile) {
             try {
@@ -211,6 +216,9 @@ export default {
             "setLocalSetting",
             "resetSettings",
             "changeTheme"
+        ]),
+        ...mapActions("projects", [
+            "setCurrentProgressLocal"
         ])
     }
 

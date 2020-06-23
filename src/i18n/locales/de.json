@@ -15,7 +15,8 @@
     "showShortcuts": "Zeige Tastenkürzel",
     "useDarkMode": "Dunkles Farbschema",
     "uploadMetadata": "Metadatenwerte importieren",
-    "giveFeedback": "Feedback geben"
+    "giveFeedback": "Feedback geben",
+    "restoreSettingsInfo": "Wollen Sie die Einstellungen wirklich zurücksetzen? Alle Einstellungen werden auf die Werkseinstellungen zurückgesetzt und der Workflow muss vor vorne begonnen werden."
   },
   "App": {
     "filesTooLarge": "Speicherlimit erreicht. Es können keine Dateien mehr hinzugefügt werden.",

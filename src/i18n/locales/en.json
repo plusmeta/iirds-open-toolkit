@@ -15,7 +15,8 @@
     "deleteSelectedObjects": "Delete selected objects",
     "downloadMetadata": "Download metadata",
     "uploadMetadata": "Import metadata values",
-    "giveFeedback": "Give feedback"
+    "giveFeedback": "Give feedback",
+    "restoreSettingsInfo": "Do you really want to restore the settings? All settings will be reset to default values and the workflow has to be started over."
   },
   "App": {
     "filesTooLarge": "Memory limit reached. No new files can be added.",

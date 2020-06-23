@@ -380,6 +380,7 @@ export default {
         items() {
             return this.getCurrentObjects
                 .filter(object => !!object)
+                .filter(object => object.type !== "iirds:Container")
                 .map(object =>
                     Object.assign(util.deepCopy(object), {
                         uuid: object.uuid,
