@@ -17,6 +17,7 @@ import i18n from "@/i18n";
 
 // Vue Plugins
 import VueRx from "vue-rx";
+import VueMatomo from "vue-matomo";
 import VueAuth from "@/plugins/auth";
 import VueSecurity from "@/plugins/security";
 import VueNotify from "@/plugins/notify";
@@ -50,6 +51,18 @@ Vue.use(VueAuth, Auth.instance);
 Vue.use(VueSecurity, Security.instance);
 Vue.use(VueNotify, NotifyService.instance);
 Vue.use(VueConfirm, ConfirmService.instance);
+
+Vue.use(VueMatomo, {
+    host: "https://statistik.tekom.de",
+    siteId: 13,
+    trackerFileName: "matomo",
+    router: Auth.router,
+    enableLinkTracking: true,
+    requireConsent: true,
+    trackInitialView: true,
+    disableCookies: false,
+    cookieDomain: "*.iirds.tekom.de"
+});
 
 if (!!+process.env.VUE_APP_LOG_VERSION) {
     // eslint-disable-next-line no-console
