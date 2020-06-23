@@ -56,7 +56,8 @@ export default {
                 subClassOf: propClass,
                 datatype: "plus:Instance",
                 identifier: propId,
-                label: propLabel
+                label: propLabel,
+                rels: { "plus:has-roles": ["plus:CustomMetadata"] }
             });
 
             store.dispatch("properties/addProperty", property);
