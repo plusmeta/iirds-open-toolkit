@@ -165,228 +165,375 @@
     },
     {
         "identifier": "iirds:DesignAndRealization",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:ProductLifeCyclePhase",
-        "rels": {
-            "plus:has-relations": [
-                "iirds:relates-to-product-lifecycle-phase"
-            ]
-        },
+        "datatype": "plus:Class",
         "label": {
             "de": "Produktentstehung",
             "en": "Design and realisation"
         },
-        "indicators": []
+        "rels": {
+            "plus:has-relations": ["iirds:relates-to-product-lifecycle-phase"]
+        }
+    },
+    {
+        "identifier": "iirds:GenericDesignAndRealization",
+        "subClassOf": "iirds:DesignAndRealization",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Produktentstehung (generisch)",
+            "en": "Design and realization (generic)"
+        }
     },
     {
         "identifier": "iirds:RequirementAnalysis",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:DesignAndRealization",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Anforderungsanalyse",
             "en": "Requirement analysis"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Acquisition",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:DesignAndRealization",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Beschaffung",
             "en": "Acquisition"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Design",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:DesignAndRealization",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Design",
             "en": "Design"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Development",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:DesignAndRealization",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Entwicklung",
             "en": "Development"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Production",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:DesignAndRealization",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Herstellung",
             "en": "Production"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:Construction",
+        "subClassOf": "iirds:DesignAndRealization",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Konstruktion",
+            "en": "Construction"
+        }
     },
     {
         "identifier": "iirds:PuttingToUse",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:ProductLifeCyclePhase",
-        "rels": {
-            "plus:has-relations": [
-                "iirds:relates-to-product-lifecycle-phase"
-            ]
-        },
+        "datatype": "plus:Class",
         "label": {
             "de": "In Nutzung nehmen",
             "en": "Putting to use"
         },
-        "indicators": []
+        "rels": {
+            "plus:has-relations": ["iirds:relates-to-product-lifecycle-phase"]
+        }
+    },
+    {
+        "identifier": "iirds:GenericPuttingToUse",
+        "subClassOf": "iirds:PuttingToUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "In Nutzung nehmen (generisch)",
+            "en": "Putting to use (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsSft:Deployment",
+        "subClassOf": "iirds:PuttingToUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Bereitstellung",
+            "en": "Deployment"
+        }
     },
     {
         "identifier": "iirds:Configuration",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:PuttingToUse",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Einrichtung",
             "en": "Configuration"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:Assembly",
+        "subClassOf": "iirds:PuttingToUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Einbau",
+            "en": "Assembly"
+        }
+    },
+    {
+        "identifier": "iirdsMch:FirstUse",
+        "subClassOf": "iirds:PuttingToUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Erstinbetriebnahme",
+            "en": "FirstUse"
+        }
     },
     {
         "identifier": "iirds:Installation",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:PuttingToUse",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Installation",
             "en": "Installation"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsSft:Integration",
+        "subClassOf": "iirds:PuttingToUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Integration",
+            "en": "Integration"
+        }
+    },
+    {
+        "identifier": "iirdsMch:Transport",
+        "subClassOf": "iirds:PuttingToUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Transport",
+            "en": "Transport"
+        }
     },
     {
         "identifier": "iirds:Use",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:ProductLifeCyclePhase",
-        "rels": {
-            "plus:has-relations": [
-                "iirds:relates-to-product-lifecycle-phase"
-            ]
-        },
+        "datatype": "plus:Class",
         "label": {
             "de": "Nutzung",
             "en": "Use"
         },
-        "indicators": []
+        "rels": {
+            "plus:has-relations": ["iirds:relates-to-product-lifecycle-phase"]
+        }
+    },
+    {
+        "identifier": "iirds:GenericUse",
+        "subClassOf": "iirds:Use",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Nutzung (generisch)",
+            "en": "Use (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsSft:Administration",
+        "subClassOf": "iirds:Use",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Administration",
+            "en": "Administration"
+        }
     },
     {
         "identifier": "iirds:Decommissioning",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Use",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Außerbetriebnahme",
             "en": "Decommissioning"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Operation",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Use",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Betrieb",
             "en": "Operation"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Diagnostics",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Use",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Fehlerdiagnose",
             "en": "Diagnostics"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:Commissioning",
+        "subClassOf": "iirds:Use",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Inbetriebnahme",
+            "en": "Commissioning"
+        }
+    },
+    {
+        "identifier": "iirdsSft:Customization",
+        "subClassOf": "iirds:Use",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Kundenspezfische Anpassung",
+            "en": "Customization"
+        }
     },
     {
         "identifier": "iirds:EmergencyOperation",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Use",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Notbetrieb",
             "en": "EmergencyOperation"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:Cleaning",
+        "subClassOf": "iirds:Use",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Reinigung",
+            "en": "Cleaning"
+        }
     },
     {
         "identifier": "iirds:Repair",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Use",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Reparatur",
             "en": "Repair"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Fault",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Use",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Störung",
             "en": "Fault"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:Modification",
+        "subClassOf": "iirds:Use",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Umrüstung",
+            "en": "Modification"
+        }
+    },
+    {
+        "identifier": "iirdsSft:Update",
+        "subClassOf": "iirds:Use",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Update",
+            "en": "Update"
+        }
     },
     {
         "identifier": "iirds:Maintenance",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Use",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Wartung",
             "en": "Maintenance"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:AfterUse",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:ProductLifeCyclePhase",
-        "rels": {
-            "plus:has-relations": [
-                "iirds:relates-to-product-lifecycle-phase"
-            ]
-        },
+        "datatype": "plus:Class",
         "label": {
             "de": "Nutzungsende",
             "en": "After use"
         },
-        "indicators": []
+        "rels": {
+            "plus:has-relations": ["iirds:relates-to-product-lifecycle-phase"]
+        }
+    },
+    {
+        "identifier": "iirds:GenericAfterUse",
+        "subClassOf": "iirds:AfterUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Nutzungsende (generisch)",
+            "en": "After use (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsSft:Deinstallation",
+        "subClassOf": "iirds:AfterUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Deinstallation",
+            "en": "Deinstallation"
+        }
+    },
+    {
+        "identifier": "iirdsMch:Disassembly",
+        "subClassOf": "iirds:AfterUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Demontage",
+            "en": "Disassembly"
+        }
     },
     {
         "identifier": "iirds:Disposal",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:AfterUse",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Entsorgung",
             "en": "Disposal"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:Storage",
+        "subClassOf": "iirds:AfterUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Lagerung",
+            "en": "Storage"
+        }
+    },
+    {
+        "identifier": "iirdsMch:Recycling",
+        "subClassOf": "iirds:AfterUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Recycling",
+            "en": "Recycling"
+        }
+    },
+    {
+        "identifier": "iirdsMch:CloseDown",
+        "subClassOf": "iirds:AfterUse",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Stillegung",
+            "en": "CloseDown"
+        }
     },
     {
         "identifier": "iirds:AdministrativeMetadata",
@@ -527,6 +674,15 @@
         "indicators": []
     },
     {
+        "identifier": "iirds:GenericConcept",
+        "subClassOf": "iirds:Concept",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Beschreibung",
+            "en": "Concept"
+        }
+    },
+    {
         "identifier": "iirds:Task",
         "datatype": "plus:Class",
         "subClassOf": "iirds:TopicType",
@@ -540,6 +696,15 @@
             "en": "Task"
         },
         "indicators": []
+    },
+    {
+        "identifier": "iirds:GenericTask",
+        "subClassOf": "iirds:Task",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Aufgabe",
+            "en": "Task"
+        }
     },
     {
         "identifier": "iirds:Reference",
@@ -557,6 +722,15 @@
         "indicators": []
     },
     {
+        "identifier": "iirds:GenericReference",
+        "subClassOf": "iirds:Reference",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Referenz",
+            "en": "Reference"
+        }
+    },
+    {
         "identifier": "iirds:Learning",
         "datatype": "plus:Class",
         "subClassOf": "iirds:TopicType",
@@ -570,6 +744,15 @@
             "en": "Learning"
         },
         "indicators": []
+    },
+    {
+        "identifier": "iirds:GenericLearning",
+        "subClassOf": "iirds:Learning",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Lernen",
+            "en": "Learning"
+        }
     },
     {
         "identifier": "iirds:Form",
@@ -587,6 +770,15 @@
         "indicators": []
     },
     {
+        "identifier": "iirds:GenericForm",
+        "subClassOf": "iirds:Form",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Formular",
+            "en": "Form"
+        }
+    },
+    {
         "identifier": "iirds:Troubleshooting",
         "datatype": "plus:Class",
         "subClassOf": "iirds:TopicType",
@@ -600,6 +792,15 @@
             "en": "Troubleshooting"
         },
         "indicators": []
+    },
+    {
+        "identifier": "iirds:GenericTroubleshooting",
+        "subClassOf": "iirds:Troubleshooting",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Störungsbeseitigung",
+            "en": "Troubleshooting"
+        }
     },
     {
         "identifier": "iirds:FunctionalMetadata",
@@ -788,344 +989,552 @@
     },
     {
         "identifier": "iirds:Formality",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Formalität",
             "en": "Formality"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericFormality",
+        "subClassOf": "iirds:Formality",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Formalität (generisch)",
+            "en": "Formality (generic)"
+        }
     },
     {
         "identifier": "iirds:WarrantyConditions",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Formality",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Garantiebedingungen",
             "en": "Warranty conditions"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:ManufacturerInformation",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Formality",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Herstellerinformation",
             "en": "Manufacturer information"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:ContactInformation",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Formality",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Kontaktdaten",
             "en": "Contact information"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:ScopeOfDelivery",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Formality",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Lieferumfang",
             "en": "Scope of delivery"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:LicenseTerms",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Formality",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Lizenzbedingungen",
             "en": "License terms"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:ProductIdentification",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Formality",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Produktidentifikation",
             "en": "Product identification"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:ProductName",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Formality",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Produktname",
             "en": "Product name"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:LegalInformation",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Formality",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Rechtlicher Hinweis",
             "en": "Legal information"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Functionality",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Funktionalität",
             "en": "Functionality"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericFunctionality",
+        "subClassOf": "iirds:Functionality",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Funktionalität (generisch)",
+            "en": "Functionality (generic)"
+        }
     },
     {
         "identifier": "iirds:Conformity",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Konformität",
             "en": "Conformity"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericConformity",
+        "subClassOf": "iirds:Conformity",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Konformität (generisch)",
+            "en": "Conformity (generic)"
+        }
     },
     {
         "identifier": "iirds:ApplicableStandard",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Conformity",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Geltende Norm und Richtlinie",
             "en": "Applicable standard"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:DeclarationOfConformity",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Conformity",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Konformitätserklärung",
             "en": "Declaration of conformity"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:RiskAssessment",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Conformity",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Risikobewertung",
             "en": "Risk assessment"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:TechnicalReport",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Conformity",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Technischer Bericht",
             "en": "Technical report"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:Process",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Prozess",
             "en": "Process"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericProcess",
+        "subClassOf": "iirds:Process",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Prozess (generisch)",
+            "en": "Process (generic)"
+        }
     },
     {
         "identifier": "iirds:Collection",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Sammlung",
             "en": "Collection"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericCollection",
+        "subClassOf": "iirds:Collection",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Sammlung (generisch)",
+            "en": "Collection (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsMch:ListOfSpareParts",
+        "subClassOf": "iirds:Collection",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Ersatzteile",
+            "en": "List of spare parts"
+        }
+    },
+    {
+        "identifier": "iirdsMch:ListOfLubricants",
+        "subClassOf": "iirds:Collection",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Schmiermittelstelle",
+            "en": "List of lubricants"
+        }
+    },
+    {
+        "identifier": "iirdsMch:LubricationPlan",
+        "subClassOf": "iirds:Collection",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Schmierplan",
+            "en": "Lubrication plan"
+        }
+    },
+    {
+        "identifier": "iirdsMch:PartsList",
+        "subClassOf": "iirds:Collection",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Stückliste",
+            "en": "List of parts"
+        }
+    },
+    {
+        "identifier": "iirdsMch:ListOfOperatingSupplies",
+        "subClassOf": "iirds:Collection",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Hilfs- und Betriebsstoffe",
+            "en": "List of operating supplies"
+        }
+    },
+    {
+        "identifier": "iirdsMch:MaintenancePlan",
+        "subClassOf": "iirds:Collection",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Wartungsplan",
+            "en": "Maintenance plan"
+        }
+    },
+    {
+        "identifier": "iirdsMch:ListOfTools",
+        "subClassOf": "iirds:Collection",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Werkzeugliste",
+            "en": "List of tools"
+        }
     },
     {
         "identifier": "iirds:Safety",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Sicherheit",
             "en": "Safety"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericSafety",
+        "subClassOf": "iirds:Safety",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Sicherheit (generisch)",
+            "en": "Safety (generic)"
+        }
     },
     {
         "identifier": "iirds:IntendedUse",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Safety",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Bestimmunsgemäße Verwendung",
             "en": "Intended use"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:RestrictionOnUse",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Safety",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Einsatzbeschränkung",
             "en": "Restriction on use"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:ExplosionProtection",
+        "subClassOf": "iirds:Safety",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Explosionsschutz",
+            "en": "Explosion protection"
+        }
+    },
+    {
+        "identifier": "iirdsMch:InstallationError",
+        "subClassOf": "iirds:Safety",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Montagefehler",
+            "en": "InstallationError"
+        }
+    },
+    {
+        "identifier": "iirdsMch:SafetyEquipment",
+        "subClassOf": "iirds:Safety",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Schutzeinrichtung",
+            "en": "Safety equipment"
+        }
+    },
+    {
+        "identifier": "iirdsMch:SafetyMeasure",
+        "subClassOf": "iirds:Safety",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Schutzmaßnahme",
+            "en": "SafetyMeasure"
+        }
     },
     {
         "identifier": "iirds:SafetyInstruction",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Safety",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Sicherheitshinweis",
             "en": "Safety instruction"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:EnvironmentalProtectionInstruction",
+        "subClassOf": "iirds:Safety",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Umweltschutzanweisung",
+            "en": "Environmental protection instruction"
+        }
+    },
+    {
+        "identifier": "iirdsMch:EnvironmentalNote",
+        "subClassOf": "iirds:Safety",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Umweltschutzhinweis",
+            "en": "Environmental note"
+        }
     },
     {
         "identifier": "iirds:ForeseeableMisuse",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:Safety",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Vorhersehbarer Fehlgebrauch",
             "en": "Foreseeable misuse"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:WarningMessage",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:Safety",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Warnhinweis",
             "en": "Warning message"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericWarningMessage",
+        "subClassOf": "iirds:WarningMessage",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Warnhinweis (generisch)",
+            "en": "Warning message (generic)"
+        }
     },
     {
         "identifier": "iirds:WarningMessageNotice",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:WarningMessage",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Warnhinweis - Hinweis",
             "en": "Warning message - Notice"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:WarningMessageCaution",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:WarningMessage",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Warnhinweis - Vorsicht",
             "en": "Warning message - Caution"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:WarningMessageWarning",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:WarningMessage",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Warnhinweis - Warnung",
             "en": "Warning message - Warning"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:WarningMessageDanger",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:WarningMessage",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Warnhinweis - Gefahr",
             "en": "Warning message - Danger"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:TechnicalData",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Technische Daten",
             "en": "Technical data"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericTechnicalData",
+        "subClassOf": "iirds:TechnicalData",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Technische Daten (generisch)",
+            "en": "Technical data (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsSft:SystemRequirement",
+        "subClassOf": "iirds:TechnicalData",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Systemanforderungen",
+            "en": "System requirement (generic)"
+        }
     },
     {
         "identifier": "iirds:TechnicalOverview",
-        "datatype": "plus:Class",
         "subClassOf": "iirds:InformationSubject",
-        "rels": {},
+        "datatype": "plus:Class",
         "label": {
             "de": "Technische Übersicht",
             "en": "Technical overview"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirds:GenericTechnicalOverview",
+        "subClassOf": "iirds:TechnicalOverview",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Technische Übersicht (generisch)",
+            "en": "Technical overview (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsMch:Layout",
+        "subClassOf": "iirds:TechnicalOverview",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Aufbau",
+            "en": "Layout"
+        }
+    },
+    {
+        "identifier": "iirdsSft:Architecture",
+        "subClassOf": "iirds:TechnicalOverview",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Architektur",
+            "en": "Architecture"
+        }
     },
     {
         "identifier": "iirds:OverviewControlElement",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:TechnicalOverview",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Bedienelemente",
             "en": "Overview control element"
-        },
-        "indicators": []
+        }
+    },
+    {
+        "identifier": "iirdsMch:HydraulicDiagram",
+        "subClassOf": "iirds:TechnicalOverview",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Hydraulikplan",
+            "en": "Hydraulic diagram"
+        }
+    },
+    {
+        "identifier": "iirdsMch:PneumaticPlan",
+        "subClassOf": "iirds:TechnicalOverview",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Pneumatikplan",
+            "en": "Pneumatic plan"
+        }
+    },
+    {
+        "identifier": "iirdsMch:CircuitDiagram",
+        "subClassOf": "iirds:TechnicalOverview",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Schaltplan",
+            "en": "Circuit diagram"
+        }
+    },
+    {
+        "identifier": "iirdsSft:Interface",
+        "subClassOf": "iirds:TechnicalOverview",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Schnittstelle",
+            "en": "Interface"
+        }
+    },
+    {
+        "identifier": "iirdsMch:FlowDiagram",
+        "subClassOf": "iirds:TechnicalOverview",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Stromlaufplan",
+            "en": "Flow diagram"
+        }
     },
     {
         "identifier": "iirds:OverviewSymbol",
-        "datatype": "plus:Instance",
         "subClassOf": "iirds:TechnicalOverview",
-        "rels": {},
+        "datatype": "plus:Instance",
         "label": {
             "de": "Symbolübersicht",
             "en": "Overview of symbols"
-        },
-        "indicators": []
+        }
     },
     {
         "identifier": "iirds:revision",
@@ -1440,6 +1849,105 @@
             "en": "Supply"
         },
         "indicators": []
+    },
+    {
+        "identifier": "iirds:GenericSupply",
+        "subClassOf": "iirds:Supply",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Hilfsmittel (generisch)",
+            "en": "Supply (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsMch:OperatingSupply",
+        "subClassOf": "iirds:Supply",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Betriebsstoff",
+            "en": "Operating supply"
+        }
+    },
+    {
+        "identifier": "iirdsMch:GenericOperatingSupply",
+        "subClassOf": "iirdsMch:OperatingSupply",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Betriebsstoff (generisch)",
+            "en": "Operating supply (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsMch:SparePart",
+        "subClassOf": "iirds:Supply",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Ersatzteil",
+            "en": "SparePart"
+        }
+    },
+    {
+        "identifier": "iirdsMch:GenericSparePart",
+        "subClassOf": "iirdsMch:SparePart",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Ersatzteil (generisch)",
+            "en": "SparePart (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsMch:Lubricant",
+        "subClassOf": "iirds:Supply",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Schmierstoff",
+            "en": "Lubricant"
+        }
+    },
+    {
+        "identifier": "iirdsMch:GenericLubricant",
+        "subClassOf": "iirdsMch:Lubricant",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Schmierstoff (generisch)",
+            "en": "Lubricant (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsMch:ConsumableSupply",
+        "subClassOf": "iirds:Supply",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Verbrauchsmaterial",
+            "en": "Consumable supply"
+        }
+    },
+    {
+        "identifier": "iirdsMch:GenericConsumableSupply",
+        "subClassOf": "iirdsMch:ConsumableSupply",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Verbrauchsmaterial (generisch)",
+            "en": "Consumable supply (generic)"
+        }
+    },
+    {
+        "identifier": "iirdsMch:HardwareTool",
+        "subClassOf": "iirds:Supply",
+        "datatype": "plus:Class",
+        "label": {
+            "de": "Werkzeug",
+            "en": "Hardware tool"
+        }
+    },
+    {
+        "identifier": "iirdsMch:GenericHardwareTool",
+        "subClassOf": "iirdsMch:HardwareTool",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Werkzeug (generisch)",
+            "en": "Hardware tool (generic)"
+        }
     },
     {
         "identifier": "iirds:Root",
