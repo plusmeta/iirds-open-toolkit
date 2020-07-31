@@ -46,7 +46,7 @@
     </div>
 
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
-      © 2020 plusmeta GmbH
+      © 2020 <a href="https:/plusmeta.de" target="_blank">plusmeta GmbH</a>
       &bull;
       {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
       &bull;
@@ -80,7 +80,7 @@
       v-show="!isValid && !isRuleViolation"
       class="mr-4"
       icon
-      :color="(isExplainerView) ? 'info' : 'default'"
+      color="white"
       :disabled="isInternetExplorer"
       @click="showExplainer = !showExplainer"
     >
