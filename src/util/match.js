@@ -60,12 +60,12 @@ export default {
         if (locale && !match && indicators.includes(locale)) {
             match = languages.find((lang) => {
                 return !!lang.indicators && lang.indicators.includes(locale);
-            }).identifier;
+            })?.identifier;
         }
         if (locale && !match && typeof locale === "string" && indicators.includes(locale.split("-")[0])) {
             match = languages.find((lang) => {
                 return !!lang.indicators && lang.indicators.includes(locale);
-            }).identifier;
+            })?.identifier;
         }
         return match;
     },
