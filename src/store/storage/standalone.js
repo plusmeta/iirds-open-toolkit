@@ -50,10 +50,12 @@ const getters = {
     indizesCurrentByType: (state, getters) => {
         return getters.getCurrentObjectUuids.reduce((map, uuid) => {
             let type = getters.typeByUuid[uuid];
-            if (!map.hasOwnProperty(type)) {
-                map[type] = [];
+            if (type) {
+                if (!map.hasOwnProperty(type)) {
+                    map[type] = [];
+                }
+                map[type].push(getters.indexByUuid[uuid]);
             }
-            map[type].push(getters.indexByUuid[uuid]);
             return map;
         }, {});
     },
@@ -169,7 +171,7 @@ const getters = {
     },
     getCurrentObjectTypes: (state, getters) => {
         return Object.entries(getters.indizesCurrentByType).reduce((obj,[k, v]) => {
-            obj[k] = v.length;
+            if (k) obj[k] = v.length;
             return obj;
         }, {});
     },

@@ -71,14 +71,15 @@
                 <v-autocomplete
                   v-show="!!items.length"
                   ref="type"
-                  :value="getSetting('ui_addobjects_filter')"
+                  :value="filter"
                   :items="getObjectTypeFilterValues"
                   :label="$t('Objects.all')"
+                  :multiple="false"
                   prepend-icon="mdi-filter"
                   single-line
                   hide-details
                   clearable
-                  @change="setLocalSetting({key: 'ui_addobjects_filter', value: $event})"
+                  @change="(v) => filter = v"
                 >
                   <template v-slot:item="{ item }">
                     <span>{{ item.text }} </span>
@@ -341,6 +342,7 @@ export default {
         return {
             loading: false,
             search: null,
+            filter: undefined,
             selected:  [],
             processing: [],
             showHelp: true,
@@ -365,8 +367,7 @@ export default {
     },
     computed: {
         getCurrentObjects() {
-            let filter = this.getSetting("ui_addobjects_filter");
-            return this.getCurrentObjectsByType(filter);
+            return this.getCurrentObjectsByType(this.filter);
         },
         getObjectTypeFilterValues() {
             return Object.entries(this.getCurrentObjectTypes).map(([key, value]) => {
@@ -458,6 +459,14 @@ export default {
         ...mapGetters("properties", [
             "getPropertyLabelById"
         ])
+    },
+    watch: {
+        getCurrentObjects() {
+        // make sure that a set filter doesn't show an empty object list
+            if (this.getCurrentObjects.length === 0 && this.filter) {
+                this.filter = undefined;
+            }
+        }
     },
     methods: {
         ...util,
