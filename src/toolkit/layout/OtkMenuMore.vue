@@ -198,6 +198,7 @@ export default {
                 this.$t("Actions.restoreSettings"),
                 this.$t("Actions.restoreSettingsInfo"))) {
                 this.setCurrentProgressLocal(1);
+                this.$matomo.forgetConsentGiven();
                 this.resetSettings(true);
                 this.$notify.send(this.$t("Otk.settingsRestored"), "success", 2);
             }

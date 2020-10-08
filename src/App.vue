@@ -41,7 +41,11 @@ export default {
     name: "App",
     components: { ConfirmDialog },
     computed: {
+        hasConsent() {
+            return this.getSetting("user_eula");
+        },
         ...mapGetters("settings", [
+            "getSetting",
             "getCurrentLocale",
             "isDarkTheme"
         ])
@@ -53,6 +57,14 @@ export default {
         isDarkTheme: {
             handler() {
                 this.$vuetify.theme.dark =  this.isDarkTheme;
+            },
+            immediate: true
+        },
+        hasConsent: {
+            handler(val) {
+                if (val && this.$matomo) {
+                    this.$matomo.rememberConsentGiven();
+                }
             },
             immediate: true
         }
