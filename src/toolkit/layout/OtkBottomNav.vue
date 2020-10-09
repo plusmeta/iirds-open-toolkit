@@ -35,17 +35,17 @@
     <v-spacer />
 
     <div v-if="isInActiveWorkflow && isRuleViolation">
-      <span class="subtitle-2">{{ $t("Common.ruleViolation") }}</span>
+      <span class="text-subtitle-2">{{ $t("Common.ruleViolation") }}</span>
     </div>
 
     <div v-if="isInActiveWorkflow && isExplainerView && !isRuleViolation">
-      <span class="subtitle-2">{{ $t("Common.ruleExplainer") }}</span>
-      <span v-if="getCurrentExplanation" class="subtitle-2">:&nbsp;
+      <span class="text-subtitle-2">{{ $t("Common.ruleExplainer") }}</span>
+      <span v-if="getCurrentExplanation" class="text-subtitle-2">:&nbsp;
         <span class="font-weight-bold">{{ getCurrentExplanation }}</span>
       </span>
     </div>
 
-    <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
+    <span v-if="!isExplainerView && !isRuleViolation" class="text-caption grey--text">
       © 2020 <a href="https:/plusmeta.de" target="_blank">plusmeta GmbH</a>
       &bull;
       {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>

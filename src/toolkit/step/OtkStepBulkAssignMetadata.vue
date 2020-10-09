@@ -22,7 +22,7 @@
         sort-by="name"
         item-key="uuid"
       >
-        <template v-slot:header>
+        <template #header>
           <v-toolbar :class="{'elevation-0': !$vuetify.theme.dark}">
             <v-flex
               v-shortkey.once="['t']"
@@ -40,7 +40,7 @@
                 clearable
                 @change="setLocalSetting({key: 'ui_assign_filter', value: $event})"
               >
-                <template v-slot:item="{ item }">
+                <template #item="{ item }">
                   <span>{{ item.text }} </span>
                   <v-spacer />
                   <v-chip small color="accent">
@@ -81,7 +81,7 @@
                 :min-width="350"
                 :close-on-content-click="false"
               >
-                <template v-slot:activator="{ on }">
+                <template #activator="{ on }">
                   <v-btn
                     icon
                     class="mr-1"
@@ -115,7 +115,7 @@
           </v-toolbar>
         </template>
 
-        <template v-slot:default="{ items, isExpanded, expand }">
+        <template #default="{ items, isExpanded, expand }">
           <v-card
             v-for="(item, index) in items"
             :key="item.uuid"
@@ -135,10 +135,10 @@
                   </v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
-                  <v-list-item-title class="subtitle-2">
+                  <v-list-item-title class="text-subtitle-2">
                     {{ item.name }}
                   </v-list-item-title>
-                  <v-list-item-subtitle class="overline">
+                  <v-list-item-subtitle class="text-overline">
                     {{ getPropertyLabelById(item.type) }}
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -159,7 +159,7 @@
       </v-data-iterator>
       <v-container
         v-if="getSetting('ui_shortcuts')"
-        class="caption grey--text text-sm-right px-0 pt-6"
+        class="text-caption grey--text text-sm-right px-0 pt-6"
       >
         <v-icon class="mr-4" color="grey darken-1">
           mdi-keyboard

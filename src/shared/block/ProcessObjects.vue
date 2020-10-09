@@ -15,7 +15,7 @@
 
       <v-scale-transition v-if="showLog">
         <v-tooltip top>
-          <template v-slot:activator="{ on }">
+          <template #activator="{ on }">
             <v-btn
               v-show="msg.length && (finished || error)"
               fab
@@ -36,7 +36,7 @@
 
       <v-scale-transition v-if="showRerun">
         <v-tooltip top>
-          <template v-slot:activator="{ on }">
+          <template #activator="{ on }">
             <v-btn
               v-show="finished"
               fab
@@ -57,7 +57,7 @@
 
       <v-scale-transition v-if="showDownload">
         <v-tooltip top>
-          <template v-slot:activator="{ on }">
+          <template #activator="{ on }">
             <v-btn
               v-show="!!countCurrentObjectsByType(resultObjectType) && finished"
               fab
@@ -108,13 +108,13 @@
             class="pa-0 flex-grow-1 text-center" :outlined="!$vuetify.theme.dark"
             color="accent"
           >
-            <v-card-text class="display-3 white--text pb-0">
+            <v-card-text class="text-h2 white--text pb-0">
               {{ $numeral(getTotal).format() }}
             </v-card-text>
-            <v-card-text class="title white--text pb-0">
+            <v-card-text class="text-h6 white--text pb-0">
               {{ $t("Plus.objects") }}
             </v-card-text>
-            <v-card-text class="subtitle-1 white--text pt-0">
+            <v-card-text class="text-subtitle-1 white--text pt-0">
               {{ $t("Plus.objectsCount") }}
             </v-card-text>
           </v-card>
@@ -125,14 +125,14 @@
             class="pa-0 flex-grow-1 text-center" :outlined="!$vuetify.theme.dark"
             color="success"
           >
-            <v-card-text class="display-3 white--text pb-0">
+            <v-card-text class="text-h2 white--text pb-0">
               <!-- prevent processed number to be higher than total number -->
               {{ $numeral(Math.min(getTotal, processedObjects)).format() }}
             </v-card-text>
-            <v-card-text class="title white--text pb-0">
+            <v-card-text class="text-h6 white--text pb-0">
               {{ $t("Plus.processed") }}
             </v-card-text>
-            <v-card-text class="subtitle-1 white--text pt-0">
+            <v-card-text class="text-subtitle-1 white--text pt-0">
               {{ $t("Plus.objectsCount") }}
             </v-card-text>
           </v-card>
@@ -145,13 +145,13 @@
             class="pa-0 flex-grow-1 text-center" :outlined="!$vuetify.theme.dark"
             color="warning"
           >
-            <v-card-text class="display-3 white--text pb-0">
+            <v-card-text class="text-h2 white--text pb-0">
               {{ $numeral(elapsedTime).format("00:00") }}
             </v-card-text>
-            <v-card-text class="title white--text pb-0">
+            <v-card-text class="text-h6 white--text pb-0">
               {{ $t("Plus.elapsedTime") }}
             </v-card-text>
-            <v-card-text class="subtitle-1 white--text pt-0">
+            <v-card-text class="text-subtitle-1 white--text pt-0">
               {{ $t("Plus.forAnalysis") }}
             </v-card-text>
           </v-card>

@@ -10,7 +10,7 @@
     nudge-left
     min-width="200"
   >
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <v-btn
         icon
         :disabled="!isReady"

@@ -11,7 +11,7 @@
     transition="scale-transition"
     :close-on-content-click="false"
   >
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <v-btn
         fab
         small
@@ -36,10 +36,10 @@
               </v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title class="subtitle-2">
+              <v-list-item-title class="text-subtitle-2">
                 {{ getObjectByUuid(object).name }}
               </v-list-item-title>
-              <v-list-item-subtitle class="overline grey--text">
+              <v-list-item-subtitle class="text-overline grey--text">
                 {{ getAvailableMetadata.length }} {{ $t("Objects.metadata") }}
               </v-list-item-subtitle>
             </v-list-item-content>
@@ -54,7 +54,7 @@
             prepend-icon="mdi-tag"
             :multiple="false"
           >
-            <template v-slot:item="{ item }">
+            <template #item="{ item }">
               <v-list-item-icon>
                 <v-icon :disabled="item.disabled">
                   {{ (item.icon) ? item.icon : "mdi-tag-outline" }}

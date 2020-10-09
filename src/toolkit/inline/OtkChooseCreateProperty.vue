@@ -19,7 +19,7 @@
         return-object
         @input="selectProperty"
       >
-        <template v-slot:item="{attrs, on, item}">
+        <template #item="{attrs, on, item}">
           <v-list-item-action>
             <v-checkbox
               v-model="attrs.inputValue"
@@ -41,14 +41,14 @@
             </v-btn>
           </v-list-item-action>
         </template>
-        <template v-slot:no-data>
+        <template #no-data>
           <v-list-item class="py-0">
             <v-list-item-content>
               {{ $t("Actions.createEntry") }}
             </v-list-item-content>
           </v-list-item>
         </template>
-        <template v-slot:selection="data">
+        <template #selection="data">
           <PropertyPanel :data="data" :icon="icon" />
         </template>
       </v-combobox>

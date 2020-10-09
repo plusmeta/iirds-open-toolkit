@@ -83,16 +83,10 @@
         "licenseUrl": "https://github.com/cainsyake/vue-doc-preview/raw/master/LICENSE",
         "parents": "iirds-open-toolkit"
     },
-    "vue-i18n": {
-        "licenses": "MIT",
-        "repository": "https://github.com/kazupon/vue-i18n",
-        "licenseUrl": "https://github.com/kazupon/vue-i18n/raw/master/LICENSE",
-        "parents": "iirds-open-toolkit"
-    },
     "vue-json-pretty": {
         "licenses": "MIT",
         "repository": "https://github.com/leezng/vue-json-pretty",
-        "licenseUrl": "https://github.com/leezng/vue-json-pretty",
+        "licenseUrl": "https://github.com/leezng/vue-json-pretty/raw/master/LICENSE",
         "parents": "iirds-open-toolkit"
     },
     "vue-router": {

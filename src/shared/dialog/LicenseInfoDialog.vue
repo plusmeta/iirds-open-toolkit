@@ -10,7 +10,7 @@
     @click:outside="$emit('close')"
   >
     <v-card>
-      <v-card-title class="title">
+      <v-card-title class="text-h6">
         {{ $t('App.licenses') }}
       </v-card-title>
       <v-card-text class="pa-2">
@@ -22,7 +22,7 @@
           sort-by="label"
           item-key="id"
         >
-          <template v-slot:item.name="{ item }">
+          <template #item[name]="{ item }">
             <a
               class="grey--text"
               :href="item.repo"
@@ -38,7 +38,7 @@
               </v-icon>
             </a>
           </template>
-          <template v-slot:item.license="{ item }">
+          <template #item[license]="{ item }">
             <a
               class="grey--text"
               :href="item.file"

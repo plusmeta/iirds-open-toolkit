@@ -23,7 +23,7 @@
       min-width="350"
       :close-on-content-click="false"
     >
-      <template v-slot:activator="{ on }">
+      <template #activator="{ on }">
         <v-btn
           icon
           :disabled="!isReady"
@@ -48,7 +48,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title class="overline">
+            <v-list-item-title class="text-overline">
               Open Toolkit {{ version }}
             </v-list-item-title>
           </v-list-item-content>

@@ -9,7 +9,7 @@
     transition="scale-transition"
     :close-on-content-click="false"
   >
-    <template v-slot:activator="{ on }">
+    <template #activator="{ on }">
       <v-chip
         small
         :close="close"
@@ -39,7 +39,7 @@
             </v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title class="subtitle-2">
+            <v-list-item-title class="text-subtitle-2">
               {{ (isProp) ? getPropertyLabelById(property.identifier) : property.identifier }}
             </v-list-item-title>
             <v-list-item-subtitle

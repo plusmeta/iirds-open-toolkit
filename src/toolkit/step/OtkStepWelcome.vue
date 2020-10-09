@@ -24,7 +24,7 @@
             shaped
             dark
             color="info"
-            class="display-2 mt-6 pa-6"
+            class="text-h3 mt-6 pa-6"
           >
             {{ $t("Otk.welcomeTitle") }}
           </v-card>
@@ -39,7 +39,7 @@
             shaped
             dark
             color="info darken-3"
-            class="headline mt-6 px-6 py-3"
+            class="text-h5 mt-6 px-6 py-3"
           >
             {{ $t("Otk.welcomeSubtitle") }}
           </v-card>
@@ -56,7 +56,7 @@
             color="error"
             class="my-8 py-4 pl-4 pr-8"
           >
-            <v-card-title class="headline">
+            <v-card-title class="text-h5">
               <v-icon left large>
                 mdi-alert-outline
               </v-icon>
@@ -71,7 +71,7 @@
             class="my-6 py-2 pl-4 pr-8"
           >
             <v-card-title>{{ $t("Otk.dataProtectionTitle") }}</v-card-title>
-            <v-card-subtitle class="caption" v-html="$t('Otk.dataProtectionText')" />
+            <v-card-subtitle class="text-caption" v-html="$t('Otk.dataProtectionText')" />
             <v-card-actions>
               <v-switch
                 :label="$t('Otk.acceptUsageAgreement')"

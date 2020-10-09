@@ -19,21 +19,19 @@
       @rerun="generatePackage"
       @download="downloadPackage"
     >
-      <template>
-        <v-flex xs3>
-          <v-card class="pa-0 flex-grow-1 text-center" color="primary">
-            <v-card-text class="display-3 white--text pb-0">
-              {{ percent }} %
-            </v-card-text>
-            <v-card-text class="title white--text pb-0">
-              {{ $t('Packages.progress') }}
-            </v-card-text>
-            <v-card-text class="subtitle-1 white--text pt-0">
-              {{ $t('Packages.packaging') }}
-            </v-card-text>
-          </v-card>
-        </v-flex>
-      </template>
+      <v-flex xs3>
+        <v-card class="pa-0 flex-grow-1 text-center" color="primary">
+          <v-card-text class="text-h2 white--text pb-0">
+            {{ percent }} %
+          </v-card-text>
+          <v-card-text class="text-h6 white--text pb-0">
+            {{ $t('Packages.progress') }}
+          </v-card-text>
+          <v-card-text class="text-subtitle-1 white--text pt-0">
+            {{ $t('Packages.packaging') }}
+          </v-card-text>
+        </v-card>
+      </v-flex>
     </ProcessObjects>
   </v-container>
 </template>

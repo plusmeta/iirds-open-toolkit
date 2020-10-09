@@ -21,7 +21,7 @@
         :rules="[checkRequired]"
         @change="selectTitle"
       >
-        <template v-slot:no-data>
+        <template #no-data>
           <v-list-item class="py-0" dense>
             <v-list-item-content>
               {{ $t("Actions.createEntry") }}

@@ -39,7 +39,7 @@
             <v-icon :size="96" color="grey">
               mdi-cloud-upload-outline
             </v-icon>
-            <div class="title my-6">
+            <div class="text-h6 my-6">
               {{ $t('Objects.dropFilesToAdd') }}
             </div>
           </v-row>
@@ -58,7 +58,7 @@
           :loading="loading"
           show-select
         >
-          <template v-slot:top>
+          <template #top>
             <v-toolbar
               :class="{'elevation-0': !$vuetify.theme.dark, 'pt-2': true}"
               min-height="80"
@@ -81,7 +81,7 @@
                   clearable
                   @change="(v) => filter = v"
                 >
-                  <template v-slot:item="{ item }">
+                  <template #item="{ item }">
                     <span>{{ item.text }} </span>
                     <v-spacer />
                     <v-chip small color="accent">
@@ -114,7 +114,7 @@
               <v-spacer />
 
               <v-tooltip top>
-                <template v-slot:activator="{ on }">
+                <template #activator="{ on }">
                   <v-btn
                     v-if="isMaxMemory"
                     icon
@@ -139,7 +139,7 @@
                   :min-width="350"
                   :close-on-content-click="false"
                 >
-                  <template v-slot:activator="{ on }">
+                  <template #activator="{ on }">
                     <v-btn
                       icon
                       class="mr-4"
@@ -170,7 +170,7 @@
                           multiple
                           @change="setLocalSetting({key: 'ui_addobjects_columns', value: uniqueValues($event)})"
                         >
-                          <template v-slot:selection="{ item, parent, index }">
+                          <template #selection="{ index }">
                             <span v-if="!index">
                               {{ $tc('Common.columns', getSetting('ui_addobjects_columns').length) }}
                             </span>
@@ -182,31 +182,29 @@
                 </v-menu>
               </div>
 
-              <template>
-                <v-tooltip top>
-                  <template v-slot:activator="{ on }">
-                    <v-fab-transition>
-                      <v-btn
-                        v-show="selected.length"
-                        color="error"
-                        class="elevation-0 mr-4"
-                        fab
-                        small
-                        v-on="on"
-                        @click="deleteSelectedObjects"
-                      >
-                        <v-icon>
-                          mdi-delete
-                        </v-icon>
-                      </v-btn>
-                    </v-fab-transition>
-                  </template>
-                  <span>{{ $t("Actions.deleteSelectedObjects") }}</span>
-                </v-tooltip>
-              </template>
+              <v-tooltip top>
+                <template #activator="{ on }">
+                  <v-fab-transition>
+                    <v-btn
+                      v-show="selected.length"
+                      color="error"
+                      class="elevation-0 mr-4"
+                      fab
+                      small
+                      v-on="on"
+                      @click="deleteSelectedObjects"
+                    >
+                      <v-icon>
+                        mdi-delete
+                      </v-icon>
+                    </v-btn>
+                  </v-fab-transition>
+                </template>
+                <span>{{ $t("Actions.deleteSelectedObjects") }}</span>
+              </v-tooltip>
 
               <v-tooltip top>
-                <template v-slot:activator="{ on }">
+                <template #activator="{ on }">
                   <v-btn
                     color="success"
                     class="elevation-0"
@@ -225,7 +223,7 @@
             </v-toolbar>
           </template>
 
-          <template v-slot:item.name="{ item }">
+          <template #item[name]="{ item }">
             <v-progress-circular
               v-if="processing.includes(item.uuid)"
               indeterminate
@@ -243,17 +241,17 @@
             <span :class="{'grey--text': processing.includes(item.uuid)}">{{ item.name }}</span>
           </template>
 
-          <template v-slot:item.size="{ item }">
+          <template #item[size]="{ item }">
             <span :class="{'grey--text': processing.includes(item.uuid)}">
               {{ $numeral(item.size).format("0.00 b") }}
             </span>
           </template>
 
-          <template v-slot:item.actions="{ item }">
+          <template #item[actions]="{ item }">
             <DeleteObject :uuid="item.uuid" />
           </template>
 
-          <template v-slot:no-data>
+          <template #no-data>
             <v-container
               fluid
               class="pa-5"
@@ -276,7 +274,7 @@
             </v-container>
           </template>
 
-          <template v-slot:no-results>
+          <template #no-results>
             <p class="pa-5">
               {{ $t('Objects.none') }} [{{ $t('Common.searchFor') }}: {{ search }}]
             </p>
@@ -287,7 +285,7 @@
 
     <v-container
       v-if="getSetting('ui_shortcuts')"
-      class="caption text-sm-right px-0 pt-6"
+      class="text-caption text-sm-right px-0 pt-6"
     >
       <v-icon class="mr-4" color="grey darken-1">
         mdi-keyboard

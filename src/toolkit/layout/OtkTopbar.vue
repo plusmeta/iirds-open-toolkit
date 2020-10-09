@@ -21,7 +21,7 @@
         class="ml-6 mr-4 mt-2"
       >
     </v-toolbar-title>
-    <v-toolbar-title class="overline" style="font-size:20px !important">
+    <v-toolbar-title class="text-overline" style="font-size:20px !important">
       Open Toolkit
     </v-toolbar-title>
 

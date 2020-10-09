@@ -17,7 +17,7 @@
       :timeout="notification.timeout"
     >
       {{ notification.text }}
-      <template v-slot:action>
+      <template #action>
         <v-btn icon @click="notification.visible = false">
           <v-icon>mdi-close</v-icon>
         </v-btn>

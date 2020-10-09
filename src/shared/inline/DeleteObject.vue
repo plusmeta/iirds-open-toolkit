@@ -5,7 +5,7 @@
 
 <template>
   <v-tooltip top>
-    <template v-if="$security.check('object:delete')" v-slot:activator="{ on }">
+    <template v-if="$security.check('object:delete')" #activator="{ on }">
       <v-btn
         icon
         class="mr-2"

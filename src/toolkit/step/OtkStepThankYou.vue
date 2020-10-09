@@ -14,7 +14,7 @@
       class="pa-6 mb-6 ty-card"
       style="text-align: center"
     >
-      <div class="my-12 headline" style="font-size: 96px !important">
+      <div class="my-12 text-h5" style="font-size: 96px !important">
         {{ $t('Otk.thankYou') }}
       </div>
       <v-icon
