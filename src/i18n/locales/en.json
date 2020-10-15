@@ -13,7 +13,7 @@
     "showShortcuts": "Show shortcuts",
     "useDarkMode": "Dark mode",
     "deleteSelectedObjects": "Delete selected objects",
-    "downloadMetadata": "Download metadata",
+    "downloadMetadata": "Save metadata",
     "uploadMetadata": "Import metadata values",
     "giveFeedback": "Give feedback",
     "restoreSettingsInfo": "Do you really want to restore the settings? All settings will be reset to default values and the workflow has to be started over."
@@ -88,11 +88,11 @@
     "processed": "Processed"
   },
   "Otk": {
-    "downloadPackage": "Download",
+    "downloadPackage": "Save",
     "retry": "Do you like to generate a new package?",
     "startNewPackage": "New package",
     "thankYou": "Thank you!",
-    "thankYouExplainer": "Your iiRDS-Package is now ready for downloading.",
+    "thankYouExplainer": "Your iiRDS-Package is now ready for saving.",
     "settingsRestored": "Restored default settings",
     "metadataDownloaded": "Downloaded metadata",
     "changeIRI": "Change IRI",

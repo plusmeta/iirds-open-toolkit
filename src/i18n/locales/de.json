@@ -9,7 +9,7 @@
     "deleteObjectsInfo": "Wollen Sie die ausgewählten Objekte wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden.",
     "deleteRefObjectInfo": "...",
     "deleteSelectedObjects": "Ausgewählte Objekte löschen",
-    "downloadMetadata": "Metadaten herunterladen",
+    "downloadMetadata": "Metadaten speichern",
     "openSettings": "Einstellungen öffnen",
     "restoreSettings": "Einstellungen zurücksetzen",
     "showShortcuts": "Zeige Tastenkürzel",
@@ -88,11 +88,11 @@
     "processed": "Verarbeitet"
   },
   "Otk": {
-    "downloadPackage": "Download",
+    "downloadPackage": "Speichern",
     "retry": "Möchten Sie ein weiteres iiRDS-Paket erstellen?",
     "startNewPackage": "Neues Paket",
     "thankYou": "Vielen Dank!",
-    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Download bereit.",
+    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Speichern bereit.",
     "settingsRestored": "Auf Standardeinstellungen zurückgesetzt",
     "metadataDownloaded": "Metadaten heruntergeladen",
     "changeIRI": "IRI ändern",
