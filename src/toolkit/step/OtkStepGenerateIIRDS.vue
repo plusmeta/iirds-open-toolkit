@@ -303,9 +303,9 @@ export default {
                 */
                 if (object.source && object.source.data instanceof Blob && !!object.source.type) {
                     let filename = object.externalId || object.source.name || object.source.data.name;
-                    let sanitized = filename.replace(/[öüäßÖÜÄ#"'#\?\s]+/g, "-");
+                    let encoded = encodeURIComponent(filename);
                     IU.ele("iirds:has-rendition")
-                        .ele("iirds:Rendition", {"rdf:about": `${URI}/rendition/${sanitized}`})
+                        .ele("iirds:Rendition", {"rdf:about": `${URI}/rendition/${encoded}`})
                         .ele("iirds:format", object.source.type).up()
                         .ele("iirds:source", `CONTENT/${filename}`);
                 }
