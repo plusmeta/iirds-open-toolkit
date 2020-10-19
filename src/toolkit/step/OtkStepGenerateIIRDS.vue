@@ -19,21 +19,19 @@
       @rerun="generatePackage"
       @download="downloadPackage"
     >
-      <template>
-        <v-flex xs3>
-          <v-card class="pa-0 flex-grow-1 text-center" color="primary">
-            <v-card-text class="display-3 white--text pb-0">
-              {{ percent }} %
-            </v-card-text>
-            <v-card-text class="title white--text pb-0">
-              {{ $t('Packages.progress') }}
-            </v-card-text>
-            <v-card-text class="subtitle-1 white--text pt-0">
-              {{ $t('Packages.packaging') }}
-            </v-card-text>
-          </v-card>
-        </v-flex>
-      </template>
+      <v-flex xs3>
+        <v-card class="pa-0 flex-grow-1 text-center" color="primary">
+          <v-card-text class="display-3 white--text pb-0">
+            {{ percent }} %
+          </v-card-text>
+          <v-card-text class="title white--text pb-0">
+            {{ $t('Packages.progress') }}
+          </v-card-text>
+          <v-card-text class="subtitle-1 white--text pt-0">
+            {{ $t('Packages.packaging') }}
+          </v-card-text>
+        </v-card>
+      </v-flex>
     </ProcessObjects>
   </v-container>
 </template>
@@ -197,7 +195,9 @@ export default {
             */
             let namespaceConfig = namespaces.reduce((config, ns) => {
                 ns.indicators?.forEach((prefix) => {
-                    config[`@xmlns:${prefix}`] = ns.identifier;
+                    if (!["mdi", "pdf", "html"].includes(prefix)) {
+                        config[`@xmlns:${prefix}`] = ns.identifier;
+                    }
                 });
                 return config;
             }, {});
@@ -210,7 +210,8 @@ export default {
                 General and Package information
             */
             let now = new Date();
-            root.com(`*** iiRDS Open Toolkit (v${process.env.VUE_APP_VERSION}) ***`);
+            let version = process.env.VUE_APP_VERSION;
+            root.com(`*** iiRDS Open Toolkit (v${version}) ***`);
             root.com(`*** generated on ${now.toLocaleString()} ***`);
 
             let pid = `${rdf.urn(this.getCurrentProjectUuid)}/package`;
@@ -302,8 +303,9 @@ export default {
                 */
                 if (object.source && object.source.data instanceof Blob && !!object.source.type) {
                     let filename = object.externalId || object.source.name || object.source.data.name;
+                    let encoded = encodeURIComponent(filename);
                     IU.ele("iirds:has-rendition")
-                        .ele("iirds:Rendition", {"rdf:about": `${URI}/rendition/${filename}`})
+                        .ele("iirds:Rendition", {"rdf:about": `${URI}/rendition/${encoded}`})
                         .ele("iirds:format", object.source.type).up()
                         .ele("iirds:source", `CONTENT/${filename}`);
                 }
