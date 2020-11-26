@@ -725,7 +725,7 @@
         ]
     },
     {
-        "identifier": "http://www.w3.org/2000/01/rdf-schema",
+        "identifier": "http://www.w3.org/2000/01/rdf-schema#",
         "datatype": "plus:Instance",
         "subClassOf": "plus:Namespace",
         "rels": {},
