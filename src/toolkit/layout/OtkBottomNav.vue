@@ -46,13 +46,13 @@
     </div>
 
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
-      © 2020 <a href="https:/plusmeta.de" target="_blank">plusmeta GmbH</a>
+      © 2020 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
       &bull;
       {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
       &bull;
       {{ $t("Otk.rightsInfo") }}
       &bull;
-      <a href="https:/iirds.org" target="_blank">iirds.org </a>
+      <a href="https://iirds.org" target="_blank">iirds.org </a>
     </span>
 
     <v-spacer />
