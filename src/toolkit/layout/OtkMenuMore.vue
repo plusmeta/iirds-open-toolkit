@@ -173,7 +173,7 @@ export default {
     data() {
         return {
             showLicenseDialog: false,
-            feebdackAddress: "info@iirds.org",
+            feebdackAddress: "info@tekom.de",
             feedbackSubject: "[iiRDS-OT] Feedback",
             version: `v${process.env.VUE_APP_VERSION}`
         };
