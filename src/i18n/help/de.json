@@ -15,7 +15,7 @@
         "title": "Metadaten vergeben"
     },
     "workflow.generateIirds": {
-        "text": "Das iiRDS-Paket wird automatisch generiert. Nach Abschluss können Sie es über die Download-Schaltfläche speichern. Sind Sie nochmal zu einem vorherigen Schritt zurückgekehrt und haben dort etwas geändert, sollten Sie die Generierung des iiRDS-Pakets erneut ausführen, indem Sie auf die grüne <b>Erneut ausführen</b>-Schaltfläche klicken. </br></br> Schließen Sie das Projekt ab, indem Sie auf den blauen Haken unten rechts in der Ecke klicken.",
+        "text": "Das iiRDS-Paket wird automatisch generiert. Nach Abschluss können Sie es über die Download-Schaltfläche speichern. Sie können die Generierung des iiRDS-Pakets erneut ausführen, indem Sie auf die grüne <b>Erneut ausführen</b>-Schaltfläche klicken. </br></br> Schließen Sie das Projekt ab, indem Sie auf den blauen Haken unten rechts in der Ecke klicken.",
         "title": "iiRDS-Paket generieren"
     }
 }

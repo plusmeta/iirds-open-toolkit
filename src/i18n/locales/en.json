@@ -76,6 +76,8 @@
     "type": "Object type"
   },
   "Packages": {
+    "cached": "Generated package available",
+    "checkingForUpdates": "Checking for updates...",
     "generate": "Generate iiRDS package",
     "packaging": "Packaging content",
     "progress": "Progress"

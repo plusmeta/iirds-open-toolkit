@@ -14,7 +14,7 @@
         "title": "Assign metadata"
     },
     "workflow.generateIirds": {
-        "text": "The iiRDS packet is generated automatically. When finished, you can download it by clicking the download button. If you have returned to a previous step and have changed something there, you should run the iiRDS packet generation again by clicking on the green <b>Restart process</b> button. </br></br> Complete the project by clicking on the blue check mark in the lower right corner.",
+        "text": "The iiRDS packet is generated automatically. When finished, you can download it by clicking the download button. You can run the iiRDS packet generation again by clicking on the green <b>Restart process</b> button. </br></br> Complete the project by clicking on the blue check mark in the lower right corner.",
         "title": "Generate iiRDS package"
     }
 }
