@@ -10,7 +10,7 @@
 
     <ProcessObjects
       ref="status"
-      :title="$t('Packages.generate')"
+      :title="titleMessage"
       :processed-objects="processed"
       :objecttype="getIirdsObjectTypes"
       result-object-type="iirds:Container"
@@ -40,6 +40,7 @@
 import { mapGetters, mapActions } from "vuex";
 import XMLbuilder from "xmlbuilder";
 import JSzip from "jszip";
+import ObjectHash from "object-hash";
 
 import template from "@/store/storage/template";
 import util from "@/util";
@@ -60,10 +61,14 @@ export default {
     data() {
         return {
             processed: 0,
-            percent: 0
+            percent: 0,
+            titleMessage: this.$t("Packages.checkingForUpdates"),
         };
     },
     computed: {
+        hasDownloadableFile() {
+            return this.getCurrentProjectRelationById("plus:relates-to-iirds-package").length > 0;
+        },
         getIirdsObjectTypes() {
             return Object.keys(iirdsMapping);
         },
@@ -76,6 +81,7 @@ export default {
             "getMetadataValueByURI"
         ]),
         ...mapGetters("projects", [
+            "getCurrentProject",
             "getCurrentProjectRelationById"
         ]),
         ...mapGetters("properties", [
@@ -87,16 +93,20 @@ export default {
         ])
     },
     mounted() {
-        if (!this.getCurrentProjectRelationById("plus:relates-to-iirds-package").length) {
-            try {
-                this.generateiiRDS();
-            } catch (error) {
-                this.$refs?.status?.abort();
-            }
-        } else {
+        let currentFingerprint = this.getProjectFingerprint();
+        let storedFingerprint = this.getCurrentProjectRelationById("plus:has-project-fingerprint")[0];
+
+        if (currentFingerprint === storedFingerprint && this.hasDownloadableFile) {
+            this.titleMessage =  this.$t("Packages.cached");
             this.processed = this.getContentObjects.length;
             this.percent = 100;
             this.$refs?.status?.finish();
+        } else {
+            try {
+                this.$refs?.status?.rerun();
+            } catch (error) {
+                this.$refs?.status?.abort();
+            }
         }
     },
     methods: {
@@ -108,6 +118,25 @@ export default {
             "addObjectsToProject",
             "updateCurrentProjectRelations"
         ]),
+        getProjectFingerprint() {
+            let projectData = util.deepCopy(this.getCurrentProject);
+            let objectsData = this.getContentObjects;
+
+            let combinedData = { projectData, objectsData };
+            delete combinedData.projectData.modifiedAt;
+
+            let normalizedData = JSON.parse(JSON.stringify(combinedData));
+            return ObjectHash(normalizedData, {
+                respectType: false,
+                excludeKeys: (key) => {
+                    return [
+                        "plus:has-metadata-order",
+                        "plus:has-project-fingerprint",
+                        "objectUuids"
+                    ].includes(key);
+                }
+            });
+        },
         generatePackage() {
             this.processed = 0;
             this.percent = 0;
@@ -139,6 +168,8 @@ export default {
             }
         },
         async generateiiRDS() {
+            this.titleMessage =  this.$t("Packages.generate");
+
             this.progress = 0;
             let zip = new JSzip();
 
@@ -178,6 +209,9 @@ export default {
 
             let packageID = await this.addToStorage(blob);
             await this.updateCurrentProjectRelations({"plus:relates-to-iirds-package": [packageID]});
+
+            let currentFingerprint = await this.getProjectFingerprint();
+            await this.updateCurrentProjectRelations({"plus:has-project-fingerprint": [currentFingerprint]});
 
             this.$refs?.status?.finish();
         },

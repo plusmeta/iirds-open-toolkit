@@ -76,6 +76,8 @@
     "type": "Objekttyp"
   },
   "Packages": {
+    "cached": "Generiertes Paket vorhanden",
+    "checkingForUpdates": "Auf Änderungen überprüfen...",
     "generate": "Paket generieren",
     "packaging": "Inhalte packen",
     "progress": "Fortschritt"
