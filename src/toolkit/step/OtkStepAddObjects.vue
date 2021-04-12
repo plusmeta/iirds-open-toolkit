@@ -466,6 +466,9 @@ export default {
             if (this.getCurrentObjects.length === 0 && this.filter) {
                 this.filter = undefined;
             }
+            // https://github.com/plusmeta/iirds-open-toolkit/issues/22
+            let currentUuids = this.getCurrentObjects.map(o => o.uuid);
+            this.selected = this.selected.filter(uuid => currentUuids.includes(uuid));
         }
     },
     methods: {
