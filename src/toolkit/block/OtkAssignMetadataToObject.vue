@@ -92,6 +92,21 @@
               :icon="custom.icon"
             />
           </div>
+          <div
+            v-if="custom.type === 'plus:Array'"
+            :key="custom.value"
+            class="mt-2"
+          >
+            <ChooseManageList
+              :key="custom.value"
+              :object-uuid="object.uuid"
+              :proplist="custom.value"
+              :required="custom.required"
+              :indicator="false"
+              :label="true"
+              :icon="custom.icon"
+            />
+          </div>
         </template>
       </v-flex>
     </v-layout>
@@ -109,6 +124,7 @@ import PreviewPDF from "@/shared/block/PreviewPDF";
 import PreviewHTML from "@/shared/block/PreviewHTML";
 import AddMetadata from "@/shared/inline/AddMetadata";
 import ChooseCreateProperty from "@/toolkit/inline/OtkChooseCreateProperty";
+import ChooseManageList from "@/toolkit/inline/OtkChooseManageList";
 import ChooseCreateTitle from "@/toolkit/inline/OtkChooseCreateTitle";
 
 export default {
@@ -119,6 +135,7 @@ export default {
         PreviewHTML,
         ChooseCreateProperty,
         ChooseCreateTitle,
+        ChooseManageList,
         AddMetadata
     },
     props: {

@@ -2427,5 +2427,29 @@
             "en": "Instance of object URI"
         },
         "indicators": []
+    },
+    {
+        "identifier": "plus:SerialNumber",
+        "datatype": "plus:Array",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata",
+                "plus:IdentityDomain"
+            ],
+            "iirds:has-identity-type": [
+                "iirds:SerialNumber"
+            ],
+            "plus:has-icons": [
+                "mdi:counter"
+            ]
+        },
+        "attrs": {},
+        "label": {
+            "de": "Seriennummer",
+            "en": "Serial number"
+        },
+        "indicators": []
     }
 ]
