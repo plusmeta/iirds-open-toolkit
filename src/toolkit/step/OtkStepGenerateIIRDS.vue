@@ -190,6 +190,8 @@ export default {
             const namespaces = this.getPropertiesByClass("plus:Namespace");
             const globalInstances = {};
 
+            const customSNIdentifier = "plus:SerialNumber";
+
             /*
                 Define namespaces and root element
             */
@@ -218,7 +220,7 @@ export default {
             let pack = root.ele("iirds:Package", { "rdf:about": pid });
 
             pack.ele("iirds:title", {}, "iiRDS Open Toolkit Export");
-            pack.ele("iirds:iiRDSVersion", "1.0.1");
+            pack.ele("iirds:iiRDSVersion", "1.1");
 
             /*
                 Generic Labeling function
@@ -232,6 +234,11 @@ export default {
                     if (property.labels && typeof property.labels === "object") {
                         Object.keys(property.labels).forEach((lang) => {
                             return instance.ele("rdfs:label", {"xml:lang": lang}, property.labels[lang]);
+                        });
+                    }
+                    if (property.label && typeof property.label === "object") {
+                        Object.keys(property.label).forEach((lang) => {
+                            return instance.ele("rdfs:label", {"xml:lang": lang}, property.label[lang]);
                         });
                     }
                 }
@@ -263,6 +270,15 @@ export default {
                 });
             });
 
+            if (this.getContentObjects.some((object) => {
+                let sn = this.getMetadataValueByURI(object.uuid, customSNIdentifier);
+                return sn && Array.isArray(sn) && sn.length;
+            })) {
+                const domain = root.ele("iirds:IdentityDomain", {"rdf:about": rdf.expand(customSNIdentifier, this.$store)})
+                    .ele("iirds:has-identity-type", {"rdf:resource": rdf.expand("iirds:SerialNumber", this.$store)}).up();
+                addLabels(customSNIdentifier, domain);
+            }
+
             /*
                 Metadata Relations
             */
@@ -285,6 +301,17 @@ export default {
                         if (rdf.isValidLanguageTag(language)) {
                             IU.ele("iirds:language", language);
                         }
+                    });
+                }
+
+                // get assigned serial numbers
+                let serialnumbers = this.getMetadataValueByURI(object.uuid, customSNIdentifier);
+                if (serialnumbers !== null && Array.isArray(serialnumbers)) {
+                    serialnumbers.forEach((sn) => {
+                        IU.ele("iirds:has-identity")
+                            .ele("iirds:Identity")
+                            .ele("iirds:identifier", {}, sn).up()
+                            .ele("iirds:has-identity-domain", {"rdf:resource": rdf.expand(customSNIdentifier, this.$store)});
                     });
                 }
 

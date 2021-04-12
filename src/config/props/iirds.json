@@ -2263,5 +2263,193 @@
         "indicators": [
             "iirdsSft"
         ]
+    },
+    {
+        "identifier": "iirds:GenericAction",
+        "datatype": "plus:Instance",
+        "subClassOf": "iirds:Action",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Handlung (generisch)",
+            "en": "Action (generic)"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:Action",
+        "datatype": "plus:Class",
+        "subClassOf": "iirds:FunctionalMetadata",
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-relations": [
+                "iirds:relates-to-action"
+            ],
+            "plus:has-icons": [
+                "mdi:gesture-double-tap"
+            ]
+        },
+        "attrs": {},
+        "label": {
+            "de": "Handlung",
+            "en": "Action"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:relates-to-action",
+        "datatype": "plus:Relation",
+        "subClassOf": "iirds:relates-to-functional-metadata",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "bezieht sich auf Handlung",
+            "en": "relates to action"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "mdi:gesture-double-tap",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Icon",
+        "rels": {},
+        "attrs": {},
+        "label": "Action-Item",
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:IdentityType",
+        "datatype": "plus:Class",
+        "subClassOf": "iirds:AdministrativeMetadata",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Identitäts-Typ",
+            "en": "Identity type"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:has-identity-type",
+        "datatype": "plus:Relation",
+        "subClassOf": "iirds:iirdsRelationConcept",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "hat Identitäts-Typ",
+            "en": "has identity type"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:ProductType",
+        "datatype": "plus:Instance",
+        "subClassOf": "iirds:IdentityType",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Produkttyp",
+            "en": "Product type"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:GlobalTradeItemNumber",
+        "datatype": "plus:Instance",
+        "subClassOf": "iirds:IdentityType",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "GTIN",
+            "en": "GTIN"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:EuropeanArticleNumber",
+        "datatype": "plus:Instance",
+        "subClassOf": "iirds:IdentityType",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "EAN",
+            "en": "EAN"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:ArticleCode",
+        "datatype": "plus:Instance",
+        "subClassOf": "iirds:IdentityType",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Artikelcode",
+            "en": "Article code"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:SerialNumber",
+        "datatype": "plus:Instance",
+        "subClassOf": "iirds:IdentityType",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Seriennummer",
+            "en": "Serial number"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:OrderCode",
+        "datatype": "plus:Instance",
+        "subClassOf": "iirds:IdentityType",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Bestellcode",
+            "en": "Order code"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:ObjectInstanceURI",
+        "datatype": "plus:Instance",
+        "subClassOf": "iirds:IdentityType",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Instanz einer Objekt-URI",
+            "en": "Instance of object URI"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:SerialNumber",
+        "datatype": "plus:Array",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata",
+                "plus:IdentityDomain"
+            ],
+            "iirds:has-identity-type": [
+                "iirds:SerialNumber"
+            ],
+            "plus:has-icons": [
+                "mdi:counter"
+            ]
+        },
+        "attrs": {},
+        "label": {
+            "de": "Seriennummer",
+            "en": "Serial number"
+        },
+        "indicators": []
     }
 ]

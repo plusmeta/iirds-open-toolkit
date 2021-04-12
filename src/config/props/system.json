@@ -99,6 +99,15 @@
         }
     },
     {
+        "subClassOf": "plus:Datatype",
+        "identifier": "plus:Array",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Liste",
+            "en": "List"
+        }
+    },
+    {
         "subClassOf": "plus:System",
         "identifier": "plus:Objecttype",
         "datatype": "plus:Class",
