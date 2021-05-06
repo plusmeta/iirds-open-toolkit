@@ -20,7 +20,7 @@
     "pdfjs-dist": "^2.3.200",
     "regenerator-runtime": "^0.13.5",
     "rxjs": "^6.5.5",
-    "sanitize-html": "^1.23.0",
+    "sanitize-html": "^2.3.2",
     "typeface-ubuntu": "0.0.65",
     "typeface-ubuntu-mono": "0.0.72",
     "uuid": "^7.0.3",
