@@ -58,7 +58,7 @@
     "eslint-plugin-vuetify": "^1.0.0-beta.6",
     "fibers": "^4.0.2",
     "git-describe": "^4.0.4",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "npm-license-crawler": "^0.2.1",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
