@@ -10,7 +10,7 @@ const singleton = Symbol();
 /**
  * Authentifikation-Fassade
  */
-export class AuthenticationService {
+export class AuthContextHolder {
 
     constructor(authService) {
         if (authService !== singletonAuthService) {

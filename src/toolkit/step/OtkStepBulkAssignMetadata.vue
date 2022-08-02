@@ -115,7 +115,7 @@
           </v-toolbar>
         </template>
 
-        <template v-slot:default="{ items, isExpanded, expand }">
+        <template v-slot="{ items, isExpanded, expand }">
           <v-card
             v-for="(item, index) in items"
             :key="item.uuid"

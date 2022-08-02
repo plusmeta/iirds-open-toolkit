@@ -63,7 +63,12 @@ module.exports = {
             enableInSFC: true
         }
     },
-    transpileDependencies: ["vuetify", "vuex-persist", "xmlbuilder"], // for IE11 minimum
+    transpileDependencies: [
+        "vuetify",
+        "vuex-persist",
+        "pdfjs-dist",
+        "xmlbuilder"
+    ],
     productionSourceMap: false,
     css: {
         sourceMap: true
