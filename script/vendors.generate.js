@@ -1,24 +1,30 @@
-/* eslint-disable no-console */
-const crawler = require("npm-license-crawler");
-const chalk = require("chalk");
+import fs from "fs/promises";
+import crawler from "license-checker";
+import chalk from "chalk";
 
 const options = {
-    start: ["."],
-    json: "./src/config/legal/vendors.json",
-    dependencies: true,
+    start: ".",
+    json: true,
     production: true,
-    onlyDirectDependencies: true,
-    omitVersion: true,
+    relativeLicensePath: true,
+    excludePrivatePackages: true
 };
-
+// eslint-disable-next-line
 console.log(chalk.green("Getting 3rd party licenses"));
 
-crawler.dumpLicenses(options,
-    function(error, res){
+crawler.init(options,
+    async function(error, res){
         if (error) {
+            // eslint-disable-next-line
             console.error("Error:", error);
         }
         else {
+            await fs.writeFile(
+                "src/config/legal/vendors.json",
+                JSON.stringify(res, null, 2) + "\n",
+                { encoding: "utf-8" }
+            );
+            // eslint-disable-next-line
             console.table(res, ["licenses", "repository"]);
         }
     }

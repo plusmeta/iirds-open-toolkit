@@ -10,15 +10,16 @@
     "deleteRefObjectInfo": "...",
     "deleteSelectedObjects": "Ausgewählte Objekte löschen",
     "downloadMetadata": "Metadaten speichern",
+    "giveFeedback": "Feedback geben",
     "openSettings": "Einstellungen öffnen",
     "restoreSettings": "Einstellungen zurücksetzen",
+    "restoreSettingsInfo": "Wollen Sie die Einstellungen wirklich zurücksetzen? Alle Einstellungen werden auf die Werkseinstellungen zurückgesetzt und der Workflow muss vor vorne begonnen werden.",
     "showShortcuts": "Zeige Tastenkürzel",
-    "useDarkMode": "Dunkles Farbschema",
     "uploadMetadata": "Metadatenwerte importieren",
-    "giveFeedback": "Feedback geben",
-    "restoreSettingsInfo": "Wollen Sie die Einstellungen wirklich zurücksetzen? Alle Einstellungen werden auf die Werkseinstellungen zurückgesetzt und der Workflow muss vor vorne begonnen werden."
+    "useDarkMode": "Dunkles Farbschema"
   },
   "App": {
+    "backToStart": "Zurück zum Start",
     "filesTooLarge": "Speicherlimit erreicht. Es können keine Dateien mehr hinzugefügt werden.",
     "help": "Hilfe",
     "helpcenter": "Anwenderportal",
@@ -26,8 +27,7 @@
     "licenses": "Lizenzen verwendeter Software",
     "maxMemory": "Maximale Speichergrenze erreicht. Objekt wird nicht importiert.",
     "pageHelp": "Hilfeseite",
-    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden",
-    "backToStart": "Zurück zum Start"
+    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden"
   },
   "Common": {
     "actions": "Aktionen",
@@ -38,6 +38,7 @@
     "name": "Name",
     "noEmptyInput": "Eingabe darf nicht leer sein",
     "preview": "Vorschau",
+    "publisher": "Herausgeber",
     "ruleExplainer": "Zum Fortfahren müssen alle Bedingungen erfüllt sein",
     "ruleViolation": "Vorgänger-Bedingungen wurden verletzt. Bitte springen Sie zum letzten validen Schritt.",
     "search": "Suche",
@@ -49,12 +50,12 @@
   },
   "Notification": {
     "deletionFailed": "Löschen fehlgeschlagen",
+    "importFailed": "Import fehlgeschlagen",
+    "importedMetadata": "Metadaten erfolgreich importiert",
     "objectDeleted": "Objekt gelöscht",
     "openedProject": "Neues OpenToolkit-Projekt gestartet",
     "permissionDenied": "Zugang verweigert",
     "propertyCreated": "Eigenschaft erstellt",
-    "importedMetadata": "Metadaten erfolgreich importiert",
-    "importFailed": "Import fehlgeschlagen",
     "propertyDeleted": "Metadatenwert gelöscht"
   },
   "Objects": {
@@ -67,13 +68,32 @@
     "log": "Protokoll",
     "metadata": "Metadaten",
     "noAssociatedFile": "Keine zugeordnete Quelldatei",
-    "none": "Keine Objekte",
     "noObjectsExplainer": "Fügen Sie neue Objekte über die grüne Schaltfläche oder per Drag&Drop hinzu.",
+    "none": "Keine Objekte",
     "objectUsedInOtherProjects": "...",
     "rerun": "Erneut ausführen",
     "sourceName": "Name der Quelldatei",
     "sourceType": "Typ der Quelldatei",
     "type": "Objekttyp"
+  },
+  "Otk": {
+    "acceptUsageAgreement": "Nutzungsbedingungen und Datenschutz akzeptieren",
+    "browserWarning": "Browser-Warnung",
+    "browserWarningText": "Verwenden Sie für ein optimales Benutzererlebnis einen <b>modernen Browser</b><br> (z.B. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox).",
+    "changeIRI": "IRI ändern",
+    "dataProtectionText": "Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffsanalyse ein. Dateien, die im iiRDS Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.\nBitte akzeptieren Sie unsere <a href=\"/docs/Nutzungsbedingungen_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://iirds.org/privacy-policy/\" target=\"_blank\">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.",
+    "dataProtectionTitle": "Nutzungsbedingungen & Datenschutz",
+    "downloadPackage": "Speichern",
+    "licenseInfo": "iiRDS lizenziert unter",
+    "metadataDownloaded": "Metadaten heruntergeladen",
+    "retry": "Möchten Sie ein weiteres iiRDS-Paket erstellen?",
+    "rightsInfo": "Alle Rechte tekom",
+    "settingsRestored": "Auf Standardeinstellungen zurückgesetzt",
+    "startNewPackage": "Neues Paket",
+    "thankYou": "Vielen Dank!",
+    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Speichern bereit.",
+    "welcomeSubtitle": "Mit dem kostenlosen iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.",
+    "welcomeTitle": "Willkommen beim iiRDS Open Toolkit!"
   },
   "Packages": {
     "cached": "Generiertes Paket vorhanden",
@@ -88,24 +108,5 @@
     "objects": "Gesamt",
     "objectsCount": "Anzahl Objekte",
     "processed": "Verarbeitet"
-  },
-  "Otk": {
-    "downloadPackage": "Speichern",
-    "retry": "Möchten Sie ein weiteres iiRDS-Paket erstellen?",
-    "startNewPackage": "Neues Paket",
-    "thankYou": "Vielen Dank!",
-    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Speichern bereit.",
-    "settingsRestored": "Auf Standardeinstellungen zurückgesetzt",
-    "metadataDownloaded": "Metadaten heruntergeladen",
-    "changeIRI": "IRI ändern",
-    "welcomeTitle": "Willkommen beim iiRDS Open Toolkit!",
-    "welcomeSubtitle": "Mit dem kostenlosen iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.",
-    "dataProtectionTitle": "Nutzungsbedingungen & Datenschutz",
-    "dataProtectionText": "Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffsanalyse ein. Dateien, die im iiRDS Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.\nBitte akzeptieren Sie unsere <a href=\"/docs/Nutzungsbedingungen_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://iirds.org/privacy-policy/\" target=\"_blank\">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.",
-    "acceptUsageAgreement": "Nutzungsbedingungen und Datenschutz akzeptieren",
-    "licenseInfo": "iiRDS lizenziert unter",
-    "rightsInfo": "Alle Rechte tekom",
-    "browserWarning": "Browser-Warnung",
-    "browserWarningText": "Verwenden Sie für ein optimales Benutzererlebnis einen <b>modernen Browser</b><br> (z.B. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox)."
   }
 }

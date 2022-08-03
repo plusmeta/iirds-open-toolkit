@@ -77,11 +77,14 @@ export default {
         getLicenseData() {
             return Object.entries(licenseData).map((entry) => {
                 let [key, value] = entry;
+                let versionSep = key.lastIndexOf("@");
+                let cleanName = key.substring(0, versionSep);
                 return {
-                    name: key,
+                    name: cleanName,
                     license: value.licenses,
                     repo: value.repository,
-                    file: value.licenseUrl
+                    author: value.publisher,
+                    mail: value.email
                 };
             });
         },
@@ -94,13 +97,19 @@ export default {
                     value: "name"
                 },
                 {
+                    text: this.$t("Common.publisher"),
+                    align: "left",
+                    sortable: true,
+                    value: "author"
+                },
+                {
                     text: this.$t("App.license"),
                     align: "left",
                     sortable: true,
                     value: "license"
                 }
             ];
-        },
+        }
     }
 };
 </script>
