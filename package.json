@@ -1,12 +1,12 @@
 {
   "name": "iirds-open-toolkit",
-  "version": "0.1.1",
+  "version": "1.1.7",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --mode development",
     "build": "vue-cli-service build --mode production",
     "lint:report": "eslint \"src/**/*.{js,vue}\" --no-fix --format json --output-file lint.json",
-    "prebuild": "node ./script/git.version.js && node ./script/vendors.generate.mjs",
+    "prebuild": "node ./script/git.version.mjs && node ./script/vendors.generate.mjs",
     "licenses": "node ./script/vendors.check.mjs"
   },
   "dependencies": {

@@ -216,33 +216,19 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\ajv-errors",
     "licenseFile": "node_modules\\ajv-errors\\LICENSE"
   },
-  "ajv-keywords@3.4.1": {
+  "ajv-keywords@3.5.2": {
     "licenses": "MIT",
     "repository": "https://github.com/epoberezkin/ajv-keywords",
     "publisher": "Evgeny Poberezkin",
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\ajv-keywords",
     "licenseFile": "node_modules\\ajv-keywords\\LICENSE"
   },
-  "ajv-keywords@3.5.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/epoberezkin/ajv-keywords",
-    "publisher": "Evgeny Poberezkin",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\worker-loader\\node_modules\\ajv-keywords",
-    "licenseFile": "node_modules\\worker-loader\\node_modules\\ajv-keywords\\LICENSE"
-  },
-  "ajv@6.12.2": {
-    "licenses": "MIT",
-    "repository": "https://github.com/epoberezkin/ajv",
-    "publisher": "Evgeny Poberezkin",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\ajv",
-    "licenseFile": "node_modules\\ajv\\LICENSE"
-  },
   "ajv@6.12.6": {
     "licenses": "MIT",
     "repository": "https://github.com/ajv-validator/ajv",
     "publisher": "Evgeny Poberezkin",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\worker-loader\\node_modules\\ajv",
-    "licenseFile": "node_modules\\worker-loader\\node_modules\\ajv\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\ajv",
+    "licenseFile": "node_modules\\ajv\\LICENSE"
   },
   "anymatch@2.0.0": {
     "licenses": "ISC",
@@ -345,7 +331,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\axios",
     "licenseFile": "node_modules\\axios\\LICENSE"
   },
-  "balanced-match@1.0.0": {
+  "balanced-match@1.0.2": {
     "licenses": "MIT",
     "repository": "https://github.com/juliangruber/balanced-match",
     "publisher": "Julian Gruber",
@@ -679,7 +665,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\core-js",
     "licenseFile": "node_modules\\core-js\\LICENSE"
   },
-  "core-util-is@1.0.2": {
+  "core-util-is@1.0.3": {
     "licenses": "MIT",
     "repository": "https://github.com/isaacs/core-util-is",
     "publisher": "Isaac Z. Schlueter",
@@ -753,8 +739,8 @@
     "repository": "https://github.com/visionmedia/debug",
     "publisher": "TJ Holowaychuk",
     "email": "tj@vision-media.ca",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\axios\\node_modules\\debug",
-    "licenseFile": "node_modules\\axios\\node_modules\\debug\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\debug",
+    "licenseFile": "node_modules\\debug\\LICENSE"
   },
   "decode-uri-component@0.2.0": {
     "licenses": "MIT",
@@ -768,8 +754,8 @@
   "deepmerge@4.2.2": {
     "licenses": "MIT",
     "repository": "https://github.com/TehShrike/deepmerge",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\sanitize-html\\node_modules\\deepmerge",
-    "licenseFile": "node_modules\\sanitize-html\\node_modules\\deepmerge\\license.txt"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\deepmerge",
+    "licenseFile": "node_modules\\deepmerge\\license.txt"
   },
   "define-property@0.2.5": {
     "licenses": "MIT",
@@ -815,8 +801,8 @@
     "repository": "https://github.com/cheeriojs/dom-renderer",
     "publisher": "Felix Boehm",
     "email": "me@feedic.com",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\domutils\\node_modules\\dom-serializer",
-    "licenseFile": "node_modules\\domutils\\node_modules\\dom-serializer\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\dom-serializer",
+    "licenseFile": "node_modules\\dom-serializer\\LICENSE"
   },
   "domain-browser@1.2.0": {
     "licenses": "MIT",
@@ -924,8 +910,8 @@
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "https://sindresorhus.com",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\sanitize-html\\node_modules\\escape-string-regexp",
-    "licenseFile": "node_modules\\sanitize-html\\node_modules\\escape-string-regexp\\license"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\escape-string-regexp",
+    "licenseFile": "node_modules\\escape-string-regexp\\license"
   },
   "eslint-scope@4.0.3": {
     "licenses": "BSD-2-Clause",
@@ -1000,7 +986,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\extglob",
     "licenseFile": "node_modules\\extglob\\LICENSE"
   },
-  "fast-deep-equal@3.1.1": {
+  "fast-deep-equal@3.1.3": {
     "licenses": "MIT",
     "repository": "https://github.com/epoberezkin/fast-deep-equal",
     "publisher": "Evgeny Poberezkin",
@@ -1076,8 +1062,8 @@
     "publisher": "Ruben Verborgh",
     "email": "ruben@verborgh.org",
     "url": "https://ruben.verborgh.org/",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\axios\\node_modules\\follow-redirects",
-    "licenseFile": "node_modules\\axios\\node_modules\\follow-redirects\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\follow-redirects",
+    "licenseFile": "node_modules\\follow-redirects\\LICENSE"
   },
   "for-in@1.0.2": {
     "licenses": "MIT",
@@ -1147,7 +1133,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\glob-parent",
     "licenseFile": "node_modules\\glob-parent\\LICENSE"
   },
-  "glob@7.1.6": {
+  "glob@7.2.3": {
     "licenses": "ISC",
     "repository": "https://github.com/isaacs/node-glob",
     "publisher": "Isaac Z. Schlueter",
@@ -1156,7 +1142,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\glob",
     "licenseFile": "node_modules\\glob\\LICENSE"
   },
-  "graceful-fs@4.2.4": {
+  "graceful-fs@4.2.10": {
     "licenses": "ISC",
     "repository": "https://github.com/isaacs/node-graceful-fs",
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\graceful-fs",
@@ -1351,8 +1337,8 @@
     "publisher": "Feross Aboukhadijeh",
     "email": "feross@feross.org",
     "url": "http://feross.org/",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\is-buffer",
-    "licenseFile": "node_modules\\is-buffer\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\is-number\\node_modules\\is-buffer",
+    "licenseFile": "node_modules\\is-number\\node_modules\\is-buffer\\LICENSE"
   },
   "is-buffer@2.0.5": {
     "licenses": "MIT",
@@ -1360,8 +1346,8 @@
     "publisher": "Feross Aboukhadijeh",
     "email": "feross@feross.org",
     "url": "https://feross.org",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\axios\\node_modules\\is-buffer",
-    "licenseFile": "node_modules\\axios\\node_modules\\is-buffer\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\is-buffer",
+    "licenseFile": "node_modules\\is-buffer\\LICENSE"
   },
   "is-data-descriptor@0.1.4": {
     "licenses": "MIT",
@@ -1456,16 +1442,16 @@
     "repository": "https://github.com/jonschlinkert/is-plain-object",
     "publisher": "Jon Schlinkert",
     "url": "https://github.com/jonschlinkert",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\is-plain-object",
-    "licenseFile": "node_modules\\is-plain-object\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\set-value\\node_modules\\is-plain-object",
+    "licenseFile": "node_modules\\set-value\\node_modules\\is-plain-object\\LICENSE"
   },
   "is-plain-object@5.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/jonschlinkert/is-plain-object",
     "publisher": "Jon Schlinkert",
     "url": "https://github.com/jonschlinkert",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\sanitize-html\\node_modules\\is-plain-object",
-    "licenseFile": "node_modules\\sanitize-html\\node_modules\\is-plain-object\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\is-plain-object",
+    "licenseFile": "node_modules\\is-plain-object\\LICENSE"
   },
   "is-windows@1.0.2": {
     "licenses": "MIT",
@@ -1529,18 +1515,18 @@
     "repository": "https://github.com/json5/json5",
     "publisher": "Aseem Kishore",
     "email": "aseem.kishore@gmail.com",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\json5",
-    "licenseFile": "node_modules\\json5\\LICENSE.md"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\webpack\\node_modules\\json5",
+    "licenseFile": "node_modules\\webpack\\node_modules\\json5\\LICENSE.md"
   },
   "json5@2.2.1": {
     "licenses": "MIT",
     "repository": "https://github.com/json5/json5",
     "publisher": "Aseem Kishore",
     "email": "aseem.kishore@gmail.com",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\worker-loader\\node_modules\\json5",
-    "licenseFile": "node_modules\\worker-loader\\node_modules\\json5\\LICENSE.md"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\json5",
+    "licenseFile": "node_modules\\json5\\LICENSE.md"
   },
-  "jszip@3.10.0": {
+  "jszip@3.10.1": {
     "licenses": "(MIT OR GPL-3.0-or-later)",
     "repository": "https://github.com/Stuk/jszip",
     "publisher": "Stuart Knightley",
@@ -1603,15 +1589,15 @@
     "licenses": "MIT",
     "repository": "https://github.com/webpack/loader-utils",
     "publisher": "Tobias Koppers @sokra",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\loader-utils",
-    "licenseFile": "node_modules\\loader-utils\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\webpack\\node_modules\\loader-utils",
+    "licenseFile": "node_modules\\webpack\\node_modules\\loader-utils\\LICENSE"
   },
   "loader-utils@2.0.2": {
     "licenses": "MIT",
     "repository": "https://github.com/webpack/loader-utils",
     "publisher": "Tobias Koppers @sokra",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\worker-loader\\node_modules\\loader-utils",
-    "licenseFile": "node_modules\\worker-loader\\node_modules\\loader-utils\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\loader-utils",
+    "licenseFile": "node_modules\\loader-utils\\LICENSE"
   },
   "localforage@1.10.0": {
     "licenses": "Apache-2.0",
@@ -1634,8 +1620,8 @@
     "repository": "https://github.com/lodash/lodash",
     "publisher": "John-David Dalton",
     "email": "john.david.dalton@gmail.com",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\vuex-persist\\node_modules\\lodash",
-    "licenseFile": "node_modules\\vuex-persist\\node_modules\\lodash\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\lodash",
+    "licenseFile": "node_modules\\lodash\\LICENSE"
   },
   "lru-cache@5.1.1": {
     "licenses": "ISC",
@@ -1730,7 +1716,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\minimalistic-crypto-utils",
     "licenseFile": "node_modules\\minimalistic-crypto-utils\\README.md"
   },
-  "minimatch@3.0.4": {
+  "minimatch@3.1.2": {
     "licenses": "ISC",
     "repository": "https://github.com/isaacs/minimatch",
     "publisher": "Isaac Z. Schlueter",
@@ -1739,7 +1725,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\minimatch",
     "licenseFile": "node_modules\\minimatch\\LICENSE"
   },
-  "minimist@1.2.5": {
+  "minimist@1.2.6": {
     "licenses": "MIT",
     "repository": "https://github.com/substack/minimist",
     "publisher": "James Halliday",
@@ -1763,7 +1749,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\mixin-deep",
     "licenseFile": "node_modules\\mixin-deep\\LICENSE"
   },
-  "mkdirp@0.5.5": {
+  "mkdirp@0.5.6": {
     "licenses": "MIT",
     "repository": "https://github.com/substack/node-mkdirp",
     "publisher": "James Halliday",
@@ -1784,8 +1770,8 @@
   "ms@2.0.0": {
     "licenses": "MIT",
     "repository": "https://github.com/zeit/ms",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\axios\\node_modules\\ms",
-    "licenseFile": "node_modules\\axios\\node_modules\\ms\\license.md"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\ms",
+    "licenseFile": "node_modules\\ms\\license.md"
   },
   "nanoid@3.3.4": {
     "licenses": "MIT",
@@ -1803,7 +1789,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\nanomatch",
     "licenseFile": "node_modules\\nanomatch\\LICENSE"
   },
-  "neo-async@2.6.1": {
+  "neo-async@2.6.2": {
     "licenses": "MIT",
     "repository": "https://github.com/suguru03/neo-async",
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\neo-async",
@@ -1984,8 +1970,8 @@
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\path-exists",
-    "licenseFile": "node_modules\\path-exists\\license"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\terser-webpack-plugin\\node_modules\\path-exists",
+    "licenseFile": "node_modules\\terser-webpack-plugin\\node_modules\\path-exists\\license"
   },
   "path-is-absolute@1.0.1": {
     "licenses": "MIT",
@@ -2055,8 +2041,8 @@
     "repository": "https://github.com/postcss/postcss",
     "publisher": "Andrey Sitnik",
     "email": "andrey@sitnik.ru",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\sanitize-html\\node_modules\\postcss",
-    "licenseFile": "node_modules\\sanitize-html\\node_modules\\postcss\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\postcss",
+    "licenseFile": "node_modules\\postcss\\LICENSE"
   },
   "process-nextick-args@2.0.1": {
     "licenses": "MIT",
@@ -2350,8 +2336,8 @@
   "semver@5.7.1": {
     "licenses": "ISC",
     "repository": "https://github.com/npm/node-semver",
-    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\semver",
-    "licenseFile": "node_modules\\semver\\LICENSE"
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\terser-webpack-plugin\\node_modules\\semver",
+    "licenseFile": "node_modules\\terser-webpack-plugin\\node_modules\\semver\\LICENSE"
   },
   "serialize-javascript@4.0.0": {
     "licenses": "BSD-3-Clause",
@@ -2692,13 +2678,13 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\upath",
     "licenseFile": "node_modules\\upath\\LICENSE"
   },
-  "uri-js@4.2.2": {
+  "uri-js@4.4.1": {
     "licenses": "BSD-2-Clause",
     "repository": "https://github.com/garycourt/uri-js",
     "publisher": "Gary Court",
     "email": "gary.court@gmail.com",
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\uri-js",
-    "licenseFile": "node_modules\\uri-js\\README.md"
+    "licenseFile": "node_modules\\uri-js\\LICENSE"
   },
   "urix@0.1.0": {
     "licenses": "MIT",
@@ -2915,6 +2901,22 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\wrappy",
     "licenseFile": "node_modules\\wrappy\\LICENSE"
   },
+  "xml-formatter@2.6.1": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chrisbottin/xml-formatter",
+    "publisher": "Chris Bottin",
+    "email": "chrisbottin@gmail.com",
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\xml-formatter",
+    "licenseFile": "node_modules\\xml-formatter\\LICENSE"
+  },
+  "xml-parser-xo@3.2.0": {
+    "licenses": "MIT",
+    "repository": "https://github.com/chrisbottin/xml-parser",
+    "publisher": "Chris Bottin",
+    "email": "chrisbottin@gmail.com",
+    "path": "D:\\work\\iirds-open-toolkit\\node_modules\\xml-parser-xo",
+    "licenseFile": "node_modules\\xml-parser-xo\\LICENSE"
+  },
   "xmlbuilder@15.1.1": {
     "licenses": "MIT",
     "repository": "https://github.com/oozcitak/xmlbuilder-js",
@@ -2931,7 +2933,7 @@
     "path": "D:\\work\\iirds-open-toolkit\\node_modules\\xtend",
     "licenseFile": "node_modules\\xtend\\LICENSE"
   },
-  "y18n@4.0.0": {
+  "y18n@4.0.3": {
     "licenses": "ISC",
     "repository": "https://github.com/yargs/y18n",
     "publisher": "Ben Coe",
