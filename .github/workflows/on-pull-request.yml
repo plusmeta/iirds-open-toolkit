@@ -58,7 +58,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           runTests: false
-          build: npm run build-dev
+          build: npm run build
           cache-key: node-on-${{ runner.os }}-hash-${{ hashFiles('**/package-lock.json') }}
 
       - name: Cache build folder
