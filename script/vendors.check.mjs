@@ -1,7 +1,7 @@
 import crawler from "license-checker";
 import chalk from "chalk";
 
-import copyleft from "./vendors.copyleft.js";
+import copyleft from "./vendors.copyleft.mjs";
 
 const options = {
     start: ".",
