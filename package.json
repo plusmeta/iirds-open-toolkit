@@ -6,8 +6,8 @@
     "serve": "vue-cli-service serve --mode development",
     "build": "vue-cli-service build --mode production",
     "lint:report": "eslint \"src/**/*.{js,vue}\" --no-fix --format json --output-file lint.json",
-    "prebuild": "node ./script/git.version.js && node ./script/vendors.generate.js",
-    "licenses": "node ./script/vendors.check.js"
+    "prebuild": "node ./script/git.version.js && node ./script/vendors.generate.mjs",
+    "licenses": "node ./script/vendors.check.mjs"
   },
   "dependencies": {
     "@sentry/browser": "^6.16.1",
