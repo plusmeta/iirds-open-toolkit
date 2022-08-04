@@ -8,17 +8,18 @@
     "deleteObjectInfo": "Do you really want to delete the object? This action can not be reverted.",
     "deleteObjectsInfo": "Do you really want to delete the selected objects? This action can not be reverted.",
     "deleteRefObjectInfo": "...",
-    "openSettings": "Open settings",
-    "restoreSettings": "Reset settings",
-    "showShortcuts": "Show shortcuts",
-    "useDarkMode": "Dark mode",
     "deleteSelectedObjects": "Delete selected objects",
     "downloadMetadata": "Save metadata",
-    "uploadMetadata": "Import metadata values",
     "giveFeedback": "Give feedback",
-    "restoreSettingsInfo": "Do you really want to restore the settings? All settings will be reset to default values and the workflow has to be started over."
+    "openSettings": "Open settings",
+    "restoreSettings": "Reset settings",
+    "restoreSettingsInfo": "Do you really want to restore the settings? All settings will be reset to default values and the workflow has to be started over.",
+    "showShortcuts": "Show shortcuts",
+    "uploadMetadata": "Import metadata values",
+    "useDarkMode": "Dark mode"
   },
   "App": {
+    "backToStart": "Back to start",
     "filesTooLarge": "Memory limit reached. No new files can be added.",
     "help": "Help",
     "helpcenter": "User portal",
@@ -26,8 +27,7 @@
     "licenses": "Licenses of used software",
     "maxMemory": "Maximum memory limit reached. Object will not be imported.",
     "pageHelp": "Help page",
-    "siteNotFound": "The requested site was not found",
-    "backToStart": "Back to start"
+    "siteNotFound": "The requested site was not found"
   },
   "Common": {
     "actions": "Actions",
@@ -38,6 +38,7 @@
     "name": "Name",
     "noEmptyInput": "Input must not be empty",
     "preview": "Preview",
+    "publisher": "Publisher",
     "ruleExplainer": "To continue you must fulfill all conditions",
     "ruleViolation": "Previous workflow rules were violated. Please jump back to the last valid step.",
     "search": "Search",
@@ -49,12 +50,12 @@
   },
   "Notification": {
     "deletionFailed": "Deletion failed",
+    "importFailed": "Import failed",
+    "importedMetadata": "Imported metadata successfully",
     "objectDeleted": "Object deleted",
     "openedProject": "Set project status to open",
     "permissionDenied": "Permission denied",
     "propertyCreated": "Property created",
-    "importedMetadata": "Imported metadata successfully",
-    "importFailed": "Import failed",
     "propertyDeleted": "Deleted metadata value"
   },
   "Objects": {
@@ -67,13 +68,32 @@
     "log": "Protocol",
     "metadata": "Metadata",
     "noAssociatedFile": "No associated source file",
-    "none": "No objects available",
     "noObjectsExplainer": "You haven't created or imported any objects yet. Click on the green button to create or import an object.",
+    "none": "No objects available",
     "objectUsedInOtherProjects": "...",
     "rerun": "Restart process",
     "sourceName": "Source file name",
     "sourceType": "Source file type",
     "type": "Object type"
+  },
+  "Otk": {
+    "acceptUsageAgreement": "Accept Usage Agreement and Data Protection",
+    "browserWarning": "Browser warning",
+    "browserWarningText": "For an optimal user experience please use a <b>modern browser</b><br> (e.g. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox).",
+    "changeIRI": "Change IRI",
+    "dataProtectionText": "For a better user experience, we use systems for access analysis. \nFiles used in the iiRDS Open Toolkit do not leave your computer.\n\nPlease accept our <a href=\"/docs/Terms of Use_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Usage Agreement</a> and <a href = \"https://iirds.org/privacy-policy/\" target=\"_ blank\">Privacy Policy</a> to continue.",
+    "dataProtectionTitle": "Usage agreement & data protection",
+    "downloadPackage": "Save",
+    "licenseInfo": "iiRDS licensed under",
+    "metadataDownloaded": "Downloaded metadata",
+    "retry": "Do you like to generate a new package?",
+    "rightsInfo": "All rights by tekom",
+    "settingsRestored": "Restored default settings",
+    "startNewPackage": "New package",
+    "thankYou": "Thank you!",
+    "thankYouExplainer": "Your iiRDS-Package is now ready for saving.",
+    "welcomeSubtitle": "With the free iiRDS Open Toolkit you can generate iiRDS packages with your own content in just a few steps",
+    "welcomeTitle": "Welcome to the iiRDS Open Toolkit!"
   },
   "Packages": {
     "cached": "Generated package available",
@@ -88,24 +108,5 @@
     "objects": "Total",
     "objectsCount": "Objects count",
     "processed": "Processed"
-  },
-  "Otk": {
-    "downloadPackage": "Save",
-    "retry": "Do you like to generate a new package?",
-    "startNewPackage": "New package",
-    "thankYou": "Thank you!",
-    "thankYouExplainer": "Your iiRDS-Package is now ready for saving.",
-    "settingsRestored": "Restored default settings",
-    "metadataDownloaded": "Downloaded metadata",
-    "changeIRI": "Change IRI",
-    "welcomeTitle": "Welcome to the iiRDS Open Toolkit!",
-    "welcomeSubtitle": "With the free iiRDS Open Toolkit you can generate iiRDS packages with your own content in just a few steps",
-    "dataProtectionTitle": "Usage agreement & data protection",
-    "dataProtectionText": "For a better user experience, we use systems for access analysis. \nFiles used in the iiRDS Open Toolkit do not leave your computer.\n\nPlease accept our <a href=\"/docs/Terms of Use_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Usage Agreement</a> and <a href = \"https://iirds.org/privacy-policy/\" target=\"_ blank\">Privacy Policy</a> to continue.",
-    "acceptUsageAgreement": "Accept Usage Agreement and Data Protection",
-    "licenseInfo": "iiRDS licensed under",
-    "rightsInfo": "All rights by tekom",
-    "browserWarning": "Browser warning",
-    "browserWarningText": "For an optimal user experience please use a <b>modern browser</b><br> (e.g. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox)."
   }
 }

@@ -2,7 +2,6 @@
 /* eslint-disable indent */
 
 const Package = require("./package.json");
-// const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 
 process.env.VUE_APP_VERSION = Package.version;
 process.env.VUE_APP_NAME = Package.name;
@@ -30,17 +29,6 @@ module.exports = {
                 return options;
             });
 
-        // config
-        //     .when(!!+process.env.VUE_APP_SENTRY_WEBPACK_ACTIVE, (config) => {
-        //         config
-        //             .plugin("sentry")
-        //             .use(SentryWebpackPlugin, [{
-        //                 include: ".",
-        //                 ignore: ["node_modules", "webpack.config.js"],
-        //                 release: `${Package.name}@${Package.version}`
-        //             }]);
-        //     });
-
         config.module
             .rule("js")
             .exclude
@@ -63,7 +51,12 @@ module.exports = {
             enableInSFC: true
         }
     },
-    transpileDependencies: ["vuetify", "vuex-persist", "xmlbuilder"], // for IE11 minimum
+    transpileDependencies: [
+        "vuetify",
+        "vuex-persist",
+        "pdfjs-dist",
+        "xmlbuilder"
+    ],
     productionSourceMap: false,
     css: {
         sourceMap: true

@@ -11,10 +11,6 @@ import "whatwg-fetch";
 // Vue
 import Vue from "vue";
 
-// Vue Init-Components
-import App from "@/App.vue";
-import i18n from "@/i18n";
-
 // Vue Plugins
 import VueRx from "vue-rx";
 import VueMatomo from "vue-matomo";
@@ -29,34 +25,25 @@ import vuetify from "@/plugins/vuetify";
 import "typeface-ubuntu";
 import "typeface-ubuntu-mono";
 
-// Sentry error reporting
-import * as Sentry from "@sentry/browser";
-import * as Integrations from "@sentry/integrations";
-
-Vue.use(VueRx);
-
-import { AuthenticationService as Auth } from "@/services/auth/auth-service";
+import { AuthContextHolder } from "@/services/auth/auth-context-holder";
 import { StandaloneService } from "@/services/auth/standalone-service";
 
-Auth.instance = new StandaloneService(Vue);
-
-Vue.router = Auth.router;
-const store = Auth.store;
-
+AuthContextHolder.instance = new StandaloneService(Vue);
 import { SecurityService as Security } from "@/services/security-service";
 import { NotifyService } from "@/services/notify-service";
 import { ConfirmService } from "@/services/confirm-service";
 
-Vue.use(VueAuth, Auth.instance);
+Vue.use(VueAuth, AuthContextHolder.instance);
 Vue.use(VueSecurity, Security.instance);
 Vue.use(VueNotify, NotifyService.instance);
 Vue.use(VueConfirm, ConfirmService.instance);
+Vue.use(VueRx);
 
 Vue.use(VueMatomo, {
     host: "https://statistik.tekom.de",
     siteId: 13,
     trackerFileName: "matomo",
-    router: Auth.router,
+    router: AuthContextHolder.router,
     enableLinkTracking: true,
     requireConsent: true,
     trackInitialView: true,
@@ -70,6 +57,9 @@ if (!!+process.env.VUE_APP_LOG_VERSION) {
     Vue.config.productionTip = false;
 }
 
+// Sentry error reporting
+import * as Sentry from "@sentry/browser";
+import * as Integrations from "@sentry/integrations";
 if (!!+process.env.VUE_APP_SENTRY_IS_ACTIVE) {
     // Sentry error logging
     Sentry.init({
@@ -92,9 +82,13 @@ if (!!+process.env.VUE_APP_SENTRY_IS_ACTIVE) {
     }
 }
 
+// Vue Init-Components
+import App from "@/App.vue";
+import i18n from "@/i18n";
+
 new Vue({
-    router: Auth.router,
-    store,
+    router: AuthContextHolder.router,
+    store: AuthContextHolder.store,
     vuetify,
     i18n,
     components: {

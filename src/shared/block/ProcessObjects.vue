@@ -109,7 +109,7 @@
             color="accent"
           >
             <v-card-text class="display-3 white--text pb-0">
-              {{ $numeral(getTotal).format() }}
+              {{ $n(getTotal) }}
             </v-card-text>
             <v-card-text class="title white--text pb-0">
               {{ $t("Plus.objects") }}
@@ -127,7 +127,7 @@
           >
             <v-card-text class="display-3 white--text pb-0">
               <!-- prevent processed number to be higher than total number -->
-              {{ $numeral(Math.min(getTotal, processedObjects)).format() }}
+              {{ $n(Math.min(getTotal, processedObjects)) }}
             </v-card-text>
             <v-card-text class="title white--text pb-0">
               {{ $t("Plus.processed") }}
@@ -146,7 +146,7 @@
             color="warning"
           >
             <v-card-text class="display-3 white--text pb-0">
-              {{ $numeral(elapsedTime).format("00:00") }}
+              {{ $d(new Date(elapsedTime * 1000), 'timer') }}
             </v-card-text>
             <v-card-text class="title white--text pb-0">
               {{ $t("Plus.elapsedTime") }}

@@ -170,7 +170,7 @@
                           multiple
                           @change="setLocalSetting({key: 'ui_addobjects_columns', value: uniqueValues($event)})"
                         >
-                          <template v-slot:selection="{ item, parent, index }">
+                          <template v-slot:selection="{ index }">
                             <span v-if="!index">
                               {{ $tc('Common.columns', getSetting('ui_addobjects_columns').length) }}
                             </span>
@@ -182,28 +182,26 @@
                 </v-menu>
               </div>
 
-              <template>
-                <v-tooltip top>
-                  <template v-slot:activator="{ on }">
-                    <v-fab-transition>
-                      <v-btn
-                        v-show="selected.length"
-                        color="error"
-                        class="elevation-0 mr-4"
-                        fab
-                        small
-                        v-on="on"
-                        @click="deleteSelectedObjects"
-                      >
-                        <v-icon>
-                          mdi-delete
-                        </v-icon>
-                      </v-btn>
-                    </v-fab-transition>
-                  </template>
-                  <span>{{ $t("Actions.deleteSelectedObjects") }}</span>
-                </v-tooltip>
-              </template>
+              <v-tooltip top>
+                <template v-slot:activator="{ on }">
+                  <v-fab-transition>
+                    <v-btn
+                      v-show="selected.length"
+                      color="error"
+                      class="elevation-0 mr-4"
+                      fab
+                      small
+                      v-on="on"
+                      @click="deleteSelectedObjects"
+                    >
+                      <v-icon>
+                        mdi-delete
+                      </v-icon>
+                    </v-btn>
+                  </v-fab-transition>
+                </template>
+                <span>{{ $t("Actions.deleteSelectedObjects") }}</span>
+              </v-tooltip>
 
               <v-tooltip top>
                 <template v-slot:activator="{ on }">
@@ -244,9 +242,7 @@
           </template>
 
           <template v-slot:item.size="{ item }">
-            <span :class="{'grey--text': processing.includes(item.uuid)}">
-              {{ $numeral(item.size).format("0.00 b") }}
-            </span>
+            <ByteUnit :value="item.size" :class="{'grey--text': processing.includes(item.uuid)}" />
           </template>
 
           <template v-slot:item.actions="{ item }">
@@ -330,10 +326,12 @@ import pdf from "@/util/import/pdf";
 import html from "@/util/import/html";
 import xml from "@/util/import/xml";
 import zip from "@/util/import/zip";
+import ByteUnit from "@/shared/inline/ByteUnit";
 
 export default {
     name: "OtkStepAddObjects",
     components: {
+        ByteUnit,
         HelpView,
         QuickView,
         DeleteObject
