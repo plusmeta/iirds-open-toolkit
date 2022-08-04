@@ -101,7 +101,6 @@ export default {
             this.$i18n.setLocaleMessage(locale, messages);
             this.$i18n.locale = locale;
             this.$vuetify.lang.current = locale;
-            this.$numeral.locale(locale);
             this.$auth.changeLocale(locale);
             document.querySelector("html").setAttribute("lang", locale);
         },

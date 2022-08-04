@@ -242,9 +242,7 @@
           </template>
 
           <template v-slot:item.size="{ item }">
-            <span :class="{'grey--text': processing.includes(item.uuid)}">
-              {{ $numeral(item.size).format("0.00 b") }}
-            </span>
+            <ByteUnit :value="item.size" :class="{'grey--text': processing.includes(item.uuid)}" />
           </template>
 
           <template v-slot:item.actions="{ item }">
@@ -328,10 +326,12 @@ import pdf from "@/util/import/pdf";
 import html from "@/util/import/html";
 import xml from "@/util/import/xml";
 import zip from "@/util/import/zip";
+import ByteUnit from "@/shared/inline/ByteUnit";
 
 export default {
     name: "OtkStepAddObjects",
     components: {
+        ByteUnit,
         HelpView,
         QuickView,
         DeleteObject

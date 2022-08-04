@@ -34,6 +34,8 @@
 import { mapActions } from "vuex";
 import VueDocPreview from "vue-doc-preview";
 
+import format from "xml-formatter";
+
 import util from "@/util";
 
 export default {
@@ -64,6 +66,7 @@ export default {
         async render() {
             let data = await this.fetchSource(this.file.uuid);
             this.xml = await util.readFile(data, "text");
+            this.xml = format(this.xml);
         },
         ...mapActions("storage", [
             "fetchSource"

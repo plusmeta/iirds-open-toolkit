@@ -5,10 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve --mode development",
     "build": "vue-cli-service build --mode production",
-    "lint": "vue-cli-service lint",
-    "reset": "npm install --no-shrinkwrap",
-    "report": "node ./script/i18n.report.js",
-    "prebuild": "node ./script/git.version.js && node ./script/vendors.generate.js"
+    "lint:report": "eslint \"src/**/*.{js,vue}\" --no-fix --format json --output-file lint.json",
+    "prebuild": "node ./script/git.version.js && node ./script/vendors.generate.js",
+    "licenses": "node ./script/vendors.check.js"
   },
   "dependencies": {
     "@sentry/browser": "^6.16.1",
@@ -37,6 +36,7 @@
     "vuex": "^3.6.2",
     "vuex-persist": "^2.3.0",
     "whatwg-fetch": "^3.6.2",
+    "xml-formatter": "^2.6.1",
     "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
@@ -50,14 +50,12 @@
     "@intlify/eslint-plugin-vue-i18n": "^1.2.0",
     "@intlify/vue-i18n-loader": "^2.1.2",
     "@mdi/font": "^6.7.96",
-    "@sentry/cli": "^1.71.0",
-    "@sentry/webpack-plugin": "^1.18.3",
-    "@vue/babel-preset-app": "~4.5.15",
-    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/babel-preset-app": "~4.5.19",
+    "@vue/cli-plugin-babel": "~4.5.19",
     "@vue/cli-plugin-eslint": "^4.5.19",
-    "@vue/cli-plugin-router": "~4.5.15",
-    "@vue/cli-plugin-vuex": "~4.5.15",
-    "@vue/cli-service": "~4.5.15",
+    "@vue/cli-plugin-router": "~4.5.19",
+    "@vue/cli-plugin-vuex": "~4.5.19",
+    "@vue/cli-service": "~4.5.19",
     "babel-eslint": "^11.0.0-beta.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-transform-require-context": "^0.1.1",

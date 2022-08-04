@@ -27,6 +27,10 @@
           :text="object.text"
           :size="1"
         />
+        <PreviewXML
+          v-if="isXML"
+          :file="object"
+        />
         <v-skeleton-loader
           v-else
           class="mx-auto"
@@ -126,10 +130,12 @@ import AddMetadata from "@/shared/inline/AddMetadata";
 import ChooseCreateProperty from "@/toolkit/inline/OtkChooseCreateProperty";
 import ChooseManageList from "@/toolkit/inline/OtkChooseManageList";
 import ChooseCreateTitle from "@/toolkit/inline/OtkChooseCreateTitle";
+import PreviewXML from "@/shared/block/PreviewXML";
 
 export default {
     name: "PlusAssignMetadataToObject",
     components: {
+        PreviewXML,
         PreviewText,
         PreviewPDF,
         PreviewHTML,
@@ -194,7 +200,10 @@ export default {
             (this.object.source.uri || this.object.source.data);
         },
         isText() {
-            return this.object.type === "plus:Text" || this.object.source.type === "text/xml";
+            return this.object.type === "plus:Text";
+        },
+        isXML() {
+            return this.object?.source?.type === "application/xml";
         },
         ...mapGetters("projects", [
             "getCurrentProjectRelationById"
