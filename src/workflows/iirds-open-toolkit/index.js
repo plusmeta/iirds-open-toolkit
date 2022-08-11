@@ -1,19 +1,19 @@
 /*!
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
  */
 
 export default {
-    id: "iirds-open-toolkit",
+    id: "iirds-validation-tool",
     icon: "mdi-open-source-initiative",
     name: {
-        de: "iiRDS Open Toolkit",
-        en: "iiRDS Open Toolkit"
+        de: "iiRDS Validation Tool",
+        en: "iiRDS Validation Tool"
     },
     desc: {
-        de: "Implementierung des iiRDS Open Toolkit",
-        en: "Implementation of the iiRDS Open Toolkit"
+        de: "Implementierung des iiRDS Validation Tool",
+        en: "Implementation of the iiRDS Validation Tool"
     },
     publishable: true,
     steps: [{

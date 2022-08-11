@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->

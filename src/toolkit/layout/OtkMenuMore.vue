@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -49,7 +49,7 @@
 
           <v-list-item-content>
             <v-list-item-title class="overline">
-              Open Toolkit {{ version }}
+              Validation Tool {{ version }}
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>

@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -46,7 +46,7 @@
     </div>
 
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
-      © 2020 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
+      © 2022 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
       &bull;
       {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
       &bull;

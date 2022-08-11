@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -322,6 +322,7 @@ import util from "@/util";
 import match from "@/util/match";
 import config from "@/config";
 
+import iirds from "@/util/import/iirds";
 import pdf from "@/util/import/pdf";
 import html from "@/util/import/html";
 import xml from "@/util/import/xml";
@@ -464,7 +465,7 @@ export default {
             if (this.getCurrentObjects.length === 0 && this.filter) {
                 this.filter = undefined;
             }
-            // https://github.com/plusmeta/iirds-open-toolkit/issues/22
+            // https://github.com/plusmeta/iirds-validation-tool/issues/22
             let currentUuids = this.getCurrentObjects.map(o => o.uuid);
             this.selected = this.selected.filter(uuid => currentUuids.includes(uuid));
         }
@@ -531,6 +532,10 @@ export default {
             ];
 
             switch (object.source.type) {
+            case "application/iirds+zip":
+                await iirds.analyze(...analyzePayload);
+                break;
+
             case "application/pdf":
                 await pdf.analyze(...analyzePayload);
                 break;

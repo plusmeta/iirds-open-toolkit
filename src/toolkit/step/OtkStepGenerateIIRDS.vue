@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -247,13 +247,13 @@ export default {
             */
             let now = new Date();
             let version = process.env.VUE_APP_VERSION;
-            root.com(`*** iiRDS Open Toolkit (v${version}) ***`);
+            root.com(`*** iiRDS Validation Tool (v${version}) ***`);
             root.com(`*** generated on ${now.toLocaleString()} ***`);
 
             let pid = `${rdf.urn(this.getCurrentProjectUuid)}/package`;
             let pack = root.ele("iirds:Package", { "rdf:about": pid });
 
-            pack.ele("iirds:title", {}, "iiRDS Open Toolkit Export");
+            pack.ele("iirds:title", {}, "iiRDS Validation Tool Export");
             pack.ele("iirds:iiRDSVersion", "1.1");
 
             /*

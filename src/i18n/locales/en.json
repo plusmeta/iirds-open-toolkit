@@ -81,7 +81,7 @@
     "browserWarning": "Browser warning",
     "browserWarningText": "For an optimal user experience please use a <b>modern browser</b><br> (e.g. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox).",
     "changeIRI": "Change IRI",
-    "dataProtectionText": "For a better user experience, we use systems for access analysis. \nFiles used in the iiRDS Open Toolkit do not leave your computer.\n\nPlease accept our <a href=\"/docs/Terms of Use_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Usage Agreement</a> and <a href = \"https://iirds.org/privacy-policy/\" target=\"_ blank\">Privacy Policy</a> to continue.",
+    "dataProtectionText": "For a better user experience, we use systems for access analysis. \nFiles used in the iiRDS Validation Tool do not leave your computer.\n\nPlease accept our <a href=\"/docs/Terms of Use_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Usage Agreement</a> and <a href = \"https://iirds.org/privacy-policy/\" target=\"_ blank\">Privacy Policy</a> to continue.",
     "dataProtectionTitle": "Usage agreement & data protection",
     "downloadPackage": "Save",
     "licenseInfo": "iiRDS licensed under",
@@ -92,8 +92,8 @@
     "startNewPackage": "New package",
     "thankYou": "Thank you!",
     "thankYouExplainer": "Your iiRDS-Package is now ready for saving.",
-    "welcomeSubtitle": "With the free iiRDS Open Toolkit you can generate iiRDS packages with your own content in just a few steps",
-    "welcomeTitle": "Welcome to the iiRDS Open Toolkit!"
+    "welcomeSubtitle": "With the free iiRDS Validation Tool you can validate iiRDS packages in just a few steps",
+    "welcomeTitle": "Welcome to the iiRDS Validation Tool!"
   },
   "Packages": {
     "cached": "Generated package available",

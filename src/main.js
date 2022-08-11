@@ -53,7 +53,7 @@ Vue.use(VueMatomo, {
 
 if (!!+process.env.VUE_APP_LOG_VERSION) {
     // eslint-disable-next-line no-console
-    console.log("iiRDS Open Toolkit Version: " + process.env.VUE_APP_VERSION);
+    console.log("iiRDS Validation Tool Version: " + process.env.VUE_APP_VERSION);
     Vue.config.productionTip = false;
 }
 
