@@ -1,5 +1,6 @@
 import validations from "@/config/imports/validation-rules";
 
+
 export default {
     validateDocument(document, scope, filename) {
         let validationMessages = [];
@@ -13,3 +14,25 @@ export default {
         return [validationResult, validationMessages];
     }
 };
+
+export function iirdsValidateXmlRule(rdfDoc, iirdsRule) {
+    let result = rdfDoc.documentElement.querySelectorAll(iirdsRule.path);
+    return iirdsRule.assert(Array.from(result));
+}
+
+export function iirdsValidateXmlContent(xmlContent) {
+    const parser = new DOMParser();
+    const rdfDoc = parser.parseFromString(xmlContent, "application/xml");
+
+    let validationMessages = [];
+
+    validations.forEach((iirdsRule) => {
+        let assertion = iirdsValidateXmlRule(rdfDoc, iirdsRule);
+        if (!assertion) validationMessages.push(iirdsRule.rule?.en);
+    });
+
+    return validationMessages;
+}
+
+export const IIRDS_RULES = validations;
+

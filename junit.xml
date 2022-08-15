@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="2" failures="0" errors="0" time="2.19">
+  <testsuite name="validate iirds xml" errors="0" failures="0" skipped="0" timestamp="2022-08-15T08:59:23" time="1.038" tests="2">
+    <testcase classname="validate iirds xml Document must have a referenced object... - [T][0]" name="validate iirds xml Document must have a referenced object... - [T][0]" time="0.012">
+    </testcase>
+    <testcase classname="validate iirds xml Document must have a referenced object... - [F][0]" name="validate iirds xml Document must have a referenced object... - [F][0]" time="0.006">
+    </testcase>
+  </testsuite>
+</testsuites>
