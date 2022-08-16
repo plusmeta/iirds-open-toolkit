@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:iirdsMch="http://iirds.tekom.de/iirds/domain/machinery#" xmlns:iirdsSft="http://iirds.tekom.de/iirds/domain/software#" xmlns:plus="https://data.plusmeta.de/metadata#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+  <!-- *** iiRDS Open Toolkit (v1.1.1) *** -->
+  <!-- *** generated on 22.7.2022, 10:27:48 *** -->
+  <iirds:Package rdf:about="urn:uuid:e97ece59-5a30-4ddf-a56f-d7fd5ab675bb/package">
+    <iirds:title>iiRDS Open Toolkit Export</iirds:title>
+    <iirds:iiRDSVersion>1.1</iirds:iiRDSVersion>
+  </iirds:Package>
+  <iirds:ProductVariant rdf:about="urn:uuid:1c403ae9-0a3b-4b28-8248-208b9468a39d">
+    <rdfs:label>T3-H1</rdfs:label>
+  </iirds:ProductVariant>
+  <iirds:ProductVariant rdf:about="urn:uuid:b3c7392c-fb05-417f-8de1-d14f99687cd0">
+    <rdfs:label>T3-B</rdfs:label>
+  </iirds:ProductVariant>
+  <iirds:Document rdf:about="urn:uuid:8cc94c1d-c55f-4be0-8155-3367dbcbac96">
+    <iirds:title>PI-Fan_Grafik_FV001.svg</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:e97ece59-5a30-4ddf-a56f-d7fd5ab675bb/package"/>
+    <iirds:language>de-DE</iirds:language>
+    <iirds:relates-to-product-variant rdf:resource="urn:uuid:1c403ae9-0a3b-4b28-8248-208b9468a39d"/>
+    <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#MaintenancePlan"/>
+    <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+    <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Operation"/>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="urn:uuid:8cc94c1d-c55f-4be0-8155-3367dbcbac96/rendition/PI-Fan_Grafik_FV001.svg">
+        <iirds:format>image/svg+xml</iirds:format>
+        <iirds:source>CONTENT/PI-Fan_Grafik_FV001.svg</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Document>
+  <iirds:Topic rdf:about="urn:uuid:4ccf1b18-82a1-46b5-b722-c7608a628b48">
+    <iirds:title>PI Fan Module 1 (2)</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:e97ece59-5a30-4ddf-a56f-d7fd5ab675bb/package"/>
+    <iirds:language>de-DE</iirds:language>
+    <iirds:relates-to-product-variant rdf:resource="urn:uuid:b3c7392c-fb05-417f-8de1-d14f99687cd0"/>
+    <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericReference"/>
+    <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericSafety"/>
+    <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#Commissioning"/>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="urn:uuid:4ccf1b18-82a1-46b5-b722-c7608a628b48/rendition/PI-Fan_Module-1%20(2).html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/PI-Fan_Module-1 (2).html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="urn:uuid:0c4d0bbb-89ce-4e51-a791-add2ab858005">
+    <iirds:title>PI Fan Module 1 (1)</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:e97ece59-5a30-4ddf-a56f-d7fd5ab675bb/package"/>
+    <iirds:language>de-DE</iirds:language>
+    <iirds:relates-to-product-variant rdf:resource="urn:uuid:1c403ae9-0a3b-4b28-8248-208b9468a39d"/>
+    <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericConcept"/>
+    <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericSafety"/>
+    <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#GenericUse"/>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="urn:uuid:0c4d0bbb-89ce-4e51-a791-add2ab858005/rendition/PI-Fan_Module-1%20(1).html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/PI-Fan_Module-1 (1).html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="urn:uuid:f01e50f4-0184-4e3c-b36a-0f3465a62987">
+    <iirds:title>PI Fan Module 1</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:e97ece59-5a30-4ddf-a56f-d7fd5ab675bb/package"/>
+    <iirds:language>de-DE</iirds:language>
+    <iirds:relates-to-product-variant rdf:resource="urn:uuid:1c403ae9-0a3b-4b28-8248-208b9468a39d"/>
+    <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericConcept"/>
+    <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#SafetyInstruction"/>
+    <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Operation"/>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="urn:uuid:f01e50f4-0184-4e3c-b36a-0f3465a62987/rendition/PI-Fan_Module-1.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/PI-Fan_Module-1.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+</rdf:RDF>

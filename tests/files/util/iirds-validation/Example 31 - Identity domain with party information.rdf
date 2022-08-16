@@ -1,0 +1,16 @@
+<!-- Example 31: Identity domain with party information  -->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+	<iirds:IdentityDomain rdf:about="http://myCompany.com/supplier/SupCo/products">
+		<rdfs:label xml:lang="en">SupCo Product IDs</rdfs:label>
+		<iirds:relates-to-party>
+			<iirds:Party rdf:about="http://myCompany.com/supplier/SupCo">
+				<iirds:has-party-role rdf:resource="http://iirds.tekom.de/iirds#Supplier"/>
+				<iirds:relates-to-vcard>
+					<vcard:Organization rdf:about="http://supco.com/about">
+						<vcard:fn>SupCo Ltd.</vcard:fn>
+					</vcard:Organization>
+				</iirds:relates-to-vcard>
+			</iirds:Party>
+		</iirds:relates-to-party>
+	</iirds:IdentityDomain>
+</rdf:RDF>

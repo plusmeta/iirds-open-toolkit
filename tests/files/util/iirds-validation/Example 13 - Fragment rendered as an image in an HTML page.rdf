@@ -1,0 +1,15 @@
+<!-- Example 13: Fragment rendered as an image in an HTML page  -->
+<iirds:Fragment rdf:about="http://myCompany.com/iiRDS/myProject/myPackage/topic_786">
+	<iirds:has-rendition>
+		<iirds:Rendition>
+			<iirds:format>text/html</iirds:format>
+			<iirds:source>rendition/general_concepts.html</iirds:source>
+			<iirds:has-selector>
+				<iirds:FragmentSelector>
+					<dcterms:conformsTo rdf:resource="http://tools.ietf.org/rfc/rfc3023"/>
+					<rdf:value>#overview</rdf:value>
+				</iirds:FragmentSelector>
+			</iirds:has-selector>
+		</iirds:Rendition>
+	</iirds:has-rendition>
+</iirds:Fragment>

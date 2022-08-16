@@ -1,0 +1,17 @@
+<!-- Example 14: Nesting an iiRDS package  -->
+<!-- In the metadata.rdf file of the parent iiRDS package: -->
+<!-- The parent package -->
+<iirds:Package rdf:about="http://myCompany.com/iiRDS-parent">
+	<iirds:iiRDSVersion>1.1</iirds:iiRDSVersion>
+</iirds:Package>
+<!-- The nested package -->
+<iirds:Package rdf:about="http://myCompany.com/iiRDS-nested">
+	<iirds:is-part-of-package rdf:resource="http://myCompany.com/iiRDS-parent"/>
+	<iirds:iiRDSVersion>1.1</iirds:iiRDSVersion>
+	<iirds:has-rendition>
+		<iirds:Rendition>
+			<iirds:format>application/iirds+zip</iirds:format>
+			<iirds:source>content/nested-package.iirds</iirds:source>
+		</iirds:Rendition>
+	</iirds:has-rendition>
+</iirds:Package>

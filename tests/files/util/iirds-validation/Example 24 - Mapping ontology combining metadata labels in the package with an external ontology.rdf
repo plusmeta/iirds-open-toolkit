@@ -1,0 +1,17 @@
+<!-- Example 24: Mapping ontology combining metadata labels in the package with an external ontology  -->
+<!-- The following example shows a mapping ontology that combines the component tree of metadata labels in the package with the component tree in the external product ontology. -->
+<rdf:Description rdf:about="http://myCompany.com/iirds/myProject/myPackage#EspressoMachine">
+	<rdfs:seeAlso rdf:resource="http://myCompany.com/iirds/externalProductWorld#EspressoMachine"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://myCompany.com/iirds/myProject/myPackage#Portafilter">
+	<rdfs:seeAlso rdf:resource="http://myCompany.com/iirds/externalProductWorld#Portafilter"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://myCompany.com/iirds/myProject/myPackage#Grouphead">
+	<rdfs:seeAlso rdf:resource="http://myCompany.com/iirds/externalProductWorld#Grouphead"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://myCompany.com/iirds/myProject/myPackage#Shower">
+	<rdfs:seeAlso rdf:resource="http://myCompany.com/iirds/externalProductWorld#Shower"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://myCompany.com/iirds/myProject/myPackage#Gasket">
+	<rdfs:seeAlso rdf:resource="http://myCompany.com/iirds/externalProductWorld#Gasket"/>
+</rdf:Description>

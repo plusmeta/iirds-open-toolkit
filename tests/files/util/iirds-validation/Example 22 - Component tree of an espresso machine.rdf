@@ -1,0 +1,21 @@
+<!-- Example 22: Component tree of an espresso machine  -->
+<!-- The following example shows a simple product tree. The espresso machine has multiple components that also consist of other components. For example, the group head has a shower and a gasket. -->
+<iirds:Component rdf:about="http://myCompany.com/iirds/myProject/myPackage#EspressoMachine">
+	<rdfs:label xml:lang="en">Espresso machine</rdfs:label>
+	<iirds:has-component rdf:resource="http://myCompany.com/iirds/myProject/myPackage#Portafilter"/>
+	<iirds:has-component rdf:resource="http://myCompany.com/iirds/myProject/myPackage#Grouphead"/>
+</iirds:Component>
+<iirds:Component rdf:about="http://myCompany.com/iirds/myProject/myPackage#Portafilter">
+	<rdfs:label xml:lang="en">Portafilter</rdfs:label>
+</iirds:Component>
+<iirds:Component rdf:about="http://myCompany.com/iirds/myProject/myPackage#Grouphead">
+	<rdfs:label xml:lang="en">Grouphead</rdfs:label>
+	<iirds:has-component rdf:resource="http://myCompany.com/iirds/myProject/myPackage#Gasket"/>
+	<iirds:has-component rdf:resource="http://myCompany.com/iirds/myProject/myPackage#Shower"/>
+</iirds:Component>
+<iirds:Component rdf:about="http://myCompany.com/iirds/myProject/myPackage#Gasket">
+	<rdfs:label xml:lang="en">Gasket</rdfs:label>
+</iirds:Component>
+<iirds:Component rdf:about="http://myCompany.com/iirds/myProject/myPackage#Shower">
+	<rdfs:label xml:lang="en">Shower</rdfs:label>
+</iirds:Component> 

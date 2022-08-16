@@ -1,0 +1,17 @@
+<!-- EXAMPLE 8: A topic with references to two files -->
+<!-- The following example shows a topic that references an XML file and the published HTML representation. -->
+
+<iirds:Topic rdf:about="http://myCompany.com/iiRDS/myProject/myPackage/topic_1">
+    <iirds:has-rendition>
+        <iirds:Rendition>
+            <iirds:format>application/xml</iirds:format>
+            <iirds:source>rendition/source/general_safety.xml</iirds:source>
+        </iirds:Rendition>
+    </iirds:has-rendition>
+    <iirds:has-rendition>
+        <iirds:Rendition>
+            <iirds:format>application/xhtml+xml</iirds:format>
+            <iirds:source>rendition/web/general_safety.html</iirds:source>
+        </iirds:Rendition>
+    </iirds:has-rendition>
+</iirds:Topic>

@@ -1,0 +1,7 @@
+<!-- Example 5: Topic and fragment with a globally unique resource identifier.  -->
+<iirds:Topic rdf:about="https://myCompany.com/iiRDS/myPackage/2017-07-22/123e4567-e89b-12d3-a456-426655440000">
+	<iirds:title>Example Topic</iirds:title>
+</iirds:Topic>
+<iirds:Fragment rdf:about="urn:uuid:6e8bc430-9c3a-11d9-9669-0800200c9a66">
+	<iirds:title>Example Fragment</iirds:title>
+</iirds:Fragment>

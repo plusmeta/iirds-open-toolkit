@@ -1,0 +1,4 @@
+<!-- Example 25: Definition of a proprietary product variant  -->
+<iirds:ProductVariant rdf:about="http://myCompany.com/iirds/myProject/myPackage#FreshDelightE61">
+	<rdfs:label xml:lang="en">Fresh Delight E61</rdfs:label>
+</iirds:ProductVariant>

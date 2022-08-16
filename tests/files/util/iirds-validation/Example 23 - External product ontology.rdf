@@ -1,0 +1,45 @@
+<!-- Example 23: External product ontology  -->
+<!-- This external product ontology models class restrictions in OWL. Because iiRDS uses only RDF and RDFS, this product ontology has to be modeled outside of iiRDS.  -->
+ <!-- Declares dcterms properties as object properties for use in class restrictions. -->
+<owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+</owl:ObjectProperty>
+<owl:ObjectProperty rdf:about="http://purl.org/dc/terms/hasPart">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+	<owl:inverseOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+</owl:ObjectProperty>
+<!-- The component tree is modeled with restrictions on hasPart. An espresso machine has only the parts Portafilter and Grouphead. -->
+<rdfs:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#EspressoMachine">
+	<rdfs:subClassOf>
+		<owl:Restriction>
+			<owl:onProperty rdf:resource="http://purl.org/dc/terms/hasPart"/>
+			<owl:allValuesFrom>
+				<rdfs:Class>
+					<owl:unionOf rdf:parseType="Collection">
+						<owl:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#Portafilter"/>
+						<owl:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#Grouphead"/>
+					</owl:unionOf>
+				</rdfs:Class>
+			</owl:allValuesFrom>
+		</owl:Restriction>
+	</rdfs:subClassOf>
+</rdfs:Class>
+<rdfs:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#Portafilter"/>
+<!-- A grouphead has only the parts Shower and Gasket. -->
+<rdfs:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#Grouphead">
+	<rdfs:subClassOf>
+		<owl:Restriction>
+			<owl:onProperty rdf:resource="http://purl.org/dc/terms/hasPart"/>
+			<owl:allValuesFrom>
+				<rdfs:Class>
+					<owl:unionOf rdf:parseType="Collection">
+						<owl:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#Shower"/>
+						<owl:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#Gasket"/>
+					</owl:unionOf>
+				</rdfs:Class>
+			</owl:allValuesFrom>
+		</owl:Restriction>
+	</rdfs:subClassOf>
+</rdfs:Class>
+<rdfs:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#Shower"/>
+<rdfs:Class rdf:about="http://myCompany.com/iirds/externalProductWorld#Gasket"/>

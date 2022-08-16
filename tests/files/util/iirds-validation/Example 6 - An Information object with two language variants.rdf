@@ -1,0 +1,43 @@
+<!-- . The English variant has two revisions, the German only one. --> 
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	<iirds:InformationObject rdf:about="http://myCompany.com/informationobjects/io_1"/>
+	<iirds:Topic rdf:about="http://myCompany.com/versions/io_1/en/1">
+		<iirds:title>Mounting the rotor</iirds:title>
+		<iirds:language>en</iirds:language>
+		<iirds:revision>1</iirds:revision>
+		<iirds:is-version-of rdf:resource="http://myCompany.com/informationobjects/io_1"/>
+		<iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+		<iirds:has-rendition>
+			<iirds:Rendition>
+				<iirds:format>text/html</iirds:format>
+				<iirds:source>rendition/mounting_en_1.html</iirds:source>
+			</iirds:Rendition>
+		</iirds:has-rendition>
+	</iirds:Topic>
+	<iirds:Topic rdf:about="http://myCompany.com/versions/io_1/en/2">
+		<iirds:title>Mounting the rotor</iirds:title>
+		<iirds:language>en</iirds:language>
+		<iirds:revision>2</iirds:revision>
+		<iirds:is-version-of rdf:resource="http://myCompany.com/informationobjects/io_1"/>
+		<iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+		<iirds:has-rendition>
+			<iirds:Rendition>
+				<iirds:format>text/html</iirds:format>
+				<iirds:source>rendition/mounting_en_2.html</iirds:source>
+			</iirds:Rendition>
+		</iirds:has-rendition>
+	</iirds:Topic>
+	<iirds:Topic rdf:about="http://myCompany.com/versions/io_1/de/1">
+		<iirds:title>Rotor montieren</iirds:title>
+		<iirds:language>de</iirds:language>
+		<iirds:revision>1</iirds:revision>
+		<iirds:is-version-of rdf:resource="http://myCompany.com/informationobjects/io_1"/>
+		<iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+		<iirds:has-rendition>
+			<iirds:Rendition>
+				<iirds:format>text/html</iirds:format>
+				<iirds:source>rendition/mounting_de_1.html</iirds:source>
+			</iirds:Rendition>
+		</iirds:has-rendition>
+	</iirds:Topic>
+</rdf:RDF>

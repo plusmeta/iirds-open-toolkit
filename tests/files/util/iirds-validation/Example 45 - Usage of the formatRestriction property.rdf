@@ -1,0 +1,5 @@
+<!-- Example 45: Usage of the formatRestriction property  -->
+<iirds:Package rdf:about="urn:uuid:0d6f0611-e0bd-42c0-a842-b38617d46988">
+	<iirds:iiRDSVersion>1.0</iirds:iiRDSVersion>
+	<iirds:formatRestriction>A</iirds:formatRestriction>
+</iirds:Package>
