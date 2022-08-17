@@ -10,57 +10,31 @@ const mustHaveChild = child => el => el.querySelectorAll(child).length === 1;
 const includesAll = (small, big) => small.every(n => big.indexOf(n) !== -1);
 
 export default [
-    //1. Conformance
-
-    //5. iiRDS Package and Container
-
-    //5.1 iiRDS Container
-
-    //5.1.1 Metadata Location
-
-    //5.1.2 Content Location
-
-    //5.1.3 Names of Files and Directories
-
-    //5.2 iiRDS ZIP Archive
-
-    //5.2.2 Content Encoding
-
-    //5.3 Nested iiRDS Packages
-
     //6.2 Information Units
-
-    {path: "InformationUnit",
-        assert: els => els.length === 0,
-        prio: "MUST",
-        rule: {
-            "de": "Dokument muss ein referenziertes Objekt haben",
-            "en": "Document must have a referenced object"
-        },
-        testFiles: {
-            "true": ["./tests/files/util/iirds-validation/01_iirds_version_not_x.xml"],
-            "false": ["./tests/files/util/iirds-validation/01_io.xml"]
-        }
-    },
     {
-        path: "Document, Topic, Fragment, Package",
-        assert: els => els.every(el => el.hasAttribute("rdf:about")),
+        path: "InformationUnit",
+        assert: els => els.length === 0,
         prio: "MUST",
         rule: {
             "de": "iiRDS-Ersteller DÜRFEN NICHT die Klasse iirds:InformationUnit direkt verwenden, sondern MÜSSEN eine der Unterklassen benutzen",
             "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_informationUnit.rdf"]
         }
     },
     {
         path: "Document, Topic, Fragment, Package",
-        //assert: els => els.every(mustNotBeABlankNode), // el => meineGenFunc(el, "rdf:about")), //el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about").length),
-        //not a blank node -> Array.from(document.querySelectorAll("Document, Topic, Fragment, Package")).every(el => el.childElementCount !== 0)
-        //subclass of IU must have IRI -> Array.from(document.querySelectorAll("Document, Topic, Fragment, Package")).every(el => el.hasAttribute("rdf:about"))
-        assert: els => els.every((el => el.childElementCount !== 0 && el.hasAttribute("rdf:about"))),
+        assert: els => els.every(el => (el.childElementCount !== 0 && el.hasAttribute("rdf:about"))),
         prio: "MUST",
         rule: {
             "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben und DARF KEIN leerer Knoten sein.",
             "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
     },
     {
@@ -70,11 +44,28 @@ export default [
         rule: {
             "de": "Jedes iiRDS-Paket MUSS genau eine entsprechende iirds:Paket-Instanz in den Metadaten haben.",
             "en": "Each iiRDS package MUST have exactly one corresponding iirds:Package instance in the metadata."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
     },
     {
+        path: "Package",
+        assert: els => els.every(el => el.querySelector("iiRDSVersion")),
+        prio: "MUST",
+        rule: {
+            "de": "...",
+            "en": "iiRDS:Package MUST use property iirds:iiRDSVersion"
+        },
+        testFiles:{
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
+        }
+
+    },
+    {
         path: "Document, Topic, Fragment, Package",
-        //tbd - 001 - Regelverletzung schwer zu prüfen /
         assert: "",
         prio: "MAY",
         rule: {
@@ -83,21 +74,20 @@ export default [
         }
     },
     {
-        status: "working",
         path: "Package",
-        //Die Paket-Instanz / Element "Package" DARF KEIN Kindelement "is-part-of-package" besitzen
-        //Array.from(document.querySelectorAll("Package")).every(el => el.querySelectorAll("is-part-of-package").length === 0)
-        //getestet mit Funktion "validate"
         assert: els => els.every(el => el.querySelectorAll("is-part-of-package").length === 0),
         prio: "MUST NOT",
         rule: {
             "de": "...",
             "en": "The corresponding iirds:Package instance of an iiRDS package MUST NOT be a member of another iiRDS package expressed by the property iirds:is-part-of-package."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
     },
     {
         path: "Document, Topic, Fragment",
-        //tbd - 003 -
         assert: "",
         prio: "MAY",
         rule: {
@@ -106,27 +96,36 @@ export default [
         }
     },
     //6.2.1 InformationUnit Identifier
+
+    //It is RECOMMENDED to use absolute IRIs in rdf:about. Additionally, it is RECOMMENDED to generate IRIs as follows: Keep the IRI of rdf:about globally unique;Keep the IRI of rdf:about stable over packages and time if the IRI identifies the same subject;If the source system has a meaningful identifier such as a unique ID from the CMS, use it to generate an IRI for rdf:about
     {
-        status: "not working correctly - ",
         path: "*",
-        //tbd - 004 - Problem: wie filtert man nach Attributen, anstatt Elementen?
-        //Array.from(document.querySelectorAll("*")).filter(e => e.hasAttribute("rdf:about")),
-        //assert: el => el.,
-        //Array.from(document.querySelectorAll("*")).filter(e => e.hasAttribute("rdf:about")).every(el => !/(^(?:\/|[a-z]+:\/\/))|(www\..*?\..*?\/)/.test(el.textContent))
-        //document.querySelector("Package").getAttribute("rdf:about")
-        //Array.from(document.querySelectorAll("*")).filter(e => e.hasAttribute("rdf:about"))
-        //document.querySelector("Package").getAttribute("rdf:about") === ""
-
-        //Prüfung auf konkreten Wert scheint zu funktionieren: (Array.from(document.querySelectorAll("*")).filter(el => el.hasAttribute("rdf:about"))).some(el => el.getAttribute("rdf:about") === "urn:uuid:307ff804-62b0-4b82-ad2a-26da8e8a4e9a/package")
-        //andererseits scheitert Längenprüfung (undefined): (Array.from(document.querySelectorAll("*")).filter(el => el.hasAttribute("rdf:about"))).some(el => el.getAttribute("rdf:about") === "urn:uuid:307ff804-62b0-4b82-ad2a-26da8e8a4e9a/package").length
-
+        //^(urn\:uuid\:)|^(https\:\/\/.+\.)|^(www\.)
         assert: els => els.filter(el => el.hasAttribute("rdf:about")).every(el => !/(^(?:\/|[a-z]+:\/\/))|(www\..*?\..*?\/)/.test(el.textContent)),
         prio: "RECOMMENDED",
         rule: {
             "de": "...",
-            "en": "It is RECOMMENDED to use absolute IRIs in rdf:about. Additionally, it is RECOMMENDED to generate IRIs as follows: Keep the IRI of rdf:about globally unique;Keep the IRI of rdf:about stable over packages and time if the IRI identifies the same subject;If the source system has a meaningful identifier such as a unique ID from the CMS, use it to generate an IRI for rdf:about"
+            "en": "It is RECOMMENDED to use absolute IRIs in rdf:about."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
     },
+    //Additionally, it is RECOMMENDED to generate IRIs as follows:
+    {
+        //out of scope
+        path: "",
+        assert: "",
+        prio: "RECOMMENDED",
+        rule: {
+            "de": "...",
+            "en": "Keep the IRI of rdf:about globally unique"
+        }
+
+    },
+
+
     //6.2.2 Information Objects
     {
         path: "Document, Topic, Fragment, Package",
@@ -139,14 +138,7 @@ export default [
         }
     },
     {
-        status: "",
-        path: "RDF", // "Document, Topic, Fragment, Package",
-        //tbd - 006 -
-        //FALSCHE ANNAHME -> Wenn das Element "InformationObject" vorhanden ist, düfren InformationUnits (Document, Topic, Fragment, Package) nur maximal einmal das Kindelement "is-version-of besitzen"
-        //BESSER -> Wenn "InformationObject" verwendet wird, dann muss bei jeder "InformationUnit" der Wert des Attributs "rdf:about" identisch sein mit dem Wert des Attributs "rdf:about" im Element "InformationObject"
-        //Array.from(document.querySelectorAll("Topic, Document, Fragment, Package")).every(el => el.querySelectorAll("is-version-of").length <= 1)
-        //assert: els => els.every(el => el.querySelectorAll("is-version-of").length >= 1),
-        //Array.from(document.querySelectorAll("Document, Topic, Fragment, Package")).map(el => el.querySelector("is-version-of").getAttribute("rdf:resource"))Array.from(document.querySelectorAll("Document, Topic, Fragment, Package")).map(el => el.querySelector("is-version-of").getAttribute("rdf:resource"))
+        path: "RDF",
         assert: ()  => {
             // TODO: Regel hat Lauftzeitkomplexität
             const versions = Array.from(document.querySelectorAll("Document, Topic, Fragment, Package")).map(el => el.querySelector("is-version-of").getAttribute("rdf:resource"));
@@ -157,12 +149,14 @@ export default [
         rule: {
             "de": "...",
             "en": "If information objects are used, each information unit MUST only be related to exactly one information object via iirds:is-version-of."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
     },
     {
         path: "InformationObject",
-        //tbd - 007 - Informationsobjekt muss eine absolute IRI im Attribut rdf:about haben |
-        //    /'^(?:[a-z]+:)?\/\/'/
         assert: () => {
 
             (Array.from(document.querySelectorAll("InformationObject")).map(el => el.getAttribute("rdf:about"))).every(el => /'^(?:[a-z]+:)?\/\/'/);
@@ -172,13 +166,7 @@ export default [
             "de": "...",
             "en": "An information object MUST have an absolute IRI and MAY be related to additional identifications via the iirds:has-identity property."
         }
-
     },
-    //test
-    /*
-    Array.from(document.querySelectorAll("InformationObject")).every(io => /(^(?:\/|[a-z]+:\/\/))|(www\..*?\..*?\/)/.test(io.hasAttribute("rdf:about")))
-    */
-    //test
     //6.3 Content References of Information Units
     {
         path: "",
@@ -191,7 +179,6 @@ export default [
     },
     {
         path: "Package",
-        //iirds:Package darf kein Kindelement vom Typ iirds:has-rendition besitzen
         assert: "",
         prio: "MUST NOT",
         rule: {
@@ -201,7 +188,6 @@ export default [
     },
     {
         path: "Rendition source",
-        //Regel prüft, dass das Muster "https://" oder "www.*.*/" nicht in URI enthalten sind.
         assert: els => els.every(el => !ABSOLUTE_IRI_REGEX.test(el.textContent)),
         prio: "MUST",
         rule: {
@@ -210,15 +196,29 @@ export default [
         }
     },
     {
-        path: "Rendition format",
-        //tbd -
-        //assert: els => els.length === 1,
-        //Array.from(document.querySelectorAll("Rendition format")).every(el => el.length !== 0)
-        assert: Array.from(document.querySelectorAll("Rendition format")).every(el => el.length !== 0),
+        path: "Rendition",
+        assert: els => els.every(el => el.querySelector("source")),
+        prio: "MUST",
+        rule: {
+            "de": "",
+            "en": "An iirds:Rendition MUST have the property iirds:source."
+        },
+        testFiles:{
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
+        }
+    },
+    {
+        path: "Rendition",
+        assert: els => els.every(el => el.querySelector("format")),
         prio: "MUST",
         rule: {
             "de": "",
             "en": "An iirds:Rendition MUST have the property iirds:format."
+        },
+        testFiles:{
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
     },
     {
@@ -238,15 +238,16 @@ export default [
     */
 
     {
-        //Array.from(document.querySelectorAll("Rendition")).every(el => el.querySelectorAll("Selector").length === 0)
-        //Array.from(document.querySelectorAll("has-rendition Selector")).length === 0
-        //TEST (expect: false): Array.from(document.querySelectorAll("has-rendition value")).length === 0
         path: "Rendition Selector",
         assert: els => els.length === 0,
         prio: "MUST NOT",
         rule: {
             "de": "...",
             "en": "iirds:Rendition MUST NOT directly use iirds:Selector but MUST use one of its subclasses to reference parts of a file. The class iirds:Selector has the following subclasses: iirds:FragmentSelector; iirds:RangeSelector"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/fail_must use selector subclass.rdf"]
         }
     },
     //6.3.1.1 Reference Part with Single Identifier
@@ -377,16 +378,17 @@ export default [
         }
     },
     {
-        //Wenn ein "Event" vorhanden ist, dann MUSS es die Kindelemente "eventCode" und "eventType" haben
-        //TEST: Was passiert, wenn kein "Event" enthalten ist?
-        //Noch nicht an konkretem Beispiel getestet
         path: "Event",
-        assert: els => els.every(el => el.querySelectorAll("eventCode").length !== 0) && (els => els.every(el => el.querySelectorAll("eventType").length !== 0)),
+        assert: els => els.every(el => el.querySelectorAll("has-event-code").length === 1) && (els => els.every(el => el.querySelectorAll("has-event-type").length === 1)),
         prio: "MUST",
         rule: {
             "de": "...",
             "en": "Instances of the iirds:Event class MUST have the following properties: iirds:eventCode and iirds:eventType. "
             //The iirds:Event class is a docking point for iiRDS Generators to link documentation content with event information code according to a standard like OPC-UA or a custom convention. The property iirds:relates-to-event links iirds:InformationUnit to iirds:Event.
+        },
+        testFiles:{
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": [""]
         }
     },
     //6.6.2 Product Metadata
@@ -1275,22 +1277,19 @@ export default [
         Document, AfterUse, Collection, Component, Concept, Conformity, ContentLifeCycleStatusValue, DesignAndRealization, DirectoryNodeType, DocumentType, Event, Form, Formality, Fragment, Functionality, IdentityDomain, IdentityType, InformationObject, InformationSubject, InformationType, Learning, Package, Party, PartyRole, Process, ProductFeature, ProductFunction, ProductLifeCyclePhase, ProductMetadata, ProductProperty, ProductVariant, PuttingToUse, Qualification, Reference, Role, Safety, SkillLevel, Supply, Task, TechnicalData, TechnicalOverview, Topic, TopicType, Troubleshooting, Use, WarningMessage, ConsumableSupply, HardwareTool, Lubricant, OperatingSupply, ProtectiveEquipment, SparePart
         */
         path: "Document, AfterUse, Collection, Component, Concept, Conformity, ContentLifeCycleStatusValue, DesignAndRealization, DirectoryNodeType, DocumentType, Event, Form, Formality, Fragment, Functionality, IdentityDomain, IdentityType, InformationObject, InformationSubject, InformationType, Learning, Package, Party, PartyRole, Process, ProductFeature, ProductFunction, ProductLifeCyclePhase, ProductMetadata, ProductProperty, ProductVariant, PuttingToUse, Qualification, Reference, Role, Safety, SkillLevel, Supply, Task, TechnicalData, TechnicalOverview, Topic, TopicType, Troubleshooting, Use, WarningMessage, ConsumableSupply, HardwareTool, Lubricant, OperatingSupply, ProtectiveEquipment, SparePart",
-        //Array darf nicht leer sein (sonst false positive) UND Element muss Attribut rdf:about besitzen
-        //Was ist, wenn kein Wert in rdf:about eingetragen ist? Zusätzliche Prüfung? -> ... UND rdf:about DARF NICHT leer sein
         assert: (els => !els.length) && (els => els.every(el => el.hasAttribute("rdf:about"))) && (els => els.every(el => el.getAttribute("rdf:about") != "")),
         prio: "REQUIRED",
         rule: {
             "de": "...,",
             "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_IRI required.rdf"]
         }
     },
     {
-        /* Alle Elemente mit IRI=OPTIONAL / Alle Elemente, die Attribute rdf:about haben KÖNNEN
-        Liste der Elemente:
-        ContentLifeCycleStatus, DirectoryNode, DownTime, FragmentSelector, Identity, MaintenanceInterval, PlanningTime, RangeSelector, Rendition, Selector, WorkingTime, SetupTime
-        */
         path: "ContentLifeCycleStatus, DirectoryNode, DownTime, FragmentSelector, Identity, MaintenanceInterval, PlanningTime, RangeSelector, Rendition, Selector, WorkingTime, SetupTime",
-        //Array darf nicht leer sein (sonst false positive) UND wenn Element KEIN rdf:about hat, dann Notice ausgeben
         assert: (els => els.length != 0) && (els => els.some(el => el.hasAttribute("rdf:about"))),
         prio: "OPTIONAL",
         rule: {
