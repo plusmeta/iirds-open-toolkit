@@ -250,15 +250,6 @@
     },
     {
         "subClassOf": "plus:Meta",
-        "identifier": "plus:OriginalFileName",
-        "datatype": "plus:String",
-        "label": {
-            "de": "Dateiname bei Import",
-            "en": "Import file name"
-        }
-    },
-    {
-        "subClassOf": "plus:Meta",
         "identifier": "plus:LastMetadataEdit",
         "datatype": "plus:Timestamp",
         "label": {
@@ -311,11 +302,6 @@
             "en": "Language"
         },
         "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata",
-                "plus:RequiredMetadata"
-            ],
             "plus:has-icons": [
                 "mdi:web"
             ],
@@ -333,9 +319,135 @@
             "en": "Title"
         },
         "rels": {
-            "plus:has-roles": ["plus:AssignableMetadata", "plus:RequiredMetadata"],
             "plus:has-icons": ["mdi:format-title"],
             "plus:has-relations": ["iirds:title"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:Rule",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Regel-Nr.",
+            "en": "Rule No."
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:counter"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:RuleText",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Verstoß",
+            "en": "Violation"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:bookmark-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:LineNr",
+        "datatype": "plus:Number",
+        "label": {
+            "de": "Zeilennummer",
+            "en": "Line number"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:bookmark-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:Line",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Zeile",
+            "en": "Line"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:bookmark-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:Level",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Level",
+            "en": "Level"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:clipboard-check-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:Spec",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Spezifikation",
+            "en": "Specification"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:book-check-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:OriginalFileName",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Datei",
+            "en": "File"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:file-find-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:RuleType",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Kontext",
+            "en": "Context"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:layers-outline"]
         }
     },
     {
@@ -810,5 +922,15 @@
         "indicators": [
             "json"
         ]
+    },
+    {
+        "identifier": "plus:RuleViolation",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:ObjectType",
+        "rels": {},
+        "label": {
+            "de": "Regelverstoß",
+            "en": "Rule violation"
+        }
     }
 ]

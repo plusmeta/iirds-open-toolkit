@@ -13,20 +13,6 @@
         lg4
         class="px2"
       >
-        <PreviewPDF
-          v-if="isPDF"
-          :file="object"
-        />
-        <PreviewHTML
-          v-else-if="isHTML"
-          :file="object"
-          :size="1"
-        />
-        <PreviewText
-          v-else-if="isText"
-          :text="object.text"
-          :size="1"
-        />
         <PreviewXML
           v-if="isXML"
           :file="object"
@@ -49,36 +35,7 @@
           'xs12': !isPreview
         }"
       >
-        <v-layout row>
-          <v-autocomplete
-            :value="object.type"
-            :items="getObjectTypes"
-            :label="$t('Objects.type')"
-            class="mr-6"
-            filled
-            @change="setObjectType"
-          />
-          <div class="pt-2 pr-2">
-            <AddMetadata
-              :object="object.uuid"
-              :visible="getVisibleMetadata.map(m => m.value)"
-              @metadata="addObjectMetadataField"
-            />
-          </div>
-        </v-layout>
-
-        <ChooseCreateTitle
-          ref="title"
-          :object-uuid="object.uuid"
-          propclass="plus:Title"
-          proprelation="iirds:title"
-          :indicator="false"
-          :label="true"
-        />
-
-        <template
-          v-for="custom in getVisibleMetadata"
-        >
+        <template v-for="custom in getVisibleMetadata">
           <div
             v-if="custom.type === 'plus:Class'"
             :key="custom.value"
@@ -111,6 +68,18 @@
               :icon="custom.icon"
             />
           </div>
+          <div
+            v-else
+            :key="custom.value"
+            class="mt-2"
+          >
+            <ShowEditMetadata
+              :object-uuid="object.uuid"
+              :proprelation="custom.rel"
+              :icon="custom.icon"
+              :label="true"
+            />
+          </div>
         </template>
       </v-flex>
     </v-layout>
@@ -120,29 +89,18 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import util from "@/util";
-import match from "@/util/match";
-
-import PreviewText from "@/shared/block/PreviewText";
-import PreviewPDF from "@/shared/block/PreviewPDF";
-import PreviewHTML from "@/shared/block/PreviewHTML";
-import AddMetadata from "@/shared/inline/AddMetadata";
 import ChooseCreateProperty from "@/toolkit/inline/OtkChooseCreateProperty";
 import ChooseManageList from "@/toolkit/inline/OtkChooseManageList";
-import ChooseCreateTitle from "@/toolkit/inline/OtkChooseCreateTitle";
+import ShowEditMetadata from "@/toolkit/inline/OtkShowEditMetadata";
 import PreviewXML from "@/shared/block/PreviewXML";
 
 export default {
     name: "PlusAssignMetadataToObject",
     components: {
         PreviewXML,
-        PreviewText,
-        PreviewPDF,
-        PreviewHTML,
         ChooseCreateProperty,
-        ChooseCreateTitle,
         ChooseManageList,
-        AddMetadata
+        ShowEditMetadata
     },
     props: {
         object: {
@@ -191,19 +149,8 @@ export default {
                 };
             });
         },
-        isPDF() {
-            return match.mimeType(this.$store, this.object.source.type, this.object.source.name) === "application/pdf" &&
-            (this.object.source.uri || this.object.source.data);
-        },
-        isHTML() {
-            return match.mimeType(this.$store, this.object.source.type, this.object.source.name) === "text/html" &&
-            (this.object.source.uri || this.object.source.data);
-        },
-        isText() {
-            return this.object.type === "plus:Text";
-        },
         isXML() {
-            return this.object?.source?.type === "application/xml";
+            return this.object?.type === "plus:RuleViolation";
         },
         ...mapGetters("projects", [
             "getCurrentProjectRelationById"

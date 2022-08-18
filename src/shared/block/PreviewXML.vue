@@ -1,13 +1,13 @@
 <!-- eslint-disable vue/no-v-html -->
 <!--
-  Copyright 2020 plusmeta GmbH
+  Copyright 2022 plusmeta GmbH
   License: MIT
 -->
 
 <template>
   <v-flex style="overflow-x: auto;">
     <v-sheet
-      v-if="xml"
+      v-if="file.text"
       height="400"
       min-width="400"
       class="pa-0 mx-auto"
@@ -15,13 +15,13 @@
       style="overflow-x: auto;"
     >
       <VueDocPreview
-        :value="xml"
+        :value="file.text"
         type="code"
         language="xml"
       />
     </v-sheet>
     <v-skeleton-loader
-      v-show="!xml"
+      v-show="!file.text"
       class="mx-auto"
       height="400"
       width="400"
@@ -31,12 +31,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
 import VueDocPreview from "vue-doc-preview";
-
-import format from "xml-formatter";
-
-import util from "@/util";
 
 export default {
     name: "PlusPreviewXML",
@@ -53,24 +48,6 @@ export default {
             required: false,
             default: 0.5
         }
-    },
-    data() {
-        return {
-            xml: null
-        };
-    },
-    mounted() {
-        this.render();
-    },
-    methods: {
-        async render() {
-            let data = await this.fetchSource(this.file.uuid);
-            this.xml = await util.readFile(data, "text");
-            this.xml = format(this.xml);
-        },
-        ...mapActions("storage", [
-            "fetchSource"
-        ])
     }
 };
 </script>
@@ -79,5 +56,12 @@ export default {
     .v-skeleton-loader__image {
         height: 100% !important;
         min-height: 400px;
+    }
+    .vm-markdown-html {
+        padding: 0 !important;
+    }
+    .vm-markdown-html pre {
+        margin: 0 !important;
+        border-radius: 0 !important;
     }
 </style>

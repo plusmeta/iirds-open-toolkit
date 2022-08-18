@@ -6,7 +6,24 @@
 
 <template>
   <v-container fluid>
-    <HelpView helpkey="workflow.assignMetadata" />
+    <v-card
+      class="mb-6"
+      :color="(isValid) ? 'success' : 'error'"
+      :outlined="!$vuetify.theme.dark"
+    >
+      <v-card-title class="h4">
+        <v-icon left x-large>
+          {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
+        </v-icon>
+        <span class="title">
+          {{ (isValid) ? 'Valid' : 'Not valid' }}
+        </span>
+        <v-spacer />
+        <span class="title">
+          iiRDS Version 1.0
+        </span>
+      </v-card-title>
+    </v-card>
 
     <v-card :outlined="!$vuetify.theme.dark">
       <v-data-iterator
@@ -131,20 +148,19 @@
               >
                 <v-list-item-icon>
                   <v-icon>
-                    {{ getIconForType(item.type) }}
+                    {{ getIconForType(item.uuid) }}
                   </v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="subtitle-2">
                     {{ item.name }}
                   </v-list-item-title>
-                  <v-list-item-subtitle class="overline">
-                    {{ getPropertyLabelById(item.type) }}
+                  <v-list-item-subtitle class="caption">
+                    <span class="font-monospace font-weight-bold">
+                      {{ getMetadataValueByURI(item.uuid, "plus:OriginalFileName") }}:{{ getMetadataValueByURI(item.uuid, "plus:LineNr") }}
+                    </span>
                   </v-list-item-subtitle>
                 </v-list-item-content>
-                <v-list-item-action>
-                  <DeleteObject :uuid="item.uuid" />
-                </v-list-item-action>
               </v-list-item>
             </v-list>
             <v-card-text
@@ -184,18 +200,12 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import util from "@/util";
-
 import AssignMetadata from "@/toolkit/block/OtkAssignMetadataToObject";
-import DeleteObject from "@/shared/inline/DeleteObject";
-import HelpView from "@/shared/block/HelpView";
 
 export default {
     name: "OtkStepBulkAssignMetadata",
     components: {
         AssignMetadata,
-        DeleteObject,
-        HelpView
     },
     props: {
         objecttype: {
@@ -211,6 +221,11 @@ export default {
         };
     },
     computed: {
+        isValid() {
+            return this.getCurrentObjectsByType(this.objecttype).filter((o) => {
+                return this.getMetadataValueByURI(o.uuid, "plus:Level") === "MUST";
+            }).length === 0;
+        },
         getCurrentObjects() {
             let filter = this.getSetting("ui_assign_filter") || this.objecttype;
             return this.getCurrentObjectsByType(filter);
@@ -248,12 +263,12 @@ export default {
     },
     mounted() {
         // open first element after mount
-        document.querySelector("#item-0").click();
+        const firstElem = document.querySelector("#item-0");
+        if (firstElem) firstElem.click();
     },
     methods: {
-        getIconForType(type) {
-            const icon = this.getPropertyRelationById(type, "plus:has-icons")[0];
-            return (icon) ? icon.replace(":", "-") : undefined;
+        getIconForType(objectUuid) {
+            return "mdi-close-circle";
         },
         ...mapActions("projects", [
             "updateCurrentProjectRelations",
