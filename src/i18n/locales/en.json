@@ -111,6 +111,7 @@
   },
   "Validate": {
     "addObjects": "Validate iiRDS",
+    "all": "All rules",
     "noObjectsExplainer": "To validate drag&drop an iiRDS package on this field"
   }
 }

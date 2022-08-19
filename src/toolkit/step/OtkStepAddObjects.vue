@@ -260,7 +260,7 @@
                 <div class="my-2" style="font-size: 96px">
                   {{ $t('Validate.addObjects') }}
                 </div>
-                <v-icon :size="96" color="grey">
+                <v-icon :size="180" color="grey">
                   mdi-package-variant-closed-check
                 </v-icon>
                 <p class="my-3" style="font-size: 24px">
@@ -281,7 +281,6 @@ import { tap, debounceTime } from "rxjs/operators";
 
 import QuickView from "@/shared/inline/QuickView";
 import DeleteObject from "@/shared/inline/DeleteObject";
-import HelpView from "@/shared/block/HelpView";
 
 import template from "@/store/storage/template";
 import util from "@/util";

@@ -340,22 +340,6 @@
     },
     {
         "subClassOf": "plus:Meta",
-        "identifier": "plus:RuleText",
-        "datatype": "plus:LongText",
-        "label": {
-            "de": "Verstoß",
-            "en": "Violation"
-        },
-        "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata"
-            ],
-            "plus:has-icons": ["mdi:bookmark-outline"]
-        }
-    },
-    {
-        "subClassOf": "plus:Meta",
         "identifier": "plus:Spec",
         "datatype": "plus:Hyperlink",
         "label": {
@@ -368,6 +352,22 @@
                 "plus:AssignableMetadata"
             ],
             "plus:has-icons": ["mdi:book-check-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
+        "identifier": "plus:RuleText",
+        "datatype": "plus:LongText",
+        "label": {
+            "de": "Verstoß",
+            "en": "Violation"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:message-alert-outline"]
         }
     },
     {

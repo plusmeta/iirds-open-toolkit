@@ -8,7 +8,7 @@
   <v-app-bar
     dense
     dark
-    color="info"
+    color="primary"
     app
   >
     <v-toolbar-title>

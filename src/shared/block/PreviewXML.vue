@@ -28,6 +28,9 @@
       width="400"
       type="image"
     />
+    <p v-if="file.text" class="font-monospace mt-2">
+      Violation found in line {{ getLineNr }} of {{ getFileName }}
+    </p>
   </v-flex>
 </template>
 
@@ -48,6 +51,9 @@ export default {
         }
     },
     computed: {
+        getFileName() {
+            return this.getMetadataValueByURI(this.file.uuid, "plus:OriginalFileName");
+        },
         getCode() {
             return this.getMetadataValueByURI(this.file.uuid, "plus:Lines");
         },

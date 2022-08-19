@@ -7,36 +7,57 @@
 <template>
   <v-container fluid>
     <v-card
-      class="mb-6"
-      min-height="100"
+      class="mb-6 elevation-4"
+      min-height="125"
       :color="(isValid) ? 'success' : 'error'"
-      :outlined="!$vuetify.theme.dark"
     >
-      <v-card-title class="h4">
-        <v-icon left x-large>
-          {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
-        </v-icon>
-        <span class="h1">
-          {{ (isValid) ? 'Valid' : 'Not valid' }}
-        </span>
+      <v-row
+        align="center"
+        style="height:125px"
+        class="white--text"
+      >
+        <v-col class="py-4 pl-12" cols="auto">
+          <v-icon
+            left :size="64"
+            color="white"
+          >
+            {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
+          </v-icon>
+          <!-- <span class="d-block caption ml-1">
+            iiRDS 1.0
+          </span> -->
+        </v-col>
+        <v-col class="py-4" cols="auto">
+          <h1>
+            {{ (isValid) ? 'Valid' : 'Not valid' }}
+          </h1>
+        </v-col>
+        <v-col class="py-4 px-8" cols="8">
+          <span class="font-weight-bold">{{ getViolations.length }}</span>
+          violations detected for file <span class="font-weight-bold">{{ getValidationSource }}</span>
+        </v-col>
         <v-spacer />
-        <span class="title">
-          iiRDS 1.0
-        </span>
-      </v-card-title>
-      <v-card-text>
-        There were <span class="font-weight-bold">{{ getViolations }}</span>
-        violations for file <span class="font-weight-bold">{{ getValidationSource }}</span> detected
-      </v-card-text>
+        <v-col class="py-4 pr-12" cols="auto">
+          <v-btn
+            icon
+            color="white"
+            @click="startFromStart()"
+          >
+            <v-icon x-large>
+              mdi-restore
+            </v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-card>
 
-    <v-card :outlined="!$vuetify.theme.dark">
+    <v-card v-if="!isValid" :outlined="!$vuetify.theme.dark">
       <v-data-iterator
         :items="getCurrentObjects"
-        :items-per-page="10"
+        :items-per-page="7"
         :search="search"
         :footer-props="{
-          'items-per-page-options': [10,25,50],
+          'items-per-page-options': [7,25,50],
           'show-first-last-page': true,
           'show-current-page': true
         }"
@@ -55,7 +76,7 @@
                 ref="type"
                 :value="getSetting('ui_assign_filter')"
                 :items="getObjectTypeFilterValues"
-                :label="$t('Objects.all')"
+                :label="$t('Validate.all')"
                 prepend-icon="mdi-filter"
                 single-line
                 hide-details
@@ -234,7 +255,7 @@ export default {
         getViolations() {
             return this.getCurrentObjectsByType(this.objecttype).filter((o) => {
                 return this.getMetadataValueByURI(o.uuid, "plus:Level") === "MUST";
-            }).length;
+            });
         },
         isValid() {
             return this.getViolations.length === 0;
@@ -295,14 +316,21 @@ export default {
     },
     methods: {
         getIconForType(objectUuid) {
-            return "mdi-close-circle";
+            return "mdi-message-alert";
+        },
+        startFromStart() {
+            this.setCurrentProgressLocal(1);
+            this.resetSettings(true);
+            this.$router.push("/");
         },
         ...mapActions("projects", [
             "updateCurrentProjectRelations",
+            "setCurrentProgressLocal",
             "deleteObjectsFromProject"
         ]),
         ...mapActions("settings", [
-            "setLocalSetting"
+            "setLocalSetting",
+            "resetSettings"
         ]),
         ...mapActions("storage", [
             "saveMetaDatum"

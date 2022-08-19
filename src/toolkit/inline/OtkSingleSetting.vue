@@ -40,10 +40,13 @@
           <v-btn
             :href="String(value)"
             target="_blank"
-            text
-            class="ml-4 mb-6"
+            class="ml-6 mb-4"
             color="primary"
+            outlined
           >
+            <v-icon left>
+              mdi-bookmark-outline
+            </v-icon>
             {{ getLabel }}
           </v-btn>
         </span>

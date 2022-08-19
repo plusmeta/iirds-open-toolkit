@@ -111,6 +111,7 @@
   },
   "Validate": {
     "addObjects": "iiRDS validieren",
+    "all": "Alle Regeln",
     "noObjectsExplainer": "iiRDS-Paket per Drag&Drop auf dieses Feld ziehenl, um es zu validieren."
   }
 }
