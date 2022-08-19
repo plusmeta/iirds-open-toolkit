@@ -1142,7 +1142,7 @@ export default [
         prio: "MAY",
         rule: {
             "de": "...",
-            "en": "Definition:	Parent class for different types of planning time that MAY be referenced in technical documentation. Planning times describe periods of time REQUIRED for or resulting from specific working tasks."
+            "en": "Definition:	Parent class for different types of planning time that MAY be referenced in technical documentation. Planning times describe periods of time required for or resulting from specific working tasks."
         }
     },
     {
