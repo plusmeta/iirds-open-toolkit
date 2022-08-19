@@ -1,9 +1,5 @@
 const ABSOLUTE_IRI_REGEX = /(^(?:\/|[a-z]+:\/\/))|(www\..*?\..*?\/)/;
 const iri_absolute_regex = /'^(?:[a-z]+:)?\/\/'/;
-
-// const meineEveryFunc = el => !ABSOLUTE_IRI_REGEX.test(el.textContent);
-
-// const meineGenFunc = (el, attr) => el.getAttribute(attr)?.length === ?;
 const mustNotBeABlankNode = el => el.childElementCount === 0;
 const mustNotHaveChild = child => el => el.querySelectorAll(child).length === 0;
 const mustHaveChild = child => el => el.querySelectorAll(child).length === 1;
