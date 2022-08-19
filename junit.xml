@@ -1,9 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="2" failures="0" errors="0" time="1.531">
-  <testsuite name="validate iirds xml" errors="0" failures="0" skipped="0" timestamp="2022-08-16T08:32:32" time="1.09" tests="2">
-    <testcase classname="validate iirds xml Document must have a referenced object... - [T][0]" name="validate iirds xml Document must have a referenced object... - [T][0]" time="0.017">
+<testsuites name="jest tests" tests="24" failures="7" errors="0" time="3.218">
+  <testsuite name="validate iirds xml" errors="0" failures="7" skipped="0" timestamp="2022-08-19T06:39:12" time="1.409" tests="24">
+    <testcase classname="validate iirds xml iiRDS Generators MUST NOT use the iirds:Infor... - [T][0]" name="validate iirds xml iiRDS Generators MUST NOT use the iirds:Infor... - [T][0]" time="0.047">
     </testcase>
-    <testcase classname="validate iirds xml Document must have a referenced object... - [F][0]" name="validate iirds xml Document must have a referenced object... - [F][0]" time="0.007">
+    <testcase classname="validate iirds xml iiRDS Generators MUST NOT use the iirds:Infor... - [F][0]" name="validate iirds xml iiRDS Generators MUST NOT use the iirds:Infor... - [F][0]" time="0.034">
+    </testcase>
+    <testcase classname="validate iirds xml An instance of an iirds:InformationUnit subcl... - [T][0]" name="validate iirds xml An instance of an iirds:InformationUnit subcl... - [T][0]" time="0.026">
+    </testcase>
+    <testcase classname="validate iirds xml An instance of an iirds:InformationUnit subcl... - [F][0]" name="validate iirds xml An instance of an iirds:InformationUnit subcl... - [F][0]" time="0.026">
+    </testcase>
+    <testcase classname="validate iirds xml Each iiRDS package MUST have exactly one corr... - [T][0]" name="validate iirds xml Each iiRDS package MUST have exactly one corr... - [T][0]" time="0.014">
+    </testcase>
+    <testcase classname="validate iirds xml Each iiRDS package MUST have exactly one corr... - [F][0]" name="validate iirds xml Each iiRDS package MUST have exactly one corr... - [F][0]" time="0.009">
+    </testcase>
+    <testcase classname="validate iirds xml iiRDS:Package MUST use property iirds:iiRDSVe... - [T][0]" name="validate iirds xml iiRDS:Package MUST use property iirds:iiRDSVe... - [T][0]" time="0.015">
+    </testcase>
+    <testcase classname="validate iirds xml iiRDS:Package MUST use property iirds:iiRDSVe... - [F][0]" name="validate iirds xml iiRDS:Package MUST use property iirds:iiRDSVe... - [F][0]" time="0.012">
+    </testcase>
+    <testcase classname="validate iirds xml The corresponding iirds:Package instance of a... - [T][0]" name="validate iirds xml The corresponding iirds:Package instance of a... - [T][0]" time="0.009">
+    </testcase>
+    <testcase classname="validate iirds xml The corresponding iirds:Package instance of a... - [F][0]" name="validate iirds xml The corresponding iirds:Package instance of a... - [F][0]" time="0.015">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  false
+Received:
+  true
+
+Message:
+  expected true to equal false
+    at Object.&lt;anonymous&gt; (C:\Work\iirds-validation-tool\tests\unit\util\validation-rules.spec.js:23:42)
+    at Object.asyncJestTest (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)</failure>
+    </testcase>
+    <testcase classname="validate iirds xml It is RECOMMENDED to use absolute IRIs in rdf... - [T][0]" name="validate iirds xml It is RECOMMENDED to use absolute IRIs in rdf... - [T][0]" time="0.013">
+    </testcase>
+    <testcase classname="validate iirds xml It is RECOMMENDED to use absolute IRIs in rdf... - [F][0]" name="validate iirds xml It is RECOMMENDED to use absolute IRIs in rdf... - [F][0]" time="0.016">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  false
+Received:
+  true
+
+Message:
+  expected true to equal false
+    at Object.&lt;anonymous&gt; (C:\Work\iirds-validation-tool\tests\unit\util\validation-rules.spec.js:23:42)
+    at Object.asyncJestTest (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)</failure>
+    </testcase>
+    <testcase classname="validate iirds xml If information objects are used, each informa... - [T][0]" name="validate iirds xml If information objects are used, each informa... - [T][0]" time="0.01">
+    </testcase>
+    <testcase classname="validate iirds xml If information objects are used, each informa... - [F][0]" name="validate iirds xml If information objects are used, each informa... - [F][0]" time="0.012">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  false
+Received:
+  true
+
+Message:
+  expected true to equal false
+    at Object.&lt;anonymous&gt; (C:\Work\iirds-validation-tool\tests\unit\util\validation-rules.spec.js:23:42)
+    at Object.asyncJestTest (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)</failure>
+    </testcase>
+    <testcase classname="validate iirds xml An iirds:Rendition MUST have the property iir... - [T][0]" name="validate iirds xml An iirds:Rendition MUST have the property iir... - [T][0]" time="0.012">
+    </testcase>
+    <testcase classname="validate iirds xml An iirds:Rendition MUST have the property iir... - [F][0]" name="validate iirds xml An iirds:Rendition MUST have the property iir... - [F][0]" time="0.014">
+    </testcase>
+    <testcase classname="validate iirds xml An iirds:Rendition MUST have the property iir... - [T][0]" name="validate iirds xml An iirds:Rendition MUST have the property iir... - [T][0]" time="0.01">
+    </testcase>
+    <testcase classname="validate iirds xml An iirds:Rendition MUST have the property iir... - [F][0]" name="validate iirds xml An iirds:Rendition MUST have the property iir... - [F][0]" time="0.007">
+    </testcase>
+    <testcase classname="validate iirds xml iirds:Rendition MUST NOT directly use iirds:S... - [T][0]" name="validate iirds xml iirds:Rendition MUST NOT directly use iirds:S... - [T][0]" time="0.011">
+    </testcase>
+    <testcase classname="validate iirds xml iirds:Rendition MUST NOT directly use iirds:S... - [F][0]" name="validate iirds xml iirds:Rendition MUST NOT directly use iirds:S... - [F][0]" time="0.002">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  false
+Received:
+  true
+
+Message:
+  expected true to equal false
+    at Object.&lt;anonymous&gt; (C:\Work\iirds-validation-tool\tests\unit\util\validation-rules.spec.js:23:42)
+    at Object.asyncJestTest (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)</failure>
+    </testcase>
+    <testcase classname="validate iirds xml Instances of the iirds:Event class MUST have ... - [T][0]" name="validate iirds xml Instances of the iirds:Event class MUST have ... - [T][0]" time="0.007">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  true
+Received:
+  [Function anonymous]
+
+Message:
+  expected [Function] to equal true
+
+Difference:
+
+  Comparing two different types of values. Expected boolean but received function.
+    at Object.&lt;anonymous&gt; (C:\Work\iirds-validation-tool\tests\unit\util\validation-rules.spec.js:23:42)
+    at Object.asyncJestTest (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)</failure>
+    </testcase>
+    <testcase classname="validate iirds xml Instances of the iirds:Event class MUST have ... - [F][0]" name="validate iirds xml Instances of the iirds:Event class MUST have ... - [F][0]" time="0.001">
+      <failure>Error: ENOENT: no such file or directory, open
+    at Object.openSync (fs.js:498:3)
+    at readFileSync (fs.js:394:35)
+    at Object.&lt;anonymous&gt; (C:\Work\iirds-validation-tool\tests\unit\util\validation-rules.spec.js:19:40)
+    at Object.asyncJestTest (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)</failure>
+    </testcase>
+    <testcase classname="validate iirds xml IRI: REQUIRED... - [T][0]" name="validate iirds xml IRI: REQUIRED... - [T][0]" time="0.018">
+    </testcase>
+    <testcase classname="validate iirds xml IRI: REQUIRED... - [F][0]" name="validate iirds xml IRI: REQUIRED... - [F][0]" time="0.013">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  false
+Received:
+  true
+
+Message:
+  expected true to equal false
+    at Object.&lt;anonymous&gt; (C:\Work\iirds-validation-tool\tests\unit\util\validation-rules.spec.js:23:42)
+    at Object.asyncJestTest (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)</failure>
     </testcase>
   </testsuite>
 </testsuites>
