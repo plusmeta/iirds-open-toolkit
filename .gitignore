@@ -23,3 +23,6 @@ yarn-error.log*
 
 # Local history (VCS plugin)
 .history
+
+coverage/clover.xml
+junit.xml
