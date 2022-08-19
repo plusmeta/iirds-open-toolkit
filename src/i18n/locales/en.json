@@ -108,5 +108,9 @@
     "objects": "Total",
     "objectsCount": "Objects count",
     "processed": "Processed"
+  },
+  "Validate": {
+    "addObjects": "Validate iiRDS",
+    "noObjectsExplainer": "To validate drag&drop an iiRDS package on this field"
   }
 }

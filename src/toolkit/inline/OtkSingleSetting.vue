@@ -4,6 +4,8 @@
       <v-col v-if="getType === 'plus:LongText'">
         <v-textarea
           :value="String(value)"
+          :rows="2"
+          auto-grow
           prepend-icon="mdi-title"
           :readonly="isReadOnly"
           :label="getLabel"
@@ -32,6 +34,19 @@
             </slot>
           </template>
         </v-text-field>
+      </v-col>
+      <v-col v-else-if="getType === 'plus:Hyperlink'">
+        <span class="d-inline-block subtitle-2">
+          <v-btn
+            :href="String(value)"
+            target="_blank"
+            text
+            class="ml-4 mb-6"
+            color="primary"
+          >
+            {{ getLabel }}
+          </v-btn>
+        </span>
       </v-col>
       <v-col v-else-if="getType === 'plus:Number'">
         <v-text-field

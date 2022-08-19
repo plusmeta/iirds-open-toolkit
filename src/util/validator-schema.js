@@ -21,8 +21,8 @@ export default {
             const pass = !selection.length || !result.length;
             if (!pass) {
                 for (let element of result) {
-                    const { location, lineNr, line } = this.getLocation(element, lineMap, lineArr);
-                    violations.push({ ...test, fileName, scope, location, lineNr, line });
+                    const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
+                    violations.push({ ...test, fileName, scope, location, lineNr, lines });
                 }
             }
         }
@@ -46,7 +46,7 @@ export default {
     getLocation(element, lineMap, lineArr) {
         const validationId = element.getAttribute(validationIdAttr);
         const lineNr = lineMap[validationId];
-        const line = lineArr[lineNr - 1];
+        const lines = lineArr.slice(Math.max(0, lineNr - 4), Math.min(lineArr.length, lineNr + 3));
 
         const validationIdRexExp = `${validationIdAttr}="[\\w\\-\\/\\.#\\d:]+"\\s?`;
         let xmlTxt = Serializer.serializeToString(element);
@@ -54,6 +54,6 @@ export default {
         xmlTxt = xmlTxt.replace(/xmlns:\w{2,5}="[\w\-\/\.#\d:]+"\s?/g, "");
         xmlTxt = xmlTxt.replace(new RegExp(validationIdRexExp, "g"), "");
 
-        return { location: xmlTxt, lineNr, line };
+        return { location: xmlTxt, lineNr, lines: lines.join("\n") };
     }
 };

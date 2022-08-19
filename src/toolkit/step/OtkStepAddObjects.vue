@@ -253,55 +253,24 @@
               class="pa-5"
             >
               <div
-                class="pa-5 mb-5"
+                class="pa-2 mb-2"
                 style="border: 3px dashed grey;"
                 @click="$refs.fileInput.click()"
               >
-                <div class="my-5" style="font-size: 96px">
-                  {{ $t('Objects.none') }}
+                <div class="my-2" style="font-size: 96px">
+                  {{ $t('Validate.addObjects') }}
                 </div>
                 <v-icon :size="96" color="grey">
-                  mdi-cloud-upload-outline
+                  mdi-package-variant-closed-check
                 </v-icon>
-                <p class="my-5" style="font-size: 24px">
-                  {{ $t('Objects.noObjectsExplainer') }}
+                <p class="my-3" style="font-size: 24px">
+                  {{ $t('Validate.noObjectsExplainer') }}
                 </p>
               </div>
             </v-container>
           </template>
-
-          <template v-slot:no-results>
-            <p class="pa-5">
-              {{ $t('Objects.none') }} [{{ $t('Common.searchFor') }}: {{ search }}]
-            </p>
-          </template>
         </v-data-table>
       </v-card>
-    </v-container>
-
-    <v-container
-      v-if="getSetting('ui_shortcuts')"
-      class="caption text-sm-right px-0 pt-6"
-    >
-      <v-icon class="mr-4" color="grey darken-1">
-        mdi-keyboard
-      </v-icon>
-      <span class="d-inline-block mr-2">
-        {{ $t("Common.filter") }}
-      </span>
-      <kbd>t</kbd>
-      <span class="d-inline-block mr-2 ml-8">
-        {{ $t("Common.search") }}
-      </span>
-      <kbd>f</kbd>
-      <span class="d-inline-block mr-2 ml-8">
-        {{ $t("Actions.addObject") }}
-      </span>
-      <kbd>u</kbd>
-      <span class="d-inline-block mr-2 ml-8">
-        {{ $t("Actions.openSettings") }}
-      </span>
-      <kbd>s</kbd>
     </v-container>
   </v-container>
 </template>

@@ -8,7 +8,7 @@
             "de": "iiRDS-Container",
             "en": "iiRDS container"
         },
-        "indicators": []
+        "indicators": ["application/iirds+zip"]
     },
     {
         "identifier": "iirds:iirdsDomainEntity",

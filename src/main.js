@@ -25,6 +25,12 @@ import vuetify from "@/plugins/vuetify";
 import "typeface-ubuntu";
 import "typeface-ubuntu-mono";
 
+import VueCodemirror from "vue-codemirror";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/xq-light.css";
+import "codemirror/mode/xml/xml.js";
+//import "codemirror/addon/selection/mark-selection.js";
+
 import { AuthContextHolder } from "@/services/auth/auth-context-holder";
 import { StandaloneService } from "@/services/auth/standalone-service";
 
@@ -38,6 +44,14 @@ Vue.use(VueSecurity, Security.instance);
 Vue.use(VueNotify, NotifyService.instance);
 Vue.use(VueConfirm, ConfirmService.instance);
 Vue.use(VueRx);
+
+Vue.use(VueCodemirror, { options: {
+    mode: "application/xml",
+    lineNumbers: true,
+    theme: "xq-light",
+    lineWrapping: true,
+    readOnly: true
+}});
 
 // Vue.use(VueMatomo, {
 //     host: "https://statistik.tekom.de",

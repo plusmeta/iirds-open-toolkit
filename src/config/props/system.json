@@ -341,7 +341,7 @@
     {
         "subClassOf": "plus:Meta",
         "identifier": "plus:RuleText",
-        "datatype": "plus:String",
+        "datatype": "plus:LongText",
         "label": {
             "de": "Verstoß",
             "en": "Violation"
@@ -356,6 +356,22 @@
     },
     {
         "subClassOf": "plus:Meta",
+        "identifier": "plus:Spec",
+        "datatype": "plus:Hyperlink",
+        "label": {
+            "de": "Gehe zu Spezifikation",
+            "en": "Go to specification"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:VisibleMetadata",
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:book-check-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
         "identifier": "plus:LineNr",
         "datatype": "plus:Number",
         "label": {
@@ -364,7 +380,6 @@
         },
         "rels": {
             "plus:has-roles": [
-                "plus:VisibleMetadata",
                 "plus:AssignableMetadata"
             ],
             "plus:has-icons": ["mdi:bookmark-outline"]
@@ -372,15 +387,14 @@
     },
     {
         "subClassOf": "plus:Meta",
-        "identifier": "plus:Line",
+        "identifier": "plus:Lines",
         "datatype": "plus:String",
         "label": {
-            "de": "Zeile",
-            "en": "Line"
+            "de": "Zeilen",
+            "en": "Lines"
         },
         "rels": {
             "plus:has-roles": [
-                "plus:VisibleMetadata",
                 "plus:AssignableMetadata"
             ],
             "plus:has-icons": ["mdi:bookmark-outline"]
@@ -404,22 +418,6 @@
     },
     {
         "subClassOf": "plus:Meta",
-        "identifier": "plus:Spec",
-        "datatype": "plus:String",
-        "label": {
-            "de": "Spezifikation",
-            "en": "Specification"
-        },
-        "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata"
-            ],
-            "plus:has-icons": ["mdi:book-check-outline"]
-        }
-    },
-    {
-        "subClassOf": "plus:Meta",
         "identifier": "plus:OriginalFileName",
         "datatype": "plus:String",
         "label": {
@@ -428,7 +426,6 @@
         },
         "rels": {
             "plus:has-roles": [
-                "plus:VisibleMetadata",
                 "plus:AssignableMetadata"
             ],
             "plus:has-icons": ["mdi:file-find-outline"]

@@ -10,7 +10,7 @@
       <v-flex
         v-if="isPreview"
         xs6
-        lg4
+        lg5
         class="px2"
       >
         <PreviewXML
@@ -27,19 +27,12 @@
         />
       </v-flex>
       <v-flex
-        class="flex-shrink-1"
-        :class="{
-          'offset-xs1': isPreview,
-          'xs5': isPreview,
-          'lg7': isPreview,
-          'xs12': !isPreview
-        }"
+        class="flex-shrink-1 offset-xs1 xs5 lg6"
       >
         <template v-for="custom in getVisibleMetadata">
           <div
             v-if="custom.type === 'plus:Class'"
             :key="custom.value"
-            class="mt-2"
           >
             <ChooseCreateProperty
               :key="custom.value"
@@ -56,7 +49,6 @@
           <div
             v-if="custom.type === 'plus:Array'"
             :key="custom.value"
-            class="mt-2"
           >
             <ChooseManageList
               :key="custom.value"
@@ -71,7 +63,6 @@
           <div
             v-else
             :key="custom.value"
-            class="mt-2"
           >
             <ShowEditMetadata
               :object-uuid="object.uuid"

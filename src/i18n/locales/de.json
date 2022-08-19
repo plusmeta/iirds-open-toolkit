@@ -108,5 +108,9 @@
     "objects": "Gesamt",
     "objectsCount": "Anzahl Objekte",
     "processed": "Verarbeitet"
+  },
+  "Validate": {
+    "addObjects": "iiRDS validieren",
+    "noObjectsExplainer": "iiRDS-Paket per Drag&Drop auf dieses Feld ziehenl, um es zu validieren."
   }
 }

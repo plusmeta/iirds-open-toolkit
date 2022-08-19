@@ -78,13 +78,9 @@ export default {
         if (validationResult && Array.isArray(validationResult)) {
             await Promise.allSettled(validationResult.map(test => this.setViolation(objectUuid, test)));
         } else {
-            let rule = ({en: "XML validation failed for M   ain document"});
+            let rule = ({en: "XML validation failed for Main document"});
             await this.setViolation(objectUuid, rule);
         }
-
-        // const {version, restriction} = this.checkConformanceLevel(objectUuid);
-
-        // await this.setViolation(objectUuid, version, restriction);
 
         await this.params.store.dispatch("projects/nextProjectStepLocal");
 
@@ -127,9 +123,9 @@ export default {
                     uri: "plus:LineNr",
                     value: Number(test.lineNr),
                 }),
-                "plus:Line": objectTemplate.metadata({
-                    uri: "plus:LineNr",
-                    value: test.line,
+                "plus:Lines": objectTemplate.metadata({
+                    uri: "plus:Lines",
+                    value: test.lines,
                 }),
                 "plus:Level": objectTemplate.metadata({
                     uri: "plus:Level",
@@ -145,7 +141,7 @@ export default {
                 }),
                 "plus:RuleType": objectTemplate.metadata({
                     uri: "plus:RuleType",
-                    value: "plus:MetadataRule",
+                    value: "iiRDS metadata model",
                 })
 
             }

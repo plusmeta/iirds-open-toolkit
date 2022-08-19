@@ -8,6 +8,7 @@
   <v-container fluid>
     <v-card
       class="mb-6"
+      min-height="100"
       :color="(isValid) ? 'success' : 'error'"
       :outlined="!$vuetify.theme.dark"
     >
@@ -15,14 +16,18 @@
         <v-icon left x-large>
           {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
         </v-icon>
-        <span class="title">
+        <span class="h1">
           {{ (isValid) ? 'Valid' : 'Not valid' }}
         </span>
         <v-spacer />
         <span class="title">
-          iiRDS Version 1.0
+          iiRDS 1.0
         </span>
       </v-card-title>
+      <v-card-text>
+        There were <span class="font-weight-bold">{{ getViolations }}</span>
+        violations for file <span class="font-weight-bold">{{ getValidationSource }}</span> detected
+      </v-card-text>
     </v-card>
 
     <v-card :outlined="!$vuetify.theme.dark">
@@ -161,6 +166,11 @@
                     </span>
                   </v-list-item-subtitle>
                 </v-list-item-content>
+                <v-list-item-action>
+                  <v-chip small color="primary">
+                    {{ getMetadataValueByURI(item.uuid, 'plus:Rule') }}
+                  </v-chip>
+                </v-list-item-action>
               </v-list-item>
             </v-list>
             <v-card-text
@@ -221,25 +231,42 @@ export default {
         };
     },
     computed: {
-        isValid() {
+        getViolations() {
             return this.getCurrentObjectsByType(this.objecttype).filter((o) => {
                 return this.getMetadataValueByURI(o.uuid, "plus:Level") === "MUST";
-            }).length === 0;
+            }).length;
+        },
+        isValid() {
+            return this.getViolations.length === 0;
+        },
+        getValidationSource() {
+            return this.getCurrentObjectsByType("iirds:Container")[0].name;
         },
         getCurrentObjects() {
-            let filter = this.getSetting("ui_assign_filter") || this.objecttype;
-            return this.getCurrentObjectsByType(filter);
+            let filter = this.getSetting("ui_assign_filter");
+            return this.getCurrentObjectsByType(this.objecttype).filter((object) => {
+                const ruleNr = this.getMetadataValueByURI(object.uuid, "plus:Rule");
+                return (filter) ? ruleNr === filter : true;
+            });
         },
         getObjectTypeFilterValues() {
-            return Object.entries(this.getCurrentObjectTypes).map(([key, value]) => {
+            const ruleCountMap = this.getCurrentObjectsByType(this.objecttype).reduce((map, object) => {
+                const ruleNr = this.getMetadataValueByURI(object.uuid, "plus:Rule");
+                if (map[ruleNr]) {
+                    map[ruleNr]++;
+                } else {
+                    map[ruleNr] = 1;
+                }
+                return map;
+            }, {});
+
+            return Object.entries(ruleCountMap).map(([rule, count]) => {
                 return {
-                    text: this.getPropertyLabelById(key) || key,
-                    value: key,
-                    count: value
+                    text: rule,
+                    value: rule,
+                    count: count
                 };
-            })
-                .filter(item => this.objecttype.includes(item.value))
-                .sort((a,b) => a.text.localeCompare(b.text));
+            }).sort((a,b) => a.text.localeCompare(b.text));
         },
         ...mapGetters("storage", [
             "getCurrentObjectTypes",
