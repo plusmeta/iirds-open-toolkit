@@ -8,7 +8,7 @@
             "de": "iiRDS-Container",
             "en": "iiRDS container"
         },
-        "indicators": []
+        "indicators": ["application/iirds+zip"]
     },
     {
         "identifier": "iirds:iirdsDomainEntity",
@@ -125,9 +125,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:ProductMetadata",
         "rels": {
-            "plus:has-roles": [
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:relates-to-component"
             ],
@@ -606,11 +603,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:InformationType",
         "rels": {
-            "plus:has-roles": [
-                "plus:RequiredMetadata",
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:has-document-type"
             ],
@@ -829,9 +821,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:FunctionalMetadata",
         "rels": {
-            "plus:has-roles": [
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:relates-to-event"
             ],
@@ -927,9 +916,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:FunctionalMetadata",
         "rels": {
-            "plus:has-roles": [
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:relates-to-qualification"
             ],
@@ -1618,9 +1604,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:ProductMetadata",
         "rels": {
-            "plus:has-roles": [
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:relates-to-product-feature"
             ],
@@ -1716,10 +1699,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:ProductMetadata",
         "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:relates-to-product-variant"
             ],
@@ -1738,10 +1717,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:InformationType",
         "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:has-subject"
             ],
@@ -1812,10 +1787,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:ProductMetadata",
         "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:relates-to-product-lifecycle-phase"
             ],
@@ -1834,9 +1805,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:FunctionalMetadata",
         "rels": {
-            "plus:has-roles": [
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:relates-to-supply"
             ],
@@ -2205,10 +2173,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:InformationType",
         "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:has-topic-type"
             ],
@@ -2281,10 +2245,6 @@
         "datatype": "plus:Class",
         "subClassOf": "iirds:FunctionalMetadata",
         "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata"
-            ],
             "plus:has-relations": [
                 "iirds:relates-to-action"
             ],
@@ -2434,8 +2394,6 @@
         "subClassOf": "plus:Meta",
         "rels": {
             "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata",
                 "plus:IdentityDomain"
             ],
             "iirds:has-identity-type": [
