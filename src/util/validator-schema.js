@@ -17,9 +17,9 @@ export default {
 
         const scopedTests = validations.filter(v => !scope || scope === v.scope);
         for (let test of scopedTests) {
-            const pass = iirdsValidateXmlRule(document, test);
-            if (!pass) {
-                for (let element of result) {
+            const { succeded, invalidElements } = iirdsValidateXmlRule(document, test);
+            if (!succeded) {
+                for (let element of invalidElements) {
                     const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
                     const violation = { ...test, fileName, scope, location, lineNr, lines };
                     violations.push(violation);
@@ -59,23 +59,11 @@ export default {
 };
 
 export function iirdsValidateXmlRule(rdfDoc, iirdsRule) {
-    const selection = rdfDoc.querySelectorAll(iirdsRule.path);
-    const result = iirdsRule.assert(Array.from(selection));
-    return !selection.length || !result.length;
-}
-
-export function iirdsValidateXmlContent(xmlContent) {
-    const parser = new DOMParser();
-    const rdfDoc = parser.parseFromString(xmlContent, "application/xml");
-
-    let validationMessages = [];
-
-    validations.forEach((iirdsRule) => {
-        let assertion = iirdsValidateXmlRule(rdfDoc.document, iirdsRule);
-        if (!assertion) validationMessages.push(iirdsRule.rule?.en);
-    });
-
-    return validationMessages;
+    const selection = Array.from(rdfDoc.querySelectorAll(iirdsRule.path));
+    const findInvalidElements = iirdsRule?.findInvalidElements ?? (() => []);
+    const assert = iirdsRule?.assert ?? ((selElements, invalidElements) => ((invalidElements?.length ?? 0) === 0));
+    const invalidElements = findInvalidElements(selection);
+    return { succeeded: assert(selection, invalidElements), invalidElements };
 }
 
 export const IIRDS_RULES = validations;

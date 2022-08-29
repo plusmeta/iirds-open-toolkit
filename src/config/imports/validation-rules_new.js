@@ -2,7 +2,7 @@ export default [
     {
         id: "r001",
         path: "InformationUnit",
-        assert: els => els,
+        findInvalidElements: els => els,
         section: "6.2 Information Units",
         link: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#properties-and-relations-overview:~:text=iiRDS%20Generators%20MUST%20NOT%20use%20the%20iirds%3AInformationUnit%20class%20directly%20but%20MUST%20use%20one%20of%20the%20subclasses.",
         prio: "MUST",
@@ -19,7 +19,7 @@ export default [
     {
         id: "r002",
         path: "Document, Topic, Fragment, Package",
-        assert: els => els.every(el => (el.childElementCount !== 0 && el.hasAttribute("rdf:about"))),
+        findInvalidElements: els => els.filter(el => el.childElementCount === 0 || el.hasAttribute("rdf:about") === false ),
         section: "6.2 Information Units",
         link: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#properties-and-relations-overview:~:text=An%20instance%20of%20an%20iirds%3AInformationUnit%20subclass%20MUST%20have%20an%20IRI%20and%20MUST%20NOT%20be%20a%20blank%20node.",
         prio: "MUST",
@@ -36,7 +36,7 @@ export default [
     {
         id: "r003",
         path: "Package",
-        assert: els => els.length === 1,
+        findInvalidElements: els => els.slice(1),
         section: "6.2.1 Subclasses of iirds:InformationUnit",
         link: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#properties-and-relations-overview:~:text=Each%20iiRDS%20package%20MUST%20have%20exactly%20one%20corresponding%20iirds%3APackage%20instance%20in%20the%20metadata.",
         prio: "MUST",
@@ -53,7 +53,7 @@ export default [
     {
         id: "r004",
         path: "Rendition",
-        assert: els => els.every(el => el.querySelector("source")),
+        findInvalidElements: els => els.filter(el => el.querySelector("source") === null),
         section: "6.3 Content References of Information Units",
         link: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#relations-1:~:text=To%20identify%20the%20physical%20file%2C%20the%20property%20iirds%3Asource%20MUST%20relate%20the%20rendition%20to%20the%20URL%20of%20the%20physical%20file.",
         prio: "MUST",
@@ -70,7 +70,7 @@ export default [
     {
         id: "r005",
         path: "Rendition",
-        assert: els => els.every(el => el.querySelector("format")),
+        findInvalidElements: els => els.filter(el => el.querySelector("format") === null),
         section: "6.3 Content References of Information Units",
         link: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#relations-1:~:text=An%20iirds%3ARendition%20MUST%20also%20have%20the%20property%20iirds%3Aformat.",
         prio: "MUST",
@@ -87,7 +87,6 @@ export default [
     {
         id: "r006",
         path: "Package",
-        assert: "",
         section: "6.3 Content References of Information Units",
         link: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#relations-1:~:text=iirds%3APackage%20elements%20representing%20the%20enclosing%20iiRDS%20package%20itself%20MUST%20NOT%20be%20subjects%20of%20any%20iirds%3Ahas%2Drendition%20relation.",
         prio: "MUST",
@@ -98,7 +97,7 @@ export default [
         },
         testFiles:{
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
-            "false": [""]
+            "false": []
         }
     },
 ];

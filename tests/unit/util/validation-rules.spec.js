@@ -15,12 +15,23 @@ describe("validate iirds xml", () => {
     for (const iirdsRule of IIRDS_RULES) {
         for (const [expectation, filePathList] of Object.entries(iirdsRule?.testFiles ?? [])) {
             for (const [idx, filePath] of filePathList.entries()) {
-                it(iirdsRule.rule.en.substr(0, 45) + `... - [${expectation.substr(0,1).toUpperCase()}][${idx}]`, () => {
+
+                const expectSymbol = expectation.substr(0,1).toUpperCase() + idx;
+                const testText = iirdsRule.rule.en.substr(0, 45) + "...";
+
+                it(`[${iirdsRule.id}][${expectSymbol}] ${testText}`, () => {
                     const xmlContent = readFileSync(filePath, "utf8");
                     const parser = new DOMParser();
                     rdfDoc = parser.parseFromString(xmlContent, "application/xml");
-                    const pass = iirdsValidateXmlRule(rdfDoc, iirdsRule);
-                    expect(pass).to.be.eq(expectation === "true");
+                    const { succeeded, invalidElements } = iirdsValidateXmlRule(rdfDoc, iirdsRule);
+
+                    if (expectation === "true" ) {
+                        expect(invalidElements).to.be.empty;
+                        expect(succeeded).to.be.true;
+                    } else {
+                        expect(invalidElements).not.to.be.empty;
+                        expect(succeeded).to.be.false;
+                    }
                 });
             }
         }
