@@ -2,7 +2,7 @@ export default [
     {
         id: "r001",
         path: "InformationUnit",
-        assert: els => els.length === 0,
+        assert: els => els,
         section: "6.2 Information Units",
         link: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#properties-and-relations-overview:~:text=iiRDS%20Generators%20MUST%20NOT%20use%20the%20iirds%3AInformationUnit%20class%20directly%20but%20MUST%20use%20one%20of%20the%20subclasses.",
         prio: "MUST",

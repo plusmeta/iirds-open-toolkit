@@ -19,8 +19,8 @@ describe("validate iirds xml", () => {
                     const xmlContent = readFileSync(filePath, "utf8");
                     const parser = new DOMParser();
                     rdfDoc = parser.parseFromString(xmlContent, "application/xml");
-                    let result = iirdsValidateXmlRule(rdfDoc, iirdsRule);
-                    expect(result).to.be.eq(expectation === "true");
+                    const pass = iirdsValidateXmlRule(rdfDoc, iirdsRule);
+                    expect(pass).to.be.eq(expectation === "true");
                 });
             }
         }

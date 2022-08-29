@@ -1,4 +1,4 @@
-import validations from "@/config/imports/validation-rules";
+import validations from "@/config/imports/validation-rules_new";
 import { v4 as uuid } from "uuid";
 
 const Serializer = new XMLSerializer();
@@ -17,13 +17,12 @@ export default {
 
         const scopedTests = validations.filter(v => !scope || scope === v.scope);
         for (let test of scopedTests) {
-            const selection = document.querySelectorAll(test.path);
-            const result = test.assert(Array.from(selection));
-            const pass = !selection.length || !result.length;
+            const pass = iirdsValidateXmlRule(document, test);
             if (!pass) {
                 for (let element of result) {
                     const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
-                    violations.push({ ...test, fileName, scope, location, lineNr, lines });
+                    const violation = { ...test, fileName, scope, location, lineNr, lines };
+                    violations.push(violation);
                 }
             }
         }
@@ -60,8 +59,9 @@ export default {
 };
 
 export function iirdsValidateXmlRule(rdfDoc, iirdsRule) {
-    let result = rdfDoc.documentElement.querySelectorAll(iirdsRule.path);
-    return iirdsRule.assert(Array.from(result));
+    const selection = rdfDoc.querySelectorAll(iirdsRule.path);
+    const result = iirdsRule.assert(Array.from(selection));
+    return !selection.length || !result.length;
 }
 
 export function iirdsValidateXmlContent(xmlContent) {
@@ -71,7 +71,7 @@ export function iirdsValidateXmlContent(xmlContent) {
     let validationMessages = [];
 
     validations.forEach((iirdsRule) => {
-        let assertion = iirdsValidateXmlRule(rdfDoc, iirdsRule);
+        let assertion = iirdsValidateXmlRule(rdfDoc.document, iirdsRule);
         if (!assertion) validationMessages.push(iirdsRule.rule?.en);
     });
 

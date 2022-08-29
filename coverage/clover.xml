@@ -1,40 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660891155046" clover="3.2.0">
-  <project timestamp="1660891155046" name="All files">
-    <metrics statements="28" coveredstatements="20" conditionals="11" coveredconditionals="9" methods="51" coveredmethods="22" elements="90" coveredelements="51" complexity="0" loc="28" ncloc="28" packages="1" files="2" classes="2"/>
-    <file name="validation-rules.js" path="C:\Work\iirds-validation-tool\src\config\imports\validation-rules.js">
-      <metrics statements="23" coveredstatements="20" conditionals="9" coveredconditionals="9" methods="43" coveredmethods="22"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="2" type="stmt"/>
-      <line num="12" count="2" type="stmt"/>
-      <line num="25" count="25" type="cond" truecount="2" falsecount="0"/>
-      <line num="38" count="2" type="stmt"/>
-      <line num="51" count="2" type="stmt"/>
-      <line num="74" count="3" type="stmt"/>
-      <line num="100" count="1534" type="stmt"/>
-      <line num="140" count="2" type="stmt"/>
-      <line num="141" count="2" type="stmt"/>
-      <line num="142" count="2" type="stmt"/>
-      <line num="158" count="0" type="stmt"/>
-      <line num="187" count="0" type="stmt"/>
-      <line num="196" count="28" type="stmt"/>
-      <line num="209" count="27" type="stmt"/>
-      <line num="238" count="2" type="stmt"/>
-      <line num="378" count="5" type="cond" truecount="2" falsecount="0"/>
-      <line num="1276" count="140" type="cond" truecount="3" falsecount="0"/>
-      <line num="1289" count="0" type="cond" truecount="2" falsecount="0"/>
-    </file>
-    <file name="validation-rules_new.js" path="C:\Work\iirds-validation-tool\src\config\imports\validation-rules_new.js">
-      <metrics statements="5" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="8" coveredmethods="0"/>
-      <line num="5" count="0" type="stmt"/>
-      <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="39" count="0" type="stmt"/>
-      <line num="56" count="0" type="stmt"/>
-      <line num="73" count="0" type="stmt"/>
-    </file>
+<coverage generated="1661761208750" clover="3.2.0">
+  <project timestamp="1661761208750" name="All files">
+    <metrics statements="48" coveredstatements="13" conditionals="10" coveredconditionals="4" methods="17" coveredmethods="9" elements="75" coveredelements="26" complexity="0" loc="48" ncloc="48" packages="2" files="2" classes="2"/>
+    <package name="config.imports">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8"/>
+      <file name="validation-rules_new.js" path="C:\Work\iirds-validation-tool\src\config\imports\validation-rules_new.js">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="22" count="25" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="56" count="28" type="stmt"/>
+        <line num="73" count="27" type="stmt"/>
+      </file>
+    </package>
+    <package name="util">
+      <metrics statements="43" coveredstatements="8" conditionals="8" coveredconditionals="2" methods="9" coveredmethods="1"/>
+      <file name="validator-schema.js" path="C:\Work\iirds-validation-tool\src\util\validator-schema.js">
+        <metrics statements="43" coveredstatements="8" conditionals="8" coveredconditionals="2" methods="9" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="62" count="11" type="stmt"/>
+        <line num="63" count="11" type="stmt"/>
+        <line num="64" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
