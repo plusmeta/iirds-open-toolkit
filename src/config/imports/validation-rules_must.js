@@ -34,10 +34,7 @@ export default [
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-package-and-container:~:text=iiRDS%20Generators%20MUST%20NOT%20use%20the%20iirds%3AInformationUnit%20class%20directly%20but%20MUST%20use%20one%20of%20the%20subclasses.",
         version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "iiRDS-Ersteller DÜRFEN NICHT die Klasse iirds:InformationUnit direkt verwenden, sondern MÜSSEN eine der Unterklassen benutzen",
-            "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclassesiiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
-        },
+        rule: { "de": "iiRDS-Ersteller DÜRFEN NICHT die Klasse iirds:InformationUnit direkt verwenden, sondern MÜSSEN eine der Unterklassen benutzen", "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclassesiiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses" },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
             "false": [
@@ -57,10 +54,7 @@ export default [
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=An%20instance%20of%20an%20iirds%3AInformationUnit%20subclass%20MUST%20have%20an%20IRI%20and%20MUST%20NOT%20be%20a%20blank%20node.",
         version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben und DARF KEIN leerer Knoten sein.",
-            "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node."
-        },
+        rule: { "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben und DARF KEIN leerer Knoten sein.", "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node." },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
@@ -243,10 +237,10 @@ export default [
         path: "Rendition",
         findInvalidElements: els => els.every(el => el.querySelector("source")),
         prio: "MUST",
-        spec: "",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#properties-and-relations-overview:~:text=1-,iirds%3ARendition,1,-iirds%3ARendition",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#properties-and-relations-overview:~:text=1-,iirds%3ARendition,1,-iirds%3ARendition",
+            "de": "",
             "en": "An iirds:Rendition MUST have the property iirds:source."
         },
         testFiles: {
@@ -257,7 +251,8 @@ export default [
         /*
         See Also:
             Chapter 6.3 https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20identify%20the%20physical%20file%2C%20the%20property%20iirds%3Asource%20MUST%20relate%20the%20rendition%20to%20the%20URL%20of%20the%20physical%20file.
-
+            RDF Schema Ref: https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=1%C2%A0%20iirds%3Asource%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal
+            https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#class-definitions:~:text=1-,iirds%3ARendition,1,-iirds%3ARendition
         */
         //Umformulieren every vs filter
     },
@@ -291,7 +286,7 @@ export default [
         path: "Rendition Selector",
         findInvalidElements: els => els,
         prio: "MUST NOT",
-        spec: "",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#x-conformance:~:text=iirds%3ARendition%20MUST%20NOT,an%20end%20identifier",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
             "de": "...",
@@ -302,6 +297,8 @@ export default [
             "false": ["./tests/files/util/iirds-validation/fail_must use selector subclass.rdf"]
         }
         //COMMENTS
+        /*SEE ALSO
+        */
     },
     {
         id: "M14",
@@ -341,6 +338,9 @@ export default [
         }
         //COMMENTS
         //vgl. M79
+        /*SEE ALSO
+
+        */
     },
 
     //6.3.2 Media Files
@@ -453,13 +453,17 @@ export default [
         rule: {
             "de": "...",
             "en": "Instances of the iirds:Event class MUST have the following properties: iirds:eventCode and iirds:eventType. "
-            //The iirds:Event class is a docking point for iiRDS Generators to link documentation content with event information code according to a standard like OPC-UA or a custom convention. The property iirds:relates-to-event links iirds:InformationUnit to iirds:Event.
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
             "false": [""]
         }
         //COMMENTS
+        //The iirds:Event class is a docking point for iiRDS Generators to link documentation content with event information code according to a standard like OPC-UA or a custom convention. The property iirds:relates-to-event links iirds:InformationUnit to iirds:Event.
+        /*SEE ALSO
+            iirds:EVENT: https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=0..1%C2%A0%20iirds%3Ahas%2Devent,%C2%A0%20iirds%3Ahas%2Devent%2Dtype%20property
+            RDF Overview: https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=1..%E2%83%B0-,iirds%3AEvent,0..1,-iirds%3AIdentity
+        */
     },
 
     //6.6.2 Product Metadata
@@ -1531,6 +1535,7 @@ export default [
             "false": [""]
         }
         //COMMENTS
+        //Signalwort MUST hier false positive?
     },
     {
         //iirds:Identity -> Properties:	1  iirds:identifier
@@ -1654,9 +1659,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
-            "false": [
-                "./tests/files/util/iirds-validation/metadata_iirds_sample_fail_IRI required.rdf"
-            ]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_IRI required.rdf"]
         }
         //COMMENTS
         //1. Sprint Review -> REQUIRED = false positive?
@@ -1763,10 +1766,7 @@ export default [
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3ADocumentType",
         version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "XX",
-            "en": "Not intended to be used directly. Use the subclasses instead."
-        },
+        rule: { "de": "XX", "en": "Not intended to be used directly. Use the subclasses instead." },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
             "false": [""]
@@ -1780,10 +1780,7 @@ export default [
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3AIdentity",
         version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "XX",
-            "en": "Not intended to be used directly. Use the subclasses instead."
-        },
+        rule: { "de": "XX", "en": "Not intended to be used directly. Use the subclasses instead." },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
             "false": [""]
@@ -1985,7 +1982,7 @@ export default [
     {
         id: "M98",
         path: "Component",
-        findInvalidElements: els => els,
+        findInvalidElements: "",
         prio: "MUST NOT",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_ProductMetadata:~:text=identity%20properties%20%2D%20iirds%3AIdentity-,0..1%C2%A0%20iirds%3Arelates%2Dto%2Dparty%20property%20%2D%20iirds%3AParty,-iirds%3AConcept",
         version: ["V1.0", "V1.0.1", "V1.1"],
