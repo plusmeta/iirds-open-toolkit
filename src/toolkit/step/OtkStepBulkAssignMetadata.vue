@@ -248,7 +248,8 @@ export default {
     },
     mounted() {
         // open first element after mount
-        document.querySelector("#item-0").click();
+        const firstElem = document.querySelector("#item-0");
+        if (firstElem) firstElem.click();
     },
     methods: {
         getIconForType(type) {
