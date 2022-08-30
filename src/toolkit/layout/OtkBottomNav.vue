@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -9,44 +9,14 @@
     app
     dark
     inset
-    min-height="36"
+    min-height="24"
     padless
     :color="getFooterColor"
   >
-    <v-fab-transition>
-      <v-btn
-        v-if="isInActiveWorkflow"
-        v-show="!isFirstStep"
-        fab
-        absolute
-        bottom
-        left
-        :color="arePreviousRulesValid ? 'secondary' : 'accent'"
-        large
-        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
-        @click="previousStep()"
-      >
-        <v-icon large>
-          mdi-arrow-left
-        </v-icon>
-      </v-btn>
-    </v-fab-transition>
-
     <v-spacer />
 
-    <div v-if="isInActiveWorkflow && isRuleViolation">
-      <span class="subtitle-2">{{ $t("Common.ruleViolation") }}</span>
-    </div>
-
-    <div v-if="isInActiveWorkflow && isExplainerView && !isRuleViolation">
-      <span class="subtitle-2">{{ $t("Common.ruleExplainer") }}</span>
-      <span v-if="getCurrentExplanation" class="subtitle-2">:&nbsp;
-        <span class="font-weight-bold">{{ getCurrentExplanation }}</span>
-      </span>
-    </div>
-
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
-      © 2020 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
+      © 2022 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
       &bull;
       {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
       &bull;
@@ -56,68 +26,6 @@
     </span>
 
     <v-spacer />
-
-    <v-fab-transition>
-      <v-btn
-        v-if="isInActiveWorkflow"
-        v-show="isValid && !isLastStep"
-        fab
-        absolute
-        bottom
-        right
-        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
-        large
-        color="accent"
-        @click="nextStep()"
-      >
-        <v-icon large>
-          mdi-arrow-right
-        </v-icon>
-      </v-btn>
-    </v-fab-transition>
-
-    <v-btn
-      v-show="!isValid && !isRuleViolation"
-      class="mr-4"
-      icon
-      color="white"
-      :disabled="isInternetExplorer"
-      @click="showExplainer = !showExplainer"
-    >
-      <v-icon>
-        {{ isExplainerView ? "mdi-close" : "mdi-information-outline" }}
-      </v-icon>
-    </v-btn>
-
-    <v-btn
-      v-show="isRuleViolation && isInActiveWorkflow"
-      class="mr-4"
-      icon
-      @click="previousStep()"
-    >
-      <v-icon>
-        mdi-alert-outline
-      </v-icon>
-    </v-btn>
-
-    <v-fab-transition>
-      <v-btn
-        v-if="isInActiveWorkflow"
-        v-show="isValid && isLastStep"
-        fab
-        absolute
-        bottom
-        right
-        :class="{'mb-8': true, 'elevation-0': !$vuetify.theme.dark}"
-        large
-        color="accent"
-        @click="closeProject()"
-      >
-        <v-icon large>
-          mdi-check
-        </v-icon>
-      </v-btn>
-    </v-fab-transition>
   </v-footer>
 </template>
 

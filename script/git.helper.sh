@@ -2,7 +2,7 @@
 
 # Read arguments
 REPO_BRANCH="$1"
-REPO_URL="https://github.com/plusmeta/iirds-open-toolkit.git" # TODO
+REPO_URL="https://github.com/plusmeta/iirds-validation-tool.git" # TODO
 
 # Remember the working directory
 WORKING_DIR="$(pwd)"

@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -12,26 +12,6 @@
     class="elevation-0"
     @change="checkRoute"
   >
-    <v-toolbar :class="{'elevation-0': !$vuetify.theme.dark}">
-      <v-stepper-header class="elevation-0" style="width: 100%; height: 64px;">
-        <template v-for="(step, index) in getSteps">
-          <v-stepper-step
-            :key="`step-${index}`"
-            :editable="getCurrentProgress > index + 1 && isEditable(index)"
-            style="height: 64px;"
-            :color="(getLastValidStep >= index + 1) ? 'info' : 'error'"
-            :complete="getCurrentProgress > index + 1"
-            :step="index + 1"
-          >
-            {{ getWorkflowStepNameById({workflowId: getCurrentWorkflowId, stepId: step.id}) }}
-          </v-stepper-step>
-
-          <v-divider v-if="index < getSteps.length - 1" :key="index" />
-        </template>
-      </v-stepper-header>
-    </v-toolbar>
-    <v-divider v-if="!$vuetify.theme.dark" />
-
     <v-stepper-items style="min-height: 100%">
       <template v-for="(step, index) in getSteps">
         <v-stepper-content

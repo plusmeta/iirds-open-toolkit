@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -8,21 +8,21 @@
   <v-app-bar
     dense
     dark
-    color="info"
+    color="primary"
     app
   >
     <v-toolbar-title>
       <img
         :src="getLogoForTheme('dark')"
-        alt="Open Toolkit"
-        title="Open Toolkit"
+        alt="Validation Tool"
+        title="Validation Tool"
         width="75px"
         height="25px"
         class="ml-6 mr-4 mt-2"
       >
     </v-toolbar-title>
     <v-toolbar-title class="overline" style="font-size:20px !important">
-      Open Toolkit
+      Validation Tool
     </v-toolbar-title>
 
     <div v-shortkey.push="['shift']" @shortkey="toggleShortcuts" />

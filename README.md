@@ -1,4 +1,4 @@
-# iiRDS Open Toolkit
+# iiRDS Validation Tool
 
 ![iiRDS Logo](https://iirds.tekom.de/fileadmin/iiRDS_specification/20190712-1.0.1-release/images/logos/iiRDS.jpg)
 
@@ -85,7 +85,7 @@ Nach erfolgreicher Git-Authentifizierung, folgende Aktionen in VS Code ausführe
   - Die Adresse des Git-Repositories eingeben (endet mit `.git`)
   - Alternativ per SSH verbinden
 - CTRL-SHIFT-Ö (neues Terminal)
-- Sicherstellen, dass man sich im gewünschten Arbeitsverzeichnis befindet (`C:\Work\iirds-open-toolkit`)
+- Sicherstellen, dass man sich im gewünschten Arbeitsverzeichnis befindet (`C:\Work\iirds-validation-tool`)
 - `npm install`
 
 ## Lokale Instanz starten
@@ -97,7 +97,7 @@ Es gibt mehrere Möglichkeiten, eine lokale Instanz in VS Code zu starten:
 
 ### Außerhalb von VS Code
 
-- im Arbeitsverezichnis (`./iirds-open-toolkit`) den Befehl `npm run-script serve` ausführen.
+- im Arbeitsverezichnis (`./iirds-validation-tool`) den Befehl `npm run-script serve` ausführen.
 
 ## Pull Request testen
 

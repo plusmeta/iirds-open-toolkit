@@ -1,6 +1,6 @@
 [defaults]
 url=https://diagnosis.iirds.org
-project=iirds-open-toolkit
+project=iirds-validation-tool
 org=tekom
 
 [auth]

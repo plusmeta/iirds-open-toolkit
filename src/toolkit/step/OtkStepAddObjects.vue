@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -21,8 +21,6 @@
         @change="addFiles($refs.fileInput.files)"
       >
     </form>
-
-    <HelpView helpkey="workflow.addObjects" />
 
     <v-container fluid class="drop-overlay drop-overlay-container">
       <v-fade-transition>
@@ -255,73 +253,41 @@
               class="pa-5"
             >
               <div
-                class="pa-5 mb-5"
+                class="pa-2 mb-2"
                 style="border: 3px dashed grey;"
                 @click="$refs.fileInput.click()"
               >
-                <div class="my-5" style="font-size: 96px">
-                  {{ $t('Objects.none') }}
+                <div class="my-2" style="font-size: 96px">
+                  {{ $t('Validate.addObjects') }}
                 </div>
-                <v-icon :size="96" color="grey">
-                  mdi-cloud-upload-outline
+                <v-icon :size="180" color="grey">
+                  mdi-package-variant-closed-check
                 </v-icon>
-                <p class="my-5" style="font-size: 24px">
-                  {{ $t('Objects.noObjectsExplainer') }}
+                <p class="my-3" style="font-size: 24px">
+                  {{ $t('Validate.noObjectsExplainer') }}
                 </p>
               </div>
             </v-container>
           </template>
-
-          <template v-slot:no-results>
-            <p class="pa-5">
-              {{ $t('Objects.none') }} [{{ $t('Common.searchFor') }}: {{ search }}]
-            </p>
-          </template>
         </v-data-table>
       </v-card>
-    </v-container>
-
-    <v-container
-      v-if="getSetting('ui_shortcuts')"
-      class="caption text-sm-right px-0 pt-6"
-    >
-      <v-icon class="mr-4" color="grey darken-1">
-        mdi-keyboard
-      </v-icon>
-      <span class="d-inline-block mr-2">
-        {{ $t("Common.filter") }}
-      </span>
-      <kbd>t</kbd>
-      <span class="d-inline-block mr-2 ml-8">
-        {{ $t("Common.search") }}
-      </span>
-      <kbd>f</kbd>
-      <span class="d-inline-block mr-2 ml-8">
-        {{ $t("Actions.addObject") }}
-      </span>
-      <kbd>u</kbd>
-      <span class="d-inline-block mr-2 ml-8">
-        {{ $t("Actions.openSettings") }}
-      </span>
-      <kbd>s</kbd>
     </v-container>
   </v-container>
 </template>
 
 <script>
-import Vue from "vue";
 import { mapGetters, mapActions } from "vuex";
 import { tap, debounceTime } from "rxjs/operators";
 
 import QuickView from "@/shared/inline/QuickView";
 import DeleteObject from "@/shared/inline/DeleteObject";
-import HelpView from "@/shared/block/HelpView";
 
 import template from "@/store/storage/template";
 import util from "@/util";
 import match from "@/util/match";
 import config from "@/config";
 
+import iirds from "@/util/import/iirds";
 import pdf from "@/util/import/pdf";
 import html from "@/util/import/html";
 import xml from "@/util/import/xml";
@@ -332,7 +298,6 @@ export default {
     name: "OtkStepAddObjects",
     components: {
         ByteUnit,
-        HelpView,
         QuickView,
         DeleteObject
     },
@@ -464,7 +429,7 @@ export default {
             if (this.getCurrentObjects.length === 0 && this.filter) {
                 this.filter = undefined;
             }
-            // https://github.com/plusmeta/iirds-open-toolkit/issues/22
+            // https://github.com/plusmeta/iirds-validation-tool/issues/22
             let currentUuids = this.getCurrentObjects.map(o => o.uuid);
             this.selected = this.selected.filter(uuid => currentUuids.includes(uuid));
         }
@@ -531,6 +496,10 @@ export default {
             ];
 
             switch (object.source.type) {
+            case "application/iirds+zip":
+                await iirds.analyze(...analyzePayload);
+                break;
+
             case "application/pdf":
                 await pdf.analyze(...analyzePayload);
                 break;

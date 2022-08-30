@@ -82,7 +82,7 @@
     "browserWarning": "Browser-Warnung",
     "browserWarningText": "Verwenden Sie für ein optimales Benutzererlebnis einen <b>modernen Browser</b><br> (z.B. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox).",
     "changeIRI": "IRI ändern",
-    "dataProtectionText": "Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffsanalyse ein. Dateien, die im iiRDS Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.\nBitte akzeptieren Sie unsere <a href=\"/docs/Nutzungsbedingungen_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://iirds.org/privacy-policy/\" target=\"_blank\">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.",
+    "dataProtectionText": "Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffsanalyse ein. Dateien, die im iiRDS Validation Tool verwendet werden, verlassen nicht Ihren Rechner.\nBitte akzeptieren Sie unsere <a href=\"/docs/Nutzungsbedingungen_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://iirds.org/privacy-policy/\" target=\"_blank\">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.",
     "dataProtectionTitle": "Nutzungsbedingungen & Datenschutz",
     "downloadPackage": "Speichern",
     "licenseInfo": "iiRDS lizenziert unter",
@@ -93,8 +93,8 @@
     "startNewPackage": "Neues Paket",
     "thankYou": "Vielen Dank!",
     "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Speichern bereit.",
-    "welcomeSubtitle": "Mit dem kostenlosen iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.",
-    "welcomeTitle": "Willkommen beim iiRDS Open Toolkit!"
+    "welcomeSubtitle": "Mit dem kostenlosen iiRDS Validation Tool können Sie in nur wenigen Schritten iiRDS-Pakete validieren",
+    "welcomeTitle": "Willkommen beim iiRDS Validation Tool!"
   },
   "Packages": {
     "cached": "Generiertes Paket vorhanden",
@@ -109,5 +109,10 @@
     "objects": "Gesamt",
     "objectsCount": "Anzahl Objekte",
     "processed": "Verarbeitet"
+  },
+  "Validate": {
+    "addObjects": "iiRDS validieren",
+    "all": "Alle Regeln",
+    "noObjectsExplainer": "iiRDS-Paket per Drag&Drop auf dieses Feld ziehenl, um es zu validieren."
   }
 }

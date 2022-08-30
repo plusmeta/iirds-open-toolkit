@@ -11,7 +11,7 @@ assignees: maxjholl
 Um was geht es?
 
 **Version**
-- iiRDS Open Toolkit Version und Umgebung (via Login-Maske oder Menü `⋮`)
+- iiRDS Validation Tool Version und Umgebung (via Login-Maske oder Menü `⋮`)
 
 **Umgebung**
 - Welches Gerät (Desktop, Tablet, Mobile)? / Betriebssystem / Browser / ggf. Version

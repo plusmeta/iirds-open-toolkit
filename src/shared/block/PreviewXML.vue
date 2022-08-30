@@ -1,48 +1,44 @@
 <!-- eslint-disable vue/no-v-html -->
 <!--
-  Copyright 2020 plusmeta GmbH
+  Copyright 2022 plusmeta GmbH
   License: MIT
 -->
 
 <template>
   <v-flex style="overflow-x: auto;">
     <v-sheet
-      v-if="xml"
-      height="400"
+      v-if="file.text"
+      height="300"
       min-width="400"
       class="pa-0 mx-auto"
       color="grey lighten-2"
       style="overflow-x: auto;"
     >
-      <VueDocPreview
-        :value="xml"
-        type="code"
-        language="xml"
+      <codemirror
+        ref="xmlcode"
+        :value="getCode"
+        :options="getOptions"
+        @ready="highlightLine"
       />
     </v-sheet>
     <v-skeleton-loader
-      v-show="!xml"
+      v-show="!file.text"
       class="mx-auto"
-      height="400"
+      height="300"
       width="400"
       type="image"
     />
+    <p v-if="file.text" class="font-monospace mt-2">
+      Violation found in line {{ getLineNr }} of {{ getFileName }}
+    </p>
   </v-flex>
 </template>
 
 <script>
-import { mapActions } from "vuex";
-import VueDocPreview from "vue-doc-preview";
-
-import format from "xml-formatter";
-
-import util from "@/util";
+import { mapGetters } from "vuex";
 
 export default {
     name: "PlusPreviewXML",
-    components: {
-        VueDocPreview
-    },
     props: {
         file: {
             type: Object,
@@ -54,23 +50,33 @@ export default {
             default: 0.5
         }
     },
-    data() {
-        return {
-            xml: null
-        };
-    },
-    mounted() {
-        this.render();
+    computed: {
+        getFileName() {
+            return this.getMetadataValueByURI(this.file.uuid, "plus:OriginalFileName");
+        },
+        getCode() {
+            return this.getMetadataValueByURI(this.file.uuid, "plus:Lines");
+        },
+        getLine() {
+            const lines = this.getCode.split("\n");
+            return (lines.length >= 3) ? lines[3] : lines[lines.length - 1];
+        },
+        getLineNr() {
+            return this.getMetadataValueByURI(this.file.uuid, "plus:LineNr") || 1;
+        },
+        getOptions() {
+            return { firstLineNumber: Number(this.getLineNr) - 3 };
+        },
+        ...mapGetters("storage", [
+            "getMetadataValueByURI",
+        ]),
     },
     methods: {
-        async render() {
-            let data = await this.fetchSource(this.file.uuid);
-            this.xml = await util.readFile(data, "text");
-            this.xml = format(this.xml);
-        },
-        ...mapActions("storage", [
-            "fetchSource"
-        ])
+        highlightLine(editor) {
+            const from = {line: 3, ch: 1};
+            const to = {line: 3, ch: this.getLine.length};
+            editor.doc.markText(from, to, {className: "highlighted"});
+        }
     }
 };
 </script>
@@ -79,5 +85,18 @@ export default {
     .v-skeleton-loader__image {
         height: 100% !important;
         min-height: 400px;
+    }
+    .vm-markdown-html {
+        padding: 0 !important;
+    }
+    .vm-markdown-html pre {
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    .highlighted {
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: red;
+
     }
 </style>

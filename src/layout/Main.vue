@@ -1,5 +1,5 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
@@ -49,7 +49,7 @@ export default {
             await this.initWorkflowsLocal();
             await this.resetSettings();
 
-            let newProject = template.project({ workflow: "iirds-open-toolkit" });
+            let newProject = template.project({ workflow: "iirds-validation-tool" });
             await this.startNewProjectLocal(newProject);
         } catch (e) {
             // eslint-disable-next-line no-console

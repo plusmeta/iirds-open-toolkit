@@ -1,20 +1,63 @@
 <!--
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
 -->
 
 <template>
   <v-container fluid>
-    <HelpView helpkey="workflow.assignMetadata" />
+    <v-card
+      class="mb-6 elevation-4"
+      min-height="125"
+      :color="(isValid) ? 'success' : 'error'"
+    >
+      <v-row
+        align="center"
+        style="height:125px"
+        class="white--text"
+      >
+        <v-col class="py-4 pl-12" cols="auto">
+          <v-icon
+            left :size="64"
+            color="white"
+          >
+            {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
+          </v-icon>
+          <!-- <span class="d-block caption ml-1">
+            iiRDS 1.0
+          </span> -->
+        </v-col>
+        <v-col class="py-4" cols="auto">
+          <h1>
+            {{ (isValid) ? 'Valid' : 'Not valid' }}
+          </h1>
+        </v-col>
+        <v-col class="py-4 px-8" cols="8">
+          <span class="font-weight-bold">{{ getViolations.length }}</span>
+          violations detected for file <span class="font-weight-bold">{{ getValidationSource }}</span>
+        </v-col>
+        <v-spacer />
+        <v-col class="py-4 pr-12" cols="auto">
+          <v-btn
+            icon
+            color="white"
+            @click="startFromStart()"
+          >
+            <v-icon x-large>
+              mdi-restore
+            </v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-card>
 
-    <v-card :outlined="!$vuetify.theme.dark">
+    <v-card v-if="!isValid" :outlined="!$vuetify.theme.dark">
       <v-data-iterator
         :items="getCurrentObjects"
-        :items-per-page="10"
+        :items-per-page="7"
         :search="search"
         :footer-props="{
-          'items-per-page-options': [10,25,50],
+          'items-per-page-options': [7,25,50],
           'show-first-last-page': true,
           'show-current-page': true
         }"
@@ -33,7 +76,7 @@
                 ref="type"
                 :value="getSetting('ui_assign_filter')"
                 :items="getObjectTypeFilterValues"
-                :label="$t('Objects.all')"
+                :label="$t('Validate.all')"
                 prepend-icon="mdi-filter"
                 single-line
                 hide-details
@@ -131,19 +174,23 @@
               >
                 <v-list-item-icon>
                   <v-icon>
-                    {{ getIconForType(item.type) }}
+                    {{ getIconForType(item.uuid) }}
                   </v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="subtitle-2">
                     {{ item.name }}
                   </v-list-item-title>
-                  <v-list-item-subtitle class="overline">
-                    {{ getPropertyLabelById(item.type) }}
+                  <v-list-item-subtitle class="caption">
+                    <span class="font-monospace font-weight-bold">
+                      {{ getMetadataValueByURI(item.uuid, "plus:OriginalFileName") }}:{{ getMetadataValueByURI(item.uuid, "plus:LineNr") }}
+                    </span>
                   </v-list-item-subtitle>
                 </v-list-item-content>
                 <v-list-item-action>
-                  <DeleteObject :uuid="item.uuid" />
+                  <v-chip small color="primary">
+                    {{ getMetadataValueByURI(item.uuid, 'plus:Rule') }}
+                  </v-chip>
                 </v-list-item-action>
               </v-list-item>
             </v-list>
@@ -184,18 +231,12 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import util from "@/util";
-
 import AssignMetadata from "@/toolkit/block/OtkAssignMetadataToObject";
-import DeleteObject from "@/shared/inline/DeleteObject";
-import HelpView from "@/shared/block/HelpView";
 
 export default {
     name: "OtkStepBulkAssignMetadata",
     components: {
         AssignMetadata,
-        DeleteObject,
-        HelpView
     },
     props: {
         objecttype: {
@@ -211,20 +252,42 @@ export default {
         };
     },
     computed: {
+        getViolations() {
+            return this.getCurrentObjectsByType(this.objecttype).filter((o) => {
+                return this.getMetadataValueByURI(o.uuid, "plus:Level") === "MUST";
+            });
+        },
+        isValid() {
+            return this.getViolations.length === 0;
+        },
+        getValidationSource() {
+            return this.getCurrentObjectsByType("iirds:Container")[0].name;
+        },
         getCurrentObjects() {
-            let filter = this.getSetting("ui_assign_filter") || this.objecttype;
-            return this.getCurrentObjectsByType(filter);
+            let filter = this.getSetting("ui_assign_filter");
+            return this.getCurrentObjectsByType(this.objecttype).filter((object) => {
+                const ruleNr = this.getMetadataValueByURI(object.uuid, "plus:Rule");
+                return (filter) ? ruleNr === filter : true;
+            });
         },
         getObjectTypeFilterValues() {
-            return Object.entries(this.getCurrentObjectTypes).map(([key, value]) => {
+            const ruleCountMap = this.getCurrentObjectsByType(this.objecttype).reduce((map, object) => {
+                const ruleNr = this.getMetadataValueByURI(object.uuid, "plus:Rule");
+                if (map[ruleNr]) {
+                    map[ruleNr]++;
+                } else {
+                    map[ruleNr] = 1;
+                }
+                return map;
+            }, {});
+
+            return Object.entries(ruleCountMap).map(([rule, count]) => {
                 return {
-                    text: this.getPropertyLabelById(key) || key,
-                    value: key,
-                    count: value
+                    text: rule,
+                    value: rule,
+                    count: count
                 };
-            })
-                .filter(item => this.objecttype.includes(item.value))
-                .sort((a,b) => a.text.localeCompare(b.text));
+            }).sort((a,b) => a.text.localeCompare(b.text));
         },
         ...mapGetters("storage", [
             "getCurrentObjectTypes",
@@ -252,16 +315,22 @@ export default {
         if (firstElem) firstElem.click();
     },
     methods: {
-        getIconForType(type) {
-            const icon = this.getPropertyRelationById(type, "plus:has-icons")[0];
-            return (icon) ? icon.replace(":", "-") : undefined;
+        getIconForType(objectUuid) {
+            return "mdi-message-alert";
+        },
+        startFromStart() {
+            this.setCurrentProgressLocal(1);
+            this.resetSettings(true);
+            this.$router.push("/");
         },
         ...mapActions("projects", [
             "updateCurrentProjectRelations",
+            "setCurrentProgressLocal",
             "deleteObjectsFromProject"
         ]),
         ...mapActions("settings", [
-            "setLocalSetting"
+            "setLocalSetting",
+            "resetSettings"
         ]),
         ...mapActions("storage", [
             "saveMetaDatum"

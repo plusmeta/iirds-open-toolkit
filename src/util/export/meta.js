@@ -1,5 +1,5 @@
 /*!
- * iiRDS Open Toolkit
+ * iiRDS Validation Tool
  * Copyright 2020 plusmeta GmbH
  * License: MIT
  */
@@ -22,7 +22,7 @@ export default {
         });
 
         let now = new Date();
-        root.com(`*** iiRDS Open Toolkit (v${process.env.VUE_APP_VERSION}) ***`);
+        root.com(`*** iiRDS Validation Tool (v${process.env.VUE_APP_VERSION}) ***`);
         root.com(`*** generated on ${now.toLocaleString()} ***`);
 
         metadata.forEach((meta) => {
