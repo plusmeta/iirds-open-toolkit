@@ -14,7 +14,7 @@
         class="px2"
       >
         <PreviewXML
-          v-if="isXML"
+          v-else-if="isXML"
           :file="object"
         />
         <v-skeleton-loader

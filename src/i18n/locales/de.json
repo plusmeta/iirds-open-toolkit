@@ -23,11 +23,12 @@
     "filesTooLarge": "Speicherlimit erreicht. Es können keine Dateien mehr hinzugefügt werden.",
     "help": "Hilfe",
     "helpcenter": "Anwenderportal",
-    "license": "Lizenzinformationen",
+    "license": "Lizenzen anzeigen",
     "licenses": "Lizenzen verwendeter Software",
     "maxMemory": "Maximale Speichergrenze erreicht. Objekt wird nicht importiert.",
     "pageHelp": "Hilfeseite",
-    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden"
+    "siteNotFound": "Die angeforderte Seite wurde nicht gefunden",
+    "sourcecode": "Quellcode anzeigen"
   },
   "Common": {
     "actions": "Aktionen",
