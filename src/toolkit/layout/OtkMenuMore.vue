@@ -137,7 +137,7 @@
 
         <v-list-item
           class="py-2"
-          href="https://github.com/plusmeta/iirds-open-toolkit"
+          href="https://github.com/plusmeta/iirds-validation-tool"
           target="_blank"
         >
           <v-list-item-action>
