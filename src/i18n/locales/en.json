@@ -23,11 +23,12 @@
     "filesTooLarge": "Memory limit reached. No new files can be added.",
     "help": "Help",
     "helpcenter": "User portal",
-    "license": "License information",
+    "license": "Show licenses",
     "licenses": "Licenses of used software",
     "maxMemory": "Maximum memory limit reached. Object will not be imported.",
     "pageHelp": "Help page",
-    "siteNotFound": "The requested site was not found"
+    "siteNotFound": "The requested site was not found",
+    "sourcecode": "Show source code"
   },
   "Common": {
     "actions": "Actions",
