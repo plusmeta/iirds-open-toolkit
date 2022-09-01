@@ -1,14 +1,13 @@
 <!--
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
 
 <template>
   <v-app-bar
     dense
-    dark
-    color="info"
+    color="accent"
     app
   >
     <v-toolbar-title>
@@ -16,13 +15,12 @@
         :src="getLogoForTheme('dark')"
         alt="Open Toolkit"
         title="Open Toolkit"
-        width="75px"
-        height="25px"
-        class="ml-6 mr-4 mt-2"
+        height="40px"
+        class="ml-4 mr-4 mt-2"
       >
     </v-toolbar-title>
-    <v-toolbar-title class="overline" style="font-size:20px !important">
-      Open Toolkit
+    <v-toolbar-title class="subtitle-1 white--text">
+      VDI 2770 Open Toolkit
     </v-toolbar-title>
 
     <div v-shortkey.push="['shift']" @shortkey="toggleShortcuts" />

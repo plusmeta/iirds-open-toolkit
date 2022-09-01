@@ -1,6 +1,6 @@
 <!--
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
 
@@ -49,7 +49,7 @@ export default {
             await this.initWorkflowsLocal();
             await this.resetSettings();
 
-            let newProject = template.project({ workflow: "iirds-open-toolkit" });
+            let newProject = template.project({ workflow: "vdi2770-open-toolkit" });
             await this.startNewProjectLocal(newProject);
         } catch (e) {
             // eslint-disable-next-line no-console
@@ -79,7 +79,7 @@ export default {
 
 <style>
   .light-bg {
-      background-image: url('/images/iiRDS_curve.jpg');
+      background-color: #fefefe;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: top center;

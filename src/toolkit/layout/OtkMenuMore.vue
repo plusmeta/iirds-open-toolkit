@@ -1,6 +1,6 @@
 <!--
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
 
@@ -26,6 +26,7 @@
       <template v-slot:activator="{ on }">
         <v-btn
           icon
+          dark
           :disabled="!isReady"
           v-on="on"
         >
@@ -36,20 +37,19 @@
       </template>
       <v-list v-if="isReady">
         <v-list-item
-          href="https://iirds.org"
+          href="https://digitaldatachain.com/"
           target="_blank"
         >
-          <v-list-item-icon class="mr-4">
+          <v-list-item-icon>
             <img
               :src="getLogo"
-              width="75px"
-              height="25px"
+              height="35px"
             >
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title class="overline">
-              Open Toolkit {{ version }}
+            <v-list-item-title class="subtitle-2">
+              VDI 2770 Open Toolkit {{ version }}
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -137,7 +137,7 @@
 
         <v-list-item
           class="py-2"
-          href="https://github.com/plusmeta/iirds-open-toolkit"
+          href="https://github.com/plusmeta/vdi2770-open-toolkit"
           target="_blank"
         >
           <v-list-item-action>
@@ -188,8 +188,8 @@ export default {
     data() {
         return {
             showLicenseDialog: false,
-            feebdackAddress: "info@tekom.de",
-            feedbackSubject: "[iiRDS-OT] Feedback",
+            feebdackAddress: "support@plusmeta.de",
+            feedbackSubject: "[VDI2770-OT] Feedback",
             version: `v${process.env.VUE_APP_VERSION}`
         };
     },

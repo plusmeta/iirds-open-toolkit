@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <!--
-  Copyright 2020 plusmeta GmbH
+  Copyright 2022 plusmeta GmbH
   License: MIT
 -->
 

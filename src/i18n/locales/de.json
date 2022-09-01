@@ -82,7 +82,7 @@
     "browserWarning": "Browser-Warnung",
     "browserWarningText": "Verwenden Sie für ein optimales Benutzererlebnis einen <b>modernen Browser</b><br> (z.B. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox).",
     "changeIRI": "IRI ändern",
-    "dataProtectionText": "Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffsanalyse ein. Dateien, die im iiRDS Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.\nBitte akzeptieren Sie unsere <a href=\"/docs/Nutzungsbedingungen_iiRDS-Open-Toolkit.pdf\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://iirds.org/privacy-policy/\" target=\"_blank\">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.",
+    "dataProtectionText": "Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffsanalyse ein. Dateien, die im VDI 2770 Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.\nBitte akzeptieren Sie unsere <a href=\"/docs/Nutzungsbedingungen_vdi2770-open-toolkit.pdf\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://iirds.org/privacy-policy/\" target=\"_blank\">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.",
     "dataProtectionTitle": "Nutzungsbedingungen & Datenschutz",
     "downloadPackage": "Speichern",
     "licenseInfo": "iiRDS lizenziert unter",
@@ -93,8 +93,8 @@
     "startNewPackage": "Neues Paket",
     "thankYou": "Vielen Dank!",
     "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Speichern bereit.",
-    "welcomeSubtitle": "Mit dem kostenlosen iiRDS Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.",
-    "welcomeTitle": "Willkommen beim iiRDS Open Toolkit!"
+    "welcomeSubtitle": "Mit dem kostenlosen VDI 2770 Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.",
+    "welcomeTitle": "Willkommen beim VDI 2770 Open Toolkit!"
   },
   "Packages": {
     "cached": "Generiertes Paket vorhanden",

@@ -1,6 +1,6 @@
-# iiRDS Open Toolkit
+# VDI 2770 Open Toolkit
 
-![iiRDS Logo](https://iirds.tekom.de/fileadmin/iiRDS_specification/20190712-1.0.1-release/images/logos/iiRDS.jpg)
+![VDI 2770 Logo](https://digitaldatachain.com/portal/load/fid544366/slotNameslideshow/VDI2770_1-100.jpg)
 
 ## Verwendete Libraries und nützliche Links
 
@@ -11,7 +11,7 @@
 - Icons: [Material Design Icons](https://materialdesignicons.com/)
 - Plattform: [plusmeta](https://help.plusmeta.de/de/Willkommen/)
 
-### iiRDS-Generierung
+### VDI-2770-Generierung
 
 - Zip: [JSZip](https://stuk.github.io/jszip/)
 - RDF/XML: [xmlbuilder-js](https://github.com/oozcitak/xmlbuilder-js)
@@ -85,7 +85,7 @@ Nach erfolgreicher Git-Authentifizierung, folgende Aktionen in VS Code ausführe
   - Die Adresse des Git-Repositories eingeben (endet mit `.git`)
   - Alternativ per SSH verbinden
 - CTRL-SHIFT-Ö (neues Terminal)
-- Sicherstellen, dass man sich im gewünschten Arbeitsverzeichnis befindet (`C:\Work\iirds-open-toolkit`)
+- Sicherstellen, dass man sich im gewünschten Arbeitsverzeichnis befindet (`C:\Work\vdi2770-open-toolkit`)
 - `npm install`
 
 ## Lokale Instanz starten
@@ -97,7 +97,7 @@ Es gibt mehrere Möglichkeiten, eine lokale Instanz in VS Code zu starten:
 
 ### Außerhalb von VS Code
 
-- im Arbeitsverezichnis (`./iirds-open-toolkit`) den Befehl `npm run-script serve` ausführen.
+- im Arbeitsverezichnis (`./vdi2770-open-toolkit`) den Befehl `npm run-script serve` ausführen.
 
 ## Pull Request testen
 

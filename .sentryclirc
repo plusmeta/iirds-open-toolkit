@@ -1,6 +1,6 @@
 [defaults]
-url=https://diagnosis.iirds.org
-project=iirds-open-toolkit
+url=https://diagnosis.plusmeta.de
+project=vdi2770-open-toolkit
 org=tekom
 
 [auth]

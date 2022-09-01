@@ -1,6 +1,6 @@
 <!--
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
 
@@ -46,13 +46,9 @@
     </div>
 
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
-      © 2020 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
+      © 2022 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
       &bull;
-      {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
-      &bull;
-      {{ $t("Otk.rightsInfo") }}
-      &bull;
-      <a href="https://iirds.org" target="_blank">iirds.org </a>
+      <a href="https://digitaldatachain.com/" target="_blank">digitaldatachain.com </a>
     </span>
 
     <v-spacer />

@@ -2,14 +2,14 @@
     "theme":{
         "dark": false,
         "logo": {
-            "dark": "/images/iiRDS_white.svg",
-            "light": "/images/iiRDS_darkgrey_bluedots.svg"
+            "dark": "/images/plusmeta.svg",
+            "light": "/images/plusmeta_dark.svg"
         },
         "themes": {
             "dark": {
                 "primary": "#dec88e",
                 "secondary": "#636363",
-                "accent": "#5cc5f2",
+                "accent": "#5755d9",
                 "error": "#FF5252",
                 "info": "#5cc5f2",
                 "success": "#4CAF50",
@@ -17,9 +17,9 @@
                 "anchor": "#c4c4c4"
             },
             "light": {
-                "primary": "#00769f",
+                "primary": "#498fcb",
                 "secondary": "#9c9c9c",
-                "accent": "#5cc5f2",
+                "accent": "#5755d9",
                 "error": "#FF5252",
                 "info": "#5cc5f2",
                 "success": "#4CAF50",

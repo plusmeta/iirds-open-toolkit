@@ -1,6 +1,6 @@
 <!--
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
 

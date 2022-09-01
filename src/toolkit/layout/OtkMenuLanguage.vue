@@ -1,6 +1,6 @@
 <!--
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
 
@@ -13,6 +13,7 @@
     <template v-slot:activator="{ on }">
       <v-btn
         icon
+        dark
         :disabled="!isReady"
         v-on="on"
       >

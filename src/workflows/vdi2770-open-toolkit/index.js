@@ -1,19 +1,19 @@
 /*!
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
  */
 
 export default {
-    id: "iirds-open-toolkit",
+    id: "vdi2770-open-toolkit",
     icon: "mdi-open-source-initiative",
     name: {
-        de: "iiRDS Open Toolkit",
-        en: "iiRDS Open Toolkit"
+        de: "VDI 2770 Open Toolkit",
+        en: "VDI 2770 Open Toolkit"
     },
     desc: {
-        de: "Implementierung des iiRDS Open Toolkit",
-        en: "Implementation of the iiRDS Open Toolkit"
+        de: "Implementierung des VDI 2770 Open Toolkit",
+        en: "Implementation of the VDI 2770 Open Toolkit"
     },
     publishable: true,
     steps: [{
@@ -65,21 +65,21 @@ export default {
         component: () => import(/* webpackChunkName: "StepBulkAssignMetadata.step" */"@/toolkit/step/OtkStepBulkAssignMetadata")
     },
     {
-        id: "generate-iirds",
+        id: "generate-vdi2770",
         editable: false,
-        helpkey: "workflow.generateIirds",
+        helpkey: "workflow.generateVdi2770",
         name: {
-            de: "iiRDS-Paket generieren",
-            en: "Generate iiRDS package"
+            de: "VDI-2770-Container generieren",
+            en: "Generate VDI 2770 container"
         },
         rules: [
             (store) => {
-                return store.getters["storage/countCurrentObjectsByType"]("iirds:Container") > 0;
+                return store.getters["storage/countCurrentObjectsByType"]("vdi:DocumentationContainer") > 0;
             }
         ],
         ruleExpl: {
-            de: "iiRDS-Paket wurde erfolgreich erzeugt",
-            en: "iiRDS package was generated successfully"
+            de: "VDI-2770-Container wurde erfolgreich erzeugt",
+            en: "VDI 2770 container was generated successfully"
         },
         component: () => import(/* webpackChunkName: "StepGenerateIIRDS.step" */ "@/toolkit/step/OtkStepGenerateIIRDS")
     }]

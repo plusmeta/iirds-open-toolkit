@@ -1,6 +1,6 @@
 <!--
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
 
@@ -19,7 +19,7 @@
             :key="`step-${index}`"
             :editable="getCurrentProgress > index + 1 && isEditable(index)"
             style="height: 64px;"
-            :color="(getLastValidStep >= index + 1) ? 'info' : 'error'"
+            :color="(getLastValidStep >= index + 1) ? 'primary' : 'error'"
             :complete="getCurrentProgress > index + 1"
             :step="index + 1"
           >

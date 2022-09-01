@@ -1,6 +1,6 @@
 <!--
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
 
@@ -464,7 +464,7 @@ export default {
             if (this.getCurrentObjects.length === 0 && this.filter) {
                 this.filter = undefined;
             }
-            // https://github.com/plusmeta/iirds-open-toolkit/issues/22
+            // https://github.com/plusmeta/vdi2770-open-toolkit/issues/22
             let currentUuids = this.getCurrentObjects.map(o => o.uuid);
             this.selected = this.selected.filter(uuid => currentUuids.includes(uuid));
         }

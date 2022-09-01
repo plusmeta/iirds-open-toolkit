@@ -1,6 +1,6 @@
 /*!
- * iiRDS Open Toolkit
- * Copyright 2020 plusmeta GmbH
+ * VDI 2770 Open Toolkit
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
  */
 
@@ -22,7 +22,7 @@ export default {
         });
 
         let now = new Date();
-        root.com(`*** iiRDS Open Toolkit (v${process.env.VUE_APP_VERSION}) ***`);
+        root.com(`*** VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION}) ***`);
         root.com(`*** generated on ${now.toLocaleString()} ***`);
 
         metadata.forEach((meta) => {

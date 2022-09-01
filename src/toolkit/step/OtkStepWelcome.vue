@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <!--
-  Copyright 2020 plusmeta GmbH
+  Copyright 2022 plusmeta GmbH
   License: MIT
 -->
 
@@ -17,14 +17,12 @@
     >
       <v-layout>
         <v-flex
-          xs8
-          offset-xs2
+          xs7
         >
           <v-card
-            shaped
             dark
-            color="info"
-            class="display-2 mt-6 pa-6"
+            color="secondary"
+            class="display-1 ml-4 mt-6 pa-6"
           >
             {{ $t("Otk.welcomeTitle") }}
           </v-card>
@@ -33,13 +31,11 @@
       <v-layout>
         <v-flex
           xs6
-          offset-xs5
         >
           <v-card
-            shaped
             dark
-            color="info darken-3"
-            class="headline mt-6 px-6 py-3"
+            color="secondary darken-2"
+            class="headline ml-4 mt-6 px-6 py-3"
           >
             {{ $t("Otk.welcomeSubtitle") }}
           </v-card>
@@ -109,9 +105,5 @@ export default {
   .welcome {
     width: 100% !important;
     margin-top: 10px;
-    background-image: url('/images/OTK_triangle.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom left;
   }
 </style>

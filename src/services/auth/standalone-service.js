@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 /*!
- * Copyright 2020 plusmeta GmbH
+ * Copyright 2022 plusmeta GmbH
  * License: MIT
  */
 
