@@ -1,4 +1,4 @@
-import validations from "@/config/imports/validation-rules_new";
+import validations from "@/config/imports/validation-rules_test";
 import { v4 as uuid } from "uuid";
 
 const Serializer = new XMLSerializer();

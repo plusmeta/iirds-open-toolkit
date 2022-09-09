@@ -17,6 +17,7 @@ const includesAll = (small, big) => small.every(n => big.indexOf(n) !== -1);
             spec: "",
             version: ["V1.0","V1.0.1","V1.1"],
             rule: { "de": "XX", "en": "XX" },
+            info: { "de": "XX", "en": "XX" },
             testfiles: {"true": [""], "false": [""]}
             //COMMENTS
         },
@@ -35,25 +36,22 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-package-and-container:~:text=iiRDS%20Generators%20MUST%20NOT%20use%20the%20iirds%3AInformationUnit%20class%20directly%20but%20MUST%20use%20one%20of%20the%20subclasses.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "iiRDS-Generatoren DÜRFEN die Klasse iirds:InformationUnit NICHT direkt verwenden, sondern MÜSSEN eine der Unterklassen verwendeniiRDS-Generatoren DÜRFEN die Klasse iirds:InformationUnit NICHT direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
-            "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclassesiiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
+            "de": "iiRDS-Generatoren DÜRFEN die Klasse iirds:InformationUnit NICHT direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
+            "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
-            "false": [
-                "./tests/files/util/iirds-validation/metadata_iirds_sample_fail_informationUnit.rdf"
-            ]
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M1_false.rdf"]
         }
         /*COMMENTS
 
         */
     },
     {
-        id: "M2",
+        id: "M2.1",
         path: "Document, Topic, Fragment, Package",
         //findInvalidElements: els => els.every(el => (el.childElementCount !== 0 && el.hasAttribute("rdf:about"))),
-        findInvalidElements: els => els.filter(el => el.childElementCount === 0 || !el.hasAttribute(
-            "rdf:about")),
+        findInvalidElements: els => els.filter(el => !el.hasAttribute("rdf:about")),
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=An%20instance%20of%20an%20iirds%3AInformationUnit%20subclass%20MUST%20have%20an%20IRI%20and%20MUST%20NOT%20be%20a%20blank%20node.",
         version: ["V1.0", "V1.0.1", "V1.1"],
@@ -61,14 +59,40 @@ export default [
             "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben und darf KEIN leerer Knoten sein.",
             "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node."
         },
+        info: {
+            "de": " ",
+            "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI."
+        },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.1_false.rdf"]
         }
         //COMMENTS
     },
     {
-        id: "M3",
+        id: "M2.2",
+        path: "Document, Topic, Fragment, Package",
+        //findInvalidElements: els => els.every(el => (el.childElementCount !== 0 && el.hasAttribute("rdf:about"))),
+        findInvalidElements: els => els.filter(el => el.childElementCount === 0),
+        prio: "MUST",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=An%20instance%20of%20an%20iirds%3AInformationUnit%20subclass%20MUST%20have%20an%20IRI%20and%20MUST%20NOT%20be%20a%20blank%20node.",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben und darf KEIN leerer Knoten sein.",
+            "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node."
+        },
+        info: {
+            "de": " ",
+            "en": "An instance of an iirds:InformationUnit subclass MUST NOT be a blank node."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.2_false.rdf"]
+        }
+        //COMMENTS
+    },
+    {
+        id: "M3.1",
         path: "Package",
         findInvalidElements: els => els.slice(1),
         prio: "MUST",
@@ -78,8 +102,34 @@ export default [
             "de": "Jedes iiRDS-Paket MUSS genau eine entsprechende iirds:Package-Instanz in den Metadaten haben.",
             "en": "Each iiRDS package MUST have exactly one corresponding iirds:Package instance in the metadata."
         },
+        info: {
+            "de": " ",
+            "en": "More than one iirds:Package instance found."
+        },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M3.1_false.rdf"]
+        }
+        //COMMENTS
+        // TODO: False-Fall: MUSS genau eine
+    },
+    {
+        id: "M3.2",
+        path: "*",
+        findInvalidElements: "",
+        prio: "MUST",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=Each%20iiRDS%20package%20MUST%20have%20exactly%20one%20corresponding%20iirds%3APackage%20instance%20in%20the%20metadata.",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "Jedes iiRDS-Paket MUSS genau eine entsprechende iirds:Package-Instanz in den Metadaten haben.",
+            "en": "Each iiRDS package MUST have exactly one corresponding iirds:Package instance in the metadata."
+        },
+        info: {
+            "de": " ",
+            "en": "No iirds:Package instance found."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
         //COMMENTS
@@ -88,7 +138,6 @@ export default [
     {
         id: "M4",
         path: "Package",
-        //findInvalidElements: els => els.every(el => el.querySelector("iiRDSVersion")),
         findInvalidElements: els => els.filter(el => !el.querySelector("iiRDSVersion")),
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=0..1-,iirds%3APackage,1,-iirds%3AParty",
@@ -98,7 +147,7 @@ export default [
             "en": "iiRDS:Package MUST use property iirds:iiRDSVersion"
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
         //COMMENTS
@@ -106,7 +155,8 @@ export default [
     {
         id: "M5",
         path: "Package",
-        findInvalidElements: els => els.every(el => el.querySelectorAll("is-part-of-package").length === 0),
+        findInvalidElements: els => els.every(el => el.querySelectorAll("is-part-of-package")
+            .length === 0),
         prio: "MUST NOT",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20corresponding%20iirds%3APackage%20instance%20of%20an%20iiRDS%20package%20MUST%20NOT%20be%20a%20member%20of%20another%20iiRDS%20package%20expressed%20by%20the%20property%20iirds%3Ais%2Dpart%2Dof%2Dpackage.",
         version: ["V1.0", "V1.0.1", "V1.1"],
@@ -115,7 +165,7 @@ export default [
             "en": "The corresponding iirds:Package instance of an iiRDS package MUST NOT be a member of another iiRDS package expressed by the property iirds:is-part-of-package."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
         //COMMENTS
@@ -138,7 +188,7 @@ export default [
             "en": "It is RECOMMENDED to use absolute IRIs in rdf:about."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
         //COMMENTS
@@ -168,7 +218,7 @@ export default [
             "en": "If information objects are used, each information unit MUST only be related to exactly one information object via iirds:is-version-of."
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
         //COMMENTS
@@ -190,7 +240,7 @@ export default [
             "en": "An information object MUST have an absolute IRI and MAY be related to additional identifications via the iirds:has-identity property."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -210,7 +260,7 @@ export default [
             "en": "iirds:Package elements representing the enclosing iiRDS package itself MUST NOT be subjects of any iirds:has-rendition relation."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -250,7 +300,7 @@ export default [
             "en": "An iirds:Rendition MUST have the property iirds:source."
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
         //COMMENTS
@@ -274,7 +324,7 @@ export default [
             "en": "An iirds:Rendition MUST have the property iirds:format."
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_multi.rdf"]
         }
         //COMMENTS
@@ -299,7 +349,7 @@ export default [
             "en": "iirds:Rendition MUST NOT directly use iirds:Selector but MUST use one of its subclasses to reference parts of a file. The class iirds:Selector has the following subclasses: iirds:FragmentSelector; iirds:RangeSelector"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": ["./tests/files/util/iirds-validation/fail_must use selector subclass.rdf"]
         }
         //COMMENTS
@@ -318,7 +368,7 @@ export default [
             "en": "iirds:Rendition MUST NOT directly use iirds:Selector but MUST use one of its subclasses to reference parts of a file. The class iirds:Selector has the following subclasses: iirds:FragmentSelector; iirds:RangeSelector"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": ["./tests/files/util/iirds-validation/fail_must use selector subclass.rdf"]
         }
         //COMMENTS
@@ -461,7 +511,7 @@ export default [
             "en": "Instances of the iirds:Event class MUST have the following properties: iirds:eventCode and iirds:eventType. "
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1664,8 +1714,10 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_fail_IRI required.rdf"]
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
+            "false": [
+                "./tests/files/util/iirds-validation/metadata_iirds_sample_fail_IRI required.rdf"
+            ]
         }
         //COMMENTS
         //1. Sprint Review -> REQUIRED = false positive?
@@ -1709,7 +1761,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1726,7 +1778,7 @@ export default [
             "en": "Not intented to be used directly. Use the subclasses instead. For collection subjects not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1743,7 +1795,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead. For information subjects not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1760,7 +1812,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1777,7 +1829,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1794,7 +1846,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1811,7 +1863,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1828,7 +1880,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1845,7 +1897,7 @@ export default [
             "en": "Not intented to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1862,7 +1914,7 @@ export default [
             "en": "Not intented to be used directly."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1879,7 +1931,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1896,7 +1948,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1913,7 +1965,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1930,7 +1982,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1947,7 +1999,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1964,7 +2016,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -1981,7 +2033,7 @@ export default [
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
@@ -2003,7 +2055,7 @@ export default [
             "en": "iirds:Component MUST NOT have more than 1 property iirds:relates-to-party"
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements"],
             "false": [""]
         }
         //COMMENTS
