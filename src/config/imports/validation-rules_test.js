@@ -2,7 +2,7 @@ export default [
     {
         id: "M13",
         path: "Rendition has-selector",
-        findInvalidElements: els => els.filter(el => el.querySelector("Selector")),
+        findInvalidElements: els => els.filter(el => el.querySelectorAll("Selector")),
         prio: "MUST NOT",
         category: "not intended to be used directly",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#x-conformance:~:text=iirds%3ARendition%20MUST%20NOT,an%20end%20identifier",

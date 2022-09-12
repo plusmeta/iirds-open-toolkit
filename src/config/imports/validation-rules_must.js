@@ -692,30 +692,33 @@ export default [
         },
     },
     {
-        id: "M31",
-        path: "",
-        findInvalidElements: "",
+        id: "M31.1",
+        path: "IdentityDomain",
+        findInvalidElements: els => els.filter(el => el.hasAttribute("rdf:about")).filter(el => [!iri_with_www, !iri_with_uuid, !iri_with_https].every(regx => regx.test(el.getAttribute("rdf:about")))),
         prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Instances%20of%20class%20iirds%3AIdentityDomain%20MUST%20have%20an%20absolute%20IRI",
+        category: "absolute IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Instances%20of%20class%20iirds%3AIdentityDomain%20MUST%20have%20an%20absolute%20IRI%20and%20MAY%20link%20to%20the%20custodian%20of%20the%20domain%20via%20the%20iirds%3Ahas%2Dparty%20property.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Instanzen der Klasse iirds:IdentityDomain MÜSSEN einen absoluten IRI haben.",
+            "de": " ",
+            "en": "Instances of class iirds:IdentityDomain MUST have an absolute IRI and MAY link to the custodian of the domain via the iirds:has-party property."
+        },
+        info: {
+            "de": " ",
             "en": "Instances of class iirds:IdentityDomain MUST have an absolute IRI."
         },
         testfiles: {
-            "true": [""],
-            "false": [""]
+            "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M31.1_false"]
         }
 
     },
-
-
-    //6.8.2 Content Lifecycle Status
     {
         id: "M32",
-        path: "",
-        findInvalidElements: "",
+        path: "ContentLifeCycleStatus",
+        findInvalidElements: els => els.mustHaveChild("has-content-lifecycle-status-value"),
         prio: "MUST",
+        category: "must have property",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AContentLifecyleStatus%20MUST%20have%20an%20iirds%3AContentLifecyleStatusValue%20which%20is%20assigned%20by%20the%20iirds%3Ahas%2Dcontent%2Dlifecycle%2Dstatus%2Dvalue%20property.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -723,19 +726,17 @@ export default [
             "en": "An iirds:ContentLifecyleStatus MUST have an iirds:ContentLifecyleStatusValue which is assigned by the iirds:has-content-lifecycle-status-value property."
         },
         testfiles: {
-            "true": [""],
-            "false": [""]
+            "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32_false.rdf"]
         }
 
     },
-
-
-    //6.8.3 Parties and Roles
     {
         id: "M33",
-        path: "",
+        path: "Party",
         findInvalidElements: "",
         prio: "MUST",
+        category: "cardinality 0..1 (Ungenauigkeit in Spec. Text impliziert cardinality 1)",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AParty%20MUST%20have%20a%20related%20iirds%3APartyRole%20that%20is%20assigned%20by%20the%20property%20iirds%3Ahas%2Dparty%2Drole%2C%20such%20as%20author%2C%20supplier%20or%20manufacturer.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -743,10 +744,9 @@ export default [
             "en": "An iirds:Party MUST have a related iirds:PartyRole that is assigned by the property iirds:has-party-role, such as author, supplier or manufacturer."
         },
         testfiles: {
-            "true": [""],
+            "true": ["./tests/files/util/iirds_validation/Example 34 - Component with manufacturer.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
-
     },
     {
         id: "M34",
@@ -1599,8 +1599,9 @@ export default [
         //iirds:Identity -> Properties:	1  iirds:identifier
         id: "M77",
         path: "",
-        findInvalidElements: "",
+        findInvalidElements: els => els.mustHaveChild("identifier"),
         prio: "MUST",
+        category: "must have property",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=1%C2%A0%20iirds%3Aidentifier%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1616,9 +1617,10 @@ export default [
     {
         //iirds:Identity -> Properties:	1  iirds:has-identity-domain
         id: "M78",
-        path: "",
-        findInvalidElements: "",
+        path: "Identity",
+        findInvalidElements: els => els.mustHaveChild("identityDomain"),
         prio: "MUST",
+        category: "must have property",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-identity-domain:~:text=1%C2%A0%20iirds%3Ahas%2Didentity%2Ddomain%20property%20%2D%20iirds%3AIdentityDomain",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1709,6 +1711,7 @@ export default [
         findInvalidElements: (els => !els.length) && (els => els.every(el => el.hasAttribute(
             "rdf:about"))) && (els => els.every(el => el.getAttribute("rdf:about") != "")),
         prio: "REQUIRED",
+        category: "must have IRI",
         spec: "",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1717,9 +1720,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": [
-                "./tests/files/util/iirds-validation/metadata_iirds_sample_fail_IRI required.rdf"
-            ]
+            "false": [""]
         }
 
         //1. Sprint Review -> REQUIRED = false positive?
@@ -1735,27 +1736,12 @@ export default [
 
         */
     },
-    /*{
-        //IRI: Optional
-        id: "",
-        path: "ContentLifeCycleStatus, DirectoryNode, DownTime, FragmentSelector, Identity, MaintenanceInterval, RangeSelector, Rendition, Selector, WorkingTime, SetupTime",
-        findInvalidElements: (els => els.length != 0) && (els => els.some(el => el.hasAttribute("rdf:about"))),
-        prio: "OPTIONAL",
-        spec: "",
-        version: ["V1.0","V1.0.1","V1.1"],
-        rule: {
-            "de": "...,",
-            "en": "IRI: OPTIONAL"
-        },
-        testfiles: {"true": [""], "false": [""]}
-
-    },*/
-    //iiRDS RDF Schema Reference
     {
         id: "M81",
         path: "AfterUse",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=use%20of%20the%20product.-,Description%3A,-Not%20intended%20to%20be",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1773,6 +1759,7 @@ export default [
         path: "Collection",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=Not%20intented%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.%20For%20collection%20subjects%20not%20covered%20by%20the%20iiRDS%20standard%20subclasses%2C%20define%20custom%20subclasses.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1790,6 +1777,7 @@ export default [
         path: "Conformity",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.%20For%20information%20subjects%20not%20covered%20by%20the%20iiRDS%20standard%20subclasses%2C%20define%20custom%20subclasses.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1807,6 +1795,7 @@ export default [
         path: "DesignAndRealization",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=of%20a%20product.-,Description%3A,phases%20not%20covered%20by%20the%20iiRDS%20standard%20subclasses%2C%20define%20custom%20subclasses.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1824,6 +1813,7 @@ export default [
         path: "DocumentationMetadata",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3ADocumentType",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1841,6 +1831,7 @@ export default [
         path: "FunctionalMetadata",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3AIdentity",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1858,6 +1849,7 @@ export default [
         path: "iirdsDomainEntity",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-Properties%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1875,6 +1867,7 @@ export default [
         path: "AdministrativeMetadata",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3AAfterUse",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1892,6 +1885,7 @@ export default [
         path: "InformationSubject",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intented%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1909,6 +1903,7 @@ export default [
         path: "InformationType",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intented%20to%20be%20used%20directly.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1926,6 +1921,7 @@ export default [
         path: "PlanningTime",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=specific%20working%20tasks.-,Description%3A,-Not%20intended%20to",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1943,6 +1939,7 @@ export default [
         path: "ProductFeature",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=functions%20of%20a%20product%20or%20component.-,Description%3A,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1960,6 +1957,7 @@ export default [
         path: "ProductLifeCyclePhase",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=MAY%20refer%20to.-,Description%3A,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1977,6 +1975,7 @@ export default [
         path: "ProductMetadata",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=product%2Drelated%20metadata.-,Description%3A,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -1994,6 +1993,7 @@ export default [
         path: "PuttingToUse",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=system%20to%20use.-,Description%3A,phases%20not%20covered%20by%20the%20iiRDS%20standard%20subclasses%2C%20define%20custom%20subclasses.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -2011,6 +2011,7 @@ export default [
         path: "Qualification",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=roles%20REQUIRED%20for%20working%20tasks%20described%20in%20technical%20documentation.-,Description%3A,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -2028,6 +2029,7 @@ export default [
         path: "relates-to-administrative-metadata",
         findInvalidElements: els => els,
         prio: "MUST",
+        category: "Not intended to be used directly.",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_relates-to-administrative-metadata:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3Arelates%2Dto%2Dcomponent",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -2050,6 +2052,7 @@ export default [
         path: "Component",
         findInvalidElements: "",
         prio: "MUST NOT",
+        category: "cardinality 0..1",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_ProductMetadata:~:text=identity%20properties%20%2D%20iirds%3AIdentity-,0..1%C2%A0%20iirds%3Arelates%2Dto%2Dparty%20property%20%2D%20iirds%3AParty,-iirds%3AConcept",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -2062,11 +2065,4 @@ export default [
         }
 
     },
-
-
-
-
-
-
-    //iiRDS RDF Schema Reference -> A.4 Properties and Relations Overview
 ];

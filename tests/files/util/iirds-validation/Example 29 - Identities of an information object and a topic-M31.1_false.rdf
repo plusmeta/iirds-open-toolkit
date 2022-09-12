@@ -1,0 +1,32 @@
+<!-- Example 29: Identities of an information object and a topic  -->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+	<iirds:IdentityDomain rdf:about="http://myCompany.com/cms1/modules"/>
+	<iirds:IdentityDomain rdf:about="http://myCompany.com/cms1/versions"/>
+	<iirds:IdentityDomain rdf:about="http://myCompany.com/cms1/pubs"/>
+	<iirds:InformationObject rdf:about="http://myCompany.com/informationobjects/io_1">
+		<iirds:has-identity>
+			<iirds:Identity>
+				<iirds:identifier>89761</iirds:identifier>
+				<iirds:has-identity-domain rdf:resource="/cms1/modules"/>
+			</iirds:Identity>
+		</iirds:has-identity>
+	</iirds:InformationObject>
+	<iirds:Topic rdf:about="http://myCompany.com/versions/io_1/en/1">
+		<iirds:has-identity>
+			<iirds:Identity>
+				<iirds:identifier>4531</iirds:identifier>
+				<iirds:has-identity-domain rdf:resource="http://myCompany.com/cms1/versions"/>
+			</iirds:Identity>
+		</iirds:has-identity>
+		<iirds:has-identity>
+			<iirds:Identity>
+				<iirds:identifier>V6952</iirds:identifier>
+				<iirds:has-identity-domain rdf:resource="http://myCompany.com/pubs"/>
+			</iirds:Identity>
+		</iirds:has-identity>
+		<iirds:title>Mounting the rotor</iirds:title>
+		<iirds:revision>1</iirds:revision>
+		<iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+		<!-- omitted -->
+	</iirds:Topic>
+</rdf:RDF>
