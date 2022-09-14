@@ -4,8 +4,9 @@ const iri_with_https = /^http[s]?\:\/\//;
 const iri_with_www = /www\..*?\..*?\//;
 const iri_with_uuid = /urn\:uuid\:[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{12}/;
 const mustNotBeABlankNode = el => el.childElementCount === 0;
-const mustNotHaveChild = child => el => el.querySelectorAll(child).length === 0;
 const mustHaveChild = child => el => el.querySelectorAll(child).length === 1;
+const mustNotHaveChild = child => el => el.querySelectorAll(child).length === 0;
+const mustNotHaveMoreThanOneChild = child => el => el.querySelectorAll(child).slice(1);
 const includesAll = (small, big) => small.every(n => big.indexOf(n) !== -1);
 
 export default [
@@ -69,6 +70,153 @@ export default [
         }
     },
     {
+        id: "M2.3",
+        path: "Document, Topic, Fragment, Package",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("dateOfCreation"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3AdateOfCreation%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
+        Version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:dateOfCreation property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:dateOfCreation."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.3_false.rdf"]
+        }
+    },
+    {
+        id: "M2.4",
+        path: "Document, Topic, Fragment, Package",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("dateOfLastModification"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3AdateOfLastModification%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
+        Version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:dateOfLastModification property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:dateOfLastModification."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_-M2.4_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.4_false.rdf"]
+        }
+    },
+    {
+        id: "M2.5",
+        path: "Document, Topic, Fragment, Package",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("revision"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Arevision%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
+        Version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:revision property - http://www.w3.org/2000/01/rdf-schema#Literal"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:revision."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.5_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.5_false.rdf"]
+        }
+    },
+    {
+        id: "M2.6",
+        path: "Document, Topic, Fragment, Package",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("title"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Atitle%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
+        Version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:title property - http://www.w3.org/2000/01/rdf-schema#Literal"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:title."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.6_false.rdf"]
+        }
+    },
+    {
+        id: "M2.7",
+        path: "Document, Topic, Fragment, Package",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("has-abstract"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ahas%2Dabstract%20property",
+        Version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:has-abstract property"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:has-abstract."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.7_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.7_false.rdf"]
+        }
+    },
+    {
+        id: "M2.8",
+        path: "Document, Topic, Fragment, Package",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("is-replacement-of "),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ais%2Dreplacement%2Dof%20property%20%2D%20iirds%3AInformationUnit",
+        Version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 	0..1  iirds:is-replacement-of property - iirds:InformationUnit"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:is-replacement-of ."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.8_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.8_false.rdf"]
+        }
+    },
+    {
+        id: "M2.9",
+        path: "Document, Topic, Fragment, Package",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("is-version-of "),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ais%2Dversion%2Dof%20property%20%2D%20iirds%3AInformationObject",
+        Version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 	0..1  iirds:is-version-of property - iirds:InformationObject"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:is-version-of ."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.9_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.9_false.rdf"]
+        }
+    },
+    {
         id: "M3.1",
         path: "Package",
         findInvalidElements: els => els.slice(1),
@@ -95,7 +243,7 @@ export default [
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=Each%20iiRDS%20package%20MUST%20have%20exactly%20one%20corresponding%20iirds%3APackage%20instance%20in%20the%20metadata.",
         version: ["V1.0", "V1.0.1", "V1.1"],
-        category: "exactly 1",
+        category: "cardinality 1",
         rule: {
             "de": "Jedes iiRDS-Paket MUSS genau eine entsprechende iirds:Package-Instanz in den Metadaten haben.",
             "en": "Each iiRDS package MUST have exactly one corresponding iirds:Package instance in the metadata."
@@ -714,11 +862,11 @@ export default [
 
     },
     {
-        id: "M32",
+        id: "M32.1",
         path: "ContentLifeCycleStatus",
         findInvalidElements: els => els.mustHaveChild("has-content-lifecycle-status-value"),
         prio: "MUST",
-        category: "must have property",
+        category: "cardinality 1",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AContentLifecyleStatus%20MUST%20have%20an%20iirds%3AContentLifecyleStatusValue%20which%20is%20assigned%20by%20the%20iirds%3Ahas%2Dcontent%2Dlifecycle%2Dstatus%2Dvalue%20property.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -727,14 +875,123 @@ export default [
         },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.1_false.rdf"]
+        }
+
+    },
+    {
+        id: "M32.2",
+        path: "ContentLifeCycleStatus",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("dateOfEffect"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20180418-1.0-release/index.html#:~:text=0..1%C2%A0%20iirds%3AdateOfEffect%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:dateOfEffect property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfEffect."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.2_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.2_false.rdf"]
+        }
+
+    },
+    {
+        id: "M32.3",
+        path: "ContentLifeCycleStatus",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("dateOfExpiry"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#functional-metadata:~:text=0..1%C2%A0%20iirds%3AdateOfExpiry%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:dateOfExpiry property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfExpiry."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.3_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.3_false.rdf"]
+        }
+
+    },
+    {
+        id: "M32.4",
+        path: "ContentLifeCycleStatus",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("dateOfStatus"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#functional-metadata:~:text=0..1%C2%A0%20iirds%3AdateOfStatus%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:dateOfStatus property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:purpose."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.4_false.rdf"]
+        }
+
+    },
+    {
+        id: "M32.5",
+        path: "ContentLifeCycleStatus",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("purpose"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#functional-metadata:~:text=0..1%C2%A0%20iirds%3Apurpose%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 0..1  iirds:purpose property - http://www.w3.org/2000/01/rdf-schema#Literal"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfStatus."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.5_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.5_false.rdf"]
+        }
+
+    },
+    {
+        id: "M32.6",
+        path: "ContentLifeCycleStatus",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("relates-to-party"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20190712-1.0.1-release/index.html#rdfproperties_core_iirdsAttribute:~:text=rdf%2Dschema%23Literal-,0..1%C2%A0%20iirds%3Arelates%2Dto%2Dparty%20property%20%2D%20iirds%3AParty,-iirds%3AContentLifeCycleStatusValue",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": " ",
+            "en": "Properties: 	0..1  iirds:relates-to-party property - iirds:Party"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:relates-to-party."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.6_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.6_false.rdf"]
         }
 
     },
     {
         id: "M33",
         path: "Party",
-        findInvalidElements: "",
         prio: "MUST",
         category: "cardinality 0..1 (Ungenauigkeit in Spec. Text impliziert cardinality 1)",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AParty%20MUST%20have%20a%20related%20iirds%3APartyRole%20that%20is%20assigned%20by%20the%20property%20iirds%3Ahas%2Dparty%2Drole%2C%20such%20as%20author%2C%20supplier%20or%20manufacturer.",
@@ -750,9 +1007,9 @@ export default [
     },
     {
         id: "M34",
-        path: "",
-        findInvalidElements: "",
+        path: "Party",
         prio: "MUST",
+        category: "cardinality 0..1 (Ungenauigkeit, siehe M33)",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=In%20addition%20to%20the%20role%2C%20an%20iirds%3AParty%20MUST%20also%20have%20an%20associated%20description%20of%20itself%20as%20compliant%20vcard%3Akind%20object%20which%20is%20assigned%20via%20iirds%3Arelates%2Dto%2Dvcard.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -760,69 +1017,103 @@ export default [
             "en": "In addition to the role, an iirds:Party MUST also have an associated description of itself as compliant vcard:kind object which is assigned via iirds:relates-to-vcard."
         },
         testfiles: {
-            "true": [""],
+            "true": ["./tests/files/util/iirds_validation/Example 34 - Component with manufacturer.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
 
     },
-
-    //6.9.1 Directory Nodes
     {
-        id: "M35",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
+        id: "M35.1",
+        path: "DirectoryNode",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("has-next-sibling"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1 (Ungenauigkeit, siehe M33)",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Navigation%20sequences%20and%20hierarchies%20of%20InformationUnits%20MUST%20be%20modeled%20as%20linked%20lists%20of%20instances%20of%20the%20class%20iirds%3ADirectoryNode.%20In%20a%20linked%20list%2C%20an%20iirds%3ADirectoryNode%20references%20the%20following%20node%20by%20the%20property%20iirds%3Ahas%2Dnext%2Dsibling.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
             "de": "Navigationsabläufe und Hierarchien von InformationUnits MÜSSEN als verkettete Listen von Instanzen der Klasse iirds:DirectoryNode modelliert werden. In einer verknüpften Liste verweist ein iirds:DirectoryNode auf den folgenden Knoten durch die Eigenschaft iirds:has-next-sibling.",
             "en": "Navigation sequences and hierarchies of InformationUnits MUST be modeled as linked lists of instances of the class iirds:DirectoryNode. In a linked list, an iirds:DirectoryNode references the following node by the property iirds:has-next-sibling."
         },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M36",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20model%20closed%20lists%2C%20the%20last%20node%20in%20a%20list%20level%20MUST%20have%20the%20property%20iirds%3Ahas%2Dnext%2Dsibling%20relating%20to%20an%20instance%20of%20the%20class%20iirds%3Anil.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Um geschlossene Listen zu modellieren, MUSS der letzte Knoten in einer Listenebene die Eigenschaft iirds:has-next-sibling haben, die sich auf eine Instanz der Klasse iirds:nil bezieht.",
-            "en": "To model closed lists, the last node in a list level MUST have the property iirds:has-next-sibling relating to an instance of the class iirds:nil."
+        info: {
+            "de": " ",
+            "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-next-sibling."
         },
         testfiles: {
-            "true": [""],
-            "false": [""]
+            "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.1_false.rdf"]
         }
 
     },
     {
-        id: "M37",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20property%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype%20determines%20the%20type%20of%20the%20directory%20structure.%20The%20root%20node%20of%20a%20directory%20structure%20MUST%20have%20one%20property%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype.",
+        id: "M35.2",
+        path: "DirectoryNode",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("has-directory-structure-type"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=0..1%C2%A0%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype%20property%20%2D%20iirds%3ADirectoryNodeType",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Die Eigenschaft iirds:has-directory-structure-type bestimmt den Typ der Verzeichnisstruktur. Der Wurzelknoten einer Verzeichnisstruktur MUSS eine Eigenschaft haben: iirds:has-directory-structure-type.",
-            "en": "The property iirds:has-directory-structure-type determines the type of the directory structure. The root node of a directory structure MUST have one property iirds:has-directory-structure-type."
+            "de": "",
+            "en": "Properties: 0..1  iirds:has-directory-structure-type property - iirds:DirectoryNodeType"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-directory-structure-type."
         },
         testfiles: {
-            "true": [""],
-            "false": [""]
+            "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.2_false.rdf"]
+        }
+    },
+    {
+        id: "M35.3",
+        path: "DirectoryNode",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("has-first-child property"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=0..1%C2%A0%20iirds%3Ahas%2Dfirst%2Dchild%20property%20%2D%20iirds%3ADirectoryNode",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "",
+            "en": "Properties: 0..1  iirds:has-first-child property - iirds:DirectoryNode"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-first-child property."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.3_false.rdf"]
         }
 
     },
     {
-        id: "M38",
-        path: "",
-        findInvalidElements: "",
+        id: "M35.4",
+        path: "DirectoryNode",
+        findInvalidElements: els => els.mustNotHaveMoreThanOneChild("relates-to-information-unit"),
+        prio: "MUST NOT",
+        category: "cardinality 0..1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=0..1%C2%A0%20iirds%3Arelates%2Dto%2Dinformation%2Dunit%20property%20%2D%20iirds%3AInformationUnit",
+        version: ["V1.1"],
+        rule: {
+            "de": " ",
+            "en": "0..1  iirds:relates-to-information-unit property - iirds:InformationUnit"
+        },
+        info: {
+            "de": " ",
+            "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:relates-to-information-unit."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.4_false.rdf"]
+        }
+
+    },
+    {
+        id: "M35.5",
+        path: "DirectoryNode",
         prio: "MUST",
+        category: "only root element must have property",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Only%20root%20nodes%20of%20a%20directory%20structure%20MUST%20have%20the%20property%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -830,13 +1121,29 @@ export default [
             "en": "Only root nodes of a directory structure MUST have the property iirds:has-directory-structure-type."
         },
         testfiles: {
-            "true": [""],
-            "false": [""]
+            "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.4_false.rdf"]
         }
 
     },
+    {
+        id: "M36",
+        path: "DirectoryNode",
+        findInvalidElements: "",
+        prio: "MUST",
+        category: "rdf:resource relates to class iirds:nil",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20model%20closed%20lists%2C%20the%20last%20node%20in%20a%20list%20level%20MUST%20have%20the%20property%20iirds%3Ahas%2Dnext%2Dsibling%20relating%20to%20an%20instance%20of%20the%20class%20iirds%3Anil.",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "Um geschlossene Listen zu modellieren, MUSS der letzte Knoten in einer Listenebene die Eigenschaft iirds:has-next-sibling haben, die sich auf eine Instanz der Klasse iirds:nil bezieht.",
+            "en": "To model closed lists, the last node in a list level MUST have the property iirds:has-next-sibling relating to an instance of the class iirds:nil."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds_validation/Example 38 - Table of contents.rdf","./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds_validation/Example 38 - Table of contents-M36_false.rdf"]
+        }
 
-    //6.9.2 Hierarchical Navigation
+    },
     {
         id: "M39",
         path: "",
@@ -1633,18 +1940,6 @@ export default [
         }
 
     },
-
-    //===================
-
-    //0..⃰  iirds:relates-to-supply properties - iirds:Supply
-
-    //0..1  iirds:relates-to-vcard property - http://www.w3.org/2006/vcard/ns#Kind
-
-    //0..1  iirds:relates-to-party property - iirds:Party
-
-
-    //0..1  iirds:has-selector property - iirds:Selector
-
     {
         //out of scope / false positive?
         path: "",

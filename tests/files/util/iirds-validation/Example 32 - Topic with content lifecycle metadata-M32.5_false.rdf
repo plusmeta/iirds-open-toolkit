@@ -1,0 +1,24 @@
+<!-- Example 32: Topic with content lifecycle metadata  -->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	<iirds:Topic rdf:about="http://myCompany.com/io/1312">
+		<iirds:title>Mounting the rotor</iirds:title>
+		<iirds:language>en</iirds:language>
+		<iirds:revision>1</iirds:revision>
+		<iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+		<iirds:has-content-lifecycle-status>
+			<iirds:ContentLifeCycleStatus>
+				<iirds:purpose>purpose1</iirds:purpose>
+				<iirds:purpose>purpose2</iirds:purpose>
+				<iirds:dateOfStatus>2018-04-10T15:28:09+01:00</iirds:dateOfStatus>
+				<iirds:statusComment> Updated information on the mounting process. </iirds:statusComment>
+				<iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Approved"/>
+			</iirds:ContentLifeCycleStatus>
+		</iirds:has-content-lifecycle-status>
+		<iirds:has-rendition>
+			<iirds:Rendition>
+				<iirds:format>text/html</iirds:format>
+				<iirds:source>rendition/mounting_en_1.html</iirds:source>
+			</iirds:Rendition>
+		</iirds:has-rendition>
+	</iirds:Topic>
+</rdf:RDF>

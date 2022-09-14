@@ -1,0 +1,47 @@
+<!-- Example 38: Table of contents  -->
+<!-- The following example illustrates how to model a simple table of contents in iiRDS. The root node references a document and has a label. The additional label in the directory node structure overrules any title or label of the referenced information unit. -->
+<!-- As the root directory node has no following sibling on the same hierarchy level, it forms a linked list with only one member. To close the linked list with only one element, the root directory node has iirds:nil as the next sibling. The next hierarchy level contains a linked list with directory nodes referencing chapter topic 1 and chapter topic 2. The first directory node on chapter level has an additional label "Topic 1". The iiRDS Consumer uses the additional label for rendering in the directory structure. The second directory node on chapter level has no additional label. The iiRDS Consumer uses the title of the referenced information unit for rendering. In this example, the instance topic_2 has the title "Transportation". -->
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:iirdsMch="http://iirds.tekom.de/iirds/domain/machinery#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:iirdsSft="http://iirds.tekom.de/iirds/domain/software#">
+<iirds:Package rdf:about="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df">
+<iirds:iiRDSVersion>1.0</iirds:iiRDSVersion>
+</iirds:Package>
+<iirds:DirectoryNode rdf:about="http://myCompany.de/iirds/myPackage/manual_1">
+    <rdfs:label>Table of Contents</rdfs:label>
+    <iirds:relates-to-information-unit 
+        rdf:resource="http://myCompany.de/iirds/myPackage/document"/>
+        <iirds:relates-to-information-unit 
+        rdf:resource="http://myCompany.de/iirds/myPackage/topic_1"/>   
+    <iirds:has-directory-structure-type 
+        rdf:resource="http://iirds.tekom.de/iirds#TableOfContents" />
+    <iirds:has-first-child>
+        <iirds:DirectoryNode>
+            <iirds:relates-to-information-unit 
+                rdf:resource="http://myCompany.de/iirds/myPackage/topic_1"/>
+            <rdfs:label>Topic 1</rdfs:label>
+            <iirds:has-next-sibling>
+                <iirds:DirectoryNode>
+                    <iirds:relates-to-information-unit
+                        rdf:resource="http://myCompany.de/iirds/myPackage/topic_2"/>
+                    <iirds:has-next-sibling 
+                        rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                </iirds:DirectoryNode>         
+        </iirds:DirectoryNode>
+    </iirds:has-first-child>
+    <iirds:has-first-child>
+        <iirds:DirectoryNode>
+            <iirds:relates-to-information-unit 
+                rdf:resource="http://myCompany.de/iirds/myPackage/topic_2"/>
+            <rdfs:label>Topic 1</rdfs:label>
+            <iirds:has-next-sibling>
+                <iirds:DirectoryNode>
+                    <iirds:relates-to-information-unit
+                        rdf:resource="http://myCompany.de/iirds/myPackage/topic_3"/>
+                    <iirds:has-next-sibling 
+                        rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                </iirds:DirectoryNode>         
+        </iirds:DirectoryNode>
+    </iirds:has-first-child>
+    <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+</iirds:DirectoryNode>
+</rdf:RDF>
