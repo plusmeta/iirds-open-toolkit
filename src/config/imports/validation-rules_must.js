@@ -6,7 +6,7 @@ const iri_with_uuid = /urn\:uuid\:[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9
 const mustNotBeABlankNode = el => el.childElementCount === 0;
 const mustHaveChild = child => el => el.querySelectorAll(child).length === 1;
 const mustNotHaveChild = child => el => el.querySelectorAll(child).length === 0;
-const mustNotHaveMoreThanOneChild = child => el => el.querySelectorAll(child).slice(1);
+const mustNotHaveMoreThanOneChild = child => el => Array.from(el.querySelectorAll(child)).slice(1);
 const includesAll = (small, big) => small.every(n => big.indexOf(n) !== -1);
 
 export default [
@@ -19,6 +19,10 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-package-and-container:~:text=iiRDS%20Generators%20MUST%20NOT%20use%20the%20iirds%3AInformationUnit%20class%20directly%20but%20MUST%20use%20one%20of%20the%20subclasses.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
+            "de": "iiRDS-Generatoren DÜRFEN die Klasse iirds:InformationUnit NICHT direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
+            "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
+        },
+        info: {
             "de": "iiRDS-Generatoren DÜRFEN die Klasse iirds:InformationUnit NICHT direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
             "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
         },
@@ -269,6 +273,10 @@ export default [
             "de": "iiRDS:Package MUSS die Eigenschaft iirds:iiRDSVersion verwenden",
             "en": "iiRDS:Package MUST use property iirds:iiRDSVersion"
         },
+        info: {
+            "de": "iiRDS:Package MUSS die Eigenschaft iirds:iiRDSVersion verwenden",
+            "en": "iiRDS:Package MUST use property iirds:iiRDSVersion"
+        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M4_false.rdf"]
@@ -287,6 +295,10 @@ export default [
             "de": "Die entsprechende iirds:Package-Instanz eines iiRDS-Pakets DARF NICHT Mitglied eines anderen iiRDS-Pakets sein, das durch die Eigenschaft iirds:is-part-of-package ausgedrückt wird.",
             "en": "The corresponding iirds:Package instance of an iiRDS package MUST NOT be a member of another iiRDS package expressed by the property iirds:is-part-of-package."
         },
+        info: {
+            "de": "Die entsprechende iirds:Package-Instanz eines iiRDS-Pakets DARF NICHT Mitglied eines anderen iiRDS-Pakets sein, das durch die Eigenschaft iirds:is-part-of-package ausgedrückt wird.",
+            "en": "The corresponding iirds:Package instance of an iiRDS package MUST NOT be a member of another iiRDS package expressed by the property iirds:is-part-of-package."
+        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M5_false.rdf"]
@@ -301,6 +313,10 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=It%20is%20RECOMMENDED%20to%20use%20absolute%20IRIs%20in%20rdf%3Aabout.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
+            "de": "Es wird EMPFOHLEN absolute IRIs in rdf:about zu verwenden.",
+            "en": "It is RECOMMENDED to use absolute IRIs in rdf:about."
+        },
+        info: {
             "de": "Es wird EMPFOHLEN absolute IRIs in rdf:about zu verwenden.",
             "en": "It is RECOMMENDED to use absolute IRIs in rdf:about."
         },
@@ -325,6 +341,10 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=If%20information%20objects%20are%20used%2C%20each%20information%20unit%20MUST%20only%20be%20related%20to%20exactly%20one%20information%20object%20via%20iirds%3Ais%2Dversion%2Dof.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
+            "de": "Wenn Informationsobjekte verwendet werden, DARF jede Informationseinheit nur auf genau ein Informationsobjekt über iirds:is-version-of bezogen werden.",
+            "en": "If information objects are used, each information unit MUST only be related to exactly one information object via iirds:is-version-of."
+        },
+        info: {
             "de": "Wenn Informationsobjekte verwendet werden, DARF jede Informationseinheit nur auf genau ein Informationsobjekt über iirds:is-version-of bezogen werden.",
             "en": "If information objects are used, each information unit MUST only be related to exactly one information object via iirds:is-version-of."
         },
@@ -383,6 +403,10 @@ export default [
             "de": "iirds:Package-Elemente, die das umschließende iiRDS-Paket selbst darstellen, DÜRFEN NICHT Gegenstand einer iirds:has-rendition-Beziehung sein.",
             "en": "iirds:Package elements representing the enclosing iiRDS package itself MUST NOT be subjects of any iirds:has-rendition relation."
         },
+        info: {
+            "de": "iirds:Package-Elemente, die das umschließende iiRDS-Paket selbst darstellen, DÜRFEN NICHT Gegenstand einer iirds:has-rendition-Beziehung sein.",
+            "en": "iirds:Package elements representing the enclosing iiRDS package itself MUST NOT be subjects of any iirds:has-rendition relation."
+        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M9_false.rdf"]
@@ -398,6 +422,10 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20URL%20MUST%20be%20relative%20to%20the%20root%20folder%20of%20the%20iiRDS%20package.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
+            "de": "Die URL MUSS relativ zum Stammordner des iiRDS-Pakets sein",
+            "en": "The URL MUST be relative to the root folder of the iiRDS package"
+        },
+        info: {
             "de": "Die URL MUSS relativ zum Stammordner des iiRDS-Pakets sein",
             "en": "The URL MUST be relative to the root folder of the iiRDS package"
         },
@@ -418,6 +446,10 @@ export default [
             "de": "Eine iirds:Rendition MUSS die Eigenschaft iirds:source haben.",
             "en": "An iirds:Rendition MUST have the property iirds:source."
         },
+        info: {
+            "de": "Eine iirds:Rendition MUSS die Eigenschaft iirds:source haben.",
+            "en": "An iirds:Rendition MUST have the property iirds:source."
+        },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M11_false.rdf"]
@@ -435,6 +467,10 @@ export default [
             "de": "Eine iirds:Rendition MUSS die Eigenschaft iirds:format haben.",
             "en": "An iirds:Rendition MUST have the property iirds:format."
         },
+        info: {
+            "de": "Eine iirds:Rendition MUSS die Eigenschaft iirds:format haben.",
+            "en": "An iirds:Rendition MUST have the property iirds:format."
+        },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M12_false.rdf"]
@@ -449,6 +485,10 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#x-conformance:~:text=iirds%3ARendition%20MUST%20NOT,an%20end%20identifier",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
+            "de": "iirds:Rendition DARF NICHT direkt iirds:Selector verwenden, sondern MUSS eine seiner Unterklassen verwenden, um Teile einer Datei zu referenzieren. Die Klasse iirds:Selector hat die folgenden Unterklassen: iirds:FragmentSelector;  iirds:RangeSelector",
+            "en": "iirds:Rendition MUST NOT directly use iirds:Selector but MUST use one of its subclasses to reference parts of a file. The class iirds:Selector has the following subclasses: iirds:FragmentSelector; iirds:RangeSelector"
+        },
+        info: {
             "de": "iirds:Rendition DARF NICHT direkt iirds:Selector verwenden, sondern MUSS eine seiner Unterklassen verwenden, um Teile einer Datei zu referenzieren. Die Klasse iirds:Selector hat die folgenden Unterklassen: iirds:FragmentSelector;  iirds:RangeSelector",
             "en": "iirds:Rendition MUST NOT directly use iirds:Selector but MUST use one of its subclasses to reference parts of a file. The class iirds:Selector has the following subclasses: iirds:FragmentSelector; iirds:RangeSelector"
         },
@@ -496,7 +536,7 @@ export default [
         id: "M15.1",
         path: "RangeSelector",
         prio: "MUST",
-        category: "must use property",
+        category: "cardinality 1",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20iirds%3ARangeSelector%20points,end%2Dselector.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -516,7 +556,7 @@ export default [
         id: "M15.2",
         path: "RangeSelector",
         prio: "MUST",
-        category: "must use property",
+        category: "cardinality 1",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20iirds%3ARangeSelector%20points,end%2Dselector.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
@@ -537,6 +577,10 @@ export default [
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=If%20a%20media%20file%20is%20not%20self%2Dcontained%2C%20then%20it%20MUST%20be%20modeled%20as%20iirds%3AFragment.",
         version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "Wenn eine Mediendatei nicht in sich geschlossen ist, MUSS sie als iirds:Fragment modelliert werden.",
+            "en": "If a media file is not self-contained, then it MUST be modeled as iirds:Fragment."
+        },
         rule: {
             "de": "Wenn eine Mediendatei nicht in sich geschlossen ist, MUSS sie als iirds:Fragment modelliert werden.",
             "en": "If a media file is not self-contained, then it MUST be modeled as iirds:Fragment."
@@ -664,9 +708,6 @@ export default [
             "de": "Es wird EMPFOHLEN, für Dokumente mit gemischtem Inhalt mehr als eine Relation zu iirds:DocumentType zu erstellen.",
             "en": "It is RECOMMENDED to create more than one relation to iirds:DocumentType for documents with mixed content."
         },
-        testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"]
-        }
 
     },
     {
@@ -707,6 +748,10 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20properties%20iirds%3Arelates%2Dto%2Dcomponent%20and%20iirds%3Arelates%2Dto%2Dproduct%2Dvariant%20relate%20an%20information%20unit%20to%20an%20instance%20of%20iirds%3AComponent%20or%20iirds%3AProductVariant.%20The%20instances%20MUST%20be%20part%20of%20a%20proprietary%20iiRDS%20extension.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
+            "de": "Die Eigenschaften iirds:relates-to-component und iirds:relates-to-product-variant beziehen eine Informationseinheit auf eine Instanz von iirds:Component oder iirds:ProductVariant. Die Instanzen MÜSSEN Teil einer proprietären iiRDS-Erweiterung sein.",
+            "en": "The properties iirds:relates-to-component and iirds:relates-to-product-variant relate an information unit to an instance of iirds:Component or iirds:ProductVariant. The instances MUST be part of a proprietary iiRDS extension."
+        },
+        info: {
             "de": "Die Eigenschaften iirds:relates-to-component und iirds:relates-to-product-variant beziehen eine Informationseinheit auf eine Instanz von iirds:Component oder iirds:ProductVariant. Die Instanzen MÜSSEN Teil einer proprietären iiRDS-Erweiterung sein.",
             "en": "The properties iirds:relates-to-component and iirds:relates-to-product-variant relate an information unit to an instance of iirds:Component or iirds:ProductVariant. The instances MUST be part of a proprietary iiRDS extension."
         }
@@ -762,16 +807,6 @@ export default [
         },
     },
     {
-        id: "M28",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20map%20product%20variants%20in%20the%20iiRDS%20package%20to%20an%20external%20product%20ontology%2C%20a%20mapping%20ontology%20MUST%20use%20the%20property%20rdfs%3AseeAlso.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Um Produktvarianten im iiRDS-Paket einer externen Produktontologie zuzuordnen, MUSS eine Mapping-Ontologie die Eigenschaft rdfs:seeAlso verwenden.",
-            "en": "To map product variants in the iiRDS package to an external product ontology, a mapping ontology MUST use the property rdfs:seeAlso."
-        },
-    },
-    {
         id: "M29",
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20property%20rdfs%3AseeAlso%20MUST%20relate%20the%20instance%20of%20the%20product%20variant%20in%20the%20iiRDS%20package%20to%20the%20external%20product%20ontology.",
@@ -800,7 +835,6 @@ export default [
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M30.1_false.rdf"]
         }
-
     },
     {
         id: "M30.2",
@@ -821,7 +855,6 @@ export default [
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M30.2_false.rdf"]
         }
-
     },
     {
         id: "M30.3",
@@ -859,7 +892,6 @@ export default [
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M31.1_false"]
         }
-
     },
     {
         id: "M32.1",
@@ -877,7 +909,6 @@ export default [
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.1_false.rdf"]
         }
-
     },
     {
         id: "M32.2",
@@ -899,7 +930,6 @@ export default [
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.2_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.2_false.rdf"]
         }
-
     },
     {
         id: "M32.3",
@@ -921,7 +951,6 @@ export default [
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.3_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.3_false.rdf"]
         }
-
     },
     {
         id: "M32.4",
@@ -943,7 +972,6 @@ export default [
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.4_false.rdf"]
         }
-
     },
     {
         id: "M32.5",
@@ -1117,8 +1145,8 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Only%20root%20nodes%20of%20a%20directory%20structure%20MUST%20have%20the%20property%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nur Wurzelknoten einer Verzeichnisstruktur MÜSSEN die Eigenschaft iirds:has-directory-structure-type haben.",
-            "en": "Only root nodes of a directory structure MUST have the property iirds:has-directory-structure-type."
+            "de": "Der Wurzelknoten einer Verzeichnisstruktur MUSS die Eigenschaft iirds:has-directory-structure-type haben.",
+            "en": "The root node of a directory structure MUST have one property iirds:has-directory-structure-type."
         },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
@@ -1145,13 +1173,17 @@ export default [
 
     },
     {
-        id: "M39",
-        path: "",
+        id: "M37",
+        path: "DirectoryNode",
         findInvalidElements: "",
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20model%20hierarchy%20levels%20in%20the%20navigation%20structure%2C%20an%20iirds%3ADirectoryNode%20instance%20MUST%20reference%20an%20iirds%3ADirectoryNode%20instance%20on%20the%20next%20lower%20level%20by%20the%20property%20iirds%3Ahas%2Dfirst%2Dchild.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
+            "de": "Um Hierarchieebenen in der Navigationsstruktur zu modellieren, MUSS eine iirds:DirectoryNode-Instanz eine iirds:DirectoryNode-Instanz auf der nächstniedrigeren Ebene durch die Eigenschaft iirds:has-first-child referenzieren.",
+            "en": "To model hierarchy levels in the navigation structure, an iirds:DirectoryNode instance MUST reference an iirds:DirectoryNode instance on the next lower level by the property iirds:has-first-child."
+        },
+        info: {
             "de": "Um Hierarchieebenen in der Navigationsstruktur zu modellieren, MUSS eine iirds:DirectoryNode-Instanz eine iirds:DirectoryNode-Instanz auf der nächstniedrigeren Ebene durch die Eigenschaft iirds:has-first-child referenzieren.",
             "en": "To model hierarchy levels in the navigation structure, an iirds:DirectoryNode instance MUST reference an iirds:DirectoryNode instance on the next lower level by the property iirds:has-first-child."
         },
@@ -1162,7 +1194,7 @@ export default [
 
     },
     {
-        id: "M40",
+        id: "M38",
         path: "",
         findInvalidElements: "",
         prio: "MUST",
@@ -1178,10 +1210,8 @@ export default [
         }
 
     },
-
-    //7.1 iiRDS Extension Scenarios
     {
-        id: "M41",
+        id: "M39",
         path: "",
         findInvalidElements: "",
         prio: "MUST",
@@ -1198,7 +1228,7 @@ export default [
 
     },
     {
-        id: "M42",
+        id: "M40",
         path: "",
         findInvalidElements: "",
         prio: "MUST",
@@ -1215,7 +1245,7 @@ export default [
 
     },
     {
-        id: "M43",
+        id: "M41",
         path: "",
         findInvalidElements: "",
         prio: "MUST NOT",
@@ -1231,10 +1261,8 @@ export default [
         }
 
     },
-
-    //7.3 Proprietary iiRDS Extensions
     {
-        id: "M44",
+        id: "M42",
         path: "",
         findInvalidElements: "",
         prio: "MUST",
@@ -1258,7 +1286,7 @@ export default [
         */
     },
     {
-        id: "M45",
+        id: "M43",
         path: "",
         findInvalidElements: "",
         prio: "MUST",
@@ -1272,16 +1300,9 @@ export default [
             "true": [""],
             "false": [""]
         }
-
     },
-
-    //7.3.1 Adding a Proprietary Instance
-
-    //7.3.2 Adding a Proprietary Class
-
-    //7.3.3 Adding a Proprietary Property
     {
-        id: "M46",
+        id: "M44",
         path: "",
         findInvalidElements: "",
         prio: "MUST",
@@ -1298,594 +1319,10 @@ export default [
 
     },
 
-    //8.1 Unrestricted iiRDS vs. iiRDS/A
-    {
-        id: "M47",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20unrestricted%20iiRDS%20package%20MAY%20include%20any%20kind%20of%20content%20files.%20An%20iiRDS/A%20package%20MUST%20only%20include%20content%20files%20with%20a%20restricted%20set%20of%20formats.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Ein uneingeschränktes iiRDS-Paket KANN jede Art von Inhaltsdateien enthalten. Ein iiRDS/A-Paket DARF nur Inhaltsdateien mit einem eingeschränkten Satz von Formaten enthalten.",
-            "en": "An unrestricted iiRDS package MAY include any kind of content files. An iiRDS/A package MUST only include content files with a restricted set of formats."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    //==============================================================
-    /*An iiRDS/A package MUST fulfill all of the following criteria:
-    The package only contains content files in formats that comply with iiRDS/A.
-    The property iirds:formatRestriction of the iiRDS package is set to A.
-    The package is self-contained.
-    */
-    {
-        id: "M48",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20package%20only%20contains%20content%20files%20in%20formats%20that%20comply%20with%20iiRDS/A.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Ein iiRDS/A-Paket MUSS die folgenden Kriterien erfüllen: Das Paket enthält nur Inhaltsdateien in Formaten, die iiRDS/A entsprechen.",
-            "en": "An iiRDS/A package MUST fulfill the following criteria: The package only contains content files in formats that comply with iiRDS/A."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-
-    },
-    {
-        id: "M49",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20property%20iirds%3AformatRestriction%20of%20the%20iiRDS%20package%20is%20set%20to%20A.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Ein iiRDS/A-Paket MUSS die folgenden Kriterien erfüllen: Die Eigenschaft iirds:formatRestriction des iiRDS-Pakets ist auf A gesetzt.",
-            "en": "An iiRDS/A package MUST fulfill the following criteria: The property iirds:formatRestriction of the iiRDS package is set to A."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-
-    },
-    {
-        id: "M50",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20package%20is%20self%2Dcontained.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Ein iiRDS/A-Paket MUSS die folgenden Kriterien erfüllen: Das Paket ist in sich abgeschlossen.",
-            "en": "An iiRDS/A package MUST fulfill the following criteria: The package is self-contained."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-
-    },
-    //==============================================================
-    {
-        id: "M51",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST NOT",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=iiRDS/A%20packages%20MUST%20NOT%20nest%20unrestricted%20iiRDS%20packages.",
-        version: ["V1.1"],
-        rule: {
-            "de": "iiRDS/A-Pakete DÜRFEN NICHT uneingeschränkte iiRDS-Pakete verschachteln.",
-            "en": "iiRDS/A packages MUST NOT nest unrestricted iiRDS packages."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //8.2 Self-contained iiRDS/A Packages
-
-    /*
-    An iiRDS package is self-contained if all URIs used in the iiRDS XHTML5 files point to local resources contained in the package except for the following cross-reference mechanisms:
-    attribute href
-    references attribute id on element a
-    references attribute id on element area
-    references attribute id on element link
-    attribute cite
-    references attribute id on element q
-    iiRDS Consumers MAY omit these cross-references, e.g. if there is no internet access, and the content MUST be still consumable.
-    */
-    {
-        id: "M52",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=iiRDS%20Consumers%20MAY%20omit%20these%20cross%2Dreferences%2C%20e.g.%20if%20there%20is%20no%20internet%20access%2C%20and%20the%20content%20MUST%20be%20still%20consumable.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "iiRDS-Verbraucher KÖNNEN diese Querverweise weglassen, z. wenn kein Internetzugang besteht und die Inhalte dennoch konsumierbar sein MÜSSEN.",
-            "en": "iiRDS Consumers MAY omit these cross-references, e.g. if there is no internet access, and the content MUST be still consumable."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //9. iiRDS/A Media Formats
-    {
-        id: "M53",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Media%20in%20iiRDS/A%20packages%20MUST%20use%20the%20formats%20listed%20in%20this%20section.%20An%20unrestricted%20iiRDS%20package%20uses%20any%20media%20format.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Medien in iiRDS/A-Paketen MÜSSEN die in diesem Abschnitt aufgeführten Formate verwenden. Ein uneingeschränktes iiRDS-Paket verwendet ein beliebiges Medienformat.",
-            "en": "Media in iiRDS/A packages MUST use the formats listed in this section. An unrestricted iiRDS package uses any media format."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //Structured textual content MUST be encoded as iiRDS XHTML5. The file extension MUST be .xhtml.
-    {
-        id: "M54",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Structured%20textual%20content%20MAY%20be%20encoded%20as%20PDF/A%2D3%20(ISO%2019005%2D3%3A2012).%20Non%2Dstructured%20textual%20content%20MUST%20be%20encoded%20this%20way.%20The%20file%20extension%20MUST%20be%20.pdf.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Strukturierte Textinhalte KÖNNEN als PDF/A-3 (ISO 19005-3:2012) kodiert werden. Nicht strukturierte Textinhalte MÜSSEN auf diese Weise codiert werden. Die Dateierweiterung MUSS .pdf sein.",
-            "en": "Structured textual content MAY be encoded as PDF/A-3 (ISO 19005-3:2012). Non-structured textual content MUST be encoded this way. The file extension MUST be .pdf."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //9.2.1 Raster Formats
-    {
-        id: "M55",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Raster%20graphics%20MUST,.jpg.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Rastergrafiken MÜSSEN als .jpg oder .png kodiert sein.",
-            "en": "Raster graphics MUST be encoded as .jpg or .png."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    //9.2.2 Vector Formats
-    //Only static language features of SVG that correspond to the feature string http://www.w3.org/TR/SVG11/feature#SVG-static MUST be used.
-    {
-        id: "M56",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Only%20static%20language%20features%20of%20SVG%20that%20correspond%20to%20the%20feature%20string%20http%3A//www.w3.org/TR/SVG11/feature%23SVG%2Dstatic%20MUST%20be%20used.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Nur statische Sprachfeatures von SVG, die dem Feature-String http://www.w3.org/TR/SVG11/feature entsprechen",
-            "en": "Only static language features of SVG that correspond to the feature string http://www.w3.org/TR/SVG11/feature#SVG-static MUST be used."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M57",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=All%20linked%20resources%20(e.g.%20CSS%2C%20graphics%2C%20fonts)%20MUST%20be%20included%20in%20the%20iiRDS/A%20package.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Alle verlinkten Ressourcen (z. B. CSS, Grafiken, Schriftarten) MÜSSEN im iiRDS/A-Paket enthalten sein.",
-            "en": "All linked resources (e.g. CSS, graphics, fonts) MUST be included in the iiRDS/A package."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M58",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Only%20JPG%20and%20PNG%20graphics%20according%20to%20this%20section%20MUST%20be%20used.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Es dürfen nur JPG- und PNG-Grafiken gemäß diesem Abschnitt verwendet werden.",
-            "en": "Only JPG and PNG graphics according to this section MUST be used."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M59",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Reference%20to%20SVG%20media%20in%20iiRDS%20XHTML5%20MUST%20use%20%3Cimg%20src%3D%22%5Bfilename%5D%22/%3E.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Verweise auf SVG-Medien in iiRDS XHTML5 MÜSSEN <img src='[filename]'/> verwenden.",
-            "en": "Reference to SVG media in iiRDS XHTML5 MUST use <img src='[filename]'/>."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //10.1 Overview
-    {
-        id: "M60",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST NOT",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=iiRDS%20XHTML5%20MUST%20NOT%20contain%20any%20additional%20elements%20or%20attributes%20that%20do%20not%20comply%20with%20the%20XHTML5%20specification.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "iiRDS XHTML5 DARF KEINE zusätzlichen Elemente oder Attribute enthalten, die nicht der XHTML5-Spezifikation entsprechen.",
-            "en": "iiRDS XHTML5 MUST NOT contain any additional elements or attributes that do not comply with the XHTML5 specification."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-        //schwer zu testen?
-    },
-    {
-        id: "M61",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=iiRDS%20XHTML5%20stylesheets%20MUST%20be%20in%20CSS%20format.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "iiRDS XHTML5-Stylesheets MÜSSEN im CSS-Format vorliegen.",
-            "en": "iiRDS XHTML5 stylesheets MUST be in CSS format."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-        //schwer zu testen? Wie stylesheet erkennen?
-    },
-
-    //10.2 iiRDS XHTML5
-    {
-        id: "M62",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Wenn kein Inhaltsmodell oder Attribute explizit angegeben sind, MUSS iiRDS XHTML5 der [HTML5]-Spezifikation entsprechen.",
-            "en": "If no content model or attributes are explicitly specified, then iiRDS XHTML5 MUST comply with the [HTML5] specification."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //10.3 Conformance Criteria
-
-    //================================================================
-    /*iiRDS XHTML5 content MUST fulfill all of the following criteria:
-    Document properties
-    It MUST be a well-formed XML document. See https://www.w3.org/TR/REC-xml/#sec-well-formed for details.
-    It MUST be an HTML5 document that conforms to the XHTML syntax. See https://www.w3.org/TR/2014/REC-html5-20141028/the-xhtml-syntax.html#the-xhtml-syntax for details.
-    It MUST use only iiRDS-compliant HTML elements listed in this specification.
-    File properties
-    The iiRDS XHTML5 content filename MUST use the file extension .xhtml.
-    */
-    {
-        id: "M63",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=It%20MUST%20be%20a%20well%2Dformed%20XML%20document.%20See%20https%3A//www.w3.org/TR/REC%2Dxml/%23sec%2Dwell%2Dformed%20for%20details.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "iiRDS XHTML5-Inhalt MUSS alle folgenden Kriterien erfüllen: Es MUSS ein wohlgeformtes XML-Dokument sein. Siehe https://www.w3.org/TR/REC-xml/",
-            "en": "iiRDS XHTML5 content MUST fulfill all of the following criteria: It MUST be a well-formed XML document. See https://www.w3.org/TR/REC-xml/#sec-well-formed for details."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M64",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=It%20MUST%20be%20an%20HTML5%20document%20that%20conforms%20to%20the%20XHTML%20syntax.%20See%20https%3A//www.w3.org/TR/2014/REC%2Dhtml5%2D20141028/the%2Dxhtml%2Dsyntax.html%23the%2Dxhtml%2Dsyntax%20for%20details.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "iiRDS XHTML5-Inhalt MUSS alle folgenden Kriterien erfüllen: Es MUSS ein HTML5-Dokument sein, das der XHTML-Syntax entspricht. Siehe https://www.w3.org/TR/2014/REC-html5-20141028/the-xhtml-syntax.html",
-            "en": "iiRDS XHTML5 content MUST fulfill all of the following criteria: It MUST be an HTML5 document that conforms to the XHTML syntax. See https://www.w3.org/TR/2014/REC-html5-20141028/the-xhtml-syntax.html#the-xhtml-syntax for details."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M65",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=It%20MUST%20use%20only%20iiRDS%2Dcompliant%20HTML%20elements%20listed%20in%20this%20specification.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Es MUSS nur iiRDS-kompatible HTML-Elemente verwenden, die in dieser Spezifikation aufgeführt sind.",
-            "en": "It MUST use only iiRDS-compliant HTML elements listed in this specification."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M66",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20iiRDS%20XHTML5%20content%20filename%20MUST%20use%20the%20file%20extension%20.xhtml.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Der Dateiname des iiRDS-XHTML5-Inhalts MUSS die Dateierweiterung .xhtml verwenden.",
-            "en": "The iiRDS XHTML5 content filename MUST use the file extension .xhtml."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    //================================================================
-
-    //10.4 Global Attributes
-
-    //Only the following subset of 'Global attributes' from the HTML5 specification (https://www.w3.org/TR/html5/dom.html#global-attributes) MUST be used in iiRDS XHTML5 elements:
-    {
-        id: "M67",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Die HTML5-Spezifikation für das Attribut „Klasse“ weist darauf hin, dass „Autoren ermutigt werden, Werte zu verwenden, die die Art des Inhalts beschreiben, und nicht Werte, die die gewünschte Präsentation des Inhalts beschreiben“. Im Gegensatz dazu DARF die Klasse in iiRDS XHTML5 nur für das Styling verwendet werden. Ein iiRDS-XHTML5-Consumer MUSS in der Lage sein, Klassenwerte ohne Bedeutungsverlust zu ignorieren oder zu ändern.",
-            "en": "The HTML5 specification for the attribute 'class' points out that 'authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content.' In contrast, class in iiRDS XHTML5 MUST only be used for styling. An iiRDS XHTML5 consumer MUST be able to ignore or modify class values without loss of meaning."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-        //schwer zu testen
-    },
-
-    //10.5 Elements
-    {
-        id: "M68",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Attributes%3A%20Only%20global%20attributes%20and%20element%2Dspecific%20attributes%20specified%20in%20the%20iiRDS%20XHTML5%20specification%20MUST%20be%20used.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Attribute: Es MÜSSEN nur globale Attribute und elementspezifische Attribute verwendet werden, die in der iiRDS XHTML5-Spezifikation angegeben sind.",
-            "en": "Attributes: Only global attributes and element-specific attributes specified in the iiRDS XHTML5 specification MUST be used."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-        //schwer zu testen?
-    },
-
-    //10.5.2 Document Metadata
-    {
-        id: "M69",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20element%20%3Clink%3E%20MUST%20be%20used%20only%20with%20the%20content%20attribute%20rel%3D%22stylesheet%22.%20Link%20types%20are%20always%20ASCII%20case%2Dinsensitive%20and%20MUST%20be%20compared%20as%20such.%20Relations%20usually%20represented%20by%20the%20element%20%3Clink%3E%20in%20HTML%20MUST%20be%20expressed%20by%20means%20of%20RDF%20in%20iiRDS.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Das Element <link> DARF nur mit dem Inhaltsattribut rel='stylesheet' verwendet werden. Link-Typen sind immer ASCII case-insensitive und MÜSSEN als solche verglichen werden. Beziehungen, die normalerweise durch das Element <link> in HTML dargestellt werden, MÜSSEN mittels RDF in iiRDS ausgedrückt werden.",
-            "en": "The element <link> MUST be used only with the content attribute rel='stylesheet'. Link types are always ASCII case-insensitive and MUST be compared as such. Relations usually represented by the element <link> in HTML MUST be expressed by means of RDF in iiRDS."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //10.5.11 SVG, MathML and IFrames
-    {
-        id: "M70",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST NOT",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20elements%20%3Csvg%3E%2C%20%3Cmath%3E%20and%20%3Ciframe%3E%20MUST%20NOT%20be%20used%20in%20iiRDS%20XHTML5%20content.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Die Elemente <svg>, <math> und <iframe> DÜRFEN NICHT in iiRDS XHTML5-Inhalten verwendet werden.",
-            "en": "The elements <svg>, <math> and <iframe> MUST NOT be used in iiRDS XHTML5 content."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //10.6 Additional Semantic Tagging of Content
-    {
-        id: "M71",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20attribute%20data%2Drole%20on%20HTML5%20elements%20MAY%20express%20semantics%20of%20elements.%20Tagging%20with%20data%2Drole%20MUST%20only%20be%20used%20with%20hazard%20statements.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Das Attribut data-role auf HTML5-Elementen KANN die Semantik von Elementen ausdrücken. Kennzeichnung mit Datenrolle DARF nur mit Gefahrenhinweisen verwendet werden.",
-            "en": "The attribute data-role on HTML5 elements MAY express semantics of elements. Tagging with data-role MUST only be used with hazard statements."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M72",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=If%20an%20iiRDS%20package%20contains%20content%20with%20hazard%20statements%2C%20then%20the%20iiRDS%20package%20MUST%20always%20provide%20the%20applicable%20safety%20alert%20symbols%20and%20signal%20words.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Wenn ein iiRDS-Paket Inhalte mit Gefahrenhinweisen enthält, MUSS das iiRDS-Paket immer die zutreffenden Sicherheitswarnsymbole und Signalwörter enthalten.",
-            "en": "If an iiRDS package contains content with hazard statements, then the iiRDS package MUST always provide the applicable safety alert symbols and signal words."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M73",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20data%2Drole%20attribute%20MUST%20be%20used%20only%20in%20the%20situations%20described%20here.%20The%20attribute%20values%20given%20in%20the%20following%20table%20MUST%20be%20used.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Das Datenrollenattribut DARF nur in den hier beschriebenen Situationen verwendet werden. Die in der folgenden Tabelle angegebenen Attributwerte MÜSSEN verwendet werden.",
-            "en": "The data-role attribute MUST be used only in the situations described here. The attribute values given in the following table MUST be used."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-    {
-        id: "M74",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20img%20element%20MUST%20be%20a%20child%20of%20the%20signal%20word%20panel.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Das img-Element MUSS ein untergeordnetes Element des Signalwort-Panels sein.",
-            "en": "The img element MUST be a child of the signal word panel."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    {
-        id: "M75",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Only%20one%20safety%20alert%20symbol%20MUST%20be%20included.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Es darf nur ein Sicherheitswarnsymbol enthalten sein.",
-            "en": "Only one safety alert symbol MUST be included."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-    },
-
-    //10.7 Styling
-
-    {
-        //out of scope
-        path: "",
-        findInvalidElements: "",
-        prio: "RECOMMENDED",
-        rule: {
-            "de": "iiRDS XHTML5 ist als Austauschformat für strukturierte Inhalte konzipiert. iiRDS-Verbrauchern wird EMPFOHLEN, iiRDS-XHTML5-Inhalte vorzuverarbeiten, bevor sie angezeigt werden.",
-            "en": "iiRDS XHTML5 is designed as an exchange format for structured content. It is RECOMMENDED for iiRDS Consumers to pre-process iiRDS XHTML5 content before displaying it."
-        },
-    },
-    {
-        //out of scope
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST NOT",
-        rule: {
-            "de": "Ein zusätzliches CSS-Stylesheet DARF enthalten sein, aber die Inhaltsverarbeitung DARF NICHT auf dem Stylesheet beruhen. Es ist nicht spezifiziert, wie begleitende CSS-Stylesheets und Zielsystem-CSS-Stylesheets vernetzt werden.",
-            "en": "An additional CSS stylesheet MAY be included, but content processing MUST NOT rely on the stylesheet. It is not specified how to mesh up accompanying CSS stylesheets and target-system CSS stylesheets."
-        },
-    },
-
-    //0..1  iirds:relates-to-party property - iirds:Party
 
     //===================iirds:Identity
     {
-        id: "M76",
+        id: "M45",
         path: "",
         findInvalidElements: "",
         prio: "MUST",
@@ -1899,44 +1336,47 @@ export default [
             "true": [""],
             "false": [""]
         }
-
-        //Signalwort MUST hier false positive?
     },
     {
-        //iirds:Identity -> Properties:	1  iirds:identifier
-        id: "M77",
-        path: "",
+        id: "M46",
+        path: "Identity",
         findInvalidElements: els => els.mustHaveChild("identifier"),
         prio: "MUST",
-        category: "must have property",
+        category: "cardinality 1",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=1%C2%A0%20iirds%3Aidentifier%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
             "de": "iirds:Identity MUSS die Eigenschaft iirds:identifier haben",
             "en": "iirds:Identity MUST have property iirds:identifier"
         },
+        info: {
+            "de": "iirds:Identity MUSS die Eigenschaft iirds:identifier haben",
+            "en": "iirds:Identity MUST have property iirds:identifier"
+        },
         testfiles: {
-            "true": [""],
-            "false": [""]
+            "true": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant-M46_false.rdf"]
         }
-
     },
     {
-        //iirds:Identity -> Properties:	1  iirds:has-identity-domain
-        id: "M78",
+        id: "M47",
         path: "Identity",
-        findInvalidElements: els => els.mustHaveChild("identityDomain"),
+        findInvalidElements: els => els.mustHaveChild("has-identity-domain"),
         prio: "MUST",
-        category: "must have property",
+        category: "cardinality 1",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-identity-domain:~:text=1%C2%A0%20iirds%3Ahas%2Didentity%2Ddomain%20property%20%2D%20iirds%3AIdentityDomain",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
             "de": "iirds:Identity MUSS die Eigenschaft iirds:IdentityDomain haben",
             "en": "iirds:Identity MUST have property iirds:IdentityDomain"
         },
+        info: {
+            "de": "iirds:Identity MUSS die Eigenschaft iirds:IdentityDomain haben",
+            "en": "iirds:Identity MUST have property iirds:has-identity-domain"
+        },
         testfiles: {
-            "true": [""],
-            "false": [""]
+            "true": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant-M47_false.rdf"]
         }
 
     },
@@ -1961,24 +1401,6 @@ export default [
             "en": "Description:	RECOMMENDED best practice is to identify the resource by means of a string conforming to a formal identification system."
         },
     },
-    {
-        id: "M79",
-        path: "",
-        findInvalidElements: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_Identity:~:text=Description%3A-,A%20range%20selector%20MUST%20reference%20one%20start%20and%20one%20end%20selector.,-iirds%3Ahas%2Devent%2Dcode",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Beschreibung: Ein Bereichsselektor MUSS auf einen Start- und einen Endselektor verweisen.",
-            "en": "Description:	A range selector MUST reference one start and one end selector."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-        //vgl. 15
-    },
 
     {
         //out of scope / signal words false positive?
@@ -1991,7 +1413,6 @@ export default [
         },
     },
     {
-        //out of scope / signal words false positive?
         path: "",
         findInvalidElements: "",
         prio: "MUST",
@@ -2001,7 +1422,7 @@ export default [
         },
     },
     {
-        id: "M80",
+        id: "M49",
         path: "Document, Component, Concept, ContentLifeCycleStatusValue, DirectoryNodeType, DocumentType, Event, Form, Formality, Fragment, Functionality, IdentityDomain, IdentityType, InformationObject, Learning, Package, Party, PartyRole, Process, ProductFunction, ProductProperty, ProductVariant, Reference, Role, Safety, SkillLevel, Supply, Task, TechnicalData, TechnicalOverview, Topic, TopicType, Troubleshooting, Use, WarningMessage, ConsumableSupply, HardwareTool, Lubricant, OperatingSupply, ProtectiveEquipment, SparePart",
         findInvalidElements: (els => !els.length) && (els => els.every(el => el.hasAttribute(
             "rdf:about"))) && (els => els.every(el => el.getAttribute("rdf:about") != "")),
@@ -2017,22 +1438,9 @@ export default [
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
-
-        //1. Sprint Review -> REQUIRED = false positive?
-        /* Alle Elemente mit IRI=REQUIRED / Alle Elemente, die Attribute rdf:about haben müssen
-
-        Liste der Elemente:
-        Document, #AfterUse, #Collection, Component, Concept, #Conformity, ContentLifeCycleStatusValue, #DesignAndRealization, DirectoryNodeType, DocumentType, Event, Form, Formality, Fragment, Functionality, IdentityDomain, IdentityType, InformationObject, #InformationSubject, #InformationType, Learning, Package, Party, PartyRole, Process, #ProductFeature, ProductFunction, #ProductLifeCyclePhase, #ProductMetadata, ProductProperty, ProductVariant, #PuttingToUse, #Qualification, Reference, Role, Safety, SkillLevel, Supply, Task, TechnicalData, TechnicalOverview, Topic, TopicType, Troubleshooting, Use, WarningMessage, ConsumableSupply, HardwareTool, Lubricant, OperatingSupply, ProtectiveEquipment, SparePart
-
-        iiRDS RDF Schema Reference
-        Only use subclass:
-
-        (InformationUnit, Not intended to be used directly. Use the subclasses Package, Document, Topic, and Fragment instead.) vgl. M1
-
-        */
     },
     {
-        id: "M81",
+        id: "M50",
         path: "AfterUse",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2050,7 +1458,7 @@ export default [
 
     },
     {
-        id: "M82",
+        id: "M51",
         path: "Collection",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2068,7 +1476,7 @@ export default [
 
     },
     {
-        id: "M83",
+        id: "M52",
         path: "Conformity",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2086,7 +1494,7 @@ export default [
 
     },
     {
-        id: "M84",
+        id: "M53",
         path: "DesignAndRealization",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2104,7 +1512,7 @@ export default [
 
     },
     {
-        id: "M85",
+        id: "M54",
         path: "DocumentationMetadata",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2122,7 +1530,7 @@ export default [
 
     },
     {
-        id: "M86",
+        id: "M55",
         path: "FunctionalMetadata",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2140,7 +1548,7 @@ export default [
 
     },
     {
-        id: "M87",
+        id: "M56",
         path: "iirdsDomainEntity",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2158,7 +1566,7 @@ export default [
 
     },
     {
-        id: "M88",
+        id: "M57",
         path: "AdministrativeMetadata",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2176,7 +1584,7 @@ export default [
 
     },
     {
-        id: "M89",
+        id: "M58",
         path: "InformationSubject",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2194,7 +1602,7 @@ export default [
 
     },
     {
-        id: "M90",
+        id: "M59",
         path: "InformationType",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2212,7 +1620,7 @@ export default [
 
     },
     {
-        id: "M91",
+        id: "M60",
         path: "PlanningTime",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2230,7 +1638,7 @@ export default [
 
     },
     {
-        id: "M92",
+        id: "M61",
         path: "ProductFeature",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2248,7 +1656,7 @@ export default [
 
     },
     {
-        id: "M93",
+        id: "M62",
         path: "ProductLifeCyclePhase",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2266,7 +1674,7 @@ export default [
 
     },
     {
-        id: "M94",
+        id: "M63",
         path: "ProductMetadata",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2284,7 +1692,7 @@ export default [
 
     },
     {
-        id: "M95",
+        id: "M64",
         path: "PuttingToUse",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2302,7 +1710,7 @@ export default [
 
     },
     {
-        id: "M96",
+        id: "M65",
         path: "Qualification",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2320,7 +1728,7 @@ export default [
 
     },
     {
-        id: "M97",
+        id: "M66",
         path: "relates-to-administrative-metadata",
         findInvalidElements: els => els,
         prio: "MUST",
@@ -2337,13 +1745,8 @@ export default [
         }
 
     },
-
-
-    //Classes -> properties with cardinality
-
-    //iirds:Component (see example 34)
     {
-        id: "M98",
+        id: "M67",
         path: "Component",
         findInvalidElements: "",
         prio: "MUST NOT",

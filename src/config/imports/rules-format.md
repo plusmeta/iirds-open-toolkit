@@ -27,3 +27,13 @@
 - [ ] iiRDS packages MAY contain nested iiRDS packages.
   - [ ] A nested iiRDS package MUST NOT contain metadata about the outer iiRDS package.
   - [ ] An iiRDS package that contains a nested iiRDS package MUST NOT contain metadata about the content of the nested iiRDS package.
+- [ ] iiRDS/A packages MUST NOT nest unrestricted iiRDS packages.
+- [ ] An iiRDS/A package MUST fulfill the following criteria:
+  - [ ] The package only contains content files in formats that comply with iiRDS/A.
+  - [ ] The property iirds:formatRestriction of the iiRDS package is set to A.
+  - [ ] The package is self-contained.
+- [ ] Structured textual content MUST be encoded as iiRDS XHTML5. The file extension MUST be .xhtml.
+- [ ] Raster graphics MUST be encoded as .jpg or .png.
+- [ ] Only static language features of SVG that correspond to the feature string http://www.w3.org/TR/SVG11/feature#SVG-static MUST be used.
+- [ ] All linked resources (e.g. CSS, graphics, fonts) MUST be included in the iiRDS/A package.
+- [ ] Only JPG and PNG graphics according to this section MUST be used.

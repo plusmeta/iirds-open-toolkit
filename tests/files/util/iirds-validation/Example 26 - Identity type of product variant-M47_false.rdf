@@ -1,0 +1,46 @@
+<!-- Example 26: Identity type of product variant  -->
+<!-- The information unit has relations to the generic type of a product with a product type and to physical object instances of the product with serial numbers. -->
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+	<iirds:IdentityDomain rdf:about="http://myCompany.com/pim/producttypes">
+		<iirds:has-identity-type rdf:resource="http://iirds.tekom.de/iirds#ProductType"/>
+	</iirds:IdentityDomain>
+	<iirds:IdentityDomain rdf:about="http://myCompany.com/serialnumbers">
+		<iirds:has-identity-type rdf:resource="http://iirds.tekom.de/iirds#SerialNumber"/>
+	</iirds:IdentityDomain>
+	<iirds:Topic rdf:about="http://myCompany.com/versions/io_e_1/en/1">
+		<iirds:relates-to-product-variant>
+			<iirds:ProductVariant rdf:about="http://myCompany.com/prdvr-tp/TH-1337">
+				<iirds:has-identity>
+					<iirds:Identity>
+						<iirds:identifier>TH-1337</iirds:identifier>
+						<iirds:has-identity-domain rdf:resource="http://myCompany.com/pim/producttypes"/>
+					</iirds:Identity>
+				</iirds:has-identity>
+			</iirds:ProductVariant>
+		</iirds:relates-to-product-variant>
+		<iirds:relates-to-product-variant>
+			<iirds:ProductVariant rdf:about="http://myCompany.com/prdvr-sr/7093258023">
+				<iirds:has-identity>
+					<iirds:Identity>
+						<iirds:identifier>7093258023</iirds:identifier>
+					</iirds:Identity>
+				</iirds:has-identity>
+			</iirds:ProductVariant>
+		</iirds:relates-to-product-variant>
+		<iirds:relates-to-product-variant>
+			<iirds:ProductVariant rdf:about="http://myCompany.com/prdvr-sr/8763258764">
+				<iirds:has-identity>
+					<iirds:Identity>
+						<iirds:identifier>8763258764</iirds:identifier>
+						<iirds:has-identity-domain rdf:resource="http://myCompany.com/serialnumbers"/>
+					</iirds:Identity>
+				</iirds:has-identity>
+			</iirds:ProductVariant>
+		</iirds:relates-to-product-variant>
+		<iirds:title>Transporting the engine</iirds:title>
+		<iirds:revision>1</iirds:revision>
+		<iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+		<!-- omitted -->
+	</iirds:Topic>
+</rdf:RDF>
