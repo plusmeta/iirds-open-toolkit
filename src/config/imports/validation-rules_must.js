@@ -1,3 +1,4 @@
+
 const ABSOLUTE_IRI_REGEX = /(^(?:\/|[a-z]+:\/\/))|(www\..*?\..*?\/)/;
 const iri_absolute_regex = /'^(?:[a-z]+:)?\/\/'/;
 const iri_with_https = /^http[s]?\:\/\//;
@@ -19,11 +20,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-package-and-container:~:text=iiRDS%20Generators%20MUST%20NOT%20use%20the%20iirds%3AInformationUnit%20class%20directly%20but%20MUST%20use%20one%20of%20the%20subclasses.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "iiRDS-Generatoren DÜRFEN die Klasse iirds:InformationUnit NICHT direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
+            "de": "iiRDS-Generatoren DÜRFEN NICHT die Klasse iirds:InformationUnit direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
             "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
         },
         info: {
-            "de": "iiRDS-Generatoren DÜRFEN die Klasse iirds:InformationUnit NICHT direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
+            "de": "iiRDS-Generatoren DÜRFEN NICHT die Klasse iirds:InformationUnit direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
             "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
         },
         testFiles: {
@@ -44,7 +45,7 @@ export default [
             "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node."
         },
         info: {
-            "de": " ",
+            "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben.",
             "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI."
         },
         testFiles: {
@@ -65,7 +66,7 @@ export default [
             "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node."
         },
         info: {
-            "de": " ",
+            "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse DARF KEIN leerer Knoten sein.",
             "en": "An instance of an iirds:InformationUnit subclass MUST NOT be a blank node."
         },
         testFiles: {
@@ -82,11 +83,11 @@ export default [
         Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3AdateOfCreation%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:dateOfCreation Eigenschaft - http://www.w3.org/2001/XMLSchema",
             "en": "Properties: 0..1  iirds:dateOfCreation property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
         },
         info: {
-            "de": " ",
+            "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:dateOfCreation haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:dateOfCreation."
         },
         testFiles: {
@@ -103,11 +104,11 @@ export default [
         Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3AdateOfLastModification%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:dateOfLastModification Eigenschaft - http://www.w3.org/2001/XMLSchema",
             "en": "Properties: 0..1  iirds:dateOfLastModification property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
         },
         info: {
-            "de": " ",
+            "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft haben iirds:dateOfLastModification.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:dateOfLastModification."
         },
         testFiles: {
@@ -124,11 +125,11 @@ export default [
         Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Arevision%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:revision Eigenschaft - http://www.w3.org/2000/01/rdf-schema",
             "en": "Properties: 0..1  iirds:revision property - http://www.w3.org/2000/01/rdf-schema#Literal"
         },
         info: {
-            "de": " ",
+            "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:revision haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:revision."
         },
         testFiles: {
@@ -145,11 +146,11 @@ export default [
         Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Atitle%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:title Eigenschaft - http://www.w3.org/2000/01/rdf-schema",
             "en": "Properties: 0..1  iirds:title property - http://www.w3.org/2000/01/rdf-schema#Literal"
         },
         info: {
-            "de": " ",
+            "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:title haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:title."
         },
         testFiles: {
@@ -166,11 +167,11 @@ export default [
         Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ahas%2Dabstract%20property",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:has-abstract-Eigenschaft",
             "en": "Properties: 0..1  iirds:has-abstract property"
         },
         info: {
-            "de": " ",
+            "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft haben iirds:has-abstract.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:has-abstract."
         },
         testFiles: {
@@ -187,11 +188,11 @@ export default [
         Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ais%2Dreplacement%2Dof%20property%20%2D%20iirds%3AInformationUnit",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:ist-Ersatz-von-Eigenschaft - iirds:InformationUnit",
             "en": "Properties: 	0..1  iirds:is-replacement-of property - iirds:InformationUnit"
         },
         info: {
-            "de": " ",
+            "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:is-replacement-of haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:is-replacement-of ."
         },
         testFiles: {
@@ -208,11 +209,11 @@ export default [
         Spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ais%2Dversion%2Dof%20property%20%2D%20iirds%3AInformationObject",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:ist-Version-von-Eigenschaft - iirds:InformationObject",
             "en": "Properties: 	0..1  iirds:is-version-of property - iirds:InformationObject"
         },
         info: {
-            "de": " ",
+            "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:is-version-of haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:is-version-of ."
         },
         testFiles: {
@@ -233,7 +234,7 @@ export default [
             "en": "Each iiRDS package MUST have exactly one corresponding iirds:Package instance in the metadata."
         },
         info: {
-            "de": " ",
+            "de": "Mehr als eine iirds:Package-Instanz gefunden.",
             "en": "More than one iirds:Package instance found."
         },
         testfiles: {
@@ -253,7 +254,7 @@ export default [
             "en": "Each iiRDS package MUST have exactly one corresponding iirds:Package instance in the metadata."
         },
         info: {
-            "de": " ",
+            "de": "Keine iirds:Package-Instanz gefunden.",
             "en": "No iirds:Package instance found."
         },
         testfiles: {
@@ -367,7 +368,7 @@ export default [
             "en": "An information object MUST have an absolute IRI and MAY be related to additional identifications via the iirds:has-identity property."
         },
         info: {
-            "de": " ",
+            "de": "Ein Informationsobjekt MUSS einen absoluten IRI haben.",
             "en": "An information object MUST have an absolute IRI."
         },
         testfiles: {
@@ -387,7 +388,7 @@ export default [
             "en": "An information object MUST have an absolute IRI and MAY be related to additional identifications via the iirds:has-identity property."
         },
         info: {
-            "de": " ",
+            "de": "Ein Informationsobjekt KANN über die Eigenschaft iirds:has-identity mit zusätzlichen Identifikationen in Beziehung gesetzt werden.",
             "en": "An information object MAY be related to additional identifications via the iirds:has-identity property."
         },
     },
@@ -485,11 +486,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#x-conformance:~:text=iirds%3ARendition%20MUST%20NOT,an%20end%20identifier",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "iirds:Rendition DARF NICHT direkt iirds:Selector verwenden, sondern MUSS eine seiner Unterklassen verwenden, um Teile einer Datei zu referenzieren. Die Klasse iirds:Selector hat die folgenden Unterklassen: iirds:FragmentSelector;  iirds:RangeSelector",
+            "de": "iirds:Rendition DARF NICHT direkt iirds:Selector verwenden, sondern MUSS eine seiner Unterklassen verwenden, um Teile einer Datei zu referenzieren.  Die Klasse iirds:Selector hat die folgenden Unterklassen: iirds:FragmentSelector;  iirds:RangeSelector",
             "en": "iirds:Rendition MUST NOT directly use iirds:Selector but MUST use one of its subclasses to reference parts of a file. The class iirds:Selector has the following subclasses: iirds:FragmentSelector; iirds:RangeSelector"
         },
         info: {
-            "de": "iirds:Rendition DARF NICHT direkt iirds:Selector verwenden, sondern MUSS eine seiner Unterklassen verwenden, um Teile einer Datei zu referenzieren. Die Klasse iirds:Selector hat die folgenden Unterklassen: iirds:FragmentSelector;  iirds:RangeSelector",
+            "de": "iirds:Rendition DARF NICHT direkt iirds:Selector verwenden, sondern MUSS eine seiner Unterklassen verwenden, um Teile einer Datei zu referenzieren.  Die Klasse iirds:Selector hat die folgenden Unterklassen: iirds:FragmentSelector;  iirds:RangeSelector",
             "en": "iirds:Rendition MUST NOT directly use iirds:Selector but MUST use one of its subclasses to reference parts of a file. The class iirds:Selector has the following subclasses: iirds:FragmentSelector; iirds:RangeSelector"
         },
         testFiles: {
@@ -505,11 +506,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20select%20parts,fragment%2Dselector%5D.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Um Teile einer Datei auszuwählen, MUSS ein iirds:Selector einen rdf:value und dcterms:conformsTo haben.  Der Wert MUSS dem durch die Eigenschaft dcterms:conformsTo angegebenen Standard entsprechen.  Es darf nur ein Standard aus der folgenden Liste von Fragmentselektoren verwendet werden: [https://www.w3.org/TR/annotation-model/",
             "en": "To select parts of a file, an iirds:Selector MUST have an rdf:value and dcterms:conformsTo. The value MUST conform to the standard specified by the property dcterms:conformsTo. Only a standard from the following list of fragment selectors MUST be used: [https://www.w3.org/TR/annotation-model/#fragment-selector]."
         },
         info: {
-            "de": " ",
+            "de": "Um Teile einer Datei auszuwählen, MUSS ein iirds:Selector einen rdf:value und dcterms:conformsTo haben.",
             "en": "To select parts of a file, an iirds:Selector MUST have an rdf:value and dcterms:conformsTo."
         },
         testfiles: {
@@ -524,11 +525,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20select%20parts,fragment%2Dselector%5D.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Um Teile einer Datei auszuwählen, MUSS ein iirds:Selector einen rdf:value und dcterms:conformsTo haben.  Der Wert MUSS dem durch die Eigenschaft dcterms:conformsTo angegebenen Standard entsprechen.  Es darf nur ein Standard aus der folgenden Liste von Fragmentselektoren verwendet werden: [https://www.w3.org/TR/annotation-model/",
             "en": "To select parts of a file, an iirds:Selector MUST have an rdf:value and dcterms:conformsTo. The value MUST conform to the standard specified by the property dcterms:conformsTo. Only a standard from the following list of fragment selectors MUST be used: [https://www.w3.org/TR/annotation-model/#fragment-selector]."
         },
         info: {
-            "de": " ",
+            "de": "Der Wert MUSS dem durch die Eigenschaft dcterms:conformsTo angegebenen Standard entsprechen.  Es darf nur ein Standard aus der folgenden Liste von Fragmentselektoren verwendet werden: [https://www.w3.org/TR/annotation-model/",
             "en": "The value MUST conform to the standard specified by the property dcterms:conformsTo. Only a standard from the following list of fragment selectors MUST be used: [https://www.w3.org/TR/annotation-model/#fragment-selector]."
         },
     },
@@ -540,11 +541,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20iirds%3ARangeSelector%20points,end%2Dselector.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Der iirds:RangeSelector zeigt durch einen Start- und einen Endselektor auf den Teil einer Datei. Die Bereichsauswahl MUSS verwendet werden, um einen Bereich in einer Datei zu identifizieren, wenn das Dateiformat oder der zugehörige Standard die direkte Auswahl eines Bereichs nicht zulässt. Der Bereichsselektor referenziert den Startselektor und den Endselektor durch die Eigenschaften iirds:has-start-selector und iirds:has-end-selector.",
+            "de": "Der iirds:RangeSelector zeigt durch einen Start- und einen Endselektor auf den Teil einer Datei.  Die Bereichsauswahl MUSS verwendet werden, um einen Bereich in einer Datei zu identifizieren, wenn das Dateiformat oder der zugehörige Standard die direkte Auswahl eines Bereichs nicht zulässt.  Der Bereichsselektor referenziert den Startselektor und den Endselektor durch die Eigenschaften iirds:has-start-selector und iirds:has-end-selector.",
             "en": "The iirds:RangeSelector points to the part of a file by a start and an end selector. The range selector MUST be used to identify a range in a file if the file format or the associated standard does not permit selecting a range directly. The range selector references the start selector and end selector by the properties iirds:has-start-selector and iirds:has-end-selector."
         },
         info: {
-            "de": " ",
+            "de": "iirds:RangeSelector muss die Eigenschaft iirds:has-start-selector verwenden.",
             "en": "iirds:RangeSelector must use property iirds:has-start-selector."
         },
         testFiles: {
@@ -560,11 +561,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20iirds%3ARangeSelector%20points,end%2Dselector.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Der iirds:RangeSelector zeigt durch einen Start- und einen Endselektor auf den Teil einer Datei. Die Bereichsauswahl MUSS verwendet werden, um einen Bereich in einer Datei zu identifizieren, wenn das Dateiformat oder der zugehörige Standard die direkte Auswahl eines Bereichs nicht zulässt. Der Bereichsselektor referenziert den Startselektor und den Endselektor durch die Eigenschaften iirds:has-start-selector und iirds:has-end-selector.",
+            "de": "Der iirds:RangeSelector zeigt durch einen Start- und einen Endselektor auf den Teil einer Datei.  Die Bereichsauswahl MUSS verwendet werden, um einen Bereich in einer Datei zu identifizieren, wenn das Dateiformat oder der zugehörige Standard die direkte Auswahl eines Bereichs nicht zulässt.  Der Bereichsselektor referenziert den Startselektor und den Endselektor durch die Eigenschaften iirds:has-start-selector und iirds:has-end-selector.",
             "en": "The iirds:RangeSelector points to the part of a file by a start and an end selector. The range selector MUST be used to identify a range in a file if the file format or the associated standard does not permit selecting a range directly. The range selector references the start selector and end selector by the properties iirds:has-start-selector and iirds:has-end-selector."
         },
         info: {
-            "de": " ",
+            "de": "iirds:RangeSelector muss die Eigenschaft iirds:has-end-selector verwenden.",
             "en": "iirds:RangeSelector must use property iirds:has-end-selector."
         },
         testFiles: {
@@ -592,11 +593,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=For%20each%20nested%20child%20iiRDS%20package%2C%20an%20iirds%3APackage%20MUST,iirds%3APackage%20in%20the%20metadata%20of%20the%20parent%20iiRDS%20package.",
         version: ["V1.1"],
         rule: {
-            "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein. Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein. Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
+            "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
             "en": "For each nested child iiRDS package, an iirds:Package MUST be present in the metadata of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be included in the iiRDS ZIP archive of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be referenced by an iirds:Rendition of its iirds:Package in the metadata of the parent iiRDS package."
         },
         info: {
-            "de": " ",
+            "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein.",
             "en": "For each nested child iiRDS package, an iirds:Package MUST be present in the metadata of the parent iiRDS package."
         },
     },
@@ -606,11 +607,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=For%20each%20nested%20child%20iiRDS%20package%2C%20an%20iirds%3APackage%20MUST,iirds%3APackage%20in%20the%20metadata%20of%20the%20parent%20iiRDS%20package.",
         version: ["V1.1"],
         rule: {
-            "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein. Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein. Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
+            "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
             "en": "For each nested child iiRDS package, an iirds:Package MUST be present in the metadata of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be included in the iiRDS ZIP archive of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be referenced by an iirds:Rendition of its iirds:Package in the metadata of the parent iiRDS package."
         },
         info: {
-            "de": " ",
+            "de": "Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein.",
             "en": "The iiRDS ZIP archive of the nested package MUST be included in the iiRDS ZIP archive of the parent iiRDS package."
         },
     },
@@ -620,11 +621,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=For%20each%20nested%20child%20iiRDS%20package%2C%20an%20iirds%3APackage%20MUST,iirds%3APackage%20in%20the%20metadata%20of%20the%20parent%20iiRDS%20package.",
         version: ["V1.1"],
         rule: {
-            "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein. Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein. Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
+            "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
             "en": "For each nested child iiRDS package, an iirds:Package MUST be present in the metadata of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be included in the iiRDS ZIP archive of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be referenced by an iirds:Rendition of its iirds:Package in the metadata of the parent iiRDS package."
         },
         info: {
-            "de": " ",
+            "de": "Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
             "en": "The iiRDS ZIP archive of the nested package MUST be referenced by an iirds:Rendition of its iirds:Package in the metadata of the parent iiRDS package."
         }
     },
@@ -635,11 +636,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=In%20the%20metadata.rdf%20file%20of%20the%20parent%20iiRDS%20package%2C%20the,package%20MUST%20NOT%20have%20any%20outgoing%20iirds%3Ais%2Dpart%2Dof%2Dpackage%20relations.",
         version: ["V1.1"],
         rule: {
-            "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets MUSS das iirds:Package des verschachtelten untergeordneten iiRDS-Pakets genau ein iirds:Package von iirds:is-part-of-package referenzieren. In der Datei metadata.rdf des übergeordneten iiRDS-Pakets DARF das referenzierte übergeordnete iiRDS-Paket KEINE ausgehenden iirds:is-part-of-package-Beziehungen haben.",
+            "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets MUSS das iirds:Package des verschachtelten untergeordneten iiRDS-Pakets genau ein iirds:Package von iirds:is-part-of-package referenzieren.  In der Datei metadata.rdf des übergeordneten iiRDS-Pakets DARF das referenzierte übergeordnete iiRDS-Paket KEINE ausgehenden iirds:is-part-of-package-Beziehungen haben.",
             "en": "In the metadata.rdf file of the parent iiRDS package, the iirds:Package of the nested child iiRDS package MUST reference exactly one iirds:Package by iirds:is-part-of-package. In the metadata.rdf file of the parent iiRDS package, the referenced parent iiRDS package MUST NOT have any outgoing iirds:is-part-of-package relations."
         },
         info: {
-            "de": " ",
+            "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets MUSS das iirds:Package des verschachtelten untergeordneten iiRDS-Pakets genau ein iirds:Package von iirds:is-part-of-package referenzieren.",
             "en": "In the metadata.rdf file of the parent iiRDS package, the iirds:Package of the nested child iiRDS package MUST reference exactly one iirds:Package by iirds:is-part-of-package."
         }
     },
@@ -650,11 +651,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=In%20the%20metadata.rdf%20file%20of%20the%20parent%20iiRDS%20package%2C%20the,package%20MUST%20NOT%20have%20any%20outgoing%20iirds%3Ais%2Dpart%2Dof%2Dpackage%20relations.",
         version: ["V1.1"],
         rule: {
-            "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets MUSS das iirds:Package des verschachtelten untergeordneten iiRDS-Pakets genau ein iirds:Package von iirds:is-part-of-package referenzieren. In der Datei metadata.rdf des übergeordneten iiRDS-Pakets DARF das referenzierte übergeordnete iiRDS-Paket KEINE ausgehenden iirds:is-part-of-package-Beziehungen haben.",
+            "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets MUSS das iirds:Package des verschachtelten untergeordneten iiRDS-Pakets genau ein iirds:Package von iirds:is-part-of-package referenzieren.  In der Datei metadata.rdf des übergeordneten iiRDS-Pakets DARF das referenzierte übergeordnete iiRDS-Paket KEINE ausgehenden iirds:is-part-of-package-Beziehungen haben.",
             "en": "In the metadata.rdf file of the parent iiRDS package, the iirds:Package of the nested child iiRDS package MUST reference exactly one iirds:Package by iirds:is-part-of-package. In the metadata.rdf file of the parent iiRDS package, the referenced parent iiRDS package MUST NOT have any outgoing iirds:is-part-of-package relations."
         },
         info: {
-            "de": " ",
+            "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets DARF das referenzierte übergeordnete iiRDS-Paket KEINE ausgehenden iirds:is-part-of-package-Beziehungen haben.",
             "en": "In the metadata.rdf file of the parent iiRDS package, the referenced parent iiRDS package MUST NOT have any outgoing iirds:is-part-of-package relations."
         }
     },
@@ -669,7 +670,7 @@ export default [
             "de": "Instanzen der Klasse iirds:Document MÜSSEN eine oder mehrere Beziehungen zu einem der standardisierten iirds:DocumentTypes haben, die in iirds:InformationType > iirds:DocumentType definiert sind.",
             "en": "Instances of the iirds:Document class MUST have one or more relations to one of the standardized iirds:DocumentTypes defined in iirds:InformationType > iirds:DocumentType."
         },info: {
-            "de": " ",
+            "de": "Instanzen der Klasse iirds:Document MÜSSEN eine oder mehrere Beziehungen zu einem der standardisierten iirds:DocumentTypes haben.",
             "en": "Instances of the iirds:Document class MUST have one or more relations to one of the standardized iirds:DocumentTypes."
         },
         testfiles: {
@@ -690,7 +691,7 @@ export default [
             "en": "Instances of the iirds:Document class MUST have one or more relations to one of the standardized iirds:DocumentTypes defined in iirds:InformationType > iirds:DocumentType."
         },
         info: {
-            "de": " ",
+            "de": "iirds:has-document-type MUSS einen standardisierten Dokumenttyp enthalten, der in iirds:InformationType > iirds:DocumentType definiert ist.",
             "en": "iirds:has-document-type MUST contain a standardized document type defined in iirds:InformationType > iirds:DocumentType."
         },
         testfiles: {
@@ -722,7 +723,7 @@ export default [
             "en": "Instances of the iirds:Event class MUST have the following properties: iirds:eventCode and iirds:eventType. "
         },
         info: {
-            "de": " ",
+            "de": "Instanzen der Klasse iirds:Event MÜSSEN die Eigenschaft iirds:eventCode haben",
             "en": "Instances of the iirds:Event class MUST have property iirds:eventCode"
         }
     },
@@ -738,7 +739,7 @@ export default [
             "en": "Instances of the iirds:Event class MUST have the following properties: iirds:eventCode and iirds:eventType. "
         },
         info: {
-            "de": " ",
+            "de": "Instanzen der Klasse iirds:Event MÜSSEN die Eigenschaft iirds:eventType haben",
             "en": "Instances of the iirds:Event class MUST have property iirds:eventType"
         }
     },
@@ -748,11 +749,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20properties%20iirds%3Arelates%2Dto%2Dcomponent%20and%20iirds%3Arelates%2Dto%2Dproduct%2Dvariant%20relate%20an%20information%20unit%20to%20an%20instance%20of%20iirds%3AComponent%20or%20iirds%3AProductVariant.%20The%20instances%20MUST%20be%20part%20of%20a%20proprietary%20iiRDS%20extension.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Die Eigenschaften iirds:relates-to-component und iirds:relates-to-product-variant beziehen eine Informationseinheit auf eine Instanz von iirds:Component oder iirds:ProductVariant. Die Instanzen MÜSSEN Teil einer proprietären iiRDS-Erweiterung sein.",
+            "de": "Die Eigenschaften iirds:relates-to-component und iirds:relates-to-product-variant beziehen eine Informationseinheit auf eine Instanz von iirds:Component oder iirds:ProductVariant.  Die Instanzen MÜSSEN Teil einer proprietären iiRDS-Erweiterung sein.",
             "en": "The properties iirds:relates-to-component and iirds:relates-to-product-variant relate an information unit to an instance of iirds:Component or iirds:ProductVariant. The instances MUST be part of a proprietary iiRDS extension."
         },
         info: {
-            "de": "Die Eigenschaften iirds:relates-to-component und iirds:relates-to-product-variant beziehen eine Informationseinheit auf eine Instanz von iirds:Component oder iirds:ProductVariant. Die Instanzen MÜSSEN Teil einer proprietären iiRDS-Erweiterung sein.",
+            "de": "Die Eigenschaften iirds:relates-to-component und iirds:relates-to-product-variant beziehen eine Informationseinheit auf eine Instanz von iirds:Component oder iirds:ProductVariant.  Die Instanzen MÜSSEN Teil einer proprietären iiRDS-Erweiterung sein.",
             "en": "The properties iirds:relates-to-component and iirds:relates-to-product-variant relate an information unit to an instance of iirds:Component or iirds:ProductVariant. The instances MUST be part of a proprietary iiRDS extension."
         }
     },
@@ -762,7 +763,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iiRDS%20package%20MAY%20model%20a%20component%20tree.%20The%20property%20iirds%3Ahas%2Dcomponent%20defines%20part%2Dof%20relations%20for%20products%20and%20their%20components.%20The%20component%20tree%20is%20a%20proprietary%20iiRDS%20extension%2C%20it%20MUST%20be%20stored%20in%20the%20metadata.rdf%20of%20the%20iiRDS%20package.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Ein iiRDS-Paket KANN einen Komponentenbaum modellieren. Die Eigenschaft iirds:has-component definiert Teil-von-Beziehungen für Produkte und ihre Komponenten. Der Komponentenbaum ist eine proprietäre iiRDS-Erweiterung, er MUSS in der metadata.rdf des iiRDS-Pakets gespeichert werden.",
+            "de": "Ein iiRDS-Paket KANN einen Komponentenbaum modellieren.  Die Eigenschaft iirds:has-component definiert Teil-von-Beziehungen für Produkte und ihre Komponenten.  Der Komponentenbaum ist eine proprietäre iiRDS-Erweiterung, er MUSS in der metadata.rdf des iiRDS-Pakets gespeichert werden.",
             "en": "An iiRDS package MAY model a component tree. The property iirds:has-component defines part-of relations for products and their components. The component tree is a proprietary iiRDS extension, it MUST be stored in the metadata.rdf of the iiRDS package."
         },
     },
@@ -782,7 +783,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iiRDS%20package%20MUST%20NOT%20use%20an%20external%20product%20ontology%20directly.%20If%20an%20external%20product%20ontology%20is%20available%20and%20used%20in%20the%20iiRDS%20package%2C%20then%20the%20iiRDS%20package%20MUST%20also%20contain%20metadata%20labels%20as%20instances%20of%20iirds%3AComponent.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Ein iiRDS-Paket DARF NICHT direkt eine externe Produktontologie verwenden. Wenn eine externe Produktontologie verfügbar ist und im iiRDS-Paket verwendet wird, MUSS das iiRDS-Paket auch Metadaten-Labels als Instanzen von iirds:Component enthalten.",
+            "de": "Ein iiRDS-Paket DARF NICHT direkt eine externe Produktontologie verwenden.  Wenn eine externe Produktontologie verfügbar ist und im iiRDS-Paket verwendet wird, MUSS das iiRDS-Paket auch Metadaten-Labels als Instanzen von iirds:Component enthalten.",
             "en": "An iiRDS package MUST NOT use an external product ontology directly. If an external product ontology is available and used in the iiRDS package, then the iiRDS package MUST also contain metadata labels as instances of iirds:Component."
         },
     },
@@ -802,7 +803,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=iiRDS%20provides%20the%20class%20iirds%3AProductVariant%20for%20extending%20the%20iiRDS%20vocabulary%20and%20adding%20proprietary%20product%20variants.%20As%20product%20variants%20are%20a%20proprietary%20iiRDS%20extension%2C%20they%20MUST%20be%20present%20in%20the%20metadata.rdf%20of%20the%20iiRDS%20package.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "iiRDS stellt die Klasse iirds:ProductVariant bereit, um das iiRDS-Vokabular zu erweitern und proprietäre Produktvarianten hinzuzufügen. Da Produktvarianten eine proprietäre iiRDS-Erweiterung sind, MÜSSEN sie in der metadata.rdf des iiRDS-Pakets vorhanden sein.",
+            "de": "iiRDS stellt die Klasse iirds:ProductVariant bereit, um das iiRDS-Vokabular zu erweitern und proprietäre Produktvarianten hinzuzufügen.  Da Produktvarianten eine proprietäre iiRDS-Erweiterung sind, MÜSSEN sie in der metadata.rdf des iiRDS-Pakets vorhanden sein.",
             "en": "iiRDS provides the class iirds:ProductVariant for extending the iiRDS vocabulary and adding proprietary product variants. As product variants are a proprietary iiRDS extension, they MUST be present in the metadata.rdf of the iiRDS package."
         },
     },
@@ -824,11 +825,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne. Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden. Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen. Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
+            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.  Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.  Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
             "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. An identity MUST point to exactly one domain by the iirds:has-identity-domain property. The domain is an instance of the iirdsIdentityDomain class."
         },
         info: {
-            "de": " ",
+            "de": "Property iirds:identifier DARF NICHT leer sein.",
             "en": "Property iirds:identifier MUST NOT be empty."
         },
         testfiles: {
@@ -844,11 +845,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne. Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden. Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen. Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
+            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.  Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.  Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
             "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. An identity MUST point to exactly one domain by the iirds:has-identity-domain property. The domain is an instance of the iirdsIdentityDomain class."
         },
         info: {
-            "de": " ",
+            "de": "Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.",
             "en": "An identity MUST point to exactly one domain by the iirds:has-identity-domain property."
         },
         testfiles: {
@@ -864,11 +865,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne. Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden. Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen. Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
+            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.  Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.  Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
             "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. An identity MUST point to exactly one domain by the iirds:has-identity-domain property. The domain is an instance of the iirdsIdentityDomain class."
         },
         info: {
-            "de": " ",
+            "de": "Die Domain MUSS eine Instanz der Klasse iirdsIdentityDomain sein.",
             "en": "The domain MUST be an instance of the iirdsIdentityDomain class."
         },
     },
@@ -881,11 +882,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Instances%20of%20class%20iirds%3AIdentityDomain%20MUST%20have%20an%20absolute%20IRI%20and%20MAY%20link%20to%20the%20custodian%20of%20the%20domain%20via%20the%20iirds%3Ahas%2Dparty%20property.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Instanzen der Klasse iirds:IdentityDomain MÜSSEN einen absoluten IRI haben und DÜRFEN über die Eigenschaft iirds:has-party mit dem Verwalter der Domain verknüpft werden.",
             "en": "Instances of class iirds:IdentityDomain MUST have an absolute IRI and MAY link to the custodian of the domain via the iirds:has-party property."
         },
         info: {
-            "de": " ",
+            "de": "Instanzen der Klasse iirds:IdentityDomain MÜSSEN einen absoluten IRI haben.",
             "en": "Instances of class iirds:IdentityDomain MUST have an absolute IRI."
         },
         testfiles: {
@@ -919,11 +920,11 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20180418-1.0-release/index.html#:~:text=0..1%C2%A0%20iirds%3AdateOfEffect%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:dateOfEffect-Eigenschaft - http://www.w3.org/2001/XMLSchema",
             "en": "Properties: 0..1  iirds:dateOfEffect property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
         },
         info: {
-            "de": " ",
+            "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:dateOfEffect haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfEffect."
         },
         testfiles: {
@@ -940,11 +941,11 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#functional-metadata:~:text=0..1%C2%A0%20iirds%3AdateOfExpiry%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:dateOfExpiry Eigenschaft - http://www.w3.org/2001/XMLSchema",
             "en": "Properties: 0..1  iirds:dateOfExpiry property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
         },
         info: {
-            "de": " ",
+            "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:dateOfExpiry haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfExpiry."
         },
         testfiles: {
@@ -961,11 +962,11 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#functional-metadata:~:text=0..1%C2%A0%20iirds%3AdateOfStatus%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:dateOfStatus Eigenschaft - http://www.w3.org/2001/XMLSchema",
             "en": "Properties: 0..1  iirds:dateOfStatus property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
         },
         info: {
-            "de": " ",
+            "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:purpose haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:purpose."
         },
         testfiles: {
@@ -982,11 +983,11 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#functional-metadata:~:text=0..1%C2%A0%20iirds%3Apurpose%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:purpose Eigenschaft - http://www.w3.org/2000/01/rdf-schema",
             "en": "Properties: 0..1  iirds:purpose property - http://www.w3.org/2000/01/rdf-schema#Literal"
         },
         info: {
-            "de": " ",
+            "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:dateOfStatus haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfStatus."
         },
         testfiles: {
@@ -1004,11 +1005,11 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20190712-1.0.1-release/index.html#rdfproperties_core_iirdsAttribute:~:text=rdf%2Dschema%23Literal-,0..1%C2%A0%20iirds%3Arelates%2Dto%2Dparty%20property%20%2D%20iirds%3AParty,-iirds%3AContentLifeCycleStatusValue",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": " ",
+            "de": "Eigenschaften: 0..1 iirds:Relates-to-Party Property - iirds:Party",
             "en": "Properties: 	0..1  iirds:relates-to-party property - iirds:Party"
         },
         info: {
-            "de": " ",
+            "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:relates-to-party haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:relates-to-party."
         },
         testfiles: {
@@ -1059,11 +1060,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Navigation%20sequences%20and%20hierarchies%20of%20InformationUnits%20MUST%20be%20modeled%20as%20linked%20lists%20of%20instances%20of%20the%20class%20iirds%3ADirectoryNode.%20In%20a%20linked%20list%2C%20an%20iirds%3ADirectoryNode%20references%20the%20following%20node%20by%20the%20property%20iirds%3Ahas%2Dnext%2Dsibling.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Navigationsabläufe und Hierarchien von InformationUnits MÜSSEN als verkettete Listen von Instanzen der Klasse iirds:DirectoryNode modelliert werden. In einer verknüpften Liste verweist ein iirds:DirectoryNode auf den folgenden Knoten durch die Eigenschaft iirds:has-next-sibling.",
+            "de": "Navigationsabläufe und Hierarchien von InformationUnits MÜSSEN als verkettete Listen von Instanzen der Klasse iirds:DirectoryNode modelliert werden.  In einer verknüpften Liste verweist ein iirds:DirectoryNode auf den folgenden Knoten durch die Eigenschaft iirds:has-next-sibling.",
             "en": "Navigation sequences and hierarchies of InformationUnits MUST be modeled as linked lists of instances of the class iirds:DirectoryNode. In a linked list, an iirds:DirectoryNode references the following node by the property iirds:has-next-sibling."
         },
         info: {
-            "de": " ",
+            "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-next-sibling.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-next-sibling."
         },
         testfiles: {
@@ -1081,11 +1082,11 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=0..1%C2%A0%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype%20property%20%2D%20iirds%3ADirectoryNodeType",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "",
+            "de": "Eigenschaften: 0..1 iirds:has-directory-structure-type property - iirds:DirectoryNodeType",
             "en": "Properties: 0..1  iirds:has-directory-structure-type property - iirds:DirectoryNodeType"
         },
         info: {
-            "de": " ",
+            "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-directory-structure-type.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-directory-structure-type."
         },
         testfiles: {
@@ -1102,11 +1103,11 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=0..1%C2%A0%20iirds%3Ahas%2Dfirst%2Dchild%20property%20%2D%20iirds%3ADirectoryNode",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "",
+            "de": "Eigenschaften: 0..1 iirds:has-first-child property - iirds:DirectoryNode",
             "en": "Properties: 0..1  iirds:has-first-child property - iirds:DirectoryNode"
         },
         info: {
-            "de": " ",
+            "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-first-child Eigenschaft.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-first-child property."
         },
         testfiles: {
@@ -1124,11 +1125,11 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=0..1%C2%A0%20iirds%3Arelates%2Dto%2Dinformation%2Dunit%20property%20%2D%20iirds%3AInformationUnit",
         version: ["V1.1"],
         rule: {
-            "de": " ",
+            "de": "0..1 iirds:relates-to-information-unit property - iirds:InformationUnit",
             "en": "0..1  iirds:relates-to-information-unit property - iirds:InformationUnit"
         },
         info: {
-            "de": " ",
+            "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:relates-to-information-unit.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:relates-to-information-unit."
         },
         testfiles: {
@@ -1145,7 +1146,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Only%20root%20nodes%20of%20a%20directory%20structure%20MUST%20have%20the%20property%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Der Wurzelknoten einer Verzeichnisstruktur MUSS die Eigenschaft iirds:has-directory-structure-type haben.",
+            "de": "Der Wurzelknoten einer Verzeichnisstruktur MUSS eine Eigenschaft haben: iirds:has-directory-structure-type.",
             "en": "The root node of a directory structure MUST have one property iirds:has-directory-structure-type."
         },
         testfiles: {
@@ -1218,7 +1219,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Proprietary%20iiRDS%20extensions%3A%20iiRDS%20supports%20proprietary%20iiRDS%20extensions%20for%20company%2Dspecific%20and%20project%2Dspecific%20instances%20and%20classes.%20A%20proprietary%20iiRDS%20extension%20MUST%20comply%20with%20the%20standard%20in%20order%20to%20be%20processible%20by%20iiRDS%20Consumers.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Proprietäre iiRDS-Erweiterungen: iiRDS unterstützt proprietäre iiRDS-Erweiterungen für unternehmens- und projektspezifische Instanzen und Klassen. Eine proprietäre iiRDS-Erweiterung MUSS dem Standard entsprechen, um von iiRDS-Verbrauchern verarbeitet werden zu können.",
+            "de": "Proprietäre iiRDS-Erweiterungen: iiRDS unterstützt proprietäre iiRDS-Erweiterungen für unternehmens- und projektspezifische Instanzen und Klassen.  Eine proprietäre iiRDS-Erweiterung MUSS dem Standard entsprechen, um von iiRDS-Verbrauchern verarbeitet werden zu können.",
             "en": "Proprietary iiRDS extensions: iiRDS supports proprietary iiRDS extensions for company-specific and project-specific instances and classes. A proprietary iiRDS extension MUST comply with the standard in order to be processible by iiRDS Consumers."
         },
         testfiles: {
@@ -1309,7 +1310,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Proprietary%20iiRDS%20extensions%20MAY%20add%20proprietary%20properties%20as%20a%20subproperty%20of%20an%20iiRDS%20property.%20Proprietary%20properties%20MUST%20comply%20with%20domain%20and%20range%20of%20the%20iiRDS%20property.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Proprietäre iiRDS-Erweiterungen KÖNNEN proprietäre Eigenschaften als Untereigenschaft einer iiRDS-Eigenschaft hinzufügen. Proprietäre Eigenschaften MÜSSEN der Domäne und dem Bereich der iiRDS-Eigenschaft entsprechen.",
+            "de": "Proprietäre iiRDS-Erweiterungen KÖNNEN proprietäre Eigenschaften als Untereigenschaft einer iiRDS-Eigenschaft hinzufügen.  Proprietäre Eigenschaften MÜSSEN der Domäne und dem Bereich der iiRDS-Eigenschaft entsprechen.",
             "en": "Proprietary iiRDS extensions MAY add proprietary properties as a subproperty of an iiRDS property. Proprietary properties MUST comply with domain and range of the iiRDS property."
         },
         testfiles: {
@@ -1329,7 +1330,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Complex%20identifier%20of%20an%20iiRDS%20domain%20entity.%20Each%20identifier%20MUST%20be%20related%20to%20the%20identity%20domain%20within%20which%20it%20is%20unambiguous.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Definition: Komplexer Bezeichner einer iiRDS-Domainentität. Jede Kennung MUSS sich auf die Identitätsdomäne beziehen, innerhalb derer sie eindeutig ist.",
+            "de": "Definition: Komplexer Bezeichner einer iiRDS-Domainentität.  Jede Kennung MUSS sich auf die Identitätsdomäne beziehen, innerhalb derer sie eindeutig ist.",
             "en": "Definition:	Complex identifier of an iiRDS domain entity. Each identifier MUST be related to the identity domain within which it is unambiguous."
         },
         testfiles: {
@@ -1371,7 +1372,7 @@ export default [
             "en": "iirds:Identity MUST have property iirds:IdentityDomain"
         },
         info: {
-            "de": "iirds:Identity MUSS die Eigenschaft iirds:IdentityDomain haben",
+            "de": "iirds:Identity MUSS die Eigenschaft iirds:has-identity-domain haben",
             "en": "iirds:Identity MUST have property iirds:has-identity-domain"
         },
         testfiles: {
@@ -1417,7 +1418,7 @@ export default [
         findInvalidElements: "",
         prio: "MUST",
         rule: {
-            "de": "Definition: Enthält allgemeine sicherheitsbezogene Informationen des Herstellers, die bei Montage, Betrieb, Wartung, Reparatur und Demontage des Produkts berücksichtigt werden MÜSSEN. In den Aufgaben werden Sicherheitshinweise zu einzelnen Aufgaben gegeben.",
+            "de": "Definition: Enthält allgemeine sicherheitsbezogene Informationen des Herstellers, die bei Montage, Betrieb, Wartung, Reparatur und Demontage des Produkts berücksichtigt werden MÜSSEN.  In den Aufgaben werden Sicherheitshinweise zu einzelnen Aufgaben gegeben.",
             "en": "Definition:	Contains general safety-related information provided by the manufacturer that MUST be considered during assembly, operation, maintenance, repair, and disassembly of the product. Safety information related to individual tasks is provided in the tasks."
         },
     },
@@ -1448,7 +1449,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=use%20of%20the%20product.-,Description%3A,-Not%20intended%20to%20be",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen. Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
@@ -1466,7 +1467,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=Not%20intented%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.%20For%20collection%20subjects%20not%20covered%20by%20the%20iiRDS%20standard%20subclasses%2C%20define%20custom%20subclasses.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen. Definieren Sie für Sammlungsthemen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Sammlungsthemen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intented to be used directly. Use the subclasses instead. For collection subjects not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
@@ -1484,7 +1485,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.%20For%20information%20subjects%20not%20covered%20by%20the%20iiRDS%20standard%20subclasses%2C%20define%20custom%20subclasses.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen. Definieren Sie für Informationsthemen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Informationsthemen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead. For information subjects not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
@@ -1502,7 +1503,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=of%20a%20product.-,Description%3A,phases%20not%20covered%20by%20the%20iiRDS%20standard%20subclasses%2C%20define%20custom%20subclasses.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen. Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
@@ -1520,7 +1521,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3ADocumentType",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1538,7 +1539,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3AIdentity",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1556,7 +1557,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-Properties%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1574,7 +1575,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#iirds-rdf-schema-reference:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3AAfterUse",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1592,7 +1593,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=Description%3A-,Not%20intented%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intented to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1628,7 +1629,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=specific%20working%20tasks.-,Description%3A,-Not%20intended%20to",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1646,7 +1647,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=functions%20of%20a%20product%20or%20component.-,Description%3A,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1664,7 +1665,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=MAY%20refer%20to.-,Description%3A,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1682,7 +1683,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=product%2Drelated%20metadata.-,Description%3A,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1700,7 +1701,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=system%20to%20use.-,Description%3A,phases%20not%20covered%20by%20the%20iiRDS%20standard%20subclasses%2C%20define%20custom%20subclasses.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen. Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
         testfiles: {
@@ -1718,7 +1719,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_has-content-lifecycle-status-value:~:text=roles%20REQUIRED%20for%20working%20tasks%20described%20in%20technical%20documentation.-,Description%3A,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-IRI%3A",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
@@ -1736,7 +1737,7 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfrelations_core_relates-to-administrative-metadata:~:text=Description%3A-,Not%20intended%20to%20be%20used%20directly.%20Use%20the%20subclasses%20instead.,-iirds%3Arelates%2Dto%2Dcomponent",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Nicht zur direkten Verwendung bestimmt. Verwenden Sie stattdessen die Unterklassen.",
+            "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
         testfiles: {
