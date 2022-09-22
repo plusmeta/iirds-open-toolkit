@@ -1,7 +1,7 @@
 export default [{
     id: "M1",
     path: "Document, Topic, Fragment, Package",
-    assert: els => els.filter(el => el.hasAttribute("rdf:about")),
+    assert: els => els.filter(el => !el.hasAttribute("rdf:about")),
     prio: "MUST",
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#navigation:~:text=An%20instance%20of%20an%20iirds%3AInformationUnit%20subclass%20MUST%20have%20an%20IRI%20and%20MUST%20NOT%20be%20a%20blank%20node.",
     rule: {
@@ -11,7 +11,7 @@ export default [{
 }, {
     id: "M2",
     path: "Rendition source",
-    assert: els => els.filter(el => !/(^(?:\/|[a-z]+:\/\/))|(www\..*?\..*?\/)/.test(el.textContent)),
+    assert: els => els.filter(el => /(^(?:\/|[a-z]+:\/\/))|(www\..*?\..*?\/)/.test(el.textContent)),
     prio: "MUST",
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#navigation:~:text=The%20URL%20MUST%20be%20relative%20to%20the%20root%20folder%20of%20the%20iiRDS%20package.",
     rule: {

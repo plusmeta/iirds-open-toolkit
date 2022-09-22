@@ -1,0 +1,29 @@
+# Container rules
+
+- [x] An iiRDS package MUST implement an iiRDS ZIP archive.
+- [-] An iiRDS container MUST have a single root directory.
+- [x] An iiRDS container MUST have a directory META-INF. The directory is exclusively used for metadata on the iiRDS package and its contents.
+- [x] The META-INF directory MUST contain the file metadata.rdf containing all metadata in RDF 1.1 XML syntax (see [rdf-syntax-grammar]).
+- [-] It is RECOMMENDED for iiRDS Consumers to ignore any other files in the META-INF directory.
+- [x] All other files (content, like PDF, HTML, media, Javascript, CSS, nested iiRDS packages) MUST be stored in arbitrary subdirectories below the root directory.
+- [x] Content files MUST NOT be placed in the root directory or in META-INF directory.
+- [-] Exception: The root container MAY contain additional files that are necessary for the interoperability with other standards, e.g. [VDI2770]. iiRDS Consumers MUST ignore these files if they are not referenced by iiRDS metadata.
+- [x] For file and directory names, all Unicode characters [UNICODE] MAY be used, with the exception of the following characters:
+  - [x] /,”*:<>\
+  - [x] the DEL character (U+007F)
+  - [x] characters from the ranges U+0000 to U+001F and U+0080 to U+009F
+  - [x] characters from the private use Unicode areas
+- [x] File names are case-sensitive and MUST be unique within their parent directories.
+- [x] The length of file names is limited to 255 characters.
+- [x] Full path names (file names including the full directory path from the root) MUST NOT exceed 260 characters).
+- [x] An iiRDS ZIP archive is an iiRDS container implementation using a ZIP archive, for example for transport and exchange between systems.
+  - [x] The iiRDS ZIP archive is the default implementation of the iiRDS container.
+  - [x] All processing applications MUST support this implementation.
+  - [x] The file name of the iiRDS ZIP archive MUST feature the file name extension .iirds.
+- [x] In addition to the iiRDS container specifications, the root directory of the ZIP file MUST contain a file named mimetype.
+  - [x] It MUST contain the following ASCII-encoded text in a single line, without any line delimiters such as CR or LF: application/iirds+zip
+  - [x] The file MUST be the first entry in the ZIP file and it MUST be stored uncompressed ('Stored' mode).
+- [ ] All other files in the ZIP are either uncompressed ('Stored' compression mode) or compressed in 'Deflated' mode. 
+- [ ] The ZIP archive MUST use the ZIP64™ extension [ZIP] if the file size is bigger than 4 GB or the package has more than 65536 file entries.
+- [-] The iiRDS ZIP archive MUST NOT be encrypted.
+

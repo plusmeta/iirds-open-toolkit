@@ -1,13 +1,15 @@
-import JSzip from "jszip";
+// import JSzip from "jszip";
 import semver from "semver";
 
 import objectTemplate from "@/store/storage/template";
 import iirds from "@/config/imports/iirdsMappings";
 
-import util from "@/util";
+// import util from "@/util";
 import rdf from "@/util/rdf";
 
-import validation from "@/util/validator-schema";
+import schemaValidation from "@/util/validator-schema";
+import containerValidation from "@/util/validator-container";
+import systemValidations from "@/config/imports/system-rules";
 
 import { ConfConst } from "@/config/imports/const";
 
@@ -26,60 +28,73 @@ export default {
     async analyze(projectUuid, objectUuid, objectData, objectFilename, store, saveOnEnd = true) {
         this.params = {projectUuid, store};
 
-        const blobContent = await util.readFile(objectData);
-        const zip = await JSzip.loadAsync(blobContent);
-        const parser = new DOMParser();
+        // const blobContent = await util.readFile(objectData);
+        // const zip = await JSzip.loadAsync(blobContent);
+        // const parser = new DOMParser();
 
-        if (!zip || !zip.files) {
-            let rule = ({en: "Corrupt ZIP container"});
-            return await this.setViolation(objectUuid, rule);
-        }
+        // if (!zip || !zip.files) {
+        //     let rule = ({en: "Corrupt ZIP container"});
+        //     return await this.setViolation(objectUuid, rule);
+        // }
 
-        if (!Object.keys(zip.files).length) {
-            let rule = ({en: "Empty ZIP container"});
-            return await this.setViolation(objectUuid, rule);
-        }
+        // if (!Object.keys(zip.files).length) {
+        //     let rule = ({en: "Empty ZIP container"});
+        //     return await this.setViolation(objectUuid, rule);
+        // }
 
-        const mimetypeFile = zip.files["mimetype"];
-        if (!mimetypeFile) {
-            let rule = ({en: "No mimetype file detected"});
-            return await this.setViolation(objectUuid, rule);
-        }
+        // const mimetypeFile = zip.files["mimetype"];
+        // if (!mimetypeFile) {
+        //     let rule = ({en: "No mimetype file detected"});
+        //     return await this.setViolation(objectUuid, rule);
+        // }
 
-        let mimetypeString = null;
-        if (mimetypeFile) mimetypeString = await zip.files["mimetype"].async("string");
-        if (!mimetypeString || mimetypeString !== "application/iirds+zip") {
-            let rule = ({en: "Wrong mimetype: " + mimetypeString});
-            return await this.setViolation(objectUuid, rule);
-        }
+        // let mimetypeString = null;
+        // if (mimetypeFile) mimetypeString = await zip.files["mimetype"].async("string");
+        // if (!mimetypeString || mimetypeString !== "application/iirds+zip") {
+        //     let rule = ({en: "Wrong mimetype: " + mimetypeString});
+        //     return await this.setViolation(objectUuid, rule);
+        // }
 
-        const metadataFile = zip.files["META-INF/metadata.rdf"];
-        if (!metadataFile) {
-            let rule = ({en: "No metadata file detected"});
-            return await this.setViolation(objectUuid, rule);
-        }
+        // const metadataFile = zip.files["META-INF/metadata.rdf"];
+        // if (!metadataFile) {
+        //     let rule = ({en: "No metadata file detected"});
+        //     return await this.setViolation(objectUuid, rule);
+        // }
 
-        let metadataString = null;
-        if (metadataFile) metadataString = await zip.files["META-INF/metadata.rdf"].async("string");
+        // let metadataString = null;
+        // if (metadataFile) metadataString = await zip.files["META-INF/metadata.rdf"].async("string");
 
-        if (!metadataString) {
-            let rule = ({en: "Couldn't read metadata file"});
-            return await this.setViolation(objectUuid, rule);
-        }
+        // if (!metadataString) {
+        //     let rule = ({en: "Couldn't read metadata file"});
+        //     return await this.setViolation(objectUuid, rule);
+        // }
 
-        const metadataDoc = parser.parseFromString(metadataString, "application/xml");
-        if (!metadataDoc) {
-            let rule = ({en: "Malformed metadata file (XML parsing error)"});
-            return await this.setViolation(objectUuid, rule);
-        }
+        // const metadataDoc = parser.parseFromString(metadataString, "application/xml");
+        // if (!metadataDoc) {
+        //     let rule = ({en: "Malformed metadata file (XML parsing error)"});
+        //     return await this.setViolation(objectUuid, rule);
+        // }
 
-        // Schema validation based on ruleset
-        const validationResult = validation.validateDocument(metadataString, null, "metadata.rdf");
-        if (validationResult && Array.isArray(validationResult)) {
-            await Promise.allSettled(validationResult.map(test => this.setViolation(objectUuid, test)));
+        let processable = true;
+
+        // Container validation based on ruleset
+        const {containerViolations, zipArchive} = await containerValidation.validate(objectData, null, objectFilename);
+        if (containerViolations && Array.isArray(containerViolations)) {
+            await Promise.allSettled(containerViolations.map(test => this.setViolation(objectUuid, test)));
+            if (containerViolations.some(violation => violation.break)) processable = false;
         } else {
-            let rule = ({en: "XML validation failed for Main document"});
-            await this.setViolation(objectUuid, rule);
+            processable = false;
+            await this.setViolation(objectUuid, systemValidations["S2"]);
+        }
+
+        if (processable) {
+            // Schema validation based on ruleset
+            const schemaViolations = await schemaValidation.validate(zipArchive, null, "metadata.rdf");
+            if (schemaViolations && Array.isArray(schemaViolations)) {
+                await Promise.allSettled(schemaViolations.map(test => this.setViolation(objectUuid, test)));
+            } else {
+                await this.setViolation(objectUuid, systemValidations["S3"]);
+            }
         }
 
         await this.params.store.dispatch("projects/nextProjectStepLocal");
@@ -119,6 +134,10 @@ export default {
                     uri: "plus:Rule",
                     value: test.id,
                 }),
+                "plus:SubFile": objectTemplate.metadata({
+                    uri: "plus:SubFile",
+                    value: test.file,
+                }),
                 "plus:LineNr": objectTemplate.metadata({
                     uri: "plus:LineNr",
                     value: Number(test.lineNr),
@@ -141,7 +160,7 @@ export default {
                 }),
                 "plus:RuleType": objectTemplate.metadata({
                     uri: "plus:RuleType",
-                    value: "iiRDS metadata model",
+                    value: test.type,
                 })
 
             }

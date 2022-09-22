@@ -1,4 +1,4 @@
-import validations from "@/config/imports/validation-rules";
+import validations from "@/config/imports/schema-rules";
 import { v4 as uuid } from "uuid";
 
 const Serializer = new XMLSerializer();
@@ -6,27 +6,28 @@ const Parser = new DOMParser();
 
 const validationIdAttr = "iirds:validation";
 const documentMimeType = "application/xml";
+const type = "Schema";
 
 export default {
-    validateDocument(documentString, scope, fileName) {
-        const violations = [];
-
+    async validate(zipArchive, scope, fileName) {
+        const schemaViolations = [];
+        const documentString = await zipArchive.files["META-INF/metadata.rdf"].async("string");
         const { processedString, lineMap, lineArr } = this.preprocessDocumentString(documentString);
         const document = Parser.parseFromString(processedString, documentMimeType);
 
         const scopedTests = validations.filter(v => !scope || scope === v.scope);
         for (let test of scopedTests) {
             const selection = document.querySelectorAll(test.path);
-            const result = test.assert(Array.from(selection));
+            const result = test.getInvalid(Array.from(selection));
             const pass = !selection.length || !result.length;
             if (!pass) {
                 for (let element of result) {
                     const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
-                    violations.push({ ...test, fileName, scope, location, lineNr, lines });
+                    schemaViolations.push({ ...test, fileName, type, scope, location, lineNr, lines });
                 }
             }
         }
-        return violations;
+        return schemaViolations;
     },
     preprocessDocumentString(documentString) {
         const lineArr = documentString.split("\n");

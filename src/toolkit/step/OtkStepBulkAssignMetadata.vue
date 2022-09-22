@@ -183,7 +183,9 @@
                   </v-list-item-title>
                   <v-list-item-subtitle class="caption">
                     <span class="font-monospace font-weight-bold">
-                      {{ getMetadataValueByURI(item.uuid, "plus:OriginalFileName") }}:{{ getMetadataValueByURI(item.uuid, "plus:LineNr") }}
+                      {{ getMetadataValueByURI(item.uuid, "plus:OriginalFileName") }}
+                      <span v-if="getType === 'Schema'">:{{ getMetadataValueByURI(item.uuid, "plus:LineNr") }}</span>
+                      <span v-if="getType === 'Container'">/({{ getMetadataValueByURI(item.uuid, "plus:SubFile")?.join(", ") }}</span>
                     </span>
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -261,7 +263,12 @@ export default {
             return this.getViolations.length === 0;
         },
         getValidationSource() {
-            return this.getCurrentObjectsByType("iirds:Container")[0].name;
+            const containers = this.getCurrentObjectsByType("iirds:Container");
+            if (containers && containers.length === 1) {
+                return containers[0].name;
+            } else {
+                return this.getCurrentObjectsByType().filter(object => object.type !== "plus:RuleViolation")[0].name;
+            }
         },
         getCurrentObjects() {
             let filter = this.getSetting("ui_assign_filter");
@@ -315,8 +322,21 @@ export default {
         if (firstElem) firstElem.click();
     },
     methods: {
+        getType(objectUuid) {
+            return this.getMetadataValueByURI(objectUuid, "plus:RuleType");
+        },
         getIconForType(objectUuid) {
-            return "mdi-message-alert";
+            const type = this.getType(objectUuid);
+            switch (type) {
+            case "Schema":
+                return "mdi-tag-multiple-outline";
+            case "Container":
+                return "mdi-folder-zip-outline";
+            case "System":
+                return "mdi-alert-circle-outline";
+            default:
+                return "mdi-message-alert";
+            }
         },
         startFromStart() {
             this.setCurrentProgressLocal(1);
