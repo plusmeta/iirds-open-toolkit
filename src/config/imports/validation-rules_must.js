@@ -28,7 +28,7 @@ export default [
             "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M1_false.rdf"]
         }
     },
@@ -258,7 +258,7 @@ export default [
             "en": "No iirds:Package instance found."
         },
         testfiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/mmetadata_iirds_sample-M3.2_false.rdf"]
         }
     },
