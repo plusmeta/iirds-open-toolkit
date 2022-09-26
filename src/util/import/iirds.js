@@ -34,7 +34,6 @@ export default {
             let containerViolationObjectUuids = [];
 
             for (let containerViolation of containerViolations) {
-                console.log(containerViolation);
                 let containerUuid = await this.setViolation(objectUuid, containerViolation);
                 containerViolationObjectUuids.push(containerUuid);
             }
