@@ -495,30 +495,7 @@ export default {
                 this.$store
             ];
 
-            switch (object.source.type) {
-            case "application/iirds+zip":
-                await iirds.analyze(...analyzePayload);
-                break;
-
-            case "application/pdf":
-                await pdf.analyze(...analyzePayload);
-                break;
-
-            case "text/html":
-                await html.analyze(...analyzePayload);
-                break;
-
-            case "text/xml":
-                await xml.analyze(...analyzePayload);
-                break;
-
-            case "application/zip":
-                await zip.analyze(...analyzePayload);
-                break;
-
-            default:
-                break;
-            }
+            await iirds.analyze(...analyzePayload);
 
             this.processing.splice(this.processing.indexOf(object.uuid), 1);
             return object.uuid;

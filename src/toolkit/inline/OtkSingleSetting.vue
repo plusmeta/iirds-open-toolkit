@@ -42,6 +42,7 @@
             target="_blank"
             class="ml-6 mb-4"
             color="primary"
+            :disabled="!value"
             outlined
           >
             <v-icon left>

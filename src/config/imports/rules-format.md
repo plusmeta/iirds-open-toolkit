@@ -1,30 +1,32 @@
-- [ ] An iiRDS package MUST implement an iiRDS ZIP archive.
-- [ ] An iiRDS container MUST have a single root directory.
-- [ ] The URL MUST be relative to the root folder of the iiRDS package
-- [ ] An iiRDS container MUST have a directory META-INF. The directory is exclusively used for metadata on the iiRDS package and its contents.
-- [ ] The META-INF directory MUST contain the file metadata.rdf containing all metadata in RDF 1.1 XML syntax (see [rdf-syntax-grammar]).
-- [ ] It is RECOMMENDED for iiRDS Consumers to ignore any other files in the META-INF directory.
-- [ ] All other files (content, like PDF, HTML, media, Javascript, CSS, nested iiRDS packages) MUST be stored in arbitrary subdirectories below the root directory.
-- [ ] Content files MUST NOT be placed in the root directory or in META-INF directory.
-- [ ] Exception: The root container MAY contain additional files that are necessary for the interoperability with other standards, e.g. [VDI2770]. iiRDS Consumers MUST ignore these files if they are not referenced by iiRDS metadata.
-- [ ] For file and directory names, all Unicode characters [UNICODE] MAY be used, with the exception of the following characters:
-  - [ ] /,”*:<>\
-  - [ ] the DEL character (U+007F)
-  - [ ] characters from the ranges U+0000 to U+001F and U+0080 to U+009F
-  - [ ] characters from the private use Unicode areas
-- [ ] File names are case-sensitive and MUST be unique within their parent directories.
-- [ ] The length of file names is limited to 255 characters.
-- [ ] Full path names (file names including the full directory path from the root) MUST NOT exceed 260 characters).
-- [ ] An iiRDS ZIP archive is an iiRDS container implementation using a ZIP archive, for example for transport and exchange between systems.
-  - [ ] The iiRDS ZIP archive is the default implementation of the iiRDS container.
-  - [ ] All processing applications MUST support this implementation.
-  - [ ] The file name of the iiRDS ZIP archive MUST feature the file name extension .iirds.
-- [ ] In addition to the iiRDS container specifications, the root directory of the ZIP file MUST contain a file named mimetype.
-  - [ ] It MUST contain the following ASCII-encoded text in a single line, without any line delimiters such as CR or LF: application/iirds+zip
-  - [ ] The file MUST be the first entry in the ZIP file and it MUST be stored uncompressed ('Stored' mode).
-- [ ] All other files in the ZIP are either uncompressed ('Stored' compression mode) or compressed in 'Deflated' mode. The ZIP archive MUST use the ZIP64™ extension [ZIP] if the file size is bigger than 4 GB or the package has more than 65536 file entries.
-- [ ] The iiRDS ZIP archive MUST NOT be encrypted.
-- [ ] iiRDS packages MAY contain nested iiRDS packages.
+# Container rules
+
+- [x] An iiRDS package MUST implement an iiRDS ZIP archive.
+- [-] An iiRDS container MUST have a single root directory.
+- [x] An iiRDS container MUST have a directory META-INF. The directory is exclusively used for metadata on the iiRDS package and its contents.
+- [x] The META-INF directory MUST contain the file metadata.rdf containing all metadata in RDF 1.1 XML syntax (see [rdf-syntax-grammar]).
+- [-] It is RECOMMENDED for iiRDS Consumers to ignore any other files in the META-INF directory.
+- [x] All other files (content, like PDF, HTML, media, Javascript, CSS, nested iiRDS packages) MUST be stored in arbitrary subdirectories below the root directory.
+- [x] Content files MUST NOT be placed in the root directory or in META-INF directory.
+- [-] Exception: The root container MAY contain additional files that are necessary for the interoperability with other standards, e.g. [VDI2770]. iiRDS Consumers MUST ignore these files if they are not referenced by iiRDS metadata.
+- [x] For file and directory names, all Unicode characters [UNICODE] MAY be used, with the exception of the following characters:
+  - [x] /,”*:<>\
+  - [x] the DEL character (U+007F)
+  - [x] characters from the ranges U+0000 to U+001F and U+0080 to U+009F
+  - [x] characters from the private use Unicode areas
+- [x] File names are case-sensitive and MUST be unique within their parent directories.
+- [x] The length of file names is limited to 255 characters.
+- [x] Full path names (file names including the full directory path from the root) MUST NOT exceed 260 characters).
+- [x] An iiRDS ZIP archive is an iiRDS container implementation using a ZIP archive, for example for transport and exchange between systems.
+  - [x] The iiRDS ZIP archive is the default implementation of the iiRDS container.
+  - [x] All processing applications MUST support this implementation.
+  - [x] The file name of the iiRDS ZIP archive MUST feature the file name extension .iirds.
+- [x] In addition to the iiRDS container specifications, the root directory of the ZIP file MUST contain a file named mimetype.
+  - [x] It MUST contain the following ASCII-encoded text in a single line, without any line delimiters such as CR or LF: application/iirds+zip
+  - [x] The file MUST be the first entry in the ZIP file and it MUST be stored uncompressed ('Stored' mode).
+- [ ] All other files in the ZIP are either uncompressed ('Stored' compression mode) or compressed in 'Deflated' mode. 
+- [ ] The ZIP archive MUST use the ZIP64™ extension [ZIP] if the file size is bigger than 4 GB or the package has more than 65536 file entries.
+- [-] The iiRDS ZIP archive MUST NOT be encrypted.
+[ ] iiRDS packages MAY contain nested iiRDS packages.
   - [ ] A nested iiRDS package MUST NOT contain metadata about the outer iiRDS package.
   - [ ] An iiRDS package that contains a nested iiRDS package MUST NOT contain metadata about the content of the nested iiRDS package.
 - [ ] iiRDS/A packages MUST NOT nest unrestricted iiRDS packages.
@@ -37,3 +39,4 @@
 - [ ] Only static language features of SVG that correspond to the feature string http://www.w3.org/TR/SVG11/feature#SVG-static MUST be used.
 - [ ] All linked resources (e.g. CSS, graphics, fonts) MUST be included in the iiRDS/A package.
 - [ ] Only JPG and PNG graphics according to this section MUST be used.
+

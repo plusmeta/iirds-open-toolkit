@@ -402,6 +402,21 @@
     },
     {
         "subClassOf": "plus:Meta",
+        "identifier": "plus:SubFile",
+        "datatype": "plus:Array",
+        "label": {
+            "de": "Datei",
+            "en": "File"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:file-outline"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
         "identifier": "plus:Level",
         "datatype": "plus:String",
         "label": {

@@ -1,4 +1,4 @@
-import validations from "@/config/imports/validation-rules_must";
+import validations from "@/config/imports/schema-rules";
 import { v4 as uuid } from "uuid";
 
 const Serializer = new XMLSerializer();
@@ -6,27 +6,35 @@ const Parser = new DOMParser();
 
 const validationIdAttr = "iirds:validation";
 const documentMimeType = "application/xml";
+const type = "Schema";
 
 
 export default {
-    validateDocument(documentString, scope, fileName) {
-        const violations = [];
-
+    async validate(zipArchive, scope, fileName) {
+        const schemaViolations = [];
+        const documentString = await zipArchive.files["META-INF/metadata.rdf"].async("string");
         const { processedString, lineMap, lineArr } = this.preprocessDocumentString(documentString);
         const document = Parser.parseFromString(processedString, documentMimeType);
+        const iiRDSVersion = document.querySelector("iiRDSVersion").textContent;
 
-        const scopedTests = validations.filter(v => !scope || scope === v.scope);
+        const scopedTests = validations.filter(v => v.assert).filter(v => !scope || scope === v.scope);
+        const checkedSchemaRules = scopedTests.length;
         for (let test of scopedTests) {
-            const { succeded, invalidElements } = iirdsValidateXmlRule(document, test);
-            if (!succeded) {
-                for (let element of invalidElements) {
-                    const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
-                    const violation = { ...test, fileName, scope, location, lineNr, lines };
-                    violations.push(violation);
+            const selection = document.querySelectorAll(test.path);
+            const pass = test.assert(Array.from(selection), document);
+            if (!pass) {
+                const result = (test.getInvalid) ? test.getInvalid(Array.from(selection), document) : [];
+                if (result.length) {
+                    for (let element of result) {
+                        const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
+                        schemaViolations.push({ ...test, fileName, type, scope, location, lineNr, lines });
+                    }
+                } else {
+                    schemaViolations.push({ ...test, fileName, type, scope });
                 }
             }
         }
-        return violations;
+        return { schemaViolations, checkedSchemaRules, iiRDSVersion };
     },
     preprocessDocumentString(documentString) {
         const lineArr = documentString.split("\n");

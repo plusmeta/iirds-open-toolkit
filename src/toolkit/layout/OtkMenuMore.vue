@@ -137,6 +137,21 @@
 
         <v-list-item
           class="py-2"
+          href="https://github.com/plusmeta/iirds-validation-tool"
+          target="_blank"
+        >
+          <v-list-item-action>
+            <v-icon>
+              mdi-github
+            </v-icon>
+          </v-list-item-action>
+          <v-list-item-title>
+            {{ $t("App.sourcecode") }}
+          </v-list-item-title>
+        </v-list-item>
+
+        <v-list-item
+          class="py-2"
           @click="showLicenseDialog = true"
         >
           <v-list-item-action>
@@ -198,7 +213,7 @@ export default {
                 this.$t("Actions.restoreSettings"),
                 this.$t("Actions.restoreSettingsInfo"))) {
                 this.setCurrentProgressLocal(1);
-                this.$matomo.forgetConsentGiven();
+                if (this.$matomo) this.$matomo.forgetConsentGiven();
                 this.resetSettings(true);
                 this.$notify.send(this.$t("Otk.settingsRestored"), "success", 2);
             }

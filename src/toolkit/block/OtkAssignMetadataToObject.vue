@@ -8,13 +8,12 @@
   <v-container fluid>
     <v-layout wrap>
       <v-flex
-        v-if="isPreview"
         xs6
         lg5
         class="px2"
       >
         <PreviewXML
-          v-if="isXML"
+          v-if="isPreview && isXML"
           :file="object"
         />
         <v-skeleton-loader
@@ -22,8 +21,8 @@
           class="mx-auto"
           boilerplate
           type="image"
-          height="400"
-          width="300"
+          height="300"
+          width="400"
         />
       </v-flex>
       <v-flex
@@ -106,7 +105,10 @@ export default {
     },
     computed: {
         isPreview() {
-            return !!this.getSetting("ui_assign_preview");
+            return !!this.getSetting("ui_assign_preview") && this.getType === "Schema";
+        },
+        getType() {
+            return this.getMetadataValueByURI(this.object.uuid, "plus:RuleType");
         },
         getVisibleMetadata() {
             return this.objectMetadata
