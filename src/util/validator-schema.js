@@ -14,20 +14,26 @@ export default {
         const documentString = await zipArchive.files["META-INF/metadata.rdf"].async("string");
         const { processedString, lineMap, lineArr } = this.preprocessDocumentString(documentString);
         const document = Parser.parseFromString(processedString, documentMimeType);
+        const iiRDSVersion = document.querySelector("iiRDSVersion").textContent;
 
-        const scopedTests = validations.filter(v => !scope || scope === v.scope);
+        const scopedTests = validations.filter(v => v.assert).filter(v => !scope || scope === v.scope);
+        const checkedSchemaRules = scopedTests.length;
         for (let test of scopedTests) {
             const selection = document.querySelectorAll(test.path);
-            const result = test.getInvalid(Array.from(selection));
-            const pass = !selection.length || !result.length;
+            const pass = test.assert(Array.from(selection), document);
             if (!pass) {
-                for (let element of result) {
-                    const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
-                    schemaViolations.push({ ...test, fileName, type, scope, location, lineNr, lines });
+                const result = (test.getInvalid) ? test.getInvalid(Array.from(selection), document) : [];
+                if (result.length) {
+                    for (let element of result) {
+                        const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
+                        schemaViolations.push({ ...test, fileName, type, scope, location, lineNr, lines });
+                    }
+                } else {
+                    schemaViolations.push({ ...test, fileName, type, scope });
                 }
             }
         }
-        return schemaViolations;
+        return { schemaViolations, checkedSchemaRules, iiRDSVersion };
     },
     preprocessDocumentString(documentString) {
         const lineArr = documentString.split("\n");

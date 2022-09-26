@@ -2,10 +2,6 @@
 import semver from "semver";
 
 import objectTemplate from "@/store/storage/template";
-import iirds from "@/config/imports/iirdsMappings";
-
-// import util from "@/util";
-import rdf from "@/util/rdf";
 
 import schemaValidation from "@/util/validator-schema";
 import containerValidation from "@/util/validator-container";
@@ -25,77 +21,62 @@ export default {
         store: null
     },
     logs: [],
-    async analyze(projectUuid, objectUuid, objectData, objectFilename, store, saveOnEnd = true) {
+    async analyze(projectUuid, objectUuid, objectData, objectFilename, store) {
         this.params = {projectUuid, store};
 
-        // const blobContent = await util.readFile(objectData);
-        // const zip = await JSzip.loadAsync(blobContent);
-        // const parser = new DOMParser();
-
-        // if (!zip || !zip.files) {
-        //     let rule = ({en: "Corrupt ZIP container"});
-        //     return await this.setViolation(objectUuid, rule);
-        // }
-
-        // if (!Object.keys(zip.files).length) {
-        //     let rule = ({en: "Empty ZIP container"});
-        //     return await this.setViolation(objectUuid, rule);
-        // }
-
-        // const mimetypeFile = zip.files["mimetype"];
-        // if (!mimetypeFile) {
-        //     let rule = ({en: "No mimetype file detected"});
-        //     return await this.setViolation(objectUuid, rule);
-        // }
-
-        // let mimetypeString = null;
-        // if (mimetypeFile) mimetypeString = await zip.files["mimetype"].async("string");
-        // if (!mimetypeString || mimetypeString !== "application/iirds+zip") {
-        //     let rule = ({en: "Wrong mimetype: " + mimetypeString});
-        //     return await this.setViolation(objectUuid, rule);
-        // }
-
-        // const metadataFile = zip.files["META-INF/metadata.rdf"];
-        // if (!metadataFile) {
-        //     let rule = ({en: "No metadata file detected"});
-        //     return await this.setViolation(objectUuid, rule);
-        // }
-
-        // let metadataString = null;
-        // if (metadataFile) metadataString = await zip.files["META-INF/metadata.rdf"].async("string");
-
-        // if (!metadataString) {
-        //     let rule = ({en: "Couldn't read metadata file"});
-        //     return await this.setViolation(objectUuid, rule);
-        // }
-
-        // const metadataDoc = parser.parseFromString(metadataString, "application/xml");
-        // if (!metadataDoc) {
-        //     let rule = ({en: "Malformed metadata file (XML parsing error)"});
-        //     return await this.setViolation(objectUuid, rule);
-        // }
-
         let processable = true;
+        let totalRulesChecked = 0;
+        let detectedVersion = "1.1";
 
         // Container validation based on ruleset
-        const {containerViolations, zipArchive} = await containerValidation.validate(objectData, null, objectFilename);
+        const {containerViolations, zipArchive, checkedContainerRules} = await containerValidation.validate(objectData, null, objectFilename);
         if (containerViolations && Array.isArray(containerViolations)) {
-            await Promise.allSettled(containerViolations.map(test => this.setViolation(objectUuid, test)));
+            let containerViolationObjectUuids = [];
+
+            for (let containerViolation of containerViolations) {
+                console.log(containerViolation);
+                let containerUuid = await this.setViolation(objectUuid, containerViolation);
+                containerViolationObjectUuids.push(containerUuid);
+            }
+
+            await this.params.store.dispatch("projects/addObjectsToProject", {
+                projectUuid: this.params.projectUuid,
+                objectUuids: containerViolationObjectUuids
+            });
+
             if (containerViolations.some(violation => violation.break)) processable = false;
         } else {
             processable = false;
             await this.setViolation(objectUuid, systemValidations["S2"]);
         }
 
+        totalRulesChecked += checkedContainerRules;
+
         if (processable) {
             // Schema validation based on ruleset
-            const schemaViolations = await schemaValidation.validate(zipArchive, null, "metadata.rdf");
+            const {schemaViolations, checkedSchemaRules, iiRDSVersion} = await schemaValidation.validate(zipArchive, null, "metadata.rdf");
             if (schemaViolations && Array.isArray(schemaViolations)) {
-                await Promise.allSettled(schemaViolations.map(test => this.setViolation(objectUuid, test)));
+                let schemaViolationObjectUuids = [];
+
+                for (let schemaViolation of schemaViolations) {
+                    let schemaUuid = await this.setViolation(objectUuid, schemaViolation);
+                    schemaViolationObjectUuids.push(schemaUuid);
+                }
+
+                await this.params.store.dispatch("projects/addObjectsToProject", {
+                    projectUuid: this.params.projectUuid,
+                    objectUuids: schemaViolationObjectUuids
+                });
             } else {
                 await this.setViolation(objectUuid, systemValidations["S3"]);
             }
+
+            detectedVersion = iiRDSVersion;
+            totalRulesChecked += checkedSchemaRules;
         }
+
+        await this.params.store.dispatch("projects/updateCurrentProjectRelations", { totalRulesChecked });
+        await this.params.store.dispatch("projects/updateCurrentProjectRelations", { detectedVersion });
 
         await this.params.store.dispatch("projects/nextProjectStepLocal");
 
@@ -117,9 +98,8 @@ export default {
         }
         return {version, restriction};
     },
-    async setViolation(objectUuid, test, version, restriction) {
+    async setViolation(objectUuid, test) {
         const locale = this.params.store.getters["settings/getCurrentLocale"];
-
         const violationObject = objectTemplate.object({
             externalId: objectUuid,
             type: "plus:RuleViolation",
@@ -128,7 +108,7 @@ export default {
             meta: {
                 "plus:RuleText": objectTemplate.metadata({
                     uri: "plus:RuleText",
-                    value: test.rule[locale],
+                    value: (test.info) ? `${test.info[locale]} (${test.rule[locale]})`: test.rule[locale],
                 }),
                 "plus:Rule": objectTemplate.metadata({
                     uri: "plus:Rule",
@@ -167,7 +147,7 @@ export default {
         });
 
         await this.params.store.dispatch("storage/saveObjectLocal", violationObject);
-        await this.params.store.dispatch("projects/addObjectsToProject", {projectUuid: this.params.projectUuid, objectUuids: [violationObject.uuid]});
+        return violationObject.uuid;
     },
     async setValidationResult(objectUuid, version, restriction) {
         let conformityString = `iiRDS ${version}`;
@@ -194,128 +174,6 @@ export default {
         });
 
         this.logs = [];
-    },
-    async handleDirectories(directoryNodes, projectUuid, localObjectStore) {
-        const directoryUuids = [];
-
-        // get only root directory nodes
-        const directoryRoots = Array.from(directoryNodes).filter((node) => {
-            return !["iirds:has-next-sibling", "iirds:has-first-child"].includes(node.parentNode.tagName);
-        });
-
-        for (let dir of directoryRoots) {
-            const dirTree = [];
-            const dirUuid = rdf.newUUID();
-            const dirExtId = dir.getAttribute("rdf:about");
-
-            let nodeId = 0;
-
-            // normalize Directory and remove nested information units
-            const nodeReferences = dir.querySelectorAll("relates-to-information-unit");
-            Array.from(nodeReferences).forEach((nodeRef) => {
-                if (nodeRef.hasAttribute("rdf:resource")) return;
-                let node = nodeRef.querySelector(iirds.$("objects"));
-                if (node.hasAttribute("rdf:about")) {
-                    let nodeUri = node.getAttribute("rdf:about");
-                    nodeRef.setAttribute("rdf:resource", nodeUri);
-                    nodeRef.removeChild(node);
-                }
-            });
-
-            const getLabel = (node, object) => {
-                let rdfLabel = node.querySelector(":scope > label");
-                return rdfLabel.textContent || object?.name || "Direcory Node";
-            };
-            const getObject = (node) => {
-                let extRef = node.querySelector(":scope > relates-to-information-unit");
-                let extId = (extRef) ? extRef.getAttribute("rdf:resource") : null;
-                return localObjectStore.find(o => o.externalId === extId);
-            };
-
-            const treeWalker = (node, tree) => {
-                let relObj = getObject(node);
-                let newNode = { id: ++nodeId, name: getLabel(node, relObj)};
-                let sibling = node.querySelector(":scope > has-next-sibling > DirectoryNode");
-                let child = node.querySelector(":scope > has-first-child > DirectoryNode");
-
-                if (relObj) {
-                    newNode.object = relObj.uuid;
-                }
-
-                if (child) {
-                    newNode.children = [];
-                    treeWalker(child, newNode.children);
-                }
-
-                tree.push(newNode);
-
-                if (sibling) {
-                    treeWalker(sibling, tree);
-                }
-            };
-
-            treeWalker(dir, dirTree);
-
-
-            const newFile = new Blob(
-                [JSON.stringify(dirTree)],
-                {type: "application/json"}
-            );
-
-            let name = "Directory";
-
-            // limit query to direct children with :scope pseudo selector
-            const nameEl = dir.querySelector(":scope > label");
-            if (nameEl) name = nameEl.textContent;
-
-            let type = "iirds:TableOfContents";
-            const typeEl = dir.querySelector("has-directory-structure-type");
-            if (typeEl) {
-                if (typeEl.hasAttribute("rdf:resource")) {
-                    type = typeEl.getAttribute("rdf:resource");
-                }
-
-                if (this.isEmpty(type)) {
-                    const instance = dir.querySelector("DirectoryNodeType");
-                    type = (!!instance) ? instance.getAttribute("rdf:about") : undefined;
-                }
-            }
-
-            // normalize type
-            type = rdf.collapse(type, this.params.store);
-
-            const dirObject = objectTemplate.object({
-                uuid: dirUuid,
-                externalId: dirExtId,
-                type: "plus:Directory",
-                name: name,
-                text: JSON.stringify(dirTree),
-                published: this.params.store.getters["projects/getPublishedState"](projectUuid),
-                source: {
-                    data: newFile,
-                    name: `${dirUuid}.json`,
-                    type: "application/json",
-                    size: newFile.size
-                }
-            });
-
-            await this.params.store.dispatch("storage/saveObjectLocal", dirObject);
-            await this.params.store.dispatch("storage/addMetadata", {
-                objectUuid: dirUuid,
-                objectMeta: {
-                    uri: "iirds:has-directory-structure-type",
-                    value: type,
-                    provenance: "File"
-                }
-            });
-
-            directoryUuids.push(dirUuid);
-        }
-        return directoryUuids;
-    },
-    isEmpty(str) {
-        // eslint-disable-next-line no-eq-null
-        return !str || 0 === str.length;
     },
     log(msg, level) {
         if (level !== "info") this.logs.push(msg);

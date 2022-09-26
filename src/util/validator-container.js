@@ -20,7 +20,8 @@ export default {
             return {containerViolations, zipArchive};
         }
 
-        const scopedTests = containerValidations.filter(v => !scope || scope === v.scope);
+        const scopedTests = containerValidations.filter(v => v.assert).filter(v => !scope || scope === v.scope);
+        const checkedContainerRules = scopedTests.length;
         for (let test of scopedTests) {
             const pass = await test.assert(zipArchive, objectData, arrayBuffer);
             if (!pass) {
@@ -30,6 +31,6 @@ export default {
                 if (test.break) break;
             }
         }
-        return {containerViolations, zipArchive};
+        return { containerViolations, zipArchive, checkedContainerRules };
     }
 };

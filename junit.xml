@@ -1,27 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="11" failures="0" errors="0" time="3.069">
-  <testsuite name="validate iirds xml" errors="0" failures="0" skipped="0" timestamp="2022-08-31T07:46:31" time="1.573" tests="11">
-    <testcase classname="validate iirds xml [r001][T0] iiRDS Generators MUST NOT use the iirds:Infor..." name="validate iirds xml [r001][T0] iiRDS Generators MUST NOT use the iirds:Infor..." time="0.068">
-    </testcase>
-    <testcase classname="validate iirds xml [r001][F0] iiRDS Generators MUST NOT use the iirds:Infor..." name="validate iirds xml [r001][F0] iiRDS Generators MUST NOT use the iirds:Infor..." time="0.061">
-    </testcase>
-    <testcase classname="validate iirds xml [r002][T0] An instance of an iirds:InformationUnit subcl..." name="validate iirds xml [r002][T0] An instance of an iirds:InformationUnit subcl..." time="0.043">
-    </testcase>
-    <testcase classname="validate iirds xml [r002][F0] An instance of an iirds:InformationUnit subcl..." name="validate iirds xml [r002][F0] An instance of an iirds:InformationUnit subcl..." time="0.045">
-    </testcase>
-    <testcase classname="validate iirds xml [r003][T0] Each iiRDS package MUST have exactly one corr..." name="validate iirds xml [r003][T0] Each iiRDS package MUST have exactly one corr..." time="0.021">
-    </testcase>
-    <testcase classname="validate iirds xml [r003][F0] Each iiRDS package MUST have exactly one corr..." name="validate iirds xml [r003][F0] Each iiRDS package MUST have exactly one corr..." time="0.016">
-    </testcase>
-    <testcase classname="validate iirds xml [r004][T0] An iirds:Rendition MUST have the property iir..." name="validate iirds xml [r004][T0] An iirds:Rendition MUST have the property iir..." time="0.024">
-    </testcase>
-    <testcase classname="validate iirds xml [r004][F0] An iirds:Rendition MUST have the property iir..." name="validate iirds xml [r004][F0] An iirds:Rendition MUST have the property iir..." time="0.014">
-    </testcase>
-    <testcase classname="validate iirds xml [r005][T0] An iirds:Rendition MUST have the property iir..." name="validate iirds xml [r005][T0] An iirds:Rendition MUST have the property iir..." time="0.016">
-    </testcase>
-    <testcase classname="validate iirds xml [r005][F0] An iirds:Rendition MUST have the property iir..." name="validate iirds xml [r005][F0] An iirds:Rendition MUST have the property iir..." time="0.012">
-    </testcase>
-    <testcase classname="validate iirds xml [r006][T0] iirds:Package elements representing the enclo..." name="validate iirds xml [r006][T0] iirds:Package elements representing the enclo..." time="0.017">
-    </testcase>
-  </testsuite>
+<testsuites name="jest tests" tests="0" failures="0" errors="0" time="0.004">
 </testsuites>

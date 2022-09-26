@@ -18,23 +18,28 @@
       >
         <v-col class="py-4 pl-12" cols="auto">
           <v-icon
-            left :size="64"
+            left
+            :size="64"
             color="white"
           >
             {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
           </v-icon>
-          <!-- <span class="d-block caption ml-1">
-            iiRDS 1.0
-          </span> -->
         </v-col>
         <v-col class="py-4" cols="auto">
           <h1>
-            {{ (isValid) ? 'Valid' : 'Not valid' }}
+            {{ (isValid) ? `Valid iiRDS ${getCurrentProjectRelationById('detectedVersion')}` : 'Not valid' }}
           </h1>
         </v-col>
         <v-col class="py-4 px-8" cols="8">
-          <span class="font-weight-bold">{{ getViolations.length }}</span>
-          violations detected for file <span class="font-weight-bold">{{ getValidationSource }}</span>
+          <p class="my-0">
+            <span class="font-weight-bold">{{ getViolations.length }}</span>
+            violations detected for file
+            <span class="font-weight-bold">{{ getValidationSource }}</span>
+          </p>
+          <p class="my-0">
+            <span class="font-weight-bold">{{ getCurrentProjectRelationById('totalRulesChecked') }}</span>
+            rules checked for validation
+          </p>
         </v-col>
         <v-spacer />
         <v-col class="py-4 pr-12" cols="auto">
@@ -184,8 +189,8 @@
                   <v-list-item-subtitle class="caption">
                     <span class="font-monospace font-weight-bold">
                       {{ getMetadataValueByURI(item.uuid, "plus:OriginalFileName") }}
-                      <span v-if="getType === 'Schema'">:{{ getMetadataValueByURI(item.uuid, "plus:LineNr") }}</span>
-                      <span v-if="getType === 'Container'">/({{ getMetadataValueByURI(item.uuid, "plus:SubFile")?.join(", ") }}</span>
+                      <span v-if="getType(item.uuid) === 'Schema'">: {{ getMetadataValueByURI(item.uuid, "plus:LineNr") }}</span>
+                      <span v-if="getType(item.uuid) === 'Container'">/ {{ getMetadataValueByURI(item.uuid, "plus:SubFile")?.join(", ") || "." }}</span>
                     </span>
                   </v-list-item-subtitle>
                 </v-list-item-content>
@@ -255,9 +260,7 @@ export default {
     },
     computed: {
         getViolations() {
-            return this.getCurrentObjectsByType(this.objecttype).filter((o) => {
-                return this.getMetadataValueByURI(o.uuid, "plus:Level") === "MUST";
-            });
+            return this.getCurrentObjectsByType(this.objecttype);
         },
         isValid() {
             return this.getViolations.length === 0;
