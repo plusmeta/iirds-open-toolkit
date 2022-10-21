@@ -518,7 +518,7 @@
         }
     },
     {
-        "identifier": "iirdsMch:Recycling",
+        "identifier": "iirdsMch:Reuse",
         "subClassOf": "iirds:AfterUse",
         "datatype": "plus:Instance",
         "label": {
