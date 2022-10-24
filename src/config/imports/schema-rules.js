@@ -51,7 +51,7 @@ export default [
     {
         id: "M1",
         path: "InformationUnit",
-        assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
+        assert: els => els.length === 0,
         getInvalid: els => els,
         prio: "MUST",
         category: "not intended to be used directly",
