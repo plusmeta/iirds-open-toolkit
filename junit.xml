@@ -1,3 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="0" failures="0" errors="0" time="0.006">
+<testsuites name="jest tests" tests="3" failures="1" errors="0" time="4.266">
+  <testsuite name="validate iirds xml" errors="0" failures="1" skipped="0" timestamp="2022-10-14T13:00:46" time="1.316" tests="3">
+    <testcase classname="validate iirds xml [M2.2][T0] An instance of an iirds:InformationUnit subcl..." name="validate iirds xml [M2.2][T0] An instance of an iirds:InformationUnit subcl..." time="0.063">
+    </testcase>
+    <testcase classname="validate iirds xml [M2.2][T1] An instance of an iirds:InformationUnit subcl..." name="validate iirds xml [M2.2][T1] An instance of an iirds:InformationUnit subcl..." time="0.002">
+    </testcase>
+    <testcase classname="validate iirds xml [M2.2][F0] An instance of an iirds:InformationUnit subcl..." name="validate iirds xml [M2.2][F0] An instance of an iirds:InformationUnit subcl..." time="0.048">
+      <failure>assert.notStrictEqual(received, expected)
+
+Expected value not be strictly equal to:
+  undefined
+Received:
+  []
+
+Message:
+  expected [] not to be empty
+
+Difference:
+
+  Comparing two different types of values. Expected undefined but received array.
+    at Object.&lt;anonymous&gt; (C:\Work\iirds-validation-tool\tests\unit\util\validation-rules.spec.js:32:25)
+    at Object.asyncJestTest (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\Work\iirds-validation-tool\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)</failure>
+    </testcase>
+  </testsuite>
 </testsuites>
