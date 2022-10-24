@@ -61,10 +61,6 @@ export default [
             "de": "iiRDS-Generatoren DÜRFEN NICHT die Klasse iirds:InformationUnit direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
             "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
         },
-        info: {
-            "de": "iiRDS-Generatoren DÜRFEN NICHT die Klasse iirds:InformationUnit direkt verwenden, sondern MÜSSEN eine der Unterklassen verwenden",
-            "en": "iiRDS Generators MUST NOT use the iirds:InformationUnit class directly but MUST use one of the subclasses"
-        },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M1_false.rdf"]
@@ -80,10 +76,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=An%20instance%20of%20an%20iirds%3AInformationUnit%20subclass%20MUST%20have%20an%20IRI%20and%20MUST%20NOT%20be%20a%20blank%20node.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben und darf KEIN leerer Knoten sein.",
-            "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node."
-        },
-        info: {
             "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben.",
             "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI."
         },
@@ -102,10 +94,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=An%20instance%20of%20an%20iirds%3AInformationUnit%20subclass%20MUST%20have%20an%20IRI%20and%20MUST%20NOT%20be%20a%20blank%20node.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse MUSS einen IRI haben und darf KEIN leerer Knoten sein.",
-            "en": "An instance of an iirds:InformationUnit subclass MUST have an IRI and MUST NOT be a blank node."
-        },
-        info: {
             "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse DARF KEIN leerer Knoten sein.",
             "en": "An instance of an iirds:InformationUnit subclass MUST NOT be a blank node."
         },
@@ -124,10 +112,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3AdateOfCreation%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:dateOfCreation Eigenschaft - http://www.w3.org/2001/XMLSchema",
-            "en": "Properties: 0..1  iirds:dateOfCreation property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-        },
-        info: {
             "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:dateOfCreation haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:dateOfCreation."
         },
@@ -146,10 +130,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3AdateOfLastModification%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:dateOfLastModification Eigenschaft - http://www.w3.org/2001/XMLSchema",
-            "en": "Properties: 0..1  iirds:dateOfLastModification property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-        },
-        info: {
             "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft haben iirds:dateOfLastModification.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:dateOfLastModification."
         },
@@ -168,10 +148,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Arevision%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:revision Eigenschaft - http://www.w3.org/2000/01/rdf-schema",
-            "en": "Properties: 0..1  iirds:revision property - http://www.w3.org/2000/01/rdf-schema#Literal"
-        },
-        info: {
             "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:revision haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:revision."
         },
@@ -190,10 +166,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Atitle%20property%20%2D%20http%3A//www.w3.org/2000/01/rdf%2Dschema%23Literal",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:title Eigenschaft - http://www.w3.org/2000/01/rdf-schema",
-            "en": "Properties: 0..1  iirds:title property - http://www.w3.org/2000/01/rdf-schema#Literal"
-        },
-        info: {
             "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:title haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:title."
         },
@@ -212,10 +184,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ahas%2Dabstract%20property",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:has-abstract-Eigenschaft",
-            "en": "Properties: 0..1  iirds:has-abstract property"
-        },
-        info: {
             "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft haben iirds:has-abstract.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:has-abstract."
         },
@@ -234,12 +202,8 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ais%2Dreplacement%2Dof%20property%20%2D%20iirds%3AInformationUnit",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:ist-Ersatz-von-Eigenschaft - iirds:InformationUnit",
-            "en": "Properties: 	0..1  iirds:is-replacement-of property - iirds:InformationUnit"
-        },
-        info: {
             "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:is-replacement-of haben.",
-            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:is-replacement-of ."
+            "en": "iirds:InformationUnit MUST NOT have more than one property iirds:is-replacement-of."
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.8_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
@@ -256,10 +220,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ais%2Dversion%2Dof%20property%20%2D%20iirds%3AInformationObject",
         Version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:ist-Version-von-Eigenschaft - iirds:InformationObject",
-            "en": "Properties: 	0..1  iirds:is-version-of property - iirds:InformationObject"
-        },
-        info: {
             "de": "iirds:InformationUnit DARF NICHT mehr als eine Eigenschaft iirds:is-version-of haben.",
             "en": "iirds:InformationUnit MUST NOT have more than one property iirds:is-version-of ."
         },
@@ -281,10 +241,6 @@ export default [
             "de": "Jedes iiRDS-Paket MUSS genau eine entsprechende iirds:Package-Instanz in den Metadaten haben.",
             "en": "Each iiRDS package MUST have exactly one corresponding iirds:Package instance in the metadata."
         },
-        info: {
-            "de": "Mehr als eine iirds:Package-Instanz gefunden.",
-            "en": "More than one iirds:Package instance found."
-        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M3.1_false.rdf"]
@@ -303,37 +259,14 @@ export default [
             "de": "iiRDS:Package MUSS die Eigenschaft iirds:iiRDSVersion verwenden",
             "en": "iiRDS:Package MUST use property iirds:iiRDSVersion"
         },
-        info: {
-            "de": "iiRDS:Package MUSS die Eigenschaft iirds:iiRDSVersion verwenden",
-            "en": "iiRDS:Package MUST use property iirds:iiRDSVersion"
-        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M4_false.rdf"]
         }
     },
-    // {
-    //     id: "M5",
-    //     path: "Package",
-    //     prio: "MUST NOT",
-    //     category: "must not use property",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20corresponding%20iirds%3APackage%20instance%20of%20an%20iiRDS%20package%20MUST%20NOT%20be%20a%20member%20of%20another%20iiRDS%20package%20expressed%20by%20the%20property%20iirds%3Ais%2Dpart%2Dof%2Dpackage.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Die entsprechende iirds:Package-Instanz eines iiRDS-Pakets DARF NICHT Mitglied eines anderen iiRDS-Pakets sein, das durch die Eigenschaft iirds:is-part-of-package ausgedrückt wird.",
-    //         "en": "The corresponding iirds:Package instance of an iiRDS package MUST NOT be a member of another iiRDS package expressed by the property iirds:is-part-of-package."
-    //     },
-    //     info: {
-    //         "de": "Die entsprechende iirds:Package-Instanz eines iiRDS-Pakets DARF NICHT Mitglied eines anderen iiRDS-Pakets sein, das durch die Eigenschaft iirds:is-part-of-package ausgedrückt wird.",
-    //         "en": "The corresponding iirds:Package instance of an iiRDS package MUST NOT be a member of another iiRDS package expressed by the property iirds:is-part-of-package."
-    //     },
-    //     testfiles: {
-    //         "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-    //         "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M5_false.rdf"]
-    //     }
-    // },
+
     {
-        id: "M6",
+        id: "M5",
         path: "*",
         assert: els => els.filter(el => el.hasAttribute("rdf:about")).every(el => getAbsoluteIRIRegExp().test(el.getAttribute("rdf:about"))),
         getInvalid: els => els.filter(el => el.hasAttribute("rdf:about")).filter(el => !getAbsoluteIRIRegExp().test(el.getAttribute("rdf:about"))),
@@ -345,17 +278,13 @@ export default [
             "de": "Es wird EMPFOHLEN absolute IRIs in rdf:about zu verwenden.",
             "en": "It is RECOMMENDED to use absolute IRIs in rdf:about."
         },
-        info: {
-            "de": "Es wird EMPFOHLEN absolute IRIs in rdf:about zu verwenden.",
-            "en": "It is RECOMMENDED to use absolute IRIs in rdf:about."
-        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M6_false.rdf"]
         }
     },
     {
-        id: "M7",
+        id: "M6",
         path: "RDF",
         getInvalid: () => {
             // TODO: Regel hat Lauftzeitkomplexität
@@ -373,10 +302,6 @@ export default [
             "de": "Wenn Informationsobjekte verwendet werden, DARF jede Informationseinheit nur auf genau ein Informationsobjekt über iirds:is-version-of bezogen werden.",
             "en": "If information objects are used, each information unit MUST only be related to exactly one information object via iirds:is-version-of."
         },
-        info: {
-            "de": "Wenn Informationsobjekte verwendet werden, DARF jede Informationseinheit nur auf genau ein Informationsobjekt über iirds:is-version-of bezogen werden.",
-            "en": "If information objects are used, each information unit MUST only be related to exactly one information object via iirds:is-version-of."
-        },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 6 - An Information object with two language variants-M7_false.rdf"]
@@ -384,7 +309,7 @@ export default [
     },
 
     {
-        id: "M8.1",
+        id: "M7.1",
         path: "InformationObject",
         assert: els => els.filter(el => el.hasAttribute("rdf:about")).every(el => getAbsoluteIRIRegExp().test(el.getAttribute("rdf:about"))),
         getInvalid: els => els.filter(el => el.hasAttribute("rdf:about")).filter(el => !getAbsoluteIRIRegExp().test(el.getAttribute("rdf:about"))),
@@ -393,10 +318,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20information%20object%20MUST%20have%20an%20absolute%20IRI%20and%20MAY%20be%20related%20to%20additional%20identifications%20via%20the%20iirds%3Ahas%2Didentity%20property.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Ein Informationsobjekt MUSS eine absolute IRI haben und DARF über die Eigenschaft iirds:has-identity mit zusätzlichen Identifikationen verbunden sein.",
-            "en": "An information object MUST have an absolute IRI and MAY be related to additional identifications via the iirds:has-identity property."
-        },
-        info: {
             "de": "Ein Informationsobjekt MUSS eine absoluten IRI haben.",
             "en": "An information object MUST have an absolute IRI."
         },
@@ -405,24 +326,9 @@ export default [
             "false": ["./tests/files/util/iirds-validation/Example 6 - An Information object with two language variants-M8.1_false.rdf"]
         }
     },
-    // {
-    //     id: "M8.2",
-    //     path: "InformationObject",
-    //     prio: "MAY",
-    //     category: "may use property",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20information%20object%20MUST%20have%20an%20absolute%20IRI%20and%20MAY%20be%20related%20to%20additional%20identifications%20via%20the%20iirds%3Ahas%2Didentity%20property.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Ein Informationsobjekt MUSS einen absoluten IRI haben und DARF über die Eigenschaft iirds:has-identity mit zusätzlichen Identifikationen verbunden sein.",
-    //         "en": "An information object MUST have an absolute IRI and MAY be related to additional identifications via the iirds:has-identity property."
-    //     },
-    //     info: {
-    //         "de": "Ein Informationsobjekt KANN über die Eigenschaft iirds:has-identity mit zusätzlichen Identifikationen in Beziehung gesetzt werden.",
-    //         "en": "An information object MAY be related to additional identifications via the iirds:has-identity property."
-    //     },
-    // },
+
     {
-        id: "M9",
+        id: "M8",
         path: "Package",
         assert: els => els.filter(el => !el.querySelectorAll("is-part-of-package").length).every(el => !el.querySelectorAll("has-rendition").length),
         getInvalid: els => els.filter(el => !el.querySelectorAll("is-part-of-package").length).filter(el => el.querySelectorAll("has-rendition")),
@@ -434,17 +340,13 @@ export default [
             "de": "iirds:Package-Elemente, die das umschließende iiRDS-Paket selbst darstellen, DÜRFEN NICHT Gegenstand einer iirds:has-rendition-Beziehung sein.",
             "en": "iirds:Package elements representing the enclosing iiRDS package itself MUST NOT be subjects of any iirds:has-rendition relation."
         },
-        info: {
-            "de": "iirds:Package-Elemente, die das umschließende iiRDS-Paket selbst darstellen, DÜRFEN NICHT Gegenstand einer iirds:has-rendition-Beziehung sein.",
-            "en": "iirds:Package elements representing the enclosing iiRDS package itself MUST NOT be subjects of any iirds:has-rendition relation."
-        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M9_false.rdf"]
         }
     },
     {
-        id: "M10",
+        id: "M9",
         path: "Rendition source",
         assert: els => els.every(el => !getAbsoluteIRIRegExp().test(el.textContent)),
         getInvalid: els => els.filter(el => getAbsoluteIRIRegExp().test(el.textContent)),
@@ -456,17 +358,13 @@ export default [
             "de": "Die URL MUSS relativ zum Stammordner des iiRDS-Pakets sein",
             "en": "The URL MUST be relative to the root folder of the iiRDS package"
         },
-        info: {
-            "de": "Die URL MUSS relativ zum Stammordner des iiRDS-Pakets sein",
-            "en": "The URL MUST be relative to the root folder of the iiRDS package"
-        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M10_false.rdf"]
         }
     },
     {
-        id: "M11",
+        id: "M10",
         path: "Rendition",
         assert: (els, doc) => isExactlyOne(els, doc, "source"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "source"),
@@ -478,17 +376,13 @@ export default [
             "de": "Eine iirds:Rendition MUSS die Eigenschaft iirds:source haben.",
             "en": "An iirds:Rendition MUST have the property iirds:source."
         },
-        info: {
-            "de": "Eine iirds:Rendition MUSS die Eigenschaft iirds:source haben.",
-            "en": "An iirds:Rendition MUST have the property iirds:source."
-        },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M11_false.rdf"]
         }
     },
     {
-        id: "M12",
+        id: "M11",
         path: "Rendition",
         assert: (els, doc) => isExactlyOne(els, doc, "format"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "format"),
@@ -500,17 +394,13 @@ export default [
             "de": "Eine iirds:Rendition MUSS die Eigenschaft iirds:format haben.",
             "en": "An iirds:Rendition MUST have the property iirds:format."
         },
-        info: {
-            "de": "Eine iirds:Rendition MUSS die Eigenschaft iirds:format haben.",
-            "en": "An iirds:Rendition MUST have the property iirds:format."
-        },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M12_false.rdf"]
         }
     },
     {
-        id: "M13",
+        id: "M12",
         path: "Rendition has-selector",
         assert: els => !els.some(el => el.querySelectorAll("Selector")),
         getInvalid: els => els.filter(el => el.querySelectorAll("Selector")),
@@ -532,7 +422,7 @@ export default [
         }
     },
     {
-        id: "M14.1",
+        id: "M13.1",
         path: "FragmentSelector, RangeSelector",
         assert: (els, doc) => isExactlyOne(els, doc, "value"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "value"),
@@ -554,7 +444,7 @@ export default [
         }
     },
     {
-        id: "M14.2",
+        id: "M13.2",
         path: "FragmentSelector, RangeSelector",
         assert: (els, doc) => isExactlyOne(els, doc, "conformsTo"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "conformsTo"),
@@ -571,7 +461,7 @@ export default [
         },
     },
     {
-        id: "M15.1",
+        id: "M14.1",
         path: "RangeSelector",
         assert: (els, doc) => isExactlyOne(els, doc, "has-start-selector"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-start-selector"),
@@ -580,10 +470,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20iirds%3ARangeSelector%20points,end%2Dselector.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Der iirds:RangeSelector zeigt durch einen Start- und einen Endselektor auf den Teil einer Datei.  Die Bereichsauswahl MUSS verwendet werden, um einen Bereich in einer Datei zu identifizieren, wenn das Dateiformat oder der zugehörige Standard die direkte Auswahl eines Bereichs nicht zulässt.  Der Bereichsselektor referenziert den Startselektor und den Endselektor durch die Eigenschaften iirds:has-start-selector und iirds:has-end-selector.",
-            "en": "The iirds:RangeSelector points to the part of a file by a start and an end selector. The range selector MUST be used to identify a range in a file if the file format or the associated standard does not permit selecting a range directly. The range selector references the start selector and end selector by the properties iirds:has-start-selector and iirds:has-end-selector."
-        },
-        info: {
             "de": "iirds:RangeSelector muss die Eigenschaft iirds:has-start-selector verwenden.",
             "en": "iirds:RangeSelector must use property iirds:has-start-selector."
         },
@@ -593,7 +479,7 @@ export default [
         }
     },
     {
-        id: "M15.2",
+        id: "M14.2",
         path: "RangeSelector",
         assert: (els, doc) => isExactlyOne(els, doc, "has-end-selector"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-end-selector"),
@@ -602,10 +488,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20iirds%3ARangeSelector%20points,end%2Dselector.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Der iirds:RangeSelector zeigt durch einen Start- und einen Endselektor auf den Teil einer Datei.  Die Bereichsauswahl MUSS verwendet werden, um einen Bereich in einer Datei zu identifizieren, wenn das Dateiformat oder der zugehörige Standard die direkte Auswahl eines Bereichs nicht zulässt.  Der Bereichsselektor referenziert den Startselektor und den Endselektor durch die Eigenschaften iirds:has-start-selector und iirds:has-end-selector.",
-            "en": "The iirds:RangeSelector points to the part of a file by a start and an end selector. The range selector MUST be used to identify a range in a file if the file format or the associated standard does not permit selecting a range directly. The range selector references the start selector and end selector by the properties iirds:has-start-selector and iirds:has-end-selector."
-        },
-        info: {
             "de": "iirds:RangeSelector muss die Eigenschaft iirds:has-end-selector verwenden.",
             "en": "iirds:RangeSelector must use property iirds:has-end-selector."
         },
@@ -614,94 +496,9 @@ export default [
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_has-selector-M15.2_false.rdf"]
         }
     },
-    // {
-    //     id: "M16",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=If%20a%20media%20file%20is%20not%20self%2Dcontained%2C%20then%20it%20MUST%20be%20modeled%20as%20iirds%3AFragment.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Wenn eine Mediendatei nicht in sich geschlossen ist, MUSS sie als iirds:Fragment modelliert werden.",
-    //         "en": "If a media file is not self-contained, then it MUST be modeled as iirds:Fragment."
-    //     },
-    //     rule: {
-    //         "de": "Wenn eine Mediendatei nicht in sich geschlossen ist, MUSS sie als iirds:Fragment modelliert werden.",
-    //         "en": "If a media file is not self-contained, then it MUST be modeled as iirds:Fragment."
-    //     },
-    // },
-    // {
-    //     id: "M17.1",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=For%20each%20nested%20child%20iiRDS%20package%2C%20an%20iirds%3APackage%20MUST,iirds%3APackage%20in%20the%20metadata%20of%20the%20parent%20iiRDS%20package.",
-    //     version: ["V1.1"],
-    //     rule: {
-    //         "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
-    //         "en": "For each nested child iiRDS package, an iirds:Package MUST be present in the metadata of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be included in the iiRDS ZIP archive of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be referenced by an iirds:Rendition of its iirds:Package in the metadata of the parent iiRDS package."
-    //     },
-    //     info: {
-    //         "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein.",
-    //         "en": "For each nested child iiRDS package, an iirds:Package MUST be present in the metadata of the parent iiRDS package."
-    //     },
-    // },
-    // {
-    //     id: "M17.2",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=For%20each%20nested%20child%20iiRDS%20package%2C%20an%20iirds%3APackage%20MUST,iirds%3APackage%20in%20the%20metadata%20of%20the%20parent%20iiRDS%20package.",
-    //     version: ["V1.1"],
-    //     rule: {
-    //         "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
-    //         "en": "For each nested child iiRDS package, an iirds:Package MUST be present in the metadata of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be included in the iiRDS ZIP archive of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be referenced by an iirds:Rendition of its iirds:Package in the metadata of the parent iiRDS package."
-    //     },
-    //     info: {
-    //         "de": "Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein.",
-    //         "en": "The iiRDS ZIP archive of the nested package MUST be included in the iiRDS ZIP archive of the parent iiRDS package."
-    //     },
-    // },
-    // {
-    //     id: "M17.3",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=For%20each%20nested%20child%20iiRDS%20package%2C%20an%20iirds%3APackage%20MUST,iirds%3APackage%20in%20the%20metadata%20of%20the%20parent%20iiRDS%20package.",
-    //     version: ["V1.1"],
-    //     rule: {
-    //         "de": "Für jedes verschachtelte untergeordnete iiRDS-Paket MUSS ein iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets vorhanden sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS im iiRDS-ZIP-Archiv des übergeordneten iiRDS-Pakets enthalten sein.  Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
-    //         "en": "For each nested child iiRDS package, an iirds:Package MUST be present in the metadata of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be included in the iiRDS ZIP archive of the parent iiRDS package. The iiRDS ZIP archive of the nested package MUST be referenced by an iirds:Rendition of its iirds:Package in the metadata of the parent iiRDS package."
-    //     },
-    //     info: {
-    //         "de": "Das iiRDS-ZIP-Archiv des verschachtelten Pakets MUSS durch eine iirds:Rendition seines iirds:Package in den Metadaten des übergeordneten iiRDS-Pakets referenziert werden.",
-    //         "en": "The iiRDS ZIP archive of the nested package MUST be referenced by an iirds:Rendition of its iirds:Package in the metadata of the parent iiRDS package."
-    //     }
-    // },
-    // {
-    //     id: "M18.1",
-    //     prio: "MUST",
-    //     category: "cardinality 1",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=In%20the%20metadata.rdf%20file%20of%20the%20parent%20iiRDS%20package%2C%20the,package%20MUST%20NOT%20have%20any%20outgoing%20iirds%3Ais%2Dpart%2Dof%2Dpackage%20relations.",
-    //     version: ["V1.1"],
-    //     rule: {
-    //         "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets MUSS das iirds:Package des verschachtelten untergeordneten iiRDS-Pakets genau ein iirds:Package von iirds:is-part-of-package referenzieren.  In der Datei metadata.rdf des übergeordneten iiRDS-Pakets DARF das referenzierte übergeordnete iiRDS-Paket KEINE ausgehenden iirds:is-part-of-package-Beziehungen haben.",
-    //         "en": "In the metadata.rdf file of the parent iiRDS package, the iirds:Package of the nested child iiRDS package MUST reference exactly one iirds:Package by iirds:is-part-of-package. In the metadata.rdf file of the parent iiRDS package, the referenced parent iiRDS package MUST NOT have any outgoing iirds:is-part-of-package relations."
-    //     },
-    //     info: {
-    //         "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets MUSS das iirds:Package des verschachtelten untergeordneten iiRDS-Pakets genau ein iirds:Package von iirds:is-part-of-package referenzieren.",
-    //         "en": "In the metadata.rdf file of the parent iiRDS package, the iirds:Package of the nested child iiRDS package MUST reference exactly one iirds:Package by iirds:is-part-of-package."
-    //     }
-    // },
-    // {
-    //     id: "M18.2",
-    //     prio: "MUST",
-    //     category: "cardinality 1",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=In%20the%20metadata.rdf%20file%20of%20the%20parent%20iiRDS%20package%2C%20the,package%20MUST%20NOT%20have%20any%20outgoing%20iirds%3Ais%2Dpart%2Dof%2Dpackage%20relations.",
-    //     version: ["V1.1"],
-    //     rule: {
-    //         "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets MUSS das iirds:Package des verschachtelten untergeordneten iiRDS-Pakets genau ein iirds:Package von iirds:is-part-of-package referenzieren.  In der Datei metadata.rdf des übergeordneten iiRDS-Pakets DARF das referenzierte übergeordnete iiRDS-Paket KEINE ausgehenden iirds:is-part-of-package-Beziehungen haben.",
-    //         "en": "In the metadata.rdf file of the parent iiRDS package, the iirds:Package of the nested child iiRDS package MUST reference exactly one iirds:Package by iirds:is-part-of-package. In the metadata.rdf file of the parent iiRDS package, the referenced parent iiRDS package MUST NOT have any outgoing iirds:is-part-of-package relations."
-    //     },
-    //     info: {
-    //         "de": "In der Datei metadata.rdf des übergeordneten iiRDS-Pakets DARF das referenzierte übergeordnete iiRDS-Paket KEINE ausgehenden iirds:is-part-of-package-Beziehungen haben.",
-    //         "en": "In the metadata.rdf file of the parent iiRDS package, the referenced parent iiRDS package MUST NOT have any outgoing iirds:is-part-of-package relations."
-    //     }
-    // },
+
     {
-        id: "M19.1",
+        id: "M15.1",
         path: "Document",
         assert: els => oneOrMore(els, "has-document-type"),
         getInvalid: els => getMissing(els, "has-document-type"),
@@ -712,50 +509,15 @@ export default [
         rule: {
             "de": "Instanzen der Klasse iirds:Document MÜSSEN eine oder mehrere Beziehungen zu einem der standardisierten iirds:DocumentTypes haben, die in iirds:InformationType > iirds:DocumentType definiert sind.",
             "en": "Instances of the iirds:Document class MUST have one or more relations to one of the standardized iirds:DocumentTypes defined in iirds:InformationType > iirds:DocumentType."
-        },info: {
-            "de": "Instanzen der Klasse iirds:Document MÜSSEN eine oder mehrere Beziehungen zu einem der standardisierten iirds:DocumentTypes haben.",
-            "en": "Instances of the iirds:Document class MUST have one or more relations to one of the standardized iirds:DocumentTypes."
         },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M19.1_false.rdf"]
         }
     },
-    // {
-    //     id: "M19.2",
-    //     path: "Document has-document-type",
-    //     prio: "MUST",
-    //     category: "specific values allowed",
-    //     values: ["http://iirds.tekom.de/iirds#RepairInstructions", "http://iirds.tekom.de/iirds#BillOfMaterials", "http://iirds.tekom.de/iirds#AdministratorGuide", "http://iirds.tekom.de/iirds#AssemblyInstructions", "http://iirds.tekom.de/iirds#SafetyInstructions", "http://iirds.tekom.de/iirds#SalesCatalog", "http://iirds.tekom.de/iirds#Specification", "http://iirds.tekom.de/iirds#TechnicalDrawingDiagram", "http://iirds.tekom.de/iirds#QuickGuide", "http://iirds.tekom.de/iirds#Plan", "http://iirds.tekom.de/iirds#PartsCatalog", "http://iirds.tekom.de/iirds#OperatingInstructions", "http://iirds.tekom.de/iirds#MaintenanceInstructions", "http://iirds.tekom.de/iirds#InstallationInstructions", "http://iirds.tekom.de/iirds#IdentificationDocument", "http://iirds.tekom.de/iirds#ElectronicIdentificationPlate", "http://iirds.tekom.de/iirds#ContractualDocument", "http://iirds.tekom.de/iirds#Certificate", "http://iirds.tekom.de/iirds#TransportInstructions", "http://iirds.tekom.de/iirds#CEDeclarationOfConformity"],
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Instances%20of%20the%20iirds%3ADocument%20class%20MUST%20have%20one%20or%20more%20relations%20to%20one%20of%20the%20standardized%20iirds%3ADocumentTypes%20defined%20in%20iirds%3AInformationType%20%3E%20iirds%3ADocumentType.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Instanzen der Klasse iirds:Document MÜSSEN eine oder mehrere Beziehungen zu einem der standardisierten iirds:DocumentTypes haben, die in iirds:InformationType > iirds:DocumentType definiert sind.",
-    //         "en": "Instances of the iirds:Document class MUST have one or more relations to one of the standardized iirds:DocumentTypes defined in iirds:InformationType > iirds:DocumentType."
-    //     },
-    //     info: {
-    //         "de": "iirds:has-document-type MUSS einen standardisierten Dokumenttyp enthalten, der in iirds:InformationType > iirds:DocumentType definiert ist.",
-    //         "en": "iirds:has-document-type MUST contain a standardized document type defined in iirds:InformationType > iirds:DocumentType."
-    //     },
-    //     testfiles: {
-    //         "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-    //         "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M19.2_false.rdf"]
-    //     }
-    // },
-    // {
-    //     id: "M20",
-    //     path: "Document",
-    //     prio: "RECOMMENDED",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=It%20is%20RECOMMENDED%20to%20create%20more%20than%20one%20relation%20to%20iirds%3ADocumentType%20for%20documents%20with%20mixed%20content.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Es wird EMPFOHLEN, für Dokumente mit gemischtem Inhalt mehr als eine Relation zu iirds:DocumentType zu erstellen.",
-    //         "en": "It is RECOMMENDED to create more than one relation to iirds:DocumentType for documents with mixed content."
-    //     },
 
-    // },
     {
-        id: "M21.1",
+        id: "M16.1",
         path: "Event",
         assert: (els, doc) => isExactlyOne(els, doc, "has-event-code"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-event-code"),
@@ -763,16 +525,12 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Instances%20of%20the%20iirds%3AEvent%20class%20MUST%20have%20the%20following%20properties%3A%20iirds%3AeventCode%20and%20iirds%3AeventType.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Instanzen der Klasse iirds:Event MÜSSEN die folgenden Eigenschaften haben: iirds:eventCode und iirds:eventType.",
-            "en": "Instances of the iirds:Event class MUST have the following properties: iirds:eventCode and iirds:eventType. "
-        },
-        info: {
             "de": "Instanzen der Klasse iirds:Event MÜSSEN die Eigenschaft iirds:eventCode haben",
             "en": "Instances of the iirds:Event class MUST have property iirds:eventCode"
         }
     },
     {
-        id: "M21.2",
+        id: "M16.2",
         path: "Event",
         assert: els => els.filter(el => !el.querySelectorAll("has-event-code")),
         getInvalid: els => els.filter(el => !el.querySelectorAll("has-event-code")),
@@ -780,50 +538,13 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Instances%20of%20the%20iirds%3AEvent%20class%20MUST%20have%20the%20following%20properties%3A%20iirds%3AeventCode%20and%20iirds%3AeventType.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Instanzen der Klasse iirds:Event MÜSSEN die folgenden Eigenschaften haben: iirds:eventCode und iirds:eventType.",
-            "en": "Instances of the iirds:Event class MUST have the following properties: iirds:eventCode and iirds:eventType. "
-        },
-        info: {
             "de": "Instanzen der Klasse iirds:Event MÜSSEN die Eigenschaft iirds:eventType haben",
             "en": "Instances of the iirds:Event class MUST have property iirds:eventType"
         }
     },
-    // {
-    //     id: "M22",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20properties%20iirds%3Arelates%2Dto%2Dcomponent%20and%20iirds%3Arelates%2Dto%2Dproduct%2Dvariant%20relate%20an%20information%20unit%20to%20an%20instance%20of%20iirds%3AComponent%20or%20iirds%3AProductVariant.%20The%20instances%20MUST%20be%20part%20of%20a%20proprietary%20iiRDS%20extension.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Die Eigenschaften iirds:relates-to-component und iirds:relates-to-product-variant beziehen eine Informationseinheit auf eine Instanz von iirds:Component oder iirds:ProductVariant.  Die Instanzen MÜSSEN Teil einer proprietären iiRDS-Erweiterung sein.",
-    //         "en": "The properties iirds:relates-to-component and iirds:relates-to-product-variant relate an information unit to an instance of iirds:Component or iirds:ProductVariant. The instances MUST be part of a proprietary iiRDS extension."
-    //     },
-    //     info: {
-    //         "de": "Die Eigenschaften iirds:relates-to-component und iirds:relates-to-product-variant beziehen eine Informationseinheit auf eine Instanz von iirds:Component oder iirds:ProductVariant.  Die Instanzen MÜSSEN Teil einer proprietären iiRDS-Erweiterung sein.",
-    //         "en": "The properties iirds:relates-to-component and iirds:relates-to-product-variant relate an information unit to an instance of iirds:Component or iirds:ProductVariant. The instances MUST be part of a proprietary iiRDS extension."
-    //     }
-    // },
-    // {
-    //     id: "M23",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iiRDS%20package%20MAY%20model%20a%20component%20tree.%20The%20property%20iirds%3Ahas%2Dcomponent%20defines%20part%2Dof%20relations%20for%20products%20and%20their%20components.%20The%20component%20tree%20is%20a%20proprietary%20iiRDS%20extension%2C%20it%20MUST%20be%20stored%20in%20the%20metadata.rdf%20of%20the%20iiRDS%20package.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Ein iiRDS-Paket KANN einen Komponentenbaum modellieren.  Die Eigenschaft iirds:has-component definiert Teil-von-Beziehungen für Produkte und ihre Komponenten.  Der Komponentenbaum ist eine proprietäre iiRDS-Erweiterung, er MUSS in der metadata.rdf des iiRDS-Pakets gespeichert werden.",
-    //         "en": "An iiRDS package MAY model a component tree. The property iirds:has-component defines part-of relations for products and their components. The component tree is a proprietary iiRDS extension, it MUST be stored in the metadata.rdf of the iiRDS package."
-    //     },
-    // },
-    // {
-    //     id: "M24",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20product%20ontology%20MUST%20NOT%20be%20a%20proprietary%20iiRDS%20extension%20and%20MAY%20use%20a%20vocabulary%20other%20than%20RDF%20and%20RDFS.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Die Produktontologie DARF KEINE proprietäre iiRDS-Erweiterung sein und DARF ein anderes Vokabular als RDF und RDFS verwenden.",
-    //         "en": "The product ontology MUST NOT be a proprietary iiRDS extension and MAY use a vocabulary other than RDF and RDFS."
-    //     },
-    // },
+
     {
-        id: "M25",
+        id: "M17",
         path: "relates-to-component",
         assert: (els, doc) => isDefinedAsClass(els, doc, "Component"),
         getInvalid: (els, doc) => getWrongClassInPackage(els, doc, "Component"),
@@ -835,18 +556,9 @@ export default [
             "en": "An iiRDS package MUST NOT use an external product ontology directly. If an external product ontology is available and used in the iiRDS package, then the iiRDS package MUST also contain metadata labels as instances of iirds:Component."
         },
     },
-    // {
-    //     id: "M26",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20map%20the%20component%20tree%20in%20the%20iiRDS%20package%20to%20the%20external%20product%20ontology%2C%20a%20mapping%20ontology%20MUST%20use%20the%20property%20rdfs%3AseeAlso.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Um den Komponentenbaum im iiRDS-Paket der externen Produktontologie zuzuordnen, MUSS eine Mapping-Ontologie die Eigenschaft rdfs:seeAlso verwenden.",
-    //         "en": "To map the component tree in the iiRDS package to the external product ontology, a mapping ontology MUST use the property rdfs:seeAlso."
-    //     },
-    // },
+
     {
-        id: "M27",
+        id: "M18",
         path: "relates-to-product-variant",
         assert: (els, doc) => isDefinedAsClass(els, doc, "ProductVariant"),
         getInvalid: (els, doc) => getWrongClassInPackage(els, doc, "ProductVariant"),
@@ -858,18 +570,9 @@ export default [
             "en": "iiRDS provides the class iirds:ProductVariant for extending the iiRDS vocabulary and adding proprietary product variants. As product variants are a proprietary iiRDS extension, they MUST be present in the metadata.rdf of the iiRDS package."
         },
     },
-    // {
-    //     id: "M29",
-    //     prio: "MUST",
-    //     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20property%20rdfs%3AseeAlso%20MUST%20relate%20the%20instance%20of%20the%20product%20variant%20in%20the%20iiRDS%20package%20to%20the%20external%20product%20ontology.",
-    //     version: ["V1.0", "V1.0.1", "V1.1"],
-    //     rule: {
-    //         "de": "Die Eigenschaft rdfs:seeAlso MUSS die Instanz der Produktvariante im iiRDS-Paket mit der externen Produktontologie in Beziehung setzen.",
-    //         "en": "The property rdfs:seeAlso MUST relate the instance of the product variant in the iiRDS package to the external product ontology. "
-    //     },
-    // },
+
     {
-        id: "M30.1",
+        id: "M19.1",
         path: "Identity",
         assert: (els, doc) => isExactlyOne(els, doc, "identifier"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "identifier"),
@@ -878,12 +581,8 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.  Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.  Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
-            "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. An identity MUST point to exactly one domain by the iirds:has-identity-domain property. The domain is an instance of the iirdsIdentityDomain class."
-        },
-        info: {
-            "de": "Property iirds:identifier MUSS vorhanden sein.",
-            "en": "Property iirds:identifier MUST be present."
+            "de": "Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.",
+            "en": "An identity MUST point to exactly one domain by the iirds:has-identity-domain property."
         },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
@@ -891,7 +590,7 @@ export default [
         }
     },
     {
-        id: "M30.2",
+        id: "M19.2",
         path: "Identity",
         assert: els => els.every(el => el.querySelector("identifier").textContent !== ""),
         getInvalid: els => els.filter(el => el.querySelector("identifier").textContent === ""),
@@ -900,12 +599,8 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.  Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.  Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
-            "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. An identity MUST point to exactly one domain by the iirds:has-identity-domain property. The domain is an instance of the iirdsIdentityDomain class."
-        },
-        info: {
-            "de": "Property iirds:identifier DARF NICHT leer sein.",
-            "en": "Property iirds:identifier MUST NOT be empty."
+            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.",
+            "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. "
         },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
@@ -913,7 +608,7 @@ export default [
         }
     },
     {
-        id: "M30.3",
+        id: "M19.3",
         path: "Identity",
         assert: (els, doc) => isExactlyOne(els, doc, "has-identity-domain"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-identity-domain"),
@@ -922,10 +617,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.  Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.  Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
-            "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. An identity MUST point to exactly one domain by the iirds:has-identity-domain property. The domain is an instance of the iirdsIdentityDomain class."
-        },
-        info: {
             "de": "Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.",
             "en": "An identity MUST point to exactly one domain by the iirds:has-identity-domain property."
         },
@@ -935,7 +626,7 @@ export default [
         }
     },
     {
-        id: "M30.3",
+        id: "M19.4",
         path: "has-identity-domain",
         assert: (els, doc) => isDefinedAsClass(els, doc, "IdentityDomain"),
         findInvalid: (els, doc) => getWrongClassInPackage(els, doc, "IdentityDomain"),
@@ -944,16 +635,12 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.  Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.  Die Domäne ist eine Instanz der Klasse iirdsIdentityDomain.",
-            "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. An identity MUST point to exactly one domain by the iirds:has-identity-domain property. The domain is an instance of the iirdsIdentityDomain class."
-        },
-        info: {
             "de": "Die Domain MUSS eine Instanz der Klasse iirdsIdentityDomain sein.",
             "en": "The domain MUST be an instance of the iirdsIdentityDomain class."
         },
     },
     {
-        id: "M31.1",
+        id: "M20.1",
         path: "IdentityDomain",
         assert: els => els.filter(el => el.hasAttribute("rdf:about")).filter(el => getAbsoluteIRIRegExp().test(el.getAttribute("rdf:about"))),
         getInvalid: els => els.filter(el => el.hasAttribute("rdf:about")).filter(el => !getAbsoluteIRIRegExp().test(el.getAttribute("rdf:about"))),
@@ -962,10 +649,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Instances%20of%20class%20iirds%3AIdentityDomain%20MUST%20have%20an%20absolute%20IRI%20and%20MAY%20link%20to%20the%20custodian%20of%20the%20domain%20via%20the%20iirds%3Ahas%2Dparty%20property.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Instanzen der Klasse iirds:IdentityDomain MÜSSEN einen absoluten IRI haben und DÜRFEN über die Eigenschaft iirds:has-party mit dem Verwalter der Domain verknüpft werden.",
-            "en": "Instances of class iirds:IdentityDomain MUST have an absolute IRI and MAY link to the custodian of the domain via the iirds:has-party property."
-        },
-        info: {
             "de": "Instanzen der Klasse iirds:IdentityDomain MÜSSEN einen absoluten IRI haben.",
             "en": "Instances of class iirds:IdentityDomain MUST have an absolute IRI."
         },
@@ -975,7 +658,7 @@ export default [
         }
     },
     {
-        id: "M32.1",
+        id: "M21.1",
         path: "ContentLifeCycleStatus",
         assert: (els, doc) => isExactlyOne(els, doc, "has-content-lifecycle-status-value"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-content-lifecycle-status-value"),
@@ -993,7 +676,7 @@ export default [
         }
     },
     {
-        id: "M32.2",
+        id: "M21.2",
         path: "ContentLifeCycleStatus",
         assert: els => isZeroOrOne(els, "dateOfEffect"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "dateOfEffect"),
@@ -1002,10 +685,6 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20180418-1.0-release/index.html#:~:text=0..1%C2%A0%20iirds%3AdateOfEffect%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:dateOfEffect-Eigenschaft - http://www.w3.org/2001/XMLSchema",
-            "en": "Properties: 0..1  iirds:dateOfEffect property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-        },
-        info: {
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:dateOfEffect haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfEffect."
         },
@@ -1015,7 +694,7 @@ export default [
         }
     },
     {
-        id: "M32.3",
+        id: "M21.3",
         path: "ContentLifeCycleStatus",
         assert: els => isZeroOrOne(els, "dateOfExpiry"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "dateOfExpiry"),
@@ -1024,10 +703,6 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#functional-metadata:~:text=0..1%C2%A0%20iirds%3AdateOfExpiry%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:dateOfExpiry Eigenschaft - http://www.w3.org/2001/XMLSchema",
-            "en": "Properties: 0..1  iirds:dateOfExpiry property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-        },
-        info: {
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:dateOfExpiry haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfExpiry."
         },
@@ -1037,7 +712,7 @@ export default [
         }
     },
     {
-        id: "M32.4",
+        id: "M21.4",
         path: "ContentLifeCycleStatus",
         assert: els => isZeroOrOne(els, "dateOfStatus"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "dateOfStatus"),
@@ -1046,10 +721,6 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#functional-metadata:~:text=0..1%C2%A0%20iirds%3AdateOfStatus%20property%20%2D%20http%3A//www.w3.org/2001/XMLSchema%23dateTimeStamp",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:dateOfStatus Eigenschaft - http://www.w3.org/2001/XMLSchema",
-            "en": "Properties: 0..1  iirds:dateOfStatus property - http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-        },
-        info: {
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:purpose haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:purpose."
         },
@@ -1059,7 +730,7 @@ export default [
         }
     },
     {
-        id: "M32.5",
+        id: "M21.5",
         path: "ContentLifeCycleStatus",
         assert: els => isZeroOrOne(els, "purpose"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "purpose"),
@@ -1081,7 +752,7 @@ export default [
         }
     },
     {
-        id: "M32.6",
+        id: "M21.6",
         path: "ContentLifeCycleStatus",
         assert: els => isZeroOrOne(els, "relates-to-party"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "relates-to-party"),
@@ -1090,10 +761,6 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20190712-1.0.1-release/index.html#rdfproperties_core_iirdsAttribute:~:text=rdf%2Dschema%23Literal-,0..1%C2%A0%20iirds%3Arelates%2Dto%2Dparty%20property%20%2D%20iirds%3AParty,-iirds%3AContentLifeCycleStatusValue",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:Relates-to-Party Property - iirds:Party",
-            "en": "Properties: 	0..1  iirds:relates-to-party property - iirds:Party"
-        },
-        info: {
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:relates-to-party haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:relates-to-party."
         },
@@ -1103,7 +770,7 @@ export default [
         }
     },
     {
-        id: "M33.1",
+        id: "M22.1",
         path: "Party",
         assert: (els, doc) => isExactlyOne(els, doc, "has-party-role"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-party-role"),
@@ -1121,7 +788,7 @@ export default [
         }
     },
     {
-        id: "M33.2",
+        id: "M22.2",
         path: "Party has-party-role",
         assert: (els, doc) => isDefinedAsClass(els, doc, "PartyRole"),
         getInvalid: (els, doc) => getWrongClassInPackage(els, doc, "PartyRole"),
@@ -1139,7 +806,7 @@ export default [
         }
     },
     {
-        id: "M34",
+        id: "M23",
         path: "Party",
         assert: (els, doc) => isExactlyOne(els, doc, "relates-to-vcard"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "relates-to-vcard"),
@@ -1157,7 +824,7 @@ export default [
         }
     },
     {
-        id: "M35.1",
+        id: "M24.1",
         path: "DirectoryNode",
         assert: els => isZeroOrOne(els, "has-next-sibling"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-next-sibling"),
@@ -1166,10 +833,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Navigation%20sequences%20and%20hierarchies%20of%20InformationUnits%20MUST%20be%20modeled%20as%20linked%20lists%20of%20instances%20of%20the%20class%20iirds%3ADirectoryNode.%20In%20a%20linked%20list%2C%20an%20iirds%3ADirectoryNode%20references%20the%20following%20node%20by%20the%20property%20iirds%3Ahas%2Dnext%2Dsibling.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Navigationsabläufe und Hierarchien von InformationUnits MÜSSEN als verkettete Listen von Instanzen der Klasse iirds:DirectoryNode modelliert werden.  In einer verknüpften Liste verweist ein iirds:DirectoryNode auf den folgenden Knoten durch die Eigenschaft iirds:has-next-sibling.",
-            "en": "Navigation sequences and hierarchies of InformationUnits MUST be modeled as linked lists of instances of the class iirds:DirectoryNode. In a linked list, an iirds:DirectoryNode references the following node by the property iirds:has-next-sibling."
-        },
-        info: {
             "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-next-sibling.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-next-sibling."
         },
@@ -1179,7 +842,7 @@ export default [
         }
     },
     {
-        id: "M35.2",
+        id: "M24.2",
         path: "DirectoryNode",
         assert: els => isZeroOrOne(els, "has-directory-structure-type"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-directory-structure-type"),
@@ -1188,10 +851,6 @@ export default [
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=0..1%C2%A0%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype%20property%20%2D%20iirds%3ADirectoryNodeType",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:has-directory-structure-type property - iirds:DirectoryNodeType",
-            "en": "Properties: 0..1  iirds:has-directory-structure-type property - iirds:DirectoryNodeType"
-        },
-        info: {
             "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-directory-structure-type.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-directory-structure-type."
         },
@@ -1201,7 +860,7 @@ export default [
         }
     },
     {
-        id: "M35.3",
+        id: "M24.3",
         path: "DirectoryNode",
         assert: els => isZeroOrOne(els, "has-first-child property"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-first-child property"),
@@ -1210,10 +869,6 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=0..1%C2%A0%20iirds%3Ahas%2Dfirst%2Dchild%20property%20%2D%20iirds%3ADirectoryNode",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
-            "de": "Eigenschaften: 0..1 iirds:has-first-child property - iirds:DirectoryNode",
-            "en": "Properties: 0..1  iirds:has-first-child property - iirds:DirectoryNode"
-        },
-        info: {
             "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-first-child Eigenschaft.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-first-child property."
         },
@@ -1223,7 +878,7 @@ export default [
         }
     },
     {
-        id: "M35.4",
+        id: "M24.4",
         path: "DirectoryNode",
         assert: els => isZeroOrOne(els, "relates-to-information-unit"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "relates-to-information-unit"),
@@ -1232,10 +887,6 @@ export default [
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=0..1%C2%A0%20iirds%3Arelates%2Dto%2Dinformation%2Dunit%20property%20%2D%20iirds%3AInformationUnit",
         version: ["V1.1"],
         rule: {
-            "de": "0..1 iirds:relates-to-information-unit property - iirds:InformationUnit",
-            "en": "0..1  iirds:relates-to-information-unit property - iirds:InformationUnit"
-        },
-        info: {
             "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:relates-to-information-unit.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:relates-to-information-unit."
         },
@@ -1245,7 +896,7 @@ export default [
         }
     },
     {
-        id: "M35.5",
+        id: "M24.5",
         path: "DirectoryNode",
         prio: "MUST",
         category: "only root element must have property",
@@ -1261,7 +912,7 @@ export default [
         }
     },
     {
-        id: "M36",
+        id: "M25",
         path: "DirectoryNode",
         getInvalid: "",
         prio: "MUST",
@@ -1278,7 +929,7 @@ export default [
         }
     },
     {
-        id: "M37",
+        id: "M26",
         path: "DirectoryNode",
         getInvalid: "",
         prio: "MUST",
@@ -1288,17 +939,13 @@ export default [
             "de": "Um Hierarchieebenen in der Navigationsstruktur zu modellieren, MUSS eine iirds:DirectoryNode-Instanz eine iirds:DirectoryNode-Instanz auf der nächstniedrigeren Ebene durch die Eigenschaft iirds:has-first-child referenzieren.",
             "en": "To model hierarchy levels in the navigation structure, an iirds:DirectoryNode instance MUST reference an iirds:DirectoryNode instance on the next lower level by the property iirds:has-first-child."
         },
-        info: {
-            "de": "Um Hierarchieebenen in der Navigationsstruktur zu modellieren, MUSS eine iirds:DirectoryNode-Instanz eine iirds:DirectoryNode-Instanz auf der nächstniedrigeren Ebene durch die Eigenschaft iirds:has-first-child referenzieren.",
-            "en": "To model hierarchy levels in the navigation structure, an iirds:DirectoryNode instance MUST reference an iirds:DirectoryNode instance on the next lower level by the property iirds:has-first-child."
-        },
         testfiles: {
-            "true": [""],
-            "false": [""]
+            "true": ["./tests/files/util/iirds_validation/Example 38 - Table of contents.rdf","./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds_validation/Example 38 - Table of contents-M37_false.rdf"]
         }
     },
     {
-        id: "M38",
+        id: "M27",
         path: "",
         getInvalid: "",
         prio: "MUST",
@@ -1309,12 +956,12 @@ export default [
             "en": "The directory node on the next lower level MUST be the first item of another linked list."
         },
         testfiles: {
-            "true": [""],
+            "true": ["./tests/files/util/iirds_validation/Example 38 - Table of contents.rdf","./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
     },
     {
-        id: "M39",
+        id: "M28",
         path: "",
         getInvalid: "",
         prio: "MUST",
@@ -1330,7 +977,7 @@ export default [
         }
     },
     {
-        id: "M40",
+        id: "M29",
         path: "",
         getInvalid: "",
         prio: "MUST",
@@ -1346,7 +993,7 @@ export default [
         }
     },
     {
-        id: "M41",
+        id: "M30",
         path: "",
         getInvalid: "",
         prio: "MUST NOT",
@@ -1362,7 +1009,7 @@ export default [
         }
     },
     {
-        id: "M42",
+        id: "M31",
         path: "",
         getInvalid: "",
         prio: "MUST",
@@ -1386,7 +1033,7 @@ export default [
         */
     },
     {
-        id: "M43",
+        id: "M32",
         path: "",
         getInvalid: "",
         prio: "MUST",
@@ -1402,7 +1049,7 @@ export default [
         }
     },
     {
-        id: "M44",
+        id: "M33",
         path: "",
         getInvalid: "",
         prio: "MUST",
@@ -1421,7 +1068,7 @@ export default [
 
     //===================iirds:Identity
     {
-        id: "M45",
+        id: "M34",
         path: "",
         getInvalid: "",
         prio: "MUST",
@@ -1437,7 +1084,7 @@ export default [
         }
     },
     {
-        id: "M46",
+        id: "M35",
         path: "Identity",
         assert: (els, doc) => isExactlyOne(els, doc, "identifier"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "identifier"),
@@ -1449,17 +1096,13 @@ export default [
             "de": "iirds:Identity MUSS die Eigenschaft iirds:identifier haben",
             "en": "iirds:Identity MUST have property iirds:identifier"
         },
-        info: {
-            "de": "iirds:Identity MUSS die Eigenschaft iirds:identifier haben",
-            "en": "iirds:Identity MUST have property iirds:identifier"
-        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant-M46_false.rdf"]
         }
     },
     {
-        id: "M47",
+        id: "M36",
         path: "Identity",
         assert: (els, doc) => isExactlyOne(els, doc, "has-identity-domain"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-identity-domain"),
@@ -1471,17 +1114,14 @@ export default [
             "de": "iirds:Identity MUSS die Eigenschaft iirds:IdentityDomain haben",
             "en": "iirds:Identity MUST have property iirds:IdentityDomain"
         },
-        info: {
-            "de": "iirds:Identity MUSS die Eigenschaft iirds:has-identity-domain haben",
-            "en": "iirds:Identity MUST have property iirds:has-identity-domain"
-        },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant-M47_false.rdf"]
         }
     },
+    /*
     {
-        id: "M49",
+
         path: "Document, Component, Concept, ContentLifeCycleStatusValue, DirectoryNodeType, DocumentType, Event, Form, Formality, Fragment, Functionality, IdentityDomain, IdentityType, InformationObject, Learning, Package, Party, PartyRole, Process, ProductFunction, ProductProperty, ProductVariant, Reference, Role, Safety, SkillLevel, Supply, Task, TechnicalData, TechnicalOverview, Topic, TopicType, Troubleshooting, Use, WarningMessage, ConsumableSupply, HardwareTool, Lubricant, OperatingSupply, ProtectiveEquipment, SparePart",
         assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
         getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
@@ -1495,11 +1135,751 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": [""]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    */
+    {
+        id: "M37",
+        path: "Document",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=the%20iiRDS%20package.-,IRI%3A,REQUIRED,-Properties%3A",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M38",
+        path: "Component",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=external%20component%20definitions.-,IRI%3A,REQUIRED,-Properties%3A",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M39",
+        path: "Concept",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=product%20or%20system.-,IRI%3A,REQUIRED,-iirds%3AConformity",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M40",
+        path: "ContentLifeCycleStatusValue",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=approved%20or%20withdrawn.-,IRI%3A,REQUIRED,-iirds%3ADesignAndRealization",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M41",
+        path: "DirectoryNodeType",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=list%20of%20figures%27.-,IRI%3A,REQUIRED,-iirds%3ADocument",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M42",
+        path: "DocumentType",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=of%20a%20document.-,IRI%3A,REQUIRED,-iirds%3ADownTime",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M43",
+        path: "Event",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=to%20an%20event.-,IRI%3A,REQUIRED,-Properties%3A",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M44",
+        path: "Form",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=and%20user%20feedback.-,IRI%3A,REQUIRED,-iirds%3AFormality",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M45",
+        path: "Formality",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=and%20warranty%20conditions.-,IRI%3A,REQUIRED,-iirds%3AFragment",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M46",
+        path: "Fragment",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=a%20fragment%20selector.-,IRI%3A,REQUIRED,-iirds%3AFragmentSelector",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M47",
+        path: "Functionality",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=of%20the%20product.-,IRI%3A,REQUIRED,-iirds%3AFunctionalMetadata",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M48",
+        path: "IdentityDomain",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=of%20the%20domain.-,IRI%3A,REQUIRED,-Properties%3A",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M49",
+        path: "IdentityType",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=by%20the%20domain.-,IRI%3A,REQUIRED,-iirds%3AiirdsDomainEntity",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
         }
     },
     {
         id: "M50",
+        path: "InformationObject",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=the%20information%20object.-,IRI%3A,REQUIRED,-Properties%3A",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M51",
+        path: "Learning",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=summaries%2C%20and%20assessments.-,IRI%3A,REQUIRED,-iirds%3AMaintenanceInterval",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M52",
+        path: "Package",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=overall%20iiRDS%20package.-,IRI%3A,REQUIRED,-Properties%3A",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M53",
+        path: "Party",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=in%20a%20vCard.-,IRI%3A,REQUIRED,-Properties%3A",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M54",
+        path: "PartyRole",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=manufacturer%2C%20author%2C%20inspector.-,IRI%3A,REQUIRED,-iirds%3APlanningTime",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M55",
+        path: "Process",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=process%2Drelated%20information-,IRI%3A,REQUIRED,-iirds%3AProductFeature",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M56",
+        path: "ProductFunction",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=phone%20call%2C%20ringing.-,IRI%3A,REQUIRED,-iirds%3AProductLifeCyclePhase",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M57",
+        path: "ProductProperty",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=voltage%2C%20power%2C%20weight.-,IRI%3A,REQUIRED,-iirds%3AProductVariant",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M58",
+        path: "ProductVariant",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=individually%20manufactured%20good.-,IRI%3A,REQUIRED,-Properties%3A",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M59",
+        path: "Reference",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=rather%20than%20memorized.-,IRI%3A,REQUIRED,-iirds%3ARendition",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M60",
+        path: "Role",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=of%20a%20system.-,IRI%3A,REQUIRED,-iirds%3ASafety",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M61",
+        path: "Safety",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=IRI%3A-,REQUIRED,-iirds%3ASelector",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M62",
+        path: "SkillLevel",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=the%20technical%20documentation.-,IRI%3A,REQUIRED,-iirds%3ASupply",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M63",
+        path: "Supply",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=IRI%3A-,REQUIRED,-iirds%3ATask",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M64",
+        path: "Task",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=or%20safety%20instructions.-,IRI%3A,REQUIRED,-iirds%3ATechnicalData",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M65",
+        path: "TechnicalData",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=this%20class%20instead.-,IRI%3A,REQUIRED,-iirds%3ATechnicalOverview",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M66",
+        path: "TechnicalOverview",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=and%20pneumatic%20diagrams.-,IRI%3A,REQUIRED,-iirds%3ATopic",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M67",
+        path: "Topic",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=is%20a%20file%20in%20the%20iiRDS%20package.-,IRI%3A,REQUIRED,-iirds%3ATopicType",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M68",
+        path: "TopicType",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=no%20specific%20type.-,IRI%3A,REQUIRED,-iirds%3ATroubleshooting",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M69",
+        path: "Troubleshooting",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=for%20the%20error.-,IRI%3A,REQUIRED,-iirds%3AUse",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M70",
+        path: "Use",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=IRI%3A-,REQUIRED,-iirds%3AWarningMessage",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M71",
+        path: "WarningMessage",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=avoid%20the%20hazard.-,IRI%3A,REQUIRED,-iirds%3AWorkingTime",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M72",
+        path: "ConsumableSupply",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=in%20technical%20documentation.-,IRI%3A,REQUIRED,-iirdsMch%3AHardwareTool",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M73",
+        path: "HardwareTool",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=IRI%3A-,REQUIRED,-iirdsMch%3AiirdsMachineryDomainEntity",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M74",
+        path: "Lubricant",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=IRI%3A-,REQUIRED,-iirdsMch%3AOperatingSupply",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M75",
+        path: "OperatingSupply",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=IRI%3A-,REQUIRED,-iirdsMch%3AProtectiveEquipment",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M76",
+        path: "ProtectiveEquipment",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=iirdsMch%3AProtectiveEquipment",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+    {
+        id: "M77",
+        path: "SparePart",
+        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        prio: "REQUIRED",
+        category: "must have IRI",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=OPTIONAL-,iirdsMch%3ASparePart,-Term",
+        version: ["V1.0", "V1.0.1", "V1.1"],
+        rule: {
+            "de": "IRI: ERFORDERLICH",
+            "en": "IRI: REQUIRED"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+        }
+    },
+
+    {
+        id: "M78",
         path: "AfterUse",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1517,7 +1897,7 @@ export default [
         }
     },
     {
-        id: "M51",
+        id: "M79",
         path: "Collection",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1535,7 +1915,7 @@ export default [
         }
     },
     {
-        id: "M52",
+        id: "M80",
         path: "Conformity",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1553,7 +1933,7 @@ export default [
         }
     },
     {
-        id: "M53",
+        id: "M81",
         path: "DesignAndRealization",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1571,7 +1951,7 @@ export default [
         }
     },
     {
-        id: "M54",
+        id: "M82",
         path: "DocumentationMetadata",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1589,7 +1969,7 @@ export default [
         }
     },
     {
-        id: "M55",
+        id: "M83",
         path: "FunctionalMetadata",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1607,7 +1987,7 @@ export default [
         }
     },
     {
-        id: "M56",
+        id: "M84",
         path: "iirdsDomainEntity",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1625,7 +2005,7 @@ export default [
         }
     },
     {
-        id: "M57",
+        id: "M85",
         path: "AdministrativeMetadata",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1643,7 +2023,7 @@ export default [
         }
     },
     {
-        id: "M58",
+        id: "M86",
         path: "InformationSubject",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1661,7 +2041,7 @@ export default [
         }
     },
     {
-        id: "M59",
+        id: "M87",
         path: "InformationType",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1679,7 +2059,7 @@ export default [
         }
     },
     {
-        id: "M60",
+        id: "M88",
         path: "PlanningTime",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1697,7 +2077,7 @@ export default [
         }
     },
     {
-        id: "M61",
+        id: "M89",
         path: "ProductFeature",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1715,7 +2095,7 @@ export default [
         }
     },
     {
-        id: "M62",
+        id: "M90",
         path: "ProductLifeCyclePhase",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1733,7 +2113,7 @@ export default [
         }
     },
     {
-        id: "M63",
+        id: "M91",
         path: "ProductMetadata",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1751,7 +2131,7 @@ export default [
         }
     },
     {
-        id: "M64",
+        id: "M92",
         path: "PuttingToUse",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1766,10 +2146,11 @@ export default [
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
+            //to do: Beispiel in Spec suchen / erstellen (in Spec kein gutes Beispiel vorhanden)
         }
     },
     {
-        id: "M65",
+        id: "M93",
         path: "Qualification",
         assert: els => els.filter(el => !el.hasAttribute("rdf:about")).length === 0,
         getInvalid: els => els,
@@ -1784,10 +2165,11 @@ export default [
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
+            //to do: Beispiel in Spec suchen / erstellen (in Spec kein gutes Beispiel vorhanden)
         }
     },
     {
-        id: "M66",
+        id: "M94",
         path: "relates-to-administrative-metadata",
         assert: els => els.length === 0,
         getInvalid: els => els,
@@ -1801,11 +2183,11 @@ export default [
         },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": [""]
+            "false": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer-M66_false.rdf"]
         }
     },
     {
-        id: "M67",
+        id: "M95",
         path: "Component",
         assert: els => isZeroOrOne(els, "relates-to-party"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "relates-to-party"),
@@ -1819,7 +2201,7 @@ export default [
         },
         testfiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": [""]
+            "false": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer-M67_false.rdf"]
         }
     },
 ];

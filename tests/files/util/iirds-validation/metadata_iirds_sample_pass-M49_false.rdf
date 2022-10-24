@@ -8,7 +8,7 @@
   <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
   <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
   <iirds:relates-to-component>
-   <iirds:Component rdf:about="https://www.i4icm.de/pifan#PIFan">
+   <iirds:Component>
     <rdfs:label>PI-Fan</rdfs:label>
    </iirds:Component>
   </iirds:relates-to-component>
@@ -50,7 +50,7 @@
   <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
   <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
  </iirds:Document>
- <iirds:Topic rdf:about="urn:uuid:bb98ea5a-431a-43a7-a5d9-2876d7656a3b">
+ <iirds:Topic>
   <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
   <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
   <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
@@ -86,7 +86,7 @@
   <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericConcept"/>
   <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
   <iirds:relates-to-qualification>
-   <iirds:Role>
+   <iirds:Role rdf:about="https://www.i4icm.de/pifan#Operator">
     <rdfs:label>Operator</rdfs:label>
    </iirds:Role>
   </iirds:relates-to-qualification>
