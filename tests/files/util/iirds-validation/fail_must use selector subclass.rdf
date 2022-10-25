@@ -1,0 +1,20 @@
+<!-- empty  --> 
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:iirdsMch="http://iirds.tekom.de/iirds/domain/machinery#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:iirdsSft="http://iirds.tekom.de/iirds/domain/software#">
+<iirds:Package rdf:about="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df">
+<iirds:iiRDSVersion>1.0</iirds:iiRDSVersion>
+</iirds:Package>
+<iirds:Topic rdf:about="http://myCompany.com/iiRDS/myProject/myPackage/topic_1">
+    <iirds:has-rendition>
+        <iirds:Rendition>
+            <iirds:format>application/xml</iirds:format>
+            <iirds:source>rendition/DocBook_Example_1.xml</iirds:source>
+            <iirds:has-selector>
+                <iirds:Selector>
+                    <dcterms:conformsTo rdf:resource="http://tools.ietf.org/rfc/rfc3023"/>
+                    <rdf:value>xpointer(id('chptr_1')/Section[1])</rdf:value>
+                </iirds:Selector>
+            </iirds:has-selector>
+        </iirds:Rendition>
+    </iirds:has-rendition>
+</iirds:Topic>
+</rdf:RDF>

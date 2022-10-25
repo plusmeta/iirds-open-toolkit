@@ -1,0 +1,6 @@
+<!-- Example 44: Adding a proprietary property as a subproperty of an iiRDS property  -->
+<!-- This example adds a proprietary property ``has-maintenance-interval`` that relates ``iirds:InformationUnit`` to ``iirds:MaintenanceInterval``. <rdf:Property rdf:about="http://www.myCompany.com/iirds/myExtension#has-maintenance-interval"> -->
+	<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#has-planning-time"/>
+	<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+	<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInterval"/>
+</rdf:Property>

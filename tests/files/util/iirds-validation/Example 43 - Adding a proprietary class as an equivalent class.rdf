@@ -1,0 +1,7 @@
+<!-- Example 43: Adding a proprietary class as an equivalent class  -->
+<rdfs:Class rdf:about="http://myCompany.com/myProject#ProductPart">
+	<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+</rdfs:Class>
+<rdf:Description rdf:about="http://iirds.tekom.de/iirds#Component">
+	<rdfs:subClassOf rdf:resource="http://myCompany.com/myProject#ProductPart"/>
+</rdf:Description>

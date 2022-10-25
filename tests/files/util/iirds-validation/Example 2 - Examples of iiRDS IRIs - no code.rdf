@@ -1,0 +1,4 @@
+<!-- EXAMPLE 2: Examples of iiRDS IRIs -->
+<!-- The identifier of the iiRDS topic class is http://iirds.tekom.de/iirds#Topic. -->
+
+<!-- The identifier of an iiRDS circuit diagram is http://iirds.tekom.de/iirds/domain/machinery#CircuitDiagram. It is part of the iiRDS Machinery Domain. -->

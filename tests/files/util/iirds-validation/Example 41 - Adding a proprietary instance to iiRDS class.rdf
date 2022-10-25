@@ -1,0 +1,7 @@
+<!-- Example 41: Adding a proprietary instance to iiRDS class  -->
+<rdf:RDF xml:lang="de" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	<iirds:Role rdf:about="http://myCompany.com/myProject#ServiceTechnician">
+		<rdfs:label xml:lang="en">Service Technician</rdfs:label>
+		<rdfs:label xml:lang="de">Servicetechniker</rdfs:label>
+	</iirds:Role>
+</rdf:RDF>

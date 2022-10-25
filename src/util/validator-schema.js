@@ -8,6 +8,7 @@ const validationIdAttr = "iirds:validation";
 const documentMimeType = "application/xml";
 const type = "Schema";
 
+
 export default {
     async validate(zipArchive, scope, fileName) {
         const schemaViolations = [];
@@ -19,10 +20,10 @@ export default {
         const scopedTests = validations.filter(v => v.assert).filter(v => !scope || scope === v.scope);
         const checkedSchemaRules = scopedTests.length;
         for (let test of scopedTests) {
-            const selection = document.querySelectorAll(test.path);
-            const pass = test.assert(Array.from(selection), document);
+            const selection = Array.from(document.querySelectorAll(test.path));
+            const pass = test.assert(selection, document);
             if (!pass) {
-                const result = (test.getInvalid) ? test.getInvalid(Array.from(selection), document) : [];
+                const result = (test.getInvalid) ? test.getInvalid(selection, document) : [];
                 if (result.length) {
                     for (let element of result) {
                         const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
@@ -64,3 +65,8 @@ export default {
         return { location: xmlTxt, lineNr, lines: lines.join("\n") };
     }
 };
+
+export function validateSingleRule(document, rule) {
+    const selection = Array.from(document.querySelectorAll(test.path));
+    return { succeeded: rule?.assert(selection, document) || true, invalidElements: rule?.getInvalid(selection) };
+}

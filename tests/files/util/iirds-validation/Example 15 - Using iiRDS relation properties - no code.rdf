@@ -1,0 +1,3 @@
+<!-- Example 15: Using iiRDS relation properties  -->
+<!-- An iiRDS Generator uses relation properties for information units. The relation properties describe if the content is suitable for a specific target group, belongs to a specific product lifecycle phase, or uses specific tools. The relation properties create relations to objects in iirds:DocumentationMetadata and iirds:InformationSubject. This metadata enables an iiRDS Consumer to retrieve pieces of information for specific contexts or user roles, to assemble lists of materials, or to filter content according to products.  -->
+<!-- For a list of all relation properties, see the iiRDS RDF Schema Reference.

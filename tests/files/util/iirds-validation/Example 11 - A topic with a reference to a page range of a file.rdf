@@ -1,0 +1,26 @@
+<!-- Example 11: A topic with a reference to a page range of a file  -->
+<!-- The following example illustrates how to select a range in a PDF file. While the application/pdf Media Type standard permits referencing a single page or named destination in a PDF file only, an iiRDS Generator uses the iirds:RangeSelector to define the start and end point. The following topic references multiple pages in a PDF file. The page range starts at page 10 and ends at page 17. The page range includes page 10 but not page 17. -->
+<iirds:Topic rdf:about="http://myCompany.com/iiRDS/myProject/myPackage/my_manual">
+	<iirds:has-rendition>
+		<iirds:Rendition>
+			<iirds:format>application/pdf</iirds:format>
+			<iirds:source>rendition/My_Manual.pdf</iirds:source>
+			<iirds:has-selector>
+				<iirds:RangeSelector>
+					<iirds:has-start-selector>
+						<iirds:FragmentSelector>
+							<dcterms:conformsTo rdf:resource="http://tools.ietf.org/rfc/rfc3778"/>
+							<rdf:value>page=10</rdf:value>
+						</iirds:FragmentSelector>
+					</iirds:has-start-selector>
+					<iirds:has-end-selector>
+						<iirds:FragmentSelector>
+							<dcterms:conformsTo rdf:resource="http://tools.ietf.org/rfc/rfc3778"/>
+							<rdf:value>page=17</rdf:value>
+						</iirds:FragmentSelector>
+					</iirds:has-end-selector>
+				</iirds:RangeSelector>
+			</iirds:has-selector>
+		</iirds:Rendition>
+	</iirds:has-rendition>
+</iirds:Topic>

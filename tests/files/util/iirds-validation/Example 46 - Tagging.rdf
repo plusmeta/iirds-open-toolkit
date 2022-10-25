@@ -1,0 +1,17 @@
+<!-- Example 46: Tagging  -->
+<div data-role="caution">
+	<div data-role="signalword-panel">
+		<img data-role="safety-alert-symbol" src="..."/>
+		<p data-role="signalword">Caution</p>
+	</div>
+	<div data-role="symbol-panel">
+		<img src="..."/>
+	</div>
+	<div data-role="message-panel">
+		<ul>
+			<li>...</li>
+			<li>...</li>
+			<li>...</li>
+		</ul>
+	</div>
+</div>

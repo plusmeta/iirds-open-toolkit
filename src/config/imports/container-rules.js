@@ -12,7 +12,7 @@ export default [{
     spec: null,
     break: true,
     rule: {
-        "de": "ZIP-Datei ist korrupt oder nicht lesbar.",
+        "de": "ZIP-Datei ist beschädigt oder kann nicht verarbeitet werden.",
         "en": "ZIP file is corrupt or cannot be processed."
     }
 },
@@ -34,7 +34,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=The%20file%20name%20of%20the%20iiRDS%20ZIP%20archive%20MUST%20feature%20the%20file%20name%20extension%20.iirds.",
     break: false,
     rule: {
-        "de": "The file name of the iiRDS ZIP archive MUST feature the file name extension .iirds.",
+        "de": "Der Dateiname des iiRDS-ZIP-Archivs MUSS die Dateinamenerweiterung .iirds aufweisen.",
         "en": "The file name of the iiRDS ZIP archive MUST feature the file name extension .iirds."
     }
 },
@@ -46,7 +46,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=In%20addition%20to%20the%20iiRDS%20container%20specifications%2C%20the%20root%20directory%20of%20the%20ZIP%20file%20MUST%20contain%20a%20file%20named%20mimetype.",
     break: false,
     rule: {
-        "de": "The root directory of the ZIP file MUST contain a file named mimetype.",
+        "de": "Das Stammverzeichnis der ZIP-Datei MUSS eine Datei namens mimetype enthalten.",
         "en": "The root directory of the ZIP file MUST contain a file named mimetype."
     }
 },
@@ -64,7 +64,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=It%20MUST%20contain,application/iirds%2Bzip",
     break: false,
     rule: {
-        "de": "The mimetype file MUST contain the following ASCII-encoded text in a single line, without any line delimiters such as CR or LF: application/iirds+zip.",
+        "de": "Die Mimetype-Datei MUSS den folgenden ASCII-codierten Text in einer einzigen Zeile enthalten, ohne Zeilentrennzeichen wie CR oder LF: application/iirds zip.",
         "en": "The mimetype file MUST contain the following ASCII-encoded text in a single line, without any line delimiters such as CR or LF: application/iirds+zip."
     }
 },
@@ -81,7 +81,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=The%20file%20MUST%20be%20the%20first%20entry%20in%20the%20ZIP%20file%20and%20it%20MUST%20be%20stored%20uncompressed%20(%22Stored%22%20mode).",
     break: false,
     rule: {
-        "de": "The mimetype file MUST be stored uncompressed ('Stored' mode).",
+        "de": "Die Mimetype-Datei MUSS unkomprimiert gespeichert werden ('Stored'-Modus).",
         "en": "The mimetype file MUST be stored uncompressed ('Stored' mode)."
     }
 },
@@ -93,7 +93,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=An%20iiRDS%20container%20MUST%20have%20a%20directory%20META%2DINF.",
     break: true,
     rule: {
-        "de": "An iiRDS container MUST have a directory META-INF.",
+        "de": "Ein iiRDS-Container MUSS ein Verzeichnis META-INF haben.",
         "en": "An iiRDS container MUST have a directory META-INF."
     }
 },
@@ -105,7 +105,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=The%20META%2DINF%20directory%20MUST%20contain%20the%20file%20metadata.rdf%20containing%20all%20metadata%20in%20RDF%201.1%20XML%20syntax%20(see%20%5Brdf%2Dsyntax%2Dgrammar%5D).",
     break: true,
     rule: {
-        "de": "The META-INF directory MUST contain the file metadata.rdf.",
+        "de": "Das META-INF-Verzeichnis MUSS die Datei metadata.rdf enthalten.",
         "en": "The META-INF directory MUST contain the file metadata.rdf."
     }
 },
@@ -123,7 +123,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=The%20META%2DINF%20directory%20MUST%20contain%20the%20file%20metadata.rdf%20containing%20all%20metadata%20in%20RDF%201.1%20XML%20syntax%20(see%20%5Brdf%2Dsyntax%2Dgrammar%5D).",
     break: true,
     rule: {
-        "de": "The META-INF directory MUST contain the file metadata.rdf.",
+        "de": "Das META-INF-Verzeichnis MUSS die Datei metadata.rdf enthalten.",
         "en": "The META-INF directory MUST contain the file metadata.rdf."
     }
 },
@@ -135,7 +135,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=For%20file%20and,use%20Unicode%20areas",
     break: true,
     rule: {
-        "de": "For file and directory names, all Unicode characters MAY be used, with the exception of the following characters: /,”*:<>\\, the DEL character (U+007F), characters from the ranges U+0000 to U+001F and U+0080 to U+009F, characters from the private use Unicode areas.",
+        "de": "Für Datei- und Verzeichnisnamen DÜRFEN alle Unicode-Zeichen verwendet werden, mit Ausnahme der folgenden Zeichen: /“,*:<>\\, das DEL-Zeichen (U 007F), Zeichen aus den Bereichen U 0000 bis U 001F und U  0080 bis U 009F, Zeichen aus dem privat genutzten Unicode-Bereich.",
         "en": "For file and directory names, all Unicode characters MAY be used, with the exception of the following characters: /,”*:<>\\, the DEL character (U+007F), characters from the ranges U+0000 to U+001F and U+0080 to U+009F, characters from the private use Unicode areas."
     }
 },
@@ -147,7 +147,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=All%20other%20files%20(content%2C%20like%20PDF%2C%20HTML%2C%20media%2C%20Javascript%2C%20CSS%2C%20nested%20iiRDS%20packages)%20MUST%20be%20stored%20in%20arbitrary%20subdirectories%20below%20the%20root%20directory.",
     break: false,
     rule: {
-        "de": "All other files (content, like PDF, HTML, media, Javascript, CSS, nested iiRDS packages) MUST be stored in arbitrary subdirectories below the root directory.",
+        "de": "Alle anderen Dateien (Inhalte wie PDF, HTML, Medien, Javascript, CSS, verschachtelte iiRDS-Pakete) MÜSSEN in beliebigen Unterverzeichnissen unterhalb des Stammverzeichnisses gespeichert werden.",
         "en": "All other files (content, like PDF, HTML, media, Javascript, CSS, nested iiRDS packages) MUST be stored in arbitrary subdirectories below the root directory."
     }
 },
@@ -159,7 +159,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=Content%20files%20MUST%20NOT%20be%20placed%20in%20the%20root%20directory%20or%20in%20META%2DINF%20directory.",
     break: false,
     rule: {
-        "de": "Content files MUST NOT be placed in the root directory or in META-INF directory.",
+        "de": "Inhaltsdateien DÜRFEN NICHT im Stammverzeichnis oder im META-INF-Verzeichnis abgelegt werden.",
         "en": "Content files MUST NOT be placed in the root directory or in META-INF directory."
     }
 },
@@ -171,7 +171,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=Full%20path%20names%20(file%20names%20including%20the%20full%20directory%20path%20from%20the%20root)%20MUST%20NOT%20exceed%20260%20characters).",
     break: false,
     rule: {
-        "de": "Full path names (file names including the full directory path from the root) MUST NOT exceed 260 characters).",
+        "de": "Vollständige Pfadnamen (Dateinamen einschließlich des vollständigen Verzeichnispfads vom Stammverzeichnis) DÜRFEN 260 Zeichen NICHT überschreiten).",
         "en": "Full path names (file names including the full directory path from the root) MUST NOT exceed 260 characters)."
     }
 },
@@ -183,7 +183,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=The%20length%20of%20file%20names%20is%20limited%20to%20255%20characters.",
     break: false,
     rule: {
-        "de": "The length of file names is limited to 255 characters.",
+        "de": "Die Länge von Dateinamen ist auf 255 Zeichen begrenzt.",
         "en": "The length of file names is limited to 255 characters."
     }
 },
@@ -201,7 +201,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=File%20names%20are%20case%2Dsensitive%20and%20MUST%20be%20unique%20within%20their%20parent%20directories. ",
     break: false,
     rule: {
-        "de": "File names are case-sensitive and MUST be unique within their parent directories",
+        "de": "Bei Dateinamen wird zwischen Groß- und Kleinschreibung unterschieden und sie MÜSSEN innerhalb ihrer übergeordneten Verzeichnisse eindeutig sein",
         "en": "File names are case-sensitive and MUST be unique within their parent directories"
     }
 },
@@ -220,7 +220,7 @@ export default [{
     spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=The%20META%2DINF%20directory%20MUST%20contain%20the%20file%20metadata.rdf%20containing%20all%20metadata%20in%20RDF%201.1%20XML%20syntax%20(see%20%5Brdf%2Dsyntax%2Dgrammar%5D).",
     break: true,
     rule: {
-        "de": "The META-INF directory MUST contain the file metadata.rdf in RDF 1.1 XML syntax. XML is invalid.",
+        "de": "Das META-INF-Verzeichnis MUSS die Datei metadata.rdf in RDF 1.1 XML-Syntax enthalten.  XML ist ungültig.",
         "en": "The META-INF directory MUST contain the file metadata.rdf in RDF 1.1 XML syntax. XML is invalid."
     }
 }];

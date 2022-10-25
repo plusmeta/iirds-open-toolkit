@@ -1,0 +1,10 @@
+<!-- Example 30: Product with an identity used for an item number  -->
+<iirds:ProductVariant rdf:about="http://myCompany.com/products/TableFan">
+	<iirds:has-identity>
+		<iirds:Identity>
+			<iirds:identifier>871321</iirds:identifier>
+			<iirds:has-identity-domain rdf:resource="http://myCompany.com/products/Items"/>
+		</iirds:Identity>
+	</iirds:has-identity>
+	<rdfs:label>Table fan</rdfs:label>
+</iirds:ProductVariant>

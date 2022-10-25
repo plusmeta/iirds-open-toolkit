@@ -1,0 +1,26 @@
+<!-- Example 33: Content lifecylce status with party information  -->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+	<iirds:Topic rdf:about="http://myCompany.com/io/1312">
+		<iirds:title>Mounting the rotor</iirds:title>
+		<iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+		<iirds:has-content-lifecycle-status>
+			<iirds:ContentLifeCycleStatus>
+				<iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Approved"/>
+				<iirds:dateOfStatus>2018-04-10T15:28:09+01:00</iirds:dateOfStatus>
+				<iirds:statusComment> Updated information on the mounting process. </iirds:statusComment>
+				<iirds:relates-to-party>
+					<iirds:Party rdf:about="http://myCompany.com/authors/jdo001">
+						<iirds:has-party-role rdf:resource="http://iirds.tekom.de/iirds#PerformedBy"/>
+						<iirds:relates-to-vcard>
+							<vcard:Individual rdf:about="http://myCompany.com/u/jdo001">
+								<vcard:fn>Jane Doe</vcard:fn>
+								<vcard:hasEmail rdf:resource="mailto:jdoe@myCompany.com"/>
+							</vcard:Individual>
+						</iirds:relates-to-vcard>
+					</iirds:Party>
+				</iirds:relates-to-party>
+			</iirds:ContentLifeCycleStatus>
+		</iirds:has-content-lifecycle-status>
+		<!-- omitted -->
+	</iirds:Topic>
+</rdf:RDF>

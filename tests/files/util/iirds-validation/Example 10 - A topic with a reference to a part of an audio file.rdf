@@ -1,0 +1,16 @@
+<!-- Example 10: A topic with a reference to a part of an audio file  -->
+<!-- The following example shows a topic that references a part of an audio file. The topic assigns metadata to a time range in the file Spoken_Words_456.wav. The time range starts at 90 seconds and continues up to 210 seconds of play time.  -->
+<iirds:Topic rdf:about="http://myCompany.com/iiRDS/myProject/myPackage/audio_7654">
+	<iirds:has-rendition>
+		<iirds:Rendition>
+			<iirds:format>audio/x-wav</iirds:format>
+			<iirds:source>rendition/Spoken_Words_456.wav</iirds:source>
+			<iirds:has-selector>
+				<iirds:FragmentSelector>
+					<dcterms:conformsTo rdf:resource="http://www.w3.org/TR/media-frags/"/>
+					<rdf:value>t=90,210</rdf:value>
+				</iirds:FragmentSelector>
+			</iirds:has-selector>
+		</iirds:Rendition>
+	</iirds:has-rendition>
+</iirds:Topic>

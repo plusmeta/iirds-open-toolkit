@@ -1,0 +1,10 @@
+<!-- Example 12: Topic that is stored as an MPEG file  -->
+<!-- This example shows a media file that contains a single self-contained piece of information modeled as an iirds:Topic. The topic's rendition and mime type identify it as a media file. -->
+<iirds:Topic rdf:about="http://myCompany.com/iiRDS/myProject/myPackage/topic_879">
+	<iirds:has-rendition>
+		<iirds:Rendition>
+			<iirds:format>video/mpeg</iirds:format>
+			<iirds:source>rendition/intro.mpeg</iirds:source>
+		</iirds:Rendition>
+	</iirds:has-rendition>
+</iirds:Topic>

@@ -1,0 +1,18 @@
+<!-- Example 34: Component with manufacturer  -->
+<!-- This iirds:Component has its manufacturer as a related party. In this example, the role of the party is iirds:Manufacturer and the vcard:Organization contains information about the company. -->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+	<iirds:Component rdf:about="http://myCompany.com/products/Rotor">
+		<rdfs:label xml:lang="en">Rotor</rdfs:label>
+		<iirds:relates-to-party>
+			<iirds:Party rdf:about="http://myCompany.com/products">
+				<iirds:relates-to-vcard>
+					<vcard:Organization rdf:about="http://myCompany.com/about">
+						<vcard:fn>My Company of Europe Ltd.</vcard:fn>
+						<vcard:organization-name>My Company</vcard:organization-name>
+						<vcard:organization-unit>Rotor Unit</vcard:organization-unit>
+					</vcard:Organization>
+				</iirds:relates-to-vcard>
+			</iirds:Party>
+		</iirds:relates-to-party>
+	</iirds:Component>
+</rdf:RDF>

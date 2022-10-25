@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:iirdsMch="http://iirds.tekom.de/iirds/domain/machinery#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:iirdsSft="http://iirds.tekom.de/iirds/domain/software#">
+ <iirds:Package rdf:about="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df">
+  <iirds:iiRDSVersion>1.0</iirds:iiRDSVersion>
+  <iirds:formatRestriction>A</iirds:formatRestriction>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/2_ProductDescription/2_2_ForeseeableMisuse.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+ </iirds:Package>
+ <iirds:Document rdf:about="urn:uuid:9cea7846-5404-4d4f-bd89-975954534921">
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#PIFan">
+    <rdfs:label>PI-Fan</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:relates-to-product-variant>
+   <iirds:ProductVariant rdf:about="https://www.i4icm.de/pifan#X5-DH2">
+    <rdfs:label>X5-DH2</rdfs:label>
+   </iirds:ProductVariant>
+  </iirds:relates-to-product-variant>
+  <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:title>PI-FAN Operating Manual</iirds:title>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-04-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:17057163-c9f2-4b21-8210-89a13e4c9192">
+      <iirds:relates-to-vcard>
+       <vcard:Individual>
+        <vcard:hasEmail rdf:resource="mailto:maxime@musterfrau.com"/>
+        <vcard:fn>Maxime Musterfrau</vcard:fn>
+       </vcard:Individual>
+      </iirds:relates-to-vcard>
+     </iirds:Party>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Approved"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+ </iirds:Document>
+ <iirds:Topic rdf:about="urn:uuid:bb98ea5a-431a-43a7-a5d9-2876d7656a3b">
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/2_ProductDescription/2_2_ForeseeableMisuse.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:title>Foreseeable misuse</iirds:title>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#ForeseeableMisuse"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-05-02T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:a0d194ed-b441-41db-947c-3f7874fcf9ad">
+      <iirds:relates-to-vcard>
+       <vcard:Individual>
+        <vcard:hasEmail rdf:resource="mailto:matz@musterknabe.com"/>
+        <vcard:fn>Matz Musterknabe</vcard:fn>
+       </vcard:Individual>
+      </iirds:relates-to-vcard>
+      <iirds:has-party-role rdf:resource="http://iirds.tekom.de/iirds#PerformedBy"/>
+     </iirds:Party>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:language>en</iirds:language>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericConcept"/>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:relates-to-qualification>
+   <iirds:Role rdf:about="https://www.i4icm.de/pifan#Operator">
+    <rdfs:label>Operator</rdfs:label>
+   </iirds:Role>
+  </iirds:relates-to-qualification>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:0525b7e9-a1ff-4e94-9f54-1c291974fcda">
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-05-21T09:05:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:a0d194ed-b441-41db-947c-3f7874fcf9ad"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:relates-to-qualification>
+   <iirds:Role rdf:about="https://www.i4icm.de/pifan#ServiceTechnician">
+    <rdfs:label>Service technician</rdfs:label>
+   </iirds:Role>
+  </iirds:relates-to-qualification>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#Assembly"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/3_Assembly/3_2_telescopic_rod_and_base_plate_mounting.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:relates-to-event>
+   <iirds:Event rdf:about="urn:uuid:edf279ac-c0dd-4366-b0f0-15f3302cad00">
+    <iirds:has-event-type rdf:parseType="Resource">
+     <rdfs:label>Actuator locked</rdfs:label>
+    </iirds:has-event-type>
+    <iirds:has-event-code rdf:parseType="Resource">
+     <rdfs:label>2X222</rdfs:label>
+    </iirds:has-event-code>
+   </iirds:Event>
+  </iirds:relates-to-event>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#BasePlate">
+    <rdfs:label>Base plate</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#TelescopicRod">
+    <rdfs:label>Telescopic rod</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:language>en</iirds:language>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:title>Mounting the telescopic rod and base plate</iirds:title>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:4243108c-eba5-472f-828a-30511f64be61">
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#IntendedUse"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-04-02T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:819c62a1-5a52-4970-a137-687c0114bda7">
+      <iirds:relates-to-vcard>
+       <vcard:Individual>
+        <vcard:hasEmail rdf:resource="mailto:max@mustermann.com"/>
+        <vcard:fn>Max Mustermann</vcard:fn>
+       </vcard:Individual>
+      </iirds:relates-to-vcard>
+      <iirds:has-party-role rdf:resource="http://iirds.tekom.de/iirds#PerformedBy"/>
+     </iirds:Party>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:language>en</iirds:language>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:title>Intended use</iirds:title>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericConcept"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/2_ProductDescription/2_1_IntendedUse.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:03e3890b-27cb-42a6-9091-f445f3044b69">
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/8_ContactData/8_contact_data.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:language>en</iirds:language>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericReference"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-06-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:819c62a1-5a52-4970-a137-687c0114bda7"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#ContactInformation"/>
+  <iirds:title>Contact data</iirds:title>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:cc296bcf-1a0d-4136-b5f3-b4ff37123112">
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/5_Operation/5_6_display.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/pdf</iirds:format>
+    <iirds:source>content/5_Operation/5_6_display.pdf</iirds:source>
+   </iirds:Rendition>  
+  </iirds:has-rendition>
+  <iirds:language>en</iirds:language>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Operation"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Configuration"/>
+  <iirds:title>Display</iirds:title>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericConcept"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:has-subject>
+   <iirds:InformationSubject rdf:about="https://www.i4icm.de/pifan#TiltAdjustment">
+    <rdfs:label>Tilt adjustment</rdfs:label>
+   </iirds:InformationSubject>
+  </iirds:has-subject>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-05-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:a0d194ed-b441-41db-947c-3f7874fcf9ad"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#DisplayOperatingElement">
+    <rdfs:label>Display operating element</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:bf190d6b-d396-49f7-a32e-0dd7d077c3bf">
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#GenericPuttingToUse"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-04-21T09:05:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:17057163-c9f2-4b21-8210-89a13e4c9192"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#Connection">
+    <rdfs:label>Connection</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:title>Getting started</iirds:title>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:language>en</iirds:language>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/4_GettingStarted/4_getting_started.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:78e7824e-0db9-440a-a798-463ffedfe35e">
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Configuration"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/5_Operation/5_1_height_adjusting.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/pdf</iirds:format>
+    <iirds:source>content/5_Operation/5_1_height_adjusting.pdf</iirds:source>
+   </iirds:Rendition>  
+  </iirds:has-rendition>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:title>Adjusting the height</iirds:title>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#TelescopicRod"/>
+  <iirds:language>en</iirds:language>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#MountingBracket">
+    <rdfs:label>Mounting bracket</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:has-subject>
+   <iirds:InformationSubject rdf:about="https://www.i4icm.de/pifan#HeightAdjustment">
+    <rdfs:label>Height adjustment</rdfs:label>
+   </iirds:InformationSubject>
+  </iirds:has-subject>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2018-11-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:17057163-c9f2-4b21-8210-89a13e4c9192"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:acdf3998-c2b7-4a4a-af13-ce402cea90ef">
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-06-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:17057163-c9f2-4b21-8210-89a13e4c9192"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:title>Clearing the swivel area</iirds:title>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#SwivelController">
+    <rdfs:label>Swivel controller</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/7_Troubleshooting/7_4_swivel_area_clearing.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Maintenance"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:language>en</iirds:language>
+  <iirds:has-subject>
+   <iirds:InformationSubject rdf:about="https://www.i4icm.de/pifan#ManualCheck">
+    <rdfs:label>Manual check</rdfs:label>
+   </iirds:InformationSubject>
+  </iirds:has-subject>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:df1332ee-1a4c-4246-a51d-9edfbdd6c160">
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericConcept"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/1_GenSafety/1_GenSafety.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-05-15T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:819c62a1-5a52-4970-a137-687c0114bda7"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericSafety"/>
+  <iirds:language>en</iirds:language>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+  <iirds:title>General safety instructions</iirds:title>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:ced3ca47-bc28-4bb2-83c3-45a86e25770f">
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-06-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:a0d194ed-b441-41db-947c-3f7874fcf9ad"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:title>Disposal</iirds:title>
+  <iirds:language>en</iirds:language>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/9_Disposal/9_disposal.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:has-subject>
+   <iirds:InformationSubject rdf:about="http://iirds.tekom.de/iirds#EnvironmentalProtectionInstruction">
+    <rdfs:label>Environmental protection instruction</rdfs:label>
+   </iirds:InformationSubject>
+  </iirds:has-subject>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericConcept"/>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Disposal"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:cf0a5c68-c2b1-45dd-a3cb-cbd2861f6e61">
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#Assembly"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-05-21T09:05:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:a0d194ed-b441-41db-947c-3f7874fcf9ad"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:relates-to-supply>
+   <iirdsMch:HardwareTool rdf:about="https://www.i4icm.de/pifan#ScrewDriverPhillips">
+    <rdfs:label>Phillips Screw Driver</rdfs:label>
+   </iirdsMch:HardwareTool>
+  </iirds:relates-to-supply>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:language>en</iirds:language>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#Rotor">
+    <rdfs:label>Rotor</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:title>Mounting the rotor</iirds:title>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/3_Assembly/3_1a_rotor_mounting.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:64792352-b96f-452a-90d8-5283515c7fc2">
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-08-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:819c62a1-5a52-4970-a137-687c0114bda7"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:title>Cleaning the rotor</iirds:title>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Maintenance"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/6_Maintenance/6_1_rotor_cleaning.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:language>en</iirds:language>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#Rotor"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds/domain/machinery#Cleaning"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:4abd6db5-1182-4445-a926-bbf615728ae7">
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:language>en</iirds:language>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#Drive">
+    <rdfs:label>Drive</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-05-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:17057163-c9f2-4b21-8210-89a13e4c9192"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Fault"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/7_Troubleshooting/7_3_power_supply_checking.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:has-subject rdf:resource="https://www.i4icm.de/pifan#ManualCheck"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:title>Checking the power supply</iirds:title>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#Connection"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:5776e4ad-07f5-4d6f-98ae-430d622483b8">
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/5_Operation/5_5b_heating_switching_on.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/pdf</iirds:format>
+    <iirds:source>content/5_Operation/5_5b_heating_switching_on.pdf</iirds:source>
+   </iirds:Rendition>  
+  </iirds:has-rendition>
+  <iirds:has-subject>
+   <iirds:InformationSubject rdf:about="https://www.i4icm.de/pifan#HeatAdjustment">
+    <rdfs:label>Heat adjustment</rdfs:label>
+   </iirds:InformationSubject>
+  </iirds:has-subject>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Operation"/>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#TemperatureControl">
+    <rdfs:label>Temperature control</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-08-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:819c62a1-5a52-4970-a137-687c0114bda7"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:language>en</iirds:language>
+  <iirds:title>Switching the heating ON/OFF</iirds:title>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:d375b206-8510-43b3-b951-264a61b426fa">
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/5_Operation/5_3a_switching_on.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/pdf</iirds:format>
+    <iirds:source>content/5_Operation/5_3a_switching_on.pdf</iirds:source>
+   </iirds:Rendition>  
+  </iirds:has-rendition>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:relates-to-component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#SpeedController">
+    <rdfs:label>Speed controller</rdfs:label>
+   </iirds:Component>
+  </iirds:relates-to-component>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:title>Switching on / Adjusting the speed</iirds:title>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Operation"/>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:has-subject>
+   <iirds:InformationSubject rdf:about="https://www.i4icm.de/pifan#SpeedAdjustment">
+    <rdfs:label>Speed adjustment</rdfs:label>
+   </iirds:InformationSubject>
+  </iirds:has-subject>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2018-11-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:17057163-c9f2-4b21-8210-89a13e4c9192"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:08102300-4bfd-46b3-a72e-a6274dcd0461">
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:title>Technical data</iirds:title>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericReference"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericTechnicalData"/>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:language>en</iirds:language>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-04-02T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:819c62a1-5a52-4970-a137-687c0114bda7"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/2_ProductDescription/2_3_TechData_X5-DH2.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:1cfa4641-7613-4716-9396-3f078c2f859c">
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#SwivelController"/>
+  <iirds:title>Switching the swivel function ON/OFF</iirds:title>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/5_Operation/5_4_swivel_function.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/pdf</iirds:format>
+    <iirds:source>content/5_Operation/5_4_swivel_function.pdf</iirds:source>
+   </iirds:Rendition>  
+  </iirds:has-rendition>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-08-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:819c62a1-5a52-4970-a137-687c0114bda7"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:has-subject rdf:resource="https://www.i4icm.de/pifan#TiltAdjustment"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Configuration"/>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Operation"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:has-subject>
+   <iirds:InformationSubject rdf:about="https://www.i4icm.de/pifan#SwivelAdjustment">
+    <rdfs:label>Swivel adjustment</rdfs:label>
+   </iirds:InformationSubject>
+  </iirds:has-subject>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:language>en</iirds:language>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:466d6b9d-6d35-4086-889a-4ec8b004a5b1">
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-05-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:17057163-c9f2-4b21-8210-89a13e4c9192"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Fault"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:title>Manual troubleshooting</iirds:title>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericReference"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/7_Troubleshooting/7_2_manual_troubleshooting.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:language>en</iirds:language>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+  <iirds:has-subject rdf:resource="https://www.i4icm.de/pifan#ManualCheck"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:6b8ffa98-e85a-4181-8884-b29ed6af8678">
+  <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/5_Operation/5_2_tilt_adjusting.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/pdf</iirds:format>
+    <iirds:source>content/5_Operation/5_2_tilt_adjusting.pdf</iirds:source>
+   </iirds:Rendition>  
+  </iirds:has-rendition>
+  <iirds:has-subject rdf:resource="https://www.i4icm.de/pifan#TiltAdjustment"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2018-11-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:a0d194ed-b441-41db-947c-3f7874fcf9ad"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:title>Adjusting the tilt</iirds:title>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Configuration"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:language>en</iirds:language>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
+ </iirds:Topic>
+ <iirds:Topic rdf:about="urn:uuid:0ff12d1a-e246-4aeb-b526-6ce68ebedc10">
+  <iirds:has-content-lifecycle-status>
+   <iirds:ContentLifeCycleStatus>
+    <iirds:dateOfStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-05-11T09:52:00+01:00</iirds:dateOfStatus>
+    <iirds:relates-to-party>
+     <iirds:Party rdf:about="urn:uuid:17057163-c9f2-4b21-8210-89a13e4c9192"/>
+    </iirds:relates-to-party>
+    <iirds:has-content-lifecycle-status-value rdf:resource="http://iirds.tekom.de/iirds#Reviewed"/>
+   </iirds:ContentLifeCycleStatus>
+  </iirds:has-content-lifecycle-status>
+  <iirds:relates-to-event>
+   <iirds:Event rdf:about="urn:uuid:614d74b3-2944-4c1e-b960-666754906721">
+    <iirds:has-event-type rdf:parseType="Resource">
+     <rdfs:label>Defect</rdfs:label>
+    </iirds:has-event-type>
+    <iirds:has-event-code rdf:parseType="Resource">
+     <rdfs:label>3X333</rdfs:label>
+    </iirds:has-event-code>
+   </iirds:Event>
+  </iirds:relates-to-event>
+  <iirds:relates-to-product-lifecycle-phase rdf:resource="http://iirds.tekom.de/iirds#Fault"/>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#Operator"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#RepairInstructions"/>
+  <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
+  <iirds:relates-to-event>
+   <iirds:Event rdf:about="urn:uuid:497164c2-2410-4e73-b353-5d59859d83b9">
+    <iirds:has-event-type rdf:parseType="Resource">
+     <rdfs:label>Locked State</rdfs:label>
+    </iirds:has-event-type>
+    <iirds:has-event-code rdf:parseType="Resource">
+     <rdfs:label>2X222</rdfs:label>
+    </iirds:has-event-code>
+   </iirds:Event>
+  </iirds:relates-to-event>
+  <iirds:language>en</iirds:language>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#DisplayOperatingElement"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
+  <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericReference"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#QuickGuide"/>
+  <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
+  <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
+  <iirds:relates-to-event>
+   <iirds:Event rdf:about="urn:uuid:cbf32359-fe58-45b1-966b-e40607210cc6">
+    <iirds:has-event-type rdf:parseType="Resource">
+     <rdfs:label>Defect</rdfs:label>
+    </iirds:has-event-type>
+    <iirds:has-event-code rdf:parseType="Resource">
+     <rdfs:label>1X111</rdfs:label>
+    </iirds:has-event-code>
+   </iirds:Event>
+  </iirds:relates-to-event>
+  <iirds:relates-to-event>
+   <iirds:Event rdf:about="urn:uuid:5280d1fb-cd1c-410f-b7ed-669eab2d3f87">
+    <iirds:has-event-type rdf:parseType="Resource">
+     <rdfs:label>Defect</rdfs:label>
+    </iirds:has-event-type>
+    <iirds:has-event-code rdf:parseType="Resource">
+     <rdfs:label>4X444</rdfs:label>
+    </iirds:has-event-code>
+   </iirds:Event>
+  </iirds:relates-to-event>
+  <iirds:relates-to-qualification rdf:resource="https://www.i4icm.de/pifan#ServiceTechnician"/>
+  <iirds:rights>Content Copyright (c) 2015, PI-Fan Project
+        iiRDS Implementation Copyright (c) 2019, iiRDS Consortium
+        
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</iirds:rights>
+  <iirds:title>Error codes on display</iirds:title>
+  <iirds:has-rendition>
+   <iirds:Rendition>
+    <iirds:format>application/xhtml+xml</iirds:format>
+    <iirds:source>content/7_Troubleshooting/7_1_display_error_codes.xhtml</iirds:source>
+   </iirds:Rendition>
+  </iirds:has-rendition>
+  <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
+  <iirds:relates-to-component rdf:resource="https://www.i4icm.de/pifan#PIFan"/>
+ </iirds:Topic>
+ <iirds:DirectoryNode>
+  <iirds:has-directory-structure-type rdf:resource="http://iirds.tekom.de/iirds#TableOfContents"/>
+  <iirds:relates-to-information-unit rdf:resource="urn:uuid:9cea7846-5404-4d4f-bd89-975954534921"/>
+  <iirds:has-first-child>
+   <iirds:DirectoryNode>
+    <iirds:has-next-sibling>
+     <iirds:DirectoryNode>
+      <iirds:has-next-sibling>
+       <iirds:DirectoryNode>
+        <iirds:has-next-sibling>
+         <iirds:DirectoryNode>
+          <iirds:has-next-sibling>
+           <iirds:DirectoryNode>
+            <iirds:has-next-sibling>
+             <iirds:DirectoryNode>
+              <iirds:has-next-sibling>
+               <iirds:DirectoryNode>
+                <iirds:has-next-sibling>
+                 <iirds:DirectoryNode>
+                  <iirds:has-next-sibling>
+                   <iirds:DirectoryNode>
+                    <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                    <iirds:relates-to-information-unit rdf:resource="urn:uuid:ced3ca47-bc28-4bb2-83c3-45a86e25770f"/>
+                    <rdfs:label>Disposal</rdfs:label>
+                   </iirds:DirectoryNode>
+                  </iirds:has-next-sibling>
+                  <iirds:relates-to-information-unit rdf:resource="urn:uuid:03e3890b-27cb-42a6-9091-f445f3044b69"/>
+                  <rdfs:label>Contact data</rdfs:label>
+                 </iirds:DirectoryNode>
+                </iirds:has-next-sibling>
+                <iirds:has-first-child>
+                 <iirds:DirectoryNode>
+                  <iirds:has-next-sibling>
+                   <iirds:DirectoryNode>
+                    <iirds:has-next-sibling>
+                     <iirds:DirectoryNode>
+                      <iirds:has-next-sibling>
+                       <iirds:DirectoryNode>
+                        <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                        <iirds:relates-to-information-unit rdf:resource="urn:uuid:acdf3998-c2b7-4a4a-af13-ce402cea90ef"/>
+                        <rdfs:label>Clearing the swivel area</rdfs:label>
+                       </iirds:DirectoryNode>
+                      </iirds:has-next-sibling>
+                      <iirds:relates-to-information-unit rdf:resource="urn:uuid:4abd6db5-1182-4445-a926-bbf615728ae7"/>
+                      <rdfs:label>Checking the power supply</rdfs:label>
+                     </iirds:DirectoryNode>
+                    </iirds:has-next-sibling>
+                    <iirds:relates-to-information-unit rdf:resource="urn:uuid:466d6b9d-6d35-4086-889a-4ec8b004a5b1"/>
+                    <rdfs:label>Manual troubleshooting</rdfs:label>
+                   </iirds:DirectoryNode>
+                  </iirds:has-next-sibling>
+                  <iirds:relates-to-information-unit rdf:resource="urn:uuid:0ff12d1a-e246-4aeb-b526-6ce68ebedc10"/>
+                  <rdfs:label>Error codes on display</rdfs:label>
+                 </iirds:DirectoryNode>
+                </iirds:has-first-child>
+                <rdfs:label>Troubleshooting</rdfs:label>
+               </iirds:DirectoryNode>
+              </iirds:has-next-sibling>
+              <iirds:has-first-child>
+               <iirds:DirectoryNode>
+                <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                <iirds:relates-to-information-unit rdf:resource="urn:uuid:64792352-b96f-452a-90d8-5283515c7fc2"/>
+                <rdfs:label>Cleaning the rotor</rdfs:label>
+               </iirds:DirectoryNode>
+              </iirds:has-first-child>
+              <rdfs:label>Maintenance</rdfs:label>
+             </iirds:DirectoryNode>
+            </iirds:has-next-sibling>
+            <iirds:has-first-child>
+             <iirds:DirectoryNode>
+              <iirds:has-next-sibling>
+               <iirds:DirectoryNode>
+                <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                <iirds:has-first-child>
+                 <iirds:DirectoryNode>
+                  <iirds:has-next-sibling>
+                   <iirds:DirectoryNode>
+                    <iirds:has-next-sibling>
+                     <iirds:DirectoryNode>
+                      <iirds:has-next-sibling>
+                       <iirds:DirectoryNode>
+                        <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                        <iirds:relates-to-information-unit rdf:resource="urn:uuid:cc296bcf-1a0d-4136-b5f3-b4ff37123112"/>
+                        <rdfs:label>Display</rdfs:label>
+                       </iirds:DirectoryNode>
+                      </iirds:has-next-sibling>
+                      <iirds:relates-to-information-unit rdf:resource="urn:uuid:5776e4ad-07f5-4d6f-98ae-430d622483b8"/>
+                      <rdfs:label>Switching the heating ON/OFF</rdfs:label>
+                     </iirds:DirectoryNode>
+                    </iirds:has-next-sibling>
+                    <iirds:relates-to-information-unit rdf:resource="urn:uuid:1cfa4641-7613-4716-9396-3f078c2f859c"/>
+                    <rdfs:label>Switching the swivel function ON/OFF</rdfs:label>
+                   </iirds:DirectoryNode>
+                  </iirds:has-next-sibling>
+                  <iirds:relates-to-information-unit rdf:resource="urn:uuid:d375b206-8510-43b3-b951-264a61b426fa"/>
+                  <rdfs:label>Switching on / Adjusting the speed</rdfs:label>
+                 </iirds:DirectoryNode>
+                </iirds:has-first-child>
+                <iirds:relates-to-information-unit rdf:resource="urn:uuid:6b8ffa98-e85a-4181-8884-b29ed6af8678"/>
+                <rdfs:label>Adjusting the tilt</rdfs:label>
+               </iirds:DirectoryNode>
+              </iirds:has-next-sibling>
+              <iirds:relates-to-information-unit rdf:resource="urn:uuid:78e7824e-0db9-440a-a798-463ffedfe35e"/>
+              <rdfs:label>Adjusting the height</rdfs:label>
+             </iirds:DirectoryNode>
+            </iirds:has-first-child>
+            <rdfs:label>Operation</rdfs:label>
+           </iirds:DirectoryNode>
+          </iirds:has-next-sibling>
+          <iirds:relates-to-information-unit rdf:resource="urn:uuid:bf190d6b-d396-49f7-a32e-0dd7d077c3bf"/>
+          <rdfs:label>Getting started</rdfs:label>
+         </iirds:DirectoryNode>
+        </iirds:has-next-sibling>
+        <iirds:has-first-child>
+         <iirds:DirectoryNode>
+          <iirds:has-next-sibling>
+           <iirds:DirectoryNode>
+            <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+            <iirds:relates-to-information-unit rdf:resource="urn:uuid:0525b7e9-a1ff-4e94-9f54-1c291974fcda"/>
+            <rdfs:label>Mounting the telescopic rod and base plate</rdfs:label>
+           </iirds:DirectoryNode>
+          </iirds:has-next-sibling>
+          <iirds:relates-to-information-unit rdf:resource="urn:uuid:cf0a5c68-c2b1-45dd-a3cb-cbd2861f6e61"/>
+          <rdfs:label>Mounting the rotor</rdfs:label>
+         </iirds:DirectoryNode>
+        </iirds:has-first-child>
+        <rdfs:label>Assembly</rdfs:label>
+       </iirds:DirectoryNode>
+      </iirds:has-next-sibling>
+      <iirds:has-first-child>
+       <iirds:DirectoryNode>
+        <iirds:has-next-sibling>
+         <iirds:DirectoryNode>
+          <iirds:has-next-sibling>
+           <iirds:DirectoryNode>
+            <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+            <iirds:relates-to-information-unit rdf:resource="urn:uuid:08102300-4bfd-46b3-a72e-a6274dcd0461"/>
+            <rdfs:label>Technical data</rdfs:label>
+           </iirds:DirectoryNode>
+          </iirds:has-next-sibling>
+          <iirds:relates-to-information-unit rdf:resource="urn:uuid:bb98ea5a-431a-43a7-a5d9-2876d7656a3b"/>
+          <rdfs:label>Foreseeable misuse</rdfs:label>
+         </iirds:DirectoryNode>
+        </iirds:has-next-sibling>
+        <iirds:relates-to-information-unit rdf:resource="urn:uuid:4243108c-eba5-472f-828a-30511f64be61"/>
+        <rdfs:label>Intended use</rdfs:label>
+       </iirds:DirectoryNode>
+      </iirds:has-first-child>
+      <rdfs:label>Product description</rdfs:label>
+     </iirds:DirectoryNode>
+    </iirds:has-next-sibling>
+    <iirds:has-first-child>
+     <iirds:DirectoryNode>
+      <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+      <iirds:relates-to-information-unit rdf:resource="urn:uuid:df1332ee-1a4c-4246-a51d-9edfbdd6c160"/>
+      <rdfs:label>General safety instructions</rdfs:label>
+     </iirds:DirectoryNode>
+    </iirds:has-first-child>
+    <rdfs:label>Safety</rdfs:label>
+   </iirds:DirectoryNode>
+  </iirds:has-first-child>
+  <rdfs:label>PI-FAN Operating Manual</rdfs:label>
+ </iirds:DirectoryNode>
+</rdf:RDF>

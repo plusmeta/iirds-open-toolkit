@@ -1,0 +1,2 @@
+<!-- EXAMPLE 4: Abstract InformationUnit -->
+<!-- An iirds:Document links to an iirds:DirectoryStructure with topics that form an Operation Instruction, but does not link to a single physical file directly. In this case, the document is not represented by a physical file, but by the collection of topics. -->

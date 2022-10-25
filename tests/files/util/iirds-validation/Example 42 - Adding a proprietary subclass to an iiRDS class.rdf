@@ -1,0 +1,8 @@
+<!-- Example 42: Adding a proprietary subclass to an iiRDS class  -->
+<!-- This example adds a proprietary class ``Error`` to the iiRDS class ``iirds:Event`` as a subclass. A proprietary implementation adds its proprietary instances to the ``Error`` class and an iiRDS Consumer finds them by searching for instances of the ``iirds:Event`` class. <rdf:RDF xml:lang="de" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> -->
+	<rdfs:Class rdf:about="http://myCompany.com/myProject#Error">
+		<rdfs:label xml:lang="en">Error</rdfs:label>
+		<rdfs:label xml:lang="de">Fehler</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Event"/>
+	</rdfs:Class>
+</rdf:RDF>
