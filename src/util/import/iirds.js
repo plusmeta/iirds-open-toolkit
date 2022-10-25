@@ -10,6 +10,7 @@ import systemValidations from "@/config/imports/system-rules";
 import { ConfConst } from "@/config/imports/const";
 
 const VERBOSE = process.env.NODE_ENV !== "production";
+const MAX_VIOLATIONS = 100;
 
 export default {
     mimeType: {
@@ -20,6 +21,7 @@ export default {
         projectUuid: null,
         store: null
     },
+    violationObjects: [],
     logs: [],
     async analyze(projectUuid, objectUuid, objectData, objectFilename, store) {
         this.params = {projectUuid, store};
@@ -74,6 +76,15 @@ export default {
             totalRulesChecked += checkedSchemaRules;
         }
 
+
+        let violationObjects = this.violationObjects;
+        if (violationObjects.length > MAX_VIOLATIONS) {
+            await this.params.store.dispatch("projects/updateCurrentProjectRelations", { maxViolationsExceeded: true });
+            violationObjects = violationObjects.slice(0, MAX_VIOLATIONS);
+        }
+
+        await this.params.store.dispatch("storage/saveObjectsLocal", violationObjects);
+
         await this.params.store.dispatch("projects/updateCurrentProjectRelations", { totalRulesChecked });
         await this.params.store.dispatch("projects/updateCurrentProjectRelations", { detectedVersion });
 
@@ -97,7 +108,7 @@ export default {
         }
         return {version, restriction};
     },
-    async setViolation(objectUuid, test) {
+    setViolation(objectUuid, test) {
         const locale = this.params.store.getters["settings/getCurrentLocale"];
         const violationObject = objectTemplate.object({
             externalId: objectUuid,
@@ -145,7 +156,7 @@ export default {
             }
         });
 
-        await this.params.store.dispatch("storage/saveObjectLocal", violationObject);
+        this.violationObjects.push(violationObject);
         return violationObject.uuid;
     },
     async setValidationResult(objectUuid, version, restriction) {
