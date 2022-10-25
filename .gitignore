@@ -2,6 +2,8 @@
 node_modules
 src/_trash
 /dist
+.history
+/coverage
 
 # local env files
 .env.local
@@ -20,9 +22,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-# Local history (VCS plugin)
-.history
-
-coverage/clover.xml
 junit.xml
+coverage/clover.xml
