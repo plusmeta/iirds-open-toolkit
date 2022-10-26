@@ -27,7 +27,8 @@ export default {
                 if (result.length) {
                     for (let element of result) {
                         const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
-                        schemaViolations.push({ ...test, fileName, type, scope, location, lineNr, lines });
+                        const elems = Serializer.serializeToString(element);
+                        schemaViolations.push({ ...test, fileName, type, scope, location, lineNr, lines, elems });
                     }
                 } else {
                     schemaViolations.push({ ...test, fileName, type, scope });
@@ -67,6 +68,9 @@ export default {
 };
 
 export function validateSingleRule(document, rule) {
-    const selection = Array.from(document.querySelectorAll(test.path));
-    return { succeeded: rule?.assert(selection, document) || true, invalidElements: rule?.getInvalid(selection) };
+    const selection = Array.from(document.querySelectorAll(rule.path));
+    const result = rule?.assert(selection, document);
+    const succeeded = (result === undefined) ? true : result; // strict comparison to undefined
+    const invalidElements = rule?.getInvalid(selection, document);
+    return { succeeded, invalidElements };
 }

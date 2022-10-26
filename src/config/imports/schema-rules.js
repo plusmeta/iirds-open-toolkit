@@ -36,6 +36,7 @@ const getMoreThanOne = (els, doc, selector) => els.filter((el) => {
 }).filter(Boolean);
 
 const getMissing = (els, selector) => els.filter(el => !el.querySelectorAll(`:scope > ${selector}`).length);
+const getNotIncluded = (small, big) => small.filter(n => big.indexOf(n) === -1);
 
 const getWrongClassInPackage = (els, doc, className) => els.filter((el) => {
     if (el.hasAttribute("rdf:resource")) {
@@ -286,14 +287,23 @@ export default [
     {
         id: "M6",
         path: "RDF",
-        getInvalid: () => {
-            // TODO: Regel hat Lauftzeitkomplexität
-            const versions = Array.from(document.querySelectorAll(
-                "Document, Topic, Fragment, Package")).map(el => el.querySelector(
-                "is-version-of").getAttribute("rdf:resource"));
-            const ios = Array.from(document.querySelectorAll("InformationObject")).map(el => el
-                .getAttribute("rdf:about"));
+        assert: () => {
+            const versions = Array.from(document.querySelectorAll("Document, Topic, Fragment, Package")).map((el) => {
+                return el.querySelector("is-version-of").getAttribute("rdf:resource");
+            });
+            const ios = Array.from(document.querySelectorAll("InformationObject")).map((el) => {
+                return el.getAttribute("rdf:about");
+            });
             return includesAll(versions, ios);
+        },
+        getInvalid: () => {
+            const versions = Array.from(document.querySelectorAll("Document, Topic, Fragment, Package")).map((el) => {
+                return el.querySelector("is-version-of").getAttribute("rdf:resource");
+            });
+            const ios = Array.from(document.querySelectorAll("InformationObject")).map((el) => {
+                return el.getAttribute("rdf:about");
+            });
+            return getNotIncluded(versions, ios);
         },
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=If%20information%20objects%20are%20used%2C%20each%20information%20unit%20MUST%20only%20be%20related%20to%20exactly%20one%20information%20object%20via%20iirds%3Ais%2Dversion%2Dof.",

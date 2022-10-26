@@ -16,29 +16,30 @@
         style="height:125px"
         class="white--text"
       >
-        <v-col class="py-4 pl-12" cols="auto">
+        <v-col class="py-4 pl-12" cols="1">
           <v-icon
             left
-            :size="64"
+            x-large
             color="white"
           >
             {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
           </v-icon>
         </v-col>
-        <v-col class="py-4" cols="auto">
-          <h1>
+        <v-col class="py-4" cols="3">
+          <h2>
             {{ (isValid) ? `${$t('Otk.valid')} iiRDS ${getCurrentProjectRelationById('detectedVersion')}` : $t('Otk.notValid') }}
-          </h1>
+          </h2>
         </v-col>
-        <v-col class="py-4 px-8" cols="8">
+        <v-col class="py-4 px-8" cols="7">
           <p
             v-if="getCurrentProjectRelationById('maxViolationsExceeded')"
             class="my-0"
           >
-            <span class="font-weight-bold">{{ getViolations.length }}+</span>
+            <span class="font-weight-bold">{{ getViolations.length }}</span>
+            <span v-if="getViolations.length > 100">+</span>
             {{ $t('Otk.violationsDetected') }}
             <span class="font-weight-bold">{{ getValidationSource }}</span>
-            ({{ $t('Otk.showOnlyViolations', [getViolations.length]) }})
+            <span v-if="getViolations.length > 100">({{ $t('Otk.showOnlyViolations', [getViolations.length]) }})</span>
           </p>
           <p
             v-else
@@ -54,7 +55,7 @@
           </p>
         </v-col>
         <v-spacer />
-        <v-col class="py-4 pr-12" cols="auto">
+        <v-col class="py-4 pr-12" cols="1">
           <v-btn
             icon
             color="white"

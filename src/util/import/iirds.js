@@ -136,6 +136,10 @@ export default {
                     uri: "plus:Lines",
                     value: test.lines,
                 }),
+                "plus:Elements": objectTemplate.metadata({
+                    uri: "plus:Elements",
+                    value: test.elems,
+                }),
                 "plus:Level": objectTemplate.metadata({
                     uri: "plus:Level",
                     value: test.prio,

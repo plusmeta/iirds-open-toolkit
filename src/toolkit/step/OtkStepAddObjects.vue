@@ -257,13 +257,13 @@
                 style="border: 3px dashed grey;"
                 @click="$refs.fileInput.click()"
               >
-                <div class="my-2" style="font-size: 96px">
+                <div class="my-1" style="font-size: 80px">
                   {{ $t('Validate.addObjects') }}
                 </div>
-                <v-icon :size="180" color="grey">
+                <v-icon :size="140" color="grey">
                   mdi-package-variant-closed-check
                 </v-icon>
-                <p class="my-3" style="font-size: 24px">
+                <p class="my-2" style="font-size: 24px">
                   {{ $t('Validate.noObjectsExplainer') }}
                 </p>
               </div>

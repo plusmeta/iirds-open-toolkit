@@ -11,13 +11,14 @@
       height="300"
       min-width="400"
       class="pa-0 mx-auto"
-      color="grey lighten-2"
+      color="grey lighten-1"
       style="overflow-x: auto;"
     >
       <codemirror
         ref="xmlcode"
         :value="getCode"
         :options="getOptions"
+        @change="highlightLine"
         @ready="highlightLine"
       />
     </v-sheet>
@@ -28,9 +29,25 @@
       width="400"
       type="image"
     />
-    <p v-if="file.text" class="font-monospace mt-2">
-      Violation found in line {{ getLineNr }} of {{ getFileName }}
-    </p>
+    <v-row no-gutters>
+      <v-col cols="10">
+        <p v-if="file.text" class="font-monospace mt-2">
+          Violation found in line {{ getLineNr }} of {{ getFileName }}
+        </p>
+      </v-col>
+      <v-col cols="2" style="text-align: right">
+        <v-btn
+          icon
+          :disabled="mode"
+          class="my-0"
+          @click="changeMode"
+        >
+          <v-icon small>
+            mdi-xml
+          </v-icon>
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-flex>
 </template>
 
@@ -50,12 +67,17 @@ export default {
             default: 0.5
         }
     },
+    data() {
+        return {
+            mode: false
+        };
+    },
     computed: {
         getFileName() {
             return this.getMetadataValueByURI(this.file.uuid, "plus:OriginalFileName");
         },
         getCode() {
-            return this.getMetadataValueByURI(this.file.uuid, "plus:Lines");
+            return (this.mode) ? this.getMetadataValueByURI(this.file.uuid, "plus:Elements") : this.getMetadataValueByURI(this.file.uuid, "plus:Lines");
         },
         getLine() {
             const lines = this.getCode.split("\n");
@@ -65,13 +87,19 @@ export default {
             return this.getMetadataValueByURI(this.file.uuid, "plus:LineNr") || 1;
         },
         getOptions() {
-            return { firstLineNumber: Number(this.getLineNr) - 3 };
+            return {
+                firstLineNumber: Number(this.getLineNr) - 3,
+                lineNumbers: !this.mode
+            };
         },
         ...mapGetters("storage", [
             "getMetadataValueByURI",
         ]),
     },
     methods: {
+        changeMode() {
+            this.mode = true;
+        },
         highlightLine(editor) {
             const from = {line: 3, ch: 1};
             const to = {line: 3, ch: this.getLine.length};

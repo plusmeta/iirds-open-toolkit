@@ -402,6 +402,21 @@
     },
     {
         "subClassOf": "plus:Meta",
+        "identifier": "plus:Elements",
+        "datatype": "plus:String",
+        "label": {
+            "de": "Elemente",
+            "en": "Elements"
+        },
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": ["mdi:xml"]
+        }
+    },
+    {
+        "subClassOf": "plus:Meta",
         "identifier": "plus:SubFile",
         "datatype": "plus:Array",
         "label": {
