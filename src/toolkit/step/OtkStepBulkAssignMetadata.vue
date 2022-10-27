@@ -92,14 +92,13 @@
             >
               <v-autocomplete
                 ref="type"
-                :value="getSetting('ui_assign_filter')"
+                v-model="filter"
                 :items="getObjectTypeFilterValues"
                 :label="$t('Validate.all')"
                 prepend-icon="mdi-filter"
                 single-line
                 hide-details
                 clearable
-                @change="setLocalSetting({key: 'ui_assign_filter', value: $event})"
               >
                 <template v-slot:item="{ item }">
                   <span>{{ item.text }} </span>
@@ -268,6 +267,7 @@ export default {
         return {
             search: null,
             removing: "",
+            filter: null,
             showSettingsMenu: false
         };
     },
@@ -287,10 +287,9 @@ export default {
             }
         },
         getCurrentObjects() {
-            let filter = this.getSetting("ui_assign_filter");
             return this.getCurrentObjectsByType(this.objecttype).filter((object) => {
                 const ruleNr = this.getMetadataValueByURI(object.uuid, "plus:Rule");
-                return (filter) ? ruleNr === filter : true;
+                return (this.filter) ? ruleNr === this.filter : true;
             });
         },
         getObjectTypeFilterValues() {

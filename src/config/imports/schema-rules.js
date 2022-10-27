@@ -267,7 +267,6 @@ export default [
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M4_false.rdf"]
         }
     },
-
     {
         id: "M5",
         path: "*",
@@ -962,9 +961,9 @@ export default [
     },
     {
         id: "M27",
-        path: "has-first-child",
-        assert: els => els.every(el => el.querySelectorAll(":scope > DirectoryNode").length === 1 || !!el.querySelector(":scope > DirectoryNode > has-next-sibling")),
-        getInvalid: els => els.filter(el => !el.querySelectorAll(":scope > DirectoryNode").length === 1 && !el.querySelector(":scope > DirectoryNode > has-next-sibling")),
+        path: "has-first-child > DirectoryNode",
+        assert: els => els.every(el => el.querySelector(":scope > has-next-sibling")),
+        getInvalid: els => els.filter(el => el.querySelector(":scope > has-next-sibling")),
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20directory%20node%20on%20the%20next%20lower%20level%20MUST%20be%20the%20first%20item%20of%20another%20linked%20list.",
         version: ["V1.0", "V1.0.1", "V1.1"],
