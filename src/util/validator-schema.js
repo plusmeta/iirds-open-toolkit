@@ -27,7 +27,7 @@ export default {
                 if (result.length) {
                     for (let element of result) {
                         const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
-                        const elems = Serializer.serializeToString(element);
+                        const elems = this.cleanUpXML(Serializer.serializeToString(element));
                         schemaViolations.push({ ...test, fileName, type, scope, location, lineNr, lines, elems });
                     }
                 } else {
@@ -57,16 +57,20 @@ export default {
         const lineNr = lineMap[validationId];
         const lines = lineArr.slice(Math.max(0, lineNr - 4), Math.min(lineArr.length, lineNr + 3));
 
-        const validationIdRexExp = `${validationIdAttr}="[\\w\\-\\/\\.#\\d:]+"\\s?`;
         let xmlTxt = Serializer.serializeToString(element);
 
+
+        return { location: this.cleanUpXML(xmlTxt), lineNr, lines: lines.join("\n") };
+    },
+    cleanUpXML(xmlTxt) {
+        const validationIdRexExp = `${validationIdAttr}="[\\w\\-\\/\\.#\\d:]+"\\s?`;
         xmlTxt = xmlTxt.replace(/xmlns:\w{2,5}="[\w\-\/\.#\d:]+"\s?/g, "");
         xmlTxt = xmlTxt.replace(new RegExp(validationIdRexExp, "g"), "");
-
-        return { location: xmlTxt, lineNr, lines: lines.join("\n") };
+        return xmlTxt;
     }
 };
 
+// for automated testing of rules (unit tests)
 export function validateSingleRule(document, rule) {
     const selection = Array.from(document.querySelectorAll(rule.path));
     const result = rule?.assert(selection, document);

@@ -1,6 +1,8 @@
 
 const isBuiltIn = uri => uri.startsWith("http://iirds.tekom.de/iirds");
-
+const isDirectoryRoot = (el) => {
+    return !["has-next-sibling", "has-first-child", "DirectoryNode"].includes(el.parentElement.localName);
+};
 const getAbsoluteIRIRegExp = () => new RegExp(/^(\w+:|www\.)[\S]+/);
 
 const includesAll = (small, big) => small.every(n => big.indexOf(n) !== -1);
@@ -639,7 +641,7 @@ export default [
         id: "M19.4",
         path: "has-identity-domain",
         assert: (els, doc) => isDefinedAsClass(els, doc, "IdentityDomain"),
-        findInvalid: (els, doc) => getWrongClassInPackage(els, doc, "IdentityDomain"),
+        getInvalid: (els, doc) => getWrongClassInPackage(els, doc, "IdentityDomain"),
         prio: "MUST",
         category: "specific values allowed",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
@@ -872,8 +874,8 @@ export default [
     {
         id: "M24.3",
         path: "DirectoryNode",
-        assert: els => isZeroOrOne(els, "has-first-child property"),
-        getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-first-child property"),
+        assert: els => isZeroOrOne(els, "has-first-child"),
+        getInvalid: (els, doc) => getMoreThanOne(els, doc, "has-first-child"),
         prio: "MUST NOT",
         category: "cardinality 0..1",
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#:~:text=0..1%C2%A0%20iirds%3Ahas%2Dfirst%2Dchild%20property%20%2D%20iirds%3ADirectoryNode",
@@ -908,6 +910,8 @@ export default [
     {
         id: "M24.5",
         path: "DirectoryNode",
+        assert: els => els.filter(el => isDirectoryRoot(el)).every(el => el.querySelector("has-directory-structure-type")),
+        getInvalid: els => els.filter(el => isDirectoryRoot(el) && !el.querySelector("has-directory-structure-type")),
         prio: "MUST",
         category: "only root element must have property",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Only%20root%20nodes%20of%20a%20directory%20structure%20MUST%20have%20the%20property%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype.",
@@ -924,7 +928,8 @@ export default [
     {
         id: "M25",
         path: "DirectoryNode",
-        getInvalid: "",
+        assert: els => els.filter(el => !el.querySelector("DirectoryNode")).every(el => el.querySelector("has-next-sibling")?.getAttribute("rdf:resource") === "http://iirds.tekom.de/iirds#nil"),
+        getInvalid: els => els.filter(el => !el.querySelector("DirectoryNode") && el.querySelector("has-next-sibling")?.getAttribute("rdf:resource") !== "http://iirds.tekom.de/iirds#nil"),
         prio: "MUST",
         category: "rdf:resource relates to class iirds:nil",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20model%20closed%20lists%2C%20the%20last%20node%20in%20a%20list%20level%20MUST%20have%20the%20property%20iirds%3Ahas%2Dnext%2Dsibling%20relating%20to%20an%20instance%20of%20the%20class%20iirds%3Anil.",
@@ -941,7 +946,8 @@ export default [
     {
         id: "M26",
         path: "DirectoryNode",
-        getInvalid: "",
+        assert: els => els.every(el => !el.querySelector(":scope > DirectoryNode")),
+        getInvalid: els => els.filter(el => !!el.querySelector(":scope > DirectoryNode")),
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20model%20hierarchy%20levels%20in%20the%20navigation%20structure%2C%20an%20iirds%3ADirectoryNode%20instance%20MUST%20reference%20an%20iirds%3ADirectoryNode%20instance%20on%20the%20next%20lower%20level%20by%20the%20property%20iirds%3Ahas%2Dfirst%2Dchild.",
         version: ["V1.0", "V1.0.1", "V1.1"],
@@ -956,8 +962,9 @@ export default [
     },
     {
         id: "M27",
-        path: "",
-        getInvalid: "",
+        path: "has-first-child",
+        assert: els => els.every(el => el.querySelectorAll(":scope > DirectoryNode").length === 1 || !!el.querySelector(":scope > DirectoryNode > has-next-sibling")),
+        getInvalid: els => els.filter(el => !el.querySelectorAll(":scope > DirectoryNode").length === 1 && !el.querySelector(":scope > DirectoryNode > has-next-sibling")),
         prio: "MUST",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20directory%20node%20on%20the%20next%20lower%20level%20MUST%20be%20the%20first%20item%20of%20another%20linked%20list.",
         version: ["V1.0", "V1.0.1", "V1.1"],
@@ -971,122 +978,16 @@ export default [
         }
     },
     {
-        id: "M28",
-        path: "",
-        getInvalid: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Proprietary%20iiRDS%20extensions%3A%20iiRDS%20supports%20proprietary%20iiRDS%20extensions%20for%20company%2Dspecific%20and%20project%2Dspecific%20instances%20and%20classes.%20A%20proprietary%20iiRDS%20extension%20MUST%20comply%20with%20the%20standard%20in%20order%20to%20be%20processible%20by%20iiRDS%20Consumers.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Proprietäre iiRDS-Erweiterungen: iiRDS unterstützt proprietäre iiRDS-Erweiterungen für unternehmens- und projektspezifische Instanzen und Klassen.  Eine proprietäre iiRDS-Erweiterung MUSS dem Standard entsprechen, um von iiRDS-Verbrauchern verarbeitet werden zu können.",
-            "en": "Proprietary iiRDS extensions: iiRDS supports proprietary iiRDS extensions for company-specific and project-specific instances and classes. A proprietary iiRDS extension MUST comply with the standard in order to be processible by iiRDS Consumers."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-    },
-    {
-        id: "M29",
-        path: "",
-        getInvalid: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=All%20proprietary%20extensions%20that%20are%20used%20in%20a%20package%20MUST%20be%20contained%20in%20the%20file%20metadata.rdf%20in%20the%20iiRDS%20package.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Alle proprietären Erweiterungen, die in einem Paket verwendet werden, MÜSSEN in der Datei metadata.rdf im iiRDS-Paket enthalten sein.",
-            "en": "All proprietary extensions that are used in a package MUST be contained in the file metadata.rdf in the iiRDS package."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-    },
-    {
         id: "M30",
-        path: "",
-        getInvalid: "",
+        path: "Class, Property, subPropertyOf, subClassOf, domain, range, domainIncludes, rangeIncludes",
+        assert: els => els.length === 0,
+        getInvalid: els => els,
         prio: "MUST NOT",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20file%20metadata.rdf%20MUST%20NOT%20contain%20the%20iiRDS%20schema%20or%20iiRDS%20domain%20extensions.",
+        spec: "https://iirds.org/fileadmin/iiRDS_specifClassication/20201103-1.1-release/index.html#information-units:~:text=The%20file%20metadata.rdf%20MUST%20NOT%20contain%20the%20iiRDS%20schema%20or%20iiRDS%20domain%20extensions.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
             "de": "Die Datei metadata.rdf DARF NICHT das iiRDS-Schema oder die iiRDS-Domänenerweiterungen enthalten.",
             "en": "The file metadata.rdf MUST NOT contain the iiRDS schema or iiRDS domain extensions."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-    },
-    {
-        id: "M31",
-        path: "",
-        getInvalid: "",
-        prio: "MUST",
-        spec: "",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Eine proprietäre iiRDS-Erweiterung MUSS die folgenden Bedingungen erfüllen:",
-            "en": "A proprietary iiRDS extension MUST fulfill the following conditions:"
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-
-        /*
-        Proprietary classes, instances, and properties are registered to the namespace of the defining party.
-        The defining party provides the proprietary iiRDS extension to other parties if said other parties are expected to process the proprietary classes and instances.
-        Proprietary classes are subclasses or equivalent classes of existing iiRDS classes.
-        Proprietary instances are instances of existing iiRDS classes or subclasses. Proprietary instances MAY also be instances of a proprietary class.
-        Proprietary properties are sub-properties of existing properties.
-        */
-    },
-    {
-        id: "M32",
-        path: "",
-        getInvalid: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Proprietary%20iiRDS%20extensions%20MUST%20only%20use%20RDF%20and%20RDFS%20vocabulary%20in%20their%20extension%20ontology.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Proprietäre iiRDS-Erweiterungen DÜRFEN nur RDF- und RDFS-Vokabular in ihrer Erweiterungs-Ontologie verwenden.",
-            "en": "Proprietary iiRDS extensions MUST only use RDF and RDFS vocabulary in their extension ontology."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-    },
-    {
-        id: "M33",
-        path: "",
-        getInvalid: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Proprietary%20iiRDS%20extensions%20MAY%20add%20proprietary%20properties%20as%20a%20subproperty%20of%20an%20iiRDS%20property.%20Proprietary%20properties%20MUST%20comply%20with%20domain%20and%20range%20of%20the%20iiRDS%20property.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Proprietäre iiRDS-Erweiterungen KÖNNEN proprietäre Eigenschaften als Untereigenschaft einer iiRDS-Eigenschaft hinzufügen.  Proprietäre Eigenschaften MÜSSEN der Domäne und dem Bereich der iiRDS-Eigenschaft entsprechen.",
-            "en": "Proprietary iiRDS extensions MAY add proprietary properties as a subproperty of an iiRDS property. Proprietary properties MUST comply with domain and range of the iiRDS property."
-        },
-        testfiles: {
-            "true": [""],
-            "false": [""]
-        }
-    },
-
-
-    //===================iirds:Identity
-    {
-        id: "M34",
-        path: "",
-        getInvalid: "",
-        prio: "MUST",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Complex%20identifier%20of%20an%20iiRDS%20domain%20entity.%20Each%20identifier%20MUST%20be%20related%20to%20the%20identity%20domain%20within%20which%20it%20is%20unambiguous.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Definition: Komplexer Bezeichner einer iiRDS-Domainentität.  Jede Kennung MUSS sich auf die Identitätsdomäne beziehen, innerhalb derer sie eindeutig ist.",
-            "en": "Definition:	Complex identifier of an iiRDS domain entity. Each identifier MUST be related to the identity domain within which it is unambiguous."
         },
         testfiles: {
             "true": [""],
@@ -1129,26 +1030,6 @@ export default [
             "false": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant-M47_false.rdf"]
         }
     },
-    /*
-    {
-
-        path: "Document, Component, Concept, ContentLifeCycleStatusValue, DirectoryNodeType, DocumentType, Event, Form, Formality, Fragment, Functionality, IdentityDomain, IdentityType, InformationObject, Learning, Package, Party, PartyRole, Process, ProductFunction, ProductProperty, ProductVariant, Reference, Role, Safety, SkillLevel, Supply, Task, TechnicalData, TechnicalOverview, Topic, TopicType, Troubleshooting, Use, WarningMessage, ConsumableSupply, HardwareTool, Lubricant, OperatingSupply, ProtectiveEquipment, SparePart",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
-        prio: "REQUIRED",
-        category: "must have IRI",
-        spec: "",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "IRI: ERFORDERLICH",
-            "en": "IRI: REQUIRED"
-        },
-        testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
-        }
-    },
-    */
     {
         id: "M37",
         path: "Document",
