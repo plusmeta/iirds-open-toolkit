@@ -1704,7 +1704,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf", "./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false_no_attribute.rdf"]
         }
     },
     {
@@ -1884,7 +1884,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M77_false.rdf"]
         }
     },
 
