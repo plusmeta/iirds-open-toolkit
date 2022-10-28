@@ -1,3 +1,0 @@
-<!-- Example 28: Examples of identities  -->
-<!-- An iiRDS Generator uses iiRDS identities to store the original management number with the iiRDS entity. It stores the module IDs from the component content management system with information units and part numbers from a parts management system with components. -->
-<!-- An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. An identity MUST point to exactly one domain by the iirds:has-identity-domain property. The domain is an instance of the iirdsIdentityDomain class.  -->

@@ -1129,26 +1129,6 @@ export default [
             "false": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant-M47_false.rdf"]
         }
     },
-    /*
-    {
-
-        path: "Document, Component, Concept, ContentLifeCycleStatusValue, DirectoryNodeType, DocumentType, Event, Form, Formality, Fragment, Functionality, IdentityDomain, IdentityType, InformationObject, Learning, Package, Party, PartyRole, Process, ProductFunction, ProductProperty, ProductVariant, Reference, Role, Safety, SkillLevel, Supply, Task, TechnicalData, TechnicalOverview, Topic, TopicType, Troubleshooting, Use, WarningMessage, ConsumableSupply, HardwareTool, Lubricant, OperatingSupply, ProtectiveEquipment, SparePart",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
-        prio: "REQUIRED",
-        category: "must have IRI",
-        spec: "",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "IRI: ERFORDERLICH",
-            "en": "IRI: REQUIRED"
-        },
-        testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
-        }
-    },
-    */
     {
         id: "M37",
         path: "Document",
@@ -1164,7 +1144,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M37_false.rdf", "./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M37_false_no_attribute.rdf"]
         }
     },
     {
@@ -1182,14 +1162,14 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M38_false.rdf"]
         }
     },
     {
         id: "M39",
-        path: "Concept",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        path: "has-topic-type",
+        assert: els => els.every(el => el.hasAttribute("rdf:resource") && el.getAttribute("rdf:resource") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:resource") || el.getAttribute("rdf:resource") === ""),
         prio: "REQUIRED",
         category: "must have IRI",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=product%20or%20system.-,IRI%3A,REQUIRED,-iirds%3AConformity",
@@ -1200,14 +1180,14 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M39_false.rdf"]
         }
     },
     {
         id: "M40",
-        path: "ContentLifeCycleStatusValue",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        path: "has-content-lifecycle-status-value",
+        assert: els => els.every(el => el.hasAttribute("rdf:resource") && el.getAttribute("rdf:resource") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:resource") || el.getAttribute("rdf:resource") === ""),
         prio: "REQUIRED",
         category: "must have IRI",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=approved%20or%20withdrawn.-,IRI%3A,REQUIRED,-iirds%3ADesignAndRealization",
@@ -1218,14 +1198,14 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M40_false.rdf"]
         }
     },
     {
         id: "M41",
-        path: "DirectoryNodeType",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        path: "DirectoryNode has-directory-structure-type",
+        assert: els => els.every(el => el.hasAttribute("rdf:resource") && el.getAttribute("rdf:resource") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:resource") || el.getAttribute("rdf:resource") === ""),
         prio: "REQUIRED",
         category: "must have IRI",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=list%20of%20figures%27.-,IRI%3A,REQUIRED,-iirds%3ADocument",
@@ -1235,15 +1215,15 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M41_false.rdf"]
         }
     },
     {
         id: "M42",
-        path: "DocumentType",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        path: "has-document-type",
+        assert: els => els.every(el => el.hasAttribute("rdf:resource") && el.getAttribute("rdf:resource") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:resource") || el.getAttribute("rdf:resource") === ""),
         prio: "REQUIRED",
         category: "must have IRI",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=of%20a%20document.-,IRI%3A,REQUIRED,-iirds%3ADownTime",
@@ -1254,7 +1234,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M42_false.rdf"]
         }
     },
     {
@@ -1272,25 +1252,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
-        }
-    },
-    {
-        id: "M44",
-        path: "Form",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
-        prio: "REQUIRED",
-        category: "must have IRI",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=and%20user%20feedback.-,IRI%3A,REQUIRED,-iirds%3AFormality",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "IRI: ERFORDERLICH",
-            "en": "IRI: REQUIRED"
-        },
-        testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M43_false.rdf"]
         }
     },
     {
@@ -1325,8 +1287,8 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M46_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M46_false.rdf"]
         }
     },
     {
@@ -1397,26 +1359,8 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
-        }
-    },
-    {
-        id: "M51",
-        path: "Learning",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
-        prio: "REQUIRED",
-        category: "must have IRI",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=summaries%2C%20and%20assessments.-,IRI%3A,REQUIRED,-iirds%3AMaintenanceInterval",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "IRI: ERFORDERLICH",
-            "en": "IRI: REQUIRED"
-        },
-        testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "true": ["./tests/files/util/iirds-validation/Example 6 - An Information object with two language variants.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 6 - An Information object with two language variants-M50_false.rdf"]
         }
     },
     {
@@ -1434,7 +1378,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M52_false.rdf"]
         }
     },
     {
@@ -1452,14 +1396,14 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M53_false.rdf"]
         }
     },
     {
         id: "M54",
-        path: "PartyRole",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
+        path: "has-party-role",
+        assert: els => els.every(el => el.hasAttribute("rdf:resource") && el.getAttribute("rdf:resource") !== ""),
+        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:resource") || el.getAttribute("rdf:resource") === ""),
         prio: "REQUIRED",
         category: "must have IRI",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=manufacturer%2C%20author%2C%20inspector.-,IRI%3A,REQUIRED,-iirds%3APlanningTime",
@@ -1470,7 +1414,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M54_false.rdf"]
         }
     },
     {
@@ -1546,24 +1490,6 @@ export default [
         }
     },
     {
-        id: "M59",
-        path: "Reference",
-        assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
-        getInvalid: els => els.filter(el => !el.hasAttribute("rdf:about") || el.getAttribute("rdf:about") === ""),
-        prio: "REQUIRED",
-        category: "must have IRI",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#about-iirds:~:text=rather%20than%20memorized.-,IRI%3A,REQUIRED,-iirds%3ARendition",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "IRI: ERFORDERLICH",
-            "en": "IRI: REQUIRED"
-        },
-        testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
-        }
-    },
-    {
         id: "M60",
         path: "Role",
         assert: els => els.every(el => el.hasAttribute("rdf:about") && el.getAttribute("rdf:about") !== ""),
@@ -1578,7 +1504,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M60_false.rdf"]
         }
     },
     {
@@ -1883,7 +1809,7 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M77_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M77_false.rdf"]
         }
     },
