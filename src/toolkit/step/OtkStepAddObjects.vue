@@ -22,6 +22,8 @@
       >
     </form>
 
+    <HelpView helpkey="workflow.addObjects" />
+
     <v-container fluid class="drop-overlay drop-overlay-container">
       <v-fade-transition>
         <v-container
@@ -272,6 +274,7 @@ import { mapGetters, mapActions } from "vuex";
 import { tap, debounceTime } from "rxjs/operators";
 
 import QuickView from "@/shared/inline/QuickView";
+import HelpView from "@/shared/block/HelpView";
 
 import template from "@/store/storage/template";
 import util from "@/util";
@@ -283,7 +286,8 @@ import iirds from "@/util/import/iirds";
 export default {
     name: "OtkStepAddObjects",
     components: {
-        QuickView
+        QuickView,
+        HelpView
     },
     data() {
         return {

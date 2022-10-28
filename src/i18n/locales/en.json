@@ -98,7 +98,7 @@
     "thankYouExplainer": "Your iiRDS-Package is now ready for saving.",
     "valid": "Valid",
     "violationInstancesDetected": "occurences in total",
-    "violationsDetected": "One violation detected for file | {n} violation detected for file | {n} violations detected for file",
+    "violationsDetected": "No violations detected for file | {n} violation detected for file | {n} violations detected for file",
     "welcomeSubtitle": "With the free iiRDS Validation Tool you can validate iiRDS packages in just a few steps",
     "welcomeTitle": "Welcome to the iiRDS Validation Tool!"
   },

@@ -51,24 +51,6 @@ export default [
         }
     },
     {
-        id: "M2.2",
-        path: "Document, Topic, Fragment, Package",
-        assert: els => els.every(el => el.childElementCount > 0),
-        getInvalid: els => els.filter(el => el.childElementCount === 0),
-        prio: "MUST",
-        category: "must not be a blank node",
-        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#nested-iirds-packages:~:text=An%20instance%20of%20an%20iirds%3AInformationUnit%20subclass%20MUST%20have%20an%20IRI%20and%20MUST%20NOT%20be%20a%20blank%20node.",
-        version: ["V1.0", "V1.0.1", "V1.1"],
-        rule: {
-            "de": "Eine Instanz einer iirds:InformationUnit-Unterklasse DARF KEIN leerer Knoten sein.",
-            "en": "An instance of an iirds:InformationUnit subclass MUST NOT be a blank node."
-        },
-        testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M2.2_false.rdf"]
-        }
-    },
-    {
         id: "M2.3",
         path: "Document, Topic, Fragment, Package",
         assert: els => isZeroOrOne(els, "dateOfCreation"),

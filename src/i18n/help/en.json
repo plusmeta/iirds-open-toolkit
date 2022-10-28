@@ -1,20 +1,7 @@
 {
-    "workflow.welcome": {
-        "link": "Welcome",
-        "title": "Accept the terms of use to start. After that, a blue arrow appears in the bottom right corner, which you can use to go to the next step.",
-        "page": "Quickstart"
-    },
     "workflow.addObjects": {
-        "text": "One or more files can be added by drag & drop or by using the Add button. <ul><li><b>Drag & Drop:</b> Select file(s) in the file manager of your operating system, drag them over the object table in the browser window and drop them.</li> <li><b>Add button:</b> Click on the green plus (Add button). The file manager of your operating system opens. Select file(s) and confirm your selection.</li></ul><br/>Tipp: HTML files which reference, e.g. external iamges or scripts, can be processed as ZIP archive.<br/><br/>After you have added objects, they are displayed in a table. Here you have further options: <ul><li><b> Change columns:</b> Via the settings (gear wheel) you can hide columns and show additional columns.</li> <li><b> Restrict view:</b> Via the search and filter function you can restrict which objects are displayed.</li> <li><b> Delete objects:</b> You can delete individual objects via the trashcan button in the object line. You can delete multiple objects by first selecting them using the checkbox and then clicking the red recycle bin button at the top of the table.</li> <li><b>View Preview:</b> Using the file preview button (eye), you can preview PDF and HTML files.</li></ul></br>To proceed to the next step, click the blue arrow at the bottom right.",
-        "title": "Add content",
+        "text": "Validation of iiRDS packages is done locally in your browser. No data is stored outside your computer or sent to a server. <br> The iiRDS Validation Tool does not use cookies or 3rd party services. The <a href='https://www.iirds.org/privacy-policy' target='_blank'>Privacy Policy</a> and the <a href='https://www.iirds.org/imprint' target='_blank'>Imprint</a> of <a href='https://www.iirds.org' target='_blank'>iirds.org</a> apply.",
+        "title": "Usage Information & Privacy",
         "link": "Objekte_hinzufuegen"
-    },
-    "workflow.assignMetadata":{
-        "text": "In this step you can classify your content with iiRDS metadata. </br></br> <b> View:</b> <ul> <li>With the search and filter function you can limit which objects are displayed to you.</li> <li> Click on an object to open the detailed view.</li><li>With the drop-down list <b>Object type</b> you can select the object type. Depending on your selection, other predefined metadata fields are displayed.</li> </ul> </br><b>Assign metadata:</b> You will already see some metadata to which you can assign values. <ul> <li><b> Predefined metadata values:</b> Click on a metadata. A drop-down list with possible metadata values is expanded. Select the correct value(s).</li> <li><b>Custom metadata values:</b> Write the desired metadata value (e.g. the product variant) directly into the metadata field, then confirm with ENTER.</li> <li><b>Compulsory metadata:</b> Compulsory metadata is extracted by the asterisk (*) after the metadata. These should always be assigned.</li> <li><b> Add more metadata:</b> Click on the Add button (green plus). Select the desired iiRDS metadata from the drop-down list <b>assignable properties</b>. Confirm with <b> ADD METADATA</b>.</li> </ul> </br>To proceed to the next step, click on the blue arrow at the bottom right.",
-        "title": "Assign metadata"
-    },
-    "workflow.generateIirds": {
-        "text": "The iiRDS packet is generated automatically. When finished, you can download it by clicking the download button. You can run the iiRDS packet generation again by clicking on the green <b>Restart process</b> button. </br></br> Complete the project by clicking on the blue check mark in the lower right corner.",
-        "title": "Generate iiRDS package"
     }
 }
