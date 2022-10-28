@@ -1007,7 +1007,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M37_false.rdf", "./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M37_false_no_attribute.rdf"]
         }
     },
     {
@@ -1025,7 +1025,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M38_false.rdf"]
         }
     },
     {
@@ -1043,7 +1043,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M39_false.rdf"]
         }
     },
     {
@@ -1078,8 +1078,8 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M41_false.rdf"]
         }
     },
     {
@@ -1097,7 +1097,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M42_false.rdf"]
         }
     },
     {
@@ -1168,8 +1168,8 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M46_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M46_false.rdf"]
         }
     },
     {
@@ -1240,8 +1240,8 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "true": ["./tests/files/util/iirds-validation/Example 6 - An Information object with two language variants.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 6 - An Information object with two language variants-M50_false.rdf"]
         }
     },
     {
@@ -1277,7 +1277,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M52_false.rdf"]
         }
     },
     {
@@ -1295,7 +1295,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M53_false.rdf"]
         }
     },
     {
@@ -1313,7 +1313,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M54_false.rdf"]
         }
     },
     {
@@ -1421,7 +1421,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M60_false.rdf"]
         }
     },
     {
@@ -1547,7 +1547,7 @@ export default [
         },
         testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf", "./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false_no_attribute.rdf"]
         }
     },
     {
@@ -1726,8 +1726,8 @@ export default [
             "en": "IRI: REQUIRED"
         },
         testFiles: {
-            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M49_false.rdf"]
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M77_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass-M77_false.rdf"]
         }
     },
 
