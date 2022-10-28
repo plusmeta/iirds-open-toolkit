@@ -291,7 +291,9 @@ const mutations = {
         state.objects.push(...payload);
     },
     CLEAR_STORAGE (state) {
-        Vue.set(state, "objects", []);
+        while (state.objects.length) {
+            state.objects.pop();
+        }
     },
     UPDATE_OBJECT (state, { oldObject, updatedObject }) {
         delete updatedObject.source;

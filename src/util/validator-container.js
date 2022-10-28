@@ -1,8 +1,8 @@
 import JSzip from "jszip";
 import util from "@/util";
 
-import containerValidations from "@/config/imports/container-rules";
-import systemValidations from "@/config/imports/system-rules";
+import containerValidations from "@/config/validation/container-rules";
+import systemValidations from "@/config/validation/system-rules";
 
 export default {
     async validate(objectData, scope, fileName) {

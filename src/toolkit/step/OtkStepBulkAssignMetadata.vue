@@ -31,27 +31,17 @@
           </h2>
         </v-col>
         <v-col class="py-4 px-8" cols="7">
-          <p
-            v-if="getCurrentProjectRelationById('maxViolationsExceeded')"
-            class="my-0"
-          >
-            <span class="font-weight-bold">{{ getViolations.length }}</span>
-            <span v-if="getViolations.length > 100">+</span>
-            {{ $t('Otk.violationsDetected') }}
-            <span class="font-weight-bold">{{ getValidationSource }}</span>
-            <span v-if="getViolations.length > 100">({{ $t('Otk.showOnlyViolations', [getViolations.length]) }})</span>
-          </p>
-          <p
-            v-else
-            class="my-0"
-          >
-            <span class="font-weight-bold">{{ getViolations.length }}</span>
-            {{ $t('Otk.violationsDetected') }}
-            <span class="font-weight-bold">{{ getValidationSource }}</span>
-          </p>
           <p class="my-0">
-            <span class="font-weight-bold">{{ getCurrentProjectRelationById('totalRulesChecked') }}</span>
-            {{ $t('Otk.rulesChecked') }}
+            <span class="font-weight-bold">{{ $tc('Otk.violationsDetected', getViolationTypes) }}</span>
+            <span class="font-monospace">&nbsp;{{ getValidationSource }}</span>
+          </p>
+
+          <p class="my-0">
+            <span class="font-weight-bold">{{ getViolations.length }}</span>
+            <span v-if="getViolations.length > 99" class="font-weight-bold">+</span>
+            <span class="font-weight-bold">&nbsp;{{ $t('Otk.violationInstancesDetected') }}</span>
+            <span>&nbsp;&nbsp;({{ getCurrentProjectRelationById('totalRulesChecked') }}</span>
+            <span>&nbsp;{{ $t('Otk.rulesChecked') }})</span>
           </p>
         </v-col>
         <v-spacer />
@@ -279,6 +269,9 @@ export default {
         getViolations() {
             return this.getCurrentObjectsByType(this.objecttype);
         },
+        getViolationTypes() {
+            return Object.keys(this.getObjectTypeFilterValues).length;
+        },
         isValid() {
             return this.getViolations.length === 0;
         },
@@ -287,7 +280,7 @@ export default {
             if (containers && containers.length === 1) {
                 return containers[0].name;
             } else {
-                return this.getCurrentObjectsByType().filter(object => object.type !== "plus:RuleViolation")[0].name;
+                return this.getCurrentObjectsByType().filter(object => object.type !== "plus:RuleViolation")[0]?.name;
             }
         },
         getCurrentObjects() {
@@ -358,9 +351,7 @@ export default {
             }
         },
         startFromStart() {
-            this.setCurrentProgressLocal(1);
-            this.clearStorage();
-            this.$router.push("/");
+            window.location.reload();
         },
         ...mapActions("projects", [
             "updateCurrentProjectRelations",

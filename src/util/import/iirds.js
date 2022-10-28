@@ -5,7 +5,7 @@ import objectTemplate from "@/store/storage/template";
 
 import schemaValidation from "@/util/validator-schema";
 import containerValidation from "@/util/validator-container";
-import systemValidations from "@/config/imports/system-rules";
+import systemValidations from "@/config/validation/system-rules";
 
 import { ConfConst } from "@/config/imports/const";
 

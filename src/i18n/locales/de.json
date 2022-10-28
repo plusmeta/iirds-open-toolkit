@@ -97,7 +97,8 @@
     "thankYou": "Vielen Dank!",
     "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Speichern bereit.",
     "valid": "Gültiges",
-    "violationsDetected": "Verletzungen erkannt für",
+    "violationInstancesDetected": "Vorkommen insgesamt",
+    "violationsDetected": "Ein Regelverstoß erkannt für | {n} Regelverstoß erkannt für | {n} Regelverstöße erkannt für",
     "welcomeSubtitle": "Mit dem kostenlosen iiRDS Validation Tool können Sie in nur wenigen Schritten iiRDS-Pakete validieren",
     "welcomeTitle": "Willkommen beim iiRDS Validation Tool!"
   },
