@@ -19,7 +19,7 @@
         <v-col class="py-4 pl-12" cols="1">
           <v-icon
             left
-            x-large
+            :size="64"
             color="white"
           >
             {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
@@ -55,7 +55,11 @@
           </p>
         </v-col>
         <v-spacer />
-        <v-col class="py-4 pr-12" cols="1">
+        <v-col
+          cols="1"
+          class="py-4 pr-12"
+          style="text-align: right"
+        >
           <v-btn
             icon
             color="white"
@@ -355,7 +359,7 @@ export default {
         },
         startFromStart() {
             this.setCurrentProgressLocal(1);
-            this.resetSettings(true);
+            this.clearStorage();
             this.$router.push("/");
         },
         ...mapActions("projects", [
@@ -364,11 +368,11 @@ export default {
             "deleteObjectsFromProject"
         ]),
         ...mapActions("settings", [
-            "setLocalSetting",
-            "resetSettings"
+            "setLocalSetting"
         ]),
         ...mapActions("storage", [
-            "saveMetaDatum"
+            "saveMetaDatum",
+            "clearStorage"
         ])
     }
 };

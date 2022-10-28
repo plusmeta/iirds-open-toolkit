@@ -1,54 +1,17 @@
 
-const isBuiltIn = uri => uri.startsWith("http://iirds.tekom.de/iirds");
-const isDirectoryRoot = (el) => {
-    return !["has-next-sibling", "has-first-child", "DirectoryNode"].includes(el.parentElement.localName);
-};
-const getAbsoluteIRIRegExp = () => new RegExp(/^(\w+:|www\.)[\S]+/);
-
-const includesAll = (small, big) => small.every(n => big.indexOf(n) !== -1);
-const oneOrMore = (els, selector) => (els && els.length) ? els.every(el => el.querySelectorAll(`:scope > ${selector}`).length >= 1) : true;
-const isZeroOrOne = (els, selector) => (els && els.length) ? els.every(el => el.querySelectorAll(`:scope > ${selector}`).length <= 1) : true;
-const isExactlyOneChild = (el, selector) => el.querySelectorAll(`:scope > ${selector}`).length === 1;
-
-const isExactlyOne = (els, doc, selector) => (els && els.length) ? els.every((el) => {
-    if (el.hasAttribute("rdf:about")) {
-        const resource = el.getAttribute("rdf:about");
-        return Array.from(doc.querySelectorAll(`[*|about='${resource}']`)).some(res => isExactlyOneChild(res, selector));
-    } else {
-        return isExactlyOneChild(el, selector);
-    }
-}) : true;
-
-const isDefinedAsClass = (els, doc, className) => els.every((el) => {
-    if (el.hasAttribute("rdf:resource")) {
-        const resource = el.getAttribute("rdf:resource");
-        return isBuiltIn(resource) || doc.querySelector(`[*|about='${resource}']`)?.localName === className;
-    } else {
-        return doc.querySelector(className);
-    }
-});
-
-const getMoreThanOne = (els, doc, selector) => els.filter((el) => {
-    if (el.hasAttribute("rdf:about")) {
-        const resource = el.getAttribute("rdf:about");
-        return !Array.from(doc.querySelectorAll(`[*|about='${resource}']`)).some(res => isExactlyOneChild(res, selector));
-    } else {
-        return !isExactlyOneChild(el, selector);
-    }
-}).filter(Boolean);
-
-const getMissing = (els, selector) => els.filter(el => !el.querySelectorAll(`:scope > ${selector}`).length);
-const getNotIncluded = (small, big) => small.filter(n => big.indexOf(n) === -1);
-
-const getWrongClassInPackage = (els, doc, className) => els.filter((el) => {
-    if (el.hasAttribute("rdf:resource")) {
-        const resource = el.getAttribute("rdf:resource");
-        return !isBuiltIn(resource) && doc.querySelector(`[*|about='${el.getAttribute("rdf:resource")}']`)?.localName !== className;
-    } else {
-        return !doc.querySelector(`:scope > ${className}`);
-    }
-});
-
+import {
+    getAbsoluteIRIRegExp,
+    getMissing,
+    getMoreThanOne,
+    getNotIncluded,
+    getWrongClassInPackage,
+    includesAll,
+    isDefinedAsClass,
+    isDirectoryRoot,
+    isExactlyOne,
+    isOneOrMore,
+    isZeroOrOne
+} from "@/util/rules";
 
 export default [
     {
@@ -511,7 +474,7 @@ export default [
     {
         id: "M15.1",
         path: "Document",
-        assert: els => oneOrMore(els, "has-document-type"),
+        assert: els => isOneOrMore(els, "has-document-type"),
         getInvalid: els => getMissing(els, "has-document-type"),
         prio: "MUST",
         category: "cardinality 1..n",
@@ -982,7 +945,7 @@ export default [
         assert: els => els.length === 0,
         getInvalid: els => els,
         prio: "MUST NOT",
-        spec: "https://iirds.org/fileadmin/iiRDS_specifClassication/20201103-1.1-release/index.html#information-units:~:text=The%20file%20metadata.rdf%20MUST%20NOT%20contain%20the%20iiRDS%20schema%20or%20iiRDS%20domain%20extensions.",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=The%20file%20metadata.rdf%20MUST%20NOT%20contain%20the%20iiRDS%20schema%20or%20iiRDS%20domain%20extensions.",
         version: ["V1.0", "V1.0.1", "V1.1"],
         rule: {
             "de": "Die Datei metadata.rdf DARF NICHT das iiRDS-Schema oder die iiRDS-Domänenerweiterungen enthalten.",
