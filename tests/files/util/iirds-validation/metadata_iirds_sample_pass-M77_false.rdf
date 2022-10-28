@@ -51,6 +51,7 @@
   <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
  </iirds:Document>
  <iirds:Topic rdf:about="urn:uuid:a0d194ed-b441-41db-947c-3f7874fcf9ad">
+ <iirds:SparePart rdf:about=""/>
   <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
   <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
   <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>

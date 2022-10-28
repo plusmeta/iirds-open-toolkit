@@ -1,3 +1,0 @@
-<!-- Example 35: Use cases for directory structures  -->
-<!-- The directory node structure provides users with information on the context of the topic they are reading, its position in a document, its predecessors, and successors. In printed documentation, tables of contents usually provide this type of information. -->
-<!-- The property iirds:has-directory-structure-type determines the type of the directory structure. The root node of a directory structure MUST have one property iirds:has-directory-structure-type. Only root nodes of a directory structure MUST have the property iirds:has-directory-structure-type. -->

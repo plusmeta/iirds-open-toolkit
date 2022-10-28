@@ -152,7 +152,7 @@
   <iirds:has-topic-type rdf:resource="http://iirds.tekom.de/iirds#GenericTask"/>
   <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
   <iirds:relates-to-component>
-   <iirds:Component rdf:about="https://www.i4icm.de/pifan#BasePlate">
+   <iirds:Component rdf:about="">
     <rdfs:label>Base plate</rdfs:label>
    </iirds:Component>
   </iirds:relates-to-component>

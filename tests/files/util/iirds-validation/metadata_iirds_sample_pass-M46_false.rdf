@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:iirdsMch="http://iirds.tekom.de/iirds/domain/machinery#" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:iirdsSft="http://iirds.tekom.de/iirds/domain/software#">
- <iirds:Package>
+ <iirds:Package rdf:about="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df">
   <iirds:iiRDSVersion>1.0</iirds:iiRDSVersion>
   <iirds:formatRestriction>A</iirds:formatRestriction>
  </iirds:Package>
@@ -8,7 +8,7 @@
   <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
   <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
   <iirds:relates-to-component>
-   <iirds:Component>
+   <iirds:Component rdf:about="https://www.i4icm.de/pifan#PIFan">
     <rdfs:label>PI-Fan</rdfs:label>
    </iirds:Component>
   </iirds:relates-to-component>
@@ -50,7 +50,7 @@
   <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
   <iirds:has-document-type rdf:resource="http://iirds.tekom.de/iirds#OperatingInstructions"/>
  </iirds:Document>
- <iirds:Topic rdf:about="urn:uuid:a0d194ed-b441-41db-947c-3f7874fcf9ad">
+ <iirds:Topic rdf:about="urn:uuid:bb98ea5a-431a-43a7-a5d9-2876d7656a3b">
   <iirds:is-applicable-for-document-type rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInstructions"/>
   <iirds:relates-to-product-variant rdf:resource="https://www.i4icm.de/pifan#X5-DH2"/>
   <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
@@ -103,6 +103,9 @@
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         THE SOFTWARE.</iirds:rights>
  </iirds:Topic>
+ <iirds:Fragment rdf:about="">
+    <iirds:title>Example Fragment</iirds:title>
+</iirds:Fragment>
  <iirds:Topic rdf:about="urn:uuid:0525b7e9-a1ff-4e94-9f54-1c291974fcda">
   <iirds:has-subject rdf:resource="http://iirds.tekom.de/iirds#GenericFunctionality"/>
   <iirds:has-content-lifecycle-status>

@@ -4,7 +4,7 @@
   <iirds:iiRDSVersion>1.0</iirds:iiRDSVersion>
   <iirds:formatRestriction>A</iirds:formatRestriction>
  </iirds:Package>
- <iirds:Document rdf:about="urn:uuid:9cea7846-5404-4d4f-bd89-975954534921">
+ <iirds:Document>
   <iirds:is-part-of-package rdf:resource="urn:uuid:0ec79b45-73ed-4afe-99ac-658cc3a2c2df"/>
   <iirds:dateOfCreation rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2019-01-09T09:52:00+01:00</iirds:dateOfCreation>
   <iirds:relates-to-component>

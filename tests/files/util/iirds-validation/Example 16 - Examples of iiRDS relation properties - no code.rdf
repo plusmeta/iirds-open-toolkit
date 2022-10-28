@@ -1,3 +1,0 @@
-<!-- Example 16: Examples of iiRDS relation properties  -->
-<!-- The following relation properties relate information units to functional metadata: -->
-<!-- iirds:relates-to-event describes a relation to a specific event, for example an event defined by an error code. With this relation, iiRDS Consumers retrieve instructions regarding specific events and present them to the user. -->
