@@ -200,9 +200,5 @@ export default {
     },
     copyToClipboard(text) {
         navigator.clipboard.writeText(text);
-    },
-    async getDocument(url) {
-        const pdfjs = await import(/* webpackChunkName: 'pdfjs-dist' */ "pdfjs-dist/webpack");
-        return await pdfjs.getDocument(url).promise;
     }
 };
