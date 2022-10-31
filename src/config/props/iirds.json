@@ -1114,7 +1114,7 @@
         }
     },
     {
-        "identifier": "iirds:ApplicableStandard",
+        "identifier": "iirds:ApplicableStandards",
         "subClassOf": "iirds:Conformity",
         "datatype": "plus:Instance",
         "label": {
@@ -1375,7 +1375,7 @@
         }
     },
     {
-        "identifier": "iirds:WarningMessageNotice",
+        "identifier": "iirds:Notice",
         "subClassOf": "iirds:WarningMessage",
         "datatype": "plus:Instance",
         "label": {
@@ -1384,7 +1384,7 @@
         }
     },
     {
-        "identifier": "iirds:WarningMessageCaution",
+        "identifier": "iirds:Caution",
         "subClassOf": "iirds:WarningMessage",
         "datatype": "plus:Instance",
         "label": {
@@ -1393,7 +1393,7 @@
         }
     },
     {
-        "identifier": "iirds:WarningMessageWarning",
+        "identifier": "iirds:Warning",
         "subClassOf": "iirds:WarningMessage",
         "datatype": "plus:Instance",
         "label": {
@@ -1402,7 +1402,7 @@
         }
     },
     {
-        "identifier": "iirds:WarningMessageDanger",
+        "identifier": "iirds:Danger",
         "subClassOf": "iirds:WarningMessage",
         "datatype": "plus:Instance",
         "label": {
