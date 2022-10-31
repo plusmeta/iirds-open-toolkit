@@ -1,5 +1,7 @@
 import validations from "@/config/validation/schema-rules";
+
 import { v4 as uuid } from "uuid";
+import formatXML from "xml-formatter";
 
 const Serializer = new XMLSerializer();
 const Parser = new DOMParser();
@@ -27,7 +29,7 @@ export default {
                 if (result.length) {
                     for (let element of result) {
                         const { location, lineNr, lines } = this.getLocation(element, lineMap, lineArr);
-                        const elems = this.cleanUpXML(Serializer.serializeToString(element));
+                        const elems = this.cleanUpXML(formatXML(element.outerHTML));
                         schemaViolations.push({ ...test, fileName, type, prio, location, lineNr, lines, elems });
                     }
                 } else {
@@ -58,7 +60,6 @@ export default {
         const lines = lineArr.slice(Math.max(0, lineNr - 4), Math.min(lineArr.length, lineNr + 3));
 
         let xmlTxt = Serializer.serializeToString(element);
-
 
         return { location: this.cleanUpXML(xmlTxt), lineNr, lines: lines.join("\n") };
     },

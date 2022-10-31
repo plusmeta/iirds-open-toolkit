@@ -25,7 +25,7 @@
             {{ (isValid) ? 'mdi-check-circle' : 'mdi-close-circle' }}
           </v-icon>
         </v-col>
-        <v-col class="py-4" cols="3">
+        <v-col class="py-4" cols="2">
           <h2>
             {{ (isValid) ? `${$t('Otk.valid')} iiRDS ${getCurrentProjectRelationById('detectedVersion')}` : $t('Otk.notValid') }}
           </h2>
@@ -39,25 +39,26 @@
           <p class="my-0">
             <span class="font-weight-bold">{{ getViolations.length }}</span>
             <span v-if="getViolations.length > 99" class="font-weight-bold">+</span>
-            <span class="font-weight-bold">&nbsp;{{ $t('Otk.violationInstancesDetected') }}</span>
+            <span class="font-weight-bold">&nbsp;{{ $tc('Otk.violationInstancesDetected', getViolations.length) }}</span>
             <span>&nbsp;&nbsp;({{ getCurrentProjectRelationById('totalRulesChecked') }}</span>
             <span>&nbsp;{{ $t('Otk.rulesChecked') }})</span>
           </p>
         </v-col>
         <v-spacer />
         <v-col
-          cols="1"
+          cols="2"
           class="py-4 pr-12"
           style="text-align: right"
         >
           <v-btn
-            icon
             color="white"
+            outlined
             @click="startFromStart()"
           >
-            <v-icon x-large>
+            <v-icon left>
               mdi-restore
             </v-icon>
+            {{ $t('Otk.checkAgain') }}
           </v-btn>
         </v-col>
       </v-row>

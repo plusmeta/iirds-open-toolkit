@@ -17,6 +17,7 @@
         ref="fileInput"
         style="display:none;"
         type="file"
+        accept=".iirds,.zip"
         multiple
         @change="addFiles($refs.fileInput.files)"
       >

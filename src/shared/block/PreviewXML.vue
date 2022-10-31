@@ -30,21 +30,23 @@
       type="image"
     />
     <v-row no-gutters>
-      <v-col cols="10">
+      <v-col cols="9">
         <p v-if="file.text" class="font-monospace mt-2">
           Violation found in line {{ getLineNr }} of {{ getFileName }}
         </p>
       </v-col>
-      <v-col cols="2" style="text-align: right">
+      <v-col cols="3" style="text-align: right">
         <v-btn
-          icon
           :disabled="mode"
           class="my-0"
+          outlined
+          small
           @click="changeMode"
         >
-          <v-icon small>
+          <v-icon small left>
             mdi-xml
           </v-icon>
+          {{ $t("Otk.format") }}
         </v-btn>
       </v-col>
     </v-row>
