@@ -1,6 +1,6 @@
 {
   "name": "iirds-validation-tool",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --mode development",
@@ -94,6 +94,6 @@
   "browserslist": [
     "defaults"
   ],
-  "homepage": "https://iirds.org",
+  "homepage": "https://iirds-validation.plusmeta.de/",
   "repository": "github:plusmeta/iirds-validation-tool"
 }
