@@ -41,7 +41,8 @@
     "vuetify": "2.4.11",
     "vuex": "^3.6.2",
     "vuex-persist": "^2.3.0",
-    "whatwg-fetch": "^3.6.2"
+    "whatwg-fetch": "^3.6.2",
+    "xml-formatter": "^2.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
