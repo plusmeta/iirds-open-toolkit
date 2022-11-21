@@ -4,7 +4,7 @@
  * License: MIT
  */
 
-import XMLbuilder from "xmlbuilder";
+import { create } from "xmlbuilder2";
 
 export default {
     export (metadata, $store) {
@@ -17,9 +17,7 @@ export default {
             return config;
         }, {});
 
-        const root = XMLbuilder.create({
-            "rdf:RDF": namespaceConfig
-        });
+        const root = create().ele("rdf:RDF", namespaceConfig);
 
         let now = new Date();
         root.com(`*** VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION}) ***`);
@@ -30,16 +28,16 @@ export default {
             let metaElement = root.ele(meta.subClassOf, {"rdf:about": meta.identifier});
             // language-neutral labeö
             if (meta.label && typeof meta.label === "string") {
-                return metaElement.ele("rdfs:label", meta.label);
+                return metaElement.ele("rdfs:label").txt(meta.label);
             }
             // multiple language-specific labels
             if (meta.labels && typeof meta.labels === "object") {
                 Object.keys(meta.labels).forEach((lang) => {
-                    return metaElement.ele("rdfs:label", {"xml:lang": lang}, meta.labels[lang]);
+                    return metaElement.ele("rdfs:label", {"xml:lang": lang}).txt(meta.labels[lang]);
                 });
             }
         });
 
-        return root.end({ pretty: true });
+        return root.end({ prettyPrint: true });
     }
 };

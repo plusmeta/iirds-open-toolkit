@@ -27,10 +27,10 @@
         <v-card
           v-if="!loading"
           class="pa-0"
-          :max-width="400"
+          :max-width="660"
         >
-          <v-list class="pa-0">
-            <v-list-item>
+          <v-list :color="$vuetify.theme.dark ? 'grey darken-2' : 'grey lighten-2'" class="pa-0">
+            <v-list-item :input-value="true">
               <v-list-item-icon>
                 <v-icon x-large>
                   mdi-eye
@@ -38,43 +38,27 @@
               </v-list-item-icon>
               <v-list-item-content>
                 <v-list-item-title class="subtitle-2">
-                  <span class="d-inline-block text-truncate" style="max-width: 300px;">
-                    {{ sourceName || getPropertyLabelById(objectType) }}
+                  <span
+                    class="d-inline-block text-truncate font-monospace" :title="sourceName || getPropertyLabelById(objectType)"
+                    style="max-width: 280px;"
+                  >
+                    {{ sourceName }}
                   </span>
                 </v-list-item-title>
                 <v-list-item-subtitle
                   v-if="sourceType"
-                  class="overline grey--text"
+                  class="overline"
                 >
-                  {{ $t("Common.preview") }} {{ getPropertyLabelById(sourceType) }}
+                  {{ getPropertyLabelById(objectType) }} - {{ getPropertyLabelById(sourceType) }}
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-list>
           <v-card-text
-            v-if="sourceType === 'text/html'"
-            class="pa-0"
-            style="zoom: 0.7"
-          >
-            <PreviewHTML :file="getObject" />
-          </v-card-text>
-          <v-card-text
-            v-else-if="sourceType === 'application/pdf'"
+            v-if="sourceType && sourceType === 'application/pdf'"
             class="pa-0"
           >
-            <PreviewPDF :file="getObject" />
-          </v-card-text>
-          <v-card-text
-            v-else-if="sourceType === 'application/xml'"
-            class="pa-0"
-          >
-            <PreviewXML :file="getObject" />
-          </v-card-text>
-          <v-card-text
-            v-else-if="objectType === 'plus:Text'"
-            class="pa-0"
-          >
-            <PreviewXML :file="getObject" />
+            <PreviewPDF :file="getObject" :embed="true" />
           </v-card-text>
         </v-card>
       </v-menu>
@@ -86,17 +70,12 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import PreviewText from "@/shared/block/PreviewText";
 import PreviewPDF from "@/shared/block/PreviewPDF";
-import PreviewHTML from "@/shared/block/PreviewHTML";
-import PreviewXML from "@/shared/block/PreviewXML";
 
 export default {
     name: "QuickView",
     components: {
         PreviewPDF,
-        PreviewHTML,
-        PreviewXML
     },
     props: {
         uuid: {
@@ -130,7 +109,7 @@ export default {
     },
     computed: {
         isPreviewable() {
-            return ["application/pdf", "text/html", "application/xml"].includes(this.sourceType) || this.isOffice;
+            return this.sourceType === "application/pdf";
         },
         getIcon() {
             if (this.peek && this.isPreviewable) {

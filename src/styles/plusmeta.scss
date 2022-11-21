@@ -133,3 +133,16 @@ kbd {
 .flag.normal-flag {
   margin: -10px -16px;
 } 
+
+// Fix v-chip margins in vuetify 2.4+
+span.v-chip + span.v-chip {
+  margin-left: 4px !important;
+}
+
+span.v-chip + span.d-inline-block {
+  margin-left: 4px !important;
+}
+
+span.d-inline-block + span.v-chip {
+  margin-left: 4px !important;
+}

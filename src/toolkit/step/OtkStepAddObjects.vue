@@ -24,6 +24,8 @@
 
     <HelpView helpkey="workflow.addObjects" />
 
+    <AssignGuidelines />
+
     <v-container fluid class="drop-overlay drop-overlay-container">
       <v-fade-transition>
         <v-container
@@ -309,13 +311,13 @@
 </template>
 
 <script>
-import Vue from "vue";
 import { mapGetters, mapActions } from "vuex";
 import { tap, debounceTime } from "rxjs/operators";
 
 import QuickView from "@/shared/inline/QuickView";
 import DeleteObject from "@/shared/inline/DeleteObject";
 import HelpView from "@/shared/block/HelpView";
+import AssignGuidelines from "@/shared/block/AssignGuidelines";
 
 import template from "@/store/storage/template";
 import util from "@/util";
@@ -323,9 +325,6 @@ import match from "@/util/match";
 import config from "@/config";
 
 import pdf from "@/util/import/pdf";
-import html from "@/util/import/html";
-import xml from "@/util/import/xml";
-import zip from "@/util/import/zip";
 import ByteUnit from "@/shared/inline/ByteUnit";
 
 export default {
@@ -334,7 +333,8 @@ export default {
         ByteUnit,
         HelpView,
         QuickView,
-        DeleteObject
+        DeleteObject,
+        AssignGuidelines
     },
     data() {
         return {
@@ -464,7 +464,6 @@ export default {
             if (this.getCurrentObjects.length === 0 && this.filter) {
                 this.filter = undefined;
             }
-            // https://github.com/plusmeta/vdi2770-open-toolkit/issues/22
             let currentUuids = this.getCurrentObjects.map(o => o.uuid);
             this.selected = this.selected.filter(uuid => currentUuids.includes(uuid));
         }
@@ -530,25 +529,10 @@ export default {
                 this.$store
             ];
 
-            switch (object.source.type) {
-            case "application/pdf":
+            if (object.source.type === "application/pdf") {
                 await pdf.analyze(...analyzePayload);
-                break;
-
-            case "text/html":
-                await html.analyze(...analyzePayload);
-                break;
-
-            case "text/xml":
-                await xml.analyze(...analyzePayload);
-                break;
-
-            case "application/zip":
-                await zip.analyze(...analyzePayload);
-                break;
-
-            default:
-                break;
+            } else {
+                console.log("UOP");
             }
 
             this.processing.splice(this.processing.indexOf(object.uuid), 1);

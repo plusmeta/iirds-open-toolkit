@@ -88,8 +88,8 @@ const getters = {
         } else if (typeof role === "string") {
             return getters.indizesByRole[role]?.map(ix => state.properties[ix]).filter(Boolean) || [];
         } else if (Array.isArray(role)) {
-            // FIXME no uniqueness if using standard method
-            return getters.indizesByRole[role[0]]?.map(ix => state.properties[ix]).filter(Boolean) || [];
+            let collection = role.flatMap(name => getters.indizesByRole[name]?.map(ix => state.properties[ix])).filter(Boolean) || [];
+            return util.uniqueProperties(collection);
         } else return [];
     },
     getInstancesByClass: (state, getters) => (className) => {
@@ -152,6 +152,19 @@ const getters = {
             }
         } else return "";
     },
+    getPropertyLabels: (state, getters, rootState, rootGetters) => (propId) => {
+        if (!!propId) {
+            let property = getters.getPropertyById(propId);
+            let locale = rootGetters["settings/getCurrentLocale"];
+            if (property) {
+                if (property && property.labels && Object.keys(property.labels).length) {
+                    return property.labels;
+                } else {
+                    return { [locale]: property.label };
+                }
+            } else return {};
+        } else return {};
+    },
     getPropertyRelationById: (state, getters) => (propId, relId) => {
         let property = getters.getPropertyById(propId);
         if (!!property &&
@@ -161,7 +174,30 @@ const getters = {
         } else {
             return [];
         }
-    }
+    },
+    resolveAssignedRelationType: (state, getters) => (uri) => {
+        let resolved = getters.getPropertyRelationById(uri, "plus:has-relations");
+        if (resolved.length > 0) {
+            return resolved[0];
+        }
+        return uri;
+    },
+    getPropertyAttributeById: (state, getters) => (propId, attrId) => {
+        let property = getters.getPropertyById(propId);
+        if (!!property &&
+            !!property.attrs &&
+            !!property.attrs[attrId]) {
+            return property.attrs[attrId];
+        } else {
+            return undefined;
+        }
+    },
+    getPropertyIcon: (state, getters) => (propId, defaultIcon) => {
+        let icon = getters.getPropertyRelationById(propId, "plus:has-icons");
+        icon = icon ? icon[0] : undefined;
+        icon = icon ? icon.replace(":", "-") : defaultIcon;
+        return icon;
+    },
 };
 
 const actions = {

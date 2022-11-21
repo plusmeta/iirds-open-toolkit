@@ -1,0 +1,533 @@
+[
+    {
+        "identifier": "vdi:ClassId:03-01",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:03",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "03-01"
+        },
+        "label": {
+            "de": "Montage, Demontage",
+            "en": "Assembly, Disassembly"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:03-03",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:03",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "03-03"
+        },
+        "label": {
+            "de": "Allgemeine Sicherheit",
+            "en": "General Safety"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:03-02",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:03",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "03-02"
+        },
+        "label": {
+            "de": "Bedienung",
+            "en": "Operation"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:03-05",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:03",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "03-05"
+        },
+        "label": {
+            "de": "Instandsetzung",
+            "en": "Repair"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:03-04",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:03",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "03-04"
+        },
+        "label": {
+            "de": "Inspektion, Wartung, Prüfung",
+            "en": "Inspection, Maintenance"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:03-06",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:03",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "03-06"
+        },
+        "label": {
+            "de": "Ersatzteile",
+            "en": "Spare parts"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:GTIN",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:RefType",
+        "rels": {
+            "vdi:has-object-type": [
+                "vdi:Type"
+            ]
+        },
+        "attrs": {},
+        "label": "GTIN",
+        "indicators": [
+            "GTIN"
+        ]
+    },
+    {
+        "identifier": "vdi:ObjectType",
+        "datatype": "plus:Class",
+        "subClassOf": "vdi:root",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "VDI-2770-Objekttyp",
+            "en": "VDI 2770 object type"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:MainDocument",
+        "datatype": "plus:Instance",
+        "description": "Das Hauptdokument ist eine Auflistung aller Dokumente einer Ebene. Gibt es zu dieser Ebene auch eine untergeordnete Ebene, so enthält die Auflistung auch die Hauptdokumente der zugehörigen ersten untergeordneten Ebene.",
+        "subClassOf": "vdi:root",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "VDI-2770-Hauptdokument",
+            "en": "VDI 2770 main document"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:root",
+        "datatype": "plus:Class",
+        "subClassOf": "plus:Root",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "VDI Metadatenmodell",
+            "en": "VDI metadata model"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:DocumentationContainer",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Objecttype",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "VDI-2770-Dokumentationscontainer",
+            "en": "VDI 2770 documentation container"
+        },
+        "indicators": [
+            "application/zip"
+        ]
+    },
+    {
+        "identifier": "vdi:EAN",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:RefType",
+        "rels": {
+            "vdi:has-object-type": [
+                "vdi:Type"
+            ]
+        },
+        "attrs": {},
+        "label": "EAN",
+        "indicators": [
+            "EAN"
+        ]
+    },
+    {
+        "identifier": "vdi:ClassId:04-01",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:04",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "04-01",
+            "urn:uuid:55606ce3-a140-4edb-afae-fb0c9ff8eeb1": ""
+        },
+        "label": {
+            "de": "Vertragsunterlagen",
+            "en": "Contract documents"
+        },
+        "indicators": [
+            "Anschreiben"
+        ]
+    },
+    {
+        "identifier": "plus:relates-to-vdi2770-package",
+        "datatype": "plus:ObjectRelation",
+        "subClassOf": "plus:SystemRelation",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "bezieht sich auf VDI-2770-Paket",
+            "en": "relates to VDI 2770 package"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:Container",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:Objecttype",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "VDI-2770-Container",
+            "en": "VDI 2770 container"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ProductType",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:RefType",
+        "rels": {
+            "vdi:has-object-type": [
+                "vdi:Type"
+            ]
+        },
+        "attrs": {},
+        "label": "Produkttyp/Modell",
+        "indicators": [
+            "product type"
+        ]
+    },
+    {
+        "identifier": "vdi:ProjectId",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:SystemRole",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Projektnummer",
+            "en": "Project ID"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:is-object-identifier",
+        "datatype": "plus:Relation",
+        "subClassOf": "vdi:root",
+        "rels": {
+            "plus:has-relation-target": [
+                "vdi:RefType"
+            ],
+            "plus:has-relation-source": [
+                "iirds:Root",
+                "plus:Attribute",
+                "vdi:root",
+                "plus:Meta"
+            ]
+        },
+        "attrs": {},
+        "label": {
+            "de": "ist Objekt-Identifikator-Typ",
+            "en": "is object identifier type"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:Individual",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ObjectType",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Individuelles Objekt",
+            "en": "Individual object"
+        },
+        "indicators": [
+            "Individual"
+        ]
+    },
+    {
+        "identifier": "vdi:EquipmentId",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:SystemRole",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Equipmentnummer",
+            "en": "Equipment ID"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ReferenceDesignation",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:SystemRole",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Referenzkennzeichen",
+            "en": "Reference designation"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ArticleNumber",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:RefType",
+        "rels": {
+            "vdi:has-object-type": [
+                "vdi:Type"
+            ]
+        },
+        "attrs": {},
+        "label": "Artikelnummer",
+        "indicators": [
+            "article number"
+        ]
+    },
+    {
+        "identifier": "vdi:ClassId:01-01",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:01",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "01-01"
+        },
+        "label": {
+            "de": "Identifikation",
+            "en": "Identification"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:RefType",
+        "datatype": "plus:Class",
+        "subClassOf": "vdi:root",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Identifikator-Typ",
+            "en": "Identifier type"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:OrderCode",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:RefType",
+        "rels": {
+            "vdi:has-object-type": [
+                "vdi:Type"
+            ]
+        },
+        "attrs": {},
+        "label": "Bestellnummer",
+        "indicators": [
+            "order code"
+        ]
+    },
+    {
+        "identifier": "vdi:has-object-type",
+        "datatype": "plus:Relation",
+        "subClassOf": "vdi:root",
+        "rels": {
+            "plus:has-relation-target": [
+                "vdi:ObjectType"
+            ],
+            "plus:has-relation-source": [
+                "vdi:RefType"
+            ]
+        },
+        "attrs": {},
+        "label": {
+            "de": "hat VDI-2770-Objekttyp",
+            "en": "has VDI 2770 object type"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:DocumentClassification",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:SystemRole",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Dokumentklassifikation",
+            "en": "Document classification"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:Type",
+        "datatype": "plus:ObjectRelation",
+        "subClassOf": "vdi:ObjectType",
+        "rels": {},
+        "attrs": {},
+        "label": "Objekt-Typ",
+        "indicators": [
+            "Type"
+        ]
+    },
+    {
+        "identifier": "vdi:ClassId:02-02",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:02",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "02-02"
+        },
+        "label": {
+            "de": "Zeichnungen, Pläne",
+            "en": "Drawings, Plans"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:02-01",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:02",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "02-01"
+        },
+        "label": {
+            "de": "Technische Spezifikation",
+            "en": "Technical specification"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:02-04",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:02",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "Zeugnisse, Zertifikate, Bescheinigungen",
+            "en": "Certificates"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:02-03",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:ClassId:02",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "02-03"
+        },
+        "label": {
+            "de": "Bauteile",
+            "en": "Components"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:04",
+        "datatype": "plus:Class",
+        "subClassOf": "vdi:DocumentCategory",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "04"
+        },
+        "label": {
+            "de": "Vertragsunterlagen",
+            "en": "Contractual documents"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:02",
+        "datatype": "plus:Class",
+        "subClassOf": "vdi:DocumentCategory",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "02"
+        },
+        "label": {
+            "de": "Technische Beschaffenheit",
+            "en": "Technical properties"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:03",
+        "datatype": "plus:Class",
+        "subClassOf": "vdi:DocumentCategory",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "03"
+        },
+        "label": {
+            "de": "Tätigkeitsbezogene Informationen",
+            "en": "Activity-based information"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ClassId:01",
+        "datatype": "plus:Class",
+        "subClassOf": "vdi:DocumentCategory",
+        "rels": {},
+        "attrs": {
+            "plus:publicName": "01"
+        },
+        "label": {
+            "de": "Identifikation",
+            "en": "Identification"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:DIN-SPEC-91406",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:RefType",
+        "rels": {
+            "vdi:has-object-type": [
+                "vdi:Individual"
+            ]
+        },
+        "attrs": {},
+        "label": "ID nach DIN SPEC 91406",
+        "indicators": [
+            "instance of object uri"
+        ]
+    },
+    {
+        "identifier": "vdi:SerialNumber",
+        "datatype": "plus:Instance",
+        "subClassOf": "vdi:RefType",
+        "rels": {
+            "vdi:has-object-type": [
+                "vdi:Individual"
+            ]
+        },
+        "attrs": {},
+        "label": "Seriennummer",
+        "indicators": [
+            "serial number"
+        ]
+    }
+]

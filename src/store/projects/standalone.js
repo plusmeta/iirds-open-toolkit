@@ -65,7 +65,11 @@ const getters = {
         } else {
             return [];
         }
-    }
+    },
+    getCurrentProjectRelations: (state, getters) => {
+        let currentProject = getters.getCurrentProject;
+        return currentProject?.rels || {};
+    },
 };
 
 // actions

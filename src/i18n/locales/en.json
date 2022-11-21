@@ -4,13 +4,18 @@
     "addObject": "Add object",
     "cancel": "Cancel",
     "createEntry": "Press Enter to create new entry",
+    "currentPage": "Current page",
     "deleteObject": "Delete object",
     "deleteObjectInfo": "Do you really want to delete the object? This action can not be reverted.",
     "deleteObjectsInfo": "Do you really want to delete the selected objects? This action can not be reverted.",
     "deleteRefObjectInfo": "...",
     "deleteSelectedObjects": "Delete selected objects",
     "downloadMetadata": "Save metadata",
+    "findEntry": "Find entry",
+    "firstPage": "First page",
+    "fullscreen": "Fullscreen",
     "giveFeedback": "Give feedback",
+    "lastPage": "Last page",
     "openSettings": "Open settings",
     "restoreSettings": "Reset settings",
     "restoreSettingsInfo": "Do you really want to restore the settings? All settings will be reset to default values and the workflow has to be started over.",
@@ -48,6 +53,9 @@
     "unknown": "Unknown",
     "view": "View",
     "workflow": "Workflow"
+  },
+  "Files": {
+    "guidelines": "Equipment"
   },
   "Notification": {
     "deletionFailed": "Deletion failed",
@@ -109,5 +117,8 @@
     "objects": "Total",
     "objectsCount": "Objects count",
     "processed": "Processed"
+  },
+  "Public": {
+    "guidelines": "The following information is set at the main document level and applies across all documents."
   }
 }

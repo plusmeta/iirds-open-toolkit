@@ -1,0 +1,8 @@
+{
+    "name": "plusmeta-scripts",
+    "private": true,
+    "type":"module",
+    "browser": {
+        "fs": false
+     }
+}

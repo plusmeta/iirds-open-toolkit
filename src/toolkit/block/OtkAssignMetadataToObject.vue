@@ -8,27 +8,12 @@
   <v-container fluid>
     <v-layout wrap>
       <v-flex
-        v-if="isPreview"
         xs6
         lg4
         class="px2"
       >
         <PreviewPDF
           v-if="isPDF"
-          :file="object"
-        />
-        <PreviewHTML
-          v-else-if="isHTML"
-          :file="object"
-          :size="1"
-        />
-        <PreviewText
-          v-else-if="isText"
-          :text="object.text"
-          :size="1"
-        />
-        <PreviewXML
-          v-else-if="isXML"
           :file="object"
         />
         <v-skeleton-loader
@@ -40,78 +25,88 @@
           width="300"
         />
       </v-flex>
-      <v-flex
-        class="flex-shrink-1"
-        :class="{
-          'offset-xs1': isPreview,
-          'xs5': isPreview,
-          'lg7': isPreview,
-          'xs12': !isPreview
-        }"
-      >
-        <v-layout row>
-          <v-autocomplete
-            :value="object.type"
-            :items="getObjectTypes"
-            :label="$t('Objects.type')"
-            class="mr-6"
-            filled
-            @change="setObjectType"
-          />
-          <div class="pt-2 pr-2">
-            <AddMetadata
-              :object="object.uuid"
-              :visible="getVisibleMetadata.map(m => m.value)"
-              @metadata="addObjectMetadataField"
-            />
-          </div>
-        </v-layout>
-
-        <ChooseCreateTitle
-          ref="title"
-          :object-uuid="object.uuid"
-          propclass="plus:Title"
-          proprelation="iirds:title"
-          :indicator="false"
-          :label="true"
-        />
-
-        <template
-          v-for="custom in getVisibleMetadata"
+      <v-flex class="flex-shrink-1 offset-xs1 xs5 lg7">
+        <v-expansion-panels
+          v-model="activeGroups"
+          focusable
+          accordion
+          multiple
         >
-          <div
-            v-if="custom.type === 'plus:Class'"
-            :key="custom.value"
-            class="mt-2"
-          >
-            <ChooseCreateProperty
-              :key="custom.value"
-              :object-uuid="object.uuid"
-              :propclass="custom.value"
-              :proprelation="custom.rel"
-              :required="custom.required"
-              :multiple="custom.multiple"
-              :indicator="false"
-              :label="true"
-              :icon="custom.icon"
-            />
-          </div>
-          <div
-            v-if="custom.type === 'plus:Array'"
-            :key="custom.value"
-            class="mt-2"
-          >
-            <ChooseManageList
-              :key="custom.value"
-              :object-uuid="object.uuid"
-              :proplist="custom.value"
-              :required="custom.required"
-              :indicator="false"
-              :label="true"
-              :icon="custom.icon"
-            />
-          </div>
-        </template>
+          <v-expansion-panel v-for="groupId in getMetadataOrderedGroups" :key="groupId">
+            <v-expansion-panel-header
+              :outlined="!$vuetify.theme.dark"
+              style="min-height: 48px"
+              class="py-0"
+            >
+              <v-row no-gutters>
+                <v-col>
+                  <span class="subtitle-2">{{ getPropertyLabelById(groupId) }}</span>
+                </v-col>
+                <v-col cols="auto">
+                  <v-badge
+                    color="accent"
+                    :content="getGroupedMetadata[groupId].length"
+                    inline
+                  />
+                </v-col>
+              </v-row>
+            </v-expansion-panel-header>
+
+            <v-expansion-panel-content class="pt-4">
+              <div
+                v-for="custom in getGroupedMetadata[groupId]"
+                :key="custom.value"
+              >
+                <ChooseCreateTitle
+                  v-if="custom.value === 'plus:Title'"
+                  :key="custom.value"
+                  :object-uuid="object.uuid"
+                  propclass="plus:Title"
+                  proprelation="iirds:title"
+                  :label="true"
+                />
+                <ChooseTaxonomyNodes
+                  v-else-if="custom.hasTaxonomyRole"
+                  :object-uuid="object.uuid"
+                  :propclass="custom.value"
+                  :proprelation="custom.rel"
+                  :required="custom.required"
+                  :multiple="custom.multiple"
+                  :label="true"
+                  :icon="custom.icon"
+                />
+                <ChooseCreateProperty
+                  v-else-if="custom.type === 'plus:Class'"
+                  :key="custom.value"
+                  :object-uuid="object.uuid"
+                  :propclass="custom.value"
+                  :proprelation="custom.rel"
+                  :required="custom.required"
+                  :multiple="custom.multiple"
+                  :label="true"
+                  :icon="custom.icon"
+                />
+                <ChooseManageList
+                  v-else-if="custom.type === 'plus:Array'"
+                  :key="custom.value"
+                  :object-uuid="object.uuid"
+                  :proplist="custom.value"
+                  :required="custom.required"
+                  :label="true"
+                  :icon="custom.icon"
+                />
+                <ShowEditMetadata
+                  v-else
+                  :key="custom.value"
+                  :object-uuid="object.uuid"
+                  :proprelation="custom.rel"
+                  :label="true"
+                  :icon="custom.icon"
+                />
+              </div>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
       </v-flex>
     </v-layout>
   </v-container>
@@ -120,29 +115,24 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import util from "@/util";
 import match from "@/util/match";
 
-import PreviewText from "@/shared/block/PreviewText";
 import PreviewPDF from "@/shared/block/PreviewPDF";
-import PreviewHTML from "@/shared/block/PreviewHTML";
-import AddMetadata from "@/shared/inline/AddMetadata";
 import ChooseCreateProperty from "@/toolkit/inline/OtkChooseCreateProperty";
+import ChooseTaxonomyNodes from "@/toolkit/inline/OtkChooseTaxonomyNodes";
 import ChooseManageList from "@/toolkit/inline/OtkChooseManageList";
 import ChooseCreateTitle from "@/toolkit/inline/OtkChooseCreateTitle";
-import PreviewXML from "@/shared/block/PreviewXML";
+import ShowEditMetadata from "@/toolkit/inline/OtkShowEditMetadata";
 
 export default {
     name: "PlusAssignMetadataToObject",
     components: {
-        PreviewXML,
-        PreviewText,
         PreviewPDF,
-        PreviewHTML,
         ChooseCreateProperty,
+        ChooseTaxonomyNodes,
         ChooseCreateTitle,
         ChooseManageList,
-        AddMetadata
+        ShowEditMetadata
     },
     props: {
         object: {
@@ -152,25 +142,48 @@ export default {
     },
     data() {
         return {
-            objectMetadata: []
+            objectMetadata: [],
+            activeGroups: []
         };
     },
     computed: {
-        isPreview() {
-            return !!this.getSetting("ui_assign_preview");
+        getMetadataOrderedGroups() {
+            return Object.keys(this.getGroupedMetadata).sort((a,b) => {
+                const posA = this.getPropertyAttributeById(a, "plus:metaListPriority") || 99;
+                const posB = this.getPropertyAttributeById(b, "plus:metaListPriority") || 99;
+                const labelA = this.getPropertyLabelById(a) || a;
+                const labelB = this.getPropertyLabelById(b) || b;
+                return posA - posB || labelA.localeCompare(labelB);
+            });
+        },
+        getGroupedMetadata() {
+            const groups = {};
+            this.getVisibleMetadata.forEach((entry) => {
+                let group = this.getPropertyRelationById(entry.value, "plus:is-part-of-metadata-group")[0];
+                if (!group) {
+                    if (!groups["plus:Meta"]){
+                        groups["plus:Meta"] = [];
+                    }
+                    groups["plus:Meta"].push(entry);
+                } else {
+                    if (!groups[group]){
+                        groups[group] = [];
+                    }
+                    groups[group].push(entry);
+                }
+            });
+            return groups;
         },
         getVisibleMetadata() {
             return this.objectMetadata
-                .filter((prop) => {
-                    const restrictions = this.getPropertyRelationById(prop.identifier, "plus:restricted-to-object-type");
-                    const areRestrictionsOk = !restrictions.length || restrictions.includes(this.object.type);
-                    return areRestrictionsOk;
-                })
                 .map((prop) => {
                     const relation = this.getPropertyRelationById(prop.identifier, "plus:has-relations")[0] || prop.identifier;
                     const required = this.getPropertyRelationById(prop.identifier, "plus:has-roles").includes("plus:RequiredMetadata");
                     const single = this.getPropertyRelationById(prop.identifier, "plus:has-roles").includes("plus:SingleMetadata");
                     const icon = this.getPropertyRelationById(prop.identifier, "plus:has-icons")[0];
+                    const position = this.getPropertyAttributeById(prop.identifier, "plus:metaListPriority") || 99;
+                    const hasTaxonomyRole = this.hasTaxonomyRole(prop.identifier);
+
                     return {
                         value: prop.identifier,
                         text: this.getPropertyLabelById(prop.identifier),
@@ -178,32 +191,16 @@ export default {
                         required: required,
                         multiple: !single,
                         rel: relation,
+                        position,
+                        hasTaxonomyRole,
                         icon: (icon) ? icon.replace(":", "-") : undefined
                     };
                 })
-                .sort((a,b) => (a.required) ? -1 : 1); // Pflichtmetadaten vorne sortieren
-        },
-        getObjectTypes() {
-            return ["plus:Document", "plus:Component", "plus:Fragment"].map((type) => {
-                return {
-                    text: this.getPropertyLabelById(type),
-                    value: type
-                };
-            });
+                .sort((a,b) => a.position - b.position || a.text.localeCompare(b.text));
         },
         isPDF() {
             return match.mimeType(this.$store, this.object.source.type, this.object.source.name) === "application/pdf" &&
             (this.object.source.uri || this.object.source.data);
-        },
-        isHTML() {
-            return match.mimeType(this.$store, this.object.source.type, this.object.source.name) === "text/html" &&
-            (this.object.source.uri || this.object.source.data);
-        },
-        isText() {
-            return this.object.type === "plus:Text";
-        },
-        isXML() {
-            return this.object?.source?.type === "application/xml";
         },
         ...mapGetters("projects", [
             "getCurrentProjectRelationById"
@@ -219,11 +216,12 @@ export default {
             "getPropertyRelationById",
             "getPropertiesByRole",
             "getPropertyLabelById",
-            "getPropertyRelationById"
+            "getPropertyAttributeById"
         ])
     },
     created() {
-        this.objectMetadata.push(...this.getPropertiesByRole("plus:VisibleMetadata"));
+        this.objectMetadata.push(...this.getPropertiesByRole("plus:AssignableMetadata"));
+        this.setDefaultOpenGroups();
     },
     methods: {
         simpleAssign(uuid, {event, uri}) {
@@ -237,26 +235,17 @@ export default {
                 }
             });
         },
-        setObjectType(type) {
-            this.saveObjectLocal({
-                uuid: this.object.uuid,
-                type: type
+        setDefaultOpenGroups() {
+            this.getMetadataOrderedGroups.forEach((groupId, index) => {
+                if (this.getPropertyAttributeById(groupId, "plus:openByDefault")) {
+                    this.activeGroups.push(index);
+                }
             });
+            if (this.activeGroups.length === 0) this.activeGroups.push(0);
         },
-        checkDependencyValue(dependentRelation, dependentValue) {
-            return dependentRelation.some((rel) => {
-                let assigned = this.getMetadataValueByURI(this.object.uuid, rel);
-                let compare = (Array.isArray(assigned)) ? assigned : [assigned];
-                return compare.filter(Boolean).some((val) => {
-                    return dependentValue.includes(val);
-                });
-            });
-        },
-        checkDependencyMapping(dependentRelation) {
-            return  !!this.getMetadataValueByURI(this.object.uuid, dependentRelation[0]);
-        },
-        addObjectMetadataField(metadata) {
-            this.objectMetadata.push(metadata);
+        hasTaxonomyRole(prop) {
+            return this.getPropertyRelationById(prop, "plus:has-roles").includes("plus:TaxonomyTree") ||
+                this.getPropertyRelationById(prop, "plus:has-roles").includes("plus:Hierarchy");
         },
         ...mapActions("storage", [
             "addMetadata",

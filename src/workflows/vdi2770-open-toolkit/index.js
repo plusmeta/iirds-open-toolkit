@@ -21,11 +21,16 @@ export default {
         editable: false,
         helpkey: "workflow.welcome",
         name: {
-            de: "Willkommen",
-            en: "Welcome"
+            de: "Daten angeben",
+            en: "Input data"
         },
         rules: [
-            store => store.getters["settings/getSetting"]("user_eula")
+            store => store.getters["settings/getSetting"]("user_eula") &&
+                    store.getters["settings/getSetting"]("base_user_name") &&
+                    store.getters["settings/getSetting"]("base_user_mail") &&
+                    store.getters["settings/getSetting"]("base_orga_name") &&
+                    store.getters["settings/getSetting"]("base_orga_url")
+
         ],
         ruleExpl: {
             de: "Sie müssen die Nutzungsbedingungen akzeptieren",
@@ -40,6 +45,9 @@ export default {
         name: {
             de: "Inhalte hinzufügen",
             en: "Add content"
+        },
+        props: {
+            objecttype: ["plus:Document"]
         },
         rules: [
             store => store.getters["storage/countCurrentObjectsByType"]
@@ -60,7 +68,7 @@ export default {
             en: "Assign metadata"
         },
         props: {
-            objecttype: ["plus:Document", "plus:Component", "plus:Fragment"]
+            objecttype: ["plus:Document"]
         },
         component: () => import(/* webpackChunkName: "StepBulkAssignMetadata.step" */"@/toolkit/step/OtkStepBulkAssignMetadata")
     },
@@ -81,6 +89,6 @@ export default {
             de: "VDI-2770-Container wurde erfolgreich erzeugt",
             en: "VDI 2770 container was generated successfully"
         },
-        component: () => import(/* webpackChunkName: "StepGenerateIIRDS.step" */ "@/toolkit/step/OtkStepGenerateIIRDS")
+        component: () => import(/* webpackChunkName: "StepGenerateIIRDS.step" */ "@/toolkit/step/OtkStepGenerateVDI2770")
     }]
 };

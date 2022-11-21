@@ -303,60 +303,6 @@
         }
     },
     {
-        "subClassOf": "plus:Meta",
-        "identifier": "plus:Language",
-        "datatype": "plus:Class",
-        "label": {
-            "de": "Sprache",
-            "en": "Language"
-        },
-        "rels": {
-            "plus:has-roles": [
-                "plus:VisibleMetadata",
-                "plus:AssignableMetadata",
-                "plus:RequiredMetadata"
-            ],
-            "plus:has-icons": [
-                "mdi:web"
-            ],
-            "plus:has-relations": [
-                "iirds:language"
-            ]
-        }
-    },
-    {
-        "subClassOf": "plus:Meta",
-        "identifier": "plus:Title",
-        "datatype": "plus:String",
-        "label": {
-            "de": "Titel",
-            "en": "Title"
-        },
-        "rels": {
-            "plus:has-roles": ["plus:AssignableMetadata", "plus:RequiredMetadata"],
-            "plus:has-icons": ["mdi:format-title"],
-            "plus:has-relations": ["iirds:title"]
-        }
-    },
-    {
-        "subClassOf": "plus:Root",
-        "identifier": "plus:Product",
-        "datatype": "plus:Class",
-        "label": {
-            "de": "Produkt",
-            "en": "Product"
-        }
-    },
-    {
-        "subClassOf": "plus:Product",
-        "identifier": "plus:EmptyProduct",
-        "datatype": "plus:Instance",
-        "label": {
-            "de": "Leeres Produkt",
-            "en": "Empty Product"
-        }
-    },
-    {
         "subClassOf": "plus:Root",
         "identifier": "plus:SupplierPart",
         "datatype": "plus:Class",

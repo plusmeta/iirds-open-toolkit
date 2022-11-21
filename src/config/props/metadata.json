@@ -1,0 +1,466 @@
+[
+    {
+        "identifier": "plus:Language",
+        "datatype": "plus:Class",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata",
+                "plus:TitlePart"
+            ],
+            "plus:has-relations": [
+                "iirds:language"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:BasicMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:earth"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 12,
+            "plus:titlePartPriority": 5,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Sprache",
+            "en": "Language"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:DocumentCategory",
+        "datatype": "plus:Class",
+        "subClassOf": "vdi:root",
+        "rels": {
+            "plus:has-roles": [
+                "plus:TaxonomyTree",
+                "plus:AssignableMetadata",
+                "vdi:DocumentClassification"
+            ],
+            "plus:has-relations": [
+                "vdi:has-document-category"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:InformationMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:file-document"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 21,
+            "plus:publicName": "VDI2770:2018",
+            "plus:singleAssignment": true,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "VDI-2770-Dokumentkategorie",
+            "en": "VDI 2770 document category"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:DCC61355",
+        "datatype": "plus:Class",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:TaxonomyTree",
+                "plus:AssignableMetadata",
+                "vdi:DocumentClassification"
+            ],
+            "plus:has-relations": [
+                "vdi:has-dcc"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:InformationMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:file-document"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 22,
+            "plus:requiredAssignment": true
+        },
+        "label": "IEC 61355",
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:revision",
+        "datatype": "plus:String",
+        "subClassOf": "iirds:iirdsAttribute",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:AdminMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:counter"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 41,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Revision",
+            "en": "Revision"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:has-key-words",
+        "datatype": "plus:Array",
+        "subClassOf": "vdi:root",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:AdminMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:tag"
+            ]
+        },
+        "attrs": {
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Schlagwörter",
+            "en": "Key words"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:Organization",
+        "datatype": "plus:Class",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata",
+                "plus:EquipmentMetadata",
+                "plus:TitlePart"
+            ],
+            "plus:has-relations": [
+                "plus:relates-to-organization"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:BasicMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:factory"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 13,
+            "plus:titlePartPriority": 1,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Organisation",
+            "en": "Organization"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:Manufacturer",
+        "datatype": "plus:Class",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [ ],
+            "plus:has-relations": [
+                "plus:relates-to-manufacturer"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:ProductMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:factory"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 32,
+            "plus:titlePartPriority": 1,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Hersteller",
+            "en": "Manufacturer"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:SerialNumber",
+        "datatype": "plus:Array",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata",
+                "plus:EquipmentMetadata",
+                "plus:IdentityDomain"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:ProductMetadataGroup"
+            ],
+            "iirds:has-identity-type": [
+                "iirds:SerialNumber"
+            ],
+            "plus:has-icons": [
+                "mdi:counter"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 33,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Seriennummer",
+            "en": "Serial number"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:IEC61406",
+        "datatype": "plus:String",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "vdi:is-object-identifier": [
+                "plus:AutoID"
+            ],
+            "plus:has-roles": [
+                "plus:AssignableMetadata",
+                "plus:EquipmentMetadata",
+                "plus:IdentityDomain"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:ProductMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:qrcode-scan"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 34,
+            "plus:requiredAssignment": true,
+            "plus:characterLimit": 150
+        },
+        "label": "AutoID (IEC 61406)",
+        "indicators": []
+    },
+    {
+        "identifier": "plus:Title",
+        "datatype": "plus:String",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-relations": [
+                "iirds:title"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:BasicMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:format-title"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 11,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Titel",
+            "en": "Title"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:title",
+        "datatype": "plus:String",
+        "subClassOf": "iirds:iirdsAttribute",
+        "rels": {},
+        "label": {
+            "de": "Titel (iiRDS)",
+            "en": "Title (iIRDS)"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:Comment",
+        "datatype": "plus:LongText",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata"
+            ],
+            "plus:has-icons": [
+                "mdi:message"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:AdminMetadataGroup"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 41,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Beschreibung",
+            "en": "Description"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:ProductVariant",
+        "datatype": "plus:Class",
+        "subClassOf": "iirds:ProductMetadata",
+        "rels": {
+            "iirds:has-identity-type": [
+                "iirds:ProductType"
+            ],
+            "plus:has-roles": [
+                "plus:AssignableMetadata",
+                "plus:TitlePart",
+                "plus:IdentityDomain"
+            ],
+            "plus:has-relations": [
+                "iirds:relates-to-product-variant"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:ProductMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:robot-industrial"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 30,
+            "plus:titlePartPriority": 2,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Produktvariante",
+            "en": "Product variant"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:ProductLabel",
+        "datatype": "plus:String",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "iirds:has-identity-type": [
+                "iirds:ProductType"
+            ],
+            "plus:has-roles": [
+                "plus:EquipmentMetadata"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:ProductMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:robot-industrial"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 30,
+            "plus:titlePartPriority": 2,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Produktbezeichung",
+            "en": "Product label"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:relates-to-product-variant",
+        "datatype": "plus:Relation",
+        "subClassOf": "iirds:relates-to-product-metadata",
+        "rels": {},
+        "label": {
+            "de": "bezieht sich auf Produktvariante",
+            "en": "relates to product variant"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:has-document-category",
+        "datatype": "plus:Relation",
+        "subClassOf": "vdi:root",
+        "rels": {},
+        "attrs": {},
+        "label": {
+            "de": "hat VDI-2770-Dokumentkategorie",
+            "en": "has VDI 2770 document category"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:InformationMetadataGroup",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:MetadataGroup",
+        "rels": {},
+        "attrs": {
+            "plus:metaListPriority": 2,
+            "plus:openByDefault": true
+        },
+        "label": {
+            "de": "Informationsbezogene Metadaten",
+            "en": "Information-related metadata"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:ProductMetadataGroup",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:MetadataGroup",
+        "rels": {},
+        "attrs": {
+            "plus:metaListPriority": 3,
+            "plus:openByDefault": true
+        },
+        "label": {
+            "de": "Produktbezogene Metadaten",
+            "en": "Product-related metadata"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:AdminMetadataGroup",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:MetadataGroup",
+        "rels": {},
+        "attrs": {
+            "plus:metaListPriority": 4,
+            "plus:openByDefault": true
+        },
+        "label": {
+            "de": "Administrative Metadaten",
+            "en": "Administrative metadata"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:BasicMetadataGroup",
+        "datatype": "plus:Instance",
+        "subClassOf": "plus:MetadataGroup",
+        "rels": {},
+        "attrs": {
+            "plus:metaListPriority": 1,
+            "plus:openByDefault": true
+        },
+        "label": {
+            "de": "Basis-Metadaten",
+            "en": "Basic metadata"
+        },
+        "indicators": []
+    }
+]

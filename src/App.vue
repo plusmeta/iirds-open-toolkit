@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import Vue from "vue";
 import util from "@/util";
 
 import { map, scan } from "rxjs/operators";

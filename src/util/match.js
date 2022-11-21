@@ -69,6 +69,17 @@ export default {
         }
         return match;
     },
+    parseLocale(identifier) {
+        const prefix = "plus:lang:ISO-639-1:";
+        if (identifier?.includes(prefix)) {
+            return identifier.substring(prefix.length);
+        } else if (identifier?.match(/^(\w\w)-(\w\w)$/)) {
+            return identifier.split("-")[0];
+        } else {
+            // Fallback
+            return identifier.substring(0, identifier.lastIndexOf(":"));
+        }
+    },
     country(store, locale) {
         const languageTag = this.language(store, locale);
         const country = ((languageTag || "").split("-") || [])[1];

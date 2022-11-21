@@ -3,6 +3,8 @@
  * License: MIT
  */
 
+import { UnitConverter } from "@/util/unit-converter";
+
 export default {
     castString(str) {
         if (typeof str === "string") {
@@ -92,6 +94,12 @@ export default {
     },
     deepCopy(obj) {
         return JSON.parse(JSON.stringify(obj));
+    },
+    withoutArray(arr, without) {
+        return arr.filter(x => !without.includes(x));
+    },
+    unionArray(arr1, arr2) {
+        return this.uniqueValues([...arr1, ...arr2]);
     },
     createTitle(title = "⌛", org = "plusmeta") {
         let browserTitle = `${title} - ${org}`;
@@ -204,5 +212,56 @@ export default {
     async getDocument(url) {
         const pdfjs = await import(/* webpackChunkName: 'pdfjs-dist' */ "pdfjs-dist/webpack");
         return await pdfjs.getDocument(url).promise;
-    }
+    },
+    getMetadata(object, uri) {
+        return object?.meta?.[uri];
+    },
+    hasMetadatum(object, uri) {
+        return !!this.getMetadata(object, uri);
+    },
+    getMetadataValue(object, uri) {
+        return this.getMetadata(object, uri)?.value ?? null;
+    },
+    getMetadataValueAsArray(object, uri) {
+        let v = this.getMetadataValue(object, uri);
+        if (!v) return [];
+        return Array.isArray(v) ? v : [v];
+    },
+    getOrderedMetaValues(objectUuid, uris, $store, attr) {
+        let i = 99;
+        let uniqueValues = uris.reduce((prev, uri) => {
+            const idx = $store.getters["properties/getPropertyAttributeById"](uri, attr) || i++;
+            let value = $store.getters["storage/getSanitizedMetaValueByURI"](objectUuid, uri);
+            prev[idx] = value || prev[idx];
+            return prev;
+        }, {});
+
+        return Array.from(new Set(Object.values(uniqueValues)))
+            .filter(Boolean)
+            .filter(val => typeof val === "string" && val.length > 1);
+    },
+    getOrderedMetaValuesByObject(object, uris, $store) {
+        let i = 99;
+        let uniqueValues = uris.reduce((prev, uri) => {
+            const idx = $store.getters["properties/getPropertyAttributeById"](uri, "plus:objectNamePriority") || i++;
+            // Direkter Zugriff auf Object, statt über store
+            let value = this.getMetadataValue(object, uri);
+            value = (Array.isArray(value)) ? value[0] : value;
+            prev[idx] = value || prev[idx];
+            return prev;
+        }, {});
+
+        return Array.from(new Set(Object.values(uniqueValues)))
+            .filter(Boolean)
+            .filter(val => typeof val === "string" && val.length > 1);
+    },
+    getSourceName(obj) {
+        return (obj?.source) ? obj?.source?.name : obj?.name;
+    },
+    getSourceType(obj) {
+        return (obj?.source) ? obj.source?.type : obj.type;
+    },
+    getSourceSize(obj, { $i18n }) {
+        return UnitConverter.byteToDisplayText({ $i18n }, obj?.source?.size);
+    },
 };

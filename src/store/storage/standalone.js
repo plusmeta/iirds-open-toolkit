@@ -193,6 +193,10 @@ const getters = {
     getCurrentObjectUuidsByType: (state, getters, rootState, rootGetters) => (type) => {
         return getters.getCurrentObjectsByType(type).map(object => object.uuid);
     },
+    getSanitizedMetaValueByURI: (state, getters, rootState, rootGetters) => (objectUuid, uri) => {
+        let value = getters.getMetadataValueByURI(objectUuid, uri);
+        return Array.isArray(value) ? value[0] : value;
+    }
 };
 
 // actions
@@ -252,9 +256,6 @@ const actions = {
     deleteObjects({ commit, getters, dispatch }, objectUuids) {
         let objects = objectUuids.map(getters.getObjectByUuid).filter(Boolean);
         commit("DELETE_OBJECTS", objects.map(object => object.uuid).filter(Boolean));
-    },
-    uploadSource({ getters, commit, rootGetters }, { objectUuid }) {
-        return true;
     },
     uploadThumbnail({ getters, commit, rootGetters }, { objectUuid, file }) {
         return true;

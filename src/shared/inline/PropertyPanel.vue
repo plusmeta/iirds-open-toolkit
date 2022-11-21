@@ -56,6 +56,9 @@
               />
             </v-list-item-subtitle>
           </v-list-item-content>
+          <v-list-item-action>
+            <slot :panel="this" name="action" />
+          </v-list-item-action>
         </v-list-item>
       </v-list>
     </v-card>
@@ -117,6 +120,9 @@ export default {
     },
     methods: {
         ...util,
+        closePanel() {
+            this.panel = false;
+        },
         changeIRI(newId) {
             let oldId = this.getValue;
             if (!newId || !newId.length || !oldId || oldId === newId) return;

@@ -19,7 +19,7 @@
         class="ml-4 mr-4 mt-2"
       >
     </v-toolbar-title>
-    <v-toolbar-title class="subtitle-1 white--text">
+    <v-toolbar-title class="subtitle-1 font-weight-bold white--text">
       VDI 2770 Open Toolkit
     </v-toolbar-title>
 

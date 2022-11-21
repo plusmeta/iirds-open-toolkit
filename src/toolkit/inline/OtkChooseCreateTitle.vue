@@ -15,7 +15,6 @@
         :disabled="isApproved || loading"
         :loading="loading"
         :label="getLabel"
-        class="pt-6"
         :return-object="false"
         prepend-icon="mdi-format-title"
         :rules="[checkRequired]"

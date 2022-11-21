@@ -7,114 +7,17 @@
 <template>
   <v-container fluid>
     <HelpView helpkey="workflow.assignMetadata" />
+    <AssignGuidelines />
 
     <v-card :outlined="!$vuetify.theme.dark">
       <v-data-iterator
         :items="getCurrentObjects"
         :items-per-page="10"
         :search="search"
-        :footer-props="{
-          'items-per-page-options': [10,25,50],
-          'show-first-last-page': true,
-          'show-current-page': true
-        }"
         must-sort
         sort-by="name"
         item-key="uuid"
       >
-        <template v-slot:header>
-          <v-toolbar :class="{'elevation-0': !$vuetify.theme.dark}">
-            <v-flex
-              v-shortkey.once="['t']"
-              class="pb-2"
-              @shortkey="$refs.type.focus()"
-            >
-              <v-autocomplete
-                ref="type"
-                :value="getSetting('ui_assign_filter')"
-                :items="getObjectTypeFilterValues"
-                :label="$t('Objects.all')"
-                prepend-icon="mdi-filter"
-                single-line
-                hide-details
-                clearable
-                @change="setLocalSetting({key: 'ui_assign_filter', value: $event})"
-              >
-                <template v-slot:item="{ item }">
-                  <span>{{ item.text }} </span>
-                  <v-spacer />
-                  <v-chip small color="accent">
-                    {{ item.count }}
-                  </v-chip>
-                </template>
-              </v-autocomplete>
-            </v-flex>
-
-            <v-spacer />
-
-            <v-flex
-              v-shortkey.once="['f']"
-              class="pb-2"
-              @shortkey="$refs.search.focus()"
-            >
-              <v-text-field
-                ref="search"
-                v-model="search"
-                prepend-icon="mdi-magnify"
-                :label="$t('Common.search')"
-                single-line
-                hide-details
-                clearable
-              />
-            </v-flex>
-
-            <v-spacer />
-
-            <div
-              v-shortkey.once="['s']"
-              @shortkey="showSettingsMenu = !showSettingsMenu"
-            >
-              <v-menu
-                v-model="showSettingsMenu"
-                left
-                offset-y
-                :min-width="350"
-                :close-on-content-click="false"
-              >
-                <template v-slot:activator="{ on }">
-                  <v-btn
-                    icon
-                    class="mr-1"
-                    v-on="on"
-                  >
-                    <v-icon :class="{turn: showSettingsMenu}">
-                      mdi-cog
-                    </v-icon>
-                  </v-btn>
-                </template>
-                <v-list>
-                  <v-subheader>
-                    {{ $t('Common.view') }}
-                    <v-divider />
-                  </v-subheader>
-
-                  <v-list-item>
-                    <v-list-item-action>
-                      <v-switch
-                        :input-value="getSetting('ui_assign_preview')"
-                        flat
-                        color="primary"
-                        @change="setLocalSetting({key: 'ui_assign_preview', value: !!$event})"
-                      />
-                    </v-list-item-action>
-                    <v-list-item-title>{{ $t('Common.preview') }}</v-list-item-title>
-                  </v-list-item>
-                </v-list>
-              </v-menu>
-            </div>
-          </v-toolbar>
-        </template>
-
         <template v-slot="{ items, isExpanded, expand }">
           <v-card
             v-for="(item, index) in items"
@@ -157,26 +60,6 @@
           <v-divider />
         </template>
       </v-data-iterator>
-      <v-container
-        v-if="getSetting('ui_shortcuts')"
-        class="caption grey--text text-sm-right px-0 pt-6"
-      >
-        <v-icon class="mr-4" color="grey darken-1">
-          mdi-keyboard
-        </v-icon>
-        <span class="d-inline-block mr-2">
-          {{ $t("Common.filter") }}
-        </span>
-        <kbd>t</kbd>
-        <span class="d-inline-block mr-2 ml-8">
-          {{ $t("Common.search") }}
-        </span>
-        <kbd>f</kbd>
-        <span class="d-inline-block mr-2 ml-8">
-          {{ $t("Actions.openSettings") }}
-        </span>
-        <kbd>s</kbd>
-      </v-container>
     </v-card>
   </v-container>
 </template>
@@ -184,18 +67,18 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import util from "@/util";
-
 import AssignMetadata from "@/toolkit/block/OtkAssignMetadataToObject";
 import DeleteObject from "@/shared/inline/DeleteObject";
 import HelpView from "@/shared/block/HelpView";
+import AssignGuidelines from "@/shared/block/AssignGuidelines";
 
 export default {
     name: "OtkStepBulkAssignMetadata",
     components: {
         AssignMetadata,
         DeleteObject,
-        HelpView
+        HelpView,
+        AssignGuidelines
     },
     props: {
         objecttype: {
