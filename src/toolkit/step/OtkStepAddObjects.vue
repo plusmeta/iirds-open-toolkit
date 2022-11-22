@@ -531,8 +531,6 @@ export default {
 
             if (object.source.type === "application/pdf") {
                 await pdf.analyze(...analyzePayload);
-            } else {
-                console.log("UOP");
             }
 
             this.processing.splice(this.processing.indexOf(object.uuid), 1);
