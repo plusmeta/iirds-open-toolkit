@@ -161,7 +161,7 @@ export default {
         },
         checkRequired(value) {
             if (this.required && !!value && !value.length) {
-                return this.$t("Common.noEmptyInput");
+                return this.$t("Validations.noEmptyInput");
             } else {
                 return true;
             }

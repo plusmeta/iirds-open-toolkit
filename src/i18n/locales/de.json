@@ -1,48 +1,55 @@
 {
   "Actions": {
+    "add": "hinzufügen",
     "addMetadata": "Metadaten hinzufügen",
     "addObject": "Objekt hinzufügen",
     "cancel": "Abbrechen",
-    "createEntry": "Eingabetaste drücken, um neuen Eintrag zu erstellen",
+    "create": "Erstellen",
+    "createEntry": "Drücken Sie <kbd>Enter</kbd>, um einen neuen Eintrag zu erstellen.",
     "currentPage": "Aktuelle Seite",
+    "delete": "{0} löschen",
     "deleteObject": "Objekt löschen",
     "deleteObjectInfo": "Wollen Sie das Objekt wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden.",
     "deleteObjectsInfo": "Wollen Sie die ausgewählten Objekte wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden.",
-    "deleteRefObjectInfo": "...",
+    "deleteRefObjectInfo": "Wollen Sie das Objekt wirklich löschen? Es wird aktuell in anderen Projekten verwendet. Dieser Vorgang kann nicht rückgängig gemacht werden.",
     "deleteSelectedObjects": "Ausgewählte Objekte löschen",
+    "download": "Herunterladen",
     "downloadMetadata": "Metadaten speichern",
+    "exit": "Beenden",
+    "exitFullscreen": "Vollbildmodus beenden",
     "findEntry": "Finde Eintrag",
     "firstPage": "Erste Seite",
     "fullscreen": "Vollbild",
     "giveFeedback": "Feedback geben",
     "lastPage": "Letzte Seite",
+    "next": "Überspringen",
+    "nextPage": "Nächste Seite",
     "openSettings": "Einstellungen öffnen",
+    "print": "Drucken",
     "restoreSettings": "Einstellungen zurücksetzen",
     "restoreSettingsInfo": "Wollen Sie die Einstellungen wirklich zurücksetzen? Alle Einstellungen werden auf die Werkseinstellungen zurückgesetzt und der Workflow muss vor vorne begonnen werden.",
-    "showShortcuts": "Zeige Tastenkürzel",
+    "rotateLeft": "Ansicht 90° nach links drehen",
+    "rotateRight": "90° nach rechts drehen",
+    "upload": "{0} hochladen",
     "uploadMetadata": "Metadatenwerte importieren",
-    "useDarkMode": "Dunkles Farbschema"
+    "zoomIn": "Ansicht vergrößern",
+    "zoomOut": "Ansicht verkleinern"
   },
   "App": {
     "backToStart": "Zurück zum Start",
     "filesTooLarge": "Speicherlimit erreicht. Es können keine Dateien mehr hinzugefügt werden.",
-    "help": "Hilfe",
-    "helpcenter": "Anwenderportal",
-    "license": "Lizenzen anzeigen",
+    "license": "Lizenzinformationen",
     "licenses": "Lizenzen verwendeter Software",
     "maxMemory": "Maximale Speichergrenze erreicht. Objekt wird nicht importiert.",
-    "pageHelp": "Hilfeseite",
     "siteNotFound": "Die angeforderte Seite wurde nicht gefunden",
     "sourcecode": "Quellcode anzeigen"
   },
   "Common": {
     "actions": "Aktionen",
     "columns": "Keine Spalten | {n} Spalte | {n} Spalten",
-    "false": "Nein",
     "filter": "Filter",
     "more": "und keine weiteren | und ein weiteres | und {n} weitere",
     "name": "Name",
-    "noEmptyInput": "Eingabe darf nicht leer sein",
     "preview": "Vorschau",
     "publisher": "Herausgeber",
     "ruleExplainer": "Zum Fortfahren müssen alle Bedingungen erfüllt sein",
@@ -51,11 +58,10 @@
     "searchFor": "Suche nach",
     "true": "Ja",
     "unknown": "Unbekannt",
-    "view": "Anzeige",
-    "workflow": "Workflow"
+    "view": "Anzeige"
   },
   "Files": {
-    "guidelines": "Equipment"
+    "guidelines": "Vorgaben"
   },
   "Notification": {
     "deletionFailed": "Löschen fehlgeschlagen",
@@ -63,23 +69,19 @@
     "importedMetadata": "Metadaten erfolgreich importiert",
     "objectDeleted": "Objekt gelöscht",
     "openedProject": "Neues OpenToolkit-Projekt gestartet",
-    "permissionDenied": "Zugang verweigert",
     "propertyCreated": "Eigenschaft erstellt",
-    "propertyDeleted": "Metadatenwert gelöscht"
+    "propertyDeleted": "Eigenschaft gelöscht"
   },
   "Objects": {
     "all": "Alle Objekte",
-    "delete": "Objekt löschen",
-    "download": "Herunterladen",
     "dropFilesToAdd": "Dateien hier ablegen, um sie zum Paket hinzuzufügen",
+    "file": "Datei",
     "filesize": "Dateigröße",
     "label": "Anzeigename",
-    "log": "Protokoll",
+    "log": "Verlaufsprotokoll",
     "metadata": "Metadaten",
-    "noAssociatedFile": "Keine zugeordnete Quelldatei",
     "noObjectsExplainer": "Fügen Sie neue Objekte über die grüne Schaltfläche oder per Drag&Drop hinzu.",
     "none": "Keine Objekte",
-    "objectUsedInOtherProjects": "...",
     "rerun": "Erneut ausführen",
     "sourceName": "Name der Quelldatei",
     "sourceType": "Typ der Quelldatei",
@@ -87,21 +89,12 @@
   },
   "Otk": {
     "acceptUsageAgreement": "Nutzungsbedingungen und Datenschutz akzeptieren",
-    "browserWarning": "Browser-Warnung",
-    "browserWarningText": "Verwenden Sie für ein optimales Benutzererlebnis einen <b>modernen Browser</b><br> (z.B. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox).",
-    "changeIRI": "IRI ändern",
-    "dataProtectionText": "Für ein besseres Benutzererlebniss setzen wir Systeme zur Zugriffsanalyse ein. Dateien, die im VDI 2770 Open Toolkit verwendet werden, verlassen nicht Ihren Rechner.\nBitte akzeptieren Sie unsere <a href=\"/docs/Nutzungsbedingungen_vdi2770-open-toolkit.pdf\" target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"https://iirds.org/privacy-policy/\" target=\"_blank\">Daten&shy;schutz&shy;bestimmung</a> zum Fortfahren.",
-    "dataProtectionTitle": "Nutzungsbedingungen & Datenschutz",
     "downloadPackage": "Speichern",
-    "licenseInfo": "iiRDS lizenziert unter",
-    "metadataDownloaded": "Metadaten heruntergeladen",
     "retry": "Möchten Sie ein weiteres iiRDS-Paket erstellen?",
-    "rightsInfo": "Alle Rechte tekom",
     "settingsRestored": "Auf Standardeinstellungen zurückgesetzt",
     "startNewPackage": "Neues Paket",
     "thankYou": "Vielen Dank!",
-    "thankYouExplainer": "Ihr iiRDS-Paket steht für Sie zum Speichern bereit.",
-    "welcomeSubtitle": "Mit dem kostenlosen VDI 2770 Open Toolkit können Sie in nur wenigen Schritten mit eigenen Inhalten iiRDS-Pakete generieren.",
+    "thankYouExplainer": "Ihr Paket steht für Sie zum Speichern bereit.",
     "welcomeTitle": "Willkommen beim VDI 2770 Open Toolkit!"
   },
   "Packages": {
@@ -119,6 +112,23 @@
     "processed": "Verarbeitet"
   },
   "Public": {
-    "guidelines": "Folgende Angaben werden auf Hauptdokument-Ebene gesetzt und gelten übergreifend."
+    "guidelines": "Die folgenden Vorgaben wurden vom Ersteller des Projekts festgelegt."
+  },
+  "Settings": {
+    "custom_company": "Firmenname (kurz)",
+    "custom_logo": "Firmenlogo",
+    "custom_name": "Firmenname (lang)",
+    "custom_url": "URL Website",
+    "google_dialogflow_project_id": "Google Dialogflow Projekt-ID",
+    "reset": "Zurücksetzen",
+    "showShortcuts": "Zeige Tastenkürzel",
+    "useDarkMode": "Dunkles Farbschema"
+  },
+  "Validations": {
+    "noEmptyInput": "Feld darf nicht leer sein",
+    "noMultipleInput": "Feld darf nur einen Wert enthalten"
+  },
+  "Workflows": {
+    "objectUsedInOtherProjects": "Objekt wird in anderen Projekten verwendet"
   }
 }

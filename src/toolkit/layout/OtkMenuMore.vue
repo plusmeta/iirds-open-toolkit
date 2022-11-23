@@ -65,7 +65,7 @@
               @change="setLocalSetting({key: 'ui_shortcuts', value: !!$event})"
             />
           </v-list-item-action>
-          <v-list-item-title>{{ $t('Actions.showShortcuts') }}</v-list-item-title>
+          <v-list-item-title>{{ $t('Settings.showShortcuts') }}</v-list-item-title>
           <v-list-item-action>
             <v-icon>mdi-apple-keyboard-shift</v-icon>
           </v-list-item-action>
@@ -79,7 +79,7 @@
               @change="changeTheme(!!$event)"
             />
           </v-list-item-action>
-          <v-list-item-title>{{ $t('Actions.useDarkMode') }}</v-list-item-title>
+          <v-list-item-title>{{ $t('Settings.useDarkMode') }}</v-list-item-title>
           <v-list-item-action>
             <v-icon>
               mdi-theme-light-dark

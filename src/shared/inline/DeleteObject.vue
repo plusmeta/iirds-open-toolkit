@@ -16,8 +16,8 @@
         <v-icon>{{ (referenced) ? "mdi-delete-alert" : "mdi-delete" }}</v-icon>
       </v-btn>
     </template>
-    <span>{{ $t("Objects.delete") }}</span><br>
-    <i v-if="referenced">{{ $t("Objects.objectUsedInOtherProjects") }}</i>
+    <span>{{ $t("Actions.delete") }}</span><br>
+    <i v-if="referenced">{{ $t("Workflows.objectUsedInOtherProjects") }}</i>
   </v-tooltip>
 </template>
 

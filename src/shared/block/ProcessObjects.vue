@@ -71,7 +71,7 @@
               </v-icon>
             </v-btn>
           </template>
-          <span>{{ $t("Objects.download") }}</span>
+          <span>{{ $t("Actions.download") }}</span>
         </v-tooltip>
       </v-scale-transition>
 

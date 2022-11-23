@@ -1,0 +1,134 @@
+{
+  "Actions": {
+    "add": "添加",
+    "addMetadata": "添加元数据",
+    "addObject": "添加对象",
+    "cancel": "取消",
+    "create": "创建",
+    "createEntry": "按<kbd>enter</kbd>以新建",
+    "currentPage": "创建页面",
+    "delete": "删除{0}",
+    "deleteObject": "删除对象",
+    "deleteObjectInfo": "是否要删除该对象？此操作不可撤销。",
+    "deleteObjectsInfo": "是否要删除所选对象？此操作不可撤销。",
+    "deleteRefObjectInfo": "是否要删除该对象？该对象目前用于其他项目中。此操作不可撤销。",
+    "deleteSelectedObjects": "删除所选对象",
+    "download": "下载",
+    "downloadMetadata": " 保存元数据",
+    "exit": "退出",
+    "exitFullscreen": "退出全屏",
+    "findEntry": "查找条目",
+    "firstPage": "第一页",
+    "fullscreen": "全屏",
+    "giveFeedback": " 给予反馈",
+    "lastPage": "最后一页",
+    "next": "跳过",
+    "nextPage": "下一页",
+    "openSettings": "打开设置",
+    "print": "打印",
+    "restoreSettings": "Reset settings",
+    "restoreSettingsInfo": "Do you really want to restore the settings? All settings will be reset to default values and the workflow has to be started over.",
+    "rotateLeft": "将视图向左旋转 90°",
+    "rotateRight": "向右旋转 90°",
+    "upload": "上传{0}",
+    "uploadMetadata": "Import metadata values",
+    "zoomIn": "放大",
+    "zoomOut": "缩小"
+  },
+  "App": {
+    "backToStart": " 回到起点",
+    "filesTooLarge": "已达到内存限制。无法添加更多文件。",
+    "license": "许可证信息",
+    "licenses": "所用软件的许可证",
+    "maxMemory": "已达到最大内存限制。不会导入对象。",
+    "siteNotFound": "未找到请求的网站",
+    "sourcecode": "显示源代码"
+  },
+  "Common": {
+    "actions": "操作",
+    "columns": "无列 | {n} 列 | {n} 列",
+    "filter": "筛选",
+    "more": "没有|加一个|加{n}个",
+    "name": "姓名",
+    "preview": "预览",
+    "publisher": "发布者",
+    "ruleExplainer": "若要继续操作，须满足所有条件",
+    "ruleViolation": "这违反了以前的工作流规则。请跳回上一有效步骤。",
+    "search": "搜索",
+    "searchFor": "寻找",
+    "true": "是",
+    "unknown": "未知",
+    "view": "视图"
+  },
+  "Files": {
+    "guidelines": "准则"
+  },
+  "Notification": {
+    "deletionFailed": "删除失败",
+    "importFailed": "导入失败",
+    "importedMetadata": "成功导入元数据",
+    "objectDeleted": "对象已删除",
+    "openedProject": "将项目状态设置为打开",
+    "propertyCreated": "属性已创建",
+    "propertyDeleted": "属性已删除"
+  },
+  "Objects": {
+    "all": "所有对象",
+    "dropFilesToAdd": "将文件拖放到此处以将它们添加到包中",
+    "file": "文件",
+    "filesize": "文件大小",
+    "label": "对象标签",
+    "log": "处理日志",
+    "metadata": "元数据",
+    "noObjectsExplainer": "您尚未创建或导入任何对象。点击绿色按钮，创建或导入对象。",
+    "none": "无可用对象",
+    "rerun": "重新启动程序",
+    "sourceName": "源文件名称",
+    "sourceType": "源文件类型",
+    "type": "对象类型"
+  },
+  "Otk": {
+    "acceptUsageAgreement": "接受使用协议和数据保护",
+    "downloadPackage": "节省",
+    "retry": "是否要生成另一个iiRDS文件包？",
+    "settingsRestored": "恢复默认设置",
+    "startNewPackage": "新包装",
+    "thankYou": "谢谢！",
+    "thankYouExplainer": "现在可以下载iiRDS文件包",
+    "welcomeTitle": "欢迎使用 VDI 2770 开放工具包！"
+  },
+  "Packages": {
+    "cached": "生成的可用文件包",
+    "checkingForUpdates": "检查更新...",
+    "generate": "生成文件包",
+    "packaging": "文件包内容",
+    "progress": "进程"
+  },
+  "Plus": {
+    "elapsedTime": "经过时间",
+    "forAnalysis": "处理",
+    "objects": "总计",
+    "objectsCount": "对象数",
+    "processed": "已处理"
+  },
+  "Public": {
+    "guidelines": "以下准则由项目创建者定义。"
+  },
+  "Settings": {
+    "custom_company": "公司名称（简称）",
+    "custom_logo": "公司徽标",
+    "custom_name": "公司名称（全称）",
+    "custom_url": "URL网址",
+    "google_dialogflow_project_id": "谷歌Dialogflow项目ID",
+    "reset": "重置",
+    "showShortcuts": "显示快捷方式",
+    "useDarkMode": "深色模式"
+  },
+  "Validations": {
+    "noEmptyInput": "字段不能为空",
+    "noMultipleInput": "字段必须只包含一个值"
+  },
+  "Workflows": {
+    "objectUsedInOtherProjects": "对象用于其他项目中"
+  }
+}

@@ -49,6 +49,15 @@ const dateTimeFormats = {
             minute: "2-digit",
             second: "2-digit"
         }
+    },
+    "zh": {
+        timer: {
+            timeZone: "UTC",
+            hourCycle: "h23",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        }
     }
 };
 

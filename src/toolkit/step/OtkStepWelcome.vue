@@ -61,7 +61,7 @@
               class="primary--text"
             >Digitalen Datenkette</a>.<br><br>
             Das VDI 2770 Open Toolkit ist kostenlos und ohne Anmeldung nutzbar.<br>
-            Angaben zu Ihrer Organisation werden an die plusmeta GmbH übermittelt und lokal in Ihrem Browser gespeichert.
+            Angaben zu Ihrer Organisation werden an die plusmeta GmbH zu Produktinformationszwecken übermittelt und lokal in Ihrem Browser gespeichert.
             Alle weiteren Daten und Dokumente werden nicht gespeichert oder übermittelt. Nach einer Aktualisierung Ihres Browsers sind diese Daten nicht mehr verfügbar.
           </span>
         </v-card>

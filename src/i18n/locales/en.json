@@ -1,48 +1,55 @@
 {
   "Actions": {
+    "add": "add",
     "addMetadata": "Add metadata",
     "addObject": "Add object",
     "cancel": "Cancel",
-    "createEntry": "Press Enter to create new entry",
+    "create": "Create",
+    "createEntry": "Press <kbd>enter</kbd> to create a new one",
     "currentPage": "Current page",
+    "delete": "Delete {0}",
     "deleteObject": "Delete object",
     "deleteObjectInfo": "Do you really want to delete the object? This action can not be reverted.",
     "deleteObjectsInfo": "Do you really want to delete the selected objects? This action can not be reverted.",
-    "deleteRefObjectInfo": "...",
+    "deleteRefObjectInfo": "Do you really want to delete the object? The object is currently used in other projects. This action can not be reverted.",
     "deleteSelectedObjects": "Delete selected objects",
+    "download": "Download",
     "downloadMetadata": "Save metadata",
+    "exit": "Exit",
+    "exitFullscreen": "Exit fullscreen",
     "findEntry": "Find entry",
     "firstPage": "First page",
     "fullscreen": "Fullscreen",
     "giveFeedback": "Give feedback",
     "lastPage": "Last page",
+    "next": "Skip",
+    "nextPage": "Next page",
     "openSettings": "Open settings",
+    "print": "Print",
     "restoreSettings": "Reset settings",
     "restoreSettingsInfo": "Do you really want to restore the settings? All settings will be reset to default values and the workflow has to be started over.",
-    "showShortcuts": "Show shortcuts",
+    "rotateLeft": "Rotate view 90° to the left",
+    "rotateRight": "Rotate 90° to the right",
+    "upload": "Upload {0}",
     "uploadMetadata": "Import metadata values",
-    "useDarkMode": "Dark mode"
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out"
   },
   "App": {
-    "backToStart": "Back to start",
-    "filesTooLarge": "Memory limit reached. No new files can be added.",
-    "help": "Help",
-    "helpcenter": "User portal",
+    "backToStart": "Back to the start",
+    "filesTooLarge": "Memory limit reached. No more files can be added.",
     "license": "Show licenses",
     "licenses": "Licenses of used software",
     "maxMemory": "Maximum memory limit reached. Object will not be imported.",
-    "pageHelp": "Help page",
     "siteNotFound": "The requested site was not found",
     "sourcecode": "Show source code"
   },
   "Common": {
     "actions": "Actions",
     "columns": "No columns | {n} column | {n} columns",
-    "false": "No",
     "filter": "Filter",
     "more": "and no more | and one more | and {n} more",
     "name": "Name",
-    "noEmptyInput": "Input must not be empty",
     "preview": "Preview",
     "publisher": "Publisher",
     "ruleExplainer": "To continue you must fulfill all conditions",
@@ -51,11 +58,10 @@
     "searchFor": "Search for",
     "true": "Yes",
     "unknown": "Unknown",
-    "view": "View",
-    "workflow": "Workflow"
+    "view": "View"
   },
   "Files": {
-    "guidelines": "Equipment"
+    "guidelines": "Guidelines"
   },
   "Notification": {
     "deletionFailed": "Deletion failed",
@@ -63,23 +69,19 @@
     "importedMetadata": "Imported metadata successfully",
     "objectDeleted": "Object deleted",
     "openedProject": "Set project status to open",
-    "permissionDenied": "Permission denied",
     "propertyCreated": "Property created",
-    "propertyDeleted": "Deleted metadata value"
+    "propertyDeleted": "Property deleted"
   },
   "Objects": {
     "all": "All objects",
-    "delete": "Delete object",
-    "download": "Download",
     "dropFilesToAdd": "Drop files here to add them to the package",
+    "file": "File",
     "filesize": "File size",
     "label": "Object label",
-    "log": "Protocol",
+    "log": "Processing log",
     "metadata": "Metadata",
-    "noAssociatedFile": "No associated source file",
     "noObjectsExplainer": "You haven't created or imported any objects yet. Click on the green button to create or import an object.",
     "none": "No objects available",
-    "objectUsedInOtherProjects": "...",
     "rerun": "Restart process",
     "sourceName": "Source file name",
     "sourceType": "Source file type",
@@ -87,27 +89,18 @@
   },
   "Otk": {
     "acceptUsageAgreement": "Accept Usage Agreement and Data Protection",
-    "browserWarning": "Browser warning",
-    "browserWarningText": "For an optimal user experience please use a <b>modern browser</b><br> (e.g. Google Chrome. Microsoft Edge, Apple Safari oder Mozilla Firefox).",
-    "changeIRI": "Change IRI",
-    "dataProtectionText": "For a better user experience, we use systems for access analysis. \nFiles used in the VDI 2770 Open Toolkit do not leave your computer.\n\nPlease accept our <a href=\"/docs/Terms of Use_vdi2770-open-toolkit.pdf\" target=\"_blank\">Usage Agreement</a> and <a href = \"https://iirds.org/privacy-policy/\" target=\"_ blank\">Privacy Policy</a> to continue.",
-    "dataProtectionTitle": "Usage agreement & data protection",
     "downloadPackage": "Save",
-    "licenseInfo": "iiRDS licensed under",
-    "metadataDownloaded": "Downloaded metadata",
     "retry": "Do you like to generate a new package?",
-    "rightsInfo": "All rights by tekom",
     "settingsRestored": "Restored default settings",
     "startNewPackage": "New package",
     "thankYou": "Thank you!",
-    "thankYouExplainer": "Your iiRDS-Package is now ready for saving.",
-    "welcomeSubtitle": "With the free VDI 2770 Open Toolkit you can generate iiRDS packages with your own content in just a few steps",
+    "thankYouExplainer": "Your Package is now ready for saving.",
     "welcomeTitle": "Welcome to the VDI 2770 Open Toolkit!"
   },
   "Packages": {
     "cached": "Generated package available",
     "checkingForUpdates": "Checking for updates...",
-    "generate": "Generate iiRDS package",
+    "generate": "Generate package",
     "packaging": "Packaging content",
     "progress": "Progress"
   },
@@ -119,6 +112,23 @@
     "processed": "Processed"
   },
   "Public": {
-    "guidelines": "The following information is set at the main document level and applies across all documents."
+    "guidelines": "The following guidelines were defined by the creator of this project."
+  },
+  "Settings": {
+    "custom_company": "Company name (short)",
+    "custom_logo": "Company logo",
+    "custom_name": "Company name (long)",
+    "custom_url": "URL website",
+    "google_dialogflow_project_id": "Google Dialogflow project ID",
+    "reset": "Reset",
+    "showShortcuts": "Show shortcuts",
+    "useDarkMode": "Dark mode"
+  },
+  "Validations": {
+    "noEmptyInput": "Field must not be empty",
+    "noMultipleInput": "Field must only contain one value"
+  },
+  "Workflows": {
+    "objectUsedInOtherProjects": "Object is used in other projects"
   }
 }
