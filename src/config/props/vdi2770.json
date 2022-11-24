@@ -9,7 +9,8 @@
         },
         "label": {
             "de": "Montage, Demontage",
-            "en": "Assembly, Disassembly"
+            "en": "Assembly, Disassembly",
+            "zh": "装配"
         },
         "indicators": []
     },
@@ -23,7 +24,8 @@
         },
         "label": {
             "de": "Allgemeine Sicherheit",
-            "en": "General Safety"
+            "en": "General Safety",
+            "zh": "安全"
         },
         "indicators": []
     },
@@ -37,7 +39,8 @@
         },
         "label": {
             "de": "Bedienung",
-            "en": "Operation"
+            "en": "Operation",
+            "zh": "运行"
         },
         "indicators": []
     },
@@ -51,7 +54,8 @@
         },
         "label": {
             "de": "Instandsetzung",
-            "en": "Repair"
+            "en": "Repair",
+            "zh": "维修"
         },
         "indicators": []
     },
@@ -65,7 +69,8 @@
         },
         "label": {
             "de": "Inspektion, Wartung, Prüfung",
-            "en": "Inspection, Maintenance"
+            "en": "Inspection, Maintenance",
+            "zh": "检查"
         },
         "indicators": []
     },
@@ -79,7 +84,8 @@
         },
         "label": {
             "de": "Ersatzteile",
-            "en": "Spare parts"
+            "en": "Spare parts",
+            "zh": "备件"
         },
         "indicators": []
     },
@@ -106,7 +112,8 @@
         "attrs": {},
         "label": {
             "de": "VDI-2770-Objekttyp",
-            "en": "VDI 2770 object type"
+            "en": "VDI 2770 object type",
+            "zh": "VDI 2770对象类型"
         },
         "indicators": []
     },
@@ -131,7 +138,8 @@
         "attrs": {},
         "label": {
             "de": "VDI Metadatenmodell",
-            "en": "VDI metadata model"
+            "en": "VDI metadata model",
+            "zh": "VDI元数据模型"
         },
         "indicators": []
     },
@@ -175,7 +183,8 @@
         },
         "label": {
             "de": "Vertragsunterlagen",
-            "en": "Contract documents"
+            "en": "Contract documents",
+            "zh": "合同"
         },
         "indicators": [
             "Anschreiben"
@@ -215,7 +224,11 @@
             ]
         },
         "attrs": {},
-        "label": "Produkttyp/Modell",
+        "label": {
+            "de": "Produkttyp/Modell",
+            "en": "Product Type / Model",
+            "zh": "产品类型/型号"
+        },
         "indicators": [
             "product type"
         ]
@@ -250,7 +263,8 @@
         "attrs": {},
         "label": {
             "de": "ist Objekt-Identifikator-Typ",
-            "en": "is object identifier type"
+            "en": "is object identifier type",
+            "zh": "是对象标识符类型"
         },
         "indicators": []
     },
@@ -262,7 +276,8 @@
         "attrs": {},
         "label": {
             "de": "Individuelles Objekt",
-            "en": "Individual object"
+            "en": "Individual object",
+            "zh": "个人对象"
         },
         "indicators": [
             "Individual"
@@ -302,7 +317,11 @@
             ]
         },
         "attrs": {},
-        "label": "Artikelnummer",
+        "label": {
+            "de": "Artikelnummer",
+            "en": "Article Number",
+            "zh": "文章编号"
+        },
         "indicators": [
             "article number"
         ]
@@ -317,7 +336,8 @@
         },
         "label": {
             "de": "Identifikation",
-            "en": "Identification"
+            "en": "Identification",
+            "zh": "标识"
         },
         "indicators": []
     },
@@ -329,7 +349,8 @@
         "attrs": {},
         "label": {
             "de": "Identifikator-Typ",
-            "en": "Identifier type"
+            "en": "Identifier type",
+            "zh": "标识符类型"
         },
         "indicators": []
     },
@@ -343,7 +364,11 @@
             ]
         },
         "attrs": {},
-        "label": "Bestellnummer",
+        "label": {
+            "de": "Bestellnummer",
+            "en": "Order Code",
+            "zh": "操作码"
+        },
         "indicators": [
             "order code"
         ]
@@ -363,7 +388,8 @@
         "attrs": {},
         "label": {
             "de": "hat VDI-2770-Objekttyp",
-            "en": "has VDI 2770 object type"
+            "en": "has VDI 2770 object type",
+            "zh": "有VDI 2770对象类型"
         },
         "indicators": []
     },
@@ -400,7 +426,8 @@
         },
         "label": {
             "de": "Zeichnungen, Pläne",
-            "en": "Drawings, Plans"
+            "en": "Drawings, Plans",
+            "zh": "图纸"
         },
         "indicators": []
     },
@@ -414,7 +441,8 @@
         },
         "label": {
             "de": "Technische Spezifikation",
-            "en": "Technical specification"
+            "en": "Technical specification",
+            "zh": "技术规范"
         },
         "indicators": []
     },
@@ -426,7 +454,8 @@
         "attrs": {},
         "label": {
             "de": "Zeugnisse, Zertifikate, Bescheinigungen",
-            "en": "Certificates"
+            "en": "Certificates",
+            "zh": "证书"
         },
         "indicators": []
     },
@@ -440,7 +469,8 @@
         },
         "label": {
             "de": "Bauteile",
-            "en": "Components"
+            "en": "Components",
+            "zh": "部件"
         },
         "indicators": []
     },
@@ -454,7 +484,8 @@
         },
         "label": {
             "de": "Vertragsunterlagen",
-            "en": "Contractual documents"
+            "en": "Contractual documents",
+            "zh": "合同文件"
         },
         "indicators": []
     },
@@ -468,7 +499,8 @@
         },
         "label": {
             "de": "Technische Beschaffenheit",
-            "en": "Technical properties"
+            "en": "Technical properties",
+            "zh": "技术特性"
         },
         "indicators": []
     },
@@ -482,7 +514,8 @@
         },
         "label": {
             "de": "Tätigkeitsbezogene Informationen",
-            "en": "Activity-based information"
+            "en": "Activity-based information",
+            "zh": "活动相关信息"
         },
         "indicators": []
     },
@@ -496,7 +529,8 @@
         },
         "label": {
             "de": "Identifikation",
-            "en": "Identification"
+            "en": "Identification",
+            "zh": "标识"
         },
         "indicators": []
     },
@@ -510,7 +544,11 @@
             ]
         },
         "attrs": {},
-        "label": "ID nach DIN SPEC 91406",
+        "label": {
+            "de": "ID nach DIN SPEC 91406",
+            "en": "ID according to DIN SPEC 91406",
+            "zh": "基于DIN SPEC 91406的ID"
+        },
         "indicators": [
             "instance of object uri"
         ]
@@ -525,7 +563,11 @@
             ]
         },
         "attrs": {},
-        "label": "Seriennummer",
+        "label": {
+            "de": "Seriennummer",
+            "en": "Serial Number",
+            "zh": "序列号"
+        },
         "indicators": [
             "serial number"
         ]
