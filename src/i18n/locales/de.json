@@ -99,6 +99,7 @@
     "orgaGroup": "Organisation",
     "organizationName": "Gebräuchlicher Organisationsname",
     "organizationOfficialName": "Offizieller Organisationsname",
+    "productReference": "Produktreferenz",
     "retry": "Möchten Sie ein weiteres iiRDS-Paket erstellen?",
     "settingsRestored": "Auf Standardeinstellungen zurückgesetzt",
     "startNewPackage": "Neues Paket",

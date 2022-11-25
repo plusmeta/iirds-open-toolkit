@@ -99,6 +99,7 @@
     "orgaGroup": "Organization",
     "organizationName": "Common organization name",
     "organizationOfficialName": "Official organization name",
+    "productReference": "Product reference",
     "retry": "Do you like to generate a new package?",
     "settingsRestored": "Restored default settings",
     "startNewPackage": "New package",

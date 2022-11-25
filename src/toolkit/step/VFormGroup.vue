@@ -15,7 +15,7 @@
       class="ma-0 pa-0 px-2 required"
       style="background-color: inherit; position: absolute; top: -12px; left: 24px;"
     >
-      <label>Produktreferenz</label>
+      <label>{{ $t('Otk.productReference') }}</label>
     </v-card-subtitle>
   </v-card>
 </template>

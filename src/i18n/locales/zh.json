@@ -99,6 +99,7 @@
     "orgaGroup": "组织",
     "organizationName": "常用组织名称",
     "organizationOfficialName": "官方组织名称",
+    "productReference": "产品参考",
     "retry": "是否要生成另一个iiRDS文件包？",
     "settingsRestored": "恢复默认设置",
     "startNewPackage": "新包装",
