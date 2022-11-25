@@ -109,6 +109,8 @@ export default {
                 return await import(/* webpackChunkName: "de.locale" */ "@/i18n/locales/de.json");
             case "en":
                 return await import(/* webpackChunkName: "en.locale" */ "@/i18n/locales/en.json");
+            case "zh":
+                return await import(/* webpackChunkName: "zh.locale" */ "@/i18n/locales/zh.json");
             default:
                 return await import(/* webpackChunkName: "de.locale" */ "@/i18n/locales/de.json");
             }
