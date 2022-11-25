@@ -9,11 +9,13 @@ export default {
     icon: "mdi-open-source-initiative",
     name: {
         de: "VDI 2770 Open Toolkit",
-        en: "VDI 2770 Open Toolkit"
+        en: "VDI 2770 Open Toolkit",
+        zh: "VDI 2770 开放工具包"
     },
     desc: {
         de: "Implementierung des VDI 2770 Open Toolkit",
-        en: "Implementation of the VDI 2770 Open Toolkit"
+        en: "Implementation of the VDI 2770 Open Toolkit",
+        zh: "VDI 2770 开放工具包的实施"
     },
     publishable: true,
     steps: [{
@@ -22,19 +24,16 @@ export default {
         helpkey: "workflow.welcome",
         name: {
             de: "Daten angeben",
-            en: "Input data"
+            en: "Input data",
+            zh: "输入数据"
         },
         rules: [
-            store => store.getters["settings/getSetting"]("user_eula") &&
-                    store.getters["settings/getSetting"]("base_user_name") &&
-                    store.getters["settings/getSetting"]("base_user_mail") &&
-                    store.getters["settings/getSetting"]("base_orga_name") &&
-                    store.getters["settings/getSetting"]("base_orga_url")
-
+            store => !!store.getters["settings/getSetting"]("validation")
         ],
         ruleExpl: {
             de: "Sie müssen die Nutzungsbedingungen akzeptieren",
-            en: "You have to accept the end user license agreement"
+            en: "You have to accept the end user license agreement",
+            zh: "您必须接受最终用户许可协议"
         },
         component: () => import(/* webpackChunkName: "StepWelcome.step" */ "@/toolkit/step/OtkStepWelcome")
     },
@@ -44,7 +43,8 @@ export default {
         helpkey: "workflow.addObjects",
         name: {
             de: "Inhalte hinzufügen",
-            en: "Add content"
+            en: "Add content",
+            zh: "添加内容"
         },
         props: {
             objecttype: ["plus:Document"]
@@ -55,7 +55,8 @@ export default {
         ],
         ruleExpl: {
             de: "Mindestens ein Inhaltsobjekt wurde hinzugefügt",
-            en: "At least one content object was added"
+            en: "At least one content object was added",
+            zh: "至少添加了一个内容对象"
         },
         component: () => import(/* webpackChunkName: "StepAddObjects.step" */ "@/toolkit/step/OtkStepAddObjects")
     },
@@ -65,7 +66,8 @@ export default {
         helpkey: "workflow.assignMetadata",
         name: {
             de: "Metadaten vergeben",
-            en: "Assign metadata"
+            en: "Assign metadata",
+            zh: "分配元数据"
         },
         props: {
             objecttype: ["plus:Document"]
@@ -78,7 +80,8 @@ export default {
         helpkey: "workflow.generateVdi2770",
         name: {
             de: "VDI-2770-Container generieren",
-            en: "Generate VDI 2770 container"
+            en: "Generate VDI 2770 container",
+            zh: "生成 VDI 2770 容器"
         },
         rules: [
             (store) => {
@@ -87,7 +90,8 @@ export default {
         ],
         ruleExpl: {
             de: "VDI-2770-Container wurde erfolgreich erzeugt",
-            en: "VDI 2770 container was generated successfully"
+            en: "VDI 2770 container was generated successfully",
+            zh: "成功生成 VDI 2770 容器"
         },
         component: () => import(/* webpackChunkName: "StepGenerateIIRDS.step" */ "@/toolkit/step/OtkStepGenerateVDI2770")
     }]

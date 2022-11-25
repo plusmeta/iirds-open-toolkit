@@ -44,31 +44,6 @@ export default {
 
         return "plus:Document";
     },
-    language(store, locale) {
-        const languages = store.getters["properties/getPropertiesByClass"]("plus:Language");
-
-        const indicators = languages.reduce((all, lang) => {
-            if (!!lang.indicators) all.push(...lang.indicators);
-            return all;
-        }, []);
-
-        let match = undefined;
-
-        if (locale && languages.map(lang => lang.identifier).includes(locale)) {
-            match = locale;
-        }
-        if (locale && !match && indicators.includes(locale)) {
-            match = languages.find((lang) => {
-                return !!lang.indicators && lang.indicators.includes(locale);
-            })?.identifier;
-        }
-        if (locale && !match && typeof locale === "string" && indicators.includes(locale.split("-")[0])) {
-            match = languages.find((lang) => {
-                return !!lang.indicators && lang.indicators.includes(locale);
-            })?.identifier;
-        }
-        return match;
-    },
     parseLocale(identifier) {
         const prefix = "plus:lang:ISO-639-1:";
         if (identifier?.includes(prefix)) {
@@ -95,5 +70,25 @@ export default {
         } else if (Array.isArray(propObjectType)) {
             propObjectType.includes(object.type);
         } else return false;
-    }
+    },
+    language(store, locale, concept = "plus:Language") {
+        if (!locale) return null;
+
+        const normalizeIndicator = ind => (ind.substr(0,1) === "-" || ind.substr(0,1) === "#") ? ind.slice(1) : ind;
+
+        const languageProps = store.getters["properties/getPropertiesByClass"](concept)
+            .filter(prop => !store.getters["properties/getPropertyAttributeById"](prop.identifier, "plus:inactiveProperty"));
+        const languageCodes = languageProps.flatMap(lang => lang.indicators).map(normalizeIndicator);
+
+        let match = undefined;
+
+        // if locale seems like language Tag "xx-XX"
+        if (locale && typeof locale === "string" && locale.match(/^(\w\w)-(\w\w)$/)) {
+            match = languageProps.find(prop => prop.indicators.map(normalizeIndicator).includes(locale.split("-")[0]));
+        }
+        if (locale && languageCodes.includes(locale)) {
+            match = languageProps.find(prop => prop.indicators.map(normalizeIndicator).includes(locale));
+        }
+        return (match) ? match.identifier : null;
+    },
 };

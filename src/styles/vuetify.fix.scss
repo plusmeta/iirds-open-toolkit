@@ -1,4 +1,4 @@
-/*! 
+/*!
  * Copyright 2022 plusmeta GmbH
  * License: MIT
  */
@@ -30,4 +30,8 @@
 
 .v-small-dialog, .v-small-dialog__activator {
   display: inline-block !important;
+}
+
+.required label::after {
+  content: "*";
 }

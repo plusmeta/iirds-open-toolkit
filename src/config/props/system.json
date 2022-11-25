@@ -863,5 +863,20 @@
         "indicators": [
             "json"
         ]
+    },
+    {
+        "subClassOf": "plus:SystemLanguage",
+        "identifier": "plus:Chinese",
+        "datatype": "plus:Instance",
+        "label": {
+            "de": "Chinesisch",
+            "en": "Chinese",
+            "zh": "中文"
+        },
+        "rels": {
+            "plus:refers-to-language": [
+                "zh-ZH"
+            ]
+        }
     }
 ]

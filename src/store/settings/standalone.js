@@ -18,7 +18,9 @@ const init = () => {
 const state = {
     ready: false,
     current_project: null,
-    settings: {}
+    settings: {
+        validation: false
+    }
 };
 
 // getters

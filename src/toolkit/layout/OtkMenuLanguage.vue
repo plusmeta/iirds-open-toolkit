@@ -6,56 +6,105 @@
 
 <template>
   <v-menu
-    offset-y
+    :light="light"
+    min-width="300"
     nudge-left
-    min-width="200"
+    offset-y
   >
     <template v-slot:activator="{ on }">
       <v-btn
-        icon
         dark
-        :disabled="!isReady"
+        :disabled="isDisabled"
+        data-cy="lang-btn"
+        icon
         v-on="on"
       >
-        <v-icon>mdi-web</v-icon>
+        <v-icon>mdi-earth</v-icon>
       </v-btn>
     </template>
-    <v-list v-if="isReady">
-      <v-list-item
-        v-for="language in getLanguages"
-        :key="language.identifier"
-        :disabled="language.locale === getCurrentLocale"
-        @click="changeLocale(language.locale)"
+    <v-list v-if="!isDisabled">
+      <template v-if="!login">
+        <v-list-item>
+          <v-list-item-avatar>
+            <v-icon
+              color="grey"
+              large
+            >
+              mdi-earth-arrow-right
+            </v-icon>
+          </v-list-item-avatar>
+          <v-list-item-content class="grey--text">
+            <v-list-item-title class="title mb-0" style="line-height:17px">
+              <span style="font-size:15px">{{ getPropertyLabelById("plus:SystemLanguage") }}</span>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-divider />
+      </template>
+
+      <v-list-item-group
+        :value="getActiveIndex"
+        mandatory
+        @change="changeLocale"
       >
-        <v-list-item-icon>
-          <country-flag :country="language.country" size="normal" />
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title>{{ language.label }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+        <v-list-item
+          v-for="language in getLanguages"
+          :key="language.locale"
+          :data-cy="language.locale"
+        >
+          <v-list-item-icon>
+            <LanguageIcon :locale="language.locale" />
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>
+              {{ language.label }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>
     </v-list>
   </v-menu>
 </template>
 
 <script>
-import CountryFlag from "vue-country-flag";
-import { mapGetters, mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
+import LanguageIcon from "@/shared/inline/LanguageIcon";
+import match from "@/util/match";
 
 export default {
     name: "OtkMenuLanguage",
-    components: { CountryFlag },
+    components: {
+        LanguageIcon
+    },
+    props: {
+        login: {
+            type: Boolean,
+            default: false
+        },
+        light: {
+            type: Boolean,
+            default: false
+        }
+    },
     computed: {
         getLanguages() {
-            return this.getPropertiesByClass("plus:SystemLanguage").map((syslang) => {
-                let language = this.getPropertyRelationById(syslang.identifier, "plus:refers-to-language")[0];
-                return {
-                    label: this.getPropertyLabelById(syslang.identifier, this.getCurrentLocale),
-                    identifier: syslang.identifier,
-                    locale:  (language?.split("-") || [])[0],
-                    country: (language?.split("-") || [])[1]
-                };
-            });
+            return this.getPropertiesByClass("plus:SystemLanguage")
+                .map((syslang) => {
+                    const localeFromUiLang = match.parseLocale(this.getPropertyRelationById(syslang.identifier, "plus:refers-to-language")[0]);
+                    const label = this.getPropertyLabelById(syslang.identifier);
+                    return [localeFromUiLang, label];
+                })
+                .map(([locale, label]) => ({
+                    label,
+                    locale
+                }));
+        },
+        getActiveIndex() {
+            return this.getLanguages.findIndex(lang => lang.locale === this.getCurrentLocale);
+        },
+        isDisabled() {
+            return !this.login && !this.isReady;
         },
         ...mapGetters("settings", [
             "getCurrentLocale",
@@ -68,12 +117,9 @@ export default {
         ]),
     },
     methods: {
-        async changeLocale(locale) {
-            if (this.$route.path.includes("login")) {
-                this.$store.commit("settings/CHANGE_LANGUAGE", locale);
-            } else {
-                await this.changeLanguageLocal(locale);
-            }
+        async changeLocale(index) {
+            let locale = this.getLanguages[index].locale;
+            await this.changeLanguageLocal(locale);
         },
         ...mapActions("settings", [
             "changeLanguageLocal"

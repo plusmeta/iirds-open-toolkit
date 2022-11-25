@@ -477,5 +477,36 @@
             "zh": "基本元数据"
         },
         "indicators": []
+    },
+    {
+        "identifier": "plus:OrganizationOfficial",
+        "datatype": "plus:Class",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata",
+                "plus:EquipmentMetadata",
+                "plus:TitlePart"
+            ],
+            "plus:has-relations": [
+                "plus:relates-to-organization"
+            ],
+            "plus:is-part-of-metadata-group": [
+                "plus:BasicMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:factory"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 13,
+            "plus:titlePartPriority": 1,
+            "plus:requiredAssignment": true
+        },
+        "label": {
+            "de": "Organisation (offiziell)",
+            "en": "Organization (official)"
+        },
+        "indicators": []
     }
 ]

@@ -6,11 +6,11 @@
 
 <template>
   <v-container fluid>
-    <v-layout wrap>
-      <v-flex
-        xs6
-        lg4
-        class="px2"
+    <v-row wrap>
+      <v-col
+        lg="4"
+        sm="6"
+        class="px-2"
       >
         <v-card
           dark
@@ -18,24 +18,19 @@
           class="ml-4 mt-8 px-6 py-3 elevation-2"
           outlined
         >
-          <v-layout wrap>
-            <v-flex>
+          <v-row wrap>
+            <v-col cols="auto">
               <v-img
                 src="/images/plusmeta.svg"
                 width="64px"
               />
-            </v-flex>
-            <v-flex class="mt-3">
+            </v-col>
+            <v-col class="mt-3">
               <span class="d-inline-block display-1 ">
                 VDI 2770 Open Toolkit
               </span>
-            </v-flex>
-          </v-layout>
-          <!-- <v-layout class="mt-4">
-            <v-flex>
-              <span class="caption">{{ $t("Otk.welcomeTitle") }}</span>
-            </v-flex>
-          </v-layout> -->
+            </v-col>
+          </v-row>
         </v-card>
         <v-card
           color="secondary lighten-3"
@@ -43,27 +38,7 @@
           class="ml-4 mt-7 pa-6 elevation-2"
           outlined
         >
-          <span>
-            Herzlich Willkommen beim <strong>VDI 2770 Open Toolkit</strong> der
-            <a
-              href="https://www.plusmeta.de"
-              target="_blank"
-              class="primary--text"
-            >plusmeta GmbH</a>.
-            Erstellen Sie in wenigen Schritten digitale Hersteller&shy;informationen konform zur <a
-              href="https://www.vdi.de/richtlinien/details/vdi-2770-blatt-1-betrieb-verfahrenstechnischer-anlagen-mindestanforderungen-an-digitale-herstellerinformationen-fuer-die-prozessindustrie-grundlagen"
-              target="_blank"
-              class="primary--text"
-            >VDI 2770</a>  und nutzen Sie die Vorteile der
-            <a
-              href="https://www.digitaldatachain.com"
-              target="_blank"
-              class="primary--text"
-            >Digitalen Datenkette</a>.<br><br>
-            Das VDI 2770 Open Toolkit ist kostenlos und ohne Anmeldung nutzbar.<br>
-            Angaben zu Ihrer Organisation werden an die plusmeta GmbH zu Produktinformationszwecken übermittelt und lokal in Ihrem Browser gespeichert.
-            Alle weiteren Daten und Dokumente werden nicht gespeichert oder übermittelt. Nach einer Aktualisierung Ihres Browsers sind diese Daten nicht mehr verfügbar.
-          </span>
+          <span v-html="$t('Otk.welcomeText')" />
         </v-card>
         <v-card
           color="white"
@@ -71,162 +46,246 @@
           class="ml-4 mt-7 pa-6 elevation-2"
           outlined
         >
-          <span class="caption d-inline-block mb-4">In Kooperation mit</span>
-          <v-img src="/images/vdi2770.svg" width="400px" />
+          <span class="caption d-inline-block mb-4">{{ $t('Otk.inCoopWith') }}</span>
+          <a href="https://digitaldatachain.com/"><v-img src="/images/vdi2770.svg" width="400px" /></a>
         </v-card>
-      </v-flex>
-      <v-flex class="flex-shrink-1 offset-xs1 xs6 lg7">
-        <v-expansion-panels
-          focusable
-          multiple
-          :value="[0,1]"
-          class="ml-4 mt-2 pa-6"
+      </v-col>
+      <v-col
+        lg="7" sm="6"
+        offset-sm="1"
+      >
+        <v-form
+          @input="onFormChange"
         >
-          <v-expansion-panel>
-            <v-expansion-panel-header
-              :outlined="!$vuetify.theme.dark"
-              style="min-height: 48px"
-              class="py-0"
-            >
-              <v-row no-gutters>
-                <v-col>
-                  <span class="subtitle-2">Organisation</span>
-                </v-col>
-                <v-col cols="auto">
-                  <v-badge
-                    color="accent"
-                    :content="4"
-                    inline
-                  />
-                </v-col>
-              </v-row>
-            </v-expansion-panel-header>
+          <v-expansion-panels
+            focusable
+            multiple
+            :value="[0,1]"
+            class="ml-4 mt-2 pa-6"
+          >
+            <v-expansion-panel>
+              <v-expansion-panel-header
+                :outlined="!$vuetify.theme.dark"
+                style="min-height: 48px"
+                class="py-0"
+              >
+                <v-row no-gutters>
+                  <v-col>
+                    <span class="subtitle-2">{{ $t('Otk.orgaGroup') }}</span>
+                  </v-col>
+                  <v-col cols="auto">
+                    <v-badge
+                      color="accent"
+                      :content="4"
+                      inline
+                    />
+                  </v-col>
+                </v-row>
+              </v-expansion-panel-header>
 
-            <v-expansion-panel-content class="pt-4">
-              <v-layout row class="my-4">
-                <v-flex class="mx-4">
-                  <v-text-field
-                    :value="getSetting('base_user_name')"
-                    prepend-icon="mdi-account"
-                    label="Name"
-                    @change="setLocalSetting({key: 'base_user_name', value: $event})"
-                  />
-                </v-flex>
-                <v-flex class="mx-4">
-                  <v-text-field
-                    :value="getSetting('base_user_mail')"
-                    prepend-icon="mdi-email"
-                    label="Mail"
-                    @change="setLocalSetting({key: 'base_user_mail', value: $event})"
-                  />
-                </v-flex>
-              </v-layout>
-              <v-layout row class="my-4">
-                <v-flex class="mx-4">
-                  <v-text-field
-                    :value="getSetting('base_orga_name')"
-                    prepend-icon="mdi-domain"
-                    label="Organization"
-                    @change="setOrganization($event)"
-                  />
-                </v-flex>
-                <v-flex class="mx-4">
-                  <v-text-field
-                    :value="getSetting('base_orga_url')"
-                    prepend-icon="mdi-web"
-                    label="Website"
-                    @change="setLocalSetting({key: 'base_orga_url', value: $event})"
-                  />
-                </v-flex>
-              </v-layout>
-              <v-switch
-                :label="$t('Otk.acceptUsageAgreement')"
-                :input-value="getSetting('user_eula')"
-                @change="setLocalSetting({key: 'user_eula', value: !!$event})"
-              />
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-          <v-expansion-panel>
-            <v-expansion-panel-header
-              :outlined="!$vuetify.theme.dark"
-              style="min-height: 48px"
-              class="py-0"
-            >
-              <v-row no-gutters>
-                <v-col>
-                  <span class="subtitle-2">Equipment</span>
-                </v-col>
-                <v-col cols="auto">
-                  <v-badge
-                    color="accent"
-                    :content="3"
-                    inline
-                  />
-                </v-col>
-              </v-row>
-            </v-expansion-panel-header>
+              <v-expansion-panel-content class="pt-4">
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      :value="getSetting('base_user_name')"
+                      :rules="[isNotEmpty]"
+                      class="required"
+                      prepend-icon="mdi-account"
+                      :label="$t('Otk.orgaContactName')"
+                      @input="setLocalSetting({key: 'base_user_name', value: $event})"
+                    />
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      :value="getSetting('base_user_mail')"
+                      :rules="[isEmail, isNotEmpty]"
+                      class="required"
+                      prepend-icon="mdi-email"
+                      :label="$t('Otk.orgaContactMail')"
+                      @input="setLocalSetting({key: 'base_user_mail', value: $event})"
+                    />
+                  </v-col>
+                </v-row>
+                <v-row v-if="false">
+                  <v-col class="">
+                    <v-text-field
+                      :value="getSetting('base_orga_url')"
+                      prepend-icon="mdi-web"
+                      :label="$t('Otk.orgaContactWebsite')"
+                      @input="setLocalSetting({key: 'base_orga_url', value: $event})"
+                    />
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      :value="getSetting('base_orga_name')"
+                      prepend-icon="mdi-domain"
+                      :rules="[isNotEmpty]"
+                      class="required"
+                      :label="getPropertyLabelById('plus:Organization')"
+                      @input="setOrganization($event)"
+                    />
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      :value="getSetting('base_orga_official_name')"
+                      prepend-icon="mdi-domain"
+                      :rules="[isNotEmpty]"
+                      class="required"
+                      :label="getPropertyLabelById('plus:OrganizationOfficial')"
+                      @input="setOrganizationOfficial($event)"
+                    />
+                  </v-col>
+                </v-row>
+                <v-switch
+                  :label="$t('Otk.acceptUsageAgreement')"
+                  :input-value="getSetting('user_eula')"
+                  :rules="[isNotEmpty]"
+                  class="required"
+                  @input="setLocalSetting({key: 'user_eula', value: !!$event})"
+                />
+              </v-expansion-panel-content>
+            </v-expansion-panel>
 
-            <v-expansion-panel-content class="pt-4">
-              <v-layout row class="my-4">
-                <v-flex class="mx-4">
-                  <v-text-field
-                    :value="getCurrentProjectRelationById('plus:ProductLabel')"
-                    prepend-icon="mdi-robot-industrial"
-                    label="Bezeichnung"
-                    @change="updateCurrentProjectRelations({'plus:ProductLabel': $event})"
-                  />
-                </v-flex>
-                <v-flex class="mx-4">
-                  <v-text-field
-                    :value="getCurrentProjectRelationById('plus:Organization')"
-                    prepend-icon="mdi-factory"
-                    disabled
-                    label="Hersteller"
-                  />
-                </v-flex>
-              </v-layout>
-              <v-layout row class="my-4">
-                <v-flex class="mx-4">
-                  <v-text-field
-                    :value="getCurrentProjectRelationById('plus:SerialNumber')"
-                    prepend-icon="mdi-counter"
-                    label="Seriennummer"
-                    @change="updateCurrentProjectRelations({'plus:SerialNumber': $event})"
-                  />
-                </v-flex>
-                <v-flex class="mx-4">
-                  <v-text-field
-                    :value="getCurrentProjectRelationById('plus:IEC61406')"
-                    prepend-icon="mdi-qrcode-scan"
-                    label="AutoID (IEC 61355)"
-                    @change="updateCurrentProjectRelations({'plus:IEC61406': $event})"
-                  />
-                </v-flex>
-              </v-layout>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
-      </v-flex>
-    </v-layout>
-    <!-- </v-card> -->
+            <v-expansion-panel>
+              <v-expansion-panel-header
+                :outlined="!$vuetify.theme.dark"
+                style="min-height: 48px"
+                class="py-0"
+              >
+                <v-row no-gutters>
+                  <v-col>
+                    <span class="subtitle-2">{{ $t('Otk.equipmentGroup') }}</span>
+                  </v-col>
+                  <v-col cols="auto">
+                    <v-badge
+                      color="accent"
+                      :content="3"
+                      inline
+                    />
+                  </v-col>
+                </v-row>
+              </v-expansion-panel-header>
+
+              <v-expansion-panel-content class="pt-4">
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      :value="getCurrentProjectRelationById('plus:ProductLabel')"
+                      prepend-icon="mdi-robot-industrial"
+                      class="required"
+                      :rules="[isNotEmpty]"
+                      :label="getPropertyLabelById('plus:ProductLabel')"
+                      @input="updateCurrentProjectRelations({'plus:ProductLabel': $event})"
+                    />
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      :value="getCurrentProjectRelationById('plus:Organization')"
+                      prepend-icon="mdi-factory"
+                      class="required"
+                      disabled
+                      :label="getPropertyLabelById('plus:Organization')"
+                    />
+                  </v-col>
+                </v-row>
+                <v-form-group>
+                  <v-row>
+                    <v-col>
+                      <v-text-field
+                        v-model="plusSerialNumber"
+                        prepend-icon="mdi-counter"
+                        :rules="hasAutoId ? [] : [isNotEmptyOr]"
+                        :label="getPropertyLabelById('plus:SerialNumber')"
+                      />
+                    </v-col>
+                    <v-col>
+                      <v-text-field
+                        v-model="plusIEC61406"
+                        prepend-icon="mdi-qrcode-scan"
+                        :rules="hasSerialNumber ? [] : [isNotEmptyOr]"
+                        :label="getPropertyLabelById('plus:IEC61406')"
+                      />
+                    </v-col>
+                  </v-row>
+                </v-form-group>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-form>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import util from "@/util";
+import validations from "@/util/validations";
+import VFormGroup from "@/toolkit/step/VFormGroup";
 
 export default {
     name: "StepWelcome",
+    components: { VFormGroup },
+    data() {
+        return {
+            valid: false
+        };
+    },
     computed: {
+        plusIEC61406: {
+            get() {
+                return this.getCurrentProjectRelationById("plus:IEC61406")?.[0];
+            },
+            set(value) {
+                value = value ? [value] : [];
+                return this.updateCurrentProjectRelations({"plus:IEC61406": value});
+            }
+        },
+        plusSerialNumber: {
+            get() {
+                return this.getCurrentProjectRelationById("plus:SerialNumber")?.[0];
+            },
+            set(value) {
+                value = value ? [value] : [];
+                return this.updateCurrentProjectRelations({"plus:SerialNumber": value});
+            }
+        },
+
+        isEmail() {
+            return validations.fIsEmail(this.$t("Validations.noValidMailAdress"));
+        },
+        isNotEmpty() {
+            return validations.fNotEmpty(this.$t("Validations.noEmptyInput"));
+        },
+        hasSerialNumber() {
+            return validations.fMinLength(1, this.$t("Validations.noEmptyInput"))(this.plusSerialNumber) === true;
+        },
+        hasAutoId() {
+            return validations.fMinLength(1, this.$t("Validations.noEmptyInput"))(this.plusIEC61406) === true;
+        },
+        isNotEmptyOr() {
+            const labels = [this.getPropertyLabelById("plus:SerialNumber"), this.getPropertyLabelById("plus:IEC61406")].join(", ");
+            return validations.fMinLength(1, this.$t("Validations.minOneOfFields", [labels]));
+        },
         ...mapGetters("settings", ["getSetting"]),
-        ...mapGetters("projects", ["getCurrentProjectRelationById"])
+        ...mapGetters("projects", ["getCurrentProjectRelationById"]),
+        ...mapGetters("properties", ["getPropertyLabelById"])
     },
     methods: {
+        onFormChange($event) {
+            debugger;
+            return this.setLocalSetting("validation", $event);
+        },
         ...util, // for isIE()
         setOrganization($event) {
             this.setLocalSetting({key: "base_orga_name", value: $event});
             this.updateCurrentProjectRelations({"plus:Organization": $event});
+        },
+        setOrganizationOfficial($event) {
+            this.setLocalSetting({key: "base_orga_official_name", value: $event});
+            this.updateCurrentProjectRelations({"plus:OrganizationOfficial": $event});
         },
         ...mapActions("settings", ["setLocalSetting"]),
         ...mapActions("projects", ["updateCurrentProjectRelations"])

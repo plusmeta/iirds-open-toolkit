@@ -27,7 +27,7 @@
     "openSettings": "打开设置",
     "print": "打印",
     "restoreSettings": "Reset settings",
-    "restoreSettingsInfo": "Do you really want to restore the settings? All settings will be reset to default values and the workflow has to be started over.",
+    "restoreSettingsInfo": "您真的要恢复设置吗？所有设置都将重置为默认值，并且必须重新开始工作流程。",
     "rotateLeft": "将视图向左旋转 90°",
     "rotateRight": "向右旋转 90°",
     "upload": "上传{0}",
@@ -90,11 +90,21 @@
   "Otk": {
     "acceptUsageAgreement": "接受使用协议和数据保护",
     "downloadPackage": "节省",
+    "equipmentDesignation": "指定",
+    "equipmentGroup": " 设备（产品）",
+    "inCoopWith": "与合作",
+    "orgaContactMail": "联系电子邮件",
+    "orgaContactName": "联系人姓名",
+    "orgaContactWebsite": "地点",
+    "orgaGroup": "组织",
+    "organizationName": "常用组织名称",
+    "organizationOfficialName": "官方组织名称",
     "retry": "是否要生成另一个iiRDS文件包？",
     "settingsRestored": "恢复默认设置",
     "startNewPackage": "新包装",
     "thankYou": "谢谢！",
     "thankYouExplainer": "现在可以下载iiRDS文件包",
+    "welcomeText": "欢迎使用 <strong>VDI 2770 开放工具包</strong> <a href=\"https://www.plusmeta.de\" target=\"_blank\" class=\"primary--text\">plusmeta GmbH</a>。根据 <a  href=\"https://www.vdi.de/guidelines/details/vdi-2770-sheet-1-operation-process-technical-plants-minimum-requirements-for-digital-manufacturer-information-for-the-process-industry-basics\" target=\"_blank\"               class=\"primary--text\">VDI 2770</a> 只需几个步骤即可创建数字制造商信息，并利用<a href=\"https://www.digitaldatachain.com\" target=\"_blank\" class=\"primary--text\">Digital data chain</a>。<br><br> VDI 2770 Open Toolkit 无需注册即可免费使用。<br> 有关您组织的信息将发送至 plusmeta GmbH 以供产品信息之用，并存储在本地浏览器中。不会存储或传输所有其他数据和文件。更新浏览器后，此数据将不再可用。",
     "welcomeTitle": "欢迎使用 VDI 2770 开放工具包！"
   },
   "Packages": {
@@ -125,8 +135,10 @@
     "useDarkMode": "深色模式"
   },
   "Validations": {
+    "minOneOfFields": "",
     "noEmptyInput": "字段不能为空",
-    "noMultipleInput": "字段必须只包含一个值"
+    "noMultipleInput": "字段必须只包含一个值",
+    "noValidMailAdress": "无有效的电子邮件地址"
   },
   "Workflows": {
     "objectUsedInOtherProjects": "对象用于其他项目中"

@@ -65,6 +65,8 @@ const actions = {
             return await import(/* webpackChunkName: "de.help" */ "@/i18n/help/de.json");
         case "en":
             return await import(/* webpackChunkName: "en.help" */ "@/i18n/help/en.json");
+        case "zh":
+            return await import(/* webpackChunkName: "en.help" */ "@/i18n/help/zh.json");
         default:
             return await import(/* webpackChunkName: "de.help" */ "@/i18n/help/de.json");
         }
