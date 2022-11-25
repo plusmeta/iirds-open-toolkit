@@ -79,7 +79,7 @@ npm install -g eslint
 
 Nach erfolgreicher Git-Authentifizierung, folgende Aktionen in VS Code ausführen:
 
-- VS Code im gewünschten Arbeitsverezeichnis öffnen (vorzugsweise `C:\Work`)
+- VS Code im gewünschten Arbeitsverzeichnis öffnen (vorzugsweise `C:\Work`)
 - CTRL-SHIFT-P (Befehlspalette)
 - `Git: Klonen auswählen`
   - Die Adresse des Git-Repositories eingeben (endet mit `.git`)
