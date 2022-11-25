@@ -8,6 +8,8 @@
           auto-grow
           prepend-icon="mdi-title"
           :label="getLabel"
+          :readonly="isReadonly"
+          :disabled="isReadonly"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -22,6 +24,8 @@
           :value="String(value)"
           prepend-icon="mdi-code-string"
           :label="getLabel"
+          :readonly="isReadonly"
+          :disabled="isReadonly"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -53,6 +57,8 @@
           type="number"
           prepend-icon="mdi-numeric"
           :label="getLabel"
+          :readonly="isReadonly"
+          :disabled="isReadonly"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -68,6 +74,8 @@
           :input-value="Boolean(value)"
           hide-details
           :label="getLabel"
+          :readonly="isReadonly"
+          :disabled="isReadonly"
           @change="$emit('setting', {event: !!$event, uri})"
         />
       </v-col>
@@ -119,6 +127,9 @@ export default {
         };
     },
     computed: {
+        isReadonly() {
+            return this.getPropertyAttributeById(this.uri, "plus:readonly") ?? false;
+        },
         getLabel() {
             let label = this.getPropertyLabelById(this.uri);
             if (this.required) label += "*";
@@ -133,7 +144,8 @@ export default {
             "getPropertyRelationById",
             "getInstancesByClass",
             "isProperty",
-            "getPropertyType"
+            "getPropertyType",
+            "getPropertyAttributeById"
         ]),
         ...mapGetters("storage", [
             "getMetadataByURI"

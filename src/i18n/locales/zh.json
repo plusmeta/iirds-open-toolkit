@@ -136,7 +136,7 @@
     "useDarkMode": "深色模式"
   },
   "Validations": {
-    "minOneOfFields": "",
+    "minOneOfFields": "至少必须填写字段 {0} 之一。",
     "noEmptyInput": "字段不能为空",
     "noMultipleInput": "字段必须只包含一个值",
     "noValidMailAdress": "无有效的电子邮件地址"

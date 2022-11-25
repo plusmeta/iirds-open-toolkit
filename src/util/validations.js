@@ -15,7 +15,7 @@ export default {
         return v => (!v || !v.value || v.value.length <= val) || textFunc(val);
     },
     fNotEmpty(text) {
-        return v => (v !== "") || text;
+        return v => (v !== null && v !== undefined && v !== "") || text;
     },
     fMinLength(val, text) {
         return v => (!v || (v)?.length >= val) || text;

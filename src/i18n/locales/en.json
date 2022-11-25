@@ -136,7 +136,7 @@
     "useDarkMode": "Dark mode"
   },
   "Validations": {
-    "minOneOfFields": "",
+    "minOneOfFields": "At least one of the fields {0} must be filled.",
     "noEmptyInput": "Field must not be empty",
     "noMultipleInput": "Field must only contain one value",
     "noValidMailAdress": "No valid email address"

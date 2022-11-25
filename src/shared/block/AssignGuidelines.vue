@@ -36,26 +36,7 @@
           v-for="guideline in getGuidelines"
           :key="guideline.id"
         >
-          <v-row dense>
-            <v-col class="pb-0" offset="2">
-              <span class="overline">
-                {{ guideline.text }}
-              </span>
-            </v-col>
-          </v-row>
-          <v-row class="mr-4" dense>
-            <v-col cols="2">
-              <v-icon class="float-right mr-2">
-                {{ guideline.icon }}
-              </v-icon>
-            </v-col>
-            <v-col>
-              <span
-                style="white-space: pre-line;"
-                v-html="guideline.value"
-              />
-            </v-col>
-          </v-row>
+          <GuidelineColumn :guideline="guideline" />
         </v-col>
       </v-row>
     </v-card-text>
@@ -64,56 +45,15 @@
 
 <script>
 import { mapGetters } from "vuex";
+import GuidelineColumn from "@/shared/block/GuidelineColumn";
 
 export default {
     name: "BlockAssignGuidelines",
+    components: { GuidelineColumn },
     computed: {
-        getGuidelines() {
-            return Object.keys(this.getCurrentProjectRelations)
-                .filter((rel) => {
-                    let prop = this.getPropertyById(rel);
-                    if (prop?.rels) {
-                        let roles = this.getPropertyRelationById(rel, "plus:has-roles");
-                        return roles.includes("plus:EquipmentMetadata");
-                    }
-                    return false;
-                })
-                .map(rel => this.getPropertyById(rel))
-                .map(prop => this.transformMetadata(prop))
-                .sort((a, b) => a?.text?.localeCompare(b?.text))
-                .sort((a, b) => a.position - b.position);
-        },
-        ...mapGetters("projects", [
-            "getCurrentProjectRelationById",
-            "getCurrentProjectRelations"
-        ]),
         ...mapGetters("properties", [
-            "getPropertyLabelById",
-            "getPropertyRelationById",
-            "getPropertyAttributeById",
-            "getPropertyIcon",
-            "isProperty",
-            "getPropertyById"
-        ]),
-        ...mapGetters("settings", [
-            "getCurrentLocale"
+            "getGuidelines"
         ])
-    },
-    methods: {
-        transformMetadata(property) {
-            let id = property.identifier;
-            const position = this.getPropertyAttributeById(id, "plus:guidelineListPriority") || 99;
-            const icon = this.getPropertyIcon(id);
-
-            return {
-                id,
-                value: this.getCurrentProjectRelationById(id),
-                text: this.getPropertyLabelById(id),
-                type: property.datatype,
-                position,
-                icon
-            };
-        }
     }
 };
 </script>

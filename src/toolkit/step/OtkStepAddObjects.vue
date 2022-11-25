@@ -443,19 +443,29 @@ export default {
         isMaxMemory() {
             return Number(this.getActiveSourceMbs) > Number(config.maxObjectMemory);
         },
-        ...mapGetters("settings", [
-            "getSetting"
-        ]),
         ...mapGetters("projects", [
+            "getCurrentProjectRelationById",
+            "getCurrentProjectRelations",
             "getCurrentProjectUuid"
+        ]),
+        ...mapGetters("properties", [
+            "getPropertyLabelById",
+            "getPropertyRelationById",
+            "getPropertyAttributeById",
+            "getPropertyIcon",
+            "isProperty",
+            "getPropertyById",
+            "getGuidelines",
+            "resolveAssignedRelationType"
+        ]),
+        ...mapGetters("settings", [
+            "getSetting",
+            "getCurrentLocale"
         ]),
         ...mapGetters("storage", [
             "getCurrentObjectsByType",
             "getCurrentObjectTypes",
             "getActiveSourceMbs"
-        ]),
-        ...mapGetters("properties", [
-            "getPropertyLabelById"
         ])
     },
     watch: {
@@ -501,6 +511,30 @@ export default {
             let mimeType = match.mimeType(this.$store, file.type, file.name);
             let objectType = match.objectType(this.$store, file.type, file.name, this.objecttype);
 
+            const predefined = [
+                {
+                    id: "iirds:revision",
+                    value: 1
+                },
+                {
+                    id: "plus:Language",
+                    value: [match.language(this.$store, this.getCurrentLocale)]
+                }
+            ];
+
+            const guidelines = this.getGuidelines;
+
+            let meta = [...guidelines, ...predefined].reduce((prev, gl) => {
+                const uri = this.resolveAssignedRelationType(gl.id) ?? gl.id;
+                prev[uri] = template.metadata({
+                    uri,
+                    value: gl.value
+                });
+
+                return prev;
+            }, {});
+
+
             let object = template.object({
                 type: objectType,
                 name: file.name,
@@ -510,7 +544,8 @@ export default {
                     size: file.size,
                     name: file.name,
                     uri: undefined
-                }
+                },
+                meta
             });
 
             this.processing.push(object.uuid);

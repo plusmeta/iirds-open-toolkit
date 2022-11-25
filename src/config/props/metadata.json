@@ -143,16 +143,13 @@
     },
     {
         "identifier": "plus:Organization",
-        "datatype": "plus:Class",
+        "datatype": "plus:String",
         "subClassOf": "plus:Meta",
         "rels": {
             "plus:has-roles": [
                 "plus:AssignableMetadata",
                 "plus:EquipmentMetadata",
                 "plus:TitlePart"
-            ],
-            "plus:has-relations": [
-                "plus:relates-to-organization"
             ],
             "plus:is-part-of-metadata-group": [
                 "plus:BasicMetadataGroup"
@@ -164,7 +161,8 @@
         "attrs": {
             "plus:metaListPriority": 13,
             "plus:titlePartPriority": 1,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:readonly": true
         },
         "label": {
             "de": "Organisation",
@@ -202,7 +200,7 @@
     },
     {
         "identifier": "plus:SerialNumber",
-        "datatype": "plus:Array",
+        "datatype": "plus:String",
         "subClassOf": "plus:Meta",
         "rels": {
             "plus:has-roles": [
@@ -222,11 +220,13 @@
         },
         "attrs": {
             "plus:metaListPriority": 33,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:readonly": true
         },
         "label": {
             "de": "Seriennummer",
-            "en": "Serial number"
+            "en": "Serial number",
+            "zh": "序列号"
         },
         "indicators": []
     },
@@ -253,7 +253,8 @@
         "attrs": {
             "plus:metaListPriority": 34,
             "plus:requiredAssignment": true,
-            "plus:characterLimit": 150
+            "plus:characterLimit": 150,
+            "plus:readonly": true
         },
         "label": "AutoID (IEC 61406)",
         "indicators": []
@@ -327,50 +328,17 @@
     },
     {
         "identifier": "iirds:ProductVariant",
-        "datatype": "plus:Class",
+        "datatype": "plus:String",
         "subClassOf": "iirds:ProductMetadata",
         "rels": {
-            "iirds:has-identity-type": [
-                "iirds:ProductType"
-            ],
+
             "plus:has-roles": [
                 "plus:AssignableMetadata",
                 "plus:TitlePart",
-                "plus:IdentityDomain"
-            ],
-            "plus:has-relations": [
-                "iirds:relates-to-product-variant"
-            ],
-            "plus:is-part-of-metadata-group": [
-                "plus:ProductMetadataGroup"
-            ],
-            "plus:has-icons": [
-                "mdi:robot-industrial"
-            ]
-        },
-        "attrs": {
-            "plus:metaListPriority": 30,
-            "plus:titlePartPriority": 2,
-            "plus:requiredAssignment": true
-        },
-        "label": {
-            "de": "Produktvariante",
-            "en": "Product variant",
-            "zh": "产品变体"
-        },
-        "indicators": []
-    },
-    {
-        "identifier": "plus:ProductLabel",
-        "datatype": "plus:String",
-        "subClassOf": "plus:Meta",
-        "rels": {
-            "iirds:has-identity-type": [
-                "iirds:ProductType"
-            ],
-            "plus:has-roles": [
+                "plus:IdentityDomain",
                 "plus:EquipmentMetadata"
             ],
+
             "plus:is-part-of-metadata-group": [
                 "plus:ProductMetadataGroup"
             ],
@@ -381,11 +349,13 @@
         "attrs": {
             "plus:metaListPriority": 30,
             "plus:titlePartPriority": 2,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:readonly": true
         },
         "label": {
-            "de": "Produktbezeichung",
-            "en": "Product label"
+            "de": "Produktbezeichnung",
+            "en": "Product label",
+            "zh": "产品变体"
         },
         "indicators": []
     },
@@ -480,16 +450,13 @@
     },
     {
         "identifier": "plus:OrganizationOfficial",
-        "datatype": "plus:Class",
+        "datatype": "plus:String",
         "subClassOf": "plus:Meta",
         "rels": {
             "plus:has-roles": [
                 "plus:AssignableMetadata",
                 "plus:EquipmentMetadata",
                 "plus:TitlePart"
-            ],
-            "plus:has-relations": [
-                "plus:relates-to-organization"
             ],
             "plus:is-part-of-metadata-group": [
                 "plus:BasicMetadataGroup"
@@ -501,11 +468,13 @@
         "attrs": {
             "plus:metaListPriority": 13,
             "plus:titlePartPriority": 1,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:readonly": true
         },
         "label": {
             "de": "Organisation (offiziell)",
-            "en": "Organization (official)"
+            "en": "Organization (official)",
+            "zh": "组织（官方)"
         },
         "indicators": []
     }

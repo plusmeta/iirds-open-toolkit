@@ -26,6 +26,8 @@ export class NotifyService {
     }
 
     send(message = "", messageType = "info", messageSeconds = 2) {
+        // eslint-disable-next-line no-console
+        console.log(message);
         this._notify$.next({
             text: message,
             color: messageType,

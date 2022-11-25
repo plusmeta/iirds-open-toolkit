@@ -28,12 +28,13 @@ export default {
             zh: "输入数据"
         },
         rules: [
-            store => !!store.getters["settings/getSetting"]("validation")
+            store => store.getters["settings/isOrgaIsNotValidCount"] === 0 &&
+                store.getters["settings/isProductNotValidCount"] === 0
         ],
         ruleExpl: {
-            de: "Sie müssen die Nutzungsbedingungen akzeptieren",
-            en: "You have to accept the end user license agreement",
-            zh: "您必须接受最终用户许可协议"
+            de: "Sie müssen die Nutzungsbedingungen akzeptieren und alle mit '*' markierten Felder ausfüllen.",
+            en: "You have to accept the terms of use and fill out all fields marked with '*'.",
+            zh: "您必须接受使用条款并填写所有标有 '*' 的字段。"
         },
         component: () => import(/* webpackChunkName: "StepWelcome.step" */ "@/toolkit/step/OtkStepWelcome")
     },

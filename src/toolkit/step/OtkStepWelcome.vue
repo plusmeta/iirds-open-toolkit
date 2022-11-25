@@ -54,166 +54,163 @@
         lg="7" sm="6"
         offset-sm="1"
       >
-        <v-form
-          @input="onFormChange"
+        <v-expansion-panels
+          focusable
+          multiple
+          :value="[0,1]"
+          class="ml-4 mt-2 pa-6"
         >
-          <v-expansion-panels
-            focusable
-            multiple
-            :value="[0,1]"
-            class="ml-4 mt-2 pa-6"
-          >
-            <v-expansion-panel>
-              <v-expansion-panel-header
-                :outlined="!$vuetify.theme.dark"
-                style="min-height: 48px"
-                class="py-0"
-              >
-                <v-row no-gutters>
-                  <v-col>
-                    <span class="subtitle-2">{{ $t('Otk.orgaGroup') }}</span>
-                  </v-col>
-                  <v-col cols="auto">
-                    <v-badge
-                      color="accent"
-                      :content="4"
-                      inline
-                    />
-                  </v-col>
-                </v-row>
-              </v-expansion-panel-header>
+          <v-expansion-panel>
+            <v-expansion-panel-header
+              :outlined="!$vuetify.theme.dark"
+              style="min-height: 48px"
+              class="py-0"
+            >
+              <v-row no-gutters>
+                <v-col>
+                  <span class="subtitle-2">{{ $t('Otk.orgaGroup') }}</span>
+                </v-col>
+                <v-col cols="auto">
+                  <v-badge
+                    v-if="isOrgaIsNotValidCount > 0"
+                    color="accent"
+                    :content="isOrgaIsNotValidCount"
+                    inline
+                  />
+                  <v-badge
+                    v-if="isOrgaIsNotValidCount === 0"
+                    color="accent"
+                    icon="mdi-check"
+                    inline
+                  />
+                </v-col>
+              </v-row>
+            </v-expansion-panel-header>
 
-              <v-expansion-panel-content class="pt-4">
+            <v-expansion-panel-content class="pt-4">
+              <v-row>
+                <v-col>
+                  <v-text-field
+                    :value="getSetting('base_user_name')"
+                    :rules="[isNotEmpty]"
+                    class="required"
+                    prepend-icon="mdi-account"
+                    :label="$t('Otk.orgaContactName')"
+                    @input="setLocalSetting({key: 'base_user_name', value: $event})"
+                  />
+                </v-col>
+                <v-col>
+                  <v-text-field
+                    :value="getSetting('base_user_mail')"
+                    :rules="[isEmail, isNotEmpty]"
+                    class="required"
+                    prepend-icon="mdi-email"
+                    :label="$t('Otk.orgaContactMail')"
+                    @input="setLocalSetting({key: 'base_user_mail', value: $event})"
+                  />
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col>
+                  <v-text-field
+                    v-model="plusOrga"
+                    prepend-icon="mdi-domain"
+                    :rules="[isNotEmpty]"
+                    class="required"
+                    :label="getPropertyLabelById('plus:Organization')"
+                  />
+                </v-col>
+                <v-col>
+                  <v-text-field
+                    v-model="plusOrgaOfficial"
+                    prepend-icon="mdi-domain"
+                    :rules="[isNotEmpty]"
+                    class="required"
+                    :label="getPropertyLabelById('plus:OrganizationOfficial')"
+                  />
+                </v-col>
+              </v-row>
+              <v-switch
+                :label="$t('Otk.acceptUsageAgreement')"
+                :input-value="getSetting('user_eula')"
+                :rules="[isNotEmpty]"
+                class="required"
+                @change="setLocalSetting({key: 'user_eula', value: $event})"
+              />
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+
+          <v-expansion-panel>
+            <v-expansion-panel-header
+              :outlined="!$vuetify.theme.dark"
+              style="min-height: 48px"
+              class="py-0"
+            >
+              <v-row no-gutters>
+                <v-col>
+                  <span class="subtitle-2 pr-2">{{ $t('Otk.equipmentGroup') }}</span>
+                </v-col>
+                <v-col cols="auto">
+                  <v-badge
+                    v-if="isProductNotValidCount > 0"
+                    color="accent"
+                    :content="isProductNotValidCount"
+                    inline
+                  />
+                  <v-badge
+                    v-if="isProductNotValidCount === 0"
+                    color="accent"
+                    icon="mdi-check"
+                    inline
+                  />
+                </v-col>
+              </v-row>
+            </v-expansion-panel-header>
+
+            <v-expansion-panel-content class="pt-4">
+              <v-row>
+                <v-col>
+                  <v-text-field
+                    v-model="plusProductLabel"
+                    prepend-icon="mdi-robot-industrial"
+                    class="required"
+                    :rules="[isNotEmpty]"
+                    :label="getPropertyLabelById('iirds:ProductVariant')"
+                  />
+                </v-col>
+                <v-col>
+                  <v-text-field
+                    :value="plusOrga"
+                    prepend-icon="mdi-factory"
+                    class="required"
+                    disabled
+                    :label="getPropertyLabelById('plus:Organization')"
+                  />
+                </v-col>
+              </v-row>
+              <v-form-group>
                 <v-row>
                   <v-col>
                     <v-text-field
-                      :value="getSetting('base_user_name')"
-                      :rules="[isNotEmpty]"
-                      class="required"
-                      prepend-icon="mdi-account"
-                      :label="$t('Otk.orgaContactName')"
-                      @input="setLocalSetting({key: 'base_user_name', value: $event})"
+                      v-model="plusSerialNumber"
+                      prepend-icon="mdi-counter"
+                      :rules="hasAutoId ? [] : [isNotEmptyOr]"
+                      :label="getPropertyLabelById('plus:SerialNumber')"
                     />
                   </v-col>
                   <v-col>
                     <v-text-field
-                      :value="getSetting('base_user_mail')"
-                      :rules="[isEmail, isNotEmpty]"
-                      class="required"
-                      prepend-icon="mdi-email"
-                      :label="$t('Otk.orgaContactMail')"
-                      @input="setLocalSetting({key: 'base_user_mail', value: $event})"
+                      v-model="plusIEC61406"
+                      prepend-icon="mdi-qrcode-scan"
+                      :rules="hasSerialNumber ? [] : [isNotEmptyOr]"
+                      :label="getPropertyLabelById('plus:IEC61406')"
                     />
                   </v-col>
                 </v-row>
-                <v-row v-if="false">
-                  <v-col class="">
-                    <v-text-field
-                      :value="getSetting('base_orga_url')"
-                      prepend-icon="mdi-web"
-                      :label="$t('Otk.orgaContactWebsite')"
-                      @input="setLocalSetting({key: 'base_orga_url', value: $event})"
-                    />
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col>
-                    <v-text-field
-                      :value="getSetting('base_orga_name')"
-                      prepend-icon="mdi-domain"
-                      :rules="[isNotEmpty]"
-                      class="required"
-                      :label="getPropertyLabelById('plus:Organization')"
-                      @input="setOrganization($event)"
-                    />
-                  </v-col>
-                  <v-col>
-                    <v-text-field
-                      :value="getSetting('base_orga_official_name')"
-                      prepend-icon="mdi-domain"
-                      :rules="[isNotEmpty]"
-                      class="required"
-                      :label="getPropertyLabelById('plus:OrganizationOfficial')"
-                      @input="setOrganizationOfficial($event)"
-                    />
-                  </v-col>
-                </v-row>
-                <v-switch
-                  :label="$t('Otk.acceptUsageAgreement')"
-                  :input-value="getSetting('user_eula')"
-                  :rules="[isNotEmpty]"
-                  class="required"
-                  @input="setLocalSetting({key: 'user_eula', value: !!$event})"
-                />
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-
-            <v-expansion-panel>
-              <v-expansion-panel-header
-                :outlined="!$vuetify.theme.dark"
-                style="min-height: 48px"
-                class="py-0"
-              >
-                <v-row no-gutters>
-                  <v-col>
-                    <span class="subtitle-2">{{ $t('Otk.equipmentGroup') }}</span>
-                  </v-col>
-                  <v-col cols="auto">
-                    <v-badge
-                      color="accent"
-                      :content="3"
-                      inline
-                    />
-                  </v-col>
-                </v-row>
-              </v-expansion-panel-header>
-
-              <v-expansion-panel-content class="pt-4">
-                <v-row>
-                  <v-col>
-                    <v-text-field
-                      :value="getCurrentProjectRelationById('plus:ProductLabel')"
-                      prepend-icon="mdi-robot-industrial"
-                      class="required"
-                      :rules="[isNotEmpty]"
-                      :label="getPropertyLabelById('plus:ProductLabel')"
-                      @input="updateCurrentProjectRelations({'plus:ProductLabel': $event})"
-                    />
-                  </v-col>
-                  <v-col>
-                    <v-text-field
-                      :value="getCurrentProjectRelationById('plus:Organization')"
-                      prepend-icon="mdi-factory"
-                      class="required"
-                      disabled
-                      :label="getPropertyLabelById('plus:Organization')"
-                    />
-                  </v-col>
-                </v-row>
-                <v-form-group>
-                  <v-row>
-                    <v-col>
-                      <v-text-field
-                        v-model="plusSerialNumber"
-                        prepend-icon="mdi-counter"
-                        :rules="hasAutoId ? [] : [isNotEmptyOr]"
-                        :label="getPropertyLabelById('plus:SerialNumber')"
-                      />
-                    </v-col>
-                    <v-col>
-                      <v-text-field
-                        v-model="plusIEC61406"
-                        prepend-icon="mdi-qrcode-scan"
-                        :rules="hasSerialNumber ? [] : [isNotEmptyOr]"
-                        :label="getPropertyLabelById('plus:IEC61406')"
-                      />
-                    </v-col>
-                  </v-row>
-                </v-form-group>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
-        </v-form>
+              </v-form-group>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
       </v-col>
     </v-row>
   </v-container>
@@ -252,7 +249,34 @@ export default {
                 return this.updateCurrentProjectRelations({"plus:SerialNumber": value});
             }
         },
+        plusOrga: {
+            get() {
+                return this.$store.getters["settings/getSetting"]("base_orga_name");
+            },
+            set($event) {
+                this.setLocalSetting({key: "base_orga_name", value: $event});
+                this.updateCurrentProjectRelations({"plus:Organization": [$event]});
+            },
 
+        },
+        plusOrgaOfficial: {
+            get() {
+                return this.$store.getters["settings/getSetting"]("base_orga_fullname");
+            },
+            set($event) {
+                this.setLocalSetting({key: "base_orga_fullname", value: $event});
+                this.updateCurrentProjectRelations({"plus:OrganizationOfficial": [$event]});
+            },
+        },
+        plusProductLabel: {
+            get() {
+                return this.getCurrentProjectRelationById("iirds:ProductVariant")?.[0];
+            },
+            set(value) {
+                value = value ? [value] : [];
+                return this.updateCurrentProjectRelations({"iirds:ProductVariant": value});
+            }
+        },
         isEmail() {
             return validations.fIsEmail(this.$t("Validations.noValidMailAdress"));
         },
@@ -260,33 +284,31 @@ export default {
             return validations.fNotEmpty(this.$t("Validations.noEmptyInput"));
         },
         hasSerialNumber() {
-            return validations.fMinLength(1, this.$t("Validations.noEmptyInput"))(this.plusSerialNumber) === true;
+            return validations.fNotEmpty( this.$t("Validations.noEmptyInput"))(this.plusSerialNumber) === true;
         },
         hasAutoId() {
-            return validations.fMinLength(1, this.$t("Validations.noEmptyInput"))(this.plusIEC61406) === true;
+            return validations.fNotEmpty( this.$t("Validations.noEmptyInput"))(this.plusIEC61406) === true;
         },
         isNotEmptyOr() {
             const labels = [this.getPropertyLabelById("plus:SerialNumber"), this.getPropertyLabelById("plus:IEC61406")].join(", ");
-            return validations.fMinLength(1, this.$t("Validations.minOneOfFields", [labels]));
+            return validations.fNotEmpty( this.$t("Validations.minOneOfFields", [labels]));
         },
-        ...mapGetters("settings", ["getSetting"]),
+        ...mapGetters("settings", ["getSetting", "isProductNotValidCount", "isOrgaIsNotValidCount"]),
         ...mapGetters("projects", ["getCurrentProjectRelationById"]),
         ...mapGetters("properties", ["getPropertyLabelById"])
     },
+    created() {
+
+        if (this.plusOrga) {
+            this.updateCurrentProjectRelations({"plus:Organization": [this.plusOrga]});
+        }
+
+        if (this.plusOrgaOfficial) {
+            this.updateCurrentProjectRelations({"plus:OrganizationOfficial": [this.plusOrgaOfficial]});
+        }
+    },
     methods: {
-        onFormChange($event) {
-            debugger;
-            return this.setLocalSetting("validation", $event);
-        },
         ...util, // for isIE()
-        setOrganization($event) {
-            this.setLocalSetting({key: "base_orga_name", value: $event});
-            this.updateCurrentProjectRelations({"plus:Organization": $event});
-        },
-        setOrganizationOfficial($event) {
-            this.setLocalSetting({key: "base_orga_official_name", value: $event});
-            this.updateCurrentProjectRelations({"plus:OrganizationOfficial": $event});
-        },
         ...mapActions("settings", ["setLocalSetting"]),
         ...mapActions("projects", ["updateCurrentProjectRelations"])
     }

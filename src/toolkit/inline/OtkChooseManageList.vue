@@ -17,6 +17,8 @@
         deletable-chips
         :search-input.sync="search"
         return-object
+        :readonly="isReadonly"
+        :disabled="isReadonly"
         @input="changeList"
       >
         <template v-slot:no-data>
@@ -71,6 +73,9 @@ export default {
         };
     },
     computed: {
+        isReadonly() {
+            return this.getPropertyAttributeById(this.proplist, "plus:readonly") ?? false;
+        },
         getLabel() {
             let label = "";
             if (this.label) label += this.getPropertyLabelById(this.proplist);
@@ -88,7 +93,8 @@ export default {
             "getMetadataByURI"
         ]),
         ...mapGetters("properties", [
-            "getPropertyLabelById"
+            "getPropertyLabelById",
+            "getPropertyAttributeById"
         ])
     },
     methods: {

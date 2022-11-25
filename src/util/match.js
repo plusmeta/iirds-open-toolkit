@@ -78,7 +78,7 @@ export default {
 
         const languageProps = store.getters["properties/getPropertiesByClass"](concept)
             .filter(prop => !store.getters["properties/getPropertyAttributeById"](prop.identifier, "plus:inactiveProperty"));
-        const languageCodes = languageProps.flatMap(lang => lang.indicators).map(normalizeIndicator);
+        const languageCodes = languageProps.flatMap(lang => (lang?.indicators ?? [] )).map(normalizeIndicator);
 
         let match = undefined;
 

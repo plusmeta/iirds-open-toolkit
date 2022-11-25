@@ -19,7 +19,11 @@ const state = {
     ready: false,
     current_project: null,
     settings: {
-        validation: false
+        base_orga_name: null,
+        base_orga_fullname: null,
+        base_orga_url: null,
+        base_user_mail: null,
+        base_user_name: null
     }
 };
 
@@ -50,9 +54,26 @@ const getters = {
         const mode = (getters.isDarkTheme) ? "dark" : "light";
         return state.settings.theme?.logo[mode] || "dark";
     },
-    getLogoForTheme: (state, getters) => (theme) => {
+    getLogoForTheme: (state, getters, rootGetters) => (theme) => {
         return state.settings.theme?.logo[theme] || "dark";
-    }
+    },
+    isOrgaIsNotValidCount: (state, getters, rootState, rootGetters) => {
+        return [
+            getters.getSetting("user_eula"),
+            getters.getSetting("base_user_name"),
+            getters.getSetting("base_user_mail"),
+            getters.getSetting("base_orga_name"),
+            getters.getSetting("base_orga_fullname")
+        ].map(Boolean).filter(v => v === false).length;
+
+    },
+    isProductNotValidCount: (state, getters, rootState, rootGetters) => {
+        return [
+            (rootGetters["projects/getCurrentProjectRelationById"]("plus:SerialNumber")?.[0] || rootGetters["projects/getCurrentProjectRelationById"]("plus:IEC61406")?.[0]),
+            rootGetters["projects/getCurrentProjectRelationById"]("iirds:ProductVariant")?.[0],
+            getters.getSetting("base_orga_fullname")
+        ].map(Boolean).filter(v => v === false).length;
+    },
 };
 
 // actions

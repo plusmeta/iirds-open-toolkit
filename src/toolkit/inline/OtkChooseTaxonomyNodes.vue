@@ -9,6 +9,8 @@
           :rules="[checkRequired]"
           :label="getLabel"
           :loading="loading"
+          :readonly="isReadonly"
+          :disabled="isReadonly"
           small-chips
           deletable-chips
           multiple
@@ -165,6 +167,9 @@ export default {
             set(value) {
                 this.$emit("input", value);
             }
+        },
+        isReadonly() {
+            return this.getPropertyAttributeById(this.propclass, "plus:readonly") ?? false;
         },
         getTreeElements() {
             return this.getParentIds(this.localAssignedProperties, this.propclass)

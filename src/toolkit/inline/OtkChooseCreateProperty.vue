@@ -17,6 +17,7 @@
         :deletable-chips="multiple"
         :search-input.sync="search"
         return-object
+        :readonly="isReadonly"
         @input="selectProperty"
       >
         <template v-slot:item="{attrs, on, item}">
@@ -105,6 +106,9 @@ export default {
         };
     },
     computed: {
+        isReadonly() {
+            return this.getPropertyAttributeById(this.propclass, "plus:readonly") ?? false;
+        },
         getLabel() {
             let label = "";
             if (this.label) label += this.getPropertyLabelById(this.propclass);
@@ -154,7 +158,8 @@ export default {
             "getPropertyLabelById",
             "getPropertyRelationById",
             "getInstancesByClassOrRole",
-            "getPropertyById"
+            "getPropertyById",
+            "getPropertyAttributeById"
         ])
     },
     methods: {

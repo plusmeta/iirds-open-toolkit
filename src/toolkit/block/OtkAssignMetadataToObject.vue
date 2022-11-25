@@ -3,7 +3,7 @@
  * Copyright 2022 plusmeta GmbH
  * License: MIT
 -->
-
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <v-container fluid>
     <v-layout wrap>
@@ -57,52 +57,70 @@
                 v-for="custom in getGroupedMetadata[groupId]"
                 :key="custom.value"
               >
-                <ChooseCreateTitle
-                  v-if="custom.value === 'plus:Title'"
-                  :key="custom.value"
-                  :object-uuid="object.uuid"
-                  propclass="plus:Title"
-                  proprelation="iirds:title"
-                  :label="true"
-                />
-                <ChooseTaxonomyNodes
-                  v-else-if="custom.hasTaxonomyRole"
-                  :object-uuid="object.uuid"
-                  :propclass="custom.value"
-                  :proprelation="custom.rel"
-                  :required="custom.required"
-                  :multiple="custom.multiple"
-                  :label="true"
-                  :icon="custom.icon"
-                />
-                <ChooseCreateProperty
-                  v-else-if="custom.type === 'plus:Class'"
-                  :key="custom.value"
-                  :object-uuid="object.uuid"
-                  :propclass="custom.value"
-                  :proprelation="custom.rel"
-                  :required="custom.required"
-                  :multiple="custom.multiple"
-                  :label="true"
-                  :icon="custom.icon"
-                />
-                <ChooseManageList
-                  v-else-if="custom.type === 'plus:Array'"
-                  :key="custom.value"
-                  :object-uuid="object.uuid"
-                  :proplist="custom.value"
-                  :required="custom.required"
-                  :label="true"
-                  :icon="custom.icon"
-                />
-                <ShowEditMetadata
-                  v-else
-                  :key="custom.value"
-                  :object-uuid="object.uuid"
-                  :proprelation="custom.rel"
-                  :label="true"
-                  :icon="custom.icon"
-                />
+                <v-row align="center">
+                  <v-col>
+                    <ChooseCreateTitle
+                      v-if="custom.value === 'plus:Title'"
+                      :key="custom.value"
+                      :object-uuid="object.uuid"
+                      propclass="plus:Title"
+                      proprelation="iirds:title"
+                      :label="true"
+                    />
+                    <ChooseTaxonomyNodes
+                      v-else-if="custom.hasTaxonomyRole"
+                      :object-uuid="object.uuid"
+                      :propclass="custom.value"
+                      :proprelation="custom.rel"
+                      :required="custom.required"
+                      :multiple="custom.multiple"
+                      :label="true"
+                      :icon="custom.icon"
+                    />
+                    <ChooseCreateProperty
+                      v-else-if="custom.type === 'plus:Class'"
+                      :key="custom.value"
+                      :object-uuid="object.uuid"
+                      :propclass="custom.value"
+                      :proprelation="custom.rel"
+                      :required="custom.required"
+                      :multiple="custom.multiple"
+                      :label="true"
+                      :icon="custom.icon"
+                    />
+                    <ChooseManageList
+                      v-else-if="custom.type === 'plus:Array'"
+                      :key="custom.value"
+                      :object-uuid="object.uuid"
+                      :proplist="custom.value"
+                      :required="custom.required"
+                      :label="true"
+                      :icon="custom.icon"
+                    />
+                    <ShowEditMetadata
+                      v-else
+                      :key="custom.value"
+                      :object-uuid="object.uuid"
+                      :proprelation="custom.rel"
+                      :label="true"
+                      :icon="custom.icon"
+                    />
+                  </v-col>
+                  <v-col v-if="custom.tooltip" cols="auto">
+                    <v-tooltip top>
+                      <template v-slot:activator="{ on: tooltip }">
+                        <v-icon
+                          class="cursor-pointer mb-1"
+                          right
+                          v-on="tooltip"
+                        >
+                          mdi-information-outline
+                        </v-icon>
+                      </template>
+                      <div v-html="custom.tooltip" />
+                    </v-tooltip>
+                  </v-col>
+                </v-row>
               </div>
             </v-expansion-panel-content>
           </v-expansion-panel>
@@ -183,6 +201,7 @@ export default {
                     const icon = this.getPropertyRelationById(prop.identifier, "plus:has-icons")[0];
                     const position = this.getPropertyAttributeById(prop.identifier, "plus:metaListPriority") || 99;
                     const hasTaxonomyRole = this.hasTaxonomyRole(prop.identifier);
+                    const tooltip = this.getPropertyAttributeById(prop.identifier, "plus:tooltipInfo")?.[this.$store["settings/getCurrentLocale"]] ?? null;
 
                     return {
                         value: prop.identifier,
@@ -193,7 +212,8 @@ export default {
                         rel: relation,
                         position,
                         hasTaxonomyRole,
-                        icon: (icon) ? icon.replace(":", "-") : undefined
+                        icon: (icon) ? icon.replace(":", "-") : undefined,
+                        tooltip
                     };
                 })
                 .sort((a,b) => a.position - b.position || a.text.localeCompare(b.text));

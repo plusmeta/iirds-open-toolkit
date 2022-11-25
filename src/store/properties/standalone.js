@@ -160,6 +160,9 @@ const getters = {
                 if (property && property.labels && Object.keys(property.labels).length) {
                     return property.labels;
                 } else {
+                    if (typeof property.label !== "string") {
+                        return property.label;
+                    }
                     return { [locale]: property.label };
                 }
             } else return {};
@@ -198,6 +201,34 @@ const getters = {
         icon = icon ? icon.replace(":", "-") : defaultIcon;
         return icon;
     },
+    getGuidelines: (state, getters, rootState, rootGetters) => {
+        return Object.keys(rootGetters["projects/getCurrentProjectRelations"])
+            .filter((rel) => {
+                let prop = getters.getPropertyById(rel);
+                if (prop?.rels) {
+                    let roles = getters.getPropertyRelationById(rel, "plus:has-roles");
+                    return roles.includes("plus:EquipmentMetadata");
+                }
+                return false;
+            })
+            .map(rel => getters.getPropertyById(rel))
+            .map((prop) => {
+                let id = prop.identifier;
+                const position = getters.getPropertyAttributeById(id, "plus:guidelineListPriority") || 99;
+                const icon = getters.getPropertyIcon(id);
+
+                return {
+                    id,
+                    value: rootGetters["projects/getCurrentProjectRelationById"](id),
+                    text: getters.getPropertyLabelById(id),
+                    type: prop.datatype,
+                    position,
+                    icon
+                };
+            })
+            .sort((a, b) => a?.text?.localeCompare(b?.text))
+            .sort((a, b) => a.position - b.position);
+    }
 };
 
 const actions = {

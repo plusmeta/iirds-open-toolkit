@@ -136,7 +136,7 @@
     "useDarkMode": "Dunkles Farbschema"
   },
   "Validations": {
-    "minOneOfFields": "Mindestens eins der Felder {0} muss befüllt sein",
+    "minOneOfFields": "Mindestens eines der Felder {0} muss ausgefüllt werden.",
     "noEmptyInput": "Feld darf nicht leer sein",
     "noMultipleInput": "Feld darf nur einen Wert enthalten",
     "noValidMailAdress": "Keine gültige Mail-Adresse"

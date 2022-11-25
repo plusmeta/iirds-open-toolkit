@@ -57,6 +57,7 @@ import ProcessObjects from "@/shared/block/ProcessObjects";
 import HelpView from "@/shared/block/HelpView";
 
 import { PdfService } from "@/services/pdf-service";
+import CryptoUtils from "@/util/crypto-utils";
 
 // Polyfill allSettled
 if (!Promise.allSettled) Promise.allSettled = allSettled;
@@ -82,20 +83,11 @@ export default {
             processedObjectsCount: 0,
             downloadPackageLoading: false,
             percent: 0,
-            documents2generics: {},
+            productLabelToRefValues: {},
             assignedManufacturersOnDocs: []
         };
     },
     computed: {
-        getInstanceIdentities() {
-            return this.getPropertiesByRole("plus:IdentityDomain").filter((prop) => {
-                return this.getPropertyRelationById(prop.identifier, "vdi:is-object-identifier").every((type) => {
-                    return this.getPropertyRelationById(type, "vdi:has-object-type").every((oType) => {
-                        return oType === "vdi:Individual";
-                    });
-                });
-            }).map(prop => prop.identifier);
-        },
         getOrganization() {
             return {
                 name: this.getSetting("base_orga_name"),
@@ -107,12 +99,6 @@ export default {
         },
         hasDownloadableFile() {
             return this.getCurrentProjectRelationById("plus:relates-to-vdi2770-package").length > 0;
-        },
-        getContentObjects() {
-            return this.getCurrentObjectsByType("plus:Document");
-        },
-        getRefObjectRel() {
-            return "plus:IEC61406";
         },
         getDocClassStrategies() {
             const docClassProps = this.getPropertiesByRole("vdi:DocumentClassification");
@@ -149,13 +135,10 @@ export default {
             "getSetting"
         ])
     },
-    async mounted() {
+    mounted() {
         this.totalObjects = this.countObjects();
 
-        let currentFingerprint = await this.getProjectFingerprint(this.fingerPrintFilter);
-        let storedFingerprint = this.getCurrentProjectRelationById("plus:has-project-fingerprint")[0];
-
-        if (currentFingerprint === storedFingerprint && this.hasDownloadableFile) {
+        if (this.hasDownloadableFile) {
             this.titleMessage = this.$t("Packages.cached");
             this.processedObjectsCount = this.totalObjects;
             this.percent = 100;
@@ -179,25 +162,6 @@ export default {
             "getCurrentProjectRelation",
             "updateCurrentProjectRelations"
         ]),
-        getProjectFingerprint() {
-            let projectData = util.deepCopy(this.getCurrentProject);
-            let objectsData = this.getContentObjects;
-
-            let combinedData = { projectData, objectsData };
-            delete combinedData.projectData.modifiedAt;
-
-            let normalizedData = JSON.parse(JSON.stringify(combinedData));
-            return ObjectHash(normalizedData, {
-                respectType: false,
-                excludeKeys: (key) => {
-                    return [
-                        "plus:has-metadata-order",
-                        "plus:has-project-fingerprint",
-                        "objectUuids"
-                    ].includes(key);
-                }
-            });
-        },
         countObjects() {
             return this.getCurrentObjectsByType(["plus:Document", "vdi:DocumentationContainer"]).length;
         },
@@ -206,11 +170,9 @@ export default {
             this.percent = 0;
             this.generateVDI();
         },
-        getObjectName(object) {
-            return this.getPropertyLabelById(object) || object;
-        },
-        addToStorage(blob) {
-            const name = `plusmeta-VDI2770-OT-${Date.now()}`;
+        addToStorage(blob, name) {
+            name = `plusmeta-VDI2770-OT-${Date.now()}-${name}`;
+
             let object = template.object({
                 type: "vdi:Container",
                 name: name,
@@ -256,102 +218,65 @@ export default {
         async generateVDI() {
             this.titleMessage = this.$t("Packages.generate");
 
-            const productVariant2instances = {};
-
-            const processDocsConfig = this.getCurrentObjectsByType(["plus:Document", "vdi:DocumentationContainer"]);
-
-            for (let object of processDocsConfig) {
-                // TODO: remove productVariant2instances logic. Only one refObject (instance) which is given as single value
-                let products = util.getMetadataValueAsArray(object, this.getRefObjectRel);
-                let manfufacturerAssignedOnDoc = util.getMetadataValueAsArray(object, "plus:relates-to-manufacturer")[0];
-                this.assignedManufacturersOnDocs.push(manfufacturerAssignedOnDoc);
-
-                let identities = this.getInstanceIdentities.reduce((set, meta) => {
-                    let value = util.getMetadataValueAsArray(object, meta);
-                    let filtered = value.filter(Boolean);
-                    if (filtered.length) set[meta] = filtered;
-                    return set;
-                }, {});
-                for (let product of products) {
-                    if (!productVariant2instances.hasOwnProperty(product)) {
-                        productVariant2instances[product] = {};
-                    }
-                    if (Object.keys(identities).length) {
-                        Object.entries(identities).forEach(([key, values]) => {
-                            if (!productVariant2instances[product].hasOwnProperty(key)) {
-                                productVariant2instances[product][key] = [];
-                            }
-                            for (let value of values) {
-                                if (!productVariant2instances[product][key].includes(value)) productVariant2instances[product][key].push(value);
-                            }
-                        });
-                    }
-                }
+            const productLabel = this.getCurrentProjectRelationById("iirds:ProductVariant")?.[0];
+            const autoIdValues = this.getCurrentProjectRelationById("plus:IEC61406");
+            const snValues = this.getCurrentProjectRelationById("plus:SerialNumber");
+            this.identities = [];
+            if (autoIdValues?.length > 0) {
+                this.identities.push({ uri: "plus:IEC61406", value: autoIdValues});
+            }
+            if (snValues?.length > 0) {
+                this.identities.push({uri: "plus:SerialNumber", value: snValues });
             }
 
-            let uniqueProductVariants = Object.entries(productVariant2instances);
+            const [containerName, main] = await this.generateDocumentationContainer([productLabel, this.identities]);
 
-            let tasks = await Promise.allSettled(uniqueProductVariants.map(p => this.generateDocumentationContainer(p)));
-            let containers = tasks.filter(t => t.status === "fulfilled").map(t => t.value).filter(Boolean);
-            let errors = tasks.filter(t => t.status === "rejected").map(t => t.reason).filter(Boolean);
-
-            errors.forEach(error => this.$notify.send(error, "error"));
-
-            let zip = new JSzip();
-            for (let [name, blob] of containers) {
-                zip.file(`${name}.zip`, blob);
-            }
-
-            this.mainContainer = "Main";
-            let main = await zip.generateAsync({
-                type: "blob",
-                compression: "DEFLATE",
-                compressionOptions: { level: 6 }
-            }, (metadata) => {
-                this.percent = Math.round(metadata.percent);
-            });
-
-            let packageID = await this.addToStorage(main);
+            let packageID = await this.addToStorage(main, containerName);
             await this.updateCurrentProjectRelations({ "plus:relates-to-vdi2770-package": [packageID] });
-
-            let currentFingerprint = await this.getProjectFingerprint(this.fingerPrintFilter);
-            await this.updateCurrentProjectRelations({ "plus:has-project-fingerprint": [currentFingerprint] });
 
             this.$refs?.status?.finish();
         },
-        async generateDocumentationContainer([pv, identities]) {
+        async generateDocumentationContainer(pvIdentity) {
+            const [productLabel, identities] = pvIdentity;
+
             let zip = new JSzip();
-            let objectName = this.getObjectName(pv);
-            let containerName = this.getContainerName(pv);
+            let objectName = productLabel;
+            let containerName = this.sanitizeFilename(productLabel);
 
-            const pvIdentity = Object.assign(identities, { [this.getRefObjectRel]: [pv] });
-
-            const table = await this.generateMainDocumentTable(pv);
-            const pdf = await this.generateMainDocumentPDF(table, objectName, pvIdentity);
-            const main = await this.generateMainDocumentObject(pdf, table, pv, pvIdentity);
-            const xml = await this.generateDocumentXML(main, pv);
-
+            // Main pdf
+            const table = await this.generateMainDocumentTable(productLabel);
+            const pdf = await this.generateMainDocumentPDF(table, objectName, identities);
             zip.file("VDI2770_Main.pdf", pdf);
+
+            // Main xml
+            const main = await this.generateMainDocumentObject(pdf, table, productLabel, identities);
+            const xml = await this.generateDocumentXML(main, productLabel);
             zip.file("VDI2770_Main.xml", xml);
 
+            // Container per File
             const processDocsConfig = this.getCurrentObjectsByType(["plus:Document", "vdi:DocumentationContainer"]);
             for (let doc of processDocsConfig) {
                 if (doc.type === "plus:Document") {
-                    const folderName = this.getDocumentId(doc);
 
-                    if (folderName) {
-                        let documentContainer = new JSzip();
-                        documentContainer.file(doc.source.name, await this.fetchSource(doc.uuid));
-                        let documentMetadataXML = await this.generateDocumentXML(doc);
-                        documentContainer.file("VDI2770_Metadata.xml", documentMetadataXML);
-                        let subZip = await documentContainer.generateAsync({
-                            type: "blob",
-                            compression: "DEFLATE",
-                            compressionOptions: { level: 6 }
-                        });
-                        let filename = `${folderName}.zip`;
-                        zip.file(filename, subZip);
-                    }
+                    let documentContainer = new JSzip();
+
+                    const docData = await this.fetchSource(doc.uuid);
+                    documentContainer.file(doc.source.name, docData);
+
+                    let documentMetadataXML = await this.generateDocumentXML(doc);
+                    documentContainer.file("VDI2770_Metadata.xml", documentMetadataXML);
+
+                    let subZip = await documentContainer.generateAsync({
+                        type: "blob",
+                        compression: "DEFLATE",
+                        compressionOptions: { level: 6 }
+                    });
+
+                    const uniqueId = await CryptoUtils.getDataHash("SHA-1", subZip);
+                    const folderName = `${this.sanitizeWindowsFs(doc.name)} (${uniqueId})`;
+
+                    let filename = `${folderName}.zip`;
+                    zip.file(filename, subZip);
                 }
                 this.processedObjectsCount++;
             }
@@ -365,31 +290,26 @@ export default {
                 this.percent = Math.round(metadata.percent);
             });
 
-            await this.generateDocumentationContainerObject(blob, pv, main.uuid, identities);
+            await this.generateDocumentationContainerObject(blob, productLabel, main.uuid, identities);
             return [containerName, blob];
         },
-        getContainerName(object) {
-            let objectName = this.getObjectName(object);
-            return (objectName) ? objectName.replace(/[\s\/]+/g, "-") : object;
+        sanitizeFilename(objectName) {
+            return (objectName) ? objectName.replace(/[\s\/]+/g, "-") : objectName;
         },
-        getDocumentId(document) {
-            return `${this.sanitizeWindowsFs(document.name)} (${document.id})`;
-        },
-        generateMainDocumentPDF({ head, body }, name, idObj) {
+        generateMainDocumentPDF({ head, body }, name, identities) {
             const mainDocumentLabel = `${this.getPropertyLabelById("vdi:MainDocument")} (${name})`;
             const footerInfo = `VDI 2770 Open Toolkit -  ${this.getOrganization.fullName} (Contact: ${this.getOrganization.mail})`;
-            const info = Object.entries(idObj).map(([uri, value]) => {
-                let label = this.getPropertyLabelById(uri);
+            const info = identities.map(({ uri, value }) => {
+                let label = this.getPropertyLabelById(uri) || uri;
                 let values = value.map(v => this.isProperty(v) ? this.getPropertyLabelById(v) : v).join(", ");
                 return `${label}: ${values}`;
             }).join("\n");
 
             return PdfService.instance(this).generateVdiMain(info, footerInfo, mainDocumentLabel, head, body);
         },
-        async generateMainDocumentObject(pdf, { head, body }, relObject, idObj = {}) {
+        async generateMainDocumentObject(pdf, { head, body }, productLabel, identities = {}) {
             const mainDocumentLabel = this.getPropertyLabelById("vdi:MainDocument");
-            const objectName = this.getObjectName(relObject);
-            const objectManuf = this.getPropertyRelationById(relObject, "plus:manufactured-by");
+            const objectName = productLabel;
             const nrOfPages = await pdfutil.getNrOfPages(pdf);
 
             let object = template.object({
@@ -407,13 +327,11 @@ export default {
 
 
             let metaSets = [
-                { uri: this.getRefObjectRel, value: [relObject] },
                 { uri: "iirds:language", value: [match.language(this.$store, this.getCurrentLocale)] },
                 { uri: "pdf:totalPages", value: nrOfPages },
                 { uri: "iirds:title", value: mainDocumentLabel },
                 { uri: "vdi:has-document-category", value: ["vdi:ClassId:01-01"] },
                 { uri: "iirds:has-document-type", value: ["vdi:MainDocument"] },
-                { uri: "plus:relates-to-manufacturer", value: objectManuf },
                 { uri: "plus:created-by-project", value: [this.getCurrentProjectUuid] },
                 { uri: "plus:CreationDate", value: Date.now() }
             ];
@@ -422,7 +340,7 @@ export default {
             for (let { uri, value } of metaSets) {
                 await this.addMetadata({ objectUuid: object.uuid, objectMeta: { uri, value } });
             }
-            for (let [uri, value] of Object.entries(idObj)) {
+            for (let { uri, value } of identities) {
                 await this.addMetadata({ objectUuid: object.uuid, objectMeta: { uri, value } });
             }
             await this.addObjectsToProject({
@@ -431,10 +349,10 @@ export default {
             });
             return this.getObjectByUuid(object.uuid);
         },
-        async generateDocumentationContainerObject(blob, relObject, mainId, idObj = {}) {
+        async generateDocumentationContainerObject(blob, productLabel, mainId, identities = {}) {
             const mainDocumentLabel = this.getPropertyLabelById("vdi:MainDocument");
-            const objectName = this.getObjectName(relObject);
-            const containerName = this.getContainerName(relObject);
+            const objectName = productLabel;
+            const containerName = this.sanitizeFilename(productLabel);
             const title = `${mainDocumentLabel} (${objectName})`;
 
             let object = template.object({
@@ -451,7 +369,6 @@ export default {
             });
 
             let metaSets = [
-                { uri: this.getRefObjectRel, value: [relObject] },
                 { uri: "iirds:language", value: [match.language(this.$store, this.getCurrentLocale)] },
                 { uri: "iirds:title", value: title },
                 { uri: "vdi:has-document-category", value: ["vdi:ClassId:01-01"] },
@@ -464,7 +381,7 @@ export default {
             for (let { uri, value } of metaSets) {
                 await this.addMetadata({ objectUuid: object.uuid, objectMeta: { uri, value } });
             }
-            for (let [uri, value] of Object.entries(idObj)) {
+            for (let { uri, value } of identities) {
                 await this.addMetadata({ objectUuid: object.uuid, objectMeta: { uri, value } });
             }
             await this.addObjectsToProject({
@@ -472,11 +389,9 @@ export default {
                 objectUuids: [object.uuid]
             });
         },
-        generateDocumentXML(object, pv) {
+        generateDocumentXML(object, productLabel) {
             const objectsDomain = "http://data.plusmeta.de/objects";
             const objectsExtDomain = "http://data.plusmeta.de/objects/name";
-
-            const currentLocale = this.getCurrentLocale;
 
             const namespaces = {
                 "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
@@ -529,10 +444,6 @@ export default {
             const refDesigIds = this.getPropertiesByRole("vdi:ReferenceDesignation");
             const equiIds = this.getPropertiesByRole("vdi:EquipmentId");
             const refObjIds = util.uniqueProperties([...objectIds, ...projectIds, ...refDesigIds, ...equiIds]);
-            const products = util.getMetadataValueAsArray(object, this.getRefObjectRel) || [];
-            // TODO: Remove firstProduct/remainingProducts logic. Only one product should be present
-            const firstProduct = products[0];
-            const remainingProducts = products.slice(1);
             const refObjIdsIdentifier = [];
             const refObjIdsIndividualIdentifier = [];
             let mainObjectRef = root.ele("ReferencedObject");
@@ -588,63 +499,15 @@ export default {
                 }
             }
 
-            const manufacturer = util.getMetadataValue(object, "plus:relates-to-manufacturer");
+            mainObjectRef
+                .ele("Party", { "Role": "Manufacturer" })
+                .ele("Organization", {
+                    "OrganizationId": this.getOrganization.url,
+                    "OrganizationName": this.getOrganization.name,
+                    "OrganizationOfficialName": this.getOrganization.fullName
+                });
 
-            let refObjectLabels = this.getPropertyLabels(firstProduct);
-            let idPublicName = undefined;
-
-            if (Object.entries(refObjectLabels).length === 0) {
-                refObjectLabels = { [currentLocale]: refObjIdsIndividualIdentifier.join(" / ") };
-            } else {
-                idPublicName = this.getPropertyAttributeById(firstProduct, "plus:publicName");
-            }
-
-            if (manufacturer) {
-                const labelName = this.getPropertyLabelById(manufacturer);
-                const publicName = this.getPropertyAttributeById(manufacturer, "plus:publicName");
-                mainObjectRef.ele("Party", { "Role": "Manufacturer" })
-                    .ele("Organization", {
-                        "OrganizationId": manufacturer,
-                        "OrganizationName": labelName,
-                        "OrganizationOfficialName": publicName || labelName
-                    });
-            }
-            for (let [locale, label] of Object.entries(refObjectLabels)) {
-                mainObjectRef.ele("Description", { Language: locale }).txt(idPublicName || label);
-            }
-
-            for (let product of remainingProducts) {
-                // skip if is included in refObjIds
-                if (refObjIdsIdentifier.includes(product)) continue;
-                let additionalObjectRef = root.ele("ReferencedObject");
-                let productManufacturer = this.getPropertyRelationById(product, "plus:manufactured-by")[0];
-                let refObjectManufacturer = productManufacturer || manufacturer;
-                let remRefObjectLabels = this.getPropertyLabels(product);
-                let remIdPublicName = undefined;
-                if (Object.entries(remRefObjectLabels).length === 0) {
-                    remRefObjectLabels = { [currentLocale]: refObjIdsIndividualIdentifier.join(" / ") };
-                } else {
-                    remIdPublicName = this.getPropertyAttributeById(product, "plus:publicName");
-                }
-
-                additionalObjectRef.ele("ObjectId", {
-                    "RefType": "product type",
-                    "ObjectType": "Type"
-                }).txt(product);
-                if (refObjectManufacturer) {
-                    let labelName = this.getPropertyLabelById(refObjectManufacturer);
-                    let publicName = this.getPropertyAttributeById(refObjectManufacturer, "plus:publicName");
-                    additionalObjectRef.ele("Party", { "Role": "Manufacturer" })
-                        .ele("Organization", {
-                            "OrganizationId": refObjectManufacturer,
-                            "OrganizationName": labelName,
-                            "OrganizationOfficialName": publicName || labelName
-                        });
-                }
-                for (let [locale, label] of Object.entries(remRefObjectLabels)) {
-                    additionalObjectRef.ele("Description", { Language: locale }).txt(remIdPublicName || label);
-                }
-            }
+            mainObjectRef.ele("Description", { Language: this.getCurrentLocale }).txt(productLabel);
 
             const vers = root.ele("DocumentVersion");
 
@@ -664,53 +527,14 @@ export default {
                 vers.ele("Language").txt(match.parseLocale(language));
             }
 
-            let authors = util.getMetadataValue(object, "plus:relates-to-manufacturer") || [];
-            if (authors.length) {
-                for (let author of authors) {
-                    let labelName = this.getPropertyLabelById(author);
-                    let publicName = this.getPropertyAttributeById(author, "plus:publicName");
-                    vers.ele("Party", { "Role": "Author" })
-                        .ele("Organization", {
-                            "OrganizationId": author,
-                            "OrganizationName": labelName,
-                            "OrganizationOfficialName": publicName || labelName
-                        });
-                }
-            } else {
-                // fallback for documents where no manufacturer relation is available (e.g. main document)
-                vers.ele("Party", { "Role": "Author" })
-                    .ele("Organization", {
-                        "OrganizationId": this.getOrganization.url,
-                        "OrganizationName": this.getOrganization.name,
-                        "OrganizationOfficialName": this.getOrganization.fullName
-                    });
-            }
-
+            vers.ele("Party", { "Role": "Author" })
+                .ele("Organization", {
+                    "OrganizationId": this.getOrganization.url,
+                    "OrganizationName": this.getOrganization.name,
+                    "OrganizationOfficialName": this.getOrganization.fullName
+                });
 
             const title = util.getMetadataValue(object, "iirds:title") || "";
-            const getkeyWords = (locale) => {
-                let values = [];
-                let customKeywords = util.getMetadataValue(object, "vdi:has-key-words");
-
-                if (customKeywords && customKeywords.length) {
-                    values = customKeywords.filter(Boolean);
-                } else {
-                    values = [
-                        util.getMetadataValue(object, this.getRefObjectRel),
-                        util.getMetadataValue(object, "plus:relates-to-manufacturer")
-                    ];
-
-                    for (let { rel } of documentClassifications) {
-                        values.push(util.getMetadataValue(object, rel));
-                    }
-
-                    values = values
-                        .filter(Boolean)
-                        .flatMap(v => this.getPropertyLabelById(v, locale) || this.getPropertyLabelById(v, currentLocale))
-                        .filter(Boolean);
-                }
-                return util.uniqueValues(values);
-            };
 
             for (let language of languages) {
                 const locale = match.parseLocale(language);
@@ -728,7 +552,7 @@ export default {
                     .ele("Title").txt(title).up()
                     .ele("Summary").txt(generatedTitle).up();
                 let docKeyWords = docDesc.ele("KeyWords");
-                let keyWords = getkeyWords(locale);
+                let keyWords = this.getKeyWords(object, documentClassifications, locale);
                 for (let keyWord of keyWords) {
                     docKeyWords.ele("KeyWord").txt(keyWord);
                 }
@@ -743,7 +567,7 @@ export default {
                     "OrganizationOfficialName": this.getOrganization.fullName
                 });
 
-            if (pv) {
+            if (productLabel) {
                 const processDocsConfig = this.getCurrentObjectsByType(["plus:Document", "vdi:DocumentationContainer"]);
                 for (let processObject of processDocsConfig)  {
 
@@ -770,16 +594,30 @@ export default {
                 vers.ele("DigitalFile", { FileFormat: "Text/plain", }).txt(object.source.name + ".txt");
             }
 
-            const hasFormatVariantViaLink = this.documents2generics.hasOwnProperty(object.uuid);
-
-            if (hasFormatVariantViaLink) {
-                let formatVariantObjects = this.documents2generics[object.uuid];
-                for (let fv of formatVariantObjects) {
-                    vers.ele("DigitalFile", { FileFormat: fv.source.type, }).txt(fv.source.name);
-                }
-            }
-
             return root.end({ prettyPrint: true });
+        },
+        getKeyWords(object, documentClassifications, locale) {
+            let values = [];
+            let customKeywords = util.getMetadataValue(object, "vdi:has-key-words");
+
+            if (customKeywords && customKeywords.length) {
+                values = customKeywords.filter(Boolean);
+            } else {
+                values = [
+                    Object.values(this.identities),
+                    this.getOrganization.name
+                ];
+
+                for (let { rel } of documentClassifications) {
+                    values.push(util.getMetadataValue(object, rel));
+                }
+
+                values = values
+                    .filter(Boolean)
+                    .flatMap(v => this.getPropertyLabelById(v, locale) || this.getPropertyLabelById(v))
+                    .filter(Boolean);
+            }
+            return util.uniqueValues(values);
         },
         generateMainDocumentTable(pv) {
             const head = [[
@@ -805,20 +643,6 @@ export default {
                         util.getMetadataValue(object, "iirds:title")
                     ]);
                 }
-            }
-            return { head, body };
-        },
-        generateMediaArchiveTable(list, folder) {
-            const head = [[
-                this.getPropertyLabelById("plus:OriginalFileName"),
-            ]];
-            let body = [];
-            if (list) {
-                list.forEach((entry) => {
-                    body.push([
-                        `${folder}/${entry}`
-                    ]);
-                });
             }
             return { head, body };
         },
