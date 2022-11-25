@@ -25,7 +25,8 @@
         },
         "label": {
             "de": "Sprache",
-            "en": "Language"
+            "en": "Language",
+            "zh": "语言"
         },
         "indicators": []
     },
@@ -57,7 +58,8 @@
         },
         "label": {
             "de": "VDI-2770-Dokumentkategorie",
-            "en": "VDI 2770 document category"
+            "en": "VDI 2770 document category",
+            "zh": "VDI 2770 文件分类"
         },
         "indicators": []
     },
@@ -109,7 +111,8 @@
         },
         "label": {
             "de": "Revision",
-            "en": "Revision"
+            "en": "Revision",
+            "zh": "修订"
         },
         "indicators": []
     },
@@ -133,7 +136,8 @@
         },
         "label": {
             "de": "Schlagwörter",
-            "en": "Key words"
+            "en": "Key words",
+            "zh": "关键字"
         },
         "indicators": []
     },
@@ -164,7 +168,8 @@
         },
         "label": {
             "de": "Organisation",
-            "en": "Organization"
+            "en": "Organization",
+            "zh": "组织"
         },
         "indicators": []
     },
@@ -173,7 +178,7 @@
         "datatype": "plus:Class",
         "subClassOf": "plus:Meta",
         "rels": {
-            "plus:has-roles": [ ],
+            "plus:has-roles": [],
             "plus:has-relations": [
                 "plus:relates-to-manufacturer"
             ],
@@ -277,7 +282,8 @@
         },
         "label": {
             "de": "Titel",
-            "en": "Title"
+            "en": "Title",
+            "zh": "标题"
         },
         "indicators": []
     },
@@ -288,7 +294,8 @@
         "rels": {},
         "label": {
             "de": "Titel (iiRDS)",
-            "en": "Title (iIRDS)"
+            "en": "Title (iIRDS)",
+            "zh": "标题（iIRDS）"
         },
         "indicators": []
     },
@@ -313,7 +320,8 @@
         },
         "label": {
             "de": "Beschreibung",
-            "en": "Description"
+            "en": "Description",
+            "zh": "评论"
         },
         "indicators": []
     },
@@ -347,7 +355,8 @@
         },
         "label": {
             "de": "Produktvariante",
-            "en": "Product variant"
+            "en": "Product variant",
+            "zh": "产品变体"
         },
         "indicators": []
     },
@@ -387,7 +396,8 @@
         "rels": {},
         "label": {
             "de": "bezieht sich auf Produktvariante",
-            "en": "relates to product variant"
+            "en": "relates to product variant",
+            "zh": "与产品变体有关"
         },
         "indicators": []
     },
@@ -399,7 +409,8 @@
         "attrs": {},
         "label": {
             "de": "hat VDI-2770-Dokumentkategorie",
-            "en": "has VDI 2770 document category"
+            "en": "has VDI 2770 document category",
+            "zh": "具有VDI 2770文档类目"
         },
         "indicators": []
     },
@@ -414,7 +425,8 @@
         },
         "label": {
             "de": "Informationsbezogene Metadaten",
-            "en": "Information-related metadata"
+            "en": "Information-related metadata",
+            "zh": "文档元数据"
         },
         "indicators": []
     },
@@ -429,7 +441,8 @@
         },
         "label": {
             "de": "Produktbezogene Metadaten",
-            "en": "Product-related metadata"
+            "en": "Product-related metadata",
+            "zh": "设备元数据"
         },
         "indicators": []
     },
@@ -444,7 +457,8 @@
         },
         "label": {
             "de": "Administrative Metadaten",
-            "en": "Administrative metadata"
+            "en": "Administrative metadata",
+            "zh": "管理性元数据"
         },
         "indicators": []
     },
@@ -459,7 +473,8 @@
         },
         "label": {
             "de": "Basis-Metadaten",
-            "en": "Basic metadata"
+            "en": "Basic metadata",
+            "zh": "基本元数据"
         },
         "indicators": []
     }

@@ -8,7 +8,14 @@
             "en": "German (Germany)"
         },
         "rels": {},
-        "indicators": [ "de", "DE", "ger", "DEU", "Germany", "german" ]
+        "indicators": [
+            "de",
+            "DE",
+            "ger",
+            "DEU",
+            "Germany",
+            "german"
+        ]
     },
     {
         "identifier": "en-US",
@@ -19,7 +26,10 @@
             "en": "English (US)"
         },
         "rels": {},
-        "indicators": [ "en", "english" ]
+        "indicators": [
+            "en",
+            "english"
+        ]
     },
     {
         "identifier": "fr-FR",
@@ -30,7 +40,11 @@
             "en": "French (France)"
         },
         "rels": {},
-        "indicators": [ "fr", "FR", "french" ]
+        "indicators": [
+            "fr",
+            "FR",
+            "french"
+        ]
     },
     {
         "identifier": "ru-RU",
@@ -41,7 +55,11 @@
             "en": "Russian (Russia)"
         },
         "rels": {},
-        "indicators": [ "ru", "RU", "russian" ]
+        "indicators": [
+            "ru",
+            "RU",
+            "russian"
+        ]
     },
     {
         "identifier": "en-GB",
@@ -52,7 +70,11 @@
             "en": "English (UK)"
         },
         "rels": {},
-        "indicators": [ "UK", "GB", "gb" ]
+        "indicators": [
+            "UK",
+            "GB",
+            "gb"
+        ]
     },
     {
         "identifier": "jp-JP",
@@ -63,7 +85,10 @@
             "en": "Japanese (Japan)"
         },
         "rels": {},
-        "indicators": [ "jp", "japanese" ]
+        "indicators": [
+            "jp",
+            "japanese"
+        ]
     },
     {
         "identifier": "zh-CN",
@@ -74,7 +99,10 @@
             "en": "Chinese (China)"
         },
         "rels": {},
-        "indicators": [ "zh", "chinese" ]
+        "indicators": [
+            "zh",
+            "chinese"
+        ]
     },
     {
         "identifier": "it-IT",
@@ -85,7 +113,9 @@
             "en": "Italian (Italy)"
         },
         "rels": {},
-        "indicators": [ "italian" ]
+        "indicators": [
+            "italian"
+        ]
     },
     {
         "identifier": "pt-BR",
@@ -96,7 +126,9 @@
             "en": "Portuguese (Brazil)"
         },
         "rels": {},
-        "indicators": [ "portuguese" ]
+        "indicators": [
+            "portuguese"
+        ]
     },
     {
         "identifier": "pt-PT",

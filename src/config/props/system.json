@@ -5,7 +5,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Basis",
-            "en": "Base"
+            "en": "Base",
+            "zh": "基属性"
         }
     },
     {
@@ -14,7 +15,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Metadaten",
-            "en": "Metadata"
+            "en": "Metadata",
+            "zh": "元数据"
         }
     },
     {
@@ -23,7 +25,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Datentyp",
-            "en": "Data type"
+            "en": "Data type",
+            "zh": "数据类型"
         }
     },
     {
@@ -32,7 +35,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Symbol",
-            "en": "Icon"
+            "en": "Icon",
+            "zh": "图标"
         }
     },
     {
@@ -41,7 +45,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Klasse",
-            "en": "Class"
+            "en": "Class",
+            "zh": "类"
         }
     },
     {
@@ -50,7 +55,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Wahrheitswert",
-            "en": "Boolean value"
+            "en": "Boolean value",
+            "zh": "布尔值"
         }
     },
     {
@@ -59,7 +65,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Listenwert",
-            "en": "List value"
+            "en": "List value",
+            "zh": "列表值"
         }
     },
     {
@@ -68,7 +75,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Zeichenkette",
-            "en": "String value"
+            "en": "String value",
+            "zh": "字符串值"
         }
     },
     {
@@ -77,7 +85,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Zahl",
-            "en": "Number"
+            "en": "Number",
+            "zh": "数字"
         }
     },
     {
@@ -86,7 +95,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Zeitstempel",
-            "en": "Timestamp"
+            "en": "Timestamp",
+            "zh": "时间戳"
         }
     },
     {
@@ -95,7 +105,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Beziehung",
-            "en": "Relation"
+            "en": "Relation",
+            "zh": "关系"
         }
     },
     {
@@ -104,7 +115,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Liste",
-            "en": "List"
+            "en": "List",
+            "zh": "数组"
         }
     },
     {
@@ -113,7 +125,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Objekttyp",
-            "en": "Object type"
+            "en": "Object type",
+            "zh": "对象类型"
         }
     },
     {
@@ -127,9 +140,12 @@
         },
         "label": {
             "de": "Dokument",
-            "en": "Document"
+            "en": "Document",
+            "zh": "文档"
         },
-        "indicators": ["application/pdf"]
+        "indicators": [
+            "application/pdf"
+        ]
     },
     {
         "subClassOf": "plus:Objecttype",
@@ -137,7 +153,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Fragment",
-            "en": "Fragment"
+            "en": "Fragment",
+            "zh": "片段"
         },
         "rels": {
             "plus:has-icons": [
@@ -151,7 +168,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Textobjekt",
-            "en": "Text object"
+            "en": "Text object",
+            "zh": "文本对象"
         }
     },
     {
@@ -160,14 +178,17 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Topic",
-            "en": "Topic"
+            "en": "Topic",
+            "zh": "内容组件"
         },
         "rels": {
             "plus:has-icons": [
                 "mdi:text-subject"
             ]
         },
-        "indicators": ["text/html"]
+        "indicators": [
+            "text/html"
+        ]
     },
     {
         "subClassOf": "plus:Objecttype",
@@ -175,9 +196,12 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Medienarchiv",
-            "en": "Media archive"
+            "en": "Media archive",
+            "zh": "媒体档案"
         },
-        "indicators": ["application/zip"]
+        "indicators": [
+            "application/zip"
+        ]
     },
     {
         "subClassOf": "plus:System",
@@ -185,7 +209,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Oberflächensprache",
-            "en": "Interface language"
+            "en": "Interface language",
+            "zh": "界面语言"
         }
     },
     {
@@ -194,10 +219,13 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Deutsch",
-            "en": "German"
+            "en": "German",
+            "zh": "德语"
         },
         "rels": {
-            "plus:refers-to-language": ["de-DE"]
+            "plus:refers-to-language": [
+                "de-DE"
+            ]
         }
     },
     {
@@ -206,10 +234,13 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Englisch",
-            "en": "English"
+            "en": "English",
+            "zh": "英语"
         },
         "rels": {
-            "plus:refers-to-language": ["en-US"]
+            "plus:refers-to-language": [
+                "en-US"
+            ]
         }
     },
     {
@@ -218,7 +249,8 @@
         "datatype": "plus:Relation",
         "label": {
             "de": "entspricht Sprache",
-            "en": "refers to language"
+            "en": "refers to language",
+            "zh": "指语言"
         }
     },
     {
@@ -227,7 +259,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Projekt-Beziehung",
-            "en": "Project relation"
+            "en": "Project relation",
+            "zh": "项目关系"
         }
     },
     {
@@ -236,7 +269,8 @@
         "datatype": "plus:ProjectRelation",
         "label": {
             "de": "von Projekt erstellt",
-            "en": "created by project"
+            "en": "created by project",
+            "zh": "由项目创建"
         }
     },
     {
@@ -245,7 +279,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Systemmetadaten",
-            "en": "System metadata"
+            "en": "System metadata",
+            "zh": "系统"
         }
     },
     {
@@ -254,7 +289,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Dateiname bei Import",
-            "en": "Import file name"
+            "en": "Import file name",
+            "zh": "导入文件名"
         }
     },
     {
@@ -263,7 +299,8 @@
         "datatype": "plus:Timestamp",
         "label": {
             "de": "Letzte Metadatenänderung",
-            "en": "Last metadata edit"
+            "en": "Last metadata edit",
+            "zh": "上次编辑元数据"
         }
     },
     {
@@ -272,7 +309,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Systemrolle",
-            "en": "System role"
+            "en": "System role",
+            "zh": "系统角色"
         }
     },
     {
@@ -281,7 +319,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Zuweisbare Eigenschaft",
-            "en": "Assignable property"
+            "en": "Assignable property",
+            "zh": "元数据"
         }
     },
     {
@@ -317,7 +356,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Akteur",
-            "en": "Actor"
+            "en": "Actor",
+            "zh": "角色"
         }
     },
     {
@@ -326,7 +366,8 @@
         "datatype": "plus:Relation",
         "label": {
             "de": "hat Rollen",
-            "en": "has roles"
+            "en": "has roles",
+            "zh": "拥有角色"
         }
     },
     {
@@ -335,7 +376,8 @@
         "datatype": "plus:Relation",
         "label": {
             "de": "hat Symbole",
-            "en": "has icons"
+            "en": "has icons",
+            "zh": "有图标"
         }
     },
     {
@@ -344,7 +386,8 @@
         "datatype": "plus:Relation",
         "label": {
             "de": "hat zugeordnete Beziehungsarten",
-            "en": "has associated relation types"
+            "en": "has associated relation types",
+            "zh": "拥有相关的关系类型"
         }
     },
     {
@@ -353,7 +396,8 @@
         "datatype": "plus:Relation",
         "label": {
             "de": "hergestellt von",
-            "en": "manufactured by"
+            "en": "manufactured by",
+            "zh": "制造者"
         }
     },
     {
@@ -362,7 +406,8 @@
         "datatype": "plus:Relation",
         "label": {
             "de": "bezieht sich auf Hersteller",
-            "en": "relates to manufacturer"
+            "en": "relates to manufacturer",
+            "zh": "与制造商有关"
         }
     },
     {
@@ -371,7 +416,8 @@
         "datatype": "plus:Relation",
         "label": {
             "de": "hat Teile",
-            "en": "has parts"
+            "en": "has parts",
+            "zh": "有零件"
         }
     },
     {
@@ -380,7 +426,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "Medientyp",
-            "en": "Mimetype"
+            "en": "Mimetype",
+            "zh": "模仿类型"
         }
     },
     {
@@ -389,7 +436,8 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "PDF-Dokument",
-            "en": "PDF document"
+            "en": "PDF document",
+            "zh": "PDF文档"
         }
     },
     {
@@ -398,9 +446,14 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "HTML-Datei",
-            "en": "HTML file"
+            "en": "HTML file",
+            "zh": "HTML文件"
         },
-        "indicators": ["application/html", "application/xhtml+xml", "xhtml"]
+        "indicators": [
+            "application/html",
+            "application/xhtml+xml",
+            "xhtml"
+        ]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -408,9 +461,14 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "XML-Datei",
-            "en": "XML file"
+            "en": "XML file",
+            "zh": ""
         },
-        "indicators": ["text/xml", "application/rdf+xml", "xml"]
+        "indicators": [
+            "text/xml",
+            "application/rdf+xml",
+            "xml"
+        ]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -418,9 +476,13 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "iiRDS-Paket",
-            "en": "iiRDS package"
+            "en": "iiRDS package",
+            "zh": "iiRDS文件包"
         },
-        "indicators": ["application/iirds", "iirds"]
+        "indicators": [
+            "application/iirds",
+            "iirds"
+        ]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -428,9 +490,12 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "ZIP-Container",
-            "en": "ZIP container"
+            "en": "ZIP container",
+            "zh": "ZIP容器"
         },
-        "indicators": ["zip"]
+        "indicators": [
+            "zip"
+        ]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -438,9 +503,12 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Text",
-            "en": "Plain text"
+            "en": "Plain text",
+            "zh": "普通文本文件"
         },
-        "indicators": ["text/*"]
+        "indicators": [
+            "text/*"
+        ]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -448,9 +516,12 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Microsoft Excel Arbeitsmappe",
-            "en": "Microsoft Excel Workbook"
+            "en": "Microsoft Excel Workbook",
+            "zh": "微软Excel工作簿"
         },
-        "indicators": ["xlsx"]
+        "indicators": [
+            "xlsx"
+        ]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -458,9 +529,12 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Microsoft Word Dokument",
-            "en": "Microsoft Word Document"
+            "en": "Microsoft Word Document",
+            "zh": "微软 Word 文档"
         },
-        "indicators": ["docx"]
+        "indicators": [
+            "docx"
+        ]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -468,9 +542,12 @@
         "datatype": "plus:Instance",
         "label": {
             "de": "Microsoft PowerPoint Präsentation",
-            "en": "Microsoft PowerPoint Presentation"
+            "en": "Microsoft PowerPoint Presentation",
+            "zh": ""
         },
-        "indicators": ["pptx"]
+        "indicators": [
+            "pptx"
+        ]
     },
     {
         "subClassOf": "plus:MimeType",
@@ -480,7 +557,10 @@
             "de": "Rich Text Format (RTF)",
             "en": "Rich Text Format (RTF)"
         },
-        "indicators": ["rtf", "text/rtf"]
+        "indicators": [
+            "rtf",
+            "text/rtf"
+        ]
     },
     {
         "subClassOf": "plus:Meta",
@@ -488,7 +568,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "HTML-Metadaten",
-            "en": "HTML metadata"
+            "en": "HTML metadata",
+            "zh": "HTML元数据"
         }
     },
     {
@@ -497,7 +578,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "HTML-ID",
-            "en": "HTML ID"
+            "en": "HTML ID",
+            "zh": "HTML ID"
         }
     },
     {
@@ -506,7 +588,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Erzeuger (HTML)",
-            "en": "Generator (HTML)"
+            "en": "Generator (HTML)",
+            "zh": "生成器（HTML）"
         }
     },
     {
@@ -515,7 +598,8 @@
         "datatype": "plus:Timestamp",
         "label": {
             "de": "Erstellungsdatum",
-            "en": "Creation date"
+            "en": "Creation date",
+            "zh": "创建日期"
         }
     },
     {
@@ -524,7 +608,8 @@
         "datatype": "plus:Class",
         "label": {
             "de": "PDF-Metadaten",
-            "en": "PDF metadata"
+            "en": "PDF metadata",
+            "zh": "PDF元数据"
         }
     },
     {
@@ -533,7 +618,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Schlagworte",
-            "en": "Keywords"
+            "en": "Keywords",
+            "zh": "关键词（PDF）"
         }
     },
     {
@@ -542,7 +628,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Thema (PDF)",
-            "en": "Subject (PDF)"
+            "en": "Subject (PDF)",
+            "zh": "主题（PDF）"
         }
     },
     {
@@ -551,7 +638,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Ersteller (PDF)",
-            "en": "Creator (PDF)"
+            "en": "Creator (PDF)",
+            "zh": "创建者（PDF）"
         }
     },
     {
@@ -560,7 +648,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Autor (PDF)",
-            "en": "Author (PDF)"
+            "en": "Author (PDF)",
+            "zh": "作者（PDF）"
         }
     },
     {
@@ -569,7 +658,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Titel (PDF)",
-            "en": "Title (PDF)"
+            "en": "Title (PDF)",
+            "zh": "标题（PDF）"
         }
     },
     {
@@ -578,7 +668,8 @@
         "datatype": "plus:Boolean",
         "label": {
             "de": "Schnelle Webanzeige (PDF)",
-            "en": "Optimized for web (PDF)"
+            "en": "Optimized for web (PDF)",
+            "zh": "已针对Web进行优化（PDF）"
         }
     },
     {
@@ -587,7 +678,8 @@
         "datatype": "plus:Boolean",
         "label": {
             "de": "Enthaltenes Acrobat-Formular (PDF)",
-            "en": "Embedded Acrobat form (PDF)"
+            "en": "Embedded Acrobat form (PDF)",
+            "zh": "嵌入式Acrobat表格（PDF）"
         }
     },
     {
@@ -596,7 +688,8 @@
         "datatype": "plus:Boolean",
         "label": {
             "de": "Enthaltenes XFA-Formular (PDF)",
-            "en": "Embedded XFA form (PDF)"
+            "en": "Embedded XFA form (PDF)",
+            "zh": "嵌入式XFA表格（PDF）"
         }
     },
     {
@@ -605,7 +698,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Formatproduzent (PDF-Software)",
-            "en": "Format producer (PDF software)"
+            "en": "Format producer (PDF software)",
+            "zh": "格式生成器（PDF）"
         }
     },
     {
@@ -614,7 +708,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Erstellungsdatum (PDF)",
-            "en": "Creation date (PDF)"
+            "en": "Creation date (PDF)",
+            "zh": "创建日期（PDF）"
         }
     },
     {
@@ -623,7 +718,8 @@
         "datatype": "plus:Relation",
         "label": {
             "de": "von Projekt erstellt",
-            "en": "created by project"
+            "en": "created by project",
+            "zh": "由项目创建"
         }
     },
     {
@@ -632,7 +728,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Zuletzt geändert (PDF)",
-            "en": "Last modified (PDF)"
+            "en": "Last modified (PDF)",
+            "zh": "上次修改（PDF）"
         }
     },
     {
@@ -641,7 +738,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "Version des PDF-Formats",
-            "en": "PDF format version"
+            "en": "PDF format version",
+            "zh": "PDF格式版本"
         }
     },
     {
@@ -650,7 +748,8 @@
         "datatype": "plus:String",
         "label": {
             "de": "wird zu Objekt konvertiert",
-            "en": "is converted to object"
+            "en": "is converted to object",
+            "zh": "转换为对象类型"
         }
     },
     {
@@ -660,7 +759,8 @@
         "rels": {},
         "label": {
             "de": "plusmeta-Namensraum",
-            "en": "plusmeta namespace"
+            "en": "plusmeta namespace",
+            "zh": "plusmeta命名空间"
         },
         "indicators": [
             "plus"
@@ -673,7 +773,8 @@
         "rels": {},
         "label": {
             "de": "RDF-Namensraum",
-            "en": "RDF namespace"
+            "en": "RDF namespace",
+            "zh": "RDF命名空间"
         },
         "indicators": [
             "rdf"
@@ -686,7 +787,8 @@
         "rels": {},
         "label": {
             "de": "RDFS-Namensraum",
-            "en": "RDFS namespace"
+            "en": "RDFS namespace",
+            "zh": "RDFS命名空间"
         },
         "indicators": [
             "rdfs"
@@ -699,7 +801,8 @@
         "rels": {},
         "label": {
             "de": "Icon-Namensraum",
-            "en": "Icon namespace"
+            "en": "Icon namespace",
+            "zh": "图标命名空间"
         },
         "indicators": [
             "mdi"
@@ -712,7 +815,8 @@
         "rels": {},
         "label": {
             "de": "HTML-Namensraum",
-            "en": "HTML namespace"
+            "en": "HTML namespace",
+            "zh": "HTML命名空间"
         },
         "indicators": [
             "html"
@@ -725,7 +829,8 @@
         "rels": {},
         "label": {
             "de": "XML-Namensraum",
-            "en": "XML namespace"
+            "en": "XML namespace",
+            "zh": "XML命名空间"
         },
         "indicators": [
             "xml"
@@ -738,7 +843,8 @@
         "rels": {},
         "label": {
             "de": "PDF/A-Namensraum",
-            "en": "PDF/A namespace"
+            "en": "PDF/A namespace",
+            "zh": "PDF/A标识命名空间"
         },
         "indicators": [
             "pdf"
@@ -751,7 +857,8 @@
         "rels": {},
         "label": {
             "de": "JSON-Datei",
-            "en": "JSON file"
+            "en": "JSON file",
+            "zh": "JSON文件"
         },
         "indicators": [
             "json"
