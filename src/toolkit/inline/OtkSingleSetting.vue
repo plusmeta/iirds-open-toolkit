@@ -10,6 +10,7 @@
           :label="getLabel"
           :readonly="isReadonly"
           :disabled="isReadonly"
+          :class="{ 'required': required }"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -26,6 +27,7 @@
           :label="getLabel"
           :readonly="isReadonly"
           :disabled="isReadonly"
+          :class="{ 'required': required }"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -59,6 +61,7 @@
           :label="getLabel"
           :readonly="isReadonly"
           :disabled="isReadonly"
+          :class="{ 'required': required }"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -93,7 +96,7 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
     name: "SingleSetting",
@@ -115,6 +118,10 @@ export default {
             type: Boolean,
             default: true
         },
+        required: {
+            type: Boolean,
+            default: false
+        },
         icon: {
             type: String,
             required: false,
@@ -131,9 +138,7 @@ export default {
             return this.getPropertyAttributeById(this.uri, "plus:readonly") ?? false;
         },
         getLabel() {
-            let label = this.getPropertyLabelById(this.uri);
-            if (this.required) label += "*";
-            return label;
+            return this.getPropertyLabelById(this.uri);
         },
         getType() {
             return this.getPropertyType(this.uri);

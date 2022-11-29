@@ -113,7 +113,8 @@ export default {
             "getCurrentObjectTypes",
             "getCurrentObjectsByType",
             "getMetadataValueByURI",
-            "getMetadataByURI"
+            "getMetadataByURI",
+            "countInvalidObjects"
         ]),
         ...mapGetters("properties", [
             "getPropertyLabelById",

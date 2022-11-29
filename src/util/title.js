@@ -7,7 +7,7 @@ const titleUtils = {
 
         store.getters["properties/getPropertiesByRole"]("plus:TitleProperty").forEach((prop) => {
             if (ignoreGeneratedTitle && prop.identifier === "plus:GeneratedTitle") return;
-            if (ignoreGeneratedTitle && prop.identifier === "iirds:title") return;
+            if (ignoreGeneratedTitle && prop.identifier === "vdi:has-title") return;
             let value = util.getMetadataValue(object, prop.identifier);
             if (value && typeof value === "string") value = value.trim();
             let prio = Number(store.getters["properties/getPropertyAttributeById"](prop.identifier, "plus:titlePriority")) || i++;

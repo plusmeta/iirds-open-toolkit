@@ -6,10 +6,10 @@
     "Event": "iirds:Event",
     "InformationSubject": "iirds:InformationSubject",
     "ProductFeature": "iirds:ProductFeature",
-    "ProductVariant": "iirds:ProductVariant",
+    "ProductVariant": "vdi:ProductVariant",
     "Role": "iirds:Role",
     "Supply": "iirds:Supply",
     "TopicType": "iirds:TopicType",
-    "Organization": "plus:Organization",
-    "Language": "plus:Language"
+    "Organization": "vdi:Organization",
+    "Language": "vdi:Language"
 }

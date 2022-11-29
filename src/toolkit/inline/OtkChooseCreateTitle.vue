@@ -15,6 +15,7 @@
         :disabled="isApproved || loading"
         :loading="loading"
         :label="getLabel"
+        :class="{ 'required': required }"
         :return-object="false"
         prepend-icon="mdi-format-title"
         :rules="[checkRequired]"
@@ -23,7 +24,7 @@
         <template v-slot:no-data>
           <v-list-item class="py-0" dense>
             <v-list-item-content>
-              {{ $t("Actions.createEntry") }}
+              <span v-html="$t('Actions.createEntry')" />
             </v-list-item-content>
           </v-list-item>
         </template>
@@ -75,7 +76,7 @@ export default {
         allTitles() {
             let uniqueTitles = new Set([
                 this.getString("pdf:Title"),
-                this.getString("iirds:title"),
+                this.getString("vdi:has-title"),
                 this.getString("html:title"),
                 this.getString("plus:SimplePDFTitle"),
                 this.getString("plus:SimpleHTMLTitle"),
@@ -91,9 +92,9 @@ export default {
         getTitleBase() {
             return [
                 this.getString("plus:relates-to-manufacturer"),
-                this.getString("iirds:has-document-type"),
-                this.getString("iirds:relates-to-product-variant"),
-                this.getString("iirds:language")
+                this.getString("vdi:has-document-type"),
+                this.getString("vdi:relates-to-product-variant"),
+                this.getString("vdi:has-language")
             ];
         },
         getTitleParts() {
@@ -102,7 +103,6 @@ export default {
         getLabel() {
             let label = "";
             if (this.label) label += this.getPropertyLabelById(this.propclass);
-            if (this.label && this.required) label += "*";
             return label;
         },
         ...mapGetters("storage", [
@@ -131,15 +131,6 @@ export default {
                     provenance
                 }
             });
-        },
-        async guessTitle() {
-            let generatedTitle = this.generateTitle();
-            let confidence = (this.getTitleParts.length / this.getTitleBase.length) * 0.9;
-            if (generatedTitle) {
-                await this.onTitleChange(generatedTitle, "System", confidence);
-            } else {
-                await this.onTitleChange(this.allTitles[0], "File", 0.9);
-            }
         },
         getString(uri) {
             let value = this.getMetadataValueByURI(this.objectUuid, uri);

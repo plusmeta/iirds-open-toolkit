@@ -43,26 +43,17 @@ const getters = {
     indexByIdentifier: (state, getters) => {
         return getters._dict.ixById;
     },
-    indizesByType: (state, getters) => {
-        return getters._dict.ixsByType;
-    },
     indizesByClass: (state, getters) => {
         return getters._dict.ixsByClass;
     },
     indizesByRole: (state, getters) => {
         return getters._dict.ixsByRole;
     },
-    getDict: (state, getters) => {
-        return getters._dict;
-    },
     isProperty: (state, getters) => (identifier) => {
         return !!state.properties[getters.indexByIdentifier[identifier]];
     },
     getPropertyById: (state, getters) => (identifier) => {
         return state.properties[getters.indexByIdentifier[identifier]];
-    },
-    getPropertyIndexById: (state, getters) => (identifier) => {
-        return getters.indexByIdentifier[identifier];
     },
     getPropertiesByClass: (state, getters) => (className) => {
         if (className === undefined) {
@@ -71,15 +62,6 @@ const getters = {
             return getters.indizesByClass[className]?.map(ix => state.properties[ix]).filter(Boolean) || [];
         } else if (Array.isArray(className)) {
             return className.flatMap(name => getters.indizesByClass[name]?.map(ix => state.properties[ix])).filter(Boolean) || [];
-        } else return [];
-    },
-    getPropertiesByType: (state, getters) => (type) => {
-        if (type === undefined) {
-            return state.properties;
-        } else if (typeof type === "string") {
-            return getters.indizesByType[type]?.map(ix => state.properties[ix]).filter(Boolean) || [];
-        } else if (Array.isArray(type)) {
-            return type.flatMap(name => getters.indizesByType[name]?.map(ix => state.properties[ix])).filter(Boolean) || [];
         } else return [];
     },
     getPropertiesByRole: (state, getters) => (role) => {
@@ -141,9 +123,9 @@ const getters = {
             let locale = lang ?? rootGetters["settings/getCurrentLocale"];
             if (!property) {
                 return "";
-            } else if (!!property.labels && typeof property.labels === "object" && !!property.labels[locale]) {
+            } else if (!!property.labels && typeof property.labels === "object" && (!!property.labels[locale] || !!property.labels[process.env.VUE_APP_I18N_FALLBACK_LOCALE])) {
                 return property.labels[locale];
-            } else if (!!property.label && typeof property.label === "object" && !!property.label[locale]) {
+            } else if (!!property.label && typeof property.label === "object" && (!!property.label[locale] || !!property.labels[process.env.VUE_APP_I18N_FALLBACK_LOCALE])) {
                 return property.label[locale];
             } else if (typeof property.label === "string") {
                 return property.label;
@@ -177,6 +159,9 @@ const getters = {
         } else {
             return [];
         }
+    },
+    isRequired: (state, getters) => (uri) => {
+        return getters.getPropertyAttributeById(uri, "plus:requiredAssignment") === true;
     },
     resolveAssignedRelationType: (state, getters) => (uri) => {
         let resolved = getters.getPropertyRelationById(uri, "plus:has-relations");
@@ -226,8 +211,18 @@ const getters = {
                     icon
                 };
             })
+            .filter(prop => prop?.value?.length > 0)
             .sort((a, b) => a?.text?.localeCompare(b?.text))
             .sort((a, b) => a.position - b.position);
+    },
+    getPropertyTooltip: (state, getters, rootState, rootGetters) => (propId) => {
+        let attrValue = getters.getPropertyAttributeById(propId, "plus:tooltipInfo");
+        let locale = rootGetters["settings/getCurrentLocale"];
+        if (attrValue && locale) {
+            return attrValue[locale] || attrValue[process.env.VUE_APP_I18N_FALLBACK_LOCALE];
+        } else {
+            return undefined;
+        }
     }
 };
 

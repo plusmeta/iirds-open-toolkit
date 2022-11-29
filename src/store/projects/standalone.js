@@ -12,22 +12,10 @@ const state = {
 
 // getters
 const getters = {
-    getProjectByUuid: (state, getters) => (projectUuid) => {
+    getProjectByUuid: state => (projectUuid) => {
         return state.projects.find((project) => {
             return project.uuid === projectUuid;
         });
-    },
-    getProjectIndexByUuid: (state, getters) => (projectUuid) => {
-        return state.projects.findIndex((project) => {
-            return project.uuid === projectUuid;
-        });
-    },
-    getPublishedState: (state, getters, rootState, rootGetters) => (projectUuid) => {
-        return 0;
-    },
-    countCurrentObjects: (state, getters) => {
-        let currentProject = getters.getCurrentProject;
-        return (currentProject) ? currentProject.objectUuids.length : 0;
     },
     getCurrentProject: (state, getters) => {
         return state.projects.find((project) => {
@@ -36,11 +24,6 @@ const getters = {
     },
     getCurrentProjectUuid: (state, getters, rootState, rootGetters) => {
         return rootGetters["settings/getCurrentProjectUuid"];
-    },
-    getCurrentProjectIndex: (state, getters) => {
-        return state.projects.findIndex((project) => {
-            return project.uuid === getters.getCurrentProjectUuid;
-        });
     },
     getCurrentProjectName: (state, getters) => {
         let currentProject = getters.getCurrentProject;
@@ -80,11 +63,11 @@ const actions = {
             commit("SET_WORKFLOW_STEP", {project, toProgress});
         }
     },
-    nextProjectStepLocal({ commit, getters, dispatch }) {
+    nextProjectStepLocal({ commit, getters }) {
         let project = getters.getCurrentProject;
         commit("NEXT_WORKFLOW_STEP", project);
     },
-    previousProjectStepLocal({ commit, getters, dispatch }) {
+    previousProjectStepLocal({ commit, getters }) {
         let project = getters.getCurrentProject;
         commit("PREV_WORKFLOW_STEP", project);
     },
@@ -142,9 +125,6 @@ const mutations = {
     UPDATE_PROJECT_RELS (state, {project, relation}) {
         project.rels = Object.assign({}, project.rels, relation);
     },
-    UPDATE_PROJECT_REL (state, {project, key, value}) {
-        Vue.set(project.rels, key, value);
-    },
     SET_WORKFLOW_STEP (state, {project, toProgress}) {
         project.progress = toProgress;
     },
@@ -153,9 +133,6 @@ const mutations = {
     },
     PREV_WORKFLOW_STEP (state, project) {
         project.progress--;
-    },
-    REMOVE_OBJECT_FROM_PROJECT (state, {project, objectIndex}) {
-        project.objectUuids.splice(objectIndex, 1);
     }
 };
 

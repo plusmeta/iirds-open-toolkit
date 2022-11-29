@@ -38,14 +38,8 @@ const getters = {
     indexByUuid: (state, getters) => {
         return getters._dict.ixByUuid;
     },
-    indexById: (state, getters) => {
-        return getters._dict.ixById;
-    },
     indexByExternalId: (state, getters) => {
         return getters._dict.ixByExId;
-    },
-    indizesByType: (state, getters) => {
-        return getters._dict.ixsByType;
     },
     indizesCurrentByType: (state, getters) => {
         return getters.getCurrentObjectUuids.reduce((map, uuid) => {
@@ -59,41 +53,14 @@ const getters = {
             return map;
         }, {});
     },
-    countAllObjects: (state) => {
-        return state.objects.length;
-    },
-    countObjectsByType: getters => (type) => {
-        return getters.getObjectsByType(type).length;
-    },
-    countProjectObjectsByType: (state, getters) => (projectUuid, type) => {
-        return getters.getProjectObjectsByType(projectUuid, type).length;
-    },
     getObjectByIndex: (state, getters) => (index) => {
         return state.objects[index];
-    },
-    getObjectById: (state, getters) => (objectId) => {
-        return getters.getObjectByIndex(getters.indexById[objectId]);
     },
     getObjectByExternalId: (state, getters) => (externalId) => {
         return getters.getObjectByIndex(getters.indexByExternalId[externalId]);
     },
     getObjectByUuid: (state, getters) => (objectUuid) => {
         return getters.getObjectByIndex(getters.indexByUuid[objectUuid]);
-    },
-    getObjectType: (state, getters) => (objectUuid) => {
-        return getters.getObjectByUuid(objectUuid)?.type;
-    },
-    getObjectsByType: state => (type) => {
-        if (type === undefined) {
-            return state.objects;
-        } else if (typeof type === "string") {
-            return getters.indizesByType[type]?.map(getters.getObjectByIndex).filter(Boolean) || [];
-        } else if (Array.isArray(type)) {
-            return type.flatMap(typ => getters.indizesByType[typ]?.map(getters.getObjectByIndex)).filter(Boolean) || [];
-        } else return [];
-    },
-    getObjectUuidsByType: (state, getters) => (type) => {
-        return getters.getObjectsByType(type).map(object => object.uuid);
     },
     getMetadata: (state, getters) => (objectUuid) => {
         const object = getters.getObjectByUuid(objectUuid);
@@ -111,46 +78,6 @@ const getters = {
             return null;
         }
     },
-    getObjectUuidsByProject: (state, getters, rootState, rootGetters) => (projectUuid) => {
-        return rootGetters["projects/getObjectUuidsForProject"](projectUuid);
-    },
-    getObjectsByProject: (state, getters, rootState, rootGetters) => (projectUuid) => {
-        return getters.getObjectUuidsByProject(projectUuid).map((uuid) => {
-            state.objects[getters.indexByUuid[uuid]];
-        });
-    },
-    getProjectObjectsByType: (state, getters) => (projectUuid, type) => {
-        let projectObjects = getters.getObjectsByProject(projectUuid);
-
-        if (type === undefined) {
-            return projectObjects;
-        } else if (typeof type === "string") {
-            return projectObjects.filter(object => object.type === type);
-        } else if (Array.isArray(type)) {
-            return projectObjects.filter(object => type.includes(object.type));
-        } else return [];
-    },
-    getProjectObjectUuidsByType: (state, getters) => (projectUuid, type) => {
-        return getters.getProjectObjectsByType(projectUuid, type).map(object => object.uuid);
-    },
-    getObjectTypes: (state, getters) => {
-        return Object.entries(getters.indizesByType).reduce((obj,[k, v]) => {
-            obj[k] = v.length;
-            return obj;
-        }, {});
-    },
-    isMetaDataLoading: (state) => {
-        return false;
-    },
-    isObjectLoading: (state) => {
-        return false;
-    },
-    isSourceDataLoading: (state) => {
-        return false;
-    },
-    isBatchLoading: (state) => {
-        return false;
-    },
     getActiveSourceMbs: (state) => {
         const sizeInByte = state.objects
             .filter(object => !!object?.source?.data)
@@ -160,11 +87,7 @@ const getters = {
                 return prev;
             }, 0);
 
-        const sizeInMByte = sizeInByte / (1000 * 1000);
-        return sizeInMByte;
-    },
-    countCurrentObjects: (state, getters, rootState, rootGetters) => {
-        return rootGetters["projects/getCurrentObjectUuids"].length;
+        return sizeInByte / (1000 * 1000);
     },
     countCurrentObjectsByType: (state, getters) => (type) => {
         return getters.getCurrentObjectsByType(type).length;
@@ -190,20 +113,34 @@ const getters = {
             return type.flatMap(typ => (getters.indizesCurrentByType[typ] || []).map(index => state.objects[index])).filter(Boolean);
         } else return [];
     },
-    getCurrentObjectUuidsByType: (state, getters, rootState, rootGetters) => (type) => {
-        return getters.getCurrentObjectsByType(type).map(object => object.uuid);
-    },
     getSanitizedMetaValueByURI: (state, getters, rootState, rootGetters) => (objectUuid, uri) => {
         let value = getters.getMetadataValueByURI(objectUuid, uri);
         return Array.isArray(value) ? value[0] : value;
+    },
+    countInvalidObjects: (state, getters, rootState, rootGetters) => {
+        const metaUrisToCheck = rootGetters["properties/getPropertiesByRole"]("plus:AssignableMetadata")
+            .filter(m => rootGetters["properties/isRequired"](m.identifier))
+            .map(m => rootGetters["properties/resolveAssignedRelationType"](m.identifier));
+
+        return getters.getCurrentObjectsByType("plus:Document").filter((o) => {
+            return !metaUrisToCheck.every((uri) => {
+
+                const val = o.meta[uri]?.value;
+                if (val === null || val === undefined) {
+                    return false;
+                } else if (Array.isArray(val)) {
+                    return val?.filter(Boolean).length > 0;
+                } else if (typeof val === "string"){
+                    return val?.length > 0;
+                }
+                return true;
+            });
+        })?.length;
     }
 };
 
 // actions
 const actions = {
-    clearStorage ({ commit }) {
-        commit("CLEAR_STORAGE");
-    },
     saveObjectLocal({ commit, getters }, updatedObject) {
         const uuid = updatedObject.uuid;
         let existingObject = getters.getObjectByUuid(uuid);
@@ -222,33 +159,11 @@ const actions = {
             commit("ADD_OBJECT", updatedObject);
         }
     },
-    saveObjectsLocal({ commit, getters, dispatch, state }, updatedObjects) {
-        let objectsToAdd = [];
-        for (let updatedObject of updatedObjects) {
-            if (getters.getObjectByUuid(updatedObject.uuid)) {
-                dispatch("saveObjectLocal", updatedObject);
-            }
-            else {
-                objectsToAdd.push(updatedObject);
-            }
-        }
-        commit("ADD_OBJECTS", objectsToAdd);
-    },
     addMetadata({ commit, getters }, {objectUuid, objectMeta}) {
         let objectIndex = getters.indexByUuid[objectUuid];
         if (Number.isInteger(objectIndex)) {
             commit("UPDATE_METADATUM", {objectIndex, objectMeta});
         }
-    },
-    deleteMetadata({ commit, getters }, {objectUuid, objectMeta}) {
-        let objectIndex = getters.indexByUuid[objectUuid];
-        if (Number.isInteger(objectIndex)) {
-            commit("DELETE_METADATA", {objectIndex, objectMeta});
-        }
-    },
-    deleteObjectData ({ commit, getters }, objectUuid) {
-        let objectSource = getters.getObjectByUuid(objectUuid).source;
-        commit("DELETE_OBJECT_SOURCE_LOCAL_DATA", objectSource);
     },
     deleteObject({ dispatch }, objectUuid) {
         dispatch("deleteObjects", [objectUuid]);
@@ -257,7 +172,7 @@ const actions = {
         let objects = objectUuids.map(getters.getObjectByUuid).filter(Boolean);
         commit("DELETE_OBJECTS", objects.map(object => object.uuid).filter(Boolean));
     },
-    uploadThumbnail({ getters, commit, rootGetters }, { objectUuid, file }) {
+    uploadThumbnail({}, {}) {
         return true;
     },
     fetchSource({ commit, getters }, objectUuid) {
@@ -283,17 +198,6 @@ const mutations = {
         Array.from(Object.values(payload.meta || {})).forEach(m => template.metadata(m));
         state.objects.push(payload);
     },
-    ADD_OBJECTS (state, payload) {
-        payload.map((obj) => {
-            let object = template.object(obj);
-            Array.from(Object.values(object.meta || {})).forEach(m => template.metadata(m));
-            return object;
-        });
-        state.objects.push(...payload);
-    },
-    CLEAR_STORAGE (state) {
-        Vue.set(state, "objects", []);
-    },
     UPDATE_OBJECT (state, { oldObject, updatedObject }) {
         delete updatedObject.source;
         delete updatedObject.meta;
@@ -302,19 +206,6 @@ const mutations = {
     UPDATE_OBJECT_SOURCE (state, { oldSource, updatedSource }) {
         delete updatedSource.data;
         oldSource = Object.assign(oldSource, updatedSource);
-    },
-    UPDATE_OBJECT_DATA (state, { source, data }) {
-        Vue.set(source, "data", data);
-    },
-    DELETE_OBJECT_SOURCE_LOCAL_DATA(state, objectSource) {
-        objectSource.data = null;
-        Vue.delete(objectSource, "data");
-    },
-    UPDATE_OBJECT_SOURCE_THUMB_URI(state, { source, uri }) {
-        Vue.set(source, "thumbnailUri", uri);
-    },
-    UPDATE_OBJECT_SOURCE_URI (state, { source, uri }) {
-        Vue.set(source, "uri", uri);
     },
     UPDATE_OBJECT_META (state, { metaObject, updatedMeta }) {
         Array.from(Object.values(updatedMeta))
@@ -332,20 +223,9 @@ const mutations = {
             Vue.set(metaObject.meta, updatedMeta.uri, updatedMeta);
         }
     },
-    DELETE_METADATA (state, {objectMeta, objectIndex}) {
-        objectMeta = template.metadata(objectMeta);
-        let metaObj = state.objects[objectIndex].meta || {};
-        Vue.delete(metaObj, objectMeta.uri);
-    },
-    DELETE_OBJECT (state, payload) {
-        state.objects.splice(payload, 1);
-    },
     DELETE_OBJECTS (state, payload) {
         state.objects = state.objects.filter(object => !payload.includes(object.uuid));
-    },
-    RESET_LOCAL_OBJECTS(state) {
-        Vue.set(state, "objects", []);
-    },
+    }
 };
 
 export default {

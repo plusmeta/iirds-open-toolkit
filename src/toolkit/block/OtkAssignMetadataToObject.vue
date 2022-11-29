@@ -60,11 +60,12 @@
                 <v-row align="center">
                   <v-col>
                     <ChooseCreateTitle
-                      v-if="custom.value === 'plus:Title'"
+                      v-if="custom.value === 'vdi:Title'"
                       :key="custom.value"
                       :object-uuid="object.uuid"
-                      propclass="plus:Title"
-                      proprelation="iirds:title"
+                      propclass="vdi:Title"
+                      proprelation="vdi:has-title"
+                      :required="custom.required"
                       :label="true"
                     />
                     <ChooseTaxonomyNodes
@@ -102,6 +103,7 @@
                       :key="custom.value"
                       :object-uuid="object.uuid"
                       :proprelation="custom.rel"
+                      :required="custom.required"
                       :label="true"
                       :icon="custom.icon"
                     />
@@ -196,7 +198,7 @@ export default {
             return this.objectMetadata
                 .map((prop) => {
                     const relation = this.getPropertyRelationById(prop.identifier, "plus:has-relations")[0] || prop.identifier;
-                    const required = this.getPropertyRelationById(prop.identifier, "plus:has-roles").includes("plus:RequiredMetadata");
+                    const required = this.isRequired(prop.identifier);
                     const single = this.getPropertyRelationById(prop.identifier, "plus:has-roles").includes("plus:SingleMetadata");
                     const icon = this.getPropertyRelationById(prop.identifier, "plus:has-icons")[0];
                     const position = this.getPropertyAttributeById(prop.identifier, "plus:metaListPriority") || 99;
@@ -232,6 +234,7 @@ export default {
             "getMetadataValueByURI"
         ]),
         ...mapGetters("properties", [
+            "isRequired",
             "getPropertyById",
             "getPropertyRelationById",
             "getPropertiesByRole",

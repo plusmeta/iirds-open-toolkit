@@ -513,11 +513,11 @@ export default {
 
             const predefined = [
                 {
-                    id: "iirds:revision",
+                    id: "vdi:revision",
                     value: 1
                 },
                 {
-                    id: "plus:Language",
+                    id: "vdi:Language",
                     value: [match.language(this.$store, this.getCurrentLocale)]
                 }
             ];

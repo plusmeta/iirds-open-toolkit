@@ -218,15 +218,15 @@ export default {
         async generateVDI() {
             this.titleMessage = this.$t("Packages.generate");
 
-            const productLabel = this.getCurrentProjectRelationById("iirds:ProductVariant")?.[0];
-            const autoIdValues = this.getCurrentProjectRelationById("plus:IEC61406");
-            const snValues = this.getCurrentProjectRelationById("plus:SerialNumber");
+            const productLabel = this.getCurrentProjectRelationById("vdi:ProductVariant")?.[0];
+            const autoIdValues = this.getCurrentProjectRelationById("vdi:IEC61406");
+            const snValues = this.getCurrentProjectRelationById("vdi:SerialNumber");
             this.identities = [];
             if (autoIdValues?.length > 0) {
-                this.identities.push({ uri: "plus:IEC61406", value: autoIdValues});
+                this.identities.push({ uri: "vdi:IEC61406", value: autoIdValues});
             }
             if (snValues?.length > 0) {
-                this.identities.push({uri: "plus:SerialNumber", value: snValues });
+                this.identities.push({uri: "vdi:SerialNumber", value: snValues });
             }
 
             const [containerName, main] = await this.generateDocumentationContainer([productLabel, this.identities]);
@@ -327,11 +327,11 @@ export default {
 
 
             let metaSets = [
-                { uri: "iirds:language", value: [match.language(this.$store, this.getCurrentLocale)] },
+                { uri: "vdi:has-language", value: [match.language(this.$store, this.getCurrentLocale)] },
                 { uri: "pdf:totalPages", value: nrOfPages },
-                { uri: "iirds:title", value: mainDocumentLabel },
+                { uri: "vdi:has-title", value: mainDocumentLabel },
                 { uri: "vdi:has-document-category", value: ["vdi:ClassId:01-01"] },
-                { uri: "iirds:has-document-type", value: ["vdi:MainDocument"] },
+                { uri: "vdi:has-document-type", value: ["vdi:MainDocument"] },
                 { uri: "plus:created-by-project", value: [this.getCurrentProjectUuid] },
                 { uri: "plus:CreationDate", value: Date.now() }
             ];
@@ -369,10 +369,10 @@ export default {
             });
 
             let metaSets = [
-                { uri: "iirds:language", value: [match.language(this.$store, this.getCurrentLocale)] },
-                { uri: "iirds:title", value: title },
+                { uri: "vdi:has-language", value: [match.language(this.$store, this.getCurrentLocale)] },
+                { uri: "vdi:has-title", value: title },
                 { uri: "vdi:has-document-category", value: ["vdi:ClassId:01-01"] },
-                { uri: "iirds:has-document-type", value: ["vdi:MainDocument"] },
+                { uri: "vdi:has-document-type", value: ["vdi:MainDocument"] },
                 { uri: "plus:created-by-project", value: [this.getCurrentProjectUuid] },
                 { uri: "plus:CreationDate", value: Date.now() }
             ];
@@ -522,7 +522,7 @@ export default {
                 vers.att("NumberOfPages", nrOfPages);
             }
 
-            let languages = util.getMetadataValue(object, "iirds:language") || [];
+            let languages = util.getMetadataValue(object, "vdi:has-language") || [];
             for (let language of languages) {
                 vers.ele("Language").txt(match.parseLocale(language));
             }
@@ -534,14 +534,14 @@ export default {
                     "OrganizationOfficialName": this.getOrganization.fullName
                 });
 
-            const title = util.getMetadataValue(object, "iirds:title") || "";
+            const title = util.getMetadataValue(object, "vdi:has-title") || "";
 
             for (let language of languages) {
                 const locale = match.parseLocale(language);
 
                 let { generatedTitle } = titleUtils.generateTitle(this.$store, object, locale);
                 if (!generatedTitle) {
-                    let docTypeId = util.getMetadataValueAsArray(object, "iirds:has-document-type")[0];
+                    let docTypeId = util.getMetadataValueAsArray(object, "vdi:has-document-type")[0];
                     let docTypeProp = this.getPropertyById(docTypeId);
                     if (docTypeProp && docTypeProp.description) {
                         generatedTitle = docTypeProp.description;
@@ -625,22 +625,22 @@ export default {
                 this.getPropertyLabelById("vdi:DocumentCategory"),
                 this.getPropertyLabelById("plus:Document") + " ID",
                 "Version",
-                this.getPropertyLabelById("plus:Language"),
-                this.getPropertyLabelById("plus:Title")
+                this.getPropertyLabelById("vdi:Language"),
+                this.getPropertyLabelById("vdi:Title")
             ]];
             let body = [];
             if (pv) {
                 const processDocsConfig = this.getCurrentObjectsByType(["plus:Document", "vdi:DocumentationContainer"]);
                 for (let object of processDocsConfig) {
                     let VDIDocumentCategories = util.getMetadataValue(object, "vdi:has-document-category") || [];
-                    let languages = util.getMetadataValue(object, "iirds:language") || [];
+                    let languages = util.getMetadataValue(object, "vdi:has-language") || [];
                     body.push([
                         VDIDocumentCategories.map(c => this.getPropertyAttributeById(c, "plus:publicName")).join(",\n"),
                         VDIDocumentCategories.map(c => this.getPropertyLabelById(c)).join(",\n"),
                         util.getMetadataValue(object, "vdi:DocumentId") || (object.id || 1312),
                         util.getMetadataValue(object, "iirds:revision") || 1,
                         languages.map(lang => match.parseLocale(lang)).join(", "),
-                        util.getMetadataValue(object, "iirds:title")
+                        util.getMetadataValue(object, "vdi:has-title")
                     ]);
                 }
             }

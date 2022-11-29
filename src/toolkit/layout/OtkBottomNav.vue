@@ -220,16 +220,12 @@ export default {
         async nextStep() {
             if (!this.isLastStep) {
                 this.showExplainer = false;
-                let workflow = this.getCurrentWorkflow;
-                let nextStepId = workflow.steps[this.getCurrentProgress].id;
                 await this.nextProjectStepLocal();
             }
         },
         async previousStep() {
             if (!this.isFirstStep) {
                 this.showExplainer = false;
-                let workflow = this.getCurrentWorkflow;
-                let previousStepId = workflow.steps[this.getCurrentProgress - 2].id;
                 if (this.arePreviousRulesValid) {
                     await this.previousProjectStepLocal();
                 } else {
@@ -237,9 +233,9 @@ export default {
                 }
             }
         },
-        async closeProject() {
+        closeProject() {
             this.showExplainer = false;
-            await this.$router.push({name: "OtkThankYou"});
+            window.location.reload();
         },
         ...mapActions("projects", [
             "nextProjectStepLocal",

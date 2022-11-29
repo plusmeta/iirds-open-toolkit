@@ -35,6 +35,7 @@
         <v-col
           v-for="guideline in getGuidelines"
           :key="guideline.id"
+          cols="3"
         >
           <GuidelineColumn :guideline="guideline" />
         </v-col>

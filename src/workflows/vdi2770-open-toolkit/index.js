@@ -73,6 +73,14 @@ export default {
         props: {
             objecttype: ["plus:Document"]
         },
+        rules: [
+            store => store.getters["storage/countInvalidObjects"] === 0
+        ],
+        ruleExpl: {
+            de: "Sie müssen alle mit '*' markierten Felder ausfüllen.",
+            en: "You have to fill out all fields marked with '*'.",
+            zh: ""
+        },
         component: () => import(/* webpackChunkName: "StepBulkAssignMetadata.step" */"@/toolkit/step/OtkStepBulkAssignMetadata")
     },
     {
@@ -94,6 +102,6 @@ export default {
             en: "VDI 2770 container was generated successfully",
             zh: "成功生成 VDI 2770 容器"
         },
-        component: () => import(/* webpackChunkName: "StepGenerateIIRDS.step" */ "@/toolkit/step/OtkStepGenerateVDI2770")
+        component: () => import(/* webpackChunkName: "OtkStepGenerateVDI2770.step" */ "@/toolkit/step/OtkStepGenerateVDI2770")
     }]
 };

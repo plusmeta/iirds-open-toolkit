@@ -71,7 +71,7 @@ export default {
             propObjectType.includes(object.type);
         } else return false;
     },
-    language(store, locale, concept = "plus:Language") {
+    language(store, locale, concept = "vdi:Language") {
         if (!locale) return null;
 
         const normalizeIndicator = ind => (ind.substr(0,1) === "-" || ind.substr(0,1) === "#") ? ind.slice(1) : ind;

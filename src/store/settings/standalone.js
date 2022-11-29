@@ -23,7 +23,46 @@ const state = {
         base_orga_fullname: null,
         base_orga_url: null,
         base_user_mail: null,
-        base_user_name: null
+        base_user_name: null,
+        locale: "de",
+        ui_shortcuts: true,
+        ui_assign_preview: true,
+        ui_assign_filter: null,
+        ui_addobjects_columns: [
+            "name",
+            "sourcetype",
+            "size",
+            "actions"
+        ],
+        theme:{
+            dark: false,
+            logo: {
+                "dark": "/images/plusmeta.svg",
+                "light": "/images/plusmeta_dark.svg"
+            },
+            themes: {
+                "dark": {
+                    "primary": "#dec88e",
+                    "secondary": "#636363",
+                    "accent": "#5755d9",
+                    "error": "#FF5252",
+                    "info": "#5cc5f2",
+                    "success": "#4CAF50",
+                    "warning": "#FFC107",
+                    "anchor": "#c4c4c4"
+                },
+                "light": {
+                    "primary": "#498fcb",
+                    "secondary": "#9c9c9c",
+                    "accent": "#5755d9",
+                    "error": "#FF5252",
+                    "info": "#5cc5f2",
+                    "success": "#4CAF50",
+                    "warning": "#FFC107",
+                    "anchor": "#c4c4c4"
+                }
+            }
+        }
     }
 };
 
@@ -34,9 +73,6 @@ const getters = {
     },
     isDarkTheme: (state) => {
         return !!state.settings?.theme?.dark;
-    },
-    getTheme: (state) => {
-        return state.settings?.theme || {};
     },
     getSetting: state => (key) => {
         return state.settings[key] ?? undefined;
@@ -54,10 +90,10 @@ const getters = {
         const mode = (getters.isDarkTheme) ? "dark" : "light";
         return state.settings.theme?.logo[mode] || "dark";
     },
-    getLogoForTheme: (state, getters, rootGetters) => (theme) => {
+    getLogoForTheme: state => (theme) => {
         return state.settings.theme?.logo[theme] || "dark";
     },
-    isOrgaIsNotValidCount: (state, getters, rootState, rootGetters) => {
+    isOrgaIsNotValidCount: (state, getters) => {
         return [
             getters.getSetting("user_eula"),
             getters.getSetting("base_user_name"),
@@ -65,13 +101,12 @@ const getters = {
             getters.getSetting("base_orga_name"),
             getters.getSetting("base_orga_fullname")
         ].map(Boolean).filter(v => v === false).length;
-
     },
     isProductNotValidCount: (state, getters, rootState, rootGetters) => {
         return [
-            (rootGetters["projects/getCurrentProjectRelationById"]("plus:SerialNumber")?.[0] || rootGetters["projects/getCurrentProjectRelationById"]("plus:IEC61406")?.[0]),
-            rootGetters["projects/getCurrentProjectRelationById"]("iirds:ProductVariant")?.[0],
-            getters.getSetting("base_orga_fullname")
+            (rootGetters["projects/getCurrentProjectRelationById"]("vdi:SerialNumber")?.[0] || rootGetters["projects/getCurrentProjectRelationById"]("vdi:IEC61406")?.[0]),
+            rootGetters["projects/getCurrentProjectRelationById"]("vdi:ProductVariant")?.[0],
+            rootGetters["projects/getCurrentProjectRelationById"]("vdi:EquipmentId")?.[0]
         ].map(Boolean).filter(v => v === false).length;
     },
 };

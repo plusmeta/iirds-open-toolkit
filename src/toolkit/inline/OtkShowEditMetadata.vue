@@ -5,6 +5,7 @@
     :object-uuid="objectUuid"
     :icon="icon"
     :value="assignedMetavalue"
+    :required="required"
     @setting="simpleAssign(objectUuid, $event)"
   >
     <template v-slot:icon="{ icon: innerIcon }">
@@ -37,6 +38,10 @@ export default {
         icon: {
             type: String,
             default: "mdi-circle"
+        },
+        required: {
+            type: Boolean,
+            default: false
         },
         dense: {
             type: Boolean,

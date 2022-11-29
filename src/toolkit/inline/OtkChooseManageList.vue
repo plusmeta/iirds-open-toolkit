@@ -17,6 +17,7 @@
         deletable-chips
         :search-input.sync="search"
         return-object
+        :class="{ 'required': required }"
         :readonly="isReadonly"
         :disabled="isReadonly"
         @input="changeList"
@@ -24,7 +25,7 @@
         <template v-slot:no-data>
           <v-list-item class="py-0">
             <v-list-item-content>
-              {{ $t("Actions.createEntry") }}
+              <span v-html="$t('Actions.createEntry')" />
             </v-list-item-content>
           </v-list-item>
         </template>
@@ -79,7 +80,6 @@ export default {
         getLabel() {
             let label = "";
             if (this.label) label += this.getPropertyLabelById(this.proplist);
-            if (this.label && this.required) label += "*";
             return label;
         },
         getAssignedListEntries() {

@@ -1,7 +1,7 @@
 [
     {
         "identifier": "de-DE",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Deutsch (Deutschland)",
@@ -19,7 +19,7 @@
     },
     {
         "identifier": "en-US",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Englisch (US)",
@@ -33,7 +33,7 @@
     },
     {
         "identifier": "fr-FR",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Französisch (Frankreich)",
@@ -48,7 +48,7 @@
     },
     {
         "identifier": "ru-RU",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Russisch (Russland)",
@@ -63,7 +63,7 @@
     },
     {
         "identifier": "en-GB",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Englisch (Großbritannien)",
@@ -78,7 +78,7 @@
     },
     {
         "identifier": "jp-JP",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Japanisch (Japan)",
@@ -92,7 +92,7 @@
     },
     {
         "identifier": "zh-CN",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Chinesisch (China)",
@@ -106,7 +106,7 @@
     },
     {
         "identifier": "it-IT",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Italienisch (Italien)",
@@ -119,7 +119,7 @@
     },
     {
         "identifier": "pt-BR",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Portugiesisch (Brasilien)",
@@ -132,7 +132,7 @@
     },
     {
         "identifier": "pt-PT",
-        "subClassOf": "plus:Language",
+        "subClassOf": "vdi:Language",
         "datatype": "plus:Instance",
         "label": {
             "de": "Portugiesisch (Portugal)",

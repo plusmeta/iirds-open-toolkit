@@ -12,15 +12,20 @@
       </v-col>
     </v-row>
     <v-card-subtitle
-      class="ma-0 pa-0 px-2 required"
-      style="background-color: inherit; position: absolute; top: -12px; left: 24px;"
+      class="ma-0 pa-0 px-1"
+      :class="{ 'required': required }"
+      style="background-color: inherit; position: absolute; top: -12px; left: -4px;"
     >
-      <label>{{ $t('Otk.productReference') }}</label>
+      <label>{{ label }}</label>
     </v-card-subtitle>
   </v-card>
 </template>
 <script>
 export default {
-    name: "VFormGroup"
+    name: "VFormGroup",
+    props: {
+        label: { type: String, required: true },
+        required: { type: Boolean, default: false }
+    }
 };
 </script>

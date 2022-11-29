@@ -14,6 +14,7 @@
           small-chips
           deletable-chips
           multiple
+          :class="{ 'required': required }"
           @update:search-input="searchInput$.next($event)"
           @click:clear="treeInput$.next(getEmpty)"
           @input="onComboboxInput($event)"
@@ -206,7 +207,6 @@ export default {
             let label = "";
             if (typeof this.label === "string") return this.label;
             if (this.label) label += this.getPropertyLabelById(this.propclass);
-            if (this.label && this.required) label += "*";
             return label;
         },
         getAssignedValues () {
