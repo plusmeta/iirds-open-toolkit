@@ -5,138 +5,141 @@
 -->
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <v-container fluid>
-    <v-layout wrap>
-      <v-flex
-        xs6
-        lg4
-        class="px2"
+  <v-row wrap>
+    <v-col
+      sm="12"
+      lg="4"
+      class="px2"
+    >
+      <PreviewPDF
+        v-if="isPDF"
+        :file="object"
+      />
+      <v-skeleton-loader
+        v-else
+        class="mx-auto"
+        boilerplate
+        type="image"
+        height="400"
+      />
+    </v-col>
+    <v-col
+      sm="12" lg="7"
+      offset-lg="1"
+    >
+      <v-expansion-panels
+        v-model="activeGroups"
+        focusable
+        accordion
+        multiple
       >
-        <PreviewPDF
-          v-if="isPDF"
-          :file="object"
-        />
-        <v-skeleton-loader
-          v-else
-          class="mx-auto"
-          boilerplate
-          type="image"
-          height="400"
-          width="300"
-        />
-      </v-flex>
-      <v-flex class="flex-shrink-1 offset-xs1 xs5 lg7">
-        <v-expansion-panels
-          v-model="activeGroups"
-          focusable
-          accordion
-          multiple
-        >
-          <v-expansion-panel v-for="groupId in getMetadataOrderedGroups" :key="groupId">
-            <v-expansion-panel-header
-              :outlined="!$vuetify.theme.dark"
-              style="min-height: 48px"
-              class="py-0"
+        <v-expansion-panel v-for="groupId in getMetadataOrderedGroups" :key="groupId">
+          <v-expansion-panel-header
+            :outlined="!$vuetify.theme.dark"
+            style="min-height: 48px"
+            class="py-0"
+          >
+            <v-row
+              align="center" no-gutters
+              style="flex-wrap: nowrap;"
             >
-              <v-row no-gutters>
+              <v-col>
+                <span class="subtitle-2">{{ getPropertyLabelById(groupId) }}</span>
+              </v-col>
+              <v-col cols="auto">
+                <v-badge
+                  v-if="countInvalidMetadata(object.uuid, groupId) > 0"
+                  color="accent"
+                  :content="countInvalidMetadata(object.uuid, groupId)"
+                  inline
+                />
+                <v-badge
+                  v-else
+                  color="accent"
+                  icon="mdi-check"
+                  inline
+                />
+              </v-col>
+            </v-row>
+          </v-expansion-panel-header>
+
+          <v-expansion-panel-content class="pt-4">
+            <div
+              v-for="custom in getGroupedMetadata[groupId]"
+              :key="custom.value"
+            >
+              <v-row align="center">
                 <v-col>
-                  <span class="subtitle-2">{{ getPropertyLabelById(groupId) }}</span>
-                </v-col>
-                <v-col cols="auto">
-                  <v-badge
-                    v-if="countInvalidMetadata(object.uuid, groupId) > 0"
-                    color="accent"
-                    :content="countInvalidMetadata(object.uuid, groupId)"
-                    inline
+                  <ChooseCreateTitle
+                    v-if="custom.value === 'vdi:Title'"
+                    :key="custom.value"
+                    :object-uuid="object.uuid"
+                    propclass="vdi:Title"
+                    proprelation="vdi:has-title"
+                    :required="custom.required"
+                    :label="true"
                   />
-                  <v-badge
+                  <ChooseTaxonomyNodes
+                    v-else-if="custom.hasTaxonomyRole"
+                    :object-uuid="object.uuid"
+                    :propclass="custom.value"
+                    :proprelation="custom.rel"
+                    :required="custom.required"
+                    :multiple="custom.multiple"
+                    :label="true"
+                    :icon="custom.icon"
+                  />
+                  <ChooseCreateProperty
+                    v-else-if="custom.type === 'plus:Class'"
+                    :key="custom.value"
+                    :object-uuid="object.uuid"
+                    :propclass="custom.value"
+                    :proprelation="custom.rel"
+                    :required="custom.required"
+                    :multiple="custom.multiple"
+                    :label="true"
+                    :icon="custom.icon"
+                  />
+                  <ChooseManageList
+                    v-else-if="custom.type === 'plus:Array'"
+                    :key="custom.value"
+                    :object-uuid="object.uuid"
+                    :proplist="custom.value"
+                    :required="custom.required"
+                    :label="true"
+                    :icon="custom.icon"
+                  />
+                  <ShowEditMetadata
                     v-else
-                    color="accent"
-                    icon="mdi-check"
-                    inline
+                    :key="custom.value"
+                    :object-uuid="object.uuid"
+                    :proprelation="custom.rel"
+                    :required="custom.required"
+                    :label="true"
+                    :icon="custom.icon"
                   />
+                </v-col>
+                <v-col v-if="custom.tooltip" cols="auto">
+                  <v-tooltip top>
+                    <template v-slot:activator="{ on: tooltip }">
+                      <v-icon
+                        class="cursor-pointer mb-1"
+                        right
+                        v-on="tooltip"
+                      >
+                        mdi-information-outline
+                      </v-icon>
+                    </template>
+                    <div v-html="custom.tooltip" />
+                  </v-tooltip>
                 </v-col>
               </v-row>
-            </v-expansion-panel-header>
-
-            <v-expansion-panel-content class="pt-4">
-              <div
-                v-for="custom in getGroupedMetadata[groupId]"
-                :key="custom.value"
-              >
-                <v-row align="center">
-                  <v-col>
-                    <ChooseCreateTitle
-                      v-if="custom.value === 'vdi:Title'"
-                      :key="custom.value"
-                      :object-uuid="object.uuid"
-                      propclass="vdi:Title"
-                      proprelation="vdi:has-title"
-                      :required="custom.required"
-                      :label="true"
-                    />
-                    <ChooseTaxonomyNodes
-                      v-else-if="custom.hasTaxonomyRole"
-                      :object-uuid="object.uuid"
-                      :propclass="custom.value"
-                      :proprelation="custom.rel"
-                      :required="custom.required"
-                      :multiple="custom.multiple"
-                      :label="true"
-                      :icon="custom.icon"
-                    />
-                    <ChooseCreateProperty
-                      v-else-if="custom.type === 'plus:Class'"
-                      :key="custom.value"
-                      :object-uuid="object.uuid"
-                      :propclass="custom.value"
-                      :proprelation="custom.rel"
-                      :required="custom.required"
-                      :multiple="custom.multiple"
-                      :label="true"
-                      :icon="custom.icon"
-                    />
-                    <ChooseManageList
-                      v-else-if="custom.type === 'plus:Array'"
-                      :key="custom.value"
-                      :object-uuid="object.uuid"
-                      :proplist="custom.value"
-                      :required="custom.required"
-                      :label="true"
-                      :icon="custom.icon"
-                    />
-                    <ShowEditMetadata
-                      v-else
-                      :key="custom.value"
-                      :object-uuid="object.uuid"
-                      :proprelation="custom.rel"
-                      :required="custom.required"
-                      :label="true"
-                      :icon="custom.icon"
-                    />
-                  </v-col>
-                  <v-col v-if="custom.tooltip" cols="auto">
-                    <v-tooltip top>
-                      <template v-slot:activator="{ on: tooltip }">
-                        <v-icon
-                          class="cursor-pointer mb-1"
-                          right
-                          v-on="tooltip"
-                        >
-                          mdi-information-outline
-                        </v-icon>
-                      </template>
-                      <div v-html="custom.tooltip" />
-                    </v-tooltip>
-                  </v-col>
-                </v-row>
-              </div>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
-      </v-flex>
-    </v-layout>
-  </v-container>
+            </div>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

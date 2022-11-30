@@ -257,17 +257,17 @@
               class="pa-5"
             >
               <div
-                class="pa-5 mb-5"
+                class="mt-4 pa-8 mb-4"
                 style="border: 3px dashed grey;"
                 @click="$refs.fileInput.click()"
               >
-                <div class="my-5" style="font-size: 96px">
-                  {{ $t('Objects.none') }}
+                <div class="text-h4 text-md-h2">
+                  {{ $t('Actions.addObject') }}
                 </div>
-                <v-icon :size="96" color="grey">
-                  mdi-cloud-upload-outline
+                <v-icon :size="140" color="grey">
+                  mdi-file-upload-outline
                 </v-icon>
-                <p class="my-5" style="font-size: 24px">
+                <p class="my-2 text-body-1 text-md-h5">
                   {{ $t('Objects.noObjectsExplainer') }}
                 </p>
               </div>
