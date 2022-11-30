@@ -333,7 +333,6 @@
                       <v-text-field
                         v-model="vdiEquipmentId"
                         :prepend-icon="getPropertyIcon('vdi:EquipmentId')"
-                        class="required"
                         :rules="[isNotEmpty]"
                         :label="getPropertyLabelById('vdi:EquipmentId')"
                       />

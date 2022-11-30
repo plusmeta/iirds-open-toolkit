@@ -1226,7 +1226,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Verkehrsflaechenberechnung",
+            "de": "Verkehrsflächenberechnung",
             "en": "Traffic area calculation"
         },
         "indicators": []
@@ -1279,7 +1279,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Flaechen-Raumberechnung",
+            "de": "Flächen-Raumberechnung",
             "en": "Area-space calculation"
         },
         "indicators": []
@@ -1333,7 +1333,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Zusammenstellung der Waermeverluste",
+            "de": "Zusammenstellung der Wärmeverluste",
             "en": "Heat dissipation summary"
         },
         "indicators": []
@@ -1413,7 +1413,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Berechnung der Beleuchtungsstaerke",
+            "de": "Berechnung der Beleuchtungsstärke",
             "en": "Illuminance calculation"
         },
         "indicators": []
@@ -1513,7 +1513,7 @@
             "IEC61355:Identity-number": "EC27"
         },
         "label": {
-            "de": "Spezifikation der PLT-Prozessanschluesse",
+            "de": "Spezifikation der PLT-Prozessanschlüsse",
             "en": "Specification E&I process connections"
         },
         "indicators": []
@@ -1538,7 +1538,7 @@
             "IEC61355:Identity-number": "D00036"
         },
         "label": {
-            "de": "Pruefspezifikation",
+            "de": "Prüfspezifikation",
             "en": "Test specification"
         },
         "indicators": []
@@ -1669,7 +1669,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Geraetespezifikation",
+            "de": "Gerätespezifikation",
             "en": "Specification sheet"
         },
         "indicators": []
@@ -1772,7 +1772,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Konzept fuer Kommunikationseinrichtungen",
+            "de": "Konzept für Kommunikationseinrichtungen",
             "en": "Concept for communication equipment"
         },
         "indicators": []
@@ -2348,7 +2348,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Gewaesserschutzanforderungen",
+            "de": "Gewässerschutzanforderungen",
             "en": "Water protection requirements"
         },
         "indicators": []
@@ -2510,7 +2510,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Pruef- und Wartungsvorschrift",
+            "de": "Prüf- und Wartungsvorschrift",
             "en": "Test and maintenance requirements"
         },
         "indicators": []
@@ -2777,7 +2777,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Pruef- und Wartungsanleitung",
+            "de": "Prüf- und Wartungsanleitung",
             "en": "Test and maintenance recommendations"
         },
         "indicators": []
@@ -2802,7 +2802,7 @@
             "IEC61355:Identity-number": "D00183"
         },
         "label": {
-            "de": "Pruefanweisung",
+            "de": "Prüfanweisung",
             "en": "Inspection Instruction"
         },
         "indicators": []
@@ -3242,7 +3242,7 @@
             "IEC61355:Identity-number": "D00188"
         },
         "label": {
-            "de": "Produkt-Broschuere",
+            "de": "Produkt-Broschüre",
             "en": "Product leaflet"
         },
         "indicators": []
@@ -3991,7 +3991,7 @@
             "IEC61355:Identity-number": "D00162"
         },
         "label": {
-            "de": "Absichtserklaerung",
+            "de": "Absichtserklärung",
             "en": "Letter of intent"
         },
         "indicators": []
@@ -4403,7 +4403,7 @@
             "IEC61355:Identity-number": "D00175"
         },
         "label": {
-            "de": "Schadenseinschaetzung",
+            "de": "Schadenseinschätzung",
             "en": "Damage assesment"
         },
         "indicators": []
@@ -4453,7 +4453,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Maengelruegen",
+            "de": "Mängelrügen",
             "en": "Notification of defects / underperformance"
         },
         "indicators": []
@@ -4603,7 +4603,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Laermschutzgutachten",
+            "de": "Lärmschutzgutachten",
             "en": "noise protection report"
         },
         "indicators": []
@@ -4737,7 +4737,7 @@
             "IEC61355:Identity-number": "D00158"
         },
         "label": {
-            "de": "Laermschutzplan",
+            "de": "Lärmschutzplan",
             "en": "Noise protection plan"
         },
         "indicators": []
@@ -5168,7 +5168,7 @@
             "IEC61355:Identity-number": "D00143"
         },
         "label": {
-            "de": "Uebergabebericht",
+            "de": "Übergabebericht",
             "en": "Handing over protocol"
         },
         "indicators": []
@@ -5368,7 +5368,7 @@
             "IEC61355:Identity-number": "D00153"
         },
         "label": {
-            "de": "Aenderungsmitteilung",
+            "de": "Änderungsmitteilung",
             "en": "Change notification"
         },
         "indicators": []
@@ -5393,7 +5393,7 @@
             "IEC61355:Identity-number": "D00154"
         },
         "label": {
-            "de": "Aenderungsanforderung",
+            "de": "Änderungsanforderung",
             "en": "Change request"
         },
         "indicators": []
@@ -5418,7 +5418,7 @@
             "IEC61355:Identity-number": "D00026"
         },
         "label": {
-            "de": "Aktivitaeten-Netzwerkplan",
+            "de": "Aktivitäten-Netzwerkplan",
             "en": "Activity network plan"
         },
         "indicators": []
@@ -5493,7 +5493,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Projekt Durchfuehrungs Plan",
+            "de": "Projekt Durchführungs Plan",
             "en": "Project execution plan"
         },
         "indicators": []
@@ -5674,7 +5674,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Termingespraechaufzeichnungen",
+            "de": "Termingesprächaufzeichnungen",
             "en": "Schedule control call minutes"
         },
         "indicators": []
@@ -5957,7 +5957,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Praesentationen",
+            "de": "Präsentationen",
             "en": "Presentations"
         },
         "indicators": []
@@ -6312,7 +6312,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Schichtplaene allgemein",
+            "de": "Schichtpläne allgemein",
             "en": "General shift schedules"
         },
         "indicators": []
@@ -6440,7 +6440,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Liste ausfuhrkritischer Ausruestungen",
+            "de": "Liste ausfuhrkritischer Ausrüstungen",
             "en": "Equipment list with export restriction"
         },
         "indicators": []
@@ -7595,7 +7595,7 @@
             "IEC61355:Identity-number": "D00080"
         },
         "label": {
-            "de": "Qualitaetsaufzeichnung",
+            "de": "Qualitätsaufzeichnung",
             "en": "Quality record"
         },
         "indicators": []
@@ -7620,7 +7620,7 @@
             "IEC61355:Identity-number": "D00078"
         },
         "label": {
-            "de": "Qualitaetshandbuch",
+            "de": "Qualitätshandbuch",
             "en": "Quality manual"
         },
         "indicators": []
@@ -7645,7 +7645,7 @@
             "IEC61355:Identity-number": "D00216"
         },
         "label": {
-            "de": "Nicht-Konformitaetsbericht",
+            "de": "Nicht-Konformitätsbericht",
             "en": "Non-conformity report"
         },
         "indicators": []
@@ -7670,7 +7670,7 @@
             "IEC61355:Identity-number": "D00215"
         },
         "label": {
-            "de": "Qualitaeaetsrichtlinie",
+            "de": "Qualitätsrichtlinie",
             "en": "Quality guideline"
         },
         "indicators": []
@@ -7695,7 +7695,7 @@
             "IEC61355:Identity-number": "D00217"
         },
         "label": {
-            "de": "Bericht ueber Korrektur und Praeventivmassnahmen",
+            "de": "Bericht über Korrektur und Präventivmassnahmen",
             "en": "Corrctive and preventive action report"
         },
         "indicators": []
@@ -7720,7 +7720,7 @@
             "IEC61355:Identity-number": "D00082"
         },
         "label": {
-            "de": "Pruefungsbericht (Audit)",
+            "de": "Prüfungsbericht (Audit)",
             "en": "Audit report"
         },
         "indicators": []
@@ -7770,7 +7770,7 @@
             "IEC61355:Identity-number": "D00081"
         },
         "label": {
-            "de": "Pruefungsplan (Audit)",
+            "de": "Prüfungsplan (Audit)",
             "en": "Audit plan"
         },
         "indicators": []
@@ -7798,7 +7798,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Pruefliste",
+            "de": "Prüfliste",
             "en": "Check list"
         },
         "indicators": []
@@ -7848,7 +7848,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Pruefplan",
+            "de": "Prüfplan",
             "en": "Test plan"
         },
         "indicators": []
@@ -7873,7 +7873,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Maengelliste",
+            "de": "Mängelliste",
             "en": "List of deficiencies"
         },
         "indicators": []
@@ -7923,7 +7923,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Qualitaetsplan",
+            "de": "Qualitätsplan",
             "en": "Quality plan"
         },
         "indicators": []
@@ -8055,7 +8055,7 @@
             "IEC61355:Identity-number": "D00083"
         },
         "label": {
-            "de": "Pruefbescheinigung",
+            "de": "Prüfbescheinigung",
             "en": "Test certificate"
         },
         "indicators": []
@@ -8080,7 +8080,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Pruefblatt fuer Schutzeinrichtungen",
+            "de": "Prüfblatt für Schutzeinrichtungen",
             "en": "Test sheet for SIF"
         },
         "indicators": []
@@ -8108,7 +8108,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "SIL-Ueberpruefung",
+            "de": "SIL-Überprüfung",
             "en": "SIL verification"
         },
         "indicators": [
@@ -8135,7 +8135,7 @@
             "IEC61355:Identity-number": "D00085"
         },
         "label": {
-            "de": "Pruefprotokoll /Testbericht",
+            "de": "Prüfprotokoll /Testbericht",
             "en": "Test report"
         },
         "indicators": []
@@ -8240,7 +8240,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Schweiß- und Pruefnachweis",
+            "de": "Schweiß- und Prüfnachweis",
             "en": "Welding and test certificate"
         },
         "indicators": []
@@ -8268,7 +8268,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "CE-Konformitaetserklaerung",
+            "de": "CE-Konformitätserklärung",
             "en": "CE declaration of conformity"
         },
         "indicators": []
@@ -8293,7 +8293,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Maengelbericht",
+            "de": "Mängelbericht",
             "en": "Defect report"
         },
         "indicators": []
@@ -8463,7 +8463,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Geraeteliste",
+            "de": "Geräteliste",
             "en": "Sensor list"
         },
         "indicators": []
@@ -8519,7 +8519,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Daemmliste",
+            "de": "Dämmliste",
             "en": "Insulation list"
         },
         "indicators": []
@@ -8600,7 +8600,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Stueckliste",
+            "de": "Stückliste",
             "en": "Bill of material"
         },
         "indicators": []
@@ -8728,7 +8728,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Liste der Unterstuetzungen",
+            "de": "Liste der Unterstützungen",
             "en": "List of supports"
         },
         "indicators": []
@@ -8778,7 +8778,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "PLT-Geraeteliste",
+            "de": "PLT-Geräteliste",
             "en": "Instrument index"
         },
         "indicators": []
@@ -9116,7 +9116,7 @@
             "IEC61355:Identity-number": "D00072"
         },
         "label": {
-            "de": "Geraeteanschlussliste",
+            "de": "Geräteanschlussliste",
             "en": "Unit connection list"
         },
         "indicators": []
@@ -9141,7 +9141,7 @@
             "IEC61355:Identity-number": "D00073"
         },
         "label": {
-            "de": "Geraeteanschlusstabelle",
+            "de": "Geräteanschlusstabelle",
             "en": "Unit connection table"
         },
         "indicators": []
@@ -9191,7 +9191,7 @@
             "IEC61355:Identity-number": "D00066"
         },
         "label": {
-            "de": "Geraeteanschlussplan",
+            "de": "Geräteanschlussplan",
             "en": "Unit connection diagram"
         },
         "indicators": []
@@ -9294,7 +9294,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Rohrbrueckenbelegungsplan",
+            "de": "Rohrbrückenbelegungsplan",
             "en": "Pipe rack allocation plan"
         },
         "indicators": []
@@ -9619,7 +9619,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Kabeltrassen-uebersichtsplan (Standort)",
+            "de": "Kabeltrassen-übersichtsplan (Standort)",
             "en": "Main cable tray layout (location)"
         },
         "indicators": []
@@ -9829,7 +9829,7 @@
             "IEC61355:Identity-number": "D00091"
         },
         "label": {
-            "de": "Kabeltrassenplan (Gebaeude)",
+            "de": "Kabeltrassenplan (Gebäude)",
             "en": "Cable routing drawing (building)"
         },
         "indicators": []
@@ -9858,7 +9858,7 @@
             "IEC61355:Identity-number": "D00100"
         },
         "label": {
-            "de": "Gebaeudezeichnung",
+            "de": "Gebäudezeichnung",
             "en": "Building drawing"
         },
         "indicators": []
@@ -9883,7 +9883,7 @@
             "IEC61355:Identity-number": "D00097"
         },
         "label": {
-            "de": "Installationsschema(Gebaeude)",
+            "de": "Installationsschema(Gebäude)",
             "en": "Installation drawing (building)"
         },
         "indicators": []
@@ -9908,7 +9908,7 @@
             "IEC61355:Identity-number": "D00063"
         },
         "label": {
-            "de": "Installationsplan (Gebaeude)",
+            "de": "Installationsplan (Gebäude)",
             "en": "Arrangement drawing (building)"
         },
         "indicators": []
@@ -9933,7 +9933,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Belegungsplan Kabel-Wanddurchfuehrung",
+            "de": "Belegungsplan Kabel-Wanddurchführung",
             "en": "Allocation plan wall bushing"
         },
         "indicators": []
@@ -9958,7 +9958,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Lageplan Instrumentenluftversorgung (Gebaeude)",
+            "de": "Lageplan Instrumentenluftversorgung (Gebäude)",
             "en": "Instrument air supply plot plan (building)"
         },
         "indicators": []
@@ -9986,7 +9986,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Aufstellungsplan (Gebaeude)",
+            "de": "Aufstellungsplan (Gebäude)",
             "en": "Plot plan / arrangement drawing (building)"
         },
         "indicators": []
@@ -10011,7 +10011,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Kabeltrassenschnitt (Gebaeude)",
+            "de": "Kabeltrassenschnitt (Gebäude)",
             "en": "Cable route section (building)"
         },
         "indicators": []
@@ -10036,7 +10036,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Lageplan PLT (Gebaeude)",
+            "de": "Lageplan PLT (Gebäude)",
             "en": "Plot plan E&I (building)"
         },
         "indicators": []
@@ -10061,7 +10061,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Kabeltrassen-uebersichtsplan (Gebaeude)",
+            "de": "Kabeltrassen-Übersichtsplan (Gebäude)",
             "en": "Main cable tray layout (building)"
         },
         "indicators": [
@@ -10637,7 +10637,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Alarm-und Verriegelungsuebersicht",
+            "de": "Alarm-und Verriegelungsübersicht",
             "en": "Alarm and locking overview"
         },
         "indicators": []
@@ -10949,7 +10949,7 @@
             "IEC61355:Identity-number": "D00112"
         },
         "label": {
-            "de": "Uebersichtsschaltplan der Energieversorgung",
+            "de": "Übersichtsschaltplan der Energieversorgung",
             "en": "Electrical single line diagram"
         },
         "indicators": []
@@ -10974,7 +10974,7 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Spezifikation Bedien- und Beobachtungsoberflaeche",
+            "de": "Spezifikation Bedien- und Beobachtungsoberfläche",
             "en": "HMI specification"
         },
         "indicators": []
@@ -11296,7 +11296,7 @@
             "IEC61355:Identity-number": "D00110"
         },
         "label": {
-            "de": "Wartung-und Aenderungprotokoll",
+            "de": "Wartung-und Änderungprotokoll",
             "en": "Maintenance and modification log"
         },
         "indicators": []

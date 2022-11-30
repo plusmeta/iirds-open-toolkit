@@ -105,8 +105,7 @@ const getters = {
     isProductNotValidCount: (state, getters, rootState, rootGetters) => {
         return [
             (rootGetters["projects/getCurrentProjectRelationById"]("vdi:SerialNumber")?.[0] || rootGetters["projects/getCurrentProjectRelationById"]("vdi:IEC61406")?.[0]),
-            rootGetters["projects/getCurrentProjectRelationById"]("vdi:ProductVariant")?.[0],
-            rootGetters["projects/getCurrentProjectRelationById"]("vdi:EquipmentId")?.[0]
+            rootGetters["projects/getCurrentProjectRelationById"]("vdi:ProductVariant")?.[0]
         ].map(Boolean).filter(v => v === false).length;
     },
 };

@@ -124,9 +124,9 @@ const getters = {
             if (!property) {
                 return "";
             } else if (!!property.labels && typeof property.labels === "object" && (!!property.labels[locale] || !!property.labels[process.env.VUE_APP_I18N_FALLBACK_LOCALE])) {
-                return property.labels[locale];
-            } else if (!!property.label && typeof property.label === "object" && (!!property.label[locale] || !!property.labels[process.env.VUE_APP_I18N_FALLBACK_LOCALE])) {
-                return property.label[locale];
+                return property.labels[locale] ?? property.labels[process.env.VUE_APP_I18N_FALLBACK_LOCALE];
+            } else if (!!property.label && typeof property.label === "object" && (!!property.label[locale] || !!property.label[process.env.VUE_APP_I18N_FALLBACK_LOCALE])) {
+                return property.label[locale] ?? property.label[process.env.VUE_APP_I18N_FALLBACK_LOCALE];
             } else if (typeof property.label === "string") {
                 return property.label;
             } else {

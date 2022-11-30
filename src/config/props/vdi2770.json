@@ -227,9 +227,15 @@
                 "vdi:Type"
             ]
         },
-        "attrs": {},
+        "attrs": {
+            "plus:tooltipInfo": {
+                "de": "",
+                "en": "",
+                "zh": ""
+            }
+        },
         "label": {
-            "de": "Produkttyp/Modell",
+            "de": "Produkttyp / Modell",
             "en": "Product Type / Model",
             "zh": "产品类型/型号"
         },
@@ -287,19 +293,6 @@
         "indicators": [
             "Individual"
         ]
-    },
-    {
-        "identifier": "vdi:EquipmentId",
-        "datatype": "plus:Instance",
-        "subClassOf": "plus:SystemRole",
-        "rels": {},
-        "attrs": {},
-        "label": {
-            "de": "Equipmentnummer",
-            "en": "Equipment ID",
-            "zh": "Equipment ID"
-        },
-        "indicators": []
     },
     {
         "identifier": "vdi:ArticleNumber",
@@ -976,7 +969,12 @@
         },
         "attrs": {
             "plus:metaListPriority": 41,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "",
+                "en": "",
+                "zh": ""
+            }
         },
         "label": {
             "de": "Dokumentbeschreibung",
