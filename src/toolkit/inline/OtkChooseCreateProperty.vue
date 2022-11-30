@@ -6,54 +6,56 @@
 <template>
   <v-layout>
     <v-flex>
-      <v-combobox
-        :value="getAssignedProperties"
-        :items="getProperties"
-        :label="getLabel"
-        :prepend-icon="icon"
-        :multiple="multiple"
-        :rules="[checkRequired]"
-        :small-chips="multiple"
-        :deletable-chips="multiple"
-        :search-input.sync="search"
-        return-object
-        :class="{ 'required': required }"
-        :readonly="isReadonly"
-        @input="selectProperty"
-      >
-        <template v-slot:item="{attrs, on, item}">
-          <v-list-item-action>
-            <v-checkbox
-              v-model="attrs.inputValue"
-              hide-details
-              color="primary"
-              v-on="on"
-            />
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
-          </v-list-item-content>
-          <v-list-item-action>
-            <v-btn
-              v-if="isCustomMetadata(item.value)"
-              icon
-              @click.stop="removeProperty(item.value)"
-            >
-              <v-icon>mdi-delete</v-icon>
-            </v-btn>
-          </v-list-item-action>
-        </template>
-        <template v-slot:no-data>
-          <v-list-item class="py-0">
+      <v-form ref="form">
+        <v-combobox
+          :value="getAssignedProperties"
+          :items="getProperties"
+          :label="getLabel"
+          :prepend-icon="icon"
+          :multiple="multiple"
+          :rules="[checkRequired]"
+          :small-chips="multiple"
+          :deletable-chips="multiple"
+          :search-input.sync="search"
+          return-object
+          :class="{ 'required': required }"
+          :readonly="isReadonly"
+          @input="selectProperty"
+        >
+          <template v-slot:item="{attrs, on, item}">
+            <v-list-item-action>
+              <v-checkbox
+                v-model="attrs.inputValue"
+                hide-details
+                color="primary"
+                v-on="on"
+              />
+            </v-list-item-action>
             <v-list-item-content>
-              <span v-html="$t('Actions.createEntry')" />
+              <v-list-item-title>{{ item.text }}</v-list-item-title>
             </v-list-item-content>
-          </v-list-item>
-        </template>
-        <template v-slot:selection="data">
-          <PropertyPanel :data="data" :icon="icon" />
-        </template>
-      </v-combobox>
+            <v-list-item-action>
+              <v-btn
+                v-if="isCustomMetadata(item.value)"
+                icon
+                @click.stop="removeProperty(item.value)"
+              >
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+            </v-list-item-action>
+          </template>
+          <template v-slot:no-data>
+            <v-list-item class="py-0">
+              <v-list-item-content>
+                <span v-html="$t('Actions.createEntry')" />
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+          <template v-slot:selection="data">
+            <PropertyPanel :data="data" :icon="icon" />
+          </template>
+        </v-combobox>
+      </v-form>
     </v-flex>
   </v-layout>
 </template>
@@ -161,6 +163,9 @@ export default {
             "getPropertyById",
             "getPropertyAttributeById"
         ])
+    },
+    mounted() {
+        this.$nextTick(() => this.$refs?.form?.validate());
     },
     methods: {
         selectProperty(selected) {

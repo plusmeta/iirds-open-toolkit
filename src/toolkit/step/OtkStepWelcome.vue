@@ -454,12 +454,12 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiReferenceLabel"
-                        :prepend-icon="getPropertyIcon('vdi:ReferenceLabel')"
-                        :label="getPropertyLabelById('vdi:ReferenceLabel')"
+                        v-model="vdiReferenceDesignation"
+                        :prepend-icon="getPropertyIcon('vdi:ReferenceDesignation')"
+                        :label="getPropertyLabelById('vdi:ReferenceDesignation')"
                       />
                     </v-col>
-                    <v-col v-if="getPropertyTooltip('vdi:ReferenceLabel')" cols="auto">
+                    <v-col v-if="getPropertyTooltip('vdi:ReferenceDesignation')" cols="auto">
                       <v-tooltip top>
                         <template v-slot:activator="{ on: tooltip }">
                           <v-icon
@@ -469,7 +469,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:ReferenceLabel')" />
+                        <div v-html="getPropertyTooltip('vdi:ReferenceDesignation')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -600,13 +600,13 @@ export default {
                 return this.updateCurrentProjectRelations({"vdi:CustomerProjectId": value});
             }
         },
-        vdiReferenceLabel: {
+        vdiReferenceDesignation: {
             get() {
-                return this.getCurrentProjectRelationById("vdi:ReferenceLabel")?.[0];
+                return this.getCurrentProjectRelationById("vdi:ReferenceDesignation")?.[0];
             },
             set(value) {
                 value = value ? [value] : [];
-                return this.updateCurrentProjectRelations({"vdi:ReferenceLabel": value});
+                return this.updateCurrentProjectRelations({"vdi:ReferenceDesignation": value});
             }
         },
         isEmail() {

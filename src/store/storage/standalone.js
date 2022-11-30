@@ -6,6 +6,21 @@
 import Vue from "vue";
 import template from "@/store/storage/template";
 
+function _countInvalidMetadata(o, metaUrisToCheck) {
+    return metaUrisToCheck.map((uri) => {
+
+        const val = o.meta[uri]?.value;
+        if (val === null || val === undefined) {
+            return false;
+        } else if (Array.isArray(val)) {
+            return val?.filter(Boolean).length > 0;
+        } else if (typeof val === "string") {
+            return val?.length > 0;
+        }
+        return true;
+    }).filter(b => !b)?.length;
+}
+
 // state
 const state = {
     objects: [],
@@ -117,25 +132,25 @@ const getters = {
         let value = getters.getMetadataValueByURI(objectUuid, uri);
         return Array.isArray(value) ? value[0] : value;
     },
-    countInvalidObjects: (state, getters, rootState, rootGetters) => {
-        const metaUrisToCheck = rootGetters["properties/getPropertiesByRole"]("plus:AssignableMetadata")
+    getRequiredMetadata: (state, getters, rootState, rootGetters) => (metaGroup = null) => {
+        return rootGetters["properties/getPropertiesByRole"]("plus:AssignableMetadata")
             .filter(m => rootGetters["properties/isRequired"](m.identifier))
-            .map(m => rootGetters["properties/resolveAssignedRelationType"](m.identifier));
-
-        return getters.getCurrentObjectsByType("plus:Document").filter((o) => {
-            return !metaUrisToCheck.every((uri) => {
-
-                const val = o.meta[uri]?.value;
-                if (val === null || val === undefined) {
-                    return false;
-                } else if (Array.isArray(val)) {
-                    return val?.filter(Boolean).length > 0;
-                } else if (typeof val === "string"){
-                    return val?.length > 0;
+            .filter((m) => {
+                if (metaGroup === null) {
+                    return true;
+                } else {
+                    return rootGetters["properties/getPropertyRelationById"](m.identifier, "plus:is-part-of-metadata-group")?.includes(metaGroup) ?? false;
                 }
-                return true;
-            });
-        })?.length;
+            })
+            .map(m => rootGetters["properties/resolveAssignedRelationType"](m.identifier));
+    },
+    countInvalidObjects: (state, getters) => {
+        const metaUrisToCheck = getters.getRequiredMetadata();
+        return getters.getCurrentObjectsByType("plus:Document").filter(o => _countInvalidMetadata(o, metaUrisToCheck) !== 0)?.length;
+    },
+    countInvalidMetadata: (state, getters) => (objectUuid, metaGroup = null) =>  {
+        const metaUrisToCheck = getters.getRequiredMetadata(metaGroup);
+        return _countInvalidMetadata(getters.getObjectByUuid(objectUuid), metaUrisToCheck);
     }
 };
 

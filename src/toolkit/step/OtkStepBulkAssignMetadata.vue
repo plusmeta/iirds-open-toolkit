@@ -46,7 +46,25 @@
                   </v-list-item-subtitle>
                 </v-list-item-content>
                 <v-list-item-action>
-                  <DeleteObject :uuid="item.uuid" />
+                  <v-row justify="center" align="center">
+                    <v-col>
+                      <v-badge
+                        v-if="countInvalidMetadata(item.uuid) > 0"
+                        color="accent"
+                        :content="countInvalidMetadata(item.uuid)"
+                        inline
+                      />
+                      <v-badge
+                        v-else
+                        color="accent"
+                        icon="mdi-check"
+                        inline
+                      />
+                    </v-col>
+                    <v-col>
+                      <DeleteObject :uuid="item.uuid" />
+                    </v-col>
+                  </v-row>
                 </v-list-item-action>
               </v-list-item>
             </v-list>
@@ -114,7 +132,8 @@ export default {
             "getCurrentObjectsByType",
             "getMetadataValueByURI",
             "getMetadataByURI",
-            "countInvalidObjects"
+            "countInvalidObjects",
+            "countInvalidMetadata"
         ]),
         ...mapGetters("properties", [
             "getPropertyLabelById",

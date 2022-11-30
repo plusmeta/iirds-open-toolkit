@@ -342,27 +342,6 @@ export default {
                 }, 250);
             });
         },
-        toggleItem(item) {
-            const value = item?.id;
-            if (value) {
-                let selected = util.deepCopy(this.localAssignedProperties);
-                let values = [value];
-                if (this.isTaxonomy) {
-                    values = Array.from(new Set(this.getAllChildIds(values)))
-                        .filter(propId => this.getChildIds(propId).length === 0);
-                }
-
-                let without = util.withoutArray(selected, values);
-                let isAdd = without.length === selected.length;
-                if (isAdd) {
-                    selected = util.unionArray(selected, values);
-                } else {
-                    selected = without;
-                }
-
-                this.treeInput$.next(selected);
-            }
-        },
         getPath(item) {
             let rawPath = this.getParentIds([item], this.propclass);
             let labeledPath = rawPath.map(id => this.getPropertyLabelById(id));
@@ -385,13 +364,6 @@ export default {
         checkRequired() {
             if (this.required && this.isInputEmpty) {
                 return this.$t("Validations.noEmptyInput");
-            } else {
-                return true;
-            }
-        },
-        checkMultiple() {
-            if (!this.multiple && this.localAssignedProperties.length > 1) {
-                return this.$t("Validations.noMultipleInput");
             } else {
                 return true;
             }

@@ -44,8 +44,15 @@
                 </v-col>
                 <v-col cols="auto">
                   <v-badge
+                    v-if="countInvalidMetadata(object.uuid, groupId) > 0"
                     color="accent"
-                    :content="getGroupedMetadata[groupId].length"
+                    :content="countInvalidMetadata(object.uuid, groupId)"
+                    inline
+                  />
+                  <v-badge
+                    v-else
+                    color="accent"
+                    icon="mdi-check"
                     inline
                   />
                 </v-col>
@@ -231,7 +238,8 @@ export default {
             "getSetting"
         ]),
         ...mapGetters("storage", [
-            "getMetadataValueByURI"
+            "getMetadataValueByURI",
+            "countInvalidMetadata"
         ]),
         ...mapGetters("properties", [
             "isRequired",

@@ -11,6 +11,7 @@
           :readonly="isReadonly"
           :disabled="isReadonly"
           :class="{ 'required': required }"
+          :rules="[checkRequired]"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -28,6 +29,7 @@
           :readonly="isReadonly"
           :disabled="isReadonly"
           :class="{ 'required': required }"
+          :rules="[checkRequired]"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -62,6 +64,7 @@
           :readonly="isReadonly"
           :disabled="isReadonly"
           :class="{ 'required': required }"
+          :rules="[checkRequired]"
           @change="$emit('setting', {event: $event, uri})"
         >
           <template v-slot:prepend>
@@ -158,6 +161,15 @@ export default {
     },
     mounted() {
         this.$nextTick(() => this.$refs?.form?.validate());
+    },
+    methods: {
+        checkRequired(value) {
+            if (this.required && !value?.length) {
+                return this.$t("Validations.noEmptyInput");
+            } else {
+                return true;
+            }
+        },
     }
 };
 </script>

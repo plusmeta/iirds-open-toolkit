@@ -6,30 +6,32 @@
 <template>
   <v-layout>
     <v-flex>
-      <v-combobox
-        :value="getAssignedListEntries"
-        :items="getAssignedListEntries"
-        :label="getLabel"
-        :prepend-icon="icon"
-        multiple
-        :rules="[checkRequired]"
-        small-chips
-        deletable-chips
-        :search-input.sync="search"
-        return-object
-        :class="{ 'required': required }"
-        :readonly="isReadonly"
-        :disabled="isReadonly"
-        @input="changeList"
-      >
-        <template v-slot:no-data>
-          <v-list-item class="py-0">
-            <v-list-item-content>
-              <span v-html="$t('Actions.createEntry')" />
-            </v-list-item-content>
-          </v-list-item>
-        </template>
-      </v-combobox>
+      <v-form ref="form">
+        <v-combobox
+          :value="getAssignedListEntries"
+          :items="getAssignedListEntries"
+          :label="getLabel"
+          :prepend-icon="icon"
+          multiple
+          :rules="[checkRequired]"
+          small-chips
+          deletable-chips
+          :search-input.sync="search"
+          return-object
+          :class="{ 'required': required }"
+          :readonly="isReadonly"
+          :disabled="isReadonly"
+          @input="changeList"
+        >
+          <template v-slot:no-data>
+            <v-list-item class="py-0">
+              <v-list-item-content>
+                <span v-html="$t('Actions.createEntry')" />
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+        </v-combobox>
+      </v-form>
     </v-flex>
   </v-layout>
 </template>
@@ -97,6 +99,9 @@ export default {
             "getPropertyAttributeById"
         ])
     },
+    mounted() {
+        this.$nextTick(() => this.$refs?.form?.validate());
+    },
     methods: {
         changeList(selected) {
             this.saveMetaDatum({
@@ -109,7 +114,7 @@ export default {
             this.$emit("change");
         },
         checkRequired(value) {
-            if (this.required && !this.getValueCount) {
+            if (this.required && this.getValueCount < 1) {
                 return this.$t("Validations.noEmptyInput");
             } else {
                 return true;

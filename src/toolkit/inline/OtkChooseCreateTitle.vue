@@ -6,29 +6,31 @@
 <template>
   <v-layout>
     <v-flex>
-      <v-combobox
-        :value="getString(proprelation)"
-        :items="allTitles"
-        item-text="value"
-        item-value="value"
-        :search-input.sync="search"
-        :disabled="isApproved || loading"
-        :loading="loading"
-        :label="getLabel"
-        :class="{ 'required': required }"
-        :return-object="false"
-        prepend-icon="mdi-format-title"
-        :rules="[checkRequired]"
-        @change="selectTitle"
-      >
-        <template v-slot:no-data>
-          <v-list-item class="py-0" dense>
-            <v-list-item-content>
-              <span v-html="$t('Actions.createEntry')" />
-            </v-list-item-content>
-          </v-list-item>
-        </template>
-      </v-combobox>
+      <v-form ref="form">
+        <v-combobox
+          :value="getString(proprelation)"
+          :items="allTitles"
+          item-text="value"
+          item-value="value"
+          :search-input.sync="search"
+          :disabled="isApproved || loading"
+          :loading="loading"
+          :label="getLabel"
+          :class="{ 'required': required }"
+          :return-object="false"
+          prepend-icon="mdi-format-title"
+          :rules="[checkRequired]"
+          @change="selectTitle"
+        >
+          <template v-slot:no-data>
+            <v-list-item class="py-0" dense>
+              <v-list-item-content>
+                <span v-html="$t('Actions.createEntry')" />
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+        </v-combobox>
+      </v-form>
     </v-flex>
   </v-layout>
 </template>
@@ -119,6 +121,9 @@ export default {
             "getCurrentWorkflowSetting"
         ])
     },
+    mounted() {
+        this.$nextTick(() => this.$refs?.form?.validate());
+    },
     methods: {
         async selectTitle(value, provenance = "User", confidence = 1) {
             await this.saveMetaDatum({
@@ -151,7 +156,7 @@ export default {
             return (generatedTitle !== "") ? generatedTitle : null;
         },
         checkRequired(value) {
-            if (this.required && !!value && !value.length) {
+            if (this.required && !value?.length) {
                 return this.$t("Validations.noEmptyInput");
             } else {
                 return true;

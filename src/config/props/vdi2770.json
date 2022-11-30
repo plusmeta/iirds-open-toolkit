@@ -302,19 +302,6 @@
         "indicators": []
     },
     {
-        "identifier": "vdi:ReferenceDesignation",
-        "datatype": "plus:Instance",
-        "subClassOf": "plus:SystemRole",
-        "rels": {},
-        "attrs": {},
-        "label": {
-            "de": "Referenzkennzeichen",
-            "en": "Reference designation",
-            "zh": "Reference designation"
-        },
-        "indicators": []
-    },
-    {
         "identifier": "vdi:ArticleNumber",
         "datatype": "plus:Instance",
         "subClassOf": "vdi:RefType",
@@ -604,7 +591,7 @@
             "plus:titlePartPriority": 5,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Sprachabhängige Liste von Schlagwörtern",
+                "de": "",
                 "en": "",
                 "zh": ""
             }
@@ -678,9 +665,9 @@
             "plus:metaListPriority": 22,
             "plus:requiredAssignment": false,
             "plus:tooltipInfo": {
-                "de": "DCC61355",
-                "en": "DCC61355",
-                "zh": "DCC61355"
+                "de": "",
+                "en": "",
+                "zh": ""
             }
         },
         "label": "IEC 61355",
@@ -823,7 +810,7 @@
             "plus:tooltipInfo": {
                 "de": "Die gebräuchliche Bezeichnung für die Organisation.<br>Beispiel: <b>Manufacturer ABC</b>",
                 "en": "Example: <b>Manufacturer ABC</b>",
-                "zh": "Example: <b>Manufacturer ABC</b>"
+                "zh": ""
             }
         },
         "label": {
@@ -856,12 +843,12 @@
             "plus:tooltipInfo": {
                 "de": "Eine eindeutige ID für die Organisation.<br> Beispiel (Website): <b>www.manufacturer-abc.org</b>",
                 "en": "Example: <b>www.manufacturer-abc.org</b>",
-                "zh": "Example: <b>www.manufacturer-abc.org</b>"
+                "zh": ""
             }
         },
         "label": {
             "de": "Organisationswebsite",
-            "en": "Organization webside",
+            "en": "Organization website",
             "zh": ""
         },
         "indicators": []
@@ -918,8 +905,8 @@
             "plus:characterLimit": 150,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "IEC61406",
-                "en": "IEC61406",
+                "de": "",
+                "en": "",
                 "zh": ""
             }
         },
@@ -1022,7 +1009,12 @@
             "plus:titlePartPriority": 2,
             "plus:guidelineListPriority": 4,
             "plus:requiredAssignment": true,
-            "plus:readonly": true
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "",
+                "en": "",
+                "zh": ""
+            }
         },
         "label": {
             "de": "Produktbezeichnung / Modell",
@@ -1054,10 +1046,10 @@
             "plus:metaListPriority": 30,
             "plus:titlePartPriority": 2,
             "plus:guidelineListPriority": 5,
-            "plus:requiredAssignment": true,
+            "plus:requiredAssignment": false,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Identifikationsnummer für ein Produkt.",
+                "de": "",
                 "en": "",
                 "zh": ""
             }
@@ -1093,7 +1085,7 @@
             "plus:guidelineListPriority": 8,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Identifikationsnummer für ein Produkt.",
+                "de": "",
                 "en": "",
                 "zh": ""
             }
@@ -1139,7 +1131,7 @@
         "indicators": []
     },
     {
-        "identifier": "vdi:ReferenceLabel",
+        "identifier": "vdi:ReferenceDesignation",
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
@@ -1166,8 +1158,8 @@
             }
         },
         "label": {
-            "de": "Referenzkennzeichnung (Kunde)",
-            "en": "reference label (customer)"
+            "de": "Referenzkennzeichen (Kunde)",
+            "en": "Reference designation (customer)"
         },
         "indicators": []
     },
@@ -1213,8 +1205,7 @@
         },
         "label": {
             "de": "Organisation (Offizieller Name)",
-            "en": "Organization (official name)",
-            "zh": ""
+            "en": "Organization (official name)"
         },
         "indicators": []
     }
