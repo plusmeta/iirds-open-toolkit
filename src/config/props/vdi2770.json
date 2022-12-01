@@ -1053,7 +1053,7 @@
             }
         },
         "label": {
-            "de": "Bestellnummer/Artikelnummer",
+            "de": "Bestellnummer / Artikelnummer",
             "en": "Product ID"
         },
         "indicators": []
