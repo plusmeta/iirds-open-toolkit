@@ -92,21 +92,6 @@
         <v-list-item
           class="py-2"
           :disabled="isInternetExplorer"
-          @click="$refs.menuInput.click()"
-        >
-          <v-list-item-action>
-            <v-icon>
-              mdi-tag-multiple
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>
-            {{ $t("Actions.uploadMetadata") }}
-          </v-list-item-title>
-        </v-list-item>
-
-        <v-list-item
-          class="py-2"
-          :disabled="isInternetExplorer"
           @click="restoreSettings"
         >
           <v-list-item-action>
