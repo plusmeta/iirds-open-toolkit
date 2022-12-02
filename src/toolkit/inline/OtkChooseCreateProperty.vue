@@ -22,27 +22,8 @@
           :readonly="isReadonly"
           @input="selectProperty"
         >
-          <template v-slot:item="{attrs, on, item}">
-            <v-list-item-action>
-              <v-checkbox
-                v-model="attrs.inputValue"
-                hide-details
-                color="primary"
-                v-on="on"
-              />
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>{{ item.text }}</v-list-item-title>
-            </v-list-item-content>
-            <v-list-item-action>
-              <v-btn
-                v-if="isCustomMetadata(item.value)"
-                icon
-                @click.stop="removeProperty(item.value)"
-              >
-                <v-icon>mdi-delete</v-icon>
-              </v-btn>
-            </v-list-item-action>
+          <template v-slot:item="{ item }">
+            {{ item.text }}
           </template>
           <template v-slot:no-data>
             <v-list-item class="py-0">
@@ -153,14 +134,11 @@ export default {
             }
         },
         ...mapGetters("storage", [
-            "getMetadataValueByURI",
-            "getMetadataByURI"
+            "getMetadataValueByURI"
         ]),
         ...mapGetters("properties", [
             "getPropertyLabelById",
-            "getPropertyRelationById",
             "getInstancesByClassOrRole",
-            "getPropertyById",
             "getPropertyAttributeById"
         ])
     },
@@ -231,34 +209,11 @@ export default {
                 return true;
             }
         },
-        isCustomMetadata(propId) {
-            let propRoles = this.getPropertyRelationById(propId, "plus:has-roles");
-            return propRoles.includes("plus:CustomMetadata");
-        },
-        removeProperty(propId) {
-            // get current assigned values and remove property which should be deleted if it is in selection
-            let assigned = this.getMetadataValueByURI(this.objectUuid, this.proprelation) || [];
-            let filtered = assigned.filter(value => value !== propId);
-            if (filtered.length < assigned.length) {
-                this.saveMetaDatum({
-                    objectUuid: this.objectUuid,
-                    objectMeta: {
-                        uri: this.proprelation,
-                        value: filtered
-                    }
-                });
-            }
-            // after removal from selection delete the property and send notification
-            this.deleteProperty(propId);
-            this.$notify.send(this.$t("Notification.propertyDeleted"), "warning");
-        },
         ...mapActions("storage", [
             "saveMetaDatum"
         ]),
         ...mapActions("properties", [
-            "createProperty",
-            "deleteProperty",
-            "savePropertiesLocal"
+            "createProperty"
         ])
     }
 };

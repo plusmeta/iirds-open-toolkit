@@ -11,6 +11,7 @@
 
     <v-card :outlined="!$vuetify.theme.dark">
       <v-data-iterator
+        :expanded="getCurrentObjects"
         :items="getCurrentObjects"
         :items-per-page="10"
         :search="search"
@@ -150,9 +151,6 @@ export default {
         ])
     },
     mounted() {
-        // open first element after mount
-        const firstElem = document.querySelector("#item-0");
-        if (firstElem) firstElem.click();
     },
     methods: {
         getIconForType(type) {
