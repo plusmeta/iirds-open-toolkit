@@ -21,13 +21,13 @@
       @rerun="generatePackage"
     >
       <v-card class="pa-0 flex-grow-1 text-center" color="info">
-        <v-card-text class="display-3 pb-0">
+        <v-card-text class="display-3 pb-0 white--text">
           {{ percent }} %
         </v-card-text>
-        <v-card-text class="title pb-0">
+        <v-card-text class="title pb-0 white--text">
           {{ $t('Packages.progress') }}
         </v-card-text>
-        <v-card-text class="subtitle-1 pt-0">
+        <v-card-text class="subtitle-1 pt-0 white--text">
           {{ $t('Packages.packaging') }} ({{ mainContainer || totalContainers }})
         </v-card-text>
       </v-card>
@@ -239,7 +239,9 @@ export default {
 
             let zip = new JSzip();
             let objectName = productLabel;
-            let containerName = this.sanitizeFilename(productLabel);
+
+            let containerName = identities.map(i => i?.value?.toString()).filter(Boolean).join(" ");
+            containerName = this.sanitizeFilename(containerName);
 
             // Main pdf
             const table = await this.generateMainDocumentTable(productLabel);

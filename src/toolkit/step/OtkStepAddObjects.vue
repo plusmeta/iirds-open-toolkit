@@ -18,6 +18,7 @@
         style="display:none;"
         type="file"
         multiple
+        accept="application/pdf"
         @change="addFiles($refs.fileInput.files)"
       >
     </form>
@@ -65,36 +66,6 @@
               :class="{'elevation-0': !$vuetify.theme.dark, 'pt-2': true}"
               min-height="80"
             >
-              <v-flex
-                v-shortkey.once="['t']"
-                class="pb-2"
-                @shortkey="$refs.type.focus()"
-              >
-                <v-autocomplete
-                  v-show="!!items.length"
-                  ref="type"
-                  :value="filter"
-                  :items="getObjectTypeFilterValues"
-                  :label="$t('Objects.all')"
-                  :multiple="false"
-                  prepend-icon="mdi-filter"
-                  single-line
-                  hide-details
-                  clearable
-                  @change="(v) => filter = v"
-                >
-                  <template v-slot:item="{ item }">
-                    <span>{{ item.text }} </span>
-                    <v-spacer />
-                    <v-chip small color="accent">
-                      {{ item.count }}
-                    </v-chip>
-                  </template>
-                </v-autocomplete>
-              </v-flex>
-
-              <v-spacer />
-
               <v-flex
                 v-shortkey.once="['f']"
                 class="pb-2"
@@ -336,6 +307,12 @@ export default {
         DeleteObject,
         AssignGuidelines
     },
+    props: {
+        objecttype: {
+            type: Array,
+            default: () => []
+        }
+    },
     data() {
         return {
             loading: false,
@@ -365,7 +342,7 @@ export default {
     },
     computed: {
         getCurrentObjects() {
-            return this.getCurrentObjectsByType(this.filter);
+            return this.getCurrentObjectsByType(this.objecttype);
         },
         getObjectTypeFilterValues() {
             return Object.entries(this.getCurrentObjectTypes).map(([key, value]) => {

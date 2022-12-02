@@ -51,8 +51,7 @@ export default {
             objecttype: ["plus:Document"]
         },
         rules: [
-            store => store.getters["storage/countCurrentObjectsByType"]
-            (["plus:Document", "plus:Component", "plus:Fragment"]) > 0
+            store => store.getters["storage/countCurrentObjectsByType"](["plus:Document"]) > 0
         ],
         ruleExpl: {
             de: "Mindestens ein Inhaltsobjekt wurde hinzugefügt",
