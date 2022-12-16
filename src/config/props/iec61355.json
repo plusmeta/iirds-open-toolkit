@@ -9,7 +9,8 @@
         },
         "label": {
             "de": "Dokumente für technische Anforderungen und Auslegung",
-            "en": "Technical requirements and design documents"
+            "en": "Technical requirements and design documents",
+            "zh": "技术要求和设计文件"
         },
         "indicators": []
     },
@@ -23,7 +24,8 @@
         },
         "label": {
             "de": "Dokumente mit allgemeiner technischer Information",
-            "en": "Documents containing general technical information"
+            "en": "Documents containing general technical information",
+            "zh": "包含一般技术信息的文件"
         },
         "indicators": []
     },
@@ -37,7 +39,8 @@
         },
         "label": {
             "de": "Vertragliche und nichttechnische Dokumente",
-            "en": "Contractual and non-technical documents"
+            "en": "Contractual and non-technical documents",
+            "zh": "合同和非技术文件"
         },
         "indicators": []
     },
@@ -51,7 +54,8 @@
         },
         "label": {
             "de": "Managementdokumente",
-            "en": "Management documents"
+            "en": "Management documents",
+            "zh": "管理文件"
         },
         "indicators": []
     },
@@ -65,7 +69,8 @@
         },
         "label": {
             "de": "Dokumentationsbeschreibende Dokumente",
-            "en": "Documentation descriptive documents"
+            "en": "Documentation descriptive documents",
+            "zh": "文档描述性文件"
         },
         "indicators": []
     },
@@ -79,7 +84,8 @@
         },
         "label": {
             "de": "Dokumente zur Beschreibung geometrischer Formen",
-            "en": "Documents describing geometric shapes"
+            "en": "Documents describing geometric shapes",
+            "zh": "几何形状描述文件"
         },
         "indicators": []
     },
@@ -93,7 +99,8 @@
         },
         "label": {
             "de": "Qualitätsmanagementdokumente und Sicherheit beschreibende Dokumente",
-            "en": "Quality management documents and safety descriptive documents"
+            "en": "Quality management documents and safety descriptive documents",
+            "zh": "质量管理文件和安全说明文件"
         },
         "indicators": []
     },
@@ -107,7 +114,8 @@
         },
         "label": {
             "de": "Objektlisten",
-            "en": "Object lists"
+            "en": "Object lists",
+            "zh": "对象列表"
         },
         "indicators": []
     },
@@ -121,7 +129,8 @@
         },
         "label": {
             "de": "Verbindungsbeschreibende Dokumente",
-            "en": "Connection descriptive documents"
+            "en": "Connection descriptive documents",
+            "zh": "连接描述文件"
         },
         "indicators": []
     },
@@ -135,7 +144,8 @@
         },
         "label": {
             "de": "Ortsbeschreibende Dokumente",
-            "en": "Location descriptive documents"
+            "en": "Location descriptive documents",
+            "zh": "位置说明文件"
         },
         "indicators": []
     },
@@ -149,7 +159,8 @@
         },
         "label": {
             "de": "Funktionsbeschreibende Dokumente",
-            "en": "Function describing documents"
+            "en": "Function describing documents",
+            "zh": "功能描述文件"
         },
         "indicators": []
     },
@@ -163,7 +174,8 @@
         },
         "label": {
             "de": "Betriebliche Protokolle und Aufzeichnungen",
-            "en": "Operational Logs and Records"
+            "en": "Operational Logs and Records",
+            "zh": "操作日志及记录"
         },
         "indicators": []
     },
@@ -177,7 +189,8 @@
         },
         "label": {
             "de": "Dimensionierungsdokumente",
-            "en": "Dimensioning documents"
+            "en": "Dimensioning documents",
+            "zh": "尺寸标注文件"
         },
         "indicators": [
             "Berechnungsblatt (technisch)",
@@ -194,7 +207,8 @@
         },
         "label": {
             "de": "Technische Spezifikations- / Anforderungsdokumente",
-            "en": "Technical specification / requirements documents"
+            "en": "Technical specification / requirements documents",
+            "zh": "技术规范/要求文件"
         },
         "indicators": [
             "Consumer list",
@@ -229,7 +243,8 @@
         },
         "label": {
             "de": "Normen und Richtlinien",
-            "en": "Standards and guidelines"
+            "en": "Standards and guidelines",
+            "zh": "标准及准则"
         },
         "indicators": [
             "IEC-Norm",
@@ -248,7 +263,8 @@
         },
         "label": {
             "de": "Dokumente über gesetzliche Auflagen",
-            "en": "Regulatory requirement documents"
+            "en": "Regulatory requirement documents",
+            "zh": "法规要求文件"
         },
         "indicators": []
     },
@@ -262,7 +278,8 @@
         },
         "label": {
             "de": "Anleitungen und Handbücher",
-            "en": "Instructions and manuals"
+            "en": "Instructions and manuals",
+            "zh": "说明书和手册"
         },
         "indicators": []
     },
@@ -276,7 +293,8 @@
         },
         "label": {
             "de": "Erläuternde Dokumente",
-            "en": "Explanatory documents"
+            "en": "Explanatory documents",
+            "zh": "说明文件"
         },
         "indicators": []
     },
@@ -290,7 +308,8 @@
         },
         "label": {
             "de": "Kataloge, Werbeschriften",
-            "en": "Catalogs, promotional literature"
+            "en": "Catalogs, promotional literature",
+            "zh": "目录，宣传资料"
         },
         "indicators": []
     },
@@ -304,7 +323,8 @@
         },
         "label": {
             "de": "Technische Berichte",
-            "en": "Technical reports"
+            "en": "Technical reports",
+            "zh": "技术报告"
         },
         "indicators": [
             "Technical report",
@@ -323,7 +343,8 @@
         },
         "label": {
             "de": "Datenblätter",
-            "en": "Datasheets"
+            "en": "Datasheets",
+            "zh": "数据表"
         },
         "indicators": []
     },
@@ -337,7 +358,8 @@
         },
         "label": {
             "de": "Technische Veröffentlichungen",
-            "en": "Technical Publications"
+            "en": "Technical Publications",
+            "zh": "技术出版物"
         },
         "indicators": []
     },
@@ -351,7 +373,8 @@
         },
         "label": {
             "de": "Genehmigungsdokumente",
-            "en": "Approval documents"
+            "en": "Approval documents",
+            "zh": "批准文件"
         },
         "indicators": []
     },
@@ -365,7 +388,8 @@
         },
         "label": {
             "de": "Anfrage-, Kalkulations- und Angebotsdokumente",
-            "en": "Inquiry, costing and quotation documents"
+            "en": "Inquiry, costing and quotation documents",
+            "zh": "询价，成本核算和报价文件"
         },
         "indicators": [
             "Acceptance",
@@ -393,7 +417,8 @@
         },
         "label": {
             "de": "Bestell- und Lieferdokumente",
-            "en": "Order and delivery documents"
+            "en": "Order and delivery documents",
+            "zh": "订单及交货文件"
         },
         "indicators": []
     },
@@ -407,7 +432,8 @@
         },
         "label": {
             "de": "Vertragliche Dokumente",
-            "en": "Contractual documents"
+            "en": "Contractual documents",
+            "zh": "合同文件"
         },
         "indicators": []
     },
@@ -421,7 +447,8 @@
         },
         "label": {
             "de": "Versicherungsdokumente",
-            "en": "Insurance documents"
+            "en": "Insurance documents",
+            "zh": "保险文件"
         },
         "indicators": []
     },
@@ -435,7 +462,8 @@
         },
         "label": {
             "de": "Rechnungsdokumente",
-            "en": "Invoicedocuments"
+            "en": "Invoicedocuments",
+            "zh": "发票文件"
         },
         "indicators": []
     },
@@ -449,7 +477,8 @@
         },
         "label": {
             "de": "Gutachten",
-            "en": "Expertise"
+            "en": "Expertise",
+            "zh": "专业知识"
         },
         "indicators": []
     },
@@ -463,7 +492,8 @@
         },
         "label": {
             "de": "Gewährleistungsdokumente",
-            "en": "Warranty documents"
+            "en": "Warranty documents",
+            "zh": "保证文件"
         },
         "indicators": []
     },
@@ -477,7 +507,8 @@
         },
         "label": {
             "de": "Objektschutzdokumente",
-            "en": "Object protection documents"
+            "en": "Object protection documents",
+            "zh": "物品保护文件"
         },
         "indicators": []
     },
@@ -491,7 +522,8 @@
         },
         "label": {
             "de": "Schulungsdokumente",
-            "en": "Training documents"
+            "en": "Training documents",
+            "zh": "培训文件"
         },
         "indicators": []
     },
@@ -505,7 +537,8 @@
         },
         "label": {
             "de": "Register",
-            "en": "Register"
+            "en": "Register",
+            "zh": "注册"
         },
         "indicators": []
     },
@@ -519,7 +552,8 @@
         },
         "label": {
             "de": "Schriftwechsel",
-            "en": "Correspondence"
+            "en": "Correspondence",
+            "zh": "信函"
         },
         "indicators": []
     },
@@ -533,7 +567,8 @@
         },
         "label": {
             "de": "Berichte",
-            "en": "Reports"
+            "en": "Reports",
+            "zh": "报告"
         },
         "indicators": []
     },
@@ -547,7 +582,8 @@
         },
         "label": {
             "de": "Dokumente zum Änderungswesen",
-            "en": "Change management documents"
+            "en": "Change management documents",
+            "zh": "变更管理文件"
         },
         "indicators": []
     },
@@ -561,7 +597,8 @@
         },
         "label": {
             "de": "Ressourcenplanungsdokumente",
-            "en": "Resource planning documents"
+            "en": "Resource planning documents",
+            "zh": "资源规划文件"
         },
         "indicators": []
     },
@@ -575,7 +612,8 @@
         },
         "label": {
             "de": "Projektleitungsdokumente",
-            "en": "Project management documents"
+            "en": "Project management documents",
+            "zh": "项目管理文件"
         },
         "indicators": []
     },
@@ -589,7 +627,8 @@
         },
         "label": {
             "de": "Standortplanungs- und Standortorganisationsdokumente",
-            "en": "Site planning and site organization documents"
+            "en": "Site planning and site organization documents",
+            "zh": "场地规划和场地组织文件"
         },
         "indicators": []
     },
@@ -603,7 +642,8 @@
         },
         "label": {
             "de": "Versand-, Lager- und Transportdokumente",
-            "en": "Shipping, storage and transport documents"
+            "en": "Shipping, storage and transport documents",
+            "zh": "运输、储存和运输单据文件"
         },
         "indicators": []
     },
@@ -617,7 +657,8 @@
         },
         "label": {
             "de": "Listen (Dokumente betreffend)",
-            "en": "Lists (pertaining to documents)"
+            "en": "Lists (pertaining to documents)",
+            "zh": "清单(与文件有关)"
         },
         "indicators": []
     },
@@ -631,7 +672,8 @@
         },
         "label": {
             "de": "Verwaltungstechnische Dokumente",
-            "en": "Administrative documents"
+            "en": "Administrative documents",
+            "zh": "行政管理文件"
         },
         "indicators": []
     },
@@ -645,7 +687,8 @@
         },
         "label": {
             "de": "Erläuternde Dokumente (Dokumente betreffend)",
-            "en": "Explanatory documents (documents related)"
+            "en": "Explanatory documents (documents related)",
+            "zh": "解释性文件(相关文件)"
         },
         "indicators": []
     },
@@ -659,7 +702,8 @@
         },
         "label": {
             "de": "Fertigungs- und Errichtungszeichnungen",
-            "en": "Manufacturing and erection drawings"
+            "en": "Manufacturing and erection drawings",
+            "zh": "生产安装图纸"
         },
         "indicators": []
     },
@@ -673,7 +717,8 @@
         },
         "label": {
             "de": "Konstruktionszeichnungen",
-            "en": "Construction drawings"
+            "en": "Construction drawings",
+            "zh": "施工图纸"
         },
         "indicators": []
     },
@@ -687,7 +732,8 @@
         },
         "label": {
             "de": "Entwurfszeichnung",
-            "en": "Design drawing"
+            "en": "Design drawing",
+            "zh": "设计图纸"
         },
         "indicators": []
     },
@@ -701,7 +747,8 @@
         },
         "label": {
             "de": "Anordnungsdokumente",
-            "en": "Arrangement documents"
+            "en": "Arrangement documents",
+            "zh": "筹备文件"
         },
         "indicators": []
     },
@@ -715,7 +762,8 @@
         },
         "label": {
             "de": "Sicherheitsbeschreibende Dokumente",
-            "en": "Security descriptive documents"
+            "en": "Security descriptive documents",
+            "zh": "安全说明文件"
         },
         "indicators": []
     },
@@ -729,7 +777,8 @@
         },
         "label": {
             "de": "Qualitätsmanagementdokumente",
-            "en": "Quality management documents"
+            "en": "Quality management documents",
+            "zh": "质量管理文件"
         },
         "indicators": []
     },
@@ -743,7 +792,8 @@
         },
         "label": {
             "de": "Qualitätsnachweisdokumente",
-            "en": "Quality verification documents"
+            "en": "Quality verification documents",
+            "zh": "质量验证文件"
         },
         "indicators": []
     },
@@ -757,7 +807,8 @@
         },
         "label": {
             "de": "Materiallisten",
-            "en": "Materiallists"
+            "en": "Materiallists",
+            "zh": "材料列表"
         },
         "indicators": []
     },
@@ -771,7 +822,8 @@
         },
         "label": {
             "de": "Funktionslisten",
-            "en": "Functionlists"
+            "en": "Functionlists",
+            "zh": "功能列表"
         },
         "indicators": []
     },
@@ -785,7 +837,8 @@
         },
         "label": {
             "de": "Stücklisten",
-            "en": "Parts list"
+            "en": "Parts list",
+            "zh": "零件清单"
         },
         "indicators": []
     },
@@ -799,7 +852,8 @@
         },
         "label": {
             "de": "Teilelisten",
-            "en": "Parts lists"
+            "en": "Parts lists",
+            "zh": "备件清单"
         },
         "indicators": []
     },
@@ -813,7 +867,8 @@
         },
         "label": {
             "de": "Produktlisten und Produkttypenlisten",
-            "en": "Product lists and product type lists"
+            "en": "Product lists and product type lists",
+            "zh": "产品和产品类型列表"
         },
         "indicators": []
     },
@@ -827,7 +882,8 @@
         },
         "label": {
             "de": "Ortslisten",
-            "en": "Location lists"
+            "en": "Location lists",
+            "zh": "位置列表"
         },
         "indicators": []
     },
@@ -841,7 +897,8 @@
         },
         "label": {
             "de": "Verkabelungs- und Rohrleitungsdokumente",
-            "en": "Wiring and piping documents"
+            "en": "Wiring and piping documents",
+            "zh": "布线和管道文件"
         },
         "indicators": []
     },
@@ -855,7 +912,8 @@
         },
         "label": {
             "de": "Verbindungsbezogene Dokumente",
-            "en": "Connection-related documents"
+            "en": "Connection-related documents",
+            "zh": "连接文件"
         },
         "indicators": []
     },
@@ -869,7 +927,8 @@
         },
         "label": {
             "de": "Rohbaudokumente",
-            "en": "Shell documents"
+            "en": "Shell documents",
+            "zh": "外壳文件"
         },
         "indicators": []
     },
@@ -883,7 +942,8 @@
         },
         "label": {
             "de": "Erdbau- und Fundamentbaudokumente",
-            "en": "Earthwork and foundation engineering documents"
+            "en": "Earthwork and foundation engineering documents",
+            "zh": "土方工程和基础工程文件"
         },
         "indicators": []
     },
@@ -897,7 +957,8 @@
         },
         "label": {
             "de": "Dokumente, die Orte an Standorten beschreiben",
-            "en": "Documents describing locations at sites"
+            "en": "Documents describing locations at sites",
+            "zh": "位置站点描述文件"
         },
         "indicators": []
     },
@@ -911,7 +972,8 @@
         },
         "label": {
             "de": "Erschließungs- und Vermessungsdokumente",
-            "en": "Development and survey documents"
+            "en": "Development and survey documents",
+            "zh": "开发和调查文件"
         },
         "indicators": []
     },
@@ -925,7 +987,8 @@
         },
         "label": {
             "de": "Orte in Gebäuden (Schiffen, Flugzeugen etc.) beschreibende Dokumente",
-            "en": "Documents describing locations in buildings (ships, airplanes, etc.)"
+            "en": "Documents describing locations in buildings (ships, airplanes, etc.)",
+            "zh": "建筑物(船舶、飞机等)位置描述文件"
         },
         "indicators": []
     },
@@ -939,7 +1002,8 @@
         },
         "label": {
             "de": "Orte in/auf Einrichtungen beschreibende Dokumente",
-            "en": "Places in/on facilities descriptive documents"
+            "en": "Places in/on facilities descriptive documents",
+            "zh": "设施内/上描述文件"
         },
         "indicators": []
     },
@@ -953,7 +1017,8 @@
         },
         "label": {
             "de": "Softwarespezifische Dokumente",
-            "en": "Software-specific documents"
+            "en": "Software-specific documents",
+            "zh": "特定软件文件"
         },
         "indicators": []
     },
@@ -967,7 +1032,8 @@
         },
         "label": {
             "de": "Einstellwertdokumente",
-            "en": "Setting value documents"
+            "en": "Setting value documents",
+            "zh": "设置值文件"
         },
         "indicators": []
     },
@@ -981,7 +1047,8 @@
         },
         "label": {
             "de": "Signalbeschreibungen",
-            "en": "Signal descriptions"
+            "en": "Signal descriptions",
+            "zh": "信号描述文件"
         },
         "indicators": []
     },
@@ -995,7 +1062,8 @@
         },
         "label": {
             "de": "Schaltkreisdokumente",
-            "en": "Circuit documents"
+            "en": "Circuit documents",
+            "zh": "电路文件"
         },
         "indicators": []
     },
@@ -1009,7 +1077,8 @@
         },
         "label": {
             "de": "Funktionsbeschreibungen",
-            "en": "Function descriptions"
+            "en": "Function descriptions",
+            "zh": "功能描述文件"
         },
         "indicators": []
     },
@@ -1023,7 +1092,8 @@
         },
         "label": {
             "de": "Funktionsschaltpläne",
-            "en": "Functional schematics"
+            "en": "Functional schematics",
+            "zh": "功能结构图"
         },
         "indicators": []
     },
@@ -1037,7 +1107,8 @@
         },
         "label": {
             "de": "Funktionsübersichtsdokumente",
-            "en": "Function overview documents"
+            "en": "Function overview documents",
+            "zh": "功能概述文件"
         },
         "indicators": []
     },
@@ -1051,7 +1122,8 @@
         },
         "label": {
             "de": "Dokumente der MMS-Gestaltung (Mensch-Maschine-Schnittstelle)",
-            "en": "MMS Design Documents (Human Machine Interface)"
+            "en": "MMS Design Documents (Human Machine Interface)",
+            "zh": "MMS(人机界面)设计文件"
         },
         "indicators": []
     },
@@ -1065,7 +1137,8 @@
         },
         "label": {
             "de": "Fließschemata",
-            "en": "Flowcharts"
+            "en": "Flowcharts",
+            "zh": "流程图"
         },
         "indicators": []
     },
@@ -1079,7 +1152,8 @@
         },
         "label": {
             "de": "Einstellwertdokumente",
-            "en": "Setting value documents"
+            "en": "Setting value documents",
+            "zh": "设置值文件"
         },
         "indicators": []
     },
@@ -1093,7 +1167,8 @@
         },
         "label": {
             "de": "Logbücher",
-            "en": "Logs"
+            "en": "Logs",
+            "zh": "日志"
         },
         "indicators": []
     },
@@ -1121,7 +1196,8 @@
         },
         "label": {
             "de": "Simulationsrechnung",
-            "en": "Simulation calculation"
+            "en": "Simulation calculation",
+            "zh": "仿真计算"
         },
         "indicators": []
     },
@@ -1146,7 +1222,8 @@
         },
         "label": {
             "de": "Netzberechnung, Energieversorgung",
-            "en": "Power supply system study"
+            "en": "Power supply system study",
+            "zh": "供电系统研究"
         },
         "indicators": []
     },
@@ -1174,7 +1251,8 @@
         },
         "label": {
             "de": "Statikberechnung",
-            "en": "Statics / Structural calculation"
+            "en": "Statics / Structural calculation",
+            "zh": "静力学/结构计算"
         },
         "indicators": []
     },
@@ -1199,7 +1277,8 @@
         },
         "label": {
             "de": "Hydraulische Berechnung",
-            "en": "Hydraulic calculation"
+            "en": "Hydraulic calculation",
+            "zh": "水力计算"
         },
         "indicators": []
     },
@@ -1227,7 +1306,8 @@
         },
         "label": {
             "de": "Verkehrsflächenberechnung",
-            "en": "Traffic area calculation"
+            "en": "Traffic area calculation",
+            "zh": "交通面积计算"
         },
         "indicators": []
     },
@@ -1255,7 +1335,8 @@
         },
         "label": {
             "de": "Mengen-, Bedarfsberechnung",
-            "en": "Quantity requirements"
+            "en": "Quantity requirements",
+            "zh": "数量、需求要求"
         },
         "indicators": []
     },
@@ -1280,7 +1361,8 @@
         },
         "label": {
             "de": "Flächen-Raumberechnung",
-            "en": "Area-space calculation"
+            "en": "Area-space calculation",
+            "zh": "面积-空间计算"
         },
         "indicators": []
     },
@@ -1309,7 +1391,8 @@
         },
         "label": {
             "de": "Festigkeitsberechnung",
-            "en": "Strength calculation"
+            "en": "Strength calculation",
+            "zh": "强度计算"
         },
         "indicators": []
     },
@@ -1334,7 +1417,8 @@
         },
         "label": {
             "de": "Zusammenstellung der Wärmeverluste",
-            "en": "Heat dissipation summary"
+            "en": "Heat dissipation summary",
+            "zh": "散热总结"
         },
         "indicators": []
     },
@@ -1359,7 +1443,8 @@
         },
         "label": {
             "de": "Ex-i Berechnung",
-            "en": "Ex-i calculation sheet"
+            "en": "Ex-i calculation sheet",
+            "zh": "Ex-i计算表"
         },
         "indicators": []
     },
@@ -1389,7 +1474,8 @@
         },
         "label": {
             "de": "Berechnungsblatt (technisch)",
-            "en": "Calculation sheet (technical)"
+            "en": "Calculation sheet (technical)",
+            "zh": "计算表(技术)"
         },
         "indicators": []
     },
@@ -1414,7 +1500,8 @@
         },
         "label": {
             "de": "Berechnung der Beleuchtungsstärke",
-            "en": "Illuminance calculation"
+            "en": "Illuminance calculation",
+            "zh": "照度计算"
         },
         "indicators": []
     },
@@ -1439,7 +1526,8 @@
         },
         "label": {
             "de": "Berechnung der Kabel-Dimensionierung",
-            "en": "Cable sizing calculation"
+            "en": "Cable sizing calculation",
+            "zh": "电缆尺寸计算"
         },
         "indicators": []
     },
@@ -1464,7 +1552,8 @@
         },
         "label": {
             "de": "Berechnung der elektrischen Begleitheizung",
-            "en": "Calculation of the electrical heat tracing"
+            "en": "Calculation of the electrical heat tracing",
+            "zh": "电伴热计算"
         },
         "indicators": []
     },
@@ -1489,7 +1578,8 @@
         },
         "label": {
             "de": "Berechnung kath. Korrosionsschutzanlage",
-            "en": "Calculation of the cathodic corrosion protection system"
+            "en": "Calculation of the cathodic corrosion protection system",
+            "zh": "阴极腐蚀防护系统计算"
         },
         "indicators": []
     },
@@ -1514,7 +1604,8 @@
         },
         "label": {
             "de": "Spezifikation der PLT-Prozessanschlüsse",
-            "en": "Specification E&I process connections"
+            "en": "Specification E&I process connections",
+            "zh": "E&I过程连接规范"
         },
         "indicators": []
     },
@@ -1539,7 +1630,8 @@
         },
         "label": {
             "de": "Prüfspezifikation",
-            "en": "Test specification"
+            "en": "Test specification",
+            "zh": "测试规范"
         },
         "indicators": []
     },
@@ -1564,7 +1656,8 @@
         },
         "label": {
             "de": "PLT-Stellenliste",
-            "en": "Loop list"
+            "en": "Loop list",
+            "zh": "循环列表"
         },
         "indicators": []
     },
@@ -1589,7 +1682,8 @@
         },
         "label": {
             "de": "Montageleistungsverzeichnis",
-            "en": "Construction bill of quantities"
+            "en": "Construction bill of quantities",
+            "zh": "施工工程量清单"
         },
         "indicators": []
     },
@@ -1617,7 +1711,8 @@
         },
         "label": {
             "de": "Heizkreisliste",
-            "en": "Heating circuit list"
+            "en": "Heating circuit list",
+            "zh": "加热线路表"
         },
         "indicators": []
     },
@@ -1645,7 +1740,8 @@
         },
         "label": {
             "de": "Konzept elektrische Begleitheizung",
-            "en": "Electrical heat tracing concept"
+            "en": "Electrical heat tracing concept",
+            "zh": "电伴热概念"
         },
         "indicators": []
     },
@@ -1670,7 +1766,8 @@
         },
         "label": {
             "de": "Gerätespezifikation",
-            "en": "Specification sheet"
+            "en": "Specification sheet",
+            "zh": "设备规格"
         },
         "indicators": []
     },
@@ -1695,7 +1792,8 @@
         },
         "label": {
             "de": "Anforderungsspezifikation",
-            "en": "Requirement specification"
+            "en": "Requirement specification",
+            "zh": "要求规范"
         },
         "indicators": []
     },
@@ -1723,7 +1821,8 @@
         },
         "label": {
             "de": "Liste elektrischer Verbraucher",
-            "en": "Electrical consumers list"
+            "en": "Electrical consumers list",
+            "zh": "电器消费者名单"
         },
         "indicators": []
     },
@@ -1748,7 +1847,8 @@
         },
         "label": {
             "de": "Lastenheft (technisch)",
-            "en": "User requirement specification (technical)"
+            "en": "User requirement specification (technical)",
+            "zh": "用户需求规范(技术)"
         },
         "indicators": []
     },
@@ -1773,7 +1873,8 @@
         },
         "label": {
             "de": "Konzept für Kommunikationseinrichtungen",
-            "en": "Concept for communication equipment"
+            "en": "Concept for communication equipment",
+            "zh": "通信设施概念"
         },
         "indicators": []
     },
@@ -1798,7 +1899,8 @@
         },
         "label": {
             "de": "Beleuchtungskonzept",
-            "en": "Lighting concept"
+            "en": "Lighting concept",
+            "zh": "照明概念"
         },
         "indicators": []
     },
@@ -1823,7 +1925,8 @@
         },
         "label": {
             "de": "Konzept kathodischer Korrosionsschutz",
-            "en": "Cathodic corrosion protection concept"
+            "en": "Cathodic corrosion protection concept",
+            "zh": "阴极腐蚀防护概念"
         },
         "indicators": []
     },
@@ -1851,7 +1954,8 @@
         },
         "label": {
             "de": "Konzept Blitzschutz, Erdung und Potentialausgleich",
-            "en": "Lightning protection, grounding and equipotential bonding concept"
+            "en": "Lightning protection, grounding and equipotential bonding concept",
+            "zh": "防雷、接地和等电位键合概念"
         },
         "indicators": []
     },
@@ -1876,7 +1980,8 @@
         },
         "label": {
             "de": "Werkstoffspezifikation",
-            "en": "Material specification"
+            "en": "Material specification",
+            "zh": "材料规格"
         },
         "indicators": []
     },
@@ -1904,7 +2009,8 @@
         },
         "label": {
             "de": "Werkstandard",
-            "en": "Site standard"
+            "en": "Site standard",
+            "zh": "工厂标准"
         },
         "indicators": []
     },
@@ -1937,7 +2043,8 @@
         },
         "label": {
             "de": "Allgemeine Engineeringspezifikation",
-            "en": "General design requirements"
+            "en": "General design requirements",
+            "zh": "一般工程规范"
         },
         "indicators": []
     },
@@ -1966,7 +2073,8 @@
         },
         "label": {
             "de": "Pflichtenheft",
-            "en": "Technical specification"
+            "en": "Technical specification",
+            "zh": "技术规范"
         },
         "indicators": []
     },
@@ -1997,7 +2105,8 @@
         },
         "label": {
             "de": "Stoffdaten",
-            "en": "Physical property data"
+            "en": "Physical property data",
+            "zh": "物理性能数据"
         },
         "indicators": []
     },
@@ -2022,7 +2131,8 @@
         },
         "label": {
             "de": "Utilities",
-            "en": "Utilities"
+            "en": "Utilities",
+            "zh": "公用工程"
         },
         "indicators": []
     },
@@ -2064,7 +2174,8 @@
         },
         "label": {
             "de": "Technische Spezifikation",
-            "en": "Evonik technical specification"
+            "en": "Evonik technical specification",
+            "zh": "技术规格"
         },
         "indicators": []
     },
@@ -2092,7 +2203,8 @@
         },
         "label": {
             "de": "Process Design Basis",
-            "en": "Process design basis"
+            "en": "Process design basis",
+            "zh": "工艺设计基础"
         },
         "indicators": []
     },
@@ -2117,7 +2229,8 @@
         },
         "label": {
             "de": "Medienliste",
-            "en": "Media list"
+            "en": "Media list",
+            "zh": "媒体列表"
         },
         "indicators": []
     },
@@ -2142,7 +2255,8 @@
         },
         "label": {
             "de": "Rohrklasse",
-            "en": "Pipe class"
+            "en": "Pipe class",
+            "zh": "管道类别"
         },
         "indicators": []
     },
@@ -2167,7 +2281,8 @@
         },
         "label": {
             "de": "NE 100",
-            "en": "NE 100"
+            "en": "NE 100",
+            "zh": "NE 100"
         },
         "indicators": []
     },
@@ -2195,7 +2310,8 @@
         },
         "label": {
             "de": "Mitgeltendes Regelwerk DIN / ISO / TS",
-            "en": "Applicable rules and regulations DIN / ISO / TS"
+            "en": "Applicable rules and regulations DIN / ISO / TS",
+            "zh": "适用的法规DIN / ISO / TS"
         },
         "indicators": []
     },
@@ -2220,7 +2336,8 @@
         },
         "label": {
             "de": "ISO Norm",
-            "en": "ISO standard"
+            "en": "ISO standard",
+            "zh": "ISO标准"
         },
         "indicators": []
     },
@@ -2245,7 +2362,8 @@
         },
         "label": {
             "de": "IEC Norm",
-            "en": "IEC standard"
+            "en": "IEC standard",
+            "zh": "IEC标准"
         },
         "indicators": []
     },
@@ -2270,7 +2388,8 @@
         },
         "label": {
             "de": "Standards",
-            "en": "Standard"
+            "en": "Standard",
+            "zh": "标准"
         },
         "indicators": []
     },
@@ -2295,7 +2414,8 @@
         },
         "label": {
             "de": "DIN-Norm",
-            "en": "DIN  standard"
+            "en": "DIN  standard",
+            "zh": "DIN标准"
         },
         "indicators": []
     },
@@ -2320,7 +2440,8 @@
         },
         "label": {
             "de": "Bauauflagen",
-            "en": "Building requirements"
+            "en": "Building requirements",
+            "zh": "建设需求"
         },
         "indicators": []
     },
@@ -2349,7 +2470,8 @@
         },
         "label": {
             "de": "Gewässerschutzanforderungen",
-            "en": "Water protection requirements"
+            "en": "Water protection requirements",
+            "zh": "水资源保护要求"
         },
         "indicators": []
     },
@@ -2377,7 +2499,8 @@
         },
         "label": {
             "de": "Umweltverordnung",
-            "en": "Environmental decree"
+            "en": "Environmental decree",
+            "zh": "环保法令"
         },
         "indicators": []
     },
@@ -2402,7 +2525,8 @@
         },
         "label": {
             "de": "Bauverordnung",
-            "en": "Building regulation"
+            "en": "Building regulation",
+            "zh": "建筑法令"
         },
         "indicators": []
     },
@@ -2430,7 +2554,8 @@
         },
         "label": {
             "de": "Umweltschutzanforderungen",
-            "en": "Environmental protection requirements"
+            "en": "Environmental protection requirements",
+            "zh": "环保要求"
         },
         "indicators": []
     },
@@ -2455,7 +2580,8 @@
         },
         "label": {
             "de": "Arbeitsschutzanforderungen",
-            "en": "Health and safety requirements"
+            "en": "Health and safety requirements",
+            "zh": "职业健康和安全要求"
         },
         "indicators": []
     },
@@ -2480,7 +2606,8 @@
         },
         "label": {
             "de": "Rezepturen",
-            "en": "Formulations / Recipies"
+            "en": "Formulations / Recipies",
+            "zh": "配方"
         },
         "indicators": []
     },
@@ -2511,7 +2638,8 @@
         },
         "label": {
             "de": "Prüf- und Wartungsvorschrift",
-            "en": "Test and maintenance requirements"
+            "en": "Test and maintenance requirements",
+            "zh": "测试和维护要求"
         },
         "indicators": []
     },
@@ -2536,7 +2664,8 @@
         },
         "label": {
             "de": "Demontageanleitung",
-            "en": "Dismantling instructions"
+            "en": "Dismantling instructions",
+            "zh": "拆除说明"
         },
         "indicators": []
     },
@@ -2572,7 +2701,8 @@
         },
         "label": {
             "de": "Arbeitsanweisung",
-            "en": "Work instruction"
+            "en": "Work instruction",
+            "zh": "工作指令"
         },
         "indicators": []
     },
@@ -2597,7 +2727,8 @@
         },
         "label": {
             "de": "Handbuch",
-            "en": "Manual"
+            "en": "Manual",
+            "zh": "手册"
         },
         "indicators": []
     },
@@ -2622,7 +2753,8 @@
         },
         "label": {
             "de": "Gebrauchsanleitung",
-            "en": "Instruction manual"
+            "en": "Instruction manual",
+            "zh": "使用说明"
         },
         "indicators": []
     },
@@ -2647,7 +2779,8 @@
         },
         "label": {
             "de": "Wartungsanweisung",
-            "en": "Maintenance instruction"
+            "en": "Maintenance instruction",
+            "zh": "维护说明"
         },
         "indicators": []
     },
@@ -2672,7 +2805,8 @@
         },
         "label": {
             "de": "Installationsanleitung",
-            "en": "Installation instruction"
+            "en": "Installation instruction",
+            "zh": "安装说明"
         },
         "indicators": []
     },
@@ -2697,7 +2831,8 @@
         },
         "label": {
             "de": "Lageranweisung",
-            "en": "Storage instruction"
+            "en": "Storage instruction",
+            "zh": "存储说明"
         },
         "indicators": []
     },
@@ -2725,7 +2860,8 @@
         },
         "label": {
             "de": "Bedienungsanleitung",
-            "en": "Operating instruction"
+            "en": "Operating instruction",
+            "zh": "操作说明"
         },
         "indicators": []
     },
@@ -2750,7 +2886,8 @@
         },
         "label": {
             "de": "Betriebsanleitung",
-            "en": "Operating manual"
+            "en": "Operating manual",
+            "zh": "操作说明"
         },
         "indicators": []
     },
@@ -2778,7 +2915,8 @@
         },
         "label": {
             "de": "Prüf- und Wartungsanleitung",
-            "en": "Test and maintenance recommendations"
+            "en": "Test and maintenance recommendations",
+            "zh": "测试和维护说明"
         },
         "indicators": []
     },
@@ -2803,7 +2941,8 @@
         },
         "label": {
             "de": "Prüfanweisung",
-            "en": "Inspection Instruction"
+            "en": "Inspection Instruction",
+            "zh": "检查说明"
         },
         "indicators": []
     },
@@ -2828,7 +2967,8 @@
         },
         "label": {
             "de": "Stilllegungsanweisung",
-            "en": "Decommissioning instruction"
+            "en": "Decommissioning instruction",
+            "zh": "退役说明"
         },
         "indicators": []
     },
@@ -2856,7 +2996,8 @@
         },
         "label": {
             "de": "Reparaturanleitung",
-            "en": "Repair manual"
+            "en": "Repair manual",
+            "zh": "维修说明"
         },
         "indicators": []
     },
@@ -2881,7 +3022,8 @@
         },
         "label": {
             "de": "Wartungskit",
-            "en": "Maintenance kit"
+            "en": "Maintenance kit",
+            "zh": "维护包"
         },
         "indicators": []
     },
@@ -2909,7 +3051,8 @@
         },
         "label": {
             "de": "Schmierplan",
-            "en": "Lubrication schedule"
+            "en": "Lubrication schedule",
+            "zh": "润滑时间表"
         },
         "indicators": []
     },
@@ -2934,7 +3077,8 @@
         },
         "label": {
             "de": "IBN-Anleitung",
-            "en": "Startup manual"
+            "en": "Startup manual",
+            "zh": "启动手册"
         },
         "indicators": []
     },
@@ -2962,7 +3106,8 @@
         },
         "label": {
             "de": "I+W+P-Anleitungen",
-            "en": "I+M+T instructions"
+            "en": "I+M+T instructions",
+            "zh": "启动+维护+测试--说明"
         },
         "indicators": []
     },
@@ -2987,7 +3132,8 @@
         },
         "label": {
             "de": "Montageanleitung",
-            "en": "Assembly instruction"
+            "en": "Assembly instruction",
+            "zh": "装配说明"
         },
         "indicators": []
     },
@@ -3012,7 +3158,8 @@
         },
         "label": {
             "de": "Kalibrieranleitung",
-            "en": "Calibration instruction"
+            "en": "Calibration instruction",
+            "zh": "校准说明"
         },
         "indicators": []
     },
@@ -3037,7 +3184,8 @@
         },
         "label": {
             "de": "Elektronisches Typenschild (DIN 66277)",
-            "en": "Electronic nameplate (DIN 66277)"
+            "en": "Electronic nameplate (DIN 66277)",
+            "zh": "电子铭牌(DIN 66277)"
         },
         "indicators": []
     },
@@ -3065,7 +3213,8 @@
         },
         "label": {
             "de": "Auslegungsrechnung",
-            "en": "Design calculation"
+            "en": "Design calculation",
+            "zh": "设计计算"
         },
         "indicators": []
     },
@@ -3090,7 +3239,8 @@
         },
         "label": {
             "de": "Identifikation",
-            "en": "Identification"
+            "en": "Identification",
+            "zh": "识别"
         },
         "indicators": []
     },
@@ -3115,7 +3265,8 @@
         },
         "label": {
             "de": "Systembeschreibung",
-            "en": "System description"
+            "en": "System description",
+            "zh": "系统描述"
         },
         "indicators": []
     },
@@ -3140,7 +3291,8 @@
         },
         "label": {
             "de": "Kennlinie",
-            "en": "Characteristic curve"
+            "en": "Characteristic curve",
+            "zh": "特性曲线"
         },
         "indicators": []
     },
@@ -3168,7 +3320,8 @@
         },
         "label": {
             "de": "Berechnung",
-            "en": "Computation"
+            "en": "Computation",
+            "zh": "计算"
         },
         "indicators": []
     },
@@ -3193,7 +3346,8 @@
         },
         "label": {
             "de": "Kennzeichnungssystem",
-            "en": "Identification system"
+            "en": "Identification system",
+            "zh": "识别系统"
         },
         "indicators": []
     },
@@ -3218,7 +3372,8 @@
         },
         "label": {
             "de": "TEMA-Sheet",
-            "en": "TEMA sheet"
+            "en": "TEMA sheet",
+            "zh": "TEMA表"
         },
         "indicators": []
     },
@@ -3243,7 +3398,8 @@
         },
         "label": {
             "de": "Produkt-Broschüre",
-            "en": "Product leaflet"
+            "en": "Product leaflet",
+            "zh": "产品传单"
         },
         "indicators": []
     },
@@ -3268,7 +3424,8 @@
         },
         "label": {
             "de": "Katalog",
-            "en": "Catalogue"
+            "en": "Catalogue",
+            "zh": "目录"
         },
         "indicators": []
     },
@@ -3293,7 +3450,8 @@
         },
         "label": {
             "de": "Info-Material",
-            "en": "Info material"
+            "en": "Info material",
+            "zh": "信息材料"
         },
         "indicators": []
     },
@@ -3318,7 +3476,8 @@
         },
         "label": {
             "de": "Versuchsbericht",
-            "en": "Experimental results"
+            "en": "Experimental results",
+            "zh": "测试报告"
         },
         "indicators": []
     },
@@ -3346,7 +3505,8 @@
         },
         "label": {
             "de": "Technical Design Basis",
-            "en": "Technical design basis"
+            "en": "Technical design basis",
+            "zh": "技术设计基础"
         },
         "indicators": []
     },
@@ -3371,7 +3531,8 @@
         },
         "label": {
             "de": "Energiebilanz",
-            "en": "Energy Balance"
+            "en": "Energy Balance",
+            "zh": "能量平衡"
         },
         "indicators": []
     },
@@ -3396,7 +3557,8 @@
         },
         "label": {
             "de": "Massenbilanz",
-            "en": "Mass balance"
+            "en": "Mass balance",
+            "zh": "质量平衡"
         },
         "indicators": []
     },
@@ -3425,7 +3587,8 @@
         },
         "label": {
             "de": "Auslegungsspezifikation",
-            "en": "Design specification"
+            "en": "Design specification",
+            "zh": "设计规范"
         },
         "indicators": []
     },
@@ -3450,7 +3613,8 @@
         },
         "label": {
             "de": "Erweiterungsmoeglichkeiten",
-            "en": "Extension possibilities"
+            "en": "Extension possibilities",
+            "zh": "扩展的可能性"
         },
         "indicators": []
     },
@@ -3475,7 +3639,8 @@
         },
         "label": {
             "de": "Reaktionsmatrix",
-            "en": "Reaction matrix"
+            "en": "Reaction matrix",
+            "zh": "反应矩阵"
         },
         "indicators": []
     },
@@ -3503,7 +3668,8 @@
         },
         "label": {
             "de": "Testbericht",
-            "en": "Test reports"
+            "en": "Test reports",
+            "zh": "测试报告"
         },
         "indicators": []
     },
@@ -3528,7 +3694,8 @@
         },
         "label": {
             "de": "Verfahrensdaten",
-            "en": "Process data"
+            "en": "Process data",
+            "zh": "过程数据"
         },
         "indicators": []
     },
@@ -3553,7 +3720,8 @@
         },
         "label": {
             "de": "Alternativenuntersuchung",
-            "en": "Alternatives report"
+            "en": "Alternatives report",
+            "zh": "替代调查"
         },
         "indicators": []
     },
@@ -3578,7 +3746,8 @@
         },
         "label": {
             "de": "Studien",
-            "en": "Studies"
+            "en": "Studies",
+            "zh": "研究"
         },
         "indicators": []
     },
@@ -3603,7 +3772,8 @@
         },
         "label": {
             "de": "Verfahrensdatenblatt",
-            "en": "Process data sheet"
+            "en": "Process data sheet",
+            "zh": "工艺参数表"
         },
         "indicators": []
     },
@@ -3632,7 +3802,8 @@
         },
         "label": {
             "de": "Sicherheitsdatenblatt",
-            "en": "Safety data sheet"
+            "en": "Safety data sheet",
+            "zh": "安全数据表"
         },
         "indicators": []
     },
@@ -3657,7 +3828,8 @@
         },
         "label": {
             "de": "Verfahrensdatenblatt Rohrleitung",
-            "en": "Pipe Line data Sheet"
+            "en": "Pipe Line data Sheet",
+            "zh": "管道数据表 "
         },
         "indicators": []
     },
@@ -3685,7 +3857,8 @@
         },
         "label": {
             "de": "PLT-Stellenblatt",
-            "en": "Instrument data sheet"
+            "en": "Instrument data sheet",
+            "zh": "仪表数据表"
         },
         "indicators": []
     },
@@ -3710,7 +3883,8 @@
         },
         "label": {
             "de": "Masszeichnung",
-            "en": "Dimension drawing"
+            "en": "Dimension drawing",
+            "zh": "尺寸图"
         },
         "indicators": []
     },
@@ -3735,7 +3909,8 @@
         },
         "label": {
             "de": "Veroeffentlichung / Fachaufsatz",
-            "en": "Publication / technical essay"
+            "en": "Publication / technical essay",
+            "zh": "出版物/技术文件"
         },
         "indicators": []
     },
@@ -3760,7 +3935,8 @@
         },
         "label": {
             "de": "Patent",
-            "en": "Patent"
+            "en": "Patent",
+            "zh": "专利"
         },
         "indicators": []
     },
@@ -3785,7 +3961,8 @@
         },
         "label": {
             "de": "Literatur",
-            "en": "Literature"
+            "en": "Literature",
+            "zh": "文献资料"
         },
         "indicators": []
     },
@@ -3814,7 +3991,8 @@
         },
         "label": {
             "de": "Genehmigungsbescheid",
-            "en": "Letter of approval"
+            "en": "Letter of approval",
+            "zh": "批准通知"
         },
         "indicators": []
     },
@@ -3842,7 +4020,8 @@
         },
         "label": {
             "de": "Genehmigung / Erlaubnis / Berechtigung",
-            "en": "Approval / Permission / Authorization"
+            "en": "Approval / Permission / Authorization",
+            "zh": "批准/许可/授权"
         },
         "indicators": []
     },
@@ -3867,7 +4046,8 @@
         },
         "label": {
             "de": "Lizenz",
-            "en": "License"
+            "en": "License",
+            "zh": "许可证"
         },
         "indicators": []
     },
@@ -3895,7 +4075,8 @@
         },
         "label": {
             "de": "Antrag auf Genehmigung",
-            "en": "Request for approval"
+            "en": "Request for approval",
+            "zh": "申请授权"
         },
         "indicators": []
     },
@@ -3920,7 +4101,8 @@
         },
         "label": {
             "de": "Angebot",
-            "en": "Offer to buy"
+            "en": "Offer to buy",
+            "zh": "购买要约"
         },
         "indicators": []
     },
@@ -3967,7 +4149,8 @@
         },
         "label": {
             "de": "Vergabeunterlagen",
-            "en": "Awarding documents"
+            "en": "Awarding documents",
+            "zh": "授予文件"
         },
         "indicators": []
     },
@@ -3992,7 +4175,8 @@
         },
         "label": {
             "de": "Absichtserklärung",
-            "en": "Letter of intent"
+            "en": "Letter of intent",
+            "zh": "意向书"
         },
         "indicators": []
     },
@@ -4020,7 +4204,8 @@
         },
         "label": {
             "de": "Ausschreibungsunterlagen",
-            "en": "Request for quotation"
+            "en": "Request for quotation",
+            "zh": "报价文件"
         },
         "indicators": []
     },
@@ -4045,7 +4230,8 @@
         },
         "label": {
             "de": "Kalkulationsblatt (komerziell)",
-            "en": "Calculation sheet (commercial)"
+            "en": "Calculation sheet (commercial)",
+            "zh": "计算表(商业)"
         },
         "indicators": []
     },
@@ -4070,7 +4256,8 @@
         },
         "label": {
             "de": "Lastenheft (komerziell)",
-            "en": "Specification book (commercial)"
+            "en": "Specification book (commercial)",
+            "zh": "规格书(商用)"
         },
         "indicators": []
     },
@@ -4095,7 +4282,8 @@
         },
         "label": {
             "de": "Annahmeschreiben",
-            "en": "Letter of acceptance"
+            "en": "Letter of acceptance",
+            "zh": "接受函"
         },
         "indicators": []
     },
@@ -4120,7 +4308,8 @@
         },
         "label": {
             "de": "Anfrage",
-            "en": "Inquiry / RFI"
+            "en": "Inquiry / RFI",
+            "zh": "查询"
         },
         "indicators": []
     },
@@ -4145,7 +4334,8 @@
         },
         "label": {
             "de": "Ersatzteilbestellung",
-            "en": "Order for spare parts"
+            "en": "Order for spare parts",
+            "zh": "备件订购"
         },
         "indicators": []
     },
@@ -4173,7 +4363,8 @@
         },
         "label": {
             "de": "Bestellung",
-            "en": "Order"
+            "en": "Order",
+            "zh": "订单"
         },
         "indicators": []
     },
@@ -4198,7 +4389,8 @@
         },
         "label": {
             "de": "Leistungsanerkennung",
-            "en": "Service acceptance note"
+            "en": "Service acceptance note",
+            "zh": "服务验收单"
         },
         "indicators": []
     },
@@ -4223,7 +4415,8 @@
         },
         "label": {
             "de": "Lieferschein",
-            "en": "Delivery note"
+            "en": "Delivery note",
+            "zh": "交付说明"
         },
         "indicators": []
     },
@@ -4248,7 +4441,8 @@
         },
         "label": {
             "de": "Abrufauftrag",
-            "en": "Call order"
+            "en": "Call order",
+            "zh": "呼叫单"
         },
         "indicators": []
     },
@@ -4273,7 +4467,8 @@
         },
         "label": {
             "de": "Vertragsunterlagen",
-            "en": "Contract document"
+            "en": "Contract document",
+            "zh": "合同文件"
         },
         "indicators": []
     },
@@ -4301,7 +4496,8 @@
         },
         "label": {
             "de": "Lizenzvertrag",
-            "en": "License agreement"
+            "en": "License agreement",
+            "zh": "许可证协议"
         },
         "indicators": []
     },
@@ -4326,7 +4522,8 @@
         },
         "label": {
             "de": "Lieferbedingungen",
-            "en": "Terms of delivery"
+            "en": "Terms of delivery",
+            "zh": "交付条款"
         },
         "indicators": []
     },
@@ -4354,7 +4551,8 @@
         },
         "label": {
             "de": "Endabnahme-Zertifikat",
-            "en": "Final acceptance certificate"
+            "en": "Final acceptance certificate",
+            "zh": "最终验收证书"
         },
         "indicators": []
     },
@@ -4379,7 +4577,8 @@
         },
         "label": {
             "de": "Engineering-Vertrag",
-            "en": "Engineering contract"
+            "en": "Engineering contract",
+            "zh": "工程合同"
         },
         "indicators": []
     },
@@ -4404,7 +4603,8 @@
         },
         "label": {
             "de": "Schadenseinschätzung",
-            "en": "Damage assesment"
+            "en": "Damage assesment",
+            "zh": "损失评估"
         },
         "indicators": []
     },
@@ -4429,7 +4629,8 @@
         },
         "label": {
             "de": "Versicherungspolice",
-            "en": "Insurance policy"
+            "en": "Insurance policy",
+            "zh": "保险政策"
         },
         "indicators": []
     },
@@ -4454,7 +4655,8 @@
         },
         "label": {
             "de": "Mängelrügen",
-            "en": "Notification of defects / underperformance"
+            "en": "Notification of defects / underperformance",
+            "zh": "瑕疵通知"
         },
         "indicators": []
     },
@@ -4479,7 +4681,8 @@
         },
         "label": {
             "de": "Versicherungen",
-            "en": "Insurances"
+            "en": "Insurances",
+            "zh": "保险"
         },
         "indicators": []
     },
@@ -4504,7 +4707,8 @@
         },
         "label": {
             "de": "Stundennachweis / Leistungsschein",
-            "en": "Time sheet / service certificate"
+            "en": "Time sheet / service certificate",
+            "zh": "时间表/服务证书"
         },
         "indicators": []
     },
@@ -4529,7 +4733,8 @@
         },
         "label": {
             "de": "Rechnung",
-            "en": "Invoice"
+            "en": "Invoice",
+            "zh": "发票"
         },
         "indicators": []
     },
@@ -4554,7 +4759,8 @@
         },
         "label": {
             "de": "Wareneingangsschein",
-            "en": "Goods receipt slip"
+            "en": "Goods receipt slip",
+            "zh": "收货单"
         },
         "indicators": []
     },
@@ -4579,7 +4785,8 @@
         },
         "label": {
             "de": "Expertise, Gutachten",
-            "en": "Expertise"
+            "en": "Expertise",
+            "zh": "专业知识"
         },
         "indicators": []
     },
@@ -4604,7 +4811,8 @@
         },
         "label": {
             "de": "Lärmschutzgutachten",
-            "en": "noise protection report"
+            "en": "noise protection report",
+            "zh": "噪声保护报告"
         },
         "indicators": []
     },
@@ -4632,7 +4840,8 @@
         },
         "label": {
             "de": "Bodengutachten",
-            "en": "Soil expertise"
+            "en": "Soil expertise",
+            "zh": "土壤专业知识"
         },
         "indicators": []
     },
@@ -4657,7 +4866,8 @@
         },
         "label": {
             "de": "Bankgarantie",
-            "en": "Bank guarantee"
+            "en": "Bank guarantee",
+            "zh": "银行担保"
         },
         "indicators": []
     },
@@ -4682,7 +4892,8 @@
         },
         "label": {
             "de": "Garantieschein",
-            "en": "Certificate of guarantee"
+            "en": "Certificate of guarantee",
+            "zh": "担保证书"
         },
         "indicators": []
     },
@@ -4710,7 +4921,8 @@
         },
         "label": {
             "de": "Garantiebestimmung",
-            "en": "Warranty provision"
+            "en": "Warranty provision",
+            "zh": "保修条款"
         },
         "indicators": []
     },
@@ -4738,7 +4950,8 @@
         },
         "label": {
             "de": "Lärmschutzplan",
-            "en": "Noise protection plan"
+            "en": "Noise protection plan",
+            "zh": "噪声保护计划"
         },
         "indicators": []
     },
@@ -4766,7 +4979,8 @@
         },
         "label": {
             "de": "Brandschutzplan",
-            "en": "Fire protection plan"
+            "en": "Fire protection plan",
+            "zh": "消防计划"
         },
         "indicators": []
     },
@@ -4791,7 +5005,8 @@
         },
         "label": {
             "de": "Notfall Anleitung",
-            "en": "Emergency instructions"
+            "en": "Emergency instructions",
+            "zh": "紧急指示"
         },
         "indicators": []
     },
@@ -4816,7 +5031,8 @@
         },
         "label": {
             "de": "Fluchtplan",
-            "en": "Escape plan"
+            "en": "Escape plan",
+            "zh": "逃生计划"
         },
         "indicators": []
     },
@@ -4841,7 +5057,8 @@
         },
         "label": {
             "de": "Schulungsplan",
-            "en": "Training schedule"
+            "en": "Training schedule",
+            "zh": "培训计划"
         },
         "indicators": []
     },
@@ -4866,7 +5083,8 @@
         },
         "label": {
             "de": "Beschreibung der Ausbildung",
-            "en": "Training description"
+            "en": "Training description",
+            "zh": "培训说明"
         },
         "indicators": []
     },
@@ -4891,7 +5109,8 @@
         },
         "label": {
             "de": "Kontaktliste",
-            "en": "Contact list"
+            "en": "Contact list",
+            "zh": "联系名单"
         },
         "indicators": []
     },
@@ -4916,7 +5135,8 @@
         },
         "label": {
             "de": "Berechtigungen im Projekt",
-            "en": "Authorizations in the project"
+            "en": "Authorizations in the project",
+            "zh": "项目中的授权"
         },
         "indicators": []
     },
@@ -4941,7 +5161,8 @@
         },
         "label": {
             "de": "Projektteilnehmer",
-            "en": "Project participants"
+            "en": "Project participants",
+            "zh": "项目参与者"
         },
         "indicators": []
     },
@@ -4966,7 +5187,8 @@
         },
         "label": {
             "de": "Lieferantenliste",
-            "en": "Supplier list"
+            "en": "Supplier list",
+            "zh": "供应商名单"
         },
         "indicators": []
     },
@@ -4991,7 +5213,8 @@
         },
         "label": {
             "de": "Verteiler",
-            "en": "Distribution list"
+            "en": "Distribution list",
+            "zh": "分销名单"
         },
         "indicators": []
     },
@@ -5016,7 +5239,8 @@
         },
         "label": {
             "de": "Anbieterliste",
-            "en": "Vendor List"
+            "en": "Vendor List",
+            "zh": "供应商名单"
         },
         "indicators": []
     },
@@ -5041,7 +5265,8 @@
         },
         "label": {
             "de": "Notiz",
-            "en": "Note"
+            "en": "Note",
+            "zh": "备注"
         },
         "indicators": []
     },
@@ -5066,7 +5291,8 @@
         },
         "label": {
             "de": "E-Mail",
-            "en": "Email"
+            "en": "Email",
+            "zh": "电子邮件"
         },
         "indicators": []
     },
@@ -5091,7 +5317,8 @@
         },
         "label": {
             "de": "Brief",
-            "en": "Letter"
+            "en": "Letter",
+            "zh": "信件"
         },
         "indicators": []
     },
@@ -5116,7 +5343,8 @@
         },
         "label": {
             "de": "Inbetriebnahmebericht",
-            "en": "Commissioning report"
+            "en": "Commissioning report",
+            "zh": "调试报告"
         },
         "indicators": []
     },
@@ -5141,7 +5369,8 @@
         },
         "label": {
             "de": "Restpunktliste",
-            "en": "Punch list"
+            "en": "Punch list",
+            "zh": "遗留问题清单"
         },
         "indicators": []
     },
@@ -5169,7 +5398,8 @@
         },
         "label": {
             "de": "Übergabebericht",
-            "en": "Handing over protocol"
+            "en": "Handing over protocol",
+            "zh": "移交报告"
         },
         "indicators": []
     },
@@ -5194,7 +5424,8 @@
         },
         "label": {
             "de": "Schadensbericht",
-            "en": "Damage report"
+            "en": "Damage report",
+            "zh": "损坏报告"
         },
         "indicators": []
     },
@@ -5219,7 +5450,8 @@
         },
         "label": {
             "de": "Abschlussbericht",
-            "en": "Final report"
+            "en": "Final report",
+            "zh": "最终报告"
         },
         "indicators": []
     },
@@ -5244,7 +5476,8 @@
         },
         "label": {
             "de": "Einkaufsbericht",
-            "en": "Purchasing report"
+            "en": "Purchasing report",
+            "zh": "采购报告"
         },
         "indicators": []
     },
@@ -5269,7 +5502,8 @@
         },
         "label": {
             "de": "Sitzungsbericht",
-            "en": "Meeting report"
+            "en": "Meeting report",
+            "zh": "会议报告"
         },
         "indicators": []
     },
@@ -5294,7 +5528,8 @@
         },
         "label": {
             "de": "Installationsbericht",
-            "en": "Installation report"
+            "en": "Installation report",
+            "zh": "安装报告"
         },
         "indicators": []
     },
@@ -5319,7 +5554,8 @@
         },
         "label": {
             "de": "Technischer Bericht (Management)",
-            "en": "Technical report (management)"
+            "en": "Technical report (management)",
+            "zh": "技术报告（管理）"
         },
         "indicators": []
     },
@@ -5344,7 +5580,8 @@
         },
         "label": {
             "de": "Statusbericht",
-            "en": "Status report"
+            "en": "Status report",
+            "zh": "状态报告"
         },
         "indicators": []
     },
@@ -5369,7 +5606,8 @@
         },
         "label": {
             "de": "Änderungsmitteilung",
-            "en": "Change notification"
+            "en": "Change notification",
+            "zh": "更改通知"
         },
         "indicators": []
     },
@@ -5394,7 +5632,8 @@
         },
         "label": {
             "de": "Änderungsanforderung",
-            "en": "Change request"
+            "en": "Change request",
+            "zh": "更改请求"
         },
         "indicators": []
     },
@@ -5419,7 +5658,8 @@
         },
         "label": {
             "de": "Aktivitäten-Netzwerkplan",
-            "en": "Activity network plan"
+            "en": "Activity network plan",
+            "zh": "活动网络计划"
         },
         "indicators": []
     },
@@ -5444,7 +5684,8 @@
         },
         "label": {
             "de": "Ressourcenauslastung",
-            "en": "Resource load diagram"
+            "en": "Resource load diagram",
+            "zh": "资源负荷图"
         },
         "indicators": []
     },
@@ -5469,7 +5710,8 @@
         },
         "label": {
             "de": "KnowHow Schutz Dokumente",
-            "en": "Know How Protection documents"
+            "en": "Know How Protection documents",
+            "zh": "知识保护文件"
         },
         "indicators": []
     },
@@ -5494,7 +5736,8 @@
         },
         "label": {
             "de": "Projekt Durchführungs Plan",
-            "en": "Project execution plan"
+            "en": "Project execution plan",
+            "zh": "项目实施计划"
         },
         "indicators": []
     },
@@ -5519,7 +5762,8 @@
         },
         "label": {
             "de": "Terminplan",
-            "en": "Time schedule"
+            "en": "Time schedule",
+            "zh": "时间表"
         },
         "indicators": []
     },
@@ -5547,7 +5791,8 @@
         },
         "label": {
             "de": "Capital Approval Request / Investitionsantrag",
-            "en": "Capital approval request"
+            "en": "Capital approval request",
+            "zh": "资本审批申请/投资申请"
         },
         "indicators": []
     },
@@ -5572,7 +5817,8 @@
         },
         "label": {
             "de": "Personaleinsatzplan",
-            "en": "Manpower mobilization plan"
+            "en": "Manpower mobilization plan",
+            "zh": "人员配置计划"
         },
         "indicators": []
     },
@@ -5600,7 +5846,8 @@
         },
         "label": {
             "de": "Wartungsplan",
-            "en": "Maintenance schedule"
+            "en": "Maintenance schedule",
+            "zh": "维护计划"
         },
         "indicators": []
     },
@@ -5625,7 +5872,8 @@
         },
         "label": {
             "de": "Belegungsplan / Auslastungsprognose",
-            "en": "Allocation plan / utilization forecast"
+            "en": "Allocation plan / utilization forecast",
+            "zh": "分配计划/利用率预测"
         },
         "indicators": []
     },
@@ -5650,7 +5898,8 @@
         },
         "label": {
             "de": "Kostendokumentation",
-            "en": "Cost related documents"
+            "en": "Cost related documents",
+            "zh": "成本文件"
         },
         "indicators": []
     },
@@ -5675,7 +5924,8 @@
         },
         "label": {
             "de": "Termingesprächaufzeichnungen",
-            "en": "Schedule control call minutes"
+            "en": "Schedule control call minutes",
+            "zh": "预约记录"
         },
         "indicators": []
     },
@@ -5700,7 +5950,8 @@
         },
         "label": {
             "de": "KPI Berechnung",
-            "en": "KPI calculation"
+            "en": "KPI calculation",
+            "zh": "KPI计算"
         },
         "indicators": []
     },
@@ -5725,7 +5976,8 @@
         },
         "label": {
             "de": "Fortschrittsbericht",
-            "en": "Progress report"
+            "en": "Progress report",
+            "zh": "进度报告"
         },
         "indicators": []
     },
@@ -5754,7 +6006,8 @@
         },
         "label": {
             "de": "Fertigmeldung",
-            "en": "Ready to handover message"
+            "en": "Ready to handover message",
+            "zh": "完成报告"
         },
         "indicators": []
     },
@@ -5779,7 +6032,8 @@
         },
         "label": {
             "de": "Organigramm",
-            "en": "Organisation chart"
+            "en": "Organisation chart",
+            "zh": "组织结构图"
         },
         "indicators": []
     },
@@ -5804,7 +6058,8 @@
         },
         "label": {
             "de": "Geheimhaltungsvereinbarung",
-            "en": "Non-disclosure agreement"
+            "en": "Non-disclosure agreement",
+            "zh": "保密协议"
         },
         "indicators": []
     },
@@ -5833,7 +6088,8 @@
         },
         "label": {
             "de": "Bericht",
-            "en": "Report"
+            "en": "Report",
+            "zh": "报告"
         },
         "indicators": []
     },
@@ -5858,7 +6114,8 @@
         },
         "label": {
             "de": "Ernennung",
-            "en": "Appointment"
+            "en": "Appointment",
+            "zh": "任命"
         },
         "indicators": []
     },
@@ -5883,7 +6140,8 @@
         },
         "label": {
             "de": "EMCI-Dokument",
-            "en": "EMCI document"
+            "en": "EMCI document",
+            "zh": "EMCI文件"
         },
         "indicators": []
     },
@@ -5908,7 +6166,8 @@
         },
         "label": {
             "de": "Dokumentenaustauschliste",
-            "en": "Document interchange list"
+            "en": "Document interchange list",
+            "zh": "文件交换清单"
         },
         "indicators": []
     },
@@ -5933,7 +6192,8 @@
         },
         "label": {
             "de": "Kommunikationsplan",
-            "en": "Communication plan"
+            "en": "Communication plan",
+            "zh": "沟通计划"
         },
         "indicators": []
     },
@@ -5958,7 +6218,8 @@
         },
         "label": {
             "de": "Präsentationen",
-            "en": "Presentations"
+            "en": "Presentations",
+            "zh": "演讲稿"
         },
         "indicators": []
     },
@@ -5983,7 +6244,8 @@
         },
         "label": {
             "de": "Stundenzettel",
-            "en": "Time sheet"
+            "en": "Time sheet",
+            "zh": "时间表"
         },
         "indicators": []
     },
@@ -6008,7 +6270,8 @@
         },
         "label": {
             "de": "Wirtschaftlichkeitsberechnung",
-            "en": "Profitability calculation"
+            "en": "Profitability calculation",
+            "zh": "盈利能力的计算"
         },
         "indicators": []
     },
@@ -6033,7 +6296,8 @@
         },
         "label": {
             "de": "Unterschriftenregelung",
-            "en": "Signature regulation"
+            "en": "Signature regulation",
+            "zh": "签名条例"
         },
         "indicators": []
     },
@@ -6058,7 +6322,8 @@
         },
         "label": {
             "de": "Projektstrukturplan",
-            "en": "Work breakdown structure (WBS)"
+            "en": "Work breakdown structure (WBS)",
+            "zh": "工作分解结构"
         },
         "indicators": []
     },
@@ -6083,7 +6348,8 @@
         },
         "label": {
             "de": "Workflow",
-            "en": "Workflow"
+            "en": "Workflow",
+            "zh": "工作流程"
         },
         "indicators": []
     },
@@ -6108,7 +6374,8 @@
         },
         "label": {
             "de": "Protokoll",
-            "en": "Minutes"
+            "en": "Minutes",
+            "zh": "会议记录"
         },
         "indicators": []
     },
@@ -6133,7 +6400,8 @@
         },
         "label": {
             "de": "Projektmitteilung",
-            "en": "Project notice"
+            "en": "Project notice",
+            "zh": "项目通知"
         },
         "indicators": []
     },
@@ -6158,7 +6426,8 @@
         },
         "label": {
             "de": "Teamkalender",
-            "en": "Team calendar"
+            "en": "Team calendar",
+            "zh": "团队日历"
         },
         "indicators": []
     },
@@ -6183,7 +6452,8 @@
         },
         "label": {
             "de": "Risikobeurteilung (Projekt)",
-            "en": "Risk assessment (project)"
+            "en": "Risk assessment (project)",
+            "zh": "风险评估（项目）"
         },
         "indicators": []
     },
@@ -6213,7 +6483,8 @@
         },
         "label": {
             "de": "Projektspezifische Festlegung",
-            "en": "Project specific definition"
+            "en": "Project specific definition",
+            "zh": "项目的特定定义"
         },
         "indicators": []
     },
@@ -6238,7 +6509,8 @@
         },
         "label": {
             "de": "Projektauftrag",
-            "en": "Project order"
+            "en": "Project order",
+            "zh": "项目订单"
         },
         "indicators": []
     },
@@ -6263,7 +6535,8 @@
         },
         "label": {
             "de": "Projektabwicklungsplan",
-            "en": "Project execution plan"
+            "en": "Project execution plan",
+            "zh": "项目执行计划"
         },
         "indicators": []
     },
@@ -6288,7 +6561,8 @@
         },
         "label": {
             "de": "Personalanforderung",
-            "en": "Personnel requisition"
+            "en": "Personnel requisition",
+            "zh": "人员需求"
         },
         "indicators": []
     },
@@ -6313,7 +6587,8 @@
         },
         "label": {
             "de": "Schichtpläne allgemein",
-            "en": "General shift schedules"
+            "en": "General shift schedules",
+            "zh": "一般轮班时间表"
         },
         "indicators": []
     },
@@ -6338,7 +6613,8 @@
         },
         "label": {
             "de": "Versandspezifikation",
-            "en": "Dispatch specification"
+            "en": "Dispatch specification",
+            "zh": "调度规范"
         },
         "indicators": []
     },
@@ -6363,7 +6639,8 @@
         },
         "label": {
             "de": "Versandliste",
-            "en": "Shipping list"
+            "en": "Shipping list",
+            "zh": "发货清单"
         },
         "indicators": []
     },
@@ -6391,7 +6668,8 @@
         },
         "label": {
             "de": "Verpackungsliste",
-            "en": "Packing list"
+            "en": "Packing list",
+            "zh": "包装清单"
         },
         "indicators": []
     },
@@ -6416,7 +6694,8 @@
         },
         "label": {
             "de": "Luftfrachtbrief",
-            "en": "Airway bill"
+            "en": "Airway bill",
+            "zh": "航空运单"
         },
         "indicators": []
     },
@@ -6441,7 +6720,8 @@
         },
         "label": {
             "de": "Liste ausfuhrkritischer Ausrüstungen",
-            "en": "Equipment list with export restriction"
+            "en": "Equipment list with export restriction",
+            "zh": "有出口限制的设备清单"
         },
         "indicators": []
     },
@@ -6466,7 +6746,8 @@
         },
         "label": {
             "de": "Ursprungszeugnis",
-            "en": "Certificate of Origin"
+            "en": "Certificate of Origin",
+            "zh": "原产地证书"
         },
         "indicators": []
     },
@@ -6491,7 +6772,8 @@
         },
         "label": {
             "de": "Frachtbrief",
-            "en": "Bill of Lading"
+            "en": "Bill of Lading",
+            "zh": "提货单"
         },
         "indicators": []
     },
@@ -6519,7 +6801,8 @@
         },
         "label": {
             "de": "Lagerspezifikation",
-            "en": "Storage specification"
+            "en": "Storage specification",
+            "zh": "仓库规格"
         },
         "indicators": []
     },
@@ -6547,7 +6830,8 @@
         },
         "label": {
             "de": "Transportspezifikation",
-            "en": "Transport Specification"
+            "en": "Transport Specification",
+            "zh": "运输规格"
         },
         "indicators": []
     },
@@ -6572,7 +6856,8 @@
         },
         "label": {
             "de": "Ablageordnung",
-            "en": "Filing system"
+            "en": "Filing system",
+            "zh": "归档系统"
         },
         "indicators": []
     },
@@ -6603,7 +6888,8 @@
         },
         "label": {
             "de": "Zeichnungsverzeichnis",
-            "en": "List of drawings"
+            "en": "List of drawings",
+            "zh": "图纸清单"
         },
         "indicators": []
     },
@@ -6628,7 +6914,8 @@
         },
         "label": {
             "de": "Hauptdokument",
-            "en": "Main Document"
+            "en": "Main Document",
+            "zh": "主要文件"
         },
         "indicators": []
     },
@@ -6657,7 +6944,8 @@
         },
         "label": {
             "de": "Dokumentenliste",
-            "en": "List of documents"
+            "en": "List of documents",
+            "zh": "文件列表"
         },
         "indicators": []
     },
@@ -6682,7 +6970,8 @@
         },
         "label": {
             "de": "Inhaltsverzeichnis",
-            "en": "Table of contents"
+            "en": "Table of contents",
+            "zh": "目录"
         },
         "indicators": []
     },
@@ -6707,7 +6996,8 @@
         },
         "label": {
             "de": "Deckblatt",
-            "en": "Cover sheet"
+            "en": "Cover sheet",
+            "zh": "封面页"
         },
         "indicators": []
     },
@@ -6732,7 +7022,8 @@
         },
         "label": {
             "de": "Dokumentbeschreibung",
-            "en": "Document description"
+            "en": "Document description",
+            "zh": "文件描述"
         },
         "indicators": []
     },
@@ -6757,7 +7048,8 @@
         },
         "label": {
             "de": "Dokumentationsbeschreibung",
-            "en": "Documentation description"
+            "en": "Documentation description",
+            "zh": "文件描述"
         },
         "indicators": []
     },
@@ -6782,7 +7074,8 @@
         },
         "label": {
             "de": "Dokumentenstrukturplan",
-            "en": "Documentation structure diagramm"
+            "en": "Documentation structure diagramm",
+            "zh": "文件结构计划"
         },
         "indicators": []
     },
@@ -6807,7 +7100,8 @@
         },
         "label": {
             "de": "Bauteilzeichnung",
-            "en": "Component drawing"
+            "en": "Component drawing",
+            "zh": "部件图"
         },
         "indicators": []
     },
@@ -6832,7 +7126,8 @@
         },
         "label": {
             "de": "Fertigungszeichnung",
-            "en": "Manufacturing drawing"
+            "en": "Manufacturing drawing",
+            "zh": "生产图"
         },
         "indicators": []
     },
@@ -6857,7 +7152,8 @@
         },
         "label": {
             "de": "Schweissplan",
-            "en": "Welding plan"
+            "en": "Welding plan",
+            "zh": "焊接图"
         },
         "indicators": []
     },
@@ -6882,7 +7178,8 @@
         },
         "label": {
             "de": "Einbauzeichnung",
-            "en": "Assembly drawing"
+            "en": "Assembly drawing",
+            "zh": "安装图"
         },
         "indicators": []
     },
@@ -6907,7 +7204,8 @@
         },
         "label": {
             "de": "Bohrplan",
-            "en": "Drilling plan"
+            "en": "Drilling plan",
+            "zh": "钻孔图"
         },
         "indicators": []
     },
@@ -6936,7 +7234,8 @@
         },
         "label": {
             "de": "Schnittzeichnung",
-            "en": "Sectional drawing"
+            "en": "Sectional drawing",
+            "zh": "剖面图"
         },
         "indicators": []
     },
@@ -6961,7 +7260,8 @@
         },
         "label": {
             "de": "Montageanordnung (Hook-up)",
-            "en": "Installation drawing (hook-up)"
+            "en": "Installation drawing (hook-up)",
+            "zh": "安装图（连接）"
         },
         "indicators": []
     },
@@ -6989,7 +7289,8 @@
         },
         "label": {
             "de": "Herstellerzeichnung",
-            "en": "Manufacturer's drawing"
+            "en": "Manufacturer's drawing",
+            "zh": "制造商的图纸"
         },
         "indicators": []
     },
@@ -7020,7 +7321,8 @@
         },
         "label": {
             "de": "Isometrie",
-            "en": "Isometric drawing"
+            "en": "Isometric drawing",
+            "zh": "正等轴测图"
         },
         "indicators": []
     },
@@ -7045,7 +7347,8 @@
         },
         "label": {
             "de": "Schnittstellenzeichnung",
-            "en": "Interface drawing"
+            "en": "Interface drawing",
+            "zh": "接口图"
         },
         "indicators": []
     },
@@ -7070,7 +7373,8 @@
         },
         "label": {
             "de": "Explosionszeichnung",
-            "en": "Exploded  view drawing"
+            "en": "Exploded  view drawing",
+            "zh": "剖析视图"
         },
         "indicators": []
     },
@@ -7095,7 +7399,8 @@
         },
         "label": {
             "de": "Konstruktionszeichnung",
-            "en": "Design drawing"
+            "en": "Design drawing",
+            "zh": "设计图"
         },
         "indicators": []
     },
@@ -7120,7 +7425,8 @@
         },
         "label": {
             "de": "Apparateskizze",
-            "en": "Apparatus sketch"
+            "en": "Apparatus sketch",
+            "zh": "设备草图"
         },
         "indicators": []
     },
@@ -7149,7 +7455,8 @@
         },
         "label": {
             "de": "Konzeptzeichnung",
-            "en": "Concept drawing"
+            "en": "Concept drawing",
+            "zh": "概念图"
         },
         "indicators": []
     },
@@ -7174,7 +7481,8 @@
         },
         "label": {
             "de": "Layoutzeichnung",
-            "en": "Layout drawing"
+            "en": "Layout drawing",
+            "zh": "布局图"
         },
         "indicators": []
     },
@@ -7202,7 +7510,8 @@
         },
         "label": {
             "de": "Sicherheitsvorschriften",
-            "en": "Safety regulations"
+            "en": "Safety regulations",
+            "zh": "安全条例"
         },
         "indicators": []
     },
@@ -7227,7 +7536,8 @@
         },
         "label": {
             "de": "Sicherheitshandbuch",
-            "en": "Safety Manual"
+            "en": "Safety Manual",
+            "zh": "安全手册"
         },
         "indicators": []
     },
@@ -7255,7 +7565,8 @@
         },
         "label": {
             "de": "Risikobewertung (Sicherheit)",
-            "en": "Risk assessment (safety)"
+            "en": "Risk assessment (safety)",
+            "zh": "风险评估(安全)"
         },
         "indicators": []
     },
@@ -7280,7 +7591,8 @@
         },
         "label": {
             "de": "Sicherheitsstudie",
-            "en": "Safety study"
+            "en": "Safety study",
+            "zh": "安全研究"
         },
         "indicators": []
     },
@@ -7305,7 +7617,8 @@
         },
         "label": {
             "de": "SIL-Einstufung",
-            "en": "SIL classification"
+            "en": "SIL classification",
+            "zh": "SIL分类"
         },
         "indicators": []
     },
@@ -7333,7 +7646,8 @@
         },
         "label": {
             "de": "Sicherheitsdatenblatt (Werkstoff)",
-            "en": "Material safety data sheet (MSDS)"
+            "en": "Material safety data sheet (MSDS)",
+            "zh": "材料安全数据表（MSDS）"
         },
         "indicators": []
     },
@@ -7358,7 +7672,8 @@
         },
         "label": {
             "de": "Gefahrenzonenplan",
-            "en": "Hazardous area classification drawing"
+            "en": "Hazardous area classification drawing",
+            "zh": "危险区域图"
         },
         "indicators": []
     },
@@ -7386,7 +7701,8 @@
         },
         "label": {
             "de": "Schutzkonzept Energieversorgung",
-            "en": "Safety concept for power supply"
+            "en": "Safety concept for power supply",
+            "zh": "能源供应的保护概念"
         },
         "indicators": []
     },
@@ -7414,7 +7730,8 @@
         },
         "label": {
             "de": "Sicherheitshinweise zu Schutzeinrichtungen",
-            "en": "Safety instructions for protective devices"
+            "en": "Safety instructions for protective devices",
+            "zh": "安全信息的保护装置"
         },
         "indicators": []
     },
@@ -7439,7 +7756,8 @@
         },
         "label": {
             "de": "Sicherheits-Info",
-            "en": "Security info"
+            "en": "Security info",
+            "zh": "安全信息"
         },
         "indicators": []
     },
@@ -7464,7 +7782,8 @@
         },
         "label": {
             "de": "Risikoanalyse",
-            "en": "Risk analysis"
+            "en": "Risk analysis",
+            "zh": "风险分析"
         },
         "indicators": []
     },
@@ -7493,7 +7812,8 @@
         },
         "label": {
             "de": "Sicherheitsbericht",
-            "en": "Safety report"
+            "en": "Safety report",
+            "zh": "安全报告"
         },
         "indicators": []
     },
@@ -7521,7 +7841,8 @@
         },
         "label": {
             "de": "HAZOP",
-            "en": "HAZOP"
+            "en": "HAZOP",
+            "zh": "危险因素分析"
         },
         "indicators": []
     },
@@ -7546,7 +7867,8 @@
         },
         "label": {
             "de": "LOPA",
-            "en": "LOPA"
+            "en": "LOPA",
+            "zh": "保护层分析"
         },
         "indicators": []
     },
@@ -7571,7 +7893,8 @@
         },
         "label": {
             "de": "Ex-Zonenplan",
-            "en": "Ex zone plan"
+            "en": "Ex zone plan",
+            "zh": "防爆区计划"
         },
         "indicators": []
     },
@@ -7596,7 +7919,8 @@
         },
         "label": {
             "de": "Qualitätsaufzeichnung",
-            "en": "Quality record"
+            "en": "Quality record",
+            "zh": "质量记录"
         },
         "indicators": []
     },
@@ -7621,7 +7945,8 @@
         },
         "label": {
             "de": "Qualitätshandbuch",
-            "en": "Quality manual"
+            "en": "Quality manual",
+            "zh": "质量手册"
         },
         "indicators": []
     },
@@ -7646,7 +7971,8 @@
         },
         "label": {
             "de": "Nicht-Konformitätsbericht",
-            "en": "Non-conformity report"
+            "en": "Non-conformity report",
+            "zh": "不合格报告"
         },
         "indicators": []
     },
@@ -7671,7 +7997,8 @@
         },
         "label": {
             "de": "Qualitätsrichtlinie",
-            "en": "Quality guideline"
+            "en": "Quality guideline",
+            "zh": "质量方针"
         },
         "indicators": []
     },
@@ -7696,7 +8023,8 @@
         },
         "label": {
             "de": "Bericht über Korrektur und Präventivmassnahmen",
-            "en": "Corrctive and preventive action report"
+            "en": "Corrctive and preventive action report",
+            "zh": "纠正和预防措施报告"
         },
         "indicators": []
     },
@@ -7721,7 +8049,8 @@
         },
         "label": {
             "de": "Prüfungsbericht (Audit)",
-            "en": "Audit report"
+            "en": "Audit report",
+            "zh": "审计报告"
         },
         "indicators": []
     },
@@ -7746,7 +8075,8 @@
         },
         "label": {
             "de": "Audit Personalakte",
-            "en": "Audit personell record"
+            "en": "Audit personell record",
+            "zh": "审计人员记录"
         },
         "indicators": []
     },
@@ -7771,7 +8101,8 @@
         },
         "label": {
             "de": "Prüfungsplan (Audit)",
-            "en": "Audit plan"
+            "en": "Audit plan",
+            "zh": "审计计划"
         },
         "indicators": []
     },
@@ -7799,7 +8130,8 @@
         },
         "label": {
             "de": "Prüfliste",
-            "en": "Check list"
+            "en": "Check list",
+            "zh": "检查清单"
         },
         "indicators": []
     },
@@ -7824,7 +8156,8 @@
         },
         "label": {
             "de": "Audit follow-up Bericht",
-            "en": "Audit-follow-up report"
+            "en": "Audit-follow-up report",
+            "zh": "审计跟进报告"
         },
         "indicators": []
     },
@@ -7849,7 +8182,8 @@
         },
         "label": {
             "de": "Prüfplan",
-            "en": "Test plan"
+            "en": "Test plan",
+            "zh": "测试计划"
         },
         "indicators": []
     },
@@ -7874,7 +8208,8 @@
         },
         "label": {
             "de": "Mängelliste",
-            "en": "List of deficiencies"
+            "en": "List of deficiencies",
+            "zh": "缺陷清单"
         },
         "indicators": []
     },
@@ -7899,7 +8234,8 @@
         },
         "label": {
             "de": "Inspektionsplan",
-            "en": "Inspection plan"
+            "en": "Inspection plan",
+            "zh": "检查计划"
         },
         "indicators": []
     },
@@ -7924,7 +8260,8 @@
         },
         "label": {
             "de": "Qualitätsplan",
-            "en": "Quality plan"
+            "en": "Quality plan",
+            "zh": "质量计划"
         },
         "indicators": []
     },
@@ -7949,7 +8286,8 @@
         },
         "label": {
             "de": "Auditzeitplanung",
-            "en": "Audit schedule"
+            "en": "Audit schedule",
+            "zh": "审核时间表"
         },
         "indicators": []
     },
@@ -7977,7 +8315,8 @@
         },
         "label": {
             "de": "Explosionsschutzdokument",
-            "en": "Explosion protection document"
+            "en": "Explosion protection document",
+            "zh": "防爆文件"
         },
         "indicators": []
     },
@@ -8002,7 +8341,8 @@
         },
         "label": {
             "de": "Testbericht (Software)",
-            "en": "Test report (software)"
+            "en": "Test report (software)",
+            "zh": "测试报告（软件）"
         },
         "indicators": []
     },
@@ -8027,7 +8367,8 @@
         },
         "label": {
             "de": "Fehlerbericht",
-            "en": "Fault report"
+            "en": "Fault report",
+            "zh": "故障报告"
         },
         "indicators": []
     },
@@ -8056,7 +8397,8 @@
         },
         "label": {
             "de": "Prüfbescheinigung",
-            "en": "Test certificate"
+            "en": "Test certificate",
+            "zh": "测试证书"
         },
         "indicators": []
     },
@@ -8081,7 +8423,8 @@
         },
         "label": {
             "de": "Prüfblatt für Schutzeinrichtungen",
-            "en": "Test sheet for SIF"
+            "en": "Test sheet for SIF",
+            "zh": "SIF测试表"
         },
         "indicators": []
     },
@@ -8109,7 +8452,8 @@
         },
         "label": {
             "de": "SIL-Überprüfung",
-            "en": "SIL verification"
+            "en": "SIL verification",
+            "zh": "SIL 验证"
         },
         "indicators": [
             "SIL-Überprüfung"
@@ -8136,7 +8480,8 @@
         },
         "label": {
             "de": "Prüfprotokoll /Testbericht",
-            "en": "Test report"
+            "en": "Test report",
+            "zh": "测试报告"
         },
         "indicators": []
     },
@@ -8166,7 +8511,8 @@
         },
         "label": {
             "de": "Abnahmedokumentation",
-            "en": "Acceptance documentation"
+            "en": "Acceptance documentation",
+            "zh": "验收文件"
         },
         "indicators": []
     },
@@ -8191,7 +8537,8 @@
         },
         "label": {
             "de": "Werkstoffzeugnis",
-            "en": "Material certificate"
+            "en": "Material certificate",
+            "zh": "材料证书"
         },
         "indicators": []
     },
@@ -8216,7 +8563,8 @@
         },
         "label": {
             "de": "Zertifikat / Nachweis",
-            "en": "Certificate / Proof"
+            "en": "Certificate / Proof",
+            "zh": "证书/证明"
         },
         "indicators": []
     },
@@ -8241,7 +8589,8 @@
         },
         "label": {
             "de": "Schweiß- und Prüfnachweis",
-            "en": "Welding and test certificate"
+            "en": "Welding and test certificate",
+            "zh": "焊接和测试证书"
         },
         "indicators": []
     },
@@ -8269,7 +8618,8 @@
         },
         "label": {
             "de": "CE-Konformitätserklärung",
-            "en": "CE declaration of conformity"
+            "en": "CE declaration of conformity",
+            "zh": "CE符合性声明"
         },
         "indicators": []
     },
@@ -8294,7 +8644,8 @@
         },
         "label": {
             "de": "Mängelbericht",
-            "en": "Defect report"
+            "en": "Defect report",
+            "zh": "缺陷报告"
         },
         "indicators": []
     },
@@ -8323,7 +8674,8 @@
         },
         "label": {
             "de": "Atex-Zertifikat /EX-I Nachweis",
-            "en": "Atex certificate /EX-I certificate"
+            "en": "Atex certificate /EX-I certificate",
+            "zh": "Atex证书/EX-I证书"
         },
         "indicators": [
             "Atex-Zertifikat",
@@ -8354,7 +8706,8 @@
         },
         "label": {
             "de": "Materialliste",
-            "en": "Material list"
+            "en": "Material list",
+            "zh": "材料清单"
         },
         "indicators": []
     },
@@ -8379,7 +8732,8 @@
         },
         "label": {
             "de": "Materialauszug",
-            "en": "Material take off"
+            "en": "Material take off",
+            "zh": "材料提取"
         },
         "indicators": []
     },
@@ -8408,7 +8762,8 @@
         },
         "label": {
             "de": "Liste der Sicherheitsarmaturen",
-            "en": "List of Safety equipment"
+            "en": "List of Safety equipment",
+            "zh": "安全设备清单"
         },
         "indicators": []
     },
@@ -8436,7 +8791,8 @@
         },
         "label": {
             "de": "Zeichnungsliste",
-            "en": "Drawing list"
+            "en": "Drawing list",
+            "zh": "图纸列表"
         },
         "indicators": []
     },
@@ -8464,7 +8820,8 @@
         },
         "label": {
             "de": "Geräteliste",
-            "en": "Sensor list"
+            "en": "Sensor list",
+            "zh": "传感器列表"
         },
         "indicators": []
     },
@@ -8492,7 +8849,8 @@
         },
         "label": {
             "de": "Rohrklassenauswahl",
-            "en": "Pipe class selection"
+            "en": "Pipe class selection",
+            "zh": "管道等级选择"
         },
         "indicators": []
     },
@@ -8520,7 +8878,8 @@
         },
         "label": {
             "de": "Dämmliste",
-            "en": "Insulation list"
+            "en": "Insulation list",
+            "zh": "绝缘清单"
         },
         "indicators": []
     },
@@ -8551,7 +8910,8 @@
         },
         "label": {
             "de": "Equipmentliste",
-            "en": "Equipment list"
+            "en": "Equipment list",
+            "zh": "设备清单"
         },
         "indicators": []
     },
@@ -8576,7 +8936,8 @@
         },
         "label": {
             "de": "Funktionsliste",
-            "en": "Function list"
+            "en": "Function list",
+            "zh": "功能列表"
         },
         "indicators": []
     },
@@ -8601,7 +8962,8 @@
         },
         "label": {
             "de": "Stückliste",
-            "en": "Bill of material"
+            "en": "Bill of material",
+            "zh": "物料清单"
         },
         "indicators": []
     },
@@ -8626,7 +8988,8 @@
         },
         "label": {
             "de": "Armaturenauswahlliste",
-            "en": "Valve selection list"
+            "en": "Valve selection list",
+            "zh": "阀门选型列表"
         },
         "indicators": []
     },
@@ -8651,7 +9014,8 @@
         },
         "label": {
             "de": "Liste dichtmachender / isometrierelevanter Teile",
-            "en": "Sealing parts in pipeline"
+            "en": "Sealing parts in pipeline",
+            "zh": "管道中的密封部件"
         },
         "indicators": []
     },
@@ -8676,7 +9040,8 @@
         },
         "label": {
             "de": "Sonderteile",
-            "en": "Special parts"
+            "en": "Special parts",
+            "zh": "特殊零件"
         },
         "indicators": []
     },
@@ -8701,7 +9066,8 @@
         },
         "label": {
             "de": "Etikettenliste",
-            "en": "Label list"
+            "en": "Label list",
+            "zh": "标签列表"
         },
         "indicators": []
     },
@@ -8729,7 +9095,8 @@
         },
         "label": {
             "de": "Liste der Unterstützungen",
-            "en": "List of supports"
+            "en": "List of supports",
+            "zh": "支持列表"
         },
         "indicators": []
     },
@@ -8754,7 +9121,8 @@
         },
         "label": {
             "de": "Verbrauchsmaterialien",
-            "en": "Consumables"
+            "en": "Consumables",
+            "zh": "耗材"
         },
         "indicators": []
     },
@@ -8779,7 +9147,8 @@
         },
         "label": {
             "de": "PLT-Geräteliste",
-            "en": "Instrument index"
+            "en": "Instrument index",
+            "zh": "仪器指标"
         },
         "indicators": []
     },
@@ -8810,7 +9179,8 @@
         },
         "label": {
             "de": "Ersatzteilliste",
-            "en": "Spare parts list"
+            "en": "Spare parts list",
+            "zh": "备件清单"
         },
         "indicators": []
     },
@@ -8835,7 +9205,8 @@
         },
         "label": {
             "de": "Systemspiegel",
-            "en": "System log book"
+            "en": "System log book",
+            "zh": "系统日志"
         },
         "indicators": []
     },
@@ -8860,7 +9231,8 @@
         },
         "label": {
             "de": "Produktliste",
-            "en": "Product list"
+            "en": "Product list",
+            "zh": "产品列表"
         },
         "indicators": []
     },
@@ -8885,7 +9257,8 @@
         },
         "label": {
             "de": "Liste der Produktarten",
-            "en": "Product type list"
+            "en": "Product type list",
+            "zh": "产品类型列表"
         },
         "indicators": []
     },
@@ -8910,7 +9283,8 @@
         },
         "label": {
             "de": "Liste der Einbindepunkte",
-            "en": "List of tie-in points"
+            "en": "List of tie-in points",
+            "zh": "配管连接点列表"
         },
         "indicators": []
     },
@@ -8935,7 +9309,8 @@
         },
         "label": {
             "de": "Baufeldliste",
-            "en": "Construction site list"
+            "en": "Construction site list",
+            "zh": "施工现场列表"
         },
         "indicators": []
     },
@@ -8960,7 +9335,8 @@
         },
         "label": {
             "de": "Standortliste",
-            "en": "Location List"
+            "en": "Location List",
+            "zh": "位置列表"
         },
         "indicators": []
     },
@@ -8989,7 +9365,8 @@
         },
         "label": {
             "de": "Rohrleitungsliste",
-            "en": "Pipe line / piping list"
+            "en": "Pipe line / piping list",
+            "zh": "管线/管道清单"
         },
         "indicators": []
     },
@@ -9014,7 +9391,8 @@
         },
         "label": {
             "de": "Kabelzugliste",
-            "en": "Cable laying list"
+            "en": "Cable laying list",
+            "zh": "电缆敷设清单"
         },
         "indicators": []
     },
@@ -9039,7 +9417,8 @@
         },
         "label": {
             "de": "Anschlussschema (Kabel)",
-            "en": "Interconnection diagram (cables)"
+            "en": "Interconnection diagram (cables)",
+            "zh": "接线图（电缆）"
         },
         "indicators": []
     },
@@ -9064,7 +9443,8 @@
         },
         "label": {
             "de": "Kabelziehkarte",
-            "en": "Cable pulling card"
+            "en": "Cable pulling card",
+            "zh": "拉线卡"
         },
         "indicators": []
     },
@@ -9092,7 +9472,8 @@
         },
         "label": {
             "de": "Kabelliste",
-            "en": "Cable list"
+            "en": "Cable list",
+            "zh": "电缆列表"
         },
         "indicators": []
     },
@@ -9117,7 +9498,8 @@
         },
         "label": {
             "de": "Geräteanschlussliste",
-            "en": "Unit connection list"
+            "en": "Unit connection list",
+            "zh": "设备连接列表"
         },
         "indicators": []
     },
@@ -9142,7 +9524,8 @@
         },
         "label": {
             "de": "Geräteanschlusstabelle",
-            "en": "Unit connection table"
+            "en": "Unit connection table",
+            "zh": "单元连接表"
         },
         "indicators": []
     },
@@ -9167,7 +9550,8 @@
         },
         "label": {
             "de": "Verschaltungstabelle",
-            "en": "Interconnection table"
+            "en": "Interconnection table",
+            "zh": "互连表"
         },
         "indicators": []
     },
@@ -9192,7 +9576,8 @@
         },
         "label": {
             "de": "Geräteanschlussplan",
-            "en": "Unit connection diagram"
+            "en": "Unit connection diagram",
+            "zh": "单元连接图"
         },
         "indicators": []
     },
@@ -9217,7 +9602,8 @@
         },
         "label": {
             "de": "Anschlussplan",
-            "en": "Connection diagram"
+            "en": "Connection diagram",
+            "zh": "接线图"
         },
         "indicators": []
     },
@@ -9242,7 +9628,8 @@
         },
         "label": {
             "de": "Rangierplan",
-            "en": "Cross wiring diagram"
+            "en": "Cross wiring diagram",
+            "zh": "交叉接线图"
         },
         "indicators": []
     },
@@ -9267,7 +9654,8 @@
         },
         "label": {
             "de": "Strukturplan der Verdrahtung",
-            "en": "Conceptual wiring diagram"
+            "en": "Conceptual wiring diagram",
+            "zh": "概念接线图"
         },
         "indicators": []
     },
@@ -9295,7 +9683,8 @@
         },
         "label": {
             "de": "Rohrbrückenbelegungsplan",
-            "en": "Pipe rack allocation plan"
+            "en": "Pipe rack allocation plan",
+            "zh": "管架配置计划"
         },
         "indicators": []
     },
@@ -9320,7 +9709,8 @@
         },
         "label": {
             "de": "Klemmenanschlussplan",
-            "en": "Terminal connection diagram"
+            "en": "Terminal connection diagram",
+            "zh": "端子接线图"
         },
         "indicators": []
     },
@@ -9345,7 +9735,8 @@
         },
         "label": {
             "de": "Verbindungs-/Anschlusstabelle",
-            "en": "Connection table"
+            "en": "Connection table",
+            "zh": "连接表"
         },
         "indicators": []
     },
@@ -9370,7 +9761,8 @@
         },
         "label": {
             "de": "Bewehrungsplan",
-            "en": "Reinforcement plan"
+            "en": "Reinforcement plan",
+            "zh": "加固方案"
         },
         "indicators": []
     },
@@ -9395,7 +9787,8 @@
         },
         "label": {
             "de": "Statikplan",
-            "en": "Static drawing"
+            "en": "Static drawing",
+            "zh": "静态图"
         },
         "indicators": []
     },
@@ -9420,7 +9813,8 @@
         },
         "label": {
             "de": "Fundament Zeichnung",
-            "en": "Foundation Drawing"
+            "en": "Foundation Drawing",
+            "zh": "基础图"
         },
         "indicators": []
     },
@@ -9445,7 +9839,8 @@
         },
         "label": {
             "de": "Aushubplan",
-            "en": "Excavation plan"
+            "en": "Excavation plan",
+            "zh": "发掘计划"
         },
         "indicators": []
     },
@@ -9470,7 +9865,8 @@
         },
         "label": {
             "de": "Installationsplan (Standort)",
-            "en": "Arrangement drawing (location)"
+            "en": "Arrangement drawing (location)",
+            "zh": "布置图（位置）"
         },
         "indicators": []
     },
@@ -9495,7 +9891,8 @@
         },
         "label": {
             "de": "Lageplan Instrumentenluftversorgung (Standort)",
-            "en": "Instrument air supply plot plan (location)"
+            "en": "Instrument air supply plot plan (location)",
+            "zh": "仪表供气地块平面图（位置）"
         },
         "indicators": []
     },
@@ -9520,7 +9917,8 @@
         },
         "label": {
             "de": "Aufstellungsplan (Standort)",
-            "en": "Plot plan (location)"
+            "en": "Plot plan (location)",
+            "zh": "地块平面图（位置）"
         },
         "indicators": []
     },
@@ -9545,7 +9943,8 @@
         },
         "label": {
             "de": "Kabeltrassenschnitt  (Standort)",
-            "en": "Cable route section (location)"
+            "en": "Cable route section (location)",
+            "zh": "电缆线路段（位置）"
         },
         "indicators": []
     },
@@ -9570,7 +9969,8 @@
         },
         "label": {
             "de": "Lageplan PLT (Standort)",
-            "en": "Plot plan E&I (location)"
+            "en": "Plot plan E&I (location)",
+            "zh": "地块平面图E&I（位置）"
         },
         "indicators": []
     },
@@ -9595,7 +9995,8 @@
         },
         "label": {
             "de": "Werklageplan",
-            "en": "Site location plan"
+            "en": "Site location plan",
+            "zh": "场地位置图"
         },
         "indicators": []
     },
@@ -9620,7 +10021,8 @@
         },
         "label": {
             "de": "Kabeltrassen-übersichtsplan (Standort)",
-            "en": "Main cable tray layout (location)"
+            "en": "Main cable tray layout (location)",
+            "zh": "主电缆桥架布局（位置）"
         },
         "indicators": []
     },
@@ -9648,7 +10050,8 @@
         },
         "label": {
             "de": "Lageplan",
-            "en": "Site plan"
+            "en": "Site plan",
+            "zh": "场地平面图"
         },
         "indicators": []
     },
@@ -9677,7 +10080,8 @@
         },
         "label": {
             "de": "Unterflurplan",
-            "en": "Underfloor plan"
+            "en": "Underfloor plan",
+            "zh": "地板平面图"
         },
         "indicators": []
     },
@@ -9702,7 +10106,8 @@
         },
         "label": {
             "de": "Aufstellungsplan",
-            "en": "Layout plan"
+            "en": "Layout plan",
+            "zh": "布局图"
         },
         "indicators": []
     },
@@ -9727,7 +10132,8 @@
         },
         "label": {
             "de": "Grundriss",
-            "en": "Ground plan"
+            "en": "Ground plan",
+            "zh": "平面图"
         },
         "indicators": []
     },
@@ -9755,7 +10161,8 @@
         },
         "label": {
             "de": "Vermessungsplan",
-            "en": "Surveying plan"
+            "en": "Surveying plan",
+            "zh": "测绘计划"
         },
         "indicators": []
     },
@@ -9780,7 +10187,8 @@
         },
         "label": {
             "de": "Entwicklungsplan",
-            "en": "Development plan"
+            "en": "Development plan",
+            "zh": "发展规划"
         },
         "indicators": []
     },
@@ -9805,7 +10213,8 @@
         },
         "label": {
             "de": "3D-Model",
-            "en": "3D model"
+            "en": "3D model",
+            "zh": "3D模型"
         },
         "indicators": []
     },
@@ -9830,7 +10239,8 @@
         },
         "label": {
             "de": "Kabeltrassenplan (Gebäude)",
-            "en": "Cable routing drawing (building)"
+            "en": "Cable routing drawing (building)",
+            "zh": "电缆布线图（建筑）"
         },
         "indicators": []
     },
@@ -9859,7 +10269,8 @@
         },
         "label": {
             "de": "Gebäudezeichnung",
-            "en": "Building drawing"
+            "en": "Building drawing",
+            "zh": "建筑图纸"
         },
         "indicators": []
     },
@@ -9884,7 +10295,8 @@
         },
         "label": {
             "de": "Installationsschema(Gebäude)",
-            "en": "Installation drawing (building)"
+            "en": "Installation drawing (building)",
+            "zh": "安装图（建筑物）"
         },
         "indicators": []
     },
@@ -9909,7 +10321,8 @@
         },
         "label": {
             "de": "Installationsplan (Gebäude)",
-            "en": "Arrangement drawing (building)"
+            "en": "Arrangement drawing (building)",
+            "zh": "布置图（建筑物）"
         },
         "indicators": []
     },
@@ -9934,7 +10347,8 @@
         },
         "label": {
             "de": "Belegungsplan Kabel-Wanddurchführung",
-            "en": "Allocation plan wall bushing"
+            "en": "Allocation plan wall bushing",
+            "zh": "配置方案穿墙套管"
         },
         "indicators": []
     },
@@ -9959,7 +10373,8 @@
         },
         "label": {
             "de": "Lageplan Instrumentenluftversorgung (Gebäude)",
-            "en": "Instrument air supply plot plan (building)"
+            "en": "Instrument air supply plot plan (building)",
+            "zh": "仪表供气地块平面图（建筑）"
         },
         "indicators": []
     },
@@ -9987,7 +10402,8 @@
         },
         "label": {
             "de": "Aufstellungsplan (Gebäude)",
-            "en": "Plot plan / arrangement drawing (building)"
+            "en": "Plot plan / arrangement drawing (building)",
+            "zh": "地块平面图/布置图（建筑）"
         },
         "indicators": []
     },
@@ -10012,7 +10428,8 @@
         },
         "label": {
             "de": "Kabeltrassenschnitt (Gebäude)",
-            "en": "Cable route section (building)"
+            "en": "Cable route section (building)",
+            "zh": "电缆线路段（建筑物）"
         },
         "indicators": []
     },
@@ -10037,7 +10454,8 @@
         },
         "label": {
             "de": "Lageplan PLT (Gebäude)",
-            "en": "Plot plan E&I (building)"
+            "en": "Plot plan E&I (building)",
+            "zh": "地块平面图E&I（建筑）"
         },
         "indicators": []
     },
@@ -10062,7 +10480,8 @@
         },
         "label": {
             "de": "Kabeltrassen-Übersichtsplan (Gebäude)",
-            "en": "Main cable tray layout (building)"
+            "en": "Main cable tray layout (building)",
+            "zh": "主电缆桥架布局（建筑物）"
         },
         "indicators": [
             "Kabeltrassen-Übersichtsplan "
@@ -10089,7 +10508,8 @@
         },
         "label": {
             "de": "Einbindepunkt",
-            "en": "Tie-in point"
+            "en": "Tie-in point",
+            "zh": "连接点"
         },
         "indicators": []
     },
@@ -10114,7 +10534,8 @@
         },
         "label": {
             "de": "Erdungsplan",
-            "en": "Earthing plan"
+            "en": "Earthing plan",
+            "zh": "接地方案"
         },
         "indicators": []
     },
@@ -10142,7 +10563,8 @@
         },
         "label": {
             "de": "Belegungsplan",
-            "en": "Allocation plan"
+            "en": "Allocation plan",
+            "zh": "分配计划"
         },
         "indicators": []
     },
@@ -10171,7 +10593,8 @@
         },
         "label": {
             "de": "Aufstellungsplan (Equipment)",
-            "en": "Arrangement drawing (Equipment)"
+            "en": "Arrangement drawing (Equipment)",
+            "zh": "布置图（设备）"
         },
         "indicators": []
     },
@@ -10196,7 +10619,8 @@
         },
         "label": {
             "de": "Baugruppenzeichnung",
-            "en": "Assembly drawing"
+            "en": "Assembly drawing",
+            "zh": "装配图"
         },
         "indicators": []
     },
@@ -10221,7 +10645,8 @@
         },
         "label": {
             "de": "Schrankaufbauplan",
-            "en": "Cabinet layout drawing"
+            "en": "Cabinet layout drawing",
+            "zh": "机柜布局图"
         },
         "indicators": []
     },
@@ -10246,7 +10671,8 @@
         },
         "label": {
             "de": "Programm-Schema",
-            "en": "Program diagram"
+            "en": "Program diagram",
+            "zh": "程序图"
         },
         "indicators": []
     },
@@ -10271,7 +10697,8 @@
         },
         "label": {
             "de": "Codeliste",
-            "en": "Code list"
+            "en": "Code list",
+            "zh": "代码列表"
         },
         "indicators": []
     },
@@ -10296,7 +10723,8 @@
         },
         "label": {
             "de": "Funktionsbeschreibung (Software)",
-            "en": "Function description (software)"
+            "en": "Function description (software)",
+            "zh": "功能说明（软件）"
         },
         "indicators": []
     },
@@ -10324,7 +10752,8 @@
         },
         "label": {
             "de": "Design Beschreibung (Software)",
-            "en": "Design description"
+            "en": "Design description",
+            "zh": "设计说明"
         },
         "indicators": []
     },
@@ -10349,7 +10778,8 @@
         },
         "label": {
             "de": "Parameterliste",
-            "en": "Configuration parameter list"
+            "en": "Configuration parameter list",
+            "zh": "配置参数列表"
         },
         "indicators": []
     },
@@ -10374,7 +10804,8 @@
         },
         "label": {
             "de": "Grenzwertliste",
-            "en": "Trip point list"
+            "en": "Trip point list",
+            "zh": "跳闸点列表"
         },
         "indicators": []
     },
@@ -10399,7 +10830,8 @@
         },
         "label": {
             "de": "Stellwertliste",
-            "en": "Setting list"
+            "en": "Setting list",
+            "zh": "设置值列表"
         },
         "indicators": []
     },
@@ -10424,7 +10856,8 @@
         },
         "label": {
             "de": "Signalliste",
-            "en": "Signal list"
+            "en": "Signal list",
+            "zh": "信号列表"
         },
         "indicators": []
     },
@@ -10449,7 +10882,8 @@
         },
         "label": {
             "de": "E/A-Liste",
-            "en": "I/O list"
+            "en": "I/O list",
+            "zh": "I/O 列表"
         },
         "indicators": []
     },
@@ -10477,7 +10911,8 @@
         },
         "label": {
             "de": "PLT-Stellenplan",
-            "en": "Loop diagram"
+            "en": "Loop diagram",
+            "zh": "回路图"
         },
         "indicators": []
     },
@@ -10505,7 +10940,8 @@
         },
         "label": {
             "de": "Stromlaufplan",
-            "en": "Circuit diagram"
+            "en": "Circuit diagram",
+            "zh": "电路图"
         },
         "indicators": []
     },
@@ -10530,7 +10966,8 @@
         },
         "label": {
             "de": "Klemmen-Funktionsdiagramm",
-            "en": "Terminal-function diagram"
+            "en": "Terminal-function diagram",
+            "zh": "终端功能图"
         },
         "indicators": []
     },
@@ -10555,7 +10992,8 @@
         },
         "label": {
             "de": "Bus-Strukturplan",
-            "en": "Bus layout drawing"
+            "en": "Bus layout drawing",
+            "zh": "总线布局图"
         },
         "indicators": []
     },
@@ -10580,7 +11018,8 @@
         },
         "label": {
             "de": "Funktionsbeschreibung",
-            "en": "Function description"
+            "en": "Function description",
+            "zh": "功能说明"
         },
         "indicators": []
     },
@@ -10608,7 +11047,8 @@
         },
         "label": {
             "de": "Funktionsplan",
-            "en": "Function block diagram"
+            "en": "Function block diagram",
+            "zh": "功能框图"
         },
         "indicators": []
     },
@@ -10638,7 +11078,8 @@
         },
         "label": {
             "de": "Alarm-und Verriegelungsübersicht",
-            "en": "Alarm and locking overview"
+            "en": "Alarm and locking overview",
+            "zh": "报警和锁定概述"
         },
         "indicators": []
     },
@@ -10663,7 +11104,8 @@
         },
         "label": {
             "de": "Wirkschaltplan",
-            "en": "Operating diagram"
+            "en": "Operating diagram",
+            "zh": "操作示意图"
         },
         "indicators": []
     },
@@ -10691,7 +11133,8 @@
         },
         "label": {
             "de": "Schaltplan",
-            "en": "Logic function diagram"
+            "en": "Logic function diagram",
+            "zh": "逻辑功能图"
         },
         "indicators": []
     },
@@ -10716,7 +11159,8 @@
         },
         "label": {
             "de": "Ablaufsteuerung / Schrittketten",
-            "en": "Sequence control chart"
+            "en": "Sequence control chart",
+            "zh": "顺序控制图"
         },
         "indicators": []
     },
@@ -10741,7 +11185,8 @@
         },
         "label": {
             "de": "Vermaschungen / Ursache-Wirkungs Tabelle",
-            "en": "Cause & effect matrix"
+            "en": "Cause & effect matrix",
+            "zh": "因果矩阵"
         },
         "indicators": [
             "Ursache-Wirkungs Tabelle",
@@ -10769,7 +11214,8 @@
         },
         "label": {
             "de": "Spannungskarte",
-            "en": "Voltage Map"
+            "en": "Voltage Map",
+            "zh": "电压图"
         },
         "indicators": []
     },
@@ -10794,7 +11240,8 @@
         },
         "label": {
             "de": "Netzplan",
-            "en": "Network map"
+            "en": "Network map",
+            "zh": "网络图"
         },
         "indicators": []
     },
@@ -10819,7 +11266,8 @@
         },
         "label": {
             "de": "Legendenfließbild",
-            "en": "Legend flow chart"
+            "en": "Legend flow chart",
+            "zh": "图例流程图"
         },
         "indicators": []
     },
@@ -10847,7 +11295,8 @@
         },
         "label": {
             "de": "Systemdiagramm",
-            "en": "System diagram"
+            "en": "System diagram",
+            "zh": "系统示意图"
         },
         "indicators": []
     },
@@ -10872,7 +11321,8 @@
         },
         "label": {
             "de": "Netzwerkkarte",
-            "en": "Network card"
+            "en": "Network card",
+            "zh": "网卡"
         },
         "indicators": []
     },
@@ -10897,7 +11347,8 @@
         },
         "label": {
             "de": "Blockschaltplan",
-            "en": "Block diagram (IEC 61082-1)"
+            "en": "Block diagram (IEC 61082-1)",
+            "zh": "框图 （IEC 61082-1）"
         },
         "indicators": []
     },
@@ -10921,7 +11372,9 @@
             "IEC61355:Identity-number": ""
         },
         "label": {
-            "de": "Strukturdiagramm PLS/SPS/ESD"
+            "de": "Strukturdiagramm PLS/SPS/ESD",
+            "en": "Structure diagram DCS/PLC/ESD",
+            "zh": "DCS/PLC/ESD结构图"
         },
         "indicators": []
     },
@@ -10950,7 +11403,8 @@
         },
         "label": {
             "de": "Übersichtsschaltplan der Energieversorgung",
-            "en": "Electrical single line diagram"
+            "en": "Electrical single line diagram",
+            "zh": "电气单线图"
         },
         "indicators": []
     },
@@ -10975,7 +11429,8 @@
         },
         "label": {
             "de": "Spezifikation Bedien- und Beobachtungsoberfläche",
-            "en": "HMI specification"
+            "en": "HMI specification",
+            "zh": "人机界面规格"
         },
         "indicators": []
     },
@@ -11000,7 +11455,8 @@
         },
         "label": {
             "de": "PLSLayoutUI",
-            "en": "DCS-Layout UI"
+            "en": "DCS-Layout UI",
+            "zh": "DCS-布局用户界面"
         },
         "indicators": []
     },
@@ -11028,7 +11484,8 @@
         },
         "label": {
             "de": "Behoerdenfließbild",
-            "en": "Authority P&ID"
+            "en": "Authority P&ID",
+            "zh": "权限 P&ID"
         },
         "indicators": []
     },
@@ -11053,7 +11510,8 @@
         },
         "label": {
             "de": "Betriebsmittel- / Utility-Fliessbild",
-            "en": "Utility Flow diagram"
+            "en": "Utility Flow diagram",
+            "zh": "公用设施流程图"
         },
         "indicators": [
             "Utility-Fliessbild",
@@ -11083,7 +11541,8 @@
         },
         "label": {
             "de": "Blockdiagramm (ISO 10628)",
-            "en": "Block diagramm (ISO 10628)"
+            "en": "Block diagramm (ISO 10628)",
+            "zh": "框图 （ISO 10628）"
         },
         "indicators": []
     },
@@ -11111,7 +11570,8 @@
         },
         "label": {
             "de": "Verbundfließbild",
-            "en": "Plant network flow chart"
+            "en": "Plant network flow chart",
+            "zh": "工厂网络流程图"
         },
         "indicators": []
     },
@@ -11139,7 +11599,8 @@
         },
         "label": {
             "de": "Grundfließbild",
-            "en": "Basic flow diagram"
+            "en": "Basic flow diagram",
+            "zh": "基本流程图"
         },
         "indicators": []
     },
@@ -11164,7 +11625,8 @@
         },
         "label": {
             "de": "Blockfließbild",
-            "en": "Block flow diagram"
+            "en": "Block flow diagram",
+            "zh": "框流程图"
         },
         "indicators": []
     },
@@ -11192,7 +11654,8 @@
         },
         "label": {
             "de": "Verfahrensfließbild",
-            "en": "Process flow diagram"
+            "en": "Process flow diagram",
+            "zh": "工艺流程图"
         },
         "indicators": []
     },
@@ -11222,7 +11685,8 @@
         },
         "label": {
             "de": "Rohrleitungs- und Instrumentenfließbild (R&I-Fließbild)",
-            "en": "Piping and instrumentation diagram (P&ID)"
+            "en": "Piping and instrumentation diagram (P&ID)",
+            "zh": "管道和仪表图（P&ID）"
         },
         "indicators": []
     },
@@ -11247,7 +11711,8 @@
         },
         "label": {
             "de": "Chargenplan",
-            "en": "Batch recipe"
+            "en": "Batch recipe",
+            "zh": "批次配方"
         },
         "indicators": []
     },
@@ -11272,7 +11737,8 @@
         },
         "label": {
             "de": "Logbuch",
-            "en": "Log"
+            "en": "Log",
+            "zh": "日志"
         },
         "indicators": []
     },
@@ -11297,7 +11763,8 @@
         },
         "label": {
             "de": "Wartung-und Änderungprotokoll",
-            "en": "Maintenance and modification log"
+            "en": "Maintenance and modification log",
+            "zh": "维护和修改日志"
         },
         "indicators": []
     },
@@ -11322,7 +11789,8 @@
         },
         "label": {
             "de": "Betriebliches Protokoll",
-            "en": "Operational log"
+            "en": "Operational log",
+            "zh": "操作日志"
         },
         "indicators": []
     },
@@ -11347,7 +11815,8 @@
         },
         "label": {
             "de": "Testprotokoll",
-            "en": "Test log"
+            "en": "Test log",
+            "zh": "测试日志"
         },
         "indicators": []
     },
@@ -11372,7 +11841,8 @@
         },
         "label": {
             "de": "Spezifikation der Sicherheitsanforderungen",
-            "en": "Safety requirement specification (SRS)"
+            "en": "Safety requirement specification (SRS)",
+            "zh": "安全要求规范"
         },
         "indicators": []
     },
@@ -11397,7 +11867,8 @@
         },
         "label": {
             "de": "Produktspezifikation",
-            "en": "Product specification"
+            "en": "Product specification",
+            "zh": "产品规格"
         },
         "indicators": []
     },
@@ -11422,7 +11893,8 @@
         },
         "label": {
             "de": "Vorschrift / Vorgabe",
-            "en": "Regulation / Default"
+            "en": "Regulation / Default",
+            "zh": "监管/违约"
         },
         "indicators": []
     },
@@ -11450,7 +11922,8 @@
         },
         "label": {
             "de": "Raumbuch",
-            "en": "Room book"
+            "en": "Room book",
+            "zh": "房间书"
         },
         "indicators": []
     }
