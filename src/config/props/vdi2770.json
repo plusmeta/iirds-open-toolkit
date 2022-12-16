@@ -550,7 +550,13 @@
                 "vdi:Individual"
             ]
         },
-        "attrs": {},
+        "attrs": {
+            "plus:tooltipInfo": {
+                "de": "Die eindeutige Identifikationsnummer vom Hersteller für ein individuelles Objektes. Innerhalb einer Produktbezeichnung (Modell, Baureihe, Produkttyp) von einem Hersteller ist die Seriennummer eindeutig.",
+                "en": "The unique identification number from the manufacturer for an individual object. Within a product designation (model, series, product type) from a manufacturer, the serial number is unique.",
+                "zh": "制造商为单个物体提供的唯一识别号码。在制造商的产品名称（型号、系列、产品类型）中，序列号是唯一的。"
+            }
+        },
         "label": {
             "de": "Seriennummer",
             "en": "Serial Number",
@@ -584,9 +590,9 @@
             "plus:titlePartPriority": 5,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
+                "de": "Hier sind alle Sprachen, die im Dokument verwendet werden, anzugeben. ",
+                "en": "All languages used in the document must be provided here. ",
+                "zh": "文件中使用的所有语言都必须在这里提供。"
             }
         },
         "label": {
@@ -658,12 +664,16 @@
             "plus:metaListPriority": 22,
             "plus:requiredAssignment": false,
             "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
+                "de": "Die IEC 61355 legt eine umfangreichere Klassifikation für Dokumente fest. Ihre Dokumentenartklassen leiten sich aus dem Informationsinhalt eines Dokuments ab. Die Gruppen und Kategorien in der IEC 61355 orientieren sich an Arbeitstätigkeiten, für die Informationen aus unterschiedlichen Dokumentenarten notwendig sein können.",
+                "en": "IEC 61355 specifies a more detailed classification for documents. Its document type classes are defined on the basis of the information content of a document. The groups and categories in IEC 61355 are oriented to work activities for which information from different document types may be necessary.",
+                "zh": "IEC 61355规定了一个更详细的文件分类。其文件类型分类是根据文件的信息内容来定义的。IEC 61355中的组别和类别是以工作活动为导向的，在这些活动中可能需要不同类型的文件信息。"
             }
         },
-        "label": "IEC 61355",
+        "label": {
+            "de": "IEC 61355",
+            "en": "IEC 61355",
+            "zh": "IEC 61355"
+        },
         "indicators": []
     },
     {
@@ -685,9 +695,9 @@
             "plus:metaListPriority": 41,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Identifikationsnummer zur Dokumentenversion.",
-                "en": "",
-                "zh": ""
+                "de": "Zu jedem Dokument muss mindestens eine Dokumentenversion angegeben werden.",
+                "en": "At minimum one document version must be specified for each document.",
+                "zh": "至少要为每个文件指定一个文件版本。"
             }
         },
         "label": {
@@ -715,9 +725,9 @@
         "attrs": {
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Sprachabhängige Liste von Schlagwörtern",
-                "en": "",
-                "zh": ""
+                "de": "Hier muss mindestens ein Schlagwort, dass sich auf das Dokument bezieht, angegeben werden. Als Schlagwort kann z.B. eine nähere Beschreibung des Dokumenteninhalts angegeben werden.",
+                "en": "At minimum one keyword that refers to the document must be specified here. For example, a more detailed description of the document content can be specified as a keyword.",
+                "zh": "这里至少要指定一个提及该文件的关键词。例如，对文件内容更详细的描述可以作为一个关键词来指定。"
             }
         },
         "label": {
@@ -742,9 +752,9 @@
         "attrs": {
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Kontaktname",
-                "en": "Contact name",
-                "zh": "联系人姓名"
+                "de": "Hier wird der Name des Erstellers der VDI 2770 konformen Dokumentation angegeben.",
+                "en": "The name of the author of the VDI 2770-compliant documentation is entered here.",
+                "zh": "输入创建符合VDI 2770标准文件作者的名字。"
             }
         },
         "label": {
@@ -769,9 +779,9 @@
         "attrs": {
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Kontaktmailadresse",
-                "en": "Contact email address",
-                "zh": "联系电子邮件"
+                "de": "Hier wird die E-Mail Adresse des Erstellers der VDI 2770 konformen Dokumentation angegeben.",
+                "en": "The e-mail address of the author of the VDI 2770-compliant documentation is entered here.",
+                "zh": "输入创建符合VDI 2770标准文件作者的电子邮件地址。"
             }
         },
         "label": {
@@ -801,9 +811,9 @@
             "plus:readonly": true,
             "plus:guidelineListPriority": 1,
             "plus:tooltipInfo": {
-                "de": "Die gebräuchliche Bezeichnung für die Organisation.<br>Beispiel: <b>Manufacturer ABC</b>",
-                "en": "Example: <b>Manufacturer ABC</b>",
-                "zh": ""
+                "de": "Die gebräuchliche Bezeichnung des Unternehmens (Kurzform ohne Angabe der Rechtsform), dass die Dokumentation erstellt und an den Kunden liefert.<br>Beispiel: <b>Unternehmen ABC</b>",
+                "en": "The common name of the company (short form without specifying the legal form) that creates the documentation and delivers it to the customer. <br>Example: <b>Manufacturer ABC</b>",
+                "zh": "创建并向客户交付文件的公司的通用名称（缩写形式，不注明法律形式）。<br>例如：<b>ABC公司</b>"
             }
         },
         "label": {
@@ -834,9 +844,9 @@
             "plus:requiredAssignment": true,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Eine eindeutige ID für die Organisation.<br> Beispiel (Website): <b>www.manufacturer-abc.org</b>",
-                "en": "Example: <b>www.manufacturer-abc.org</b>",
-                "zh": ""
+                "de": "Die offzielle Website des Unternehmens, dass die Dokumentation erstellt und an den Kunden liefert.",
+                "en": "The official website of the company that creates and delivers the documentation to the customer.",
+                "zh": "创建并向客户交付文件的公司的官方网站。"
             }
         },
         "label": {
@@ -866,7 +876,12 @@
             "plus:metaListPriority": 33,
             "plus:guidelineListPriority": 6,
             "plus:requiredAssignment": true,
-            "plus:readonly": true
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "Die eindeutige Identifikationsnummer vom Hersteller für ein individuelles Objektes. Innerhalb einer Produktbezeichnung (Modell, Baureihe, Produkttyp) von einem Hersteller ist die Seriennummer eindeutig.",
+                "en": "The unique identification number from the manufacturer for an individual object. Within a product designation (model, series, product type) from a manufacturer, the serial number is unique.",
+                "zh": "制造商为单个物体提供的唯一识别号码。在制造商的产品名称（型号、系列、产品类型）中，序列号是唯一的。"
+            }
         },
         "label": {
             "de": "Seriennummer",
@@ -928,9 +943,9 @@
             "plus:metaListPriority": 11,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Sprachabhängiger Titel des Dokuments.",
-                "en": "",
-                "zh": ""
+                "de": "Hier ist die Angabe eines möglichst aussagekräftigen Titels für das aufgeführte Dokument festzulegen. Der Titel kann vom Dateinamen des Dokuments abweichen.",
+                "en": "Here you have to define the specification of a title for the document that is as meaningful as possible. The title can be different from the file name of the document.",
+                "zh": "这里你必须为文件定义一个尽可能有意义的标题规范。该标题可以与文件的文件名不同。"
             }
         },
         "label": {
@@ -950,7 +965,14 @@
             "en": "Title",
             "zh": "标题"
         },
-        "indicators": []
+        "indicators": [],
+        "attrs": {
+            "plus:tooltipInfo": {
+                "de": "Hier ist die Angabe eines möglichst aussagekräftigen Titels für das aufgeführte Dokument festzulegen. Der Titel kann vom Dateinamen des Dokuments abweichen.",
+                "en": "Here you have to define the specification of a title for the document that is as meaningful as possible. The title can be different from the file name of the document.",
+                "zh": "这里你必须为文件定义一个尽可能有意义的标题规范。该标题可以与文件的文件名不同。"
+            }
+        }
     },
     {
         "identifier": "vdi:Comment",
@@ -971,9 +993,9 @@
             "plus:metaListPriority": 41,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
+                "de": "Hier werden die sprachspezifischen Beschreibungen zum Dokument eingetragen. Für jede im Dokument verwendete Sprache muss eine Dokumentbeschreibung angegeben werden. Inhaltlich sollten die Dokumentbeschreibungen der verschiedenen Sprachversionen identisch sein (im Sinne einer Übersetzung).",
+                "en": "The language-specific descriptions for the document are entered here. A document description must be entered for each language used in the document. The content of the document descriptions of the different language versions should be identical (in the sense of a translation).",
+                "zh": "文件的特定语言描述在此输入。必须为文件中使用的每种语言输入一份文件描述。不同语言版本的文件描述的内容应该是相同的（在翻译的意义上）。"
             }
         },
         "label": {
@@ -988,13 +1010,11 @@
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
-
             "plus:has-roles": [
                 "plus:TitlePart",
                 "plus:IdentityDomain",
                 "plus:EquipmentMetadata"
             ],
-
             "plus:is-part-of-metadata-group": [
                 "plus:ProductMetadataGroup"
             ],
@@ -1009,9 +1029,9 @@
             "plus:requiredAssignment": true,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
+                "de": "Die Produktbezeichnung (Modell, Baureihe, Produkttyp) kann als Komponente in einer oder mehreren Baueinheiten Verwendung finden. Die Produktbezeichnung ist innerhalb eines Herstellers eindeutig.",
+                "en": "The product designation (model, series, product type) can be used as a component in one or more assembly units. The product designation is unique within a manufacturer.",
+                "zh": "产品名称（型号、系列、产品类型）可以作为一个或多个装配单元的组成部分。产品名称在一个制造商内部是唯一的。"
             }
         },
         "label": {
@@ -1026,13 +1046,11 @@
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
-
             "plus:has-roles": [
                 "plus:TitlePart",
                 "plus:IdentityDomain",
                 "plus:EquipmentMetadata"
             ],
-
             "plus:is-part-of-metadata-group": [
                 "plus:ProductMetadataGroup"
             ],
@@ -1047,14 +1065,15 @@
             "plus:requiredAssignment": false,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
+                "de": "Die Identifikationsnummer vom Hersteller mit der ein identisches Objekt bestellt werden kann.",
+                "en": "The identification number from the manufacturer with which an identical object can be ordered.",
+                "zh": "制造商的识别号码，可以用它来订购一个相同的物品。"
             }
         },
         "label": {
             "de": "Bestellnummer / Artikelnummer",
-            "en": "Product ID"
+            "en": "Product ID",
+            "zh": ""
         },
         "indicators": []
     },
@@ -1063,13 +1082,11 @@
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
-
             "plus:has-roles": [
                 "plus:TitlePart",
                 "plus:IdentityDomain",
                 "plus:EquipmentMetadata"
             ],
-
             "plus:is-part-of-metadata-group": [
                 "plus:ProjectMetadataGroup"
             ],
@@ -1083,14 +1100,15 @@
             "plus:guidelineListPriority": 8,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
+                "de": "Die Projektnummer (intern) ist eine identifizierende Nummer und Kennungen für die Bestellung eines oder mehrerer Objekte, die in den IT-Systemen des Herstellers verwendet wird.",
+                "en": "The project number (internal) is an identification number and identifiers for the order of one or more objects, which is used in the IT systems of the manufacturer.",
+                "zh": "项目编号（内部）是一个或多个对象的订单的识别号码和标识符，用于制造商的IT系统。"
             }
         },
         "label": {
             "de": "Projektnummer (Intern)",
-            "en": "Project ID (internal)"
+            "en": "Project ID (internal)",
+            "zh": ""
         },
         "indicators": []
     },
@@ -1117,14 +1135,15 @@
             "plus:guidelineListPriority": 9,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
+                "de": "Die Projektnummer (Kunde) ist eine identifizierende Nummer und Kennungen für die Bestellung eines oder mehrerer Objekte, die in den IT-Systemen des Kunden verwendet wird und bei der Bestellung dem Hersteller übermittelt wird.",
+                "en": "The project number (customer) is an identification number and identifiers for the order of one or more objects, which is used in the customer's IT systems and is provided to the manufacturer when the order is received.",
+                "zh": "项目编号（客户）是一个或多个对象的订单的识别号和标识符，在客户的IT系统中使用，并在下订单时传送给制造商。"
             }
         },
         "label": {
             "de": "Projektnummer (Kunde)",
-            "en": "Project id (customer)"
+            "en": "Project id (customer)",
+            "zh": ""
         },
         "indicators": []
     },
