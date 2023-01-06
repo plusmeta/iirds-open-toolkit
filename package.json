@@ -55,7 +55,7 @@
     "@vue/cli-plugin-eslint": "^4.5.19",
     "@vue/cli-plugin-router": "~4.5.19",
     "@vue/cli-plugin-vuex": "~4.5.19",
-    "@vue/cli-service": "~4.5.19",
+    "@vue/cli-service": "~5.0.8",
     "babel-eslint": "^11.0.0-beta.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-transform-require-context": "^0.1.1",
