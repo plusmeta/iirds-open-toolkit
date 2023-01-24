@@ -13,26 +13,18 @@
 
       <v-spacer />
 
-      <v-scale-transition v-if="showLog">
-        <v-tooltip top>
-          <template v-slot:activator="{ on }">
-            <v-btn
-              v-show="msg.length && (finished || error)"
-              fab
-              small
-              class="mr-4 elevation-0"
-              color="info"
-              v-on="on"
-              @click="report"
-            >
-              <v-icon>
-                mdi-format-list-checks
-              </v-icon>
-            </v-btn>
-          </template>
-          <span>{{ $t("Objects.log") }}</span>
-        </v-tooltip>
-      </v-scale-transition>
+      <v-btn
+        v-if="showDownload"
+        small
+        class="mr-8 elevation-0"
+        color="warning"
+        @click="showUpsellDialog"
+      >
+        <v-icon left>
+          mdi-upload
+        </v-icon>
+        {{ $t("Otk.transferToIEP") }}
+      </v-btn>
 
       <v-scale-transition v-if="showRerun">
         <v-tooltip top>
@@ -141,7 +133,7 @@
       <v-col lg="3" sm="12">
         <v-card
           class="pa-0 flex-grow-1 text-center" :outlined="!$vuetify.theme.dark"
-          color="warning"
+          color="primary"
         >
           <v-card-text class="display-3 white--text pb-0">
             {{ $d(new Date(elapsedTime * 1000), 'timer') }}
@@ -160,7 +152,6 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import util from "@/util";
 
 export default {
     name: "PlusProcessObjects",
@@ -273,22 +264,9 @@ export default {
             let timestamp = (new Date()).toLocaleTimeString();
             this.msg.push(`[${timestamp}] ${msg}`);
         },
-        report() {
-            let date = (new Date()).toLocaleDateString();
-            let time = (new Date()).toLocaleTimeString();
-            let content = "****** plusmeta Protocol ******\n";
-            content += `App: ${this.name} ${this.version} (${this.env})\n`;
-            content += `Date: ${date} - ${time}\n\n`;
-
-            content += this.msg.join("\n");
-
-            let exportFile = new File(
-                [content],
-                `plusmeta_protocol_${date}-${time}.txt`,
-                {type: "text/plain"}
-            );
-            util.downloadBlob(exportFile);
-        }
+        showUpsellDialog() {
+            this.$upsell.open(this.$t("Otk.IepIntegration"));
+        },
     }
 };
 </script>

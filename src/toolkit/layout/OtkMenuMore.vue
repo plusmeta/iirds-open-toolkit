@@ -104,6 +104,20 @@
           </v-list-item-title>
         </v-list-item>
 
+        <v-list-item
+          class="py-2"
+          @click="showUpsellDialog"
+        >
+          <v-list-item-action>
+            <v-icon color="warning">
+              mdi-account
+            </v-icon>
+          </v-list-item-action>
+          <v-list-item-title>
+            {{ $t("Otk.manageAccount") }}
+          </v-list-item-title>
+        </v-list-item>
+
         <v-divider />
 
         <v-list-item
@@ -117,21 +131,6 @@
           </v-list-item-action>
           <v-list-item-title>
             {{ $t("Actions.giveFeedback") }}
-          </v-list-item-title>
-        </v-list-item>
-
-        <v-list-item
-          class="py-2"
-          href="https://github.com/plusmeta/vdi2770-open-toolkit"
-          target="_blank"
-        >
-          <v-list-item-action>
-            <v-icon>
-              mdi-github
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>
-            {{ $t("App.sourcecode") }}
           </v-list-item-title>
         </v-list-item>
 
@@ -212,6 +211,9 @@ export default {
             } finally {
                 this.$refs.menuForm.reset();
             }
+        },
+        showUpsellDialog() {
+            this.$upsell.open(this.$t("Otk.accountInstance"));
         },
         ...mapActions("settings", [
             "setLocalSetting",

@@ -40,7 +40,6 @@ import { mapActions, mapGetters } from "vuex";
 import { create } from "xmlbuilder2";
 
 import JSzip from "jszip";
-import ObjectHash from "object-hash";
 
 import allSettled from "@ungap/promise-all-settled";
 

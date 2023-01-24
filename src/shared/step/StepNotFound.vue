@@ -44,7 +44,7 @@ export default {
     created() {
         // Log 404 event with warning level if Sentry is active for further investigation
         if (!!+process.env.VUE_APP_SENTRY_IS_ACTIVE) {
-            Sentry.captureMessage(`RouteNotFound (404): ${this.$route.fullPath}`, "warning");
+            Sentry.captureMessage(`RouteNotFound (404): ${this.$route.fullPath}`, "error");
         }
     }
 };

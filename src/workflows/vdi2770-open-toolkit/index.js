@@ -20,7 +20,7 @@ export default {
     publishable: true,
     steps: [{
         id: "start",
-        editable: false,
+        editable: true,
         helpkey: "workflow.welcome",
         name: {
             de: "Daten angeben",
@@ -40,7 +40,7 @@ export default {
     },
     {
         id: "add-content",
-        editable: false,
+        editable: true,
         helpkey: "workflow.addObjects",
         name: {
             de: "Inhalte hinzufügen",
@@ -62,7 +62,7 @@ export default {
     },
     {
         id: "assign-metadata",
-        editable: false,
+        editable: true,
         helpkey: "workflow.assignMetadata",
         name: {
             de: "Metadaten vergeben",
@@ -84,7 +84,7 @@ export default {
     },
     {
         id: "generate-vdi2770",
-        editable: false,
+        editable: true,
         helpkey: "workflow.generateVdi2770",
         name: {
             de: "VDI-2770-Container generieren",

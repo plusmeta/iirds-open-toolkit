@@ -25,6 +25,7 @@
     </v-snackbar>
     <router-view />
     <ConfirmDialog ref="confirm" />
+    <UpsellDialog ref="upsell" />
   </v-app>
 </template>
 
@@ -35,10 +36,14 @@ import { map, scan } from "rxjs/operators";
 import { mapGetters } from "vuex";
 
 import ConfirmDialog from "@/shared/dialog/ConfirmDialog.vue";
+import UpsellDialog from "@/shared/dialog/UpsellDialog.vue";
 
 export default {
     name: "App",
-    components: { ConfirmDialog },
+    components: {
+        ConfirmDialog,
+        UpsellDialog
+    },
     computed: {
         hasConsent() {
             return this.getSetting("user_eula");
@@ -75,9 +80,11 @@ export default {
     },
     mounted() {
         this.$confirm.register(this.$refs?.confirm);
+        this.$upsell.register(this.$refs?.upsell);
     },
     destroyed() {
         this.$confirm.unregister();
+        this.$upsell.unregister();
     },
     subscriptions() {
         return {

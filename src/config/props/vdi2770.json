@@ -835,7 +835,7 @@
                 "plus:BasicMetadataGroup"
             ],
             "plus:has-icons": [
-                "mdi:factory"
+                "mdi:web"
             ]
         },
         "attrs": {
@@ -1055,7 +1055,7 @@
                 "plus:ProductMetadataGroup"
             ],
             "plus:has-icons": [
-                "mdi:robot-industrial"
+                "mdi:id-card"
             ]
         },
         "attrs": {
@@ -1126,7 +1126,7 @@
                 "plus:ProjectMetadataGroup"
             ],
             "plus:has-icons": [
-                "mdi:briefcase-outline"
+                "mdi:briefcase-arrow-left-right-outline"
             ]
         },
         "attrs": {
@@ -1160,7 +1160,7 @@
                 "plus:ProjectMetadataGroup"
             ],
             "plus:has-icons": [
-                "mdi:briefcase-outline"
+                "mdi:target-variant"
             ]
         },
         "attrs": {

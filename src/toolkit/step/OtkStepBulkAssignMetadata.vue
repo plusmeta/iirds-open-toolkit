@@ -34,9 +34,15 @@
                 @click="expand(item, !isExpanded(item))"
               >
                 <v-list-item-icon>
-                  <v-icon>
+                  <v-icon v-if="countInvalidMetadata(item.uuid) > 0">
                     {{ getIconForType(item.type) }}
                   </v-icon>
+                  <v-badge
+                    v-else
+                    color="success"
+                    icon="mdi-check"
+                    inline
+                  />
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title class="subtitle-2">
@@ -47,25 +53,20 @@
                   </v-list-item-subtitle>
                 </v-list-item-content>
                 <v-list-item-action>
-                  <v-row justify="center" align="center">
-                    <v-col>
-                      <v-badge
-                        v-if="countInvalidMetadata(item.uuid) > 0"
-                        color="accent"
-                        :content="countInvalidMetadata(item.uuid)"
-                        inline
-                      />
-                      <v-badge
-                        v-else
-                        color="accent"
-                        icon="mdi-check"
-                        inline
-                      />
-                    </v-col>
-                    <v-col>
-                      <DeleteObject :uuid="item.uuid" />
-                    </v-col>
-                  </v-row>
+                  <v-btn
+                    small
+                    class="mr-4 elevation-0"
+                    color="warning"
+                    @click="showUpsellDialog"
+                  >
+                    <v-icon left>
+                      mdi-auto-fix
+                    </v-icon>
+                    {{ $t("Otk.automated") }}
+                  </v-btn>
+                </v-list-item-action>
+                <v-list-item-action>
+                  <DeleteObject :uuid="item.uuid" />
                 </v-list-item-action>
               </v-list-item>
             </v-list>
@@ -156,6 +157,9 @@ export default {
         getIconForType(type) {
             const icon = this.getPropertyRelationById(type, "plus:has-icons")[0];
             return (icon) ? icon.replace(":", "-") : undefined;
+        },
+        showUpsellDialog() {
+            this.$upsell.open(this.$t("Otk.autoMetadata"));
         },
         ...mapActions("projects", [
             "updateCurrentProjectRelations",

@@ -71,6 +71,7 @@
 import { mapActions, mapGetters } from "vuex";
 import LanguageIcon from "@/shared/inline/LanguageIcon";
 import match from "@/util/match";
+import * as Sentry from "@sentry/browser";
 
 export default {
     name: "OtkMenuLanguage",
@@ -119,6 +120,7 @@ export default {
     methods: {
         async changeLocale(index) {
             let locale = this.getLanguages[index].locale;
+            Sentry.setTag("locale", this.getCurrentLocale);
             await this.changeLanguageLocal(locale);
         },
         ...mapActions("settings", [

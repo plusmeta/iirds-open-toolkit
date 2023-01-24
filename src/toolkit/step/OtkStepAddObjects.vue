@@ -218,6 +218,39 @@
             <ByteUnit :value="item.size" :class="{'grey--text': processing.includes(item.uuid)}" />
           </template>
 
+          <template v-slot:item.sourcename="{ item }">
+            <code>{{ item.sourcename }}</code>
+          </template>
+
+          <template v-slot:item.conformance="{ item }">
+            <MetaSwitch
+              v-if="item.isPdfaSupported"
+              icon="mdi-file-check-outline"
+              :tooltip="$t('Objects.selectForPDFA')"
+              :reason="$t('Otk.pdfaConversion')"
+            />
+            <ConformanceInfo
+              v-else
+              :value="item"
+            />
+          </template>
+          <template v-slot:item.textCount="{ item }">
+            <MetaSwitch
+              v-if="!item.textCount"
+              icon="mdi-ocr"
+              :tooltip="$t('Objects.selectForOCR')"
+              :reason="$t('Otk.ocrAnalysis')"
+            />
+            <v-chip v-else>
+              <v-icon left>
+                mdi-text
+              </v-icon>
+              <span>
+                {{ $n(item.textCount, { maximumFractionDigits: 0 }) }}
+              </span>
+            </v-chip>
+          </template>
+
           <template v-slot:item.actions="{ item }">
             <DeleteObject :uuid="item.uuid" />
           </template>
@@ -284,8 +317,12 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 import { tap, debounceTime } from "rxjs/operators";
+import ObjectHash from "object-hash";
+import * as Sentry from "@sentry/browser";
 
 import QuickView from "@/shared/inline/QuickView";
+import MetaSwitch from "@/toolkit/inline/MetaSwitch";
+import ConformanceInfo from "@/toolkit/inline/ConformanceInfo";
 import DeleteObject from "@/shared/inline/DeleteObject";
 import HelpView from "@/shared/block/HelpView";
 import AssignGuidelines from "@/shared/block/AssignGuidelines";
@@ -305,7 +342,9 @@ export default {
         HelpView,
         QuickView,
         DeleteObject,
-        AssignGuidelines
+        AssignGuidelines,
+        MetaSwitch,
+        ConformanceInfo
     },
     props: {
         objecttype: {
@@ -361,11 +400,17 @@ export default {
                     Object.assign(util.deepCopy(object), {
                         uuid: object.uuid,
                         name: object.name,
+                        textContent: object.text,
+                        textCount: object.text?.length,
                         type: object.type,
                         typeLabel: this.getPropertyLabelById(object.type) || this.$t("Common.unknown"),
                         size: object.source?.size || 0,
-                        sourcetype: this.getPropertyLabelById(object.source?.type) || this.$t("Common.unknown"),
+                        sourceTypeLabel: this.getPropertyLabelById(object.source?.type) || this.$t("Common.unknown"),
+                        sourceType: object.source?.type,
                         sourcename: object.source?.name,
+                        conformance: util.getMetadataValueAsArray(object, "plus:Conformity")[0],
+                        isOcrSupported: this.isOcrSupported({textCount: object.text?.lengt, sourceType: object.source?.type}),
+                        isPdfaSupported: this.isPdfaSupported({...object, sourceType: object.source?.type}),
                         object
                     })
                 );
@@ -394,8 +439,20 @@ export default {
                 {
                     text: this.$t("Objects.sourceType"),
                     align: "left",
-                    value: "sourcetype",
+                    value: "sourceTypeLabel",
                     sortable: true
+                },
+                {
+                    text: this.$t("Objects.conformity"),
+                    align: "center",
+                    value: "conformance",
+                    sortable: false
+                },
+                {
+                    text: this.$t("Objects.textContent"),
+                    align: "center",
+                    value: "textCount",
+                    sortable: false
                 },
                 {
                     text: this.$t("Objects.filesize"),
@@ -437,6 +494,7 @@ export default {
         ]),
         ...mapGetters("settings", [
             "getSetting",
+            "getSettings",
             "getCurrentLocale"
         ]),
         ...mapGetters("storage", [
@@ -455,8 +513,62 @@ export default {
             this.selected = this.selected.filter(uuid => currentUuids.includes(uuid));
         }
     },
+    mounted() {
+        const baseSettings = Object.entries(this.getSettings).filter(entry => entry[0].startsWith("base")).reduce((obj, [key, value]) => {
+            obj[key] = value;
+            return obj;
+        }, {});
+
+        const storedBaseSettingsHash = this.getSetting("user_settings_hash");
+        const currentBaseSettingsHash = ObjectHash(JSON.stringify(baseSettings));
+
+        if (storedBaseSettingsHash !== currentBaseSettingsHash) {
+            this.setLocalSetting({key: "user_settings_hash", value: currentBaseSettingsHash });
+
+            Sentry.setUser({
+                id: currentBaseSettingsHash,
+                username: baseSettings.base_user_name,
+                email: baseSettings.base_user_mail,
+            });
+
+            Sentry.setTag("org.name", baseSettings.base_orga_name);
+            Sentry.setTag("org.full", baseSettings.base_orga_fullname);
+            Sentry.setTag("org.id", baseSettings.base_orga_id);
+
+            Sentry.setTag("locale", this.getCurrentLocale);
+
+            Sentry.captureMessage("UsageTag", "debug");
+        }
+
+    },
     methods: {
         ...util,
+        isOcrSupported(item) {
+            const supportedFormats = [ "application/pdf", "image/jpeg", "image/png", "image/svg+xml", "image/gif" ];
+            const noText = item.textCount <= 5;
+            const isSupported = supportedFormats.includes(item.sourceType);
+            return noText && isSupported;
+        },
+        isPdfaSupported(item) {
+            const conformance = util.getMetadataValueAsArray(item, "plus:Conformity");
+            const hasConformance = conformance?.length > 0;
+            const isSupported = item.sourceType === "application/pdf";
+            return !hasConformance && isSupported;
+        },
+        isOfficeSupported(item) {
+            const supportedFormats = [
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                "application/vnd.ms-excel",
+                "application/msword",
+                "application/vnd.ms-powerpoint",
+                "text/plain",
+                "application/rtf",
+                "text/csv"
+            ];
+            return supportedFormats.includes(item.sourceType);
+        },
         async deleteSelectedObjects() {
             if (await this.$confirm.open(
                 this.$t("Actions.deleteSelectedObjects"),

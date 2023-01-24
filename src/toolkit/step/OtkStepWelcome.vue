@@ -8,11 +8,10 @@
   <v-container fluid>
     <v-row wrap>
       <v-col
-        lg="3"
-        offset-lg="1"
+        lg="4"
         md="6"
         sm="12"
-        class="px-2"
+        class="px-2 mx-6"
       >
         <v-card
           dark
@@ -48,22 +47,19 @@
           class="mt-7 pa-6 elevation-2"
           outlined
         >
+          <v-row align="center" justify="center">
+            <v-col>
+              <span class="caption d-inline-block mb-2">{{ $t('Otk.providedBy') }}</span>
+            </v-col>
+          </v-row>
           <v-row justify="center" align="center">
             <v-col cols="auto">
               <a href="https://plusmeta.de/" target="_blank"><v-img src="/images/plusmeta_logo.svg" width="300px" /></a>
             </v-col>
-            <v-col cols="auto">
-              <div class="d-inline-block body-2 ">
-                <a href="https://plusmeta.de/" target="_blank">plusmeta GmbH</a><br>
-                Kaiserstraße 235<br>
-                76133 Karlsruhe<br>
-                <a href="mailto:info@plusmeta.de">info@plusmeta.de</a><br>
-              </div>
-            </v-col>
           </v-row>
           <v-row align="center" justify="center">
             <v-col>
-              <span class="caption d-inline-block mb-4">{{ $t('Otk.inCoopWith') }}</span>
+              <span class="caption d-inline-block mb-2">{{ $t('Otk.inCoopWith') }}</span>
             </v-col>
           </v-row>
           <v-row
@@ -77,9 +73,9 @@
         </v-card>
       </v-col>
       <v-col
-        offset-lg="1"
-        md="6"
+        md="7"
         sm="12"
+        class="mx-6"
       >
         <v-expansion-panels
           focusable
@@ -168,9 +164,6 @@
                   </v-row>
                 </v-col>
               </v-row>
-              <!--              <v-form-group-->
-              <!--                :label="$t('Otk.orgaGroup')"-->
-              <!--              >-->
               <v-row>
                 <v-col cols="12" lg="6">
                   <v-row align="center">
@@ -226,7 +219,8 @@
                   </v-row>
                 </v-col>
                 <v-col
-                  lg="6" cols="12"
+                  lg="6"
+                  cols="12"
                   class="mt-0 pt-0"
                 >
                   <v-row align="center">
@@ -254,8 +248,20 @@
                     </v-col>
                   </v-row>
                 </v-col>
+                <v-col
+                  lg="6"
+                  cols="12"
+                  class="mt-0 pt-0"
+                >
+                  <v-row align="center">
+                    <v-col>
+                      <v-card class="caption pa-2" flat>
+                        {{ $t("Otk.dataProtectionInfo") }}
+                      </v-card>
+                    </v-col>
+                  </v-row>
+                </v-col>
               </v-row>
-              <!--              </v-form-group>-->
               <v-row>
                 <v-col>
                   <v-switch
@@ -486,6 +492,7 @@ import { mapActions, mapGetters } from "vuex";
 import util from "@/util";
 import validations from "@/util/validations";
 import VFormGroup from "@/toolkit/step/VFormGroup";
+import * as Sentry from "@sentry/browser";
 
 export default {
     name: "StepWelcome",
@@ -503,6 +510,7 @@ export default {
             set(value) {
                 this.setLocalSetting({key: "base_user_name", value});
                 value = value ? [value] : [];
+                Sentry.setTag("user", value[0]);
                 return this.updateCurrentProjectRelations({"vdi:AuthorName": value});
             }
         },
@@ -513,6 +521,7 @@ export default {
             set(value) {
                 this.setLocalSetting({key: "base_user_mail", value});
                 value = value ? [value] : [];
+                Sentry.setTag("user.mail", value[0]);
                 return this.updateCurrentProjectRelations({"vdi:AuthorEmail": value});
             }
         },
@@ -522,6 +531,7 @@ export default {
             },
             set(value) {
                 this.setLocalSetting({key: "base_orga_name", value});
+                Sentry.setTag("user.org", value);
                 this.updateCurrentProjectRelations({"vdi:OrganizationName": [value]});
             },
 
@@ -532,6 +542,7 @@ export default {
             },
             set(value) {
                 this.setLocalSetting({key: "base_orga_fullname", value});
+                Sentry.setTag("user.org.full", value);
                 this.updateCurrentProjectRelations({"vdi:OrganizationOfficialName": [value]});
             },
         },
@@ -541,6 +552,7 @@ export default {
             },
             set(value) {
                 this.setLocalSetting({key: "base_orga_id", value});
+                Sentry.setUser("user.org.id", value);
                 this.updateCurrentProjectRelations({"vdi:OrganizationId": [value]});
             },
         },

@@ -17,6 +17,7 @@ import VueAuth from "@/plugins/auth";
 import VueSecurity from "@/plugins/security";
 import VueNotify from "@/plugins/notify";
 import VueConfirm from "@/plugins/confirm";
+import VueUpsell from "@/plugins/upsell";
 import VueShortKey from "@/plugins/shortkey";
 
 // UI-Framework, CSS
@@ -31,11 +32,13 @@ AuthContextHolder.instance = new StandaloneService(Vue);
 import { SecurityService as Security } from "@/services/security-service";
 import { NotifyService } from "@/services/notify-service";
 import { ConfirmService } from "@/services/confirm-service";
+import { UpsellService } from "@/services/upsell-service";
 
 Vue.use(VueAuth, AuthContextHolder.instance);
 Vue.use(VueSecurity, Security.instance);
 Vue.use(VueNotify, NotifyService.instance);
 Vue.use(VueConfirm, ConfirmService.instance);
+Vue.use(VueUpsell, UpsellService.instance);
 Vue.use(VueRx);
 
 if (!!+process.env.VUE_APP_LOG_VERSION) {
@@ -50,7 +53,7 @@ import * as Integrations from "@sentry/integrations";
 if (!!+process.env.VUE_APP_SENTRY_IS_ACTIVE) {
     // Sentry error logging
     Sentry.init({
-        dsn: process.env.VUE_APP_SENTRY_DNS,
+        dsn: process.env.VUE_APP_SENTRY_DSN,
         release: `${process.env.VUE_APP_NAME}@${process.env.VUE_APP_VERSION}`,
         environment: process.env.NODE_ENV,
         integrations: [

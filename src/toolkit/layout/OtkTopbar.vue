@@ -27,6 +27,17 @@
     <v-spacer />
 
     <!-- Right-hand Menus -->
+    <v-btn
+      small
+      class="mr-4 elevation-0"
+      color="warning"
+      @click="showUpsellDialog"
+    >
+      <v-icon left>
+        mdi-lifebuoy
+      </v-icon>
+      Support
+    </v-btn>
     <MenuLanguage />
     <MenuMore />
   </v-app-bar>
@@ -73,6 +84,9 @@ export default {
                 this.initital = false;
                 this.setLocalSetting({ key: "ui_shortcuts", value: false });
             }
+        },
+        showUpsellDialog() {
+            this.$upsell.open(this.$t("Otk.support"));
         },
         ...mapActions("settings", [
             "setLocalSetting"

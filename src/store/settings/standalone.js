@@ -31,6 +31,8 @@ const state = {
         ui_addobjects_columns: [
             "name",
             "sourcetype",
+            "conformity",
+            "textCount",
             "size",
             "actions"
         ],
