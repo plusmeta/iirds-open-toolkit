@@ -130,7 +130,7 @@
                         mdi-information-outline
                       </v-icon>
                     </template>
-                    <div v-html="custom.tooltip" />
+                    <div class="tooltip-width" v-html="custom.tooltip" />
                   </v-tooltip>
                 </v-col>
               </v-row>
@@ -213,7 +213,7 @@ export default {
                     const icon = this.getPropertyRelationById(prop.identifier, "plus:has-icons")[0];
                     const position = this.getPropertyAttributeById(prop.identifier, "plus:metaListPriority") || 99;
                     const hasTaxonomyRole = this.hasTaxonomyRole(prop.identifier);
-                    const tooltip = this.getPropertyAttributeById(prop.identifier, "plus:tooltipInfo")?.[this.$store["settings/getCurrentLocale"]] ?? null;
+                    const tooltip = this.getPropertyAttributeById(prop.identifier, "plus:tooltipInfo")?.[this.$store.getters["settings/getCurrentLocale"]] ?? null;
 
                     return {
                         value: prop.identifier,

@@ -608,7 +608,6 @@
         "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
-                "plus:TaxonomyTree",
                 "plus:AssignableMetadata",
                 "vdi:DocumentClassification"
             ],
@@ -628,9 +627,9 @@
             "plus:singleAssignment": true,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Sprachabhängige Liste von Schlagwörtern",
-                "en": "",
-                "zh": ""
+                "de": "Hier ist dem Dokument zugehörige VDI 2770 Dokumentkategorie anzugeben. Das Dokument kann sich in seltenen Fällen auch auf mehrere VDI 2770 Dokumentkategorien beziehen. Die Klassifikation nach VDI Richtlinie 2770 besteht aus vier Gruppen, die in insgesamt zwölf Kategorien untergliedert sind. Die Gruppen leiten sich aus den allgemeinen Zwecken von objektbezogenen Dokumenten ab.",
+                "en": "The VDI 2770 document category associated with the document must be provided here. In rare cases, the document may refer to several VDI 2770 document categories. The classification according to VDI guideline 2770 consists of four groups, which are subdivided into a total of twelve categories. The groups are based on the general purposes of object-related documents.",
+                "zh": "这里必须提供与该文件相关的VDI 2770文件类别。在极少数情况下，该文件可能会提到几个VDI 2770文件类别。根据VDI准则2770的分类包括四个组，它们又被细分为总共12个类别。这些组是基于对象相关文件的一般目的。"
             }
         },
         "label": {
@@ -646,7 +645,6 @@
         "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
-                "plus:TaxonomyTree",
                 "plus:AssignableMetadata",
                 "vdi:DocumentClassification"
             ],
@@ -1169,9 +1167,9 @@
             "plus:guidelineListPriority": 10,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
+                "de": "Das Referenzkennzeichen ist eine identifizierende Nummer und Kennungen für ein Objekt (z.B. Einbauort eines Objekts), dass durch den Betreiber an den Hersteller in den meisten Fällen bei der Bestellung übermittelt wird.",
+                "en": "The reference designation is an identification number and identifiers for an object (e.g. installation location of an object) that is provided by the operator to the manufacturer in most cases when the order is received.",
+                "zh": "参考标识是物体的识别号码和标识符（如物体的安装位置），在大多数情况下，在下订单时由运营商传送给制造商。"
             }
         },
         "label": {
@@ -1216,8 +1214,9 @@
             "plus:requiredAssignment": true,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Der offizielle Namen der Organisation.<br>Beispiel: <b>Manufacturer ABC Ltd. & Co KG</b>",
-                "en": "Example: <b>Manufacturer ABC Ltd. & Co KG</b>"
+                "de": "Der offizielle Name des Unternehmens (Langform mit Angabe der Rechtsform), dass die Dokumentation erstellt und an den Kunden liefert.<br>Beispiel: <b>Unternehmen ABC GmbH & Co. KG</b>",
+                "en": "The official name of the company (long form with specifying the legal form) that creates and delivers the documentation to the customer.<br>Example: <b>Manufacturer ABC Ltd.</b>",
+                "zh": "创建并向客户交付文件的公司的正式名称（长格式，注明法律形式）。<br>例如：<b>ABC有限公司</b>"
             }
         },
         "label": {
