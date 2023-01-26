@@ -158,6 +158,7 @@
     "useDarkMode": "Dunkles Farbschema"
   },
   "Validations": {
+    "maxLenghtExceeded": "Maximale Zeichenlänge überschritten",
     "minOneOfFields": "Mindestens eines der Felder {0} muss ausgefüllt werden.",
     "noEmptyInput": "Feld darf nicht leer sein",
     "noMultipleInput": "Feld darf nur einen Wert enthalten",

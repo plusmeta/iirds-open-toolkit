@@ -388,9 +388,50 @@
                     <v-text-field
                       v-model="ObjectInstanceURI"
                       :prepend-icon="getPropertyIcon('iirds:ObjectInstanceURI')"
-                      :rules="hasSerialNumber ? [isURL] : [isNotEmptyOr, isURL]"
+                      :rules="hasSerialNumber ? [isURL, isBelowMaxLength] : [isNotEmptyOr, isURL, isBelowMaxLength]"
+                      :counter="255"
                       :label="getPropertyLabelById('iirds:ObjectInstanceURI')"
-                    />
+                    >
+                      <template v-slot:append-outer>
+                        <v-menu
+                          v-model="qrPanel"
+                          transition="scale-transition"
+                          :close-on-content-click="false"
+                        >
+                          <template v-slot:activator="{ on }">
+                            <v-btn
+                              icon
+                              class="ml-2 my-0 pa-0"
+                              :disabled="!hasValidAutoId"
+                              :loading="qrLoading"
+                              v-on="on"
+                            >
+                              <v-icon>
+                                mdi-qrcode
+                              </v-icon>
+                            </v-btn>
+                          </template>
+                          <v-card
+                            color="white"
+                            outlined
+                            class="pa-2"
+                          >
+                            <canvas
+                              v-show="qrReady"
+                              ref="qr"
+                            />
+                            <v-skeleton-loader
+                              v-show="!qrReady"
+                              class="mx-auto"
+                              boilerplate
+                              type="image"
+                              :height="getQrWidth"
+                              :width="getQrWidth"
+                            />
+                          </v-card>
+                        </v-menu>
+                      </template>
+                    </v-text-field>
                   </v-col>
                 </v-row>
               </v-form-group>
@@ -522,10 +563,12 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import util from "@/util";
-import validations from "@/util/validations";
 import VFormGroup from "@/toolkit/step/VFormGroup";
 import * as Sentry from "@sentry/browser";
+import QRCode from "qrcode";
+
+import util from "@/util";
+import validations from "@/util/validations";
 
 export default {
     name: "StepWelcome",
@@ -533,6 +576,35 @@ export default {
     data() {
         return {
             valid: false,
+            defaultCharCount: 189,
+            dpiRatioPxMm: 0.03937011, // reverse-engineered from online calculator
+            dpiPrint: 300,
+            dpiScreen: 72,
+            dpiPreviewScale: 2,
+            qrErrorCorrectionLevel: "Q",
+            qrModuleSizeMm: 0.35,
+            qrPanel: false,
+            qrLoading: false,
+            qrMode: "byte",
+            qrReady: false,
+            qrSizes: { // at error correction level "Q"
+                SMALL: {
+                    chars: [0, 86],
+                    size: 45,
+                    version: 7
+                },
+                MEDIUM: {
+                    chars: [87, 177],
+                    size: 61,
+                    version: 11
+                },
+                LARGE: {
+                    chars: [178, 255],
+                    size: 73,
+                    version: 14
+                }
+            },
+            qrVersion: 9
         };
     },
     computed: {
@@ -671,9 +743,41 @@ export default {
         isURL() {
             return validations.fIsURL(this.$t("Validations.noValidAutoID"));
         },
+        isBelowMaxLength() {
+            return validations.fMaxLengthRelValue(255, this.$t("Validations.maxLenghtExceeded"));
+        },
+        hasValidAutoId() {
+            const checkURI = validations.fIsURL(this.$t("Validations.noValidAutoID"));
+            return this.ObjectInstanceURI && checkURI(this.ObjectInstanceURI) === true;
+        },
+        getInputValue() {
+            return this.hasValidAutoId ? this.ObjectInstanceURI : undefined;
+        },
+        getInputValueLength() {
+            return this.getInputValue?.length || this.defaultCharCount;
+        },
+        getQrMeasures() {
+            const charCount = this.getInputValueLength;
+            return Object.values(this.qrSizes).find(s => s.chars[0] <= charCount && charCount <= s.chars[1]) || this.qrSizes["LARGE"];
+        },
+        getQrWidth() {
+            return this.calcQrWidth(this.getQrMeasures?.size, this.dpiScreen) * this.dpiPreviewScale; // in pixels
+        },
         ...mapGetters("settings", ["getSetting", "isProductNotValidCount", "isOrgaIsNotValidCount"]),
         ...mapGetters("projects", ["getCurrentProjectRelationById"]),
         ...mapGetters("properties", ["getPropertyLabelById", "getPropertyTooltip", "getPropertyIcon"])
+    },
+    watch: {
+        qrPanel: {
+            handler(val) {
+                if (!val) return;
+                this.qrLoading = true;
+                window.setTimeout(() => {
+                    if (this.$refs.qr) this.showQRCode();
+                }, 1000);
+
+            }
+        }
     },
     created() {
         if (this.OrgaName) {
@@ -692,6 +796,42 @@ export default {
         ...util, // for isIE()
         showUpsellDialog() {
             this.$upsell.open(this.$t("Otk.customMetadata"));
+        },
+        calcQrWidth(codeSize, dpi) {
+            return codeSize * dpi * this.dpiRatioPxMm;
+        },
+        async showQRCode() {
+            const codeSize = this.getQrMeasures?.size;
+            const qrVersion = this.getQrMeasures?.version;
+            const borderSize = 1;
+            const qzoneSize = 4 + borderSize;
+            const cornerSize = 6 + 2 * borderSize;
+            const fullSize = codeSize + 2 * (qzoneSize + borderSize);
+
+            const moduleWidth = this.getQrWidth / fullSize;
+            const borderWidth = borderSize * moduleWidth;
+            const cornerWidth = cornerSize * moduleWidth;
+
+            let canvas = this.$refs.qr;
+            await QRCode.toCanvas(canvas, this.getInputValue, {
+                errorCorrectionLevel: this.qrErrorCorrectionLevel,
+                margin: qzoneSize,
+                width: this.getQrWidth,
+                version: qrVersion,
+                mode: this.qrMode
+            });
+            let ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(canvas.width, canvas.height);
+            ctx.lineTo(canvas.width - cornerWidth, canvas.height);
+            ctx.lineTo(canvas.width, canvas.height - cornerWidth);
+            ctx.fill();
+            ctx.lineWidth = borderWidth * 2;
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+            this.qrLoading = false;
+            this.qrReady = true;
+
         },
         ...mapActions("settings", ["setLocalSetting"]),
         ...mapActions("projects", ["updateCurrentProjectRelations"])

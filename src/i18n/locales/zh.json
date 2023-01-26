@@ -158,6 +158,7 @@
     "useDarkMode": "深色模式"
   },
   "Validations": {
+    "maxLenghtExceeded": "超出最大字符长度",
     "minOneOfFields": "至少必须填写字段 {0} 之一。",
     "noEmptyInput": "字段不能为空",
     "noMultipleInput": "字段必须只包含一个值",
