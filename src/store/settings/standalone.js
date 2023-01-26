@@ -21,7 +21,7 @@ const state = {
     settings: {
         base_orga_name: null,
         base_orga_fullname: null,
-        base_orga_url: null,
+        base_orga_id: null,
         base_user_mail: null,
         base_user_name: null,
         locale: "de",
@@ -30,8 +30,9 @@ const state = {
         ui_assign_filter: null,
         ui_addobjects_columns: [
             "name",
-            "sourcetype",
-            "conformity",
+            "sourcename",
+            "sourceTypeLabel",
+            "conformance",
             "textCount",
             "size",
             "actions"
@@ -106,8 +107,8 @@ const getters = {
     },
     isProductNotValidCount: (state, getters, rootState, rootGetters) => {
         return [
-            (rootGetters["projects/getCurrentProjectRelationById"]("vdi:SerialNumber")?.[0] || rootGetters["projects/getCurrentProjectRelationById"]("vdi:IEC61406")?.[0]),
-            rootGetters["projects/getCurrentProjectRelationById"]("vdi:ProductVariant")?.[0]
+            (rootGetters["projects/getCurrentProjectRelationById"]("iirds:SerialNumber")?.[0] || rootGetters["projects/getCurrentProjectRelationById"]("iirds:ObjectInstanceURI")?.[0]),
+            rootGetters["projects/getCurrentProjectRelationById"]("iirds:ProductVariant")?.[0]
         ].map(Boolean).filter(v => v === false).length;
     },
 };

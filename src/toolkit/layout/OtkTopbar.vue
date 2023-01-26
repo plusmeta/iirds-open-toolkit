@@ -36,7 +36,7 @@
       <v-icon left>
         mdi-lifebuoy
       </v-icon>
-      Support
+      {{ $t("Otk.supportButton") }}
     </v-btn>
     <MenuLanguage />
     <MenuMore />

@@ -72,8 +72,8 @@ export class PdfService {
             PDF.info["Title"] = info;
             PDF.info["Author"] = orgaLabel;
             PDF.info["Subject"] = mainDocumentLabel;
-            PDF.info["Producer"] = `plusmeta Platform (v${process.env.VUE_APP_VERSION})`;
-            PDF.info["Creator"] = `plusmeta Platform (v${process.env.VUE_APP_VERSION})`;
+            PDF.info["Producer"] = `plusmeta VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION})`;
+            PDF.info["Creator"] = `plusmeta VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION})`;
 
             const stream = PDF.pipe(blobStream());
 
@@ -150,8 +150,8 @@ export class PdfService {
 
             PDF.info["Title"] = header;
             PDF.info["Author"] = "plusmeta GmbH";
-            PDF.info["Producer"] = `plusmeta Platform (v${process.env.VUE_APP_VERSION})`;
-            PDF.info["Creator"] = `plusmeta Platform (v${process.env.VUE_APP_VERSION})`;
+            PDF.info["Producer"] = `plusmeta VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION})`;
+            PDF.info["Creator"] = `plusmeta VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION})`;
 
             const stream = PDF.pipe(blobStream());
 

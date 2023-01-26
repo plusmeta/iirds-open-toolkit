@@ -14,8 +14,8 @@
         "page": "Metadaten_pruefen",
         "title": "Metadaten vergeben"
     },
-    "workflow.generateIirds": {
-        "text": "Das Paket wird automatisch generiert. Nach Abschluss können Sie es über die Download-Schaltfläche speichern. Sie können die Generierung des Pakets erneut ausführen, indem Sie auf die grüne <b>Erneut ausführen</b>-Schaltfläche klicken. </br></br> Schließen Sie das Projekt ab, indem Sie auf den blauen Haken unten rechts in der Ecke klicken.",
-        "title": "Paket generieren"
+    "workflow.generateVdi2770": {
+        "text": "Der VDI-2770-Container wird automatisch generiert. Nach Abschluss können Sie es über die Download-Schaltfläche speichern. Sie können die Generierung des VDI-2770-Containers erneut ausführen, indem Sie auf die grüne <b>Erneut ausführen</b>-Schaltfläche klicken. </br></br> Schließen Sie das Projekt ab, indem Sie auf den blauen Haken unten rechts in der Ecke klicken.",
+        "title": "VDI-2770-Container generieren"
     }
 }

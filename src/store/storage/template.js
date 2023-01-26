@@ -8,6 +8,7 @@ import { v4 as uuid } from "uuid";
 export default {
     object(objectProps) {
         let template = {
+            id: Math.random().toString(36).slice(-6),
             uuid: uuid(),
             externalId: undefined,
             type: "plus:Document",

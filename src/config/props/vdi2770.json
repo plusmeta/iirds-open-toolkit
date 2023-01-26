@@ -193,14 +193,14 @@
         ]
     },
     {
-        "identifier": "plus:relates-to-vdi2770-package",
+        "identifier": "plus:relates-to-vdi2770-container",
         "datatype": "plus:ObjectRelation",
         "subClassOf": "plus:SystemRelation",
         "rels": {},
         "attrs": {},
         "label": {
-            "de": "bezieht sich auf VDI-2770-Paket",
-            "en": "relates to VDI 2770 package",
+            "de": "bezieht sich auf VDI-2770-Container",
+            "en": "relates to VDI 2770 container",
             "zh": "与VDI 2770文件包有关"
         },
         "indicators": []
@@ -228,20 +228,13 @@
             ]
         },
         "attrs": {
-            "plus:tooltipInfo": {
-                "de": "",
-                "en": "",
-                "zh": ""
-            }
+            "plus:publicName": "product type"
         },
         "label": {
             "de": "Produkttyp / Modell",
             "en": "Product Type / Model",
             "zh": "产品类型/型号"
-        },
-        "indicators": [
-            "product type"
-        ]
+        }
     },
     {
         "identifier": "vdi:ProjectId",
@@ -284,15 +277,14 @@
         "datatype": "plus:Instance",
         "subClassOf": "vdi:ObjectType",
         "rels": {},
-        "attrs": {},
+        "attrs": {
+            "plus:publicName": "Individual"
+        },
         "label": {
             "de": "Individuelles Objekt",
             "en": "Individual object",
             "zh": "个人对象"
-        },
-        "indicators": [
-            "Individual"
-        ]
+        }
     },
     {
         "identifier": "vdi:ArticleNumber",
@@ -350,15 +342,14 @@
                 "vdi:Type"
             ]
         },
-        "attrs": {},
+        "attrs": {
+            "plus:publicName": "order code"
+        },
         "label": {
             "de": "Bestellnummer",
             "en": "Order Code",
             "zh": "操作码"
-        },
-        "indicators": [
-            "order code"
-        ]
+        }
     },
     {
         "identifier": "vdi:has-object-type",
@@ -398,11 +389,10 @@
         "datatype": "plus:ObjectRelation",
         "subClassOf": "vdi:ObjectType",
         "rels": {},
-        "attrs": {},
-        "label": "Objekt-Typ",
-        "indicators": [
-            "Type"
-        ]
+        "attrs": {
+            "plus:publicName": "Type"
+        },
+        "label": "Objekt-Typ"
     },
     {
         "identifier": "vdi:ClassId:02-02",
@@ -439,7 +429,9 @@
         "datatype": "plus:Instance",
         "subClassOf": "vdi:ClassId:02",
         "rels": {},
-        "attrs": {},
+        "attrs": {
+            "plus:publicName": "02-04"
+        },
         "label": {
             "de": "Zeugnisse, Zertifikate, Bescheinigungen",
             "en": "Certificates",
@@ -523,7 +515,7 @@
         "indicators": []
     },
     {
-        "identifier": "vdi:DIN-SPEC-91406",
+        "identifier": "vdi:IEC61406",
         "datatype": "plus:Instance",
         "subClassOf": "vdi:RefType",
         "rels": {
@@ -531,15 +523,14 @@
                 "vdi:Individual"
             ]
         },
-        "attrs": {},
-        "label": {
-            "de": "ID nach DIN SPEC 91406",
-            "en": "ID according to DIN SPEC 91406",
-            "zh": "基于DIN SPEC 91406的ID"
+        "attrs": {
+            "plus:publicName": "instance of object uri"
         },
-        "indicators": [
-            "instance of object uri"
-        ]
+        "label": {
+            "de": "ID nach IEC 61406",
+            "en": "ID according to IEC 61406",
+            "zh": "基于IEC 61406的ID"
+        }
     },
     {
         "identifier": "vdi:SerialNumber",
@@ -551,20 +542,13 @@
             ]
         },
         "attrs": {
-            "plus:tooltipInfo": {
-                "de": "Die eindeutige Identifikationsnummer vom Hersteller für ein individuelles Objektes. Innerhalb einer Produktbezeichnung (Modell, Baureihe, Produkttyp) von einem Hersteller ist die Seriennummer eindeutig.",
-                "en": "The unique identification number from the manufacturer for an individual object. Within a product designation (model, series, product type) from a manufacturer, the serial number is unique.",
-                "zh": "制造商为单个物体提供的唯一识别号码。在制造商的产品名称（型号、系列、产品类型）中，序列号是唯一的。"
-            }
+            "plus:publicName": "serial number"
         },
         "label": {
             "de": "Seriennummer",
             "en": "Serial Number",
             "zh": "序列号"
-        },
-        "indicators": [
-            "serial number"
-        ]
+        }
     },
     {
         "identifier": "vdi:Language",
@@ -641,7 +625,7 @@
         "indicators": []
     },
     {
-        "identifier": "vdi:DCC61355",
+        "identifier": "vdi:IEC61355",
         "datatype": "plus:Class",
         "subClassOf": "vdi:root",
         "rels": {
@@ -649,9 +633,6 @@
                 "plus:TaxonomyTree",
                 "plus:AssignableMetadata",
                 "vdi:DocumentClassification"
-            ],
-            "plus:has-relations": [
-                "vdi:has-dcc"
             ],
             "plus:is-part-of-metadata-group": [
                 "plus:InformationMetadataGroup"
@@ -661,6 +642,7 @@
             ]
         },
         "attrs": {
+            "plus:publicName": "IEC61355:2008",
             "plus:metaListPriority": 22,
             "plus:requiredAssignment": false,
             "plus:tooltipInfo": {
@@ -670,9 +652,9 @@
             }
         },
         "label": {
-            "de": "IEC 61355",
-            "en": "IEC 61355",
-            "zh": "IEC 61355"
+            "de": "IEC 61355-1:2008",
+            "en": "IEC 61355-1:2008",
+            "zh": "IEC 61355-1:2008"
         },
         "indicators": []
     },
@@ -857,7 +839,7 @@
         "indicators": []
     },
     {
-        "identifier": "vdi:SerialNumber",
+        "identifier": "iirds:SerialNumber",
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
@@ -870,6 +852,9 @@
             ],
             "plus:has-icons": [
                 "mdi:counter"
+            ],
+            "vdi:is-object-identifier": [
+                "vdi:SerialNumber"
             ]
         },
         "attrs": {
@@ -891,7 +876,7 @@
         "indicators": []
     },
     {
-        "identifier": "vdi:IEC61406",
+        "identifier": "iirds:ObjectInstanceURI",
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
@@ -904,6 +889,9 @@
             ],
             "plus:has-icons": [
                 "mdi:qrcode-scan"
+            ],
+            "vdi:is-object-identifier": [
+                "vdi:IEC61406"
             ]
         },
         "attrs": {
@@ -1006,7 +994,7 @@
         "indicators": []
     },
     {
-        "identifier": "vdi:ProductVariant",
+        "identifier": "iirds:ProductVariant",
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
@@ -1020,6 +1008,9 @@
             ],
             "plus:has-icons": [
                 "mdi:robot-industrial"
+            ],
+            "vdi:is-object-identifier": [
+                "vdi:ProductType"
             ]
         },
         "attrs": {
@@ -1036,13 +1027,13 @@
         },
         "label": {
             "de": "Produktbezeichnung / Modell",
-            "en": "Product label / Model",
+            "en": "Product label / Type",
             "zh": "产品变体"
         },
         "indicators": []
     },
     {
-        "identifier": "vdi:EquipmentId",
+        "identifier": "iirds:OrderCode",
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
@@ -1056,6 +1047,9 @@
             ],
             "plus:has-icons": [
                 "mdi:id-card"
+            ],
+            "vdi:is-object-identifier": [
+                "vdi:OrderCode"
             ]
         },
         "attrs": {
@@ -1072,19 +1066,19 @@
         },
         "label": {
             "de": "Bestellnummer / Artikelnummer",
-            "en": "Product ID",
+            "en": "Order code / Article number",
             "zh": ""
         },
         "indicators": []
     },
     {
-        "identifier": "vdi:InternalProjectId",
+        "identifier": "plus:InternalProjectId",
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
                 "plus:TitlePart",
-                "plus:IdentityDomain",
+                "vdi:ProjectId",
                 "plus:EquipmentMetadata"
             ],
             "plus:is-part-of-metadata-group": [
@@ -1113,13 +1107,13 @@
         "indicators": []
     },
     {
-        "identifier": "vdi:CustomerProjectId",
+        "identifier": "plus:CustomerProjectId",
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
                 "plus:TitlePart",
-                "plus:IdentityDomain",
+                "vdi:ProjectId",
                 "plus:EquipmentMetadata"
             ],
             "plus:is-part-of-metadata-group": [
@@ -1142,18 +1136,18 @@
         },
         "label": {
             "de": "Projektnummer (Kunde)",
-            "en": "Project id (customer)",
+            "en": "Project ID (Customer)",
             "zh": ""
         },
         "indicators": []
     },
     {
-        "identifier": "vdi:ReferenceDesignation",
+        "identifier": "plus:ReferenceDesignation",
         "datatype": "plus:String",
         "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
-                "plus:IdentityDomain",
+                "vdi:ReferenceDesignation",
                 "plus:EquipmentMetadata"
             ],
             "plus:is-part-of-metadata-group": [

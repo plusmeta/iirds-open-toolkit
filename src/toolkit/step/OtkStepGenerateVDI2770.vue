@@ -47,7 +47,6 @@ import util from "@/util";
 import rdf from "@/util/rdf";
 import pdfutil from "@/util/import/pdf";
 import match from "@/util/match";
-import titleUtils from "@/util/title";
 import template from "@/store/storage/template";
 
 import ProcessObjects from "@/shared/block/ProcessObjects";
@@ -80,8 +79,7 @@ export default {
             processedObjectsCount: 0,
             downloadPackageLoading: false,
             percent: 0,
-            productLabelToRefValues: {},
-            assignedManufacturersOnDocs: []
+            identities: []
         };
     },
     computed: {
@@ -90,12 +88,12 @@ export default {
                 name: this.getSetting("base_orga_name"),
                 user: this.getSetting("base_user_name"),
                 mail: this.getSetting("base_user_mail"),
-                url: this.getSetting("base_orga_url"),
+                url: this.getSetting("base_orga_id"),
                 fullName: this.getSetting("base_orga_fullname") || this.getSetting("base_orga_name"),
             };
         },
         hasDownloadableFile() {
-            return this.getCurrentProjectRelationById("plus:relates-to-vdi2770-package").length > 0;
+            return this.getCurrentProjectRelationById("plus:relates-to-vdi2770-container").length > 0;
         },
         getDocClassStrategies() {
             const docClassProps = this.getPropertiesByRole("vdi:DocumentClassification");
@@ -112,9 +110,7 @@ export default {
         ]),
         ...mapGetters("projects", [
             "getCurrentProject",
-            "getCurrentProjectName",
-            "getCurrentProjectRelationById",
-            "getProjectRelationById"
+            "getCurrentProjectRelationById"
         ]),
         ...mapGetters("properties", [
             "isProperty",
@@ -153,6 +149,7 @@ export default {
             "saveObjectLocal",
             "addMetadata",
             "fetchSource",
+            "deleteObjects"
         ]),
         ...mapActions("projects", [
             "addObjectsToProject",
@@ -206,30 +203,35 @@ export default {
         async downloadPackage() {
             if (this.hasDownloadableFile) {
                 this.downloadPackageLoading = true;
-                let packageObjectUuid = this.getCurrentProjectRelationById("plus:relates-to-vdi2770-package")[0];
-                let packageObject = this.getObjectByUuid(packageObjectUuid);
-                util.downloadBlob(await this.fetchSource(packageObjectUuid), packageObject?.source?.name);
+                let containerObjectUuid = this.getCurrentProjectRelationById("plus:relates-to-vdi2770-container")[0];
+                let containerObject = this.getObjectByUuid(containerObjectUuid);
+                util.downloadBlob(await this.fetchSource(containerObjectUuid), containerObject?.source?.name);
                 this.downloadPackageLoading = false;
             }
         },
         async generateVDI() {
             this.titleMessage = this.$t("Packages.generate");
 
-            const productLabel = this.getCurrentProjectRelationById("vdi:ProductVariant")?.[0];
-            const autoIdValues = this.getCurrentProjectRelationById("vdi:IEC61406");
-            const snValues = this.getCurrentProjectRelationById("vdi:SerialNumber");
-            this.identities = [];
+            const previousContainers = this.getCurrentObjectsByType(["vdi:Container", "vdi:MainDocument", "vdi:DocumentationContainer"]);
+            await this.deleteObjects(previousContainers.map(o => o.uuid));
+            this.totalContainers = 0;
+            this.totalObjects = this.countObjects();
+
+            const productLabel = this.getCurrentProjectRelationById("iirds:ProductVariant");
+            const autoIdValues = this.getCurrentProjectRelationById("iirds:ObjectInstanceURI");
+            const snValues = this.getCurrentProjectRelationById("iirds:SerialNumber");
+
             if (autoIdValues?.length > 0) {
-                this.identities.push({ uri: "vdi:IEC61406", value: autoIdValues});
+                this.identities.push({ uri: "iirds:ObjectInstanceURI", value: autoIdValues});
             }
             if (snValues?.length > 0) {
-                this.identities.push({uri: "vdi:SerialNumber", value: snValues });
+                this.identities.push({ uri: "iirds:SerialNumber", value: snValues });
             }
 
-            const [containerName, main] = await this.generateDocumentationContainer([productLabel, this.identities]);
+            const [containerName, main] = await this.generateDocumentationContainer([productLabel[0], this.identities]);
 
-            let packageID = await this.addToStorage(main, containerName);
-            await this.updateCurrentProjectRelations({ "plus:relates-to-vdi2770-package": [packageID] });
+            let containerID = await this.addToStorage(main, containerName);
+            await this.updateCurrentProjectRelations({ "plus:relates-to-vdi2770-container": [containerID] });
 
             this.$refs?.status?.finish();
         },
@@ -249,7 +251,7 @@ export default {
 
             // Main xml
             const main = await this.generateMainDocumentObject(pdf, table, productLabel, identities);
-            const xml = await this.generateDocumentXML(main, productLabel);
+            const xml = await this.generateDocumentXML(main, productLabel, true);
             zip.file("VDI2770_Main.xml", xml);
 
             // Container per File
@@ -262,7 +264,7 @@ export default {
                     const docData = await this.fetchSource(doc.uuid);
                     documentContainer.file(doc.source.name, docData);
 
-                    let documentMetadataXML = await this.generateDocumentXML(doc);
+                    let documentMetadataXML = await this.generateDocumentXML(doc, productLabel);
                     documentContainer.file("VDI2770_Metadata.xml", documentMetadataXML);
 
                     let subZip = await documentContainer.generateAsync({
@@ -297,7 +299,7 @@ export default {
         },
         generateMainDocumentPDF({ head, body }, name, identities) {
             const mainDocumentLabel = `${this.getPropertyLabelById("vdi:MainDocument")} (${name})`;
-            const footerInfo = `VDI 2770 Open Toolkit -  ${this.getOrganization.fullName} (Contact: ${this.getOrganization.mail})`;
+            const footerInfo = `VDI 2770 Open Toolkit - ${this.getOrganization.fullName} <${this.getOrganization.url}> - ${this.getOrganization.user} <${this.getOrganization.mail}>`;
             const info = identities.map(({ uri, value }) => {
                 let label = this.getPropertyLabelById(uri) || uri;
                 let values = value.map(v => this.isProperty(v) ? this.getPropertyLabelById(v) : v).join(", ");
@@ -388,7 +390,7 @@ export default {
                 objectUuids: [object.uuid]
             });
         },
-        generateDocumentXML(object, productLabel) {
+        generateDocumentXML(object, productLabel, mainDocument) {
             const objectsDomain = "http://data.plusmeta.de/objects";
             const objectsExtDomain = "http://data.plusmeta.de/objects/name";
 
@@ -405,12 +407,12 @@ export default {
                 root.att(key, value);
             }
 
-            let now = new Date();
+            const now = new Date();
             root.com(`*** VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION}) ***`);
             root.com(`*** generated on ${now.toLocaleString()} by ${this.getOrganization.user} <${this.getOrganization.mail}> ***`);
 
 
-            root.ele("DocumentId", { "DomainId": objectsDomain, "IsPrimary": "true" }).txt((object.id || 1312));
+            root.ele("DocumentId", { "DomainId": objectsDomain, "IsPrimary": "true" }).txt((object.id));
             if (object.name) {
                 root.ele("DocumentId", { "DomainId": objectsExtDomain }).txt(object.name);
             }
@@ -425,12 +427,12 @@ export default {
 
             const documentClassifications = this.getDocClassStrategies;
             for (let { concept, rel } of documentClassifications) {
-                let classSystem = this.getPropertyAttributeById(concept, "plus:publicName");
-                let assignedClasses = util.getMetadataValueAsArray(object, rel) || [];
+                const classSystem = this.getPropertyAttributeById(concept, "plus:publicName");
+                const assignedClasses = util.getMetadataValueAsArray(object, rel) || [];
                 for (let classEntry of assignedClasses) {
-                    let availableLabels = this.getPropertyLabels(classEntry);
-                    let classId = this.getPropertyAttributeById(classEntry, "plus:publicName");
-                    let elem = root.ele("DocumentClassification", { "ClassificationSystem": classSystem })
+                    const availableLabels = this.getPropertyLabels(classEntry);
+                    const classId = this.getPropertyAttributeById(classEntry, "plus:publicName");
+                    const elem = root.ele("DocumentClassification", { "ClassificationSystem": classSystem })
                         .ele("ClassId").txt(classId).up();
                     for (let [locale, label] of Object.entries(availableLabels)) {
                         elem.ele("ClassName", { Language: locale }).txt(label);
@@ -442,63 +444,51 @@ export default {
             const projectIds = this.getPropertiesByRole("vdi:ProjectId");
             const refDesigIds = this.getPropertiesByRole("vdi:ReferenceDesignation");
             const equiIds = this.getPropertiesByRole("vdi:EquipmentId");
-            const refObjIds = util.uniqueProperties([...objectIds, ...projectIds, ...refDesigIds, ...equiIds]);
-            const refObjIdsIdentifier = [];
-            const refObjIdsIndividualIdentifier = [];
-            let mainObjectRef = root.ele("ReferencedObject");
+            const refObjIds = util.uniqueProperties([...objectIds, ...refDesigIds, ...equiIds, ...projectIds]);
+            const referencedObject = root.ele("ReferencedObject");
 
             for (let identity of refObjIds) {
-                let idRelation = this.getPropertyRelationById(identity.identifier, "plus:has-relations");
-                let relation = (idRelation.length) ? idRelation[0] : identity.identifier;
-                let metadataValue = util.getMetadataValue(object, relation);
-                let normalizedIds = (Array.isArray(metadataValue)) ? metadataValue : [metadataValue];
+                const idRelation = this.getPropertyRelationById(identity.identifier, "plus:has-relations");
+                const relation = (idRelation.length) ? idRelation[0] : identity.identifier;
+                const metadataValue = util.getMetadataValue(object, relation);
+                const normalizedIds = (Array.isArray(metadataValue)) ? metadataValue : [metadataValue];
 
-                refObjIdsIdentifier.push(...normalizedIds);
 
                 for (let value of normalizedIds.filter(Boolean)) {
                     let idValue = value;
+
                     const idLabel = this.getPropertyLabelById(value);
                     const idPublicNameByValue = this.getPropertyAttributeById(value, "plus:publicName");
+
                     if (idRelation.length && idLabel) idValue = idLabel;
                     if (idRelation.length && idPublicNameByValue) idValue = idPublicNameByValue;
 
-                    // Reihenfolge wichtig! ObjectId -> ReferenceDesignation -> EquipmentId -> ProjectId ----> Party -----> Description
-                    // ObjectId
                     if (objectIds.includes(identity)) {
-                        let idType = this.getPropertyRelationById(identity.identifier, "vdi:is-object-identifier")[0];
-                        let objType = this.getPropertyRelationById(idType, "vdi:has-object-type")[0];
-                        let objTypeFallback = this.getPropertyRelationById(identity.identifier, "vdi:has-object-type")[0];
+                        const idType = this.getPropertyRelationById(identity.identifier, "vdi:is-object-identifier")[0];
+                        const objType = this.getPropertyRelationById(idType, "vdi:has-object-type")[0];
 
-                        let idTypeValue = (idType) ? this.getPropertyById(idType)?.indicators[0] : identity.identifier;
-                        let objTypeValue = (objType) ? this.getPropertyById(objType)?.indicators[0] : "Type";
-                        if (objTypeFallback) objTypeValue = this.getPropertyById(objTypeFallback)?.indicators[0];
+                        const idTypeValue = (idType) ? this.getPropertyAttributeById(idType, "plus:publicName") : identity.identifier;
+                        const objTypeValue = (objType) ? this.getPropertyAttributeById(objType, "plus:publicName") : "Type";
 
-                        if (objTypeValue === "Individual") {
-                            refObjIdsIndividualIdentifier.push(idValue);
-                        }
-
-                        mainObjectRef.ele("ObjectId", {
+                        referencedObject.ele("ObjectId", {
                             "RefType": idTypeValue,
                             "ObjectType": objTypeValue,
                             "IsGloballyBiUnique": String(idTypeValue === "instance of object uri")
                         }).txt(idValue);
                     }
-                    // ReferenceDesignation
                     if (refDesigIds.includes(identity)) {
-                        mainObjectRef.ele("ReferenceDesignation").txt(idValue);
+                        referencedObject.ele("ReferenceDesignation").txt(idValue);
                     }
-                    // EquipmentId
                     if (equiIds.includes(identity)) {
-                        mainObjectRef.ele("EquipmentId").txt(idValue);
+                        referencedObject.ele("EquipmentId").txt(idValue);
                     }
-                    // ProjectId
                     if (projectIds.includes(identity)) {
-                        mainObjectRef.ele("ProjectId").txt(idValue);
+                        referencedObject.ele("ProjectId").txt(idValue);
                     }
                 }
             }
 
-            mainObjectRef
+            referencedObject
                 .ele("Party", { "Role": "Manufacturer" })
                 .ele("Organization", {
                     "OrganizationId": this.getOrganization.url,
@@ -506,22 +496,19 @@ export default {
                     "OrganizationOfficialName": this.getOrganization.fullName
                 });
 
-            mainObjectRef.ele("Description", { Language: this.getCurrentLocale }).txt(productLabel);
+            referencedObject.ele("Description", { Language: this.getCurrentLocale }).txt(productLabel);
 
             const vers = root.ele("DocumentVersion");
 
-            let revision = util.getMetadataValue(object, "iirds:revision") || 1;
-            if (Array.isArray(revision) && revision.length > 0) {
-                revision = revision[0];
-            }
+            const revision = util.getMetadataValue(object, "iirds:revision") || 1;
             vers.ele("DocumentVersionId").txt(revision);
 
-            let nrOfPages = util.getMetadataValue(object, "pdf:totalPages") || [];
+            const nrOfPages = util.getMetadataValue(object, "pdf:totalPages") || [];
             if (object.type === "plus:Document" && nrOfPages) {
                 vers.att("NumberOfPages", nrOfPages);
             }
 
-            let languages = util.getMetadataValue(object, "vdi:has-language") || [];
+            const languages = util.getMetadataValue(object, "vdi:has-language") || [];
             for (let language of languages) {
                 vers.ele("Language").txt(match.parseLocale(language));
             }
@@ -533,29 +520,22 @@ export default {
                     "OrganizationOfficialName": this.getOrganization.fullName
                 });
 
-            const title = util.getMetadataValue(object, "vdi:has-title") || "";
+            const description = (mainDocument) ? this.getPropertyById("vdi:MainDocument")?.description : util.getMetadataValue(object, "vdi:Comment");
+            const keywords = (mainDocument) ? [this.getPropertyLabelById("vdi:MainDocument")] : util.getMetadataValue(object, "vdi:has-key-words");
+            const title = (mainDocument) ? this.getPropertyLabelById("vdi:MainDocument") : util.getMetadataValue(object, "vdi:has-title");
 
             for (let language of languages) {
                 const locale = match.parseLocale(language);
-
-                let { generatedTitle } = titleUtils.generateTitle(this.$store, object, locale);
-                if (!generatedTitle) {
-                    let docTypeId = util.getMetadataValueAsArray(object, "vdi:has-document-type")[0];
-                    let docTypeProp = this.getPropertyById(docTypeId);
-                    if (docTypeProp && docTypeProp.description) {
-                        generatedTitle = docTypeProp.description;
-                    }
-                }
-
-                let docDesc = vers.ele("DocumentDescription", { "Language": locale })
+                const docDesc = vers.ele("DocumentDescription", { "Language": locale })
                     .ele("Title").txt(title).up()
-                    .ele("Summary").txt(generatedTitle).up();
-                let docKeyWords = docDesc.ele("KeyWords");
-                let keyWords = this.getKeyWords(object, documentClassifications, locale);
-                for (let keyWord of keyWords) {
-                    docKeyWords.ele("KeyWord").txt(keyWord);
+                    .ele("Summary").txt(description).up();
+
+                const docKeyWords = docDesc.ele("KeyWords");
+                for (let keyword of keywords) {
+                    docKeyWords.ele("KeyWord").txt(keyword);
                 }
             }
+
             vers.ele("LifeCycleStatus", {
                 SetDate: (new Date()).toISOString().split("T")[0],
                 StatusValue: "Released"
@@ -566,57 +546,23 @@ export default {
                     "OrganizationOfficialName": this.getOrganization.fullName
                 });
 
-            if (productLabel) {
+            if (mainDocument) {
                 const processDocsConfig = this.getCurrentObjectsByType(["plus:Document", "vdi:DocumentationContainer"]);
                 for (let processObject of processDocsConfig)  {
 
-                    let docVers = util.getMetadataValue(processObject, "iirds:revision") || 1;
-                    let { generatedTitle } = titleUtils.generateTitle(this.$store, processObject, this.getCurrentLocale);
+                    const refRevision = util.getMetadataValue(processObject, "iirds:revision") || 1;
+                    const refDescription = util.getMetadataValue(processObject, "vdi:Comment") || "";
 
-                    const relationshipType = (processObject.type === "plus:MediaArchive") ? "includesSupplierData" : "RefersTo";
+                    const relationshipType = "RefersTo";
                     vers.ele("DocumentRelationship", { "Type": relationshipType })
-                        .ele("DocumentId", { "DomainId": objectsDomain }).txt(processObject.id || 1312).up()
-                        .ele("DocumentVersionId").txt(docVers).up()
-                        .ele("Description", { "Language": this.getCurrentLocale }).txt(generatedTitle);
+                        .ele("DocumentId", { "DomainId": objectsDomain }).txt(processObject.id).up()
+                        .ele("DocumentVersionId").txt(refRevision).up()
+                        .ele("Description", { "Language": this.getCurrentLocale }).txt(refDescription);
                 }
             }
 
-            if (object.type === "plus:MediaArchive") {
-                let supplierlabel = this.getPropertyLabelById("iirds:Supplier");
-                let supplierFileName = `${supplierlabel}.pdf`;
-                vers.ele("DigitalFile", { FileFormat: "application/pdf", }).txt(supplierFileName);
-            } else {
-                vers.ele("DigitalFile", { FileFormat: object.source.type, }).txt(object.source.name);
-            }
-            const wasOCR = !!util.getMetadataValue(object, "plus:OCRCompleted");
-            if (wasOCR && object.text.length) {
-                vers.ele("DigitalFile", { FileFormat: "Text/plain", }).txt(object.source.name + ".txt");
-            }
-
+            vers.ele("DigitalFile", { FileFormat: object.source.type, }).txt(object.source.name);
             return root.end({ prettyPrint: true });
-        },
-        getKeyWords(object, documentClassifications, locale) {
-            let values = [];
-            let customKeywords = util.getMetadataValue(object, "vdi:has-key-words");
-
-            if (customKeywords && customKeywords.length) {
-                values = customKeywords.filter(Boolean);
-            } else {
-                values = [
-                    Object.values(this.identities),
-                    this.getOrganization.name
-                ];
-
-                for (let { rel } of documentClassifications) {
-                    values.push(util.getMetadataValue(object, rel));
-                }
-
-                values = values
-                    .filter(Boolean)
-                    .flatMap(v => this.getPropertyLabelById(v, locale) || this.getPropertyLabelById(v))
-                    .filter(Boolean);
-            }
-            return util.uniqueValues(values);
         },
         generateMainDocumentTable(pv) {
             const head = [[
@@ -627,16 +573,16 @@ export default {
                 this.getPropertyLabelById("vdi:Language"),
                 this.getPropertyLabelById("vdi:Title")
             ]];
-            let body = [];
+            const body = [];
             if (pv) {
                 const processDocsConfig = this.getCurrentObjectsByType(["plus:Document", "vdi:DocumentationContainer"]);
                 for (let object of processDocsConfig) {
-                    let VDIDocumentCategories = util.getMetadataValue(object, "vdi:has-document-category") || [];
-                    let languages = util.getMetadataValue(object, "vdi:has-language") || [];
+                    const vdiDocumentCategories = util.getMetadataValue(object, "vdi:has-document-category") || [];
+                    const languages = util.getMetadataValue(object, "vdi:has-language") || [];
                     body.push([
-                        VDIDocumentCategories.map(c => this.getPropertyAttributeById(c, "plus:publicName")).join(",\n"),
-                        VDIDocumentCategories.map(c => this.getPropertyLabelById(c)).join(",\n"),
-                        util.getMetadataValue(object, "vdi:DocumentId") || (object.id || 1312),
+                        vdiDocumentCategories.map(c => this.getPropertyAttributeById(c, "plus:publicName")).join(",\n"),
+                        vdiDocumentCategories.map(c => this.getPropertyLabelById(c)).join(",\n"),
+                        object.id,
                         util.getMetadataValue(object, "iirds:revision") || 1,
                         languages.map(lang => match.parseLocale(lang)).join(", "),
                         util.getMetadataValue(object, "vdi:has-title")

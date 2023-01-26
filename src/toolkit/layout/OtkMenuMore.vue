@@ -110,10 +110,10 @@
         >
           <v-list-item-action>
             <v-icon color="warning">
-              mdi-account
+              mdi-download
             </v-icon>
           </v-list-item-action>
-          <v-list-item-title>
+          <v-list-item-title class="warning--text">
             {{ $t("Otk.manageAccount") }}
           </v-list-item-title>
         </v-list-item>
@@ -159,7 +159,6 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 
-import meta from "@/util/import/meta";
 import util from "@/util";
 
 import LicenseInfoDialog from "@/shared/dialog/LicenseInfoDialog";
@@ -200,16 +199,6 @@ export default {
                 if (this.$matomo) this.$matomo.forgetConsentGiven();
                 this.resetSettings(true);
                 this.$notify.send(this.$t("Otk.settingsRestored"), "success", 2);
-            }
-        },
-        async uploadMetadata(uploadedFile) {
-            try {
-                await meta.analyze(uploadedFile[0], this.$store);
-                this.$notify.send(this.$t("Notification.importedMetadata"), "success", 5);
-            } catch (error) {
-                this.$notify.send(this.$t("Notification.importFailed"), "error", 5);
-            } finally {
-                this.$refs.menuForm.reset();
             }
         },
         showUpsellDialog() {

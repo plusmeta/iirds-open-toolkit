@@ -5,7 +5,10 @@
     "ui_assign_filter": null,
     "ui_addobjects_columns": [
         "name",
-        "sourcetype",
+        "sourcename",
+        "sourceTypeLabel",
+        "conformance",
+        "textCount",
         "size",
         "actions"
     ]

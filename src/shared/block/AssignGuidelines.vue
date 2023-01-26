@@ -8,19 +8,7 @@
   >
     <v-card-title class="pl-6">
       <span class="text-h6">
-        {{ $t("Files.guidelines") }}
-        <v-tooltip top>
-          <template v-slot:activator="{ on }">
-            <v-icon
-              class="cursor-pointer mb-1"
-              right
-              v-on="on"
-            >
-              mdi-information-outline
-            </v-icon>
-          </template>
-          <span>{{ $t("Public.guidelines") }}</span>
-        </v-tooltip>
+        {{ $t('Otk.equipmentGroup') }}
       </span>
       <v-spacer />
       <v-btn

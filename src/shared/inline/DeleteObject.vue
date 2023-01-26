@@ -17,7 +17,6 @@
       </v-btn>
     </template>
     <span>{{ $t("Actions.deleteObject") }}</span><br>
-    <i v-if="referenced">{{ $t("Workflows.objectUsedInOtherProjects") }}</i>
   </v-tooltip>
 </template>
 

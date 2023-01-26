@@ -472,20 +472,6 @@
     },
     {
         "subClassOf": "plus:MimeType",
-        "identifier": "application/iirds+zip",
-        "datatype": "plus:Instance",
-        "label": {
-            "de": "iiRDS-Paket",
-            "en": "iiRDS package",
-            "zh": "iiRDS文件包"
-        },
-        "indicators": [
-            "application/iirds",
-            "iirds"
-        ]
-    },
-    {
-        "subClassOf": "plus:MimeType",
         "identifier": "application/zip",
         "datatype": "plus:Instance",
         "label": {

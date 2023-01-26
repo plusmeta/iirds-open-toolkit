@@ -2,7 +2,7 @@
     {
         "identifier": "DCC:E",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "E"
@@ -17,7 +17,7 @@
     {
         "identifier": "DCC:D",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "D"
@@ -32,7 +32,7 @@
     {
         "identifier": "DCC:C",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "C"
@@ -47,7 +47,7 @@
     {
         "identifier": "DCC:B",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "B"
@@ -62,7 +62,7 @@
     {
         "identifier": "DCC:A",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "A"
@@ -77,7 +77,7 @@
     {
         "identifier": "DCC:T",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "T"
@@ -92,7 +92,7 @@
     {
         "identifier": "DCC:Q",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "Q"
@@ -107,7 +107,7 @@
     {
         "identifier": "DCC:P",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "P"
@@ -122,7 +122,7 @@
     {
         "identifier": "DCC:M",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "M"
@@ -137,7 +137,7 @@
     {
         "identifier": "DCC:L",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "L"
@@ -152,7 +152,7 @@
     {
         "identifier": "DCC:F",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "F"
@@ -167,7 +167,7 @@
     {
         "identifier": "DCC:W",
         "datatype": "plus:Class",
-        "subClassOf": "vdi:DCC61355",
+        "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
             "plus:publicName": "W"

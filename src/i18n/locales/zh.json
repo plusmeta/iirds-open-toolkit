@@ -102,12 +102,15 @@
     "accountInstance": "自己的用户环境",
     "autoMetadata": "自动元数据",
     "automated": "自动地",
+    "customMetadata": "自己的元数据",
     "dataProtectionInfo": "该组中的条目作为信息写入 VDI-2770 容器中，并发送给 plusmeta GmbH 进行分析。",
+    "dataprotection": "隐私",
     "downloadPackage": "节省",
     "equipmentDesignation": "指定",
     "equipmentGroup": " 设备 / 产品",
     "inCoopWith": "与合作",
-    "manageAccount": "管理环境",
+    "legal": "烙印",
+    "manageAccount": "保存文件",
     "ocrAnalysis": "OCR分析",
     "orgaContactWebsite": "地点",
     "orgaGroup": "组织",
@@ -115,14 +118,15 @@
     "organizationOfficialName": "官方组织名称",
     "pdfaConversion": "PDF/A转换",
     "productReference": "产品参考",
-    "projectGroup": "",
+    "projectGroup": "项目（可选）",
     "providedBy": "假如",
-    "retry": "是否要生成另一个iiRDS文件包？",
+    "retry": "是否要生成另一个VDI 2770文件包？",
     "settingsRestored": "恢复默认设置",
     "startNewPackage": "新包装",
     "support": "专业支持",
+    "supportButton": "支持",
     "thankYou": "谢谢！",
-    "thankYouExplainer": "现在可以下载iiRDS文件包",
+    "thankYouExplainer": "现在可以下载VDI 2770文件包",
     "transferToIEP": "转移到 IEP",
     "welcomeText": "欢迎使用 <strong>VDI 2770 开放工具包</strong> <a href=\"https://www.plusmeta.de\" target=\"_blank\" class=\"primary--text\">plusmeta GmbH</a>。根据 <a  href=\"https://www.vdi.de/guidelines/details/vdi-2770-sheet-1-operation-process-technical-plants-minimum-requirements-for-digital-manufacturer-information-for-the-process-industry-basics\" target=\"_blank\"               class=\"primary--text\">VDI 2770</a> 只需几个步骤即可创建数字制造商信息，并利用<a href=\"https://www.digitaldatachain.com\" target=\"_blank\" class=\"primary--text\">Digital data chain</a>。<br><br> VDI 2770 Open Toolkit 无需注册即可免费使用。<br> 有关您组织的信息将发送至 plusmeta GmbH 以供产品信息之用，并存储在本地浏览器中。不会存储或传输所有其他数据和文件。更新浏览器后，此数据将不再可用。",
     "welcomeTitle": "欢迎使用 VDI 2770 开放工具包！"
@@ -149,7 +153,6 @@
     "custom_logo": "公司徽标",
     "custom_name": "公司名称（全称）",
     "custom_url": "URL网址",
-    "google_dialogflow_project_id": "谷歌Dialogflow项目ID",
     "reset": "重置",
     "showShortcuts": "显示快捷方式",
     "useDarkMode": "深色模式"
@@ -158,9 +161,7 @@
     "minOneOfFields": "至少必须填写字段 {0} 之一。",
     "noEmptyInput": "字段不能为空",
     "noMultipleInput": "字段必须只包含一个值",
+    "noValidAutoID": "没有有效的 AutoID (URL)",
     "noValidMailAdress": "无有效的电子邮件地址"
-  },
-  "Workflows": {
-    "objectUsedInOtherProjects": "对象用于其他项目中"
   }
 }

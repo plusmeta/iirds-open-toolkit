@@ -13,18 +13,20 @@
 
       <v-spacer />
 
-      <v-btn
-        v-if="showDownload"
-        small
-        class="mr-8 elevation-0"
-        color="warning"
-        @click="showUpsellDialog"
-      >
-        <v-icon left>
-          mdi-upload
-        </v-icon>
-        {{ $t("Otk.transferToIEP") }}
-      </v-btn>
+      <v-scale-transition>
+        <v-btn
+          v-show="finished"
+          small
+          class="mr-4 elevation-0"
+          color="warning"
+          @click="showUpsellDialog"
+        >
+          <v-icon left>
+            mdi-web
+          </v-icon>
+          {{ $t("Otk.transferToIEP") }}
+        </v-btn>
+      </v-scale-transition>
 
       <v-scale-transition v-if="showRerun">
         <v-tooltip top>

@@ -46,9 +46,11 @@
     </div>
 
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
-      © 2022 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
+      © 2023 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
       &bull;
-      <a href="https://digitaldatachain.com/" target="_blank">digitaldatachain.com </a>
+      <a target="_blank" href="https://help.plusmeta.de/usage-agreement/">{{ $t("Otk.dataprotection") }}</a>
+      &bull;
+      <a target="_blank" href="https://help.plusmeta.de/legal">{{ $t("Otk.legal") }}</a>
     </span>
 
     <v-spacer />

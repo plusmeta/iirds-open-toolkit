@@ -212,6 +212,21 @@
               :object-type="item.type"
             />
             <span :class="{'grey--text': processing.includes(item.uuid)}">{{ item.name }}</span>
+            <v-tooltip top>
+              <template v-slot:activator="{ on: tooltip }">
+                <v-icon
+                  v-if="!processing.includes(item.uuid) && !item.conformance"
+                  class="cursor-pointer"
+                  color="error"
+                  right
+                  small
+                  v-on="tooltip"
+                >
+                  mdi-alert
+                </v-icon>
+              </template>
+              {{ $t("Objects.conformity") }}: {{ $t("Common.unknown") }}
+            </v-tooltip>
           </template>
 
           <template v-slot:item.size="{ item }">
@@ -220,6 +235,10 @@
 
           <template v-slot:item.sourcename="{ item }">
             <code>{{ item.sourcename }}</code>
+          </template>
+
+          <template v-slot:item.sourceTypeLabel="{ item }">
+            {{ item.sourceTypeLabel }}
           </template>
 
           <template v-slot:item.conformance="{ item }">
@@ -469,7 +488,7 @@ export default {
                 }
             ];
         },
-        itemsHeaders () {
+        itemsHeaders() {
             return this.allColumnHeaders.filter((header) => {
                 return this.getSetting("ui_addobjects_columns").includes(header.value);
             });

@@ -16,7 +16,7 @@
         <v-card
           dark
           color="accent"
-          class="px-6 py-3 elevation-2"
+          class="px-6 py-2 elevation-2"
           outlined
         >
           <v-row align="center" justify="center">
@@ -26,7 +26,7 @@
                 width="64px"
               />
             </v-col>
-            <v-col class="mt-3">
+            <v-col class="mt-1">
               <span class="d-inline-block display-1 ">
                 VDI 2770 Open Toolkit
               </span>
@@ -36,7 +36,7 @@
         <v-card
           color="secondary lighten-3"
           light
-          class="mt-7 pa-6 elevation-2"
+          class="mt-5 pa-6 elevation-2"
           outlined
         >
           <span v-html="$t('Otk.welcomeText')" />
@@ -44,12 +44,12 @@
         <v-card
           color="white"
           light
-          class="mt-7 pa-6 elevation-2"
+          class="mt-5 pa-5 elevation-2"
           outlined
         >
           <v-row align="center" justify="center">
-            <v-col>
-              <span class="caption d-inline-block mb-2">{{ $t('Otk.providedBy') }}</span>
+            <v-col cols="auto">
+              <span class="subtitle-2">{{ $t('Otk.providedBy') }}</span>
             </v-col>
           </v-row>
           <v-row justify="center" align="center">
@@ -57,9 +57,18 @@
               <a href="https://plusmeta.de/" target="_blank"><v-img src="/images/plusmeta_logo.svg" width="300px" /></a>
             </v-col>
           </v-row>
+          <v-row justify="center" align="center">
+            <v-col cols="auto" class="caption">
+              <a href="https://plusmeta.de/" target="_blank">www.plusmeta.de</a>
+              &bull;
+              <a href="mailto:hallo@plusmeta.de">hallo@plusmeta.de</a>
+              &bull;
+              <a href="tel:+4972195977777">+49 721 95977777</a>
+            </v-col>
+          </v-row>
           <v-row align="center" justify="center">
-            <v-col>
-              <span class="caption d-inline-block mb-2">{{ $t('Otk.inCoopWith') }}</span>
+            <v-col cols="auto" class="mt-4">
+              <span class="subtitle-2">{{ $t('Otk.inCoopWith') }}</span>
             </v-col>
           </v-row>
           <v-row
@@ -115,7 +124,7 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiAuthorName"
+                        v-model="AuthorName"
                         :rules="[isNotEmpty]"
                         class="required"
                         :prepend-icon="getPropertyIcon('vdi:AuthorName')"
@@ -141,7 +150,7 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiAuthorEmail"
+                        v-model="AuthorEmail"
                         :rules="[isEmail, isNotEmpty]"
                         class="required"
                         :prepend-icon="getPropertyIcon('vdi:AuthorEmail')"
@@ -169,7 +178,7 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiOrga"
+                        v-model="OrgaName"
                         :prepend-icon="getPropertyIcon('vdi:OrganizationName')"
                         :rules="[isNotEmpty]"
                         class="required"
@@ -196,7 +205,7 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiOrgaOfficial"
+                        v-model="OrgaOfficialName"
                         :prepend-icon="getPropertyIcon('vdi:OrganizationOfficialName')"
                         :rules="[isNotEmpty]"
                         class="required"
@@ -226,7 +235,7 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiOrgaId"
+                        v-model="OrgaUrl"
                         :prepend-icon="getPropertyIcon('vdi:OrganizationId')"
                         :rules="[isNotEmpty]"
                         class="required"
@@ -309,14 +318,14 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiProductVariant"
-                        :prepend-icon="getPropertyIcon('vdi:ProductVariant')"
+                        v-model="iirdsProductVariant"
+                        :prepend-icon="getPropertyIcon('iirds:ProductVariant')"
                         class="required"
                         :rules="[isNotEmpty]"
-                        :label="getPropertyLabelById('vdi:ProductVariant')"
+                        :label="getPropertyLabelById('iirds:ProductVariant')"
                       />
                     </v-col>
-                    <v-col v-if="getPropertyTooltip('vdi:ProductVariant')" cols="auto">
+                    <v-col v-if="getPropertyTooltip('iirds:ProductVariant')" cols="auto">
                       <v-tooltip top>
                         <template v-slot:activator="{ on: tooltip }">
                           <v-icon
@@ -327,7 +336,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:ProductVariant')" />
+                        <div v-html="getPropertyTooltip('iirds:ProductVariant')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -337,12 +346,12 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiEquipmentId"
-                        :prepend-icon="getPropertyIcon('vdi:EquipmentId')"
-                        :label="getPropertyLabelById('vdi:EquipmentId')"
+                        v-model="OrderCode"
+                        :prepend-icon="getPropertyIcon('iirds:OrderCode')"
+                        :label="getPropertyLabelById('iirds:OrderCode')"
                       />
                     </v-col>
-                    <v-col v-if="getPropertyTooltip('vdi:EquipmentId')" cols="auto">
+                    <v-col v-if="getPropertyTooltip('iirds:OrderCode')" cols="auto">
                       <v-tooltip top>
                         <template v-slot:activator="{ on: tooltip }">
                           <v-icon
@@ -352,7 +361,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:EquipmentId')" />
+                        <div v-html="getPropertyTooltip('iirds:OrderCode')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -365,18 +374,18 @@
                 <v-row>
                   <v-col cols="12" lg="6">
                     <v-text-field
-                      v-model="vdiSerialNumber"
-                      :prepend-icon="getPropertyIcon('vdi:SerialNumber')"
+                      v-model="SerialNumber"
+                      :prepend-icon="getPropertyIcon('iirds:SerialNumber')"
                       :rules="hasAutoId ? [] : [isNotEmptyOr]"
-                      :label="getPropertyLabelById('vdi:SerialNumber')"
+                      :label="getPropertyLabelById('iirds:SerialNumber')"
                     />
                   </v-col>
                   <v-col cols="12" lg="6">
                     <v-text-field
-                      v-model="vdiIEC61406"
-                      :prepend-icon="getPropertyIcon('vdi:IEC61406')"
-                      :rules="hasSerialNumber ? [] : [isNotEmptyOr]"
-                      :label="getPropertyLabelById('vdi:IEC61406')"
+                      v-model="ObjectInstanceURI"
+                      :prepend-icon="getPropertyIcon('iirds:ObjectInstanceURI')"
+                      :rules="hasSerialNumber ? [isURL] : [isNotEmptyOr, isURL]"
+                      :label="getPropertyLabelById('iirds:ObjectInstanceURI')"
                     />
                   </v-col>
                 </v-row>
@@ -410,12 +419,12 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiInternalProjectId"
-                        :prepend-icon="getPropertyIcon('vdi:InternalProjectId')"
-                        :label="getPropertyLabelById('vdi:InternalProjectId')"
+                        v-model="InternalProjectId"
+                        :prepend-icon="getPropertyIcon('plus:InternalProjectId')"
+                        :label="getPropertyLabelById('plus:InternalProjectId')"
                       />
                     </v-col>
-                    <v-col v-if="getPropertyTooltip('vdi:InternalProjectId')" cols="auto">
+                    <v-col v-if="getPropertyTooltip('plus:InternalProjectId')" cols="auto">
                       <v-tooltip top>
                         <template v-slot:activator="{ on: tooltip }">
                           <v-icon
@@ -425,7 +434,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:InternalProjectId')" />
+                        <div v-html="getPropertyTooltip('plus:InternalProjectId')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -434,12 +443,12 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiCustomerProjectId"
-                        :prepend-icon="getPropertyIcon('vdi:CustomerProjectId')"
-                        :label="getPropertyLabelById('vdi:CustomerProjectId')"
+                        v-model="CustomerProjectId"
+                        :prepend-icon="getPropertyIcon('plus:CustomerProjectId')"
+                        :label="getPropertyLabelById('plus:CustomerProjectId')"
                       />
                     </v-col>
-                    <v-col v-if="getPropertyTooltip('vdi:CustomerProjectId')" cols="auto">
+                    <v-col v-if="getPropertyTooltip('plus:CustomerProjectId')" cols="auto">
                       <v-tooltip top>
                         <template v-slot:activator="{ on: tooltip }">
                           <v-icon
@@ -449,7 +458,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:CustomerProjectId')" />
+                        <div v-html="getPropertyTooltip('plus:CustomerProjectId')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -458,12 +467,12 @@
                   <v-row align="center">
                     <v-col>
                       <v-text-field
-                        v-model="vdiReferenceDesignation"
-                        :prepend-icon="getPropertyIcon('vdi:ReferenceDesignation')"
-                        :label="getPropertyLabelById('vdi:ReferenceDesignation')"
+                        v-model="ReferenceDesignation"
+                        :prepend-icon="getPropertyIcon('plus:ReferenceDesignation')"
+                        :label="getPropertyLabelById('plus:ReferenceDesignation')"
                       />
                     </v-col>
-                    <v-col v-if="getPropertyTooltip('vdi:ReferenceDesignation')" cols="auto">
+                    <v-col v-if="getPropertyTooltip('plus:ReferenceDesignation')" cols="auto">
                       <v-tooltip top>
                         <template v-slot:activator="{ on: tooltip }">
                           <v-icon
@@ -473,8 +482,28 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:ReferenceDesignation')" />
+                        <div v-html="getPropertyTooltip('plus:ReferenceDesignation')" />
                       </v-tooltip>
+                    </v-col>
+                  </v-row>
+                </v-col>
+                <v-col cols="12" lg="6">
+                  <v-row align="center">
+                    <v-col class="pt-8" cols="auto">
+                      <v-icon left>
+                        mdi-tag-outline
+                      </v-icon>
+                      <v-btn
+                        small
+                        class="elevation-0"
+                        color="warning"
+                        @click="showUpsellDialog"
+                      >
+                        <v-icon left>
+                          mdi-plus
+                        </v-icon>
+                        {{ $t("Actions.addMetadata") }}
+                      </v-btn>
                     </v-col>
                   </v-row>
                 </v-col>
@@ -503,7 +532,7 @@ export default {
         };
     },
     computed: {
-        vdiAuthorName: {
+        AuthorName: {
             get() {
                 return this.$store.getters["settings/getSetting"]("base_user_name");
             },
@@ -514,7 +543,7 @@ export default {
                 return this.updateCurrentProjectRelations({"vdi:AuthorName": value});
             }
         },
-        vdiAuthorEmail: {
+        AuthorEmail: {
             get() {
                 return this.$store.getters["settings/getSetting"]("base_user_mail");
             },
@@ -525,7 +554,7 @@ export default {
                 return this.updateCurrentProjectRelations({"vdi:AuthorEmail": value});
             }
         },
-        vdiOrga: {
+        OrgaName: {
             get() {
                 return this.$store.getters["settings/getSetting"]("base_orga_name");
             },
@@ -536,7 +565,7 @@ export default {
             },
 
         },
-        vdiOrgaOfficial: {
+        OrgaOfficialName: {
             get() {
                 return this.$store.getters["settings/getSetting"]("base_orga_fullname");
             },
@@ -546,7 +575,7 @@ export default {
                 this.updateCurrentProjectRelations({"vdi:OrganizationOfficialName": [value]});
             },
         },
-        vdiOrgaId: {
+        OrgaUrl: {
             get() {
                 return this.$store.getters["settings/getSetting"]("base_orga_id");
             },
@@ -556,67 +585,67 @@ export default {
                 this.updateCurrentProjectRelations({"vdi:OrganizationId": [value]});
             },
         },
-        vdiProductVariant: {
+        iirdsProductVariant: {
             get() {
-                return this.getCurrentProjectRelationById("vdi:ProductVariant")?.[0];
+                return this.getCurrentProjectRelationById("iirds:ProductVariant")?.[0];
             },
             set(value) {
                 value = value ? [value] : [];
-                return this.updateCurrentProjectRelations({"vdi:ProductVariant": value});
+                return this.updateCurrentProjectRelations({"iirds:ProductVariant": value});
             }
         },
-        vdiEquipmentId: {
+        OrderCode: {
             get() {
-                return this.getCurrentProjectRelationById("vdi:EquipmentId")?.[0];
+                return this.getCurrentProjectRelationById("iirds:OrderCode")?.[0];
             },
             set(value) {
                 value = value ? [value] : [];
-                return this.updateCurrentProjectRelations({"vdi:EquipmentId": value});
+                return this.updateCurrentProjectRelations({"iirds:OrderCode": value});
             }
         },
-        vdiIEC61406: {
+        ObjectInstanceURI: {
             get() {
-                return this.getCurrentProjectRelationById("vdi:IEC61406")?.[0];
+                return this.getCurrentProjectRelationById("iirds:ObjectInstanceURI")?.[0];
             },
             set(value) {
                 value = value ? [value] : [];
-                return this.updateCurrentProjectRelations({"vdi:IEC61406": value});
+                return this.updateCurrentProjectRelations({"iirds:ObjectInstanceURI": value});
             }
         },
-        vdiSerialNumber: {
+        SerialNumber: {
             get() {
-                return this.getCurrentProjectRelationById("vdi:SerialNumber")?.[0];
+                return this.getCurrentProjectRelationById("iirds:SerialNumber")?.[0];
             },
             set(value) {
                 value = value ? [value] : [];
-                return this.updateCurrentProjectRelations({"vdi:SerialNumber": value});
+                return this.updateCurrentProjectRelations({"iirds:SerialNumber": value});
             }
         },
-        vdiInternalProjectId: {
+        InternalProjectId: {
             get() {
-                return this.getCurrentProjectRelationById("vdi:InternalProjectId")?.[0];
+                return this.getCurrentProjectRelationById("plus:InternalProjectId")?.[0];
             },
             set(value) {
                 value = value ? [value] : [];
-                return this.updateCurrentProjectRelations({"vdi:InternalProjectId": value});
+                return this.updateCurrentProjectRelations({"plus:InternalProjectId": value});
             }
         },
-        vdiCustomerProjectId: {
+        CustomerProjectId: {
             get() {
-                return this.getCurrentProjectRelationById("vdi:CustomerProjectId")?.[0];
+                return this.getCurrentProjectRelationById("plus:CustomerProjectId")?.[0];
             },
             set(value) {
                 value = value ? [value] : [];
-                return this.updateCurrentProjectRelations({"vdi:CustomerProjectId": value});
+                return this.updateCurrentProjectRelations({"plus:CustomerProjectId": value});
             }
         },
-        vdiReferenceDesignation: {
+        ReferenceDesignation: {
             get() {
-                return this.getCurrentProjectRelationById("vdi:ReferenceDesignation")?.[0];
+                return this.getCurrentProjectRelationById("plus:ReferenceDesignation")?.[0];
             },
             set(value) {
                 value = value ? [value] : [];
-                return this.updateCurrentProjectRelations({"vdi:ReferenceDesignation": value});
+                return this.updateCurrentProjectRelations({"plus:ReferenceDesignation": value});
             }
         },
         isEmail() {
@@ -626,34 +655,40 @@ export default {
             return validations.fNotEmpty(this.$t("Validations.noEmptyInput"));
         },
         hasSerialNumber() {
-            return validations.fNotEmpty( this.$t("Validations.noEmptyInput"))(this.vdiSerialNumber) === true;
+            return validations.fNotEmpty( this.$t("Validations.noEmptyInput"))(this.SerialNumber) === true;
         },
         hasAutoId() {
-            return validations.fNotEmpty( this.$t("Validations.noEmptyInput"))(this.vdiIEC61406) === true;
+            return validations.fNotEmpty( this.$t("Validations.noEmptyInput"))(this.ObjectInstanceURI) === true;
         },
         isNotEmptyOr() {
-            const labels = [this.getPropertyLabelById("vdi:SerialNumber"), this.getPropertyLabelById("vdi:IEC61406")].join(", ");
+            const labels = [this.getPropertyLabelById("iirds:SerialNumber"), this.getPropertyLabelById("iirds:ObjectInstanceURI")].join(", ");
             return validations.fNotEmpty( this.$t("Validations.minOneOfFields", [labels]));
+        },
+        isURL() {
+            return validations.fIsURL(this.$t("Validations.noValidAutoID"));
         },
         ...mapGetters("settings", ["getSetting", "isProductNotValidCount", "isOrgaIsNotValidCount"]),
         ...mapGetters("projects", ["getCurrentProjectRelationById"]),
         ...mapGetters("properties", ["getPropertyLabelById", "getPropertyTooltip", "getPropertyIcon"])
     },
     created() {
-        if (this.vdiOrga) {
-            this.updateCurrentProjectRelations({"vdi:OrganizationName": [this.vdiOrga]});
+        if (this.OrgaName) {
+            this.updateCurrentProjectRelations({"vdi:OrganizationName": [this.OrgaName]});
         }
 
-        if (this.vdiOrgaOfficial) {
-            this.updateCurrentProjectRelations({"vdi:OrganizationOfficialName": [this.vdiOrgaOfficial]});
+        if (this.OrgaOfficialName) {
+            this.updateCurrentProjectRelations({"vdi:OrganizationOfficialName": [this.OrgaOfficialName]});
         }
 
-        if (this.vdiOrgaId) {
-            this.updateCurrentProjectRelations({"vdi:OrganizationId": [this.vdiOrgaId]});
+        if (this.OrgaUrl) {
+            this.updateCurrentProjectRelations({"vdi:OrganizationId": [this.OrgaUrl]});
         }
     },
     methods: {
         ...util, // for isIE()
+        showUpsellDialog() {
+            this.$upsell.open(this.$t("Otk.customMetadata"));
+        },
         ...mapActions("settings", ["setLocalSetting"]),
         ...mapActions("projects", ["updateCurrentProjectRelations"])
     }
