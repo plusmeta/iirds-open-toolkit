@@ -141,7 +141,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:AuthorName')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('vdi:AuthorName')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -167,7 +167,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:AuthorEmail')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('vdi:AuthorEmail')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -196,7 +196,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:OrganizationName')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('vdi:OrganizationName')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -222,7 +222,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:OrganizationOfficialName')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('vdi:OrganizationOfficialName')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -252,7 +252,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('vdi:OrganizationId')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('vdi:OrganizationId')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -336,7 +336,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('iirds:ProductVariant')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('iirds:ProductVariant')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -361,7 +361,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('iirds:OrderCode')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('iirds:OrderCode')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -369,6 +369,7 @@
               </v-row>
               <v-form-group
                 required
+                :tooltip="'vdi:SerialNumber'"
                 :label="$t('Otk.productReference')"
               >
                 <v-row>
@@ -434,7 +435,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('plus:InternalProjectId')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('plus:InternalProjectId')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -458,7 +459,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('plus:CustomerProjectId')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('plus:CustomerProjectId')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>
@@ -482,7 +483,7 @@
                             mdi-information-outline
                           </v-icon>
                         </template>
-                        <div v-html="getPropertyTooltip('plus:ReferenceDesignation')" />
+                        <div class="tooltip-width" v-html="getPropertyTooltip('plus:ReferenceDesignation')" />
                       </v-tooltip>
                     </v-col>
                   </v-row>

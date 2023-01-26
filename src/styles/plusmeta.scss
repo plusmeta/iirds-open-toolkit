@@ -1,4 +1,4 @@
-/*! 
+/*!
  * Copyright 2022 plusmeta GmbH
  * License: MIT
  */
@@ -18,7 +18,7 @@ html {
 
 .hidden-input-60 {
   opacity: 0.6
-} 
+}
 
 .table-link {
   text-decoration: none;
@@ -124,15 +124,15 @@ kbd {
   background-color: rgba(255,255,255,0.6) !important;
 }
 
-// Fix vue-country-flag:2.0.1 
+// Fix vue-country-flag:2.0.1
 // https://github.com/plusmeta/app/issues/623
 .flag.small-flag {
   margin: -5px -20px;
-} 
+}
 
 .flag.normal-flag {
   margin: -10px -16px;
-} 
+}
 
 // Fix v-chip margins in vuetify 2.4+
 span.v-chip + span.v-chip {
@@ -145,4 +145,8 @@ span.v-chip + span.d-inline-block {
 
 span.d-inline-block + span.v-chip {
   margin-left: 4px !important;
+}
+
+.tooltip-width {
+  max-width: 320px;
 }
