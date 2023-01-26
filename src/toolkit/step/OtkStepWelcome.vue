@@ -257,22 +257,12 @@
                     </v-col>
                   </v-row>
                 </v-col>
+              </v-row>
+              <v-row>
                 <v-col
                   lg="6"
                   cols="12"
-                  class="mt-0 pt-0"
                 >
-                  <v-row align="center">
-                    <v-col>
-                      <v-card class="caption pa-2" flat>
-                        {{ $t("Otk.dataProtectionInfo") }}
-                      </v-card>
-                    </v-col>
-                  </v-row>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col>
                   <v-switch
                     :label="$t('Otk.acceptUsageAgreement')"
                     :input-value="getSetting('user_eula')"
@@ -280,6 +270,19 @@
                     class="required"
                     @change="setLocalSetting({key: 'user_eula', value: $event})"
                   />
+                </v-col>
+                <v-col
+                  lg="6"
+                  cols="12"
+                  class="mt-4 pt-0"
+                >
+                  <v-row align="center">
+                    <v-col>
+                      <v-card class="caption pa-2 secondary--text" flat>
+                        {{ $t("Otk.dataProtectionInfo") }}
+                      </v-card>
+                    </v-col>
+                  </v-row>
                 </v-col>
               </v-row>
             </v-expansion-panel-content>
