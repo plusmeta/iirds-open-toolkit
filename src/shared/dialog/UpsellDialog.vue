@@ -26,7 +26,7 @@
           <h4 v-else>
             {{ $t("Otk.upsellTitle") }}
           </h4>
-          <p Otk.upsellText")"v-html="$t(" />
+          <p v-html="$t('Otk.upsellText')" />
           <p>
             <v-row>
               <v-col cols="6">
