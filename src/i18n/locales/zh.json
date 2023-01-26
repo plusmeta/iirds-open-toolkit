@@ -128,6 +128,10 @@
     "thankYou": "谢谢！",
     "thankYouExplainer": "现在可以下载VDI 2770文件包",
     "transferToIEP": "转移到 IEP",
+    "upselUpgradeNow": "现在升级！",
+    "upsellAndMore": "以及更多",
+    "upsellText": "借助 plusmeta 平台，您可以自动化与 VDI 2770 相关的流程。<br>\n为您的数字数据链使用市场领先的企业解决方案。<br>\n立即安排演示以讨论您的要求。",
+    "upsellTitle": "自动化您的 VDI 2770 流程",
     "welcomeText": "欢迎使用 <strong>VDI 2770 开放工具包</strong> <a href=\"https://www.plusmeta.de\" target=\"_blank\" class=\"primary--text\">plusmeta GmbH</a>。根据 <a  href=\"https://www.vdi.de/guidelines/details/vdi-2770-sheet-1-operation-process-technical-plants-minimum-requirements-for-digital-manufacturer-information-for-the-process-industry-basics\" target=\"_blank\"               class=\"primary--text\">VDI 2770</a> 只需几个步骤即可创建数字制造商信息，并利用<a href=\"https://www.digitaldatachain.com\" target=\"_blank\" class=\"primary--text\">Digital data chain</a>。<br><br> VDI 2770 Open Toolkit 无需注册即可免费使用。<br> 有关您组织的信息将发送至 plusmeta GmbH 以供产品信息之用，并存储在本地浏览器中。不会存储或传输所有其他数据和文件。更新浏览器后，此数据将不再可用。",
     "welcomeTitle": "欢迎使用 VDI 2770 开放工具包！"
   },

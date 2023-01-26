@@ -10,7 +10,7 @@
       color="accent"
     >
       <v-card-title class="title white--text">
-        {{ reason }}? - Upgraden Sie jetzt!
+        {{ reason }}? - {{ $t("Otk.upselUpgradeNow") }}
       </v-card-title>
       <v-card-text class="pa-0 pm-upsell-bg" />
       <v-card
@@ -20,15 +20,13 @@
       >
         <v-card-text class="pt-4 px-6 pb-2">
           <h3 v-if="reason" class="mb-2">
-            {{ reason }} und vieles mehr
+            {{ reason }} {{ $t("Otk.upsellAndMore") }}
           </h3>
           <h4 v-else>
-            Automatisieren Sie Ihren VDI-2770-Prozesse
+            {{ $t("Otk.upsellTitle") }}
           </h4>
           <p>
-            Mit der plusmeta-Plattform automatisieren Sie Ihre Prozesse rund um die VDI 2770.<br>
-            Nutzen Sie die martkführende Enterprise-Lösung für Ihre Digitale Datenkette.<br>
-            Vereinbaren Sie jetzt eine Demo, um Ihre Anfonderungen zu besprechen.
+            {{ $t("Otk.upsellText") }}
           </p>
           <p>
             <v-row>
