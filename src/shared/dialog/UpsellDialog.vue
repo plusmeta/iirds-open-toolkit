@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <v-dialog
     v-if="showDialog"
@@ -25,9 +26,7 @@
           <h4 v-else>
             {{ $t("Otk.upsellTitle") }}
           </h4>
-          <p>
-            {{ $t("Otk.upsellText") }}
-          </p>
+          <p Otk.upsellText")"v-html="$t(" />
           <p>
             <v-row>
               <v-col cols="6">
