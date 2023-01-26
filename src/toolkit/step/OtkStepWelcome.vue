@@ -804,7 +804,7 @@ export default {
             const codeSize = this.getQrMeasures?.size;
             const qrVersion = this.getQrMeasures?.version;
             const borderSize = 1;
-            const qzoneSize = 4 + borderSize;
+            const qzoneSize = 5 + borderSize;
             const cornerSize = 6 + 2 * borderSize;
             const fullSize = codeSize + 2 * (qzoneSize + borderSize);
 
