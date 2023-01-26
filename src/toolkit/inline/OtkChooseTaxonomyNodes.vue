@@ -72,6 +72,8 @@
               :active="selected"
               :open="localTreeOpened"
               :selection-type="selectionMode"
+              :disable-per-node="true"
+              item-disabled="inactive"
               selected-color="primary"
               selectable
               multiple-active
@@ -93,8 +95,6 @@
 <script>
 import {mapActions, mapGetters} from "vuex";
 import {debounceTime, distinctUntilChanged, filter, map, switchMap, tap} from "rxjs/operators";
-
-import util from "@/util";
 
 import PropertyPanel from "@/shared/inline/PropertyPanel";
 
@@ -358,6 +358,7 @@ export default {
             return {
                 id: propId,
                 name: this.getPropertyLabelById(propId),
+                inactive: this.getPropertyAttributeById(propId, "plus:inactiveProperty"),
                 children
             };
         },

@@ -460,6 +460,7 @@
         "subClassOf": "vdi:DocumentCategory",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "04"
         },
         "label": {
@@ -475,6 +476,7 @@
         "subClassOf": "vdi:DocumentCategory",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "02"
         },
         "label": {
@@ -490,6 +492,7 @@
         "subClassOf": "vdi:DocumentCategory",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "03"
         },
         "label": {
@@ -505,6 +508,7 @@
         "subClassOf": "vdi:DocumentCategory",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "01"
         },
         "label": {
@@ -593,7 +597,8 @@
         "rels": {
             "plus:has-roles": [
                 "plus:AssignableMetadata",
-                "vdi:DocumentClassification"
+                "vdi:DocumentClassification",
+                "plus:Hierarchy"
             ],
             "plus:has-relations": [
                 "vdi:has-document-category"
@@ -630,6 +635,7 @@
         "rels": {
             "plus:has-roles": [
                 "plus:AssignableMetadata",
+                "plus:Hierarchy",
                 "vdi:DocumentClassification"
             ],
             "plus:is-part-of-metadata-group": [

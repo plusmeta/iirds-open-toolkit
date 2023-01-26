@@ -1,10 +1,10 @@
-[
-    {
+[{
         "identifier": "DCC:E",
         "datatype": "plus:Class",
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "E"
         },
         "label": {
@@ -20,6 +20,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "D"
         },
         "label": {
@@ -35,6 +36,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "C"
         },
         "label": {
@@ -50,6 +52,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "B"
         },
         "label": {
@@ -65,6 +68,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "A"
         },
         "label": {
@@ -80,6 +84,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "T"
         },
         "label": {
@@ -95,6 +100,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "Q"
         },
         "label": {
@@ -110,6 +116,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "P"
         },
         "label": {
@@ -125,6 +132,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "M"
         },
         "label": {
@@ -140,6 +148,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "L"
         },
         "label": {
@@ -155,6 +164,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "F"
         },
         "label": {
@@ -170,6 +180,7 @@
         "subClassOf": "vdi:IEC61355",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "W"
         },
         "label": {
@@ -185,6 +196,7 @@
         "subClassOf": "DCC:E",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "ED"
         },
         "label": {
@@ -203,6 +215,7 @@
         "subClassOf": "DCC:E",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "EC"
         },
         "label": {
@@ -239,6 +252,7 @@
         "subClassOf": "DCC:E",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "EB"
         },
         "label": {
@@ -259,6 +273,7 @@
         "subClassOf": "DCC:E",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "EA"
         },
         "label": {
@@ -274,6 +289,7 @@
         "subClassOf": "DCC:D",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "DC"
         },
         "label": {
@@ -289,6 +305,7 @@
         "subClassOf": "DCC:D",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "DB"
         },
         "label": {
@@ -304,6 +321,7 @@
         "subClassOf": "DCC:D",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "DE"
         },
         "label": {
@@ -319,6 +337,7 @@
         "subClassOf": "DCC:D",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "DD"
         },
         "label": {
@@ -339,6 +358,7 @@
         "subClassOf": "DCC:D",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "DA"
         },
         "label": {
@@ -354,6 +374,7 @@
         "subClassOf": "DCC:D",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "DF"
         },
         "label": {
@@ -369,6 +390,7 @@
         "subClassOf": "DCC:C",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "CB"
         },
         "label": {
@@ -384,6 +406,7 @@
         "subClassOf": "DCC:C",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "CA"
         },
         "label": {
@@ -413,6 +436,7 @@
         "subClassOf": "DCC:C",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "CD"
         },
         "label": {
@@ -428,6 +452,7 @@
         "subClassOf": "DCC:C",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "CC"
         },
         "label": {
@@ -443,6 +468,7 @@
         "subClassOf": "DCC:C",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "CF"
         },
         "label": {
@@ -458,6 +484,7 @@
         "subClassOf": "DCC:C",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "CE"
         },
         "label": {
@@ -473,6 +500,7 @@
         "subClassOf": "DCC:C",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "CH"
         },
         "label": {
@@ -488,6 +516,7 @@
         "subClassOf": "DCC:C",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "CG"
         },
         "label": {
@@ -503,6 +532,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BS"
         },
         "label": {
@@ -518,6 +548,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BT"
         },
         "label": {
@@ -533,6 +564,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BA"
         },
         "label": {
@@ -548,6 +580,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BC"
         },
         "label": {
@@ -563,6 +596,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BB"
         },
         "label": {
@@ -578,6 +612,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BH"
         },
         "label": {
@@ -593,6 +628,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BE"
         },
         "label": {
@@ -608,6 +644,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BD"
         },
         "label": {
@@ -623,6 +660,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BG"
         },
         "label": {
@@ -638,6 +676,7 @@
         "subClassOf": "DCC:B",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "BF"
         },
         "label": {
@@ -653,6 +692,7 @@
         "subClassOf": "DCC:A",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "AB"
         },
         "label": {
@@ -668,6 +708,7 @@
         "subClassOf": "DCC:A",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "AA"
         },
         "label": {
@@ -683,6 +724,7 @@
         "subClassOf": "DCC:A",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "AC"
         },
         "label": {
@@ -698,6 +740,7 @@
         "subClassOf": "DCC:T",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "TC"
         },
         "label": {
@@ -713,6 +756,7 @@
         "subClassOf": "DCC:T",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "TB"
         },
         "label": {
@@ -728,6 +772,7 @@
         "subClassOf": "DCC:T",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "TA"
         },
         "label": {
@@ -743,6 +788,7 @@
         "subClassOf": "DCC:T",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "TL"
         },
         "label": {
@@ -758,6 +804,7 @@
         "subClassOf": "DCC:Q",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "QB"
         },
         "label": {
@@ -773,6 +820,7 @@
         "subClassOf": "DCC:Q",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "QA"
         },
         "label": {
@@ -788,6 +836,7 @@
         "subClassOf": "DCC:Q",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "QC"
         },
         "label": {
@@ -803,6 +852,7 @@
         "subClassOf": "DCC:P",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "PA"
         },
         "label": {
@@ -818,6 +868,7 @@
         "subClassOf": "DCC:P",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "PF"
         },
         "label": {
@@ -833,6 +884,7 @@
         "subClassOf": "DCC:P",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "PC"
         },
         "label": {
@@ -848,6 +900,7 @@
         "subClassOf": "DCC:P",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "PB"
         },
         "label": {
@@ -863,6 +916,7 @@
         "subClassOf": "DCC:P",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "PD"
         },
         "label": {
@@ -878,6 +932,7 @@
         "subClassOf": "DCC:P",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "PL"
         },
         "label": {
@@ -893,6 +948,7 @@
         "subClassOf": "DCC:M",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "MB"
         },
         "label": {
@@ -908,6 +964,7 @@
         "subClassOf": "DCC:M",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "MA"
         },
         "label": {
@@ -923,6 +980,7 @@
         "subClassOf": "DCC:L",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "LC"
         },
         "label": {
@@ -938,6 +996,7 @@
         "subClassOf": "DCC:L",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "LB"
         },
         "label": {
@@ -953,6 +1012,7 @@
         "subClassOf": "DCC:L",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "LD"
         },
         "label": {
@@ -968,6 +1028,7 @@
         "subClassOf": "DCC:L",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "LA"
         },
         "label": {
@@ -983,6 +1044,7 @@
         "subClassOf": "DCC:L",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "LH"
         },
         "label": {
@@ -998,6 +1060,7 @@
         "subClassOf": "DCC:L",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "LU"
         },
         "label": {
@@ -1013,6 +1076,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FT"
         },
         "label": {
@@ -1028,6 +1092,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FQ"
         },
         "label": {
@@ -1043,6 +1108,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FP"
         },
         "label": {
@@ -1058,6 +1124,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FS"
         },
         "label": {
@@ -1073,6 +1140,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FE"
         },
         "label": {
@@ -1088,6 +1156,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FF"
         },
         "label": {
@@ -1103,6 +1172,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FA"
         },
         "label": {
@@ -1118,6 +1188,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FC"
         },
         "label": {
@@ -1133,6 +1204,7 @@
         "subClassOf": "DCC:F",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "FB"
         },
         "label": {
@@ -1148,6 +1220,7 @@
         "subClassOf": "DCC:W",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "WA"
         },
         "label": {
@@ -1163,6 +1236,7 @@
         "subClassOf": "DCC:W",
         "rels": {},
         "attrs": {
+            "plus:inactiveProperty": "true",
             "plus:publicName": "WT"
         },
         "label": {
