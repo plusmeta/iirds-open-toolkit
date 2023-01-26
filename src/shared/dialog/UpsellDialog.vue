@@ -96,15 +96,13 @@ export default {
         "getSetting",
         "getSettings"
     ]),
-    mounted() {
-        this.userName = this.getSetting("base_user_name");
-        this.userMail = this.getSetting("base_user_mail");
-    },
     methods: {
         openDialog(reason) {
             this.showDialog = true;
             this.timer = 5;
             this.reason = reason;
+            this.userName = this.getSetting("base_user_name");
+            this.userMail = this.getSetting("base_user_mail");
             this.startTimer();
         },
         startTimer() {
