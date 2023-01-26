@@ -215,7 +215,7 @@
             <v-tooltip top>
               <template v-slot:activator="{ on: tooltip }">
                 <v-icon
-                  v-if="!processing.includes(item.uuid) && !item.conformance"
+                  v-show="!processing.includes(item.uuid) && item.conformance === undefined"
                   class="cursor-pointer"
                   color="error"
                   right
