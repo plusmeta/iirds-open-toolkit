@@ -76,7 +76,11 @@
             justify="center"
           >
             <v-col cols="auto">
-              <a href="https://digitaldatachain.com/" target="_blank"><v-img src="/images/vdi2770.svg" width="300px" /></a>
+              <a href="https://digitaldatachain.com/" target="_blank">
+                <v-img
+                  src="/images/vdi2770.svg" width="300px"
+                  height="43px"
+                /></a>
             </v-col>
           </v-row>
         </v-card>

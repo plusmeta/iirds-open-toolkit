@@ -578,7 +578,7 @@
             "plus:titlePartPriority": 5,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Hier sind alle Sprachen, die im Dokument verwendet werden, anzugeben. ",
+                "de": "Hier sind alle Sprachen, die im Dokument verwendet werden, anzugeben.",
                 "en": "All languages used in the document must be provided here. ",
                 "zh": "文件中使用的所有语言都必须在这里提供。"
             }
@@ -616,8 +616,8 @@
             "plus:singleAssignment": true,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Hier ist dem Dokument zugehörige VDI 2770 Dokumentkategorie anzugeben. Das Dokument kann sich in seltenen Fällen auch auf mehrere VDI 2770 Dokumentkategorien beziehen. Die Klassifikation nach VDI Richtlinie 2770 besteht aus vier Gruppen, die in insgesamt zwölf Kategorien untergliedert sind. Die Gruppen leiten sich aus den allgemeinen Zwecken von objektbezogenen Dokumenten ab.",
-                "en": "The VDI 2770 document category associated with the document must be provided here. In rare cases, the document may refer to several VDI 2770 document categories. The classification according to VDI guideline 2770 consists of four groups, which are subdivided into a total of twelve categories. The groups are based on the general purposes of object-related documents.",
+                "de": "Geben Sie die entsprechende VDI-2770-Dokumentkategorie an. Das Dokument kann sich in seltenen Fällen auch auf mehrere VDI-2770-Dokumentkategorien beziehen. Die Klassifikation nach VDI-Richtlinie 2770 besteht aus vier Gruppen, die in insgesamt zwölf Kategorien untergliedert sind. Die Gruppen leiten sich aus den allgemeinen Zwecken von objektbezogenen Dokumenten ab.",
+                "en": "Specify the appropriate VDI 2770 document category. In rare cases, the document may refer to several VDI 2770 document categories. The classification according to VDI guideline 2770 consists of four groups, which are subdivided into a total of twelve categories. The groups are based on the general purposes of object-related documents.",
                 "zh": "这里必须提供与该文件相关的VDI 2770文件类别。在极少数情况下，该文件可能会提到几个VDI 2770文件类别。根据VDI准则2770的分类包括四个组，它们又被细分为总共12个类别。这些组是基于对象相关文件的一般目的。"
             }
         },
@@ -681,7 +681,7 @@
             "plus:metaListPriority": 41,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Zu jedem Dokument muss mindestens eine Dokumentenversion angegeben werden.",
+                "de": "Geben Sie mindestens eine Dokumentenversion an.",
                 "en": "At minimum one document version must be specified for each document.",
                 "zh": "至少要为每个文件指定一个文件版本。"
             }
@@ -738,7 +738,7 @@
         "attrs": {
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Hier wird der Name des Erstellers der VDI 2770 konformen Dokumentation angegeben.",
+                "de": "Geben Sie hier den Namen des Erstellers der VDI-2770-konformen Dokumentation an.",
                 "en": "The name of the author of the VDI 2770-compliant documentation is entered here.",
                 "zh": "输入创建符合VDI 2770标准文件作者的名字。"
             }
@@ -765,7 +765,7 @@
         "attrs": {
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Hier wird die E-Mail Adresse des Erstellers der VDI 2770 konformen Dokumentation angegeben.",
+                "de": "Geben Sie hier die E-Mail-Adresse des Erstellers der VDI-2770-konformen Dokumentation an.",
                 "en": "The e-mail address of the author of the VDI 2770-compliant documentation is entered here.",
                 "zh": "输入创建符合VDI 2770标准文件作者的电子邮件地址。"
             }
@@ -797,7 +797,7 @@
             "plus:readonly": true,
             "plus:guidelineListPriority": 1,
             "plus:tooltipInfo": {
-                "de": "Die gebräuchliche Bezeichnung des Unternehmens (Kurzform ohne Angabe der Rechtsform), dass die Dokumentation erstellt und an den Kunden liefert.<br>Beispiel: <b>Unternehmen ABC</b>",
+                "de": "Geben Sie die gebräuchliche Bezeichnung des Unternehmens (Kurzform ohne Angabe der Rechtsform) an, welches die Dokumentation erstellt und an den Kunden liefert.<br>Beispiel: <b>Unternehmen ABC</b>",
                 "en": "The common name of the company (short form without specifying the legal form) that creates the documentation and delivers it to the customer. <br>Example: <b>Manufacturer ABC</b>",
                 "zh": "创建并向客户交付文件的公司的通用名称（缩写形式，不注明法律形式）。<br>例如：<b>ABC公司</b>"
             }
@@ -830,7 +830,7 @@
             "plus:requiredAssignment": true,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Die offzielle Website des Unternehmens, dass die Dokumentation erstellt und an den Kunden liefert.",
+                "de": "Geben Sie die offizielle Website des Unternehmens an, welches die Dokumentation erstellt und an den Kunden liefert.",
                 "en": "The official website of the company that creates and delivers the documentation to the customer.",
                 "zh": "创建并向客户交付文件的公司的官方网站。"
             }
@@ -867,8 +867,8 @@
             "plus:requiredAssignment": true,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Die eindeutige Identifikationsnummer vom Hersteller für ein individuelles Objektes. Innerhalb einer Produktbezeichnung (Modell, Baureihe, Produkttyp) von einem Hersteller ist die Seriennummer eindeutig.",
-                "en": "The unique identification number from the manufacturer for an individual object. Within a product designation (model, series, product type) from a manufacturer, the serial number is unique.",
+                "de": "Die eindeutige Identifikationsnummer für ein individuelles Objekt, vergeben vom Hersteller. Innerhalb einer Produktbezeichnung (Modell, Baureihe, Produkttyp) muss die Seriennummer eindeutig sein.",
+                "en": "The unique identification number from the manufacturer for an individual object. Within a product designation (model, series, product type) from a manufacturer, the serial number must be unique.",
                 "zh": "制造商为单个物体提供的唯一识别号码。在制造商的产品名称（型号、系列、产品类型）中，序列号是唯一的。"
             }
         },
@@ -935,8 +935,8 @@
             "plus:metaListPriority": 11,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Hier ist die Angabe eines möglichst aussagekräftigen Titels für das aufgeführte Dokument festzulegen. Der Titel kann vom Dateinamen des Dokuments abweichen.",
-                "en": "Here you have to define the specification of a title for the document that is as meaningful as possible. The title can be different from the file name of the document.",
+                "de": "Geben Sie einen aussagekräftigen Titel für das Dokument an. Der Titel kann vom Dateinamen des Dokuments abweichen.",
+                "en": "Specify a meaningful title for the document. The title can be different from the file name of the document.",
                 "zh": "这里你必须为文件定义一个尽可能有意义的标题规范。该标题可以与文件的文件名不同。"
             }
         },
@@ -960,8 +960,8 @@
         "indicators": [],
         "attrs": {
             "plus:tooltipInfo": {
-                "de": "Hier ist die Angabe eines möglichst aussagekräftigen Titels für das aufgeführte Dokument festzulegen. Der Titel kann vom Dateinamen des Dokuments abweichen.",
-                "en": "Here you have to define the specification of a title for the document that is as meaningful as possible. The title can be different from the file name of the document.",
+                "de": "Geben Sie einen aussagekräftigen Titel für das Dokument an. Der Titel kann vom Dateinamen des Dokuments abweichen.",
+                "en": "Specify a meaningful title for the document. The title can be different from the file name of the document.",
                 "zh": "这里你必须为文件定义一个尽可能有意义的标题规范。该标题可以与文件的文件名不同。"
             }
         }
@@ -985,8 +985,8 @@
             "plus:metaListPriority": 41,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Hier werden die sprachspezifischen Beschreibungen zum Dokument eingetragen. Für jede im Dokument verwendete Sprache muss eine Dokumentbeschreibung angegeben werden. Inhaltlich sollten die Dokumentbeschreibungen der verschiedenen Sprachversionen identisch sein (im Sinne einer Übersetzung).",
-                "en": "The language-specific descriptions for the document are entered here. A document description must be entered for each language used in the document. The content of the document descriptions of the different language versions should be identical (in the sense of a translation).",
+                "de": "Geben Sie hier eine Beschreibung zum Dokumenteninhalt an. Die Beschreibung muss in allen Sprachen vorliegen und inhaltlich übereinstimmen.",
+                "en": "Enter a description of the document content here. The description must be available in all languages and must match the content.",
                 "zh": "文件的特定语言描述在此输入。必须为文件中使用的每种语言输入一份文件描述。不同语言版本的文件描述的内容应该是相同的（在翻译的意义上）。"
             }
         },
@@ -1063,8 +1063,8 @@
             "plus:requiredAssignment": false,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Die Identifikationsnummer vom Hersteller mit der ein identisches Objekt bestellt werden kann.",
-                "en": "The identification number from the manufacturer with which an identical object can be ordered.",
+                "de": "Die Identifikationsnummer des Produkts, mit welcher ein identisches Objekt bestellt werden kann.",
+                "en": "The identification number of the product, with which an identical object can be ordered.",
                 "zh": "制造商的识别号码，可以用它来订购一个相同的物品。"
             }
         },
@@ -1098,8 +1098,8 @@
             "plus:guidelineListPriority": 8,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Die Projektnummer (intern) ist eine identifizierende Nummer und Kennungen für die Bestellung eines oder mehrerer Objekte, die in den IT-Systemen des Herstellers verwendet wird.",
-                "en": "The project number (internal) is an identification number and identifiers for the order of one or more objects, which is used in the IT systems of the manufacturer.",
+                "de": "Die Projektnummer (intern) ist eine identifizierende Nummer für die Bestellung eines oder mehrerer Objekte, die als Referenz des Herstellers verwendet wird.",
+                "en": "The project number (internal) is an identifying number for the order of one or more objects, which is used as a reference of the manufacturer.",
                 "zh": "项目编号（内部）是一个或多个对象的订单的识别号码和标识符，用于制造商的IT系统。"
             }
         },
@@ -1133,8 +1133,8 @@
             "plus:guidelineListPriority": 9,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Die Projektnummer (Kunde) ist eine identifizierende Nummer und Kennungen für die Bestellung eines oder mehrerer Objekte, die in den IT-Systemen des Kunden verwendet wird und bei der Bestellung dem Hersteller übermittelt wird.",
-                "en": "The project number (customer) is an identification number and identifiers for the order of one or more objects, which is used in the customer's IT systems and is provided to the manufacturer when the order is received.",
+                "de": "Die Projektnummer (Kunde) ist eine identifizierende Nummer für die Bestellung eines oder mehrerer Objekte, die als Referenz des Kunden verwendet wird und bei der Bestellung an den Hersteller übermittelt werden kann.",
+                "en": "The project number (customer) is an identifying number for the order of one or more objects, which is used as a reference of the customer and can be transmitted to the manufacturer when ordering.",
                 "zh": "项目编号（客户）是一个或多个对象的订单的识别号和标识符，在客户的IT系统中使用，并在下订单时传送给制造商。"
             }
         },
@@ -1167,8 +1167,8 @@
             "plus:guidelineListPriority": 10,
             "plus:requiredAssignment": true,
             "plus:tooltipInfo": {
-                "de": "Das Referenzkennzeichen ist eine identifizierende Nummer und Kennungen für ein Objekt (z.B. Einbauort eines Objekts), dass durch den Betreiber an den Hersteller in den meisten Fällen bei der Bestellung übermittelt wird.",
-                "en": "The reference designation is an identification number and identifiers for an object (e.g. installation location of an object) that is provided by the operator to the manufacturer in most cases when the order is received.",
+                "de": "Das Referenzkennzeichen ist eine identifizierende Nummer für ein Objekt (z.B. Einbauort), das bei der Bestellung durch den Betreiber an den Hersteller übermittelt werden kann.",
+                "en": "The reference mark is an identifying number for an object (e.g. installation location) that can be transmitted to the manufacturer when the operator places an order.",
                 "zh": "参考标识是物体的识别号码和标识符（如物体的安装位置），在大多数情况下，在下订单时由运营商传送给制造商。"
             }
         },
@@ -1214,8 +1214,8 @@
             "plus:requiredAssignment": true,
             "plus:readonly": true,
             "plus:tooltipInfo": {
-                "de": "Der offizielle Name des Unternehmens (Langform mit Angabe der Rechtsform), dass die Dokumentation erstellt und an den Kunden liefert.<br>Beispiel: <b>Unternehmen ABC GmbH & Co. KG</b>",
-                "en": "The official name of the company (long form with specifying the legal form) that creates and delivers the documentation to the customer.<br>Example: <b>Manufacturer ABC Ltd.</b>",
+                "de": "Geben Sie den offiziellen Name des Unternehmens mit Rechtsform an, welches die Dokumentation erstellt und an den Kunden liefert.<br>Beispiel: <b>Unternehmen ABC GmbH & Co. KG</b>",
+                "en": "Specify the official name of the company with legal form that creates and delivers the documentation to the customer.<br>Example: <b>Manufacturer ABC Ltd.</b>",
                 "zh": "创建并向客户交付文件的公司的正式名称（长格式，注明法律形式）。<br>例如：<b>ABC有限公司</b>"
             }
         },
