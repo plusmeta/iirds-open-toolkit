@@ -367,7 +367,10 @@ export default {
             }
         },
         startFromStart() {
-            window.location.reload();
+            this.setCurrentProgressLocal(1);
+            this.resetSettings(true);
+            this.clearStorage();
+            this.$router.push("/");
         },
         ...mapActions("projects", [
             "updateCurrentProjectRelations",
@@ -378,8 +381,8 @@ export default {
             "setLocalSetting"
         ]),
         ...mapActions("storage", [
-            "saveMetaDatum",
-            "clearStorage"
+            "clearStorage",
+            "saveMetaDatum"
         ])
     }
 };
