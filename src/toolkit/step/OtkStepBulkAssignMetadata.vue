@@ -369,20 +369,19 @@ export default {
         startFromStart() {
             this.setCurrentProgressLocal(1);
             this.resetSettings(true);
+            this.clearObjectsOfProject();
             this.clearStorage();
             this.$router.push("/");
         },
         ...mapActions("projects", [
-            "updateCurrentProjectRelations",
-            "setCurrentProgressLocal",
-            "deleteObjectsFromProject"
+            "clearObjectsOfProject",
+            "setCurrentProgressLocal"
         ]),
         ...mapActions("settings", [
             "setLocalSetting"
         ]),
         ...mapActions("storage", [
-            "clearStorage",
-            "saveMetaDatum"
+            "clearStorage"
         ])
     }
 };

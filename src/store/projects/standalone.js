@@ -111,13 +111,17 @@ const actions = {
         }
         commit("SET_PROJECT_OBJECT_UUIDS", { project, objectUuids: allObjectUuids });
     },
-    updateProjectStatus(context, {projectUuid, status}) {
+    clearObjectsOfProject(context) {
+        const project = context.getters.getCurrentProject;
+        context.commit("SET_PROJECT_OBJECT_UUIDS", { project, objectUuids: []});
+    },
+    updateProjectStatus(context, { projectUuid, status }) {
         let project = context.getters.getProjectByUuid(projectUuid);
-        context.commit("UPDATE_PROJECT_STATUS", {project, status});
+        context.commit("UPDATE_PROJECT_STATUS", { project, status });
     },
     updateCurrentProjectRelations(context, relation) {
         let project = context.getters.getCurrentProject;
-        context.commit("UPDATE_PROJECT_RELS", {project, relation});
+        context.commit("UPDATE_PROJECT_RELS", { project, relation });
     }
 };
 
