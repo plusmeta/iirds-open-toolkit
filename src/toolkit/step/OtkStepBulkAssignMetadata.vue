@@ -369,17 +369,8 @@ export default {
         startFromStart() {
             window.location.reload();
         },
-        ...mapActions("projects", [
-            "updateCurrentProjectRelations",
-            "setCurrentProgressLocal",
-            "deleteObjectsFromProject"
-        ]),
         ...mapActions("settings", [
             "setLocalSetting"
-        ]),
-        ...mapActions("storage", [
-            "saveMetaDatum",
-            "clearStorage"
         ])
     }
 };

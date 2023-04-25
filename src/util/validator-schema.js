@@ -17,7 +17,7 @@ export default {
         const documentString = await zipArchive.files["META-INF/metadata.rdf"].async("string");
         const { processedString, lineMap, lineArr } = this.preprocessDocumentString(documentString);
         const document = Parser.parseFromString(processedString, documentMimeType);
-        const iiRDSVersion = document.querySelector("iiRDSVersion").textContent;
+        const iiRDSVersion = document.querySelector("iiRDSVersion")?.textContent;
 
         const scopedTests = validations.filter(v => v.assert).filter(v => !prio || v.prio === prio);
         const checkedSchemaRules = scopedTests.length;
