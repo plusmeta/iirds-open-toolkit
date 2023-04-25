@@ -367,21 +367,10 @@ export default {
             }
         },
         startFromStart() {
-            this.setCurrentProgressLocal(1);
-            this.resetSettings(true);
-            this.clearObjectsOfProject();
-            this.clearStorage();
-            this.$router.push("/");
+            window.location.reload();
         },
-        ...mapActions("projects", [
-            "clearObjectsOfProject",
-            "setCurrentProgressLocal"
-        ]),
         ...mapActions("settings", [
             "setLocalSetting"
-        ]),
-        ...mapActions("storage", [
-            "clearStorage"
         ])
     }
 };
