@@ -392,7 +392,7 @@
                     <v-text-field
                       v-model="ObjectInstanceURI"
                       :prepend-icon="getPropertyIcon('iirds:ObjectInstanceURI')"
-                      :rules="hasSerialNumber ? [isURL, isBelowMaxLength] : [isNotEmptyOr, isURL, isBelowMaxLength]"
+                      :rules="hasSerialNumber ? [isBelowMaxLength] : [isNotEmptyOr, isBelowMaxLength]"
                       :counter="255"
                       :label="getPropertyLabelById('iirds:ObjectInstanceURI')"
                     >
@@ -751,8 +751,7 @@ export default {
             return validations.fMaxLengthRelValue(255, this.$t("Validations.maxLenghtExceeded"));
         },
         hasValidAutoId() {
-            const checkURI = validations.fIsURL(this.$t("Validations.noValidAutoID"));
-            return this.ObjectInstanceURI && checkURI(this.ObjectInstanceURI) === true;
+            return !!this.ObjectInstanceURI;
         },
         getInputValue() {
             return this.hasValidAutoId ? this.ObjectInstanceURI : undefined;
