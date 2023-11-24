@@ -923,9 +923,9 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:Qualification",
+        "identifier": "iirds:Role",
         "datatype": "plus:Class",
-        "subClassOf": "iirds:FunctionalMetadata",
+        "subClassOf": "iirds:Qualification",
         "rels": {
             "plus:has-roles": [
                 "plus:AssignableMetadata"
@@ -938,8 +938,8 @@
             ]
         },
         "label": {
-            "de": "Qualifikation",
-            "en": "Qualification"
+            "de": "Rolle",
+            "en": "Role"
         },
         "indicators": []
     },
@@ -966,9 +966,9 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:Role",
+        "identifier": "iirds:Qualification",
         "datatype": "plus:Class",
-        "subClassOf": "iirds:Qualification",
+        "subClassOf": "iirds:FunctionalMetadata",
         "rels": {},
         "label": {
             "de": "Rolle",
