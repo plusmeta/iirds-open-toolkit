@@ -340,7 +340,7 @@ export default {
         return {
             loading: false,
             search: null,
-            filter: undefined,
+            filter: null,
             selected:  [],
             processing: [],
             showHelp: true,
