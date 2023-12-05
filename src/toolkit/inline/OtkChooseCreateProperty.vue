@@ -19,15 +19,7 @@
         return-object
         @input="selectProperty"
       >
-        <template v-slot:item="{attrs, on, item}">
-          <v-list-item-action>
-            <v-checkbox
-              v-model="attrs.inputValue"
-              hide-details
-              color="primary"
-              v-on="on"
-            />
-          </v-list-item-action>
+        <template v-slot:item="{ item }">
           <v-list-item-content>
             <v-list-item-title>{{ item.text }}</v-list-item-title>
           </v-list-item-content>
