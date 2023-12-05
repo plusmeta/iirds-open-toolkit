@@ -254,7 +254,7 @@ export default {
             let pack = root.ele("iirds:Package", { "rdf:about": pid });
 
             pack.ele("iirds:title", {}, "iiRDS Open Toolkit Export");
-            pack.ele("iirds:iiRDSVersion", "1.1");
+            pack.ele("iirds:iiRDSVersion", "1.2");
 
             /*
                 Generic Labeling function
