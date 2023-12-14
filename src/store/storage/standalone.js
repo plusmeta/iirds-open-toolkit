@@ -182,7 +182,7 @@ const getters = {
         return getters.getCurrentObjectUuids.map(uuid => state.objects[getters.indexByUuid[uuid]]).filter(Boolean);
     },
     getCurrentObjectsByType: (state, getters) => (type) => {
-        if (type === undefined) {
+        if (type === undefined || type === null) {
             return getters.getCurrentObjects;
         } else if (typeof type === "string") {
             return (getters.indizesCurrentByType[type] || []).map(index => state.objects[index]).filter(Boolean);
