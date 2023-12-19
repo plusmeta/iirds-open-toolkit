@@ -966,6 +966,17 @@
         "indicators": []
     },
     {
+        "identifier": "iirds:has-external-classification",
+        "datatype": "plus:Relation",
+        "subClassOf": "iirds:relates-to-administrative-metadata",
+        "rels": {},
+        "label": {
+            "de": "hat externe Klassifikation",
+            "en": "has external classification"
+        },
+        "indicators": []
+    },
+    {
         "identifier": "iirds:Qualification",
         "datatype": "plus:Class",
         "subClassOf": "iirds:FunctionalMetadata",
@@ -1555,6 +1566,17 @@
         "label": {
             "de": "ist Version/Variante von",
             "en": "is version/variant of"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "iirds:relates-to-administrative-metadata",
+        "datatype": "plus:ObjectRelation",
+        "subClassOf": "iirds:iirdsRelationConcept",
+        "rels": {},
+        "label": {
+            "de": "bezieht sich auf administrative Metadaten",
+            "en": "relates to administrative metadata"
         },
         "indicators": []
     },
@@ -2449,6 +2471,28 @@
         "label": {
             "de": "Seriennummer",
             "en": "Serial number"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "plus:ExternalClassification",
+        "datatype": "plus:Array",
+        "subClassOf": "plus:Meta",
+        "rels": {
+            "plus:has-roles": [
+                "plus:AssignableMetadata"
+            ],
+            "iirds:has-external-classification": [
+                "iirds:ExternalClassification"
+            ],
+            "plus:has-icons": [
+                "mdi:order-bool-descending-variant "
+            ]
+        },
+        "attrs": {},
+        "label": {
+            "de": "Externe Klassifikation",
+            "en": "External classification"
         },
         "indicators": []
     }
