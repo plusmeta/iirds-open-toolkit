@@ -318,8 +318,7 @@ export default {
                 let sn = this.getMetadataValueByURI(object.uuid, externalClassification);
                 return sn && Array.isArray(sn) && sn.length;
             })) {
-                const domain = root.ele("iirds:ClassificationDomain", {"rdf:about": rdf.expand(externalClassification, this.$store)})
-                    .ele("iirds:has-classification-type", {"rdf:resource": "EN61355-1:2009"}).up();
+                const domain = root.ele("iirds:ClassificationDomain", {"rdf:about": rdf.expand(externalClassification, this.$store)});
                 addLabels(externalClassification, domain);
             }
 
