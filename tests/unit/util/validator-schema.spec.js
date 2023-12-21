@@ -5,7 +5,7 @@
 
 import { expect } from "chai";
 
-import validations from "@/config/imports/schema-rules";
+import validations from "@/config/validation/schema-rules";
 import { validateSingleRule } from "@/util/validator-schema.js";
 import { readFileSync } from "fs";
 

@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:html="http://www.w3.org/1999/xhtml" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:mdi="https://materialdesignicons.com/icon/" xmlns:iirdsMch="http://iirds.tekom.de/iirds/domain/machinery#" xmlns:iirdsSft="http://iirds.tekom.de/iirds/domain/software#" xmlns:test="urn:uuid:23639938-f9d1-4f81-97c9-7eacac0f4455" xmlns:pdfaid="http://www.aiim.org/pdfa/ns/id/" xmlns:fs="https://flowserve.com/autoID/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:plus="https://data.plusmeta.de/metadata#" xmlns:festo="https://www.festo.com/autoID/" xmlns:iirds="http://iirds.tekom.de/iirds#" xmlns:xmpmm="http://ns.adobe.com/xap/1.0/mm/" xmlns:zs="https://zeppelin.com/systems/autoID/" xmlns:ditrano="http://dke.de/ditrano#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:jana="https://janacorp.com/" xmlns:dai="https://www.danfoss.com/autoID/" xmlns:st4="https://data.plusmeta.de/thirdparty/st4#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dke="http://dke.de/">
+  <!--*** plusmeta Platform (v4.1.15) ***-->
+  <!--*** generated on 5.12.2023, 11:48:30 ***-->
+  <iirds:Package rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package">
+    <iirds:title>asdf</iirds:title>
+    <iirds:iiRDSVersion>1.1</iirds:iiRDSVersion>
+  </iirds:Package>
+  <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc">
+    <rdfs:label>asdf</rdfs:label>
+    <iirds:has-directory-structure-type rdf:resource="http://iirds.tekom.de/iirds#TableOfContents"/>
+    <iirds:has-first-child>
+      <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/29554955">
+        <rdfs:label>Ansprechpartner</rdfs:label>
+        <iirds:relates-to-information-unit rdf:resource="29554955"/>
+        <iirds:has-first-child>
+          <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/29563787">
+            <rdfs:label>Angaben für Anfragen und Bestellungen</rdfs:label>
+            <iirds:relates-to-information-unit rdf:resource="29563787"/>
+            <iirds:has-next-sibling>
+              <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/29593099">
+                <rdfs:label>Kontaktdaten Ihres Händlers</rdfs:label>
+                <iirds:relates-to-information-unit rdf:resource="29593099"/>
+                <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+              </iirds:DirectoryNode>
+            </iirds:has-next-sibling>
+          </iirds:DirectoryNode>
+        </iirds:has-first-child>
+        <iirds:has-next-sibling>
+          <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/57125771">
+            <rdfs:label>Zu diesem Dokument</rdfs:label>
+            <iirds:relates-to-information-unit rdf:resource="57125771"/>
+            <iirds:has-first-child>
+              <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/92974219">
+                <rdfs:label>Gültigkeit</rdfs:label>
+                <iirds:relates-to-information-unit rdf:resource="92974219"/>
+                <iirds:has-next-sibling>
+                  <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/9211851659">
+                    <rdfs:label>Bedeutung des Dokuments</rdfs:label>
+                    <iirds:relates-to-information-unit rdf:resource="9211851659"/>
+                    <iirds:has-next-sibling>
+                      <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/404694539">
+                        <rdfs:label>Nachbestellung</rdfs:label>
+                        <iirds:relates-to-information-unit rdf:resource="404694539"/>
+                        <iirds:has-next-sibling>
+                          <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/57723275">
+                            <rdfs:label>Mitgeltende Dokumente</rdfs:label>
+                            <iirds:relates-to-information-unit rdf:resource="57723275"/>
+                            <iirds:has-next-sibling>
+                              <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/57147531">
+                                <rdfs:label>Zielgruppe dieses Dokuments</rdfs:label>
+                                <iirds:relates-to-information-unit rdf:resource="57147531"/>
+                                <iirds:has-next-sibling>
+                                  <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/271515531">
+                                    <rdfs:label>So benutzen Sie dieses Dokument</rdfs:label>
+                                    <iirds:relates-to-information-unit rdf:resource="271515531"/>
+                                    <iirds:has-first-child>
+                                      <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/57149451">
+                                        <rdfs:label>Verzeichnisse und Verweise</rdfs:label>
+                                        <iirds:relates-to-information-unit rdf:resource="57149451"/>
+                                        <iirds:has-next-sibling>
+                                          <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/57151371">
+                                            <rdfs:label>Richtungsangaben</rdfs:label>
+                                            <iirds:relates-to-information-unit rdf:resource="57151371"/>
+                                            <iirds:has-next-sibling>
+                                              <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/231391755">
+                                                <rdfs:label>Begriff „Maschine“</rdfs:label>
+                                                <iirds:relates-to-information-unit rdf:resource="231391755"/>
+                                                <iirds:has-next-sibling>
+                                                  <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/163870475">
+                                                    <rdfs:label>Abbildungen</rdfs:label>
+                                                    <iirds:relates-to-information-unit rdf:resource="163870475"/>
+                                                    <iirds:has-next-sibling>
+                                                      <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/377352971">
+                                                        <rdfs:label>Umfang des Dokuments</rdfs:label>
+                                                        <iirds:relates-to-information-unit rdf:resource="377352971"/>
+                                                        <iirds:has-next-sibling>
+                                                          <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/57257995">
+                                                            <rdfs:label>Darstellungsmittel</rdfs:label>
+                                                            <iirds:relates-to-information-unit rdf:resource="57257995"/>
+                                                            <iirds:has-next-sibling>
+                                                              <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/382791563">
+                                                                <rdfs:label>Umrechnungstabelle</rdfs:label>
+                                                                <iirds:relates-to-information-unit rdf:resource="382791563"/>
+                                                                <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                                                              </iirds:DirectoryNode>
+                                                            </iirds:has-next-sibling>
+                                                          </iirds:DirectoryNode>
+                                                        </iirds:has-next-sibling>
+                                                      </iirds:DirectoryNode>
+                                                    </iirds:has-next-sibling>
+                                                  </iirds:DirectoryNode>
+                                                </iirds:has-next-sibling>
+                                              </iirds:DirectoryNode>
+                                            </iirds:has-next-sibling>
+                                          </iirds:DirectoryNode>
+                                        </iirds:has-next-sibling>
+                                      </iirds:DirectoryNode>
+                                    </iirds:has-first-child>
+                                    <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+                                  </iirds:DirectoryNode>
+                                </iirds:has-next-sibling>
+                              </iirds:DirectoryNode>
+                            </iirds:has-next-sibling>
+                          </iirds:DirectoryNode>
+                        </iirds:has-next-sibling>
+                      </iirds:DirectoryNode>
+                    </iirds:has-next-sibling>
+                  </iirds:DirectoryNode>
+                </iirds:has-next-sibling>
+              </iirds:DirectoryNode>
+            </iirds:has-first-child>
+            <iirds:has-next-sibling>
+              <iirds:DirectoryNode rdf:about="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package/toc/244123403">
+                <rdfs:label>Sicherheit</rdfs:label>
+                <iirds:relates-to-information-unit rdf:resource="244123403"/>
+                <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+              </iirds:DirectoryNode>
+            </iirds:has-next-sibling>
+          </iirds:DirectoryNode>
+        </iirds:has-next-sibling>
+      </iirds:DirectoryNode>
+    </iirds:has-first-child>
+    <iirds:has-next-sibling rdf:resource="http://iirds.tekom.de/iirds#nil"/>
+  </iirds:DirectoryNode>
+  <iirds:Topic rdf:about="29554955">
+    <iirds:title>Ansprechpartner</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="29554955/rendition/CONTENT/29554955.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/29554955.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="29563787">
+    <iirds:title>Angaben für Anfragen und Bestellungen</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="29563787/rendition/CONTENT/29563787.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/29563787.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="29593099">
+    <iirds:title>Kontaktdaten Ihres Händlers</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="29593099/rendition/CONTENT/29593099.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/29593099.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="57125771">
+    <iirds:title>Zu diesem Dokument</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="57125771/rendition/CONTENT/57125771.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/57125771.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="57149451">
+    <iirds:title>Verzeichnisse und Verweise</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="57149451/rendition/CONTENT/57149451.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/57149451.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="57151371">
+    <iirds:title>Richtungsangaben</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="57151371/rendition/CONTENT/57151371.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/57151371.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="57257995">
+    <iirds:title>Darstellungsmittel</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:has-identity>
+      <iirds:Identity>
+        <iirds:identifier>Getriebe</iirds:identifier>
+        <iirds:has-identity-domain rdf:resource="urn:uuid:1c2f7729-888e-4e91-a259-9d533159e4a7"/>
+      </iirds:Identity>
+    </iirds:has-identity>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="57257995/rendition/CONTENT/57257995.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/57257995.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="57723275">
+    <iirds:title>Mitgeltende Dokumente</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="57723275/rendition/CONTENT/57723275.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/57723275.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="92974219">
+    <iirds:title>Gültigkeit</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="92974219/rendition/CONTENT/92974219.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/92974219.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="163870475">
+    <iirds:title>Abbildungen</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="163870475/rendition/CONTENT/163870475.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/163870475.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="231391755">
+    <iirds:title>Begriff „Maschine“</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="231391755/rendition/CONTENT/231391755.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/231391755.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="244123403">
+    <iirds:title>Sicherheit</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="244123403/rendition/CONTENT/244123403.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/244123403.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="271515531">
+    <iirds:title>So benutzen Sie dieses Dokument</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="271515531/rendition/CONTENT/271515531.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/271515531.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="377352971">
+    <iirds:title>Umfang des Dokuments</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="377352971/rendition/CONTENT/377352971.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/377352971.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="382791563">
+    <iirds:title>Umrechnungstabelle</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="382791563/rendition/CONTENT/382791563.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/382791563.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="404694539">
+    <iirds:title>Nachbestellung</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="404694539/rendition/CONTENT/404694539.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/404694539.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="9211851659">
+    <iirds:title>Bedeutung des Dokuments</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="9211851659/rendition/CONTENT/9211851659.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/9211851659.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+  <iirds:Topic rdf:about="57147531">
+    <iirds:title>Zielgruppe dieses Dokuments</iirds:title>
+    <iirds:is-part-of-package rdf:resource="urn:uuid:844e6f1d-48e5-43d8-9107-60fa30a344f0/package"/>
+    <iirds:language>de</iirds:language>
+    <iirds:has-rendition>
+      <iirds:Rendition rdf:about="57147531/rendition/CONTENT/57147531.html">
+        <iirds:format>text/html</iirds:format>
+        <iirds:source>CONTENT/57147531.html</iirds:source>
+      </iirds:Rendition>
+    </iirds:has-rendition>
+  </iirds:Topic>
+</rdf:RDF>

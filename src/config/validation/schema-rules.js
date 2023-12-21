@@ -854,8 +854,8 @@ export default [
     {
         id: "M24.5",
         path: "DirectoryNode",
-        assert: els => els.filter(el => isDirectoryRoot(el)).every(el => el.querySelector("has-directory-structure-type")),
-        getInvalid: els => els.filter(el => isDirectoryRoot(el) && !el.querySelector("has-directory-structure-type")),
+        assert: els => els.filter(el => isDirectoryRoot(els, el)).every(el => el.querySelector("has-directory-structure-type")),
+        getInvalid: els => els.filter(el => isDirectoryRoot(els, el) && !el.querySelector("has-directory-structure-type")),
         prio: "MUST",
         category: "only root element must have property",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=Only%20root%20nodes%20of%20a%20directory%20structure%20MUST%20have%20the%20property%20iirds%3Ahas%2Ddirectory%2Dstructure%2Dtype.",
@@ -870,10 +870,33 @@ export default [
         }
     },
     {
+        id: "M24.6",
+        path: "DirectoryNode",
+        assert: (els) => {
+            if (els.length > 0) {
+                return els.filter(el => isDirectoryRoot(els, el)).length > 0;
+            }
+            return true;
+        },
+        getInvalid: els => els.filter(el => !isDirectoryRoot(els, el)),
+        prio: "MUST",
+        category: "there must be at least one root directory node",
+        spec: "https://iirds.org/fileadmin/iiRDS_specification/20231110-1.2-release/index.html#information-units:~:text=6.9.1-,Directory%20Nodes",
+        version: ["V1.0", "V1.0.1", "V1.1", "V1.2"],
+        rule: {
+            "de": "Es MUSS mindestens ein Wurzelknoten vorhanden sein, der die Elemente iirds:has-directory-structure-type, iirds:has-first-child und iirds:has-next-sibling hat.",
+            "en": "There MUST be at least one root node that has the elements iirds:has-directory-structure-type, iirds:has-first-child and iirds:has-next-sibling."
+        },
+        testfiles: {
+            "true": ["./tests/files/util/iirds-validation/M24-6-2_true.rdf"],
+            "false": ["./tests/files/util/iirds-validation/M24-6-1_false.rdf", "./tests/files/util/iirds-validation/M24-6-2_false.rdf"]
+        }
+    },
+    {
         id: "M25",
         path: "DirectoryNode",
-        assert: els => els.filter(el => !el.querySelector("DirectoryNode")).every(el => el.querySelector("has-next-sibling")?.getAttribute("rdf:resource") === "http://iirds.tekom.de/iirds#nil"),
-        getInvalid: els => els.filter(el => !el.querySelector("DirectoryNode") && el.querySelector("has-next-sibling")?.getAttribute("rdf:resource") !== "http://iirds.tekom.de/iirds#nil"),
+        assert: els => els.filter(el => !el.querySelector("DirectoryNode")).every(el => el.querySelector("has-next-sibling")),
+        getInvalid: els => els.filter(el => !el.querySelector("DirectoryNode") && !el.querySelector("has-next-sibling")),
         prio: "MUST",
         category: "rdf:resource relates to class iirds:nil",
         spec: "https://iirds.org/fileadmin/iiRDS_specification/20201103-1.1-release/index.html#information-units:~:text=To%20model%20closed%20lists%2C%20the%20last%20node%20in%20a%20list%20level%20MUST%20have%20the%20property%20iirds%3Ahas%2Dnext%2Dsibling%20relating%20to%20an%20instance%20of%20the%20class%20iirds%3Anil.",
