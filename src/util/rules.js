@@ -8,6 +8,18 @@ export const isDirectoryRoot = (els, dirRoot) => {
         !els.some(el => el.querySelector(":scope > has-next-sibling")?.getAttribute("rdf:resource") === id) &&
         dirRoot.parentElement.localName !== "has-first-child" && dirRoot.parentElement.localName !== "has-next-sibling";
 };
+export const mayHasExternalClassification = (el) => {
+    return [
+        "Component",
+        "ProductVariant",
+        "ProductFunction",
+        "ProductProperty",
+        "InformationPackage",
+        "Topic",
+        "Fragment",
+        "Document"
+    ].includes(el.parentElement.localName);
+};
 export const getAbsoluteIRIRegExp = () => new RegExp(/^(\w+:|www\.)[\S]+/);
 
 export const includesAll = (small, big) => small.every(n => big.indexOf(n) !== -1);
