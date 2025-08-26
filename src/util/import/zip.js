@@ -17,7 +17,7 @@ export default {
         if (!Object.keys(zip.files).length) throw "Empty container";
 
         const htmlFiles = Object.keys(zip.files).filter((key) => {
-            return !!key?.match(/.+?\.html$/);
+            return !!key?.match(/.+?\.(x?html)$/);
         });
 
         if (!htmlFiles.length) throw "No HTML files";
