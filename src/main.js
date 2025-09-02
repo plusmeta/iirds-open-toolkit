@@ -48,7 +48,7 @@ Vue.use(VueMatomo, {
     requireConsent: true,
     trackInitialView: true,
     disableCookies: false,
-    cookieDomain: "*.iirds.tekom.de"
+    cookieDomain: ".iirds.tekom.de"
 });
 
 if (!!+process.env.VUE_APP_LOG_VERSION) {
