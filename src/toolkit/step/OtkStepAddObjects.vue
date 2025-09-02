@@ -493,6 +493,8 @@ export default {
             try {
                 this.loading = true;
                 let objectUuids = await Promise.all([...uploadedFiles].map(this.handleFile));
+            } catch (error) {
+                this.$notify.send(`${this.$t("Notification.importFailed")}: ${error}`, "error");
             } finally {
                 this.$refs.fileForm.reset();
                 this.loading = false;
