@@ -225,6 +225,7 @@ export default {
             const globalInstances = {};
 
             const customSNIdentifier = "plus:SerialNumber";
+            const externalClassification = "plus:ExternalClassification";
 
             /*
                 Define namespaces and root element
@@ -313,6 +314,14 @@ export default {
                 addLabels(customSNIdentifier, domain);
             }
 
+            if (this.getContentObjects.some((object) => {
+                let sn = this.getMetadataValueByURI(object.uuid, externalClassification);
+                return sn && Array.isArray(sn) && sn.length;
+            })) {
+                const domain = root.ele("iirds:ClassificationDomain", {"rdf:about": rdf.expand(externalClassification, this.$store)});
+                addLabels(externalClassification, domain);
+            }
+
             /*
                 Metadata Relations
             */
@@ -346,6 +355,17 @@ export default {
                             .ele("iirds:Identity")
                             .ele("iirds:identifier", {}, sn).up()
                             .ele("iirds:has-identity-domain", {"rdf:resource": rdf.expand(customSNIdentifier, this.$store)});
+                    });
+                }
+
+                // get external classification
+                let classifications = this.getMetadataValueByURI(object.uuid, externalClassification);
+                if (classifications !== null && Array.isArray(classifications)) {
+                    classifications.forEach((classification) => {
+                        IU.ele("iirds:has-external-classification")
+                            .ele("iirds:ExternalClassification")
+                            .ele("iirds:classificationIdentifier", {}, classification).up()
+                            .ele("iirds:has-classification-domain", {"rdf:resource": rdf.expand(externalClassification, this.$store)});
                     });
                 }
 
