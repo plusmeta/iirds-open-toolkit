@@ -161,10 +161,63 @@ const getters = {
         } else {
             return [];
         }
+    },
+    getPropertyTooltip: (state, getters, rootState, rootGetters) => (propId) => {
+        let attrValue = getters.getPropertyAttributeById(propId, "plus:tooltipInfo");
+        let locale = rootGetters["settings/getCurrentLocale"];
+        if (attrValue && locale) {
+            return attrValue[locale] || attrValue[process.env.VUE_APP_I18N_FALLBACK_LOCALE];
+        } else {
+            return undefined;
+        }
+    },
+    getPropertyAttributeById: (state, getters) => (propId, attrId) => {
+        let property = getters.getPropertyById(propId);
+        if (!!property &&
+            !!property.attrs &&
+            !!property.attrs[attrId]) {
+            return property.attrs[attrId];
+        } else {
+            return undefined;
+        }
     }
 };
 
 const actions = {
+
+    addRoleToProperty({commit, getters}, {identifier, role}) {
+        let property = getters.getPropertyById(identifier);
+        if (!property) return;
+
+        const existingRoles = property.rels?.["plus:has-roles"] || [];
+
+        if (existingRoles.includes(role)) return;
+
+        const updatedRoles = [...existingRoles, role];
+        const updatedProperty = {
+            ...property,
+            rels: {
+                ...(property.rels || {}),
+                "plus:has-roles": updatedRoles
+            }
+        };
+        commit("UPDATE_PROPERTY", [property, updatedProperty]);
+    },
+
+    deleteRoleFromProperty({commit, getters}, {identifier, role}) {
+        let property = getters.getPropertyById(identifier);
+        if (property && property.rels && Array.isArray(property.rels["plus:has-roles"])) {
+            const updatedRoles = property.rels["plus:has-roles"].filter(r => r !== role);
+            const updatedProperty = {
+                ...property,
+                rels: {
+                    ...property.rels,
+                    "plus:has-roles": updatedRoles
+                }
+            };
+            commit("UPDATE_PROPERTY", [property, updatedProperty]);
+        }
+    },
     savePropertiesLocal ({ commit, getters, dispatch }, properties) {
         properties = (Array.isArray(properties)) ? properties : [properties];
         properties.forEach((prop) => {

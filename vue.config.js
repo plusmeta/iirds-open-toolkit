@@ -55,7 +55,8 @@ module.exports = {
         "vuetify",
         "vuex-persist",
         "pdfjs-dist",
-        "xmlbuilder"
+        "xmlbuilder",
+        "rdflib"
     ],
     productionSourceMap: false,
     css: {

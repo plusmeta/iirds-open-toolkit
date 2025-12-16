@@ -33,17 +33,24 @@
   "Common": {
     "actions": "Aktionen",
     "columns": "Keine Spalten | {n} Spalte | {n} Spalten",
+    "domain": "Domain",
     "false": "Nein",
     "filter": "Filter",
     "more": "und keine weiteren | und ein weiteres | und {n} weitere",
     "name": "Name",
     "noEmptyInput": "Eingabe darf nicht leer sein",
+    "objectInstanceUri": "Instanz einer Objekt-URI",
+    "objectTypeUri": "Objekt-URI eines Produkttyps",
+    "organisation": "Organisation",
     "preview": "Vorschau",
+    "productDetails": "Produktreferenz",
+    "productType": "Produkttyp",
     "publisher": "Herausgeber",
     "ruleExplainer": "Zum Fortfahren müssen alle Bedingungen erfüllt sein",
     "ruleViolation": "Vorgänger-Bedingungen wurden verletzt. Bitte springen Sie zum letzten validen Schritt.",
     "search": "Suche",
     "searchFor": "Suche nach",
+    "serialNumber": "Seriennummer",
     "true": "Ja",
     "unknown": "Unbekannt",
     "view": "Anzeige",
@@ -109,5 +116,12 @@
     "objects": "Gesamt",
     "objectsCount": "Anzahl Objekte",
     "processed": "Verarbeitet"
+  },
+  "Validations": {
+    "noEmptyInput": "Eingabe darf nicht leer sein",
+    "noValidMailAdress": "Keine gültige E-Mail-Adresse",
+    "noValidAutoID": "Keine gültige URL",
+    "maxLenghtExceeded": "Maximale Länge überschritten",
+    "minOneOfFields": "Mindestens eines der folgenden Felder muss ausgefüllt sein: {0}"
   }
 }
