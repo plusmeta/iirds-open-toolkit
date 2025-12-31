@@ -6,7 +6,7 @@
     },
   "workflow.chooseVariant": {
     "text": "<ul><li><b>iiRDS</b>: No restrictions or requirements regarding content and metadata.</li><li><b>iiRDS/A</b>: The use case is archiving. Restricted in terms of content formats, which are very common and future-proof. Permitted formats are PDF/A, a subset of HTML5, and various multimedia formats.</li><li><b>iiRDS/H</b>: Focuses on the legally compliant transfer of documentation relating to a product instance or a defined product type. Restricted in terms of content format and the use of metadata. The prescribed format is PDF/A. Mandatory metadata includes document category, document type, and product identification information.</li></ul><br/>For details, see specification.",
-    "title": "Choose iiRDS variant",
+    "title": "Input iiRDS package details",
     "link": "iiRDS_Variante_waehlen"
     },
   "workflow.addObjects": {

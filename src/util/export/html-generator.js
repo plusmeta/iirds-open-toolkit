@@ -5,10 +5,11 @@ class HtmlGenerator {
     /**
      * Erstellt eine HTML-Datei mit Überschrift und Tabelle
      * @param {string} title - Die Überschrift für die HTML-Seite
+     * @param {string} subtitle - Die Unterüberschrift für die HTML-Seite
      * @param {Array<Object>} data - Array von Objekten für die Tabellenwerte
      * @returns {string} Der generierte HTML-String
      */
-    generate(title, data) {
+    generate(title, subtitle, data) {
         if (!data || data.length === 0) {
             throw new Error("Daten-Array darf nicht leer sein");
         }
@@ -60,7 +61,7 @@ class HtmlGenerator {
 </head>
 <body>
     <h1>${this.escapeHtml(title)}</h1>
-    <h2>Package Contents</h2>
+    <h2>${this.escapeHtml(subtitle)}</h2>
     <table>
         <thead>
             <tr>
@@ -98,11 +99,12 @@ ${headers.map(header => `                <td>${this.escapeHtml(String(row[header
     /**
      * Erstellt eine HTML-Datei und gibt sie als Blob zurück
      * @param {string} title - Die Überschrift für die HTML-Seite
+     * @param {string} subtitle - Die Unterüberschrift für die HTML-Seite
      * @param {Array<Object>} data - Array von Objekten für die Tabellenwerte
      * @returns {Blob} Ein Blob-Objekt mit dem HTML-Inhalt
      */
-    generateBlob(title, data) {
-        const html = this.generate(title, data);
+    generateBlob(title, subtitle, data) {
+        const html = this.generate(title, subtitle, data);
         return new Blob([html], {type: "text/html;charset=utf-8"});
     }
 }
