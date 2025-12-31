@@ -38,8 +38,8 @@ export default {
         editable: false,
         helpkey: "workflow.variant",
         name: {
-            de: "Variante wählen",
-            en: "Choose variant"
+            de: "iiRDS-Paket-Details eingeben",
+            en: "Input iiRDS package details"
         },
         rules: [
             (store) => {

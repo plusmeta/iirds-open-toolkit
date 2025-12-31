@@ -15,47 +15,35 @@
     <HelpView helpkey="workflow.chooseVariant" />
 
     <v-container fluid class="drop-overlay drop-overlay-container">
-      <v-card class="mb-4 mx-auto" max-width="800">
+      <v-card class="mb-4 mx-auto">
         <v-card-title>
-          <v-icon left>
-            mdi-file-code
-          </v-icon>
-          iiRDS-Variante
+          {{ $t("Common.packageInformation") }}
         </v-card-title>
         <v-card-text>
-          <v-radio-group
-            v-model="iirdsVariant"
-            row
-            @change="toggleVariantSettings"
-          >
-            <v-radio
-              label="iiRDS"
-              value="iirds"
-            />
-            <v-radio
-              label="iiRDS/A"
-              value="A"
-            />
-            <v-radio
-              label="iiRDS/H"
-              value="H"
-            />
-          </v-radio-group>
-
-          <v-expand-transition>
-            <div v-if="iirdsVariant === 'H'" class="mt-4">
+          <v-row>
+            <v-col class="pr-10">
+              <v-select
+                v-model="iirdsVariant"
+                prepend-icon="mdi-package-variant"
+                :items="iirdsVariants"
+                item-text="text"
+                item-value="value"
+                :label="$t('Common.packageVariant')"
+                @change="toggleVariantSettings"
+              />
+            </v-col>
+            <v-col class="pl-16 pr-10">
               <v-row align="center">
                 <v-col>
                   <v-text-field
-                    v-model="companyName"
+                    v-model="packageTitle"
                     class="required"
-                    prepend-icon="mdi-factory"
-                    :label="$t('Common.organisation')+'*'"
-                    :rules="[isNotEmpty]"
+                    prepend-icon="mdi-format-title"
+                    :label="$t('Common.packageTitle')"
                   />
                 </v-col>
                 <v-col
-                  v-if="getPropertyTooltip('plus:Organisation')"
+                  v-if="getPropertyTooltip('iirds:title')"
                   cols="auto"
                 >
                   <v-tooltip top>
@@ -70,7 +58,7 @@
                     </template>
                     <div
                       class="tooltip-width"
-                      v-html="getPropertyTooltip('plus:Organisation')"
+                      v-html="getPropertyTooltip('iirds:title')"
                     />
                   </v-tooltip>
                 </v-col>
@@ -78,15 +66,16 @@
               <v-row align="center">
                 <v-col>
                   <v-text-field
-                    v-model="domain"
-                    :label="$t('Common.domain')+'*'"
+                    v-model="iirdsVersion"
                     class="required"
-                    prepend-icon="mdi-web"
-                    :rules="[isNotEmpty, isURL]"
+                    prepend-icon="mdi-numeric"
+                    :label="$t('Common.iirdsVersion')"
+                    readonly
+                    disabled
                   />
                 </v-col>
                 <v-col
-                  v-if="getPropertyTooltip('iirds:IdentityDomain')"
+                  v-if="getPropertyTooltip('iirds:iiRDSVersion')"
                   cols="auto"
                 >
                   <v-tooltip top>
@@ -101,144 +90,210 @@
                     </template>
                     <div
                       class="tooltip-width"
-                      v-html="getPropertyTooltip('iirds:IdentityDomain')"
+                      v-html="getPropertyTooltip('plus:iiRDSVersion')"
                     />
                   </v-tooltip>
                 </v-col>
               </v-row>
-              <v-row align="center">
-                <v-col>
-                  <v-text-field
-                    v-model="productType"
-                    :label="$t('Common.productType')+'*'"
-                    class="required"
-                    prepend-icon="mdi-memory"
-                    :rules="[isNotEmpty]"
-                  />
-                </v-col>
-                <v-col
-                  v-if="getPropertyTooltip('iirds:ProductType')"
-                  cols="auto"
-                >
-                  <v-tooltip top>
-                    <template v-slot:activator="{ on: tooltip }">
-                      <v-icon
-                        class="cursor-pointer"
-                        right
-                        v-on="tooltip"
+              <v-expand-transition>
+                <div v-if="iirdsVariant === 'H'">
+                  <v-row align="center">
+                    <v-col>
+                      <v-text-field
+                        v-model="companyName"
+                        class="required"
+                        prepend-icon="mdi-factory"
+                        :label="$t('Common.organisation')+'*'"
+                        :rules="[isNotEmpty]"
+                      />
+                    </v-col>
+                    <v-col
+                      v-if="getPropertyTooltip('plus:Organisation')"
+                      cols="auto"
+                    >
+                      <v-tooltip top>
+                        <template v-slot:activator="{ on: tooltip }">
+                          <v-icon
+                            class="cursor-pointer"
+                            right
+                            v-on="tooltip"
+                          >
+                            mdi-information-outline
+                          </v-icon>
+                        </template>
+                        <div
+                          class="tooltip-width"
+                          v-html="getPropertyTooltip('plus:Organisation')"
+                        />
+                      </v-tooltip>
+                    </v-col>
+                  </v-row>
+                  <v-row align="center">
+                    <v-col>
+                      <v-text-field
+                        v-model="domain"
+                        :label="$t('Common.domain')+'*'"
+                        class="required"
+                        prepend-icon="mdi-web"
+                        :rules="[isNotEmpty, isURL]"
+                      />
+                    </v-col>
+                    <v-col
+                      v-if="getPropertyTooltip('iirds:IdentityDomain')"
+                      cols="auto"
+                    >
+                      <v-tooltip top>
+                        <template v-slot:activator="{ on: tooltip }">
+                          <v-icon
+                            class="cursor-pointer"
+                            right
+                            v-on="tooltip"
+                          >
+                            mdi-information-outline
+                          </v-icon>
+                        </template>
+                        <div
+                          class="tooltip-width"
+                          v-html="getPropertyTooltip('iirds:IdentityDomain')"
+                        />
+                      </v-tooltip>
+                    </v-col>
+                  </v-row>
+                  <v-row align="center">
+                    <v-col>
+                      <v-text-field
+                        v-model="productType"
+                        :label="$t('Common.productType')+'*'"
+                        class="required"
+                        prepend-icon="mdi-memory"
+                        :rules="[isNotEmpty]"
+                      />
+                    </v-col>
+                    <v-col
+                      v-if="getPropertyTooltip('iirds:ProductType')"
+                      cols="auto"
+                    >
+                      <v-tooltip top>
+                        <template v-slot:activator="{ on: tooltip }">
+                          <v-icon
+                            class="cursor-pointer"
+                            right
+                            v-on="tooltip"
+                          >
+                            mdi-information-outline
+                          </v-icon>
+                        </template>
+                        <div
+                          class="tooltip-width"
+                          v-html="getPropertyTooltip('iirds:ProductType')"
+                        />
+                      </v-tooltip>
+                    </v-col>
+                  </v-row>
+                  <v-form-group
+                    :label="$t('Common.productDetails')+'*'"
+                  >
+                    <v-row align="center">
+                      <v-col>
+                        <v-text-field
+                          ref="objectTypeURIField"
+                          v-model="objectTypeURI"
+                          :label="$t('Common.objectTypeUri')"
+                          class="required"
+                          prepend-icon="mdi-qrcode-scan"
+                          :rules="[atLeastOneProductDetailForObjectType, isURL]"
+                        />
+                      </v-col>
+                      <v-col
+                        v-if="getPropertyTooltip('iirds:ObjectTypeURI')"
+                        cols="auto"
                       >
-                        mdi-information-outline
-                      </v-icon>
-                    </template>
-                    <div
-                      class="tooltip-width"
-                      v-html="getPropertyTooltip('iirds:ProductType')"
-                    />
-                  </v-tooltip>
-                </v-col>
-              </v-row>
-              <v-form-group
-                :label="$t('Common.productDetails')+'*'"
-              >
-                <v-row align="center">
-                  <v-col>
-                    <v-text-field
-                      ref="objectTypeURIField"
-                      v-model="objectTypeURI"
-                      :label="$t('Common.objectTypeUri')"
-                      class="required"
-                      prepend-icon="mdi-qrcode-scan"
-                      :rules="[atLeastOneProductDetailForObjectType, isURL]"
-                    />
-                  </v-col>
-                  <v-col
-                    v-if="getPropertyTooltip('iirds:ObjectTypeURI')"
-                    cols="auto"
-                  >
-                    <v-tooltip top>
-                      <template v-slot:activator="{ on: tooltip }">
-                        <v-icon
-                          class="cursor-pointer"
-                          right
-                          v-on="tooltip"
-                        >
-                          mdi-information-outline
-                        </v-icon>
-                      </template>
-                      <div
-                        class="tooltip-width"
-                        v-html="getPropertyTooltip('iirds:ObjectTypeURI')"
-                      />
-                    </v-tooltip>
-                  </v-col>
-                </v-row>
-                <v-row align="center">
-                  <v-col>
-                    <v-text-field
-                      ref="objectInstanceUriField"
-                      v-model="objectInstanceUri"
-                      :label="$t('Common.objectInstanceUri')"
-                      class="required"
-                      prepend-icon="mdi-qrcode-scan"
-                      :rules="[atLeastOneProductDetailForObjectInstance, isURL]"
-                    />
-                  </v-col>
-                  <v-col
-                    v-if="getPropertyTooltip('iirds:ObjectInstanceURI')"
-                    cols="auto"
-                  >
-                    <v-tooltip top>
-                      <template v-slot:activator="{ on: tooltip }">
-                        <v-icon
-                          class="cursor-pointer"
-                          right
-                          v-on="tooltip"
-                        >
-                          mdi-information-outline
-                        </v-icon>
-                      </template>
-                      <div
-                        class="tooltip-width"
-                        v-html="getPropertyTooltip('iirds:ObjectInstanceURI')"
-                      />
-                    </v-tooltip>
-                  </v-col>
-                </v-row>
-                <v-row align="center">
-                  <v-col>
-                    <v-text-field
-                      ref="serialNumberField"
-                      v-model="serialNumber"
-                      :label="$t('Common.serialNumber')"
-                      class="required"
-                      prepend-icon="mdi-counter"
-                      :rules="[atLeastOneProductDetailForSerial]"
-                    />
-                  </v-col>
-                  <v-col
-                    v-if="getPropertyTooltip('iirds:SerialNumber')"
-                    cols="auto"
-                  >
-                    <v-tooltip top>
-                      <template v-slot:activator="{ on: tooltip }">
-                        <v-icon
-                          class="cursor-pointer"
-                          right
-                          v-on="tooltip"
-                        >
-                          mdi-information-outline
-                        </v-icon>
-                      </template>
-                      <div
-                        class="tooltip-width"
-                        v-html="getPropertyTooltip('iirds:SerialNumber')"
-                      />
-                    </v-tooltip>
-                  </v-col>
-                </v-row>
-              </v-form-group>
-            </div>
-          </v-expand-transition>
+                        <v-tooltip top>
+                          <template v-slot:activator="{ on: tooltip }">
+                            <v-icon
+                              class="cursor-pointer"
+                              right
+                              v-on="tooltip"
+                            >
+                              mdi-information-outline
+                            </v-icon>
+                          </template>
+                          <div
+                            class="tooltip-width"
+                            v-html="getPropertyTooltip('iirds:ObjectTypeURI')"
+                          />
+                        </v-tooltip>
+                      </v-col>
+                    </v-row>
+                    <v-row align="center">
+                      <v-col>
+                        <v-text-field
+                          ref="objectInstanceUriField"
+                          v-model="objectInstanceUri"
+                          :label="$t('Common.objectInstanceUri')"
+                          class="required"
+                          prepend-icon="mdi-qrcode-scan"
+                          :rules="[atLeastOneProductDetailForObjectInstance, isURL]"
+                        />
+                      </v-col>
+                      <v-col
+                        v-if="getPropertyTooltip('iirds:ObjectInstanceURI')"
+                        cols="auto"
+                      >
+                        <v-tooltip top>
+                          <template v-slot:activator="{ on: tooltip }">
+                            <v-icon
+                              class="cursor-pointer"
+                              right
+                              v-on="tooltip"
+                            >
+                              mdi-information-outline
+                            </v-icon>
+                          </template>
+                          <div
+                            class="tooltip-width"
+                            v-html="getPropertyTooltip('iirds:ObjectInstanceURI')"
+                          />
+                        </v-tooltip>
+                      </v-col>
+                    </v-row>
+                    <v-row align="center">
+                      <v-col>
+                        <v-text-field
+                          ref="serialNumberField"
+                          v-model="serialNumber"
+                          :label="$t('Common.serialNumber')"
+                          class="required"
+                          prepend-icon="mdi-counter"
+                          :rules="[atLeastOneProductDetailForSerial]"
+                        />
+                      </v-col>
+                      <v-col
+                        v-if="getPropertyTooltip('iirds:SerialNumber')"
+                        cols="auto"
+                      >
+                        <v-tooltip top>
+                          <template v-slot:activator="{ on: tooltip }">
+                            <v-icon
+                              class="cursor-pointer"
+                              right
+                              v-on="tooltip"
+                            >
+                              mdi-information-outline
+                            </v-icon>
+                          </template>
+                          <div
+                            class="tooltip-width"
+                            v-html="getPropertyTooltip('iirds:SerialNumber')"
+                          />
+                        </v-tooltip>
+                      </v-col>
+                    </v-row>
+                  </v-form-group>
+                </div>
+              </v-expand-transition>
+            </v-col>
+          </v-row>
         </v-card-text>
       </v-card>
     </v-container>
@@ -278,6 +333,15 @@ export default {
             "getPropertyTooltip",
             "getPropertyLabelById"
         ]),
+        packageTitle: {
+            get() {
+                const relations = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:packageTitle");
+                return relations.length > 0 ? relations[0] : "";
+            },
+            set(value) {
+                this.updateCurrentProjectRelations({"plus:packageTitle": [value]});
+            }
+        },
         companyName: {
             get() {
                 const relations = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:companyName");
@@ -335,11 +399,32 @@ export default {
         iirdsVariant: {
             get() {
                 const relations = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:formatRestriction");
-                return relations.length > 0 ? relations[0] : "iirds";
+                return relations[0];
             },
             set(value) {
                 this.updateCurrentProjectRelations({"iirds:formatRestriction": [value]});
             }
+        },
+        iirdsVersion: {
+            get() {
+                const relations = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:iiRDSVersion");
+                return relations[0];
+            },
+            set(value) {
+                this.updateCurrentProjectRelations({"iirds:iiRDSVersion": [value]});
+            }
+        },
+        iirdsVariants() {
+            return [{
+                text: "iiRDS",
+                value: "iirds"
+            }, {
+                text: "iiRDS/A",
+                value: "A"
+            }, {
+                text: "iiRDS/H",
+                value: "H"
+            }];
         },
         isNotEmpty() {
             return validations.fNotEmpty(this.$t("Validations.noEmptyInput"));
@@ -371,9 +456,9 @@ export default {
         },
         getLabelsForValidationMessages() {
             return [
-                this.getPropertyLabelById("iirds:ObjectTypeURI") + ", " +
-                this.getPropertyLabelById("iirds:ObjectInstanceURI") + ", " +
-                this.getPropertyLabelById("plus:SerialNumber")
+                this.$t("Common.objectTypeUri") + ", " +
+                this.$t("Common.objectInstanceUri") + ", " +
+                this.$t("Common.serialNumber")
             ];
         }
     },
@@ -412,6 +497,9 @@ export default {
     mounted() {
         if (this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:formatRestriction")?.length === 0) {
             this.updateCurrentProjectRelations({"iirds:formatRestriction": ["iirds"]});
+        }
+        if (this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:iiRDSVersion")?.length === 0) {
+            this.updateCurrentProjectRelations({"iirds:iiRDSVersion": ["1.3"]});
         }
     },
     methods: {
