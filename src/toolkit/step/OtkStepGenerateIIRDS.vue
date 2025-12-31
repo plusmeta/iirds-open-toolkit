@@ -198,7 +198,7 @@ export default {
             // HTML Overview
             if (this.formatRestriction === "H") {
                 const generator = new HtmlGenerator();
-                const htmlFile = generator.generateBlob(metadata.htmlData.title, metadata.htmlData.rows);
+                const htmlFile = generator.generateBlob(metadata.htmlData.title, metadata.htmlData.subtitle, metadata.htmlData.rows);
                 zip.file("index.html", htmlFile);
             }
 
@@ -247,39 +247,13 @@ export default {
             const htmlTableRows = [];
 
             const customSNIdentifier = "plus:SerialNumber";
-            let productVariantInstance;
-            let partyCreatorInstance;
-            let partyAuthorInstance;
+            let productVariantId;
+            let partyManufacturerId;
+            let partyCreatorId;
+            let partyAuthorId;
             let productReferences;
-
-            if (this.formatRestriction === "H") {
-                this.organisation = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:companyName")?.[0];
-                this.identityDomain = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:domain")?.[0];
-                this.productType = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:ProductType")?.[0];
-                this.serialNumber = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:SerialNumber")?.[0];
-                this.objectTypeURI = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:ObjectTypeURI")?.[0];
-                this.objectInstanceUri = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:ObjectInstanceURI")?.[0];
-
-                delete exportConfig["iirds:relates-to-product-variant"];
-                productReferences = {};
-                if (!!this.serialNumber) {
-                    productReferences["iirds:SerialNumber"] = this.serialNumber;
-                }
-                if (!!this.objectTypeURI) {
-                    productReferences["iirds:ObjectTypeURI"] = this.objectTypeURI;
-                }
-                if (!!this.objectInstanceUri) {
-                    productReferences["iirds:ObjectInstanceURI"] = this.objectInstanceUri;
-                }
-                const productType = {};
-                if (!!this.productType) {
-                    productType["iirds:ProductType"] = this.productType;
-                }
-
-                productVariantInstance = this.createProductVariant(productReferences, productType, this.organisation);
-                partyCreatorInstance = this.createParty("iirds:Creator", this.organisation);
-                partyAuthorInstance = this.createParty("iirds:Author", this.organisation);
-            }
+            this.packageTitle = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:packageTitle")?.[0];
+            this.iirdsVersion = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:iiRDSVersion")?.[0];
 
             /*
                 Define namespaces and root element
@@ -306,28 +280,53 @@ export default {
             root.com(`*** generated on ${now.toLocaleString()} ***`);
 
             let pid = `${rdf.urn(this.getCurrentProjectUuid)}/package`;
-            let pack = root.ele("iirds:Package", { "rdf:about": pid });
+            let pack = root.ele("iirds:Package", {"rdf:about": pid});
 
-            const packageTitle = "iiRDS Open Toolkit Export";
-            pack.ele("iirds:title", {}, packageTitle);
-            pack.ele("iirds:iiRDSVersion", "1.3");
+            if (!!this.packageTitle) {
+                pack.ele("iirds:title", {}, this.packageTitle);
+            }
+            pack.ele("iirds:iiRDSVersion", this.iirdsVersion);
             if (this.formatRestriction !== "iirds") {
                 pack.ele("iirds:formatRestriction", {}, this.formatRestriction);
             }
             if (this.formatRestriction === "H") {
-                pack.ele("iirds:relates-to-product-variant", {"rdf:resource": productVariantInstance.productVariantId});
-                pack.ele("iirds:relates-to-party", {"rdf:resource": partyCreatorInstance.partyId});
-                productVariantInstance.xmlNodes.forEach((xmlNode) => {
-                    root.importDocument(xmlNode);
-                });
-                partyCreatorInstance.xmlNodes.forEach((xmlNode) => {
-                    root.importDocument(xmlNode);
-                });
-                partyAuthorInstance.xmlNodes.forEach((xmlNode) => {
-                    root.importDocument(xmlNode);
-                });
-                htmlData["title"] = packageTitle;
+
+                this.organisationName = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:companyName")?.[0];
+                this.organisationId = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:domain")?.[0];
+                this.productType = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:ProductType")?.[0];
+                this.serialNumber = this.$store.getters["projects/getCurrentProjectRelationById"]("plus:SerialNumber")?.[0];
+                this.objectTypeURI = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:ObjectTypeURI")?.[0];
+                this.objectInstanceUri = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:ObjectInstanceURI")?.[0];
+
+                delete exportConfig["iirds:relates-to-product-variant"];
+                productReferences = {};
+                if (!!this.serialNumber) {
+                    productReferences["iirds:SerialNumber"] = this.serialNumber;
+                }
+                if (!!this.objectTypeURI) {
+                    productReferences["iirds:ObjectTypeURI"] = this.objectTypeURI;
+                }
+                if (!!this.objectInstanceUri) {
+                    productReferences["iirds:ObjectInstanceURI"] = this.objectInstanceUri;
+                }
+                if (!!this.productType) {
+                    productReferences["iirds:ProductType"] = this.productType;
+                }
+
+                this.createOrganisationElement(root, this.organisationName, this.organisationId);
+                partyManufacturerId = this.createPartyElement(root, "iirds:Manufacturer", this.organisationId);
+                partyCreatorId = this.createPartyElement(root, "iirds:Creator", this.organisationId);
+                partyAuthorId = this.createPartyElement(root, "iirds:Author", this.organisationId);
+                productVariantId = this.createProductVariantElement(root, productReferences, partyManufacturerId);
+
+                pack.ele("iirds:relates-to-product-variant", {"rdf:resource": productVariantId});
+                pack.ele("iirds:relates-to-party", {"rdf:resource": partyCreatorId});
+                htmlData["title"] = this.packageTitle || this.$t("Common.untitledPackage");
+                htmlData["subtitle"] = this.$t("Common.packageContent");
+
             }
+
+
 
             /*
                 Generic Labeling function
@@ -402,22 +401,18 @@ export default {
                 if (!!title) IU.ele("iirds:title", title);
 
                 if (this.formatRestriction === "H") {
-                    htmlTableRow["Title"] = title || "";
+                    htmlTableRow[this.$t("Common.title")] = title || "";
                     for (let [uri, value] of Object.entries(productReferences)) {
-                        const heading = this.$store.getters["properties/getPropertyLabelById"](uri, "en");
+                        const heading = this.$store.getters["properties/getPropertyLabelById"](uri);
                         htmlTableRow[heading] = value;
                     }
-                    htmlTableRow["Information Unit IRI"] = URI;
+                    htmlTableRow[this.$t("Common.informationUnitIri")] = URI;
 
                     const ioUri = rdf.newURN();
                     IO = root.ele("iirds:InformationObject", {"rdf:about": ioUri});
-                    const ioIdentityInstance = this.createIdentityElement(title, null, "iirds:Creator", this.organisation, "/InformationObject");
-                    IO.ele("iirds:has-identity", {"rdf:resource": ioIdentityInstance.identityId});
+                    const ioIdentityId = this.createIdentityElement(root, this.organisationName, null, partyCreatorId);
+                    IO.ele("iirds:has-identity", {"rdf:resource": ioIdentityId});
                     IU.ele("iirds:is-version-of", {"rdf:resource": ioUri});
-                    ioIdentityInstance.xmlNodes.forEach((xmlNode) => {
-                        root.importDocument(xmlNode);
-                    });
-
                 }
 
                 IU.ele("iirds:is-part-of-package", {"rdf:resource": pid});
@@ -430,12 +425,12 @@ export default {
                             IU.ele("iirds:language", language);
                         }
                     });
-                    htmlTableRow["Language"] = languages.join(", ");
+                    htmlTableRow[this.$t("Common.language")] = languages.join(", ");
                 }
 
                 if (this.formatRestriction === "H") {
-                    IU.ele("iirds:relates-to-product-variant", {"rdf:resource": productVariantInstance.productVariantId});
-                    IU.ele("iirds:relates-to-party", {"rdf:resource": partyAuthorInstance.partyId});
+                    IU.ele("iirds:relates-to-product-variant", {"rdf:resource": productVariantId});
+                    IU.ele("iirds:relates-to-party", {"rdf:resource": partyAuthorId});
                 } else {
                     let serialnumbers = this.getMetadataValueByURI(object.uuid, customSNIdentifier);
                     if (serialnumbers !== null && Array.isArray(serialnumbers)) {
@@ -455,7 +450,8 @@ export default {
                         assigned.forEach((value) => {
                             IU.ele(relation, {"rdf:resource": rdf.expand(value, this.$store)});
                             if (relation === "iirdsHov:has-document-category") {
-                                htmlTableRow["Document Category"] = this.$store.getters["properties/getPropertyLabelById"](value, "en");
+                                const documentCategoryLabel = this.$store.getters["properties/getPropertyLabelById"]("iirdsHov:DocumentCategory");
+                                htmlTableRow[documentCategoryLabel] = this.$store.getters["properties/getPropertyLabelById"](value);
                             }
                         });
                     }
@@ -471,7 +467,7 @@ export default {
                         .ele("iirds:Rendition", {"rdf:about": `${URI}/rendition/${encoded}`})
                         .ele("iirds:format", object.source.type).up()
                         .ele("iirds:source", `CONTENT/${filename}`);
-                    htmlTableRow["File"] = `CONTENT/${filename}`;
+                    htmlTableRow[this.$t("Common.file")] = `CONTENT/${filename}`;
                 }
                 htmlTableRows.push(htmlTableRow);
                 htmlData["rows"] = htmlTableRows;
@@ -479,6 +475,7 @@ export default {
             const xml = root.end({pretty: true});
             return {xml, htmlData};
         },
+
         async generateJSONLD(rdfXml) {
             const context = rdfConverter.createJsonLdContext(this.$store);
             try {
@@ -492,82 +489,47 @@ export default {
             }
         },
 
-        createProductVariant(productReferences, productTypes, organisation) {
+        createProductVariantElement(root, productReferences, partyManufacturerId) {
             const productVariantId = rdf.newURN();
-            let productVariantNode = XMLbuilder.begin()
-                .ele("iirds:ProductVariant", {"rdf:about": productVariantId});
+            let productVariantNode = root.ele("iirds:ProductVariant", {"rdf:about": productVariantId});
 
-            const localInstanceNodes = [];
             for (let [identityType, identifier] of Object.entries(productReferences)) {
-                const uriExtension = "/" + identityType.substring(identityType.lastIndexOf(":") + 1);
-                const {
-                    identityId: instanceIdentityId,
-                    xmlNodes: instanceNodes
-                } = this.createIdentityElement(identifier, identityType, "iirds:Manufacturer", organisation, uriExtension);
+                const instanceIdentityId = this.createIdentityElement(root, identifier, identityType, partyManufacturerId);
                 productVariantNode.ele("iirds:has-identity", {"rdf:resource": instanceIdentityId}).up();
-                localInstanceNodes.push(...instanceNodes);
             }
-
-            const localTypeNodes = [];
-            for (let [identityType, identifier] of Object.entries(productTypes)) {
-                const uriExtension = "/" + identityType.substring(identityType.lastIndexOf(":") + 1);
-                const {
-                    identityId: typeIdentityId,
-                    xmlNodes: typeNodes
-                } = this.createIdentityElement(identifier, identityType, "iirds:Manufacturer", organisation, uriExtension);
-                productVariantNode.ele("iirds:has-identity", {"rdf:resource": typeIdentityId}).up();
-                localTypeNodes.push(...typeNodes);
-            }
-
-            let xmlNodes = [...localInstanceNodes, ...localTypeNodes, productVariantNode];
-            return {productVariantId, xmlNodes};
+            return productVariantId;
         },
 
-        createIdentityElement(identifier, identityType, partyRole, organisation, identityExtension) {
+        createIdentityElement(root, identifier, identityType, partyId) {
             const identityId = rdf.newURN();
-            const {
-                identityDomainId,
-                xmlNodes
-            } = this.createIdentityDomainElement(identityType, partyRole, organisation, identityExtension);
-            let identityNode = XMLbuilder.begin()
-                .ele("iirds:Identity", {"rdf:about": identityId})
+            const identityDomainId = this.createIdentityDomainElement(root, identityType, partyId);
+            root.ele("iirds:Identity", {"rdf:about": identityId})
                 .ele("iirds:identifier", identifier).up()
                 .ele("iirds:has-identity-domain", {"rdf:resource": identityDomainId}).up();
-            xmlNodes.push(identityNode);
-            return {identityId, xmlNodes};
+            return identityId;
         },
 
-        createIdentityDomainElement(identityType, partyRole, organisation, identityDomainExtension = "") {
-            const identityDomainId = `${this.identityDomain}${identityDomainExtension}`;
-            const {partyId, xmlNodes} = this.createParty(partyRole, organisation);
-            const identityDomainNode = XMLbuilder.begin()
-                .ele("iirds:IdentityDomain", {"rdf:about": identityDomainId})
-                .ele("iirds:relates-to-party", {"rdf:resource": partyId}).up();
+        createIdentityDomainElement(root, identityType, partyId) {
+            const identityDomainId = rdf.newURN();
+            const identityDomainNode = root.ele("iirds:IdentityDomain", {"rdf:about": identityDomainId});
+            identityDomainNode.ele("iirds:relates-to-party", {"rdf:resource": partyId}).up();
             if (!!identityType) {
                 identityDomainNode.ele("iirds:has-identity-type", {"rdf:resource": rdf.expand(identityType, this.$store)}).up();
             }
-            xmlNodes.push(identityDomainNode);
-            return {identityDomainId, xmlNodes};
+            return identityDomainId;
         },
 
-        createParty(partyRole, organisation) {
+        createPartyElement(root, partyRole, organisationId) {
             const partyId = rdf.newURN();
-            const {organisationId, xmlNodes} = this.createOrganisation(organisation);
-            const partyNode = XMLbuilder.begin()
-                .ele("iirds:Party", {"rdf:about": partyId})
+            root.ele("iirds:Party", {"rdf:about": partyId})
                 .ele("iirds:has-party-role", {"rdf:resource": rdf.expand(partyRole, this.$store)}).up()
                 .ele("iirds:relates-to-vcard", {"rdf:resource": organisationId}).up();
-            xmlNodes.push(partyNode);
-            return {partyId, xmlNodes};
+            return partyId;
         },
 
-        createOrganisation(organisation) {
-            const organisationId = rdf.newURN();
-            const organisationNode = XMLbuilder.begin()
-                .ele("vcard:organization", {"rdf:about": organisationId})
-                .ele("vcard:organization-name", organisation).up();
-            const xmlNodes = [organisationNode];
-            return {organisationId, xmlNodes};
+        createOrganisationElement(root, organisationName, organisationId) {
+            root.ele("vcard:organization", {"rdf:about": organisationId})
+                .ele("vcard:organization-name", organisationName).up();
         },
 
     }
