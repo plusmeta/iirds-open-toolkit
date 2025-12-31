@@ -2496,8 +2496,8 @@
     "rels": {},
     "attrs": {
       "plus:tooltipInfo": {
-        "de": "Eine weltweit eindeutige Nummer, die Produkte desselben Typs identifiziert, beispielsweise gemäß den Bestimmungen der Norm IEC 61406-2.",
-        "en": "A globally biunique number that identifies products of the same type, for example, according to the stipulations made in IEC 61406-2."
+        "de": "Eine weltweit eindeutige Bezeichung, die Produkte desselben Typs identifiziert, beispielsweise gemäß den Bestimmungen der Norm IEC 61406-2.",
+        "en": "A globally biunique designation that identifies products of the same type, for example, according to the stipulations made in IEC 61406-2."
       }
     },
     "label": {
