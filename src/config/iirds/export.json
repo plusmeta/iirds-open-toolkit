@@ -7,6 +7,7 @@
     "iirds:has-topic-type": "iirds:TopicType",
     "iirds:has-subject": "iirds:Functionality",
     "iirds:has-document-type": "iirds:DocumentType",
+    "iirdsHov:has-document-category": "iirdsHov:DocumentCategory",
     "iirds:relates-to-product-lifecycle-phase": "iirds:Use",
     "iirds:relates-to-product-feature": "iirds:ProductFunction",
     "iirds:relates-to-action": "iirds:Action"

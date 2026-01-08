@@ -118,9 +118,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-
-import util from "@/util";
+import {mapActions, mapGetters} from "vuex";
 import match from "@/util/match";
 
 import PreviewText from "@/shared/block/PreviewText";
@@ -184,7 +182,12 @@ export default {
                 .sort((a,b) => (a.required) ? -1 : 1); // Pflichtmetadaten vorne sortieren
         },
         getObjectTypes() {
-            return ["plus:Document", "plus:Component", "plus:Fragment"].map((type) => {
+            let objectTypes = ["plus:Document", "plus:Component", "plus:Fragment"];
+            const iirdsVariant = this.$store.getters["projects/getCurrentProjectRelationById"]("iirds:formatRestriction")[0];
+            if (iirdsVariant === "H") {
+                objectTypes = ["plus:Document"];
+            }
+            return objectTypes.map((type) => {
                 return {
                     text: this.getPropertyLabelById(type),
                     value: type

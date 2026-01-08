@@ -15,6 +15,7 @@
 
 - Zip: [JSZip](https://stuk.github.io/jszip/)
 - RDF/XML: [xmlbuilder-js](https://github.com/oozcitak/xmlbuilder-js)
+- JSON-LD: [jsonld.js](https://github.com/digitalbazaar/jsonld.js) - RDF/XML zu JSON-LD Konvertierung
 
 ### Backend
 

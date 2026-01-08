@@ -1,0 +1,146 @@
+[
+  {
+    "identifier": "iirdsHov:DocumentCategory",
+    "datatype": "plus:Class",
+    "subClassOf": "iirds:InformationType",
+    "rels": {
+      "plus:has-roles": [
+        "plus:AssignableMetadata"
+      ],
+      "plus:has-relations": [
+        "iirdsHov:has-document-category"
+      ],
+      "plus:has-icons": [
+        "mdi:file-document"
+      ],
+      "plus:restricted-to-object-type": [
+        "plus:Document"
+      ]
+    },
+    "label": {
+      "de": "Dokumentkategorie",
+      "en": "Document cateogry"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:ContractDocuments",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Vertragsunterlagen",
+      "en": "Contract documents"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:DrawingsPlans",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Zeichnungen, Pläne",
+      "en": "Drawings, Plans"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:TechnicalSpecification",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Technische Spezifikation",
+      "en": "Technical specification"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:Certificates",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Zeugnisse, Zertifikate, Bescheinigungen",
+      "en": "Certificates"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:Components",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Bauteile",
+      "en": "Components"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:AssemblyDisassembly",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Montage, Demontage",
+      "en": "Assembly, Disassembly"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:GeneralSafety",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Allgemeine Sicherheit",
+      "en": "General Safety"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:Operation",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Bedienung",
+      "en": "Operation"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:Repair",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Instandsetzung",
+      "en": "Repair"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:InspectionMaintenanceControl",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Inspektion, Wartung, Prüfung",
+      "en": "Inspection, Maintenance, Control"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:SpareParts",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Ersatzteile",
+      "en": "Spare parts"
+    },
+    "indicators": []
+  },
+  {
+    "identifier": "iirdsHov:Identification",
+    "datatype": "plus:Instance",
+    "subClassOf": "iirdsHov:DocumentCategory",
+    "label": {
+      "de": "Identifikation",
+      "en": "Identification"
+    },
+    "indicators": []
+  }
+]

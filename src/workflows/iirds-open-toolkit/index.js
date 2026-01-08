@@ -34,6 +34,42 @@ export default {
         component: () => import(/* webpackChunkName: "StepWelcome.step" */ "@/toolkit/step/OtkStepWelcome")
     },
     {
+        id: "variant",
+        editable: false,
+        helpkey: "workflow.variant",
+        name: {
+            de: "iiRDS-Paket-Details eingeben",
+            en: "Input iiRDS package details"
+        },
+        rules: [
+            (store) => {
+                const variant = store.getters["projects/getCurrentProjectRelationById"]("iirds:formatRestriction");
+                const iirdsVariant = variant.length > 0 ? variant[0] : "iirds";
+
+                if (iirdsVariant === "H") {
+                    const companyName = store.getters["projects/getCurrentProjectRelationById"]("plus:companyName");
+                    const domain = store.getters["projects/getCurrentProjectRelationById"]("plus:domain");
+                    const productType = store.getters["projects/getCurrentProjectRelationById"]("iirds:ProductType");
+                    const objectTypeURI = store.getters["projects/getCurrentProjectRelationById"]("iirds:ObjectTypeURI");
+                    const objectInstanceUri = store.getters["projects/getCurrentProjectRelationById"]("iirds:ObjectInstanceURI");
+                    const serialNumber = store.getters["projects/getCurrentProjectRelationById"]("plus:serialNumber");
+
+                    return companyName?.[0] &&
+                        domain?.[0] &&
+                        productType?.[0] &&
+                        (objectTypeURI?.[0] || objectInstanceUri?.[0] || serialNumber?.[0]);
+                }
+
+                return true;
+            }
+        ],
+        ruleExpl: {
+            de: "Für iiRDS/H müssen Organisation, Domain, Produkttyp und Produktreferenz ausgefüllt sein",
+            en: "For iiRDS/H, Organisation, Domain, Product Type and Product Reference must be filled"
+        },
+        component: () => import(/* webpackChunkName: "StepChooseVariant.step" */ "@/toolkit/step/OtkStepChooseVariant")
+    },
+    {
         id: "add-content",
         editable: false,
         helpkey: "workflow.addObjects",

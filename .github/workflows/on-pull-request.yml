@@ -14,11 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: "Install (node_modules))"
-        uses: cypress-io/github-action@v2
-        with:
-          runTests: false
-          cache-key: node-on-${{ runner.os }}-hash-${{ hashFiles('**/package-lock.json') }}
+      - name: "Install (node_modules)"
+        run: npm ci
+
+      - name: Install Cypress 12.x compatible with Node 14
+        run: npx cypress@12 install --force
 
       - name: "License check"
         id: copyleft
@@ -54,12 +54,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: "Install all (node_modules) and build (dev)"
-        uses: cypress-io/github-action@v2
-        with:
-          runTests: false
-          build: npm run build
-          cache-key: node-on-${{ runner.os }}-hash-${{ hashFiles('**/package-lock.json') }}
+      - name: "Install all (node_modules)"
+        run: npm ci
+
+      - name: Install Cypress 12.x compatible with Node 14
+        run: npx cypress@12 install --force
+
+      - name: "Build (dev)"
+        run: npm run build
 
       - name: Cache build folder
         uses: actions/cache@v4
