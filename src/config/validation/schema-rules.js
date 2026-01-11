@@ -144,8 +144,8 @@ export default [
     {
         id: "M2.8",
         path: "Document, Topic, Fragment, Package",
-        assert: els => isZeroOrOne(els, "is-replacement-of "),
-        getInvalid: (els, doc) => getMoreThanOne(els, doc, "is-replacement-of "),
+        assert: els => isZeroOrOne(els, "is-replacement-of"),
+        getInvalid: (els, doc) => getMoreThanOne(els, doc, "is-replacement-of"),
         prio: "MUST NOT",
         category: "cardinality 0..1",
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#rdfclasses_core_InformationUnit:~:text=0..1%C2%A0%20iirds%3Ais%2Dreplacement%2Dof%20property%20%2D%20iirds%3AInformationUnit",
@@ -162,7 +162,7 @@ export default [
     {
         id: "M2.9",
         path: "Document, Topic, Fragment, Package",
-        assert: els => isZeroOrOne(els, "is-version-of "),
+        assert: els => isZeroOrOne(els, "is-version-of"),
         getInvalid: (els, doc) => getMoreThanOne(els, doc, "is-version-of "),
         prio: "MUST NOT",
         category: "cardinality 0..1",
@@ -190,7 +190,7 @@ export default [
             "de": "Jedes iiRDS-Paket MUSS genau eine entsprechende iirds:Package-Instanz in den Metadaten haben.",
             "en": "Each iiRDS package MUST have exactly one corresponding iirds:Package instance in the metadata."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M3.1_false.rdf"]
         }
@@ -208,7 +208,7 @@ export default [
             "de": "iiRDS:Package MUSS die Eigenschaft iirds:iiRDSVersion verwenden",
             "en": "iiRDS:Package MUST use property iirds:iiRDSVersion"
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M4_false.rdf"]
         }
@@ -226,7 +226,7 @@ export default [
             "de": "Es wird EMPFOHLEN absolute IRIs in rdf:about zu verwenden.",
             "en": "It is RECOMMENDED to use absolute IRIs in rdf:about."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M6_false.rdf"]
         }
@@ -278,7 +278,7 @@ export default [
             "de": "Ein Informationsobjekt MUSS eine absoluten IRI haben.",
             "en": "An information object MUST have an absolute IRI."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 6 - An Information object with two language variants.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 6 - An Information object with two language variants-M8.1_false.rdf"]
         }
@@ -297,7 +297,7 @@ export default [
             "de": "iirds:Package-Elemente, die das umschließende iiRDS-Paket selbst darstellen, DÜRFEN NICHT Gegenstand einer iirds:has-rendition-Beziehung sein.",
             "en": "iirds:Package elements representing the enclosing iiRDS package itself MUST NOT be subjects of any iirds:has-rendition relation."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M9_false.rdf"]
         }
@@ -315,7 +315,7 @@ export default [
             "de": "Die URL MUSS relativ zum Stammordner des iiRDS-Pakets sein",
             "en": "The URL MUST be relative to the root folder of the iiRDS package"
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M10_false.rdf"]
         }
@@ -395,7 +395,7 @@ export default [
             "de": "Um Teile einer Datei auszuwählen, MUSS ein iirds:Selector einen rdf:value und dcterms:conformsTo haben.",
             "en": "To select parts of a file, an iirds:Selector MUST have an rdf:value and dcterms:conformsTo."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_has-selector.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample_has-selector-M14.1_false.rdf"]
         }
@@ -467,7 +467,7 @@ export default [
             "de": "Instanzen der Klasse iirds:Document MÜSSEN eine oder mehrere Beziehungen zu einem der standardisierten iirds:DocumentTypes haben, die in iirds:InformationType > iirds:DocumentType definiert sind.",
             "en": "Instances of the iirds:Document class MUST have one or more relations to one of the standardized iirds:DocumentTypes defined in iirds:InformationType > iirds:DocumentType."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M19.1_false.rdf"]
         }
@@ -554,7 +554,7 @@ export default [
             "de": "Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.",
             "en": "An identity MUST point to exactly one domain by the iirds:has-identity-domain property."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M30.1_false.rdf"]
         }
@@ -562,8 +562,8 @@ export default [
     {
         id: "M19.2",
         path: "Identity",
-        assert: els => els.every(el => el.querySelector("identifier").textContent !== ""),
-        getInvalid: els => els.filter(el => el.querySelector("identifier").textContent === ""),
+        assert: els => els.every(el => Array.from(el.children).filter(child => child.localName === "identifier")[0]?.textContent !== ""),
+        getInvalid: els => els.filter(el => Array.from(el.children).filter(child => child.localName === "identifier")[0]?.textContent === ""),
         prio: "MUST",
         category: "must not be empty",
         spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#information-units:~:text=An%20iirds%3AIdentity%20instance%20consists,of%20the%20iirdsIdentityDomain%20class.",
@@ -572,7 +572,7 @@ export default [
             "de": "Eine iirds:Identity-Instanz besteht aus zwei Teilen: dem Wert und der Domäne.  Der Wert MUSS als nicht leerer String in der Eigenschaft iirds:identifier angegeben werden.",
             "en": "An iirds:Identity instance consists of two parts: the value and the domain. The value MUST be provided as a non-empty string in the iirds:identifier property. "
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M30.1_false.rdf"]
         }
@@ -590,7 +590,7 @@ export default [
             "de": "Eine Identität MUSS durch die Eigenschaft iirds:has-identity-domain auf genau eine Domäne verweisen.",
             "en": "An identity MUST point to exactly one domain by the iirds:has-identity-domain property."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M30.2_false.rdf"]
         }
@@ -622,9 +622,9 @@ export default [
             "de": "Instanzen der Klasse iirds:IdentityDomain MÜSSEN einen absoluten IRI haben.",
             "en": "Instances of class iirds:IdentityDomain MUST have an absolute IRI."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M31.1_false"]
+            "false": ["./tests/files/util/iirds-validation/Example 29 - Identities of an information object and a topic-M30.1_false.rdf"]
         }
     },
     {
@@ -640,7 +640,7 @@ export default [
             "de": "Ein iirds:ContentLifecyleStatus MUSS einen iirds:ContentLifecyleStatusValue haben, der von der Eigenschaft iirds:has-content-lifecycle-status-value zugewiesen wird.",
             "en": "An iirds:ContentLifecyleStatus MUST have an iirds:ContentLifecyleStatusValue which is assigned by the iirds:has-content-lifecycle-status-value property."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.1_false.rdf"]
         }
@@ -658,7 +658,7 @@ export default [
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:dateOfEffect haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfEffect."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.2_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.2_false.rdf"]
         }
@@ -676,7 +676,7 @@ export default [
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:dateOfExpiry haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfExpiry."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.3_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.3_false.rdf"]
         }
@@ -694,7 +694,7 @@ export default [
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:purpose haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:purpose."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.4_false.rdf"]
         }
@@ -716,7 +716,7 @@ export default [
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:dateOfStatus haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:dateOfStatus."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.5_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.5_false.rdf"]
         }
@@ -734,7 +734,7 @@ export default [
             "de": "iirds:ContentLifeCycleStatus DARF NICHT mehr als eine Eigenschaft iirds:relates-to-party haben.",
             "en": "iirds:ContentLifeCycleStatus MUST NOT have more than one property iirds:relates-to-party."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.6_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 32 - Topic with content lifecycle metadata-M32.6_false.rdf"]
         }
@@ -752,9 +752,9 @@ export default [
             "de": "Eine iirds:Party MUSS eine zugehörige iirds:PartyRole haben, die von der Eigenschaft iirds:has-party-role zugewiesen wird, wie z. B. Autor, Lieferant oder Hersteller.",
             "en": "An iirds:Party MUST have a related iirds:PartyRole that is assigned by the property iirds:has-party-role, such as author, supplier or manufacturer."
         },
-        testfiles: {
-            "true": ["./tests/files/util/iirds_validation/Example 34 - Component with manufacturer.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": [""]
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer-M33_false.rdf"]
         }
     },
     {
@@ -770,9 +770,9 @@ export default [
             "de": "Eine iirds:Party MUSS eine zugehörige iirds:PartyRole haben, die von der Eigenschaft iirds:has-party-role zugewiesen wird, wie z. B. Autor, Lieferant oder Hersteller.",
             "en": "An iirds:Party MUST have a related iirds:PartyRole that is assigned by the property iirds:has-party-role, such as author, supplier or manufacturer."
         },
-        testfiles: {
-            "true": ["./tests/files/util/iirds_validation/Example 34 - Component with manufacturer.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": [""]
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer-M33_false.rdf"]
         }
     },
     {
@@ -788,9 +788,9 @@ export default [
             "de": "Zusätzlich zur Rolle MUSS eine iirds:Party auch eine zugehörige Beschreibung von sich selbst als konformes vcard:kind-Objekt haben, die über iirds:relates-to-vcard zugewiesen wird.",
             "en": "In addition to the role, an iirds:Party MUST also have an associated description of itself as compliant vcard:kind object which is assigned via iirds:relates-to-vcard."
         },
-        testfiles: {
-            "true": ["./tests/files/util/iirds_validation/Example 34 - Component with manufacturer.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
-            "false": [""]
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer-M33_false.rdf"]
         }
     },
     {
@@ -806,7 +806,7 @@ export default [
             "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-next-sibling.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-next-sibling."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.1_false.rdf"]
         }
@@ -824,7 +824,7 @@ export default [
             "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-directory-structure-type.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-directory-structure-type."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.2_false.rdf"]
         }
@@ -842,7 +842,7 @@ export default [
             "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:has-first-child Eigenschaft.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:has-first-child property."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.3_false.rdf"]
         }
@@ -860,7 +860,7 @@ export default [
             "de": "iirds:DirectoryNode DARF NICHT mehr als eine Eigenschaft haben iirds:relates-to-information-unit.",
             "en": "iirds:DirectoryNode MUST NOT have more than one property iirds:relates-to-information-unit."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.4_false.rdf"]
         }
@@ -878,7 +878,7 @@ export default [
             "de": "Der Wurzelknoten einer Verzeichnisstruktur MUSS eine Eigenschaft haben: iirds:has-directory-structure-type.",
             "en": "The root node of a directory structure MUST have one property iirds:has-directory-structure-type."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 38 - Table of contents.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 38 - Table of contents-M35.4_false.rdf"]
         }
@@ -901,7 +901,7 @@ export default [
             "de": "Es MUSS mindestens ein Wurzelknoten vorhanden sein, der die Elemente iirds:has-directory-structure-type, iirds:has-first-child und iirds:has-next-sibling hat und nicht selbst als iirds:next-sibling oder iirds:first-child referenziert wird.",
             "en": "There MUST be at least one root node that has the elements iirds:has-directory-structure-type, iirds:has-first-child and iirds:has-next-sibling and is not itself referenced as iirds:next-sibling or iirds:first-child."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/M24-6-2_true.rdf"],
             "false": ["./tests/files/util/iirds-validation/M24-6-1_false.rdf", "./tests/files/util/iirds-validation/M24-6-2_false.rdf"]
         }
@@ -919,7 +919,7 @@ export default [
             "de": "Um geschlossene Listen zu modellieren, MUSS der letzte Knoten in einer Listenebene die Eigenschaft iirds:has-next-sibling haben, die sich auf eine Instanz der Klasse iirds:nil bezieht.",
             "en": "To model closed lists, the last node in a list level MUST have the property iirds:has-next-sibling relating to an instance of the class iirds:nil."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds_validation/Example 38 - Table of contents.rdf","./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds_validation/Example 38 - Table of contents-M36_false.rdf"]
         }
@@ -936,7 +936,7 @@ export default [
             "de": "Um Hierarchieebenen in der Navigationsstruktur zu modellieren, MUSS eine iirds:DirectoryNode-Instanz eine iirds:DirectoryNode-Instanz auf der nächstniedrigeren Ebene durch die Eigenschaft iirds:has-first-child referenzieren.",
             "en": "To model hierarchy levels in the navigation structure, an iirds:DirectoryNode instance MUST reference an iirds:DirectoryNode instance on the next lower level by the property iirds:has-first-child."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds_validation/Example 38 - Table of contents.rdf","./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds_validation/Example 38 - Table of contents-M37_false.rdf"]
         }
@@ -953,7 +953,7 @@ export default [
             "de": "Der Verzeichnisknoten auf der nächstniedrigeren Ebene MUSS das erste Element einer anderen verknüpften Liste sein.",
             "en": "The directory node on the next lower level MUST be the first item of another linked list."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds_validation/Example 38 - Table of contents.rdf","./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -970,9 +970,9 @@ export default [
             "de": "Die Datei metadata.rdf DARF NICHT das iiRDS-Schema oder die iiRDS-Domänenerweiterungen enthalten.",
             "en": "The file metadata.rdf MUST NOT contain the iiRDS schema or iiRDS domain extensions."
         },
-        testfiles: {
-            "true": [""],
-            "false": [""]
+        testFiles: {
+            "true": [],
+            "false": []
         }
     },
     {
@@ -988,7 +988,7 @@ export default [
             "de": "iirds:Identity MUSS die Eigenschaft iirds:identifier haben",
             "en": "iirds:Identity MUST have property iirds:identifier"
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant-M46_false.rdf"]
         }
@@ -1006,7 +1006,7 @@ export default [
             "de": "iirds:Identity MUSS die Eigenschaft iirds:IdentityDomain haben",
             "en": "iirds:Identity MUST have property iirds:IdentityDomain"
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 26 - Identity type of product variant-M47_false.rdf"]
         }
@@ -1763,7 +1763,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1781,7 +1781,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Sammlungsthemen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intented to be used directly. Use the subclasses instead. For collection subjects not covered by the iiRDS standard subclasses, define custom subclasses."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1799,7 +1799,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Informationsthemen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead. For information subjects not covered by the iiRDS standard subclasses, define custom subclasses."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1817,7 +1817,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1835,7 +1835,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1853,7 +1853,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1871,7 +1871,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1889,7 +1889,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1907,7 +1907,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intented to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1925,7 +1925,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.",
             "en": "Not intented to be used directly."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1943,7 +1943,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1961,7 +1961,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1979,7 +1979,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -1997,7 +1997,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
         }
@@ -2015,7 +2015,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.  Definieren Sie für Lebenszyklusphasen, die nicht von den iiRDS-Standardunterklassen abgedeckt werden, benutzerdefinierte Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
             //to do: Beispiel in Spec suchen / erstellen (in Spec kein gutes Beispiel vorhanden)
@@ -2034,7 +2034,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": [""]
             //to do: Beispiel in Spec suchen / erstellen (in Spec kein gutes Beispiel vorhanden)
@@ -2053,7 +2053,7 @@ export default [
             "de": "Nicht zur direkten Verwendung bestimmt.  Verwenden Sie stattdessen die Unterklassen.",
             "en": "Not intended to be used directly. Use the subclasses instead."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer-M66_false.rdf"]
         }
@@ -2071,7 +2071,7 @@ export default [
             "de": "iirds:Component DARF NICHT mehr als 1 Eigenschaft iirds:relates-to-party haben",
             "en": "iirds:Component MUST NOT have more than 1 property iirds:relates-to-party"
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/metadata_iirds_sample_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/Example 34 - Component with manufacturer-M67_false.rdf"]
         }
@@ -2089,7 +2089,7 @@ export default [
             "de": "Eine externe Klassifikation MUSS über die Eigenschaft iirds:has-classification-domain auf genau eine Klassifikationsdomäne verweisen.",
             "en": "An external classification MUST point to exactly one classification domain by the iirds:has-classification-domain property."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/M96_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/M96-1_false.rdf"]
         }
@@ -2107,7 +2107,7 @@ export default [
             "de": "Eine externe Klassifikation MUSS genau einen Klassifikationsidentifikator haben.",
             "en": "An external classification MUST have exactly one classification identifier."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/M96_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/M96-2_false.rdf"]
         }
@@ -2125,7 +2125,7 @@ export default [
             "de": "Der Klassifizierungsbezeichner MUSS als nicht leere Zeichenfolge in der Eigenschaft iirds:classificationIdentifier angegeben werden.",
             "en": "The classification identifier MUST be provided as a non-empty string in the iirds:classificationIdentifier property."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/M96_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/M96-3_false.rdf"]
         }
@@ -2143,7 +2143,7 @@ export default [
             "de": "Instanzen der Klassen iirds:ProductVariant, iirds:ProductFeature, iirds:Component und iirds:InformationUnit KÖNNEN iirds:has-external-classification-Beziehungen zu iirds:ExternalClassification-Instanzen haben.",
             "en": "Instances of the classes iirds:ProductVariant, iirds:ProductFeature, iirds:Component and iirds:InformationUnit MAY have iirds:has-external-classification relations to iirds:ExternalClassification instances."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/M96_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/M96-4_false.rdf"]
         }
@@ -2179,7 +2179,7 @@ export default [
             "de": "Instanzen der Klasse iirds:ClassificationDomain MÜSSEN einen absoluten IRI haben.",
             "en": "Instances of class iirds:ClassificationDomain MUST have an absolute IRI."
         },
-        testfiles: {
+        testFiles: {
             "true": ["./tests/files/util/iirds-validation/M97_true.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
             "false": ["./tests/files/util/iirds-validation/M97-2_false.rdf"]
         }
