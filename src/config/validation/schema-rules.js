@@ -11,8 +11,14 @@ import {
     isExactlyOne,
     isOneOrMore,
     isZeroOrOne,
-    mayHasExternalClassification
+    mayHasExternalClassification,
+    hasValidInstanceIdentity,
+    hasValidInstanceIdentityManufacturer,
+    hasValidProductTypeIdentity,
+    hasValidProductTypeIdentityManufacturer, hasValidPartyRole, hasValidIdentity,
+    getZeroOrMoreThanOne
 } from "@/util/rules";
+import {IdConst} from "@/util/const";
 
 export default [
     {
@@ -472,7 +478,418 @@ export default [
             "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M19.1_false.rdf"]
         }
     },
+    {
+        id: "M15.2",
+        path: "Document",
+        assert: (els, doc) => isExactlyOne(els, doc, "has-document-category"),
+        getInvalid: (els, doc) => getZeroOrMoreThanOne(els, doc, "has-document-category"),
+        prio: "MUST",
+        category: "cardinality 1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H sind die folgenden Metadaten für jedes iirds:Document obligatorisch: eine iirdsHov:has-document-category.",
+            "en": "In iiRDS/H the following metadata is mandatory for each iirds:Document: one iirdsHov:has-document-category."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M15_false.rdf"]
+        }
+    },
+    {
+        id: "M15.3",
+        path: "Document",
+        assert: (els, doc) => isOneOrMore(els, doc, "language"),
+        getInvalid: (els, doc) => getMissing(els, doc, "language"),
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H sind die folgenden Metadaten für jedes iirds:Document obligatorisch: iirds:language.",
+            "en": "In iiRDS/H the following metadata is mandatory for each iirds:Document: iirds:language."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M15_false.rdf"]
+        }
+    },
+    {
+        id: "M15.4",
+        path: "Document",
+        assert: (els, doc) => isOneOrMore(els, doc, "title"),
+        getInvalid: (els, doc) => getMissing(els, doc, "title"),
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H sind die folgenden Metadaten für jedes iirds:Document obligatorisch: iirds:title.",
+            "en": "In iiRDS/H the following metadata is mandatory for each iirds:Document: iirds:title."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M15_false.rdf"]
+        }
+    },
+    {
+        id: "M15.5",
+        path: "Document",
+        assert: (els, doc) => isExactlyOne(els, doc, "is-version-of"),
+        getInvalid: (els, doc) => getMoreThanOne(els, doc, "is-version-of"),
+        prio: "MUST",
+        category: "cardinality 1",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H sind die folgenden Metadaten für jedes iirds:Document obligatorisch: ein iirds:is-version-of verknüpft mit einem iirds:InformationObject",
+            "en": "In iiRDS/H the following metadata is mandatory for each iirds:Document: one iirds:is-version-of relating to an iirds:InformationObject"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M15_false.rdf"]
+        }
+    },
+    {
+        id: "M15.6",
+        path: "Document",
+        assert: (els, doc) => isOneOrMore(els, doc, "has-rendition"),
+        getInvalid: (els, doc) => getMissing(els, doc, "has-rendition"),
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H sind die folgenden Metadaten für jedes iirds:Document obligatorisch: iirds:has-rendition",
+            "en": "In iiRDS/H the following metadata is mandatory for each iirds:Document: iirds:has-rendition"
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/min_requirements.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds_sample-M15_false.rdf"]
+        }
+    },
+    {
+        id: "M15.7a",
+        path: "Document Package",
+        assert: (els, doc) => {
+            return els.every((el) => {
+                const relatesProductVariantEls = Array.from(el.children).filter(child => child.localName === "relates-to-product-variant");
+                if (relatesProductVariantEls.length === 0) return false;
+                return relatesProductVariantEls.some((pvEl) => {
+                    const productVariantUri = pvEl.getAttribute("rdf:resource");
+                    return productVariantUri && hasValidInstanceIdentity(productVariantUri, doc);
+                });
+            });
+        },
+        getInvalid: (els, doc) => {
+            return els.filter((el) => {
+                const relatesProductVariantEls = Array.from(el.children).filter(child => child.localName === "relates-to-product-variant");
+                if (relatesProductVariantEls.length === 0) return true;
 
+                return !relatesProductVariantEls.some((pvEl) => {
+                    const productVariantUri = pvEl.getAttribute("rdf:resource");
+                    return productVariantUri && hasValidInstanceIdentity(productVariantUri, doc);
+                });
+            });
+        },
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H muss jedes iirds:Document und iirds:Package mindestens ein iirds:relates-to-product-variant haben, das sich auf ein iirds:ProductVariant bezieht. Dieses iirds:ProductVariant MUSS sich auf eine iirds:Identity mit einer iirds:IdentityDomain beziehen, die einen iirds:has-identity-type von entweder iirds:ObjectInstanceURI, iirds:ObjectTypeURI oder iirds:SerialNumber hat.",
+            "en": "In iiRDS/H each iirds:Document must have at least one iirds:relates-to-product-variant relating to an iirds:ProductVariant. This iirds:ProductVariant MUST relate to an iirds:Identity with an iirds:IdentityDomain that has an iirds:has-identity-type of either iirds:ObjectInstanceURI, iirds:ObjectTypeURI or iirds:SerialNumber."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7a_false.rdf"]
+        }
+    },
+    {
+        id: "M15.7b",
+        path: "Document Package",
+        assert: (els, doc) => {
+            return els.every((el) => {
+                const relatesProductVariantEls = Array.from(el.querySelectorAll(":scope > relates-to-product-variant"));
+                if (relatesProductVariantEls.length === 0) return false;
+
+                return relatesProductVariantEls.some((pvEl) => {
+                    const productVariantUri = pvEl.getAttribute("rdf:resource");
+                    return productVariantUri && hasValidInstanceIdentityManufacturer(productVariantUri, doc);
+                });
+            });
+        },
+        getInvalid: (els, doc) => {
+            return els.filter((el) => {
+                const relatesProductVariantEls = Array.from(el.querySelectorAll(":scope > relates-to-product-variant"));
+                if (relatesProductVariantEls.length === 0) return true;
+
+                return !relatesProductVariantEls.some((pvEl) => {
+                    const productVariantUri = pvEl.getAttribute("rdf:resource");
+                    return productVariantUri && hasValidInstanceIdentityManufacturer(productVariantUri, doc);
+                });
+            });
+        },
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "Die iirds:IdentityDomain der Instance-Identity (ObjectInstanceURI/ObjectTypeURI/SerialNumber) MUSS sich auf eine iirds:Party mit iirds:has-party-role iirds:Manufacturer beziehen. Diese Party MUSS mit iirds:relates-to-vcard auf eine vcard:Organization verweisen, die eine vcard:organization-name angibt.",
+            "en": "The iirds:IdentityDomain of the Instance Identity (ObjectInstanceURI/ObjectTypeURI/SerialNumber) MUST relate to an iirds:Party with iirds:has-party-role iirds:Manufacturer. This Party MUST relate via iirds:relates-to-vcard to a vcard:Organization which states vcard:organization-name."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7b_false.rdf"]
+        }
+    },
+    {
+        id: "M15.7c",
+        path: "Document Package",
+        assert: (els, doc) => {
+            return els.every((el) => {
+                const relatesProductVariantEls = Array.from(el.querySelectorAll(":scope > relates-to-product-variant"));
+                if (relatesProductVariantEls.length === 0) return false;
+
+                return relatesProductVariantEls.some((pvEl) => {
+                    const productVariantUri = pvEl.getAttribute("rdf:resource");
+                    return productVariantUri && hasValidProductTypeIdentity(productVariantUri, doc);
+                });
+            });
+        },
+        getInvalid: (els, doc) => {
+            return els.filter((el) => {
+                const relatesProductVariantEls = Array.from(el.querySelectorAll(":scope > relates-to-product-variant"));
+                if (relatesProductVariantEls.length === 0) return true;
+
+                return !relatesProductVariantEls.some((pvEl) => {
+                    const productVariantUri = pvEl.getAttribute("rdf:resource");
+                    return productVariantUri && hasValidProductTypeIdentity(productVariantUri, doc);
+                });
+            });
+        },
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "Das iirds:ProductVariant MUSS sich auf eine weitere iirds:Identity mit einer iirds:IdentityDomain beziehen, die einen iirds:has-identity-type von iirds:ProductType hat.",
+            "en": "The iirds:ProductVariant MUST relate to another iirds:Identity with an iirds:IdentityDomain that has an iirds:has-identity-type of iirds:ProductType."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7c_false.rdf"]
+        }
+    },
+    {
+        id: "M15.7d",
+        path: "Document Package",
+        assert: (els, doc) => {
+            return els.every((el) => {
+                const relatesProductVariantEls = Array.from(el.querySelectorAll(":scope > relates-to-product-variant"));
+                if (relatesProductVariantEls.length === 0) return false;
+
+                return relatesProductVariantEls.some((pvEl) => {
+                    const productVariantUri = pvEl.getAttribute("rdf:resource");
+                    return productVariantUri && hasValidProductTypeIdentityManufacturer(productVariantUri, doc);
+                });
+            });
+        },
+        getInvalid: (els, doc) => {
+            return els.filter((el) => {
+                const relatesProductVariantEls = Array.from(el.querySelectorAll(":scope > relates-to-product-variant"));
+                if (relatesProductVariantEls.length === 0) return true;
+
+                return !relatesProductVariantEls.some((pvEl) => {
+                    const productVariantUri = pvEl.getAttribute("rdf:resource");
+                    return productVariantUri && hasValidProductTypeIdentityManufacturer(productVariantUri, doc);
+                });
+            });
+        },
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "Die iirds:IdentityDomain der ProductType-Identity MUSS sich auf eine iirds:Party mit iirds:has-party-role iirds:Manufacturer beziehen. Diese Party MUSS mit iirds:relates-to-vcard auf eine vcard:Organization verweisen, die eine vcard:organization-name angibt.",
+            "en": "The iirds:IdentityDomain of the ProductType Identity MUST relate to an iirds:Party with iirds:has-party-role iirds:Manufacturer. This Party MUST relate via iirds:relates-to-vcard to a vcard:Organization which states vcard:organization-name."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7d_false.rdf"]
+        }
+    },
+    {
+        id: "M15.8",
+        path: "Document",
+        assert: (els, doc) => {
+            return els.every((el) => {
+                const relatesPartyEls = Array.from(el.querySelectorAll(":scope > relates-to-party"));
+                if (relatesPartyEls.length === 0) return false;
+
+                return relatesPartyEls.some((pEl) => {
+                    const partyUri = pEl.getAttribute("rdf:resource");
+                    return partyUri && hasValidPartyRole(partyUri, doc, IdConst.IIRDS_PARTYROLE_AUTHOR);
+                });
+            });
+        },
+        getInvalid: (els, doc) => {
+            return els.filter((el) => {
+                const relatesPartyEls = Array.from(el.querySelectorAll(":scope > relates-to-party"));
+                if (relatesPartyEls.length === 0) return true;
+
+                return !relatesPartyEls.some((pEl) => {
+                    const partyUri = pEl.getAttribute("rdf:resource");
+                    return partyUri && hasValidPartyRole(partyUri, doc, IdConst.IIRDS_PARTYROLE_AUTHOR);
+                });
+            });
+        },
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H muss jedes iirds:Document mindestens ein iirds:relates-to-Party in Bezug auf eine iirds:Party mit iirds:has-party-role iirds:Autor und iirds:relates-to-vcard in Bezug auf eine vcard:Organization enthalten, die vcard:organization-name angibt.",
+            "en": "In iiRDS/H each iirds:Document must have at least one iirds:relates-to-Party relating to an iirds:Party with iirds:has-party-role iirds:Author and iirds:relates-to-vcard relating to a vcard:Organization which states vcard:organization-name."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7d_false.rdf"]
+        }
+    },
+    {
+        id: "M15.9",
+        path: "Package",
+        assert: (els, doc) => {
+            return els.every((el) => {
+                const relatesPartyEls = Array.from(el.querySelectorAll(":scope > relates-to-party"));
+                if (relatesPartyEls.length === 0) return false;
+
+                return relatesPartyEls.some((pEl) => {
+                    const partyUri = pEl.getAttribute("rdf:resource");
+                    return partyUri && hasValidPartyRole(partyUri, doc, IdConst.IIRDS_PARTYROLE_CREATOR);
+                });
+            });
+        },
+        getInvalid: (els, doc) => {
+            return els.filter((el) => {
+                const relatesPartyEls = Array.from(el.querySelectorAll(":scope > relates-to-party"));
+                if (relatesPartyEls.length === 0) return true;
+
+                return !relatesPartyEls.some((pEl) => {
+                    const partyUri = pEl.getAttribute("rdf:resource");
+                    return partyUri && hasValidPartyRole(partyUri, doc, IdConst.IIRDS_PARTYROLE_CREATOR);
+                });
+            });
+        },
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H muss jedes iirds:Package mindestens ein iirds:relates-to-Party in Bezug auf eine iirds:Party mit iirds:has-party-role iirds:Creator und iirds:relates-to-vcard in Bezug auf eine vcard:Organization enthalten, die vcard:organization-name angibt.",
+            "en": "In iiRDS/H each iirds:Package must have at least one iirds:relates-to-Party relating to an iirds:Party with iirds:has-party-role iirds:Creator and iirds:relates-to-vcard relating to a vcard:Organization which states vcard:organization-name."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7d_false.rdf"]
+        }
+    },
+    {
+        id: "M15.10",
+        path: "InformationObject",
+        assert: (els, doc) => {
+            return els.every((el) => {
+                return hasValidIdentity(el, doc);
+            });
+        },
+        getInvalid: (els, doc) => {
+            return els.filter((el) => {
+                return !hasValidIdentity(el, doc);
+            });
+        },
+        prio: "MUST",
+        category: "cardinality 1..*",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#metadata-requirements:~:text=The%20following%20metadata%20is%20mandatory%20for%20each%20iirds%3ADocument%3A",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "In iiRDS/H muss jedes iirds:InformationObject mindestens ein iirds:relates-to-Party in Bezug auf eine iirds:Party mit iirds:has-party-role iirds:Creator und iirds:relates-to-vcard in Bezug auf eine vcard:Organization enthalten, die vcard:organization-name angibt.",
+            "en": "In iiRDS/H each iirds:InformationObject must have at least one iirds:relates-to-Party relating to an iirds:Party with iirds:has-party-role iirds:Creator and iirds:relates-to-vcard relating to a vcard:Organization which states vcard:organization-name."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7d_false.rdf"]
+        }
+    },
+    {
+        id: "M15.11a",
+        path: "Topic Fragment",
+        assert: els => els.length === 0,
+        getInvalid: els => els,
+        prio: "MUST",
+        category: "cardinality 0",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#restrictions-regarding-the-use-of-classes-and-instances",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "Ein iiRDS/H-Paket darf nur Informationseinheiten der Unterklassen iirds:Document und iirds:Package enthalten.",
+            "en": "An iiRDS/H package MUST contain only information units of the subclasses iirds:Document and iirds:Package."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7d_false.rdf"]
+        }
+    },
+    {
+        id: "M15.11b",
+        path: "DirectoryNode",
+        assert: els => els.length === 0,
+        getInvalid: els => els,
+        prio: "MUST",
+        category: "cardinality 0",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#restrictions-regarding-the-use-of-classes-and-instances",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "Ein iiRDS/H-Paket darf KEINE Instanzen von iirds:DirectoryNode enthalten.",
+            "en": "An iiRDS/H package MUST NOT contain instances of iirds:DirectoryNode."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7d_false.rdf"]
+        }
+    },
+    {
+        id: "M15.11c",
+        path: "Selector",
+        assert: els => els.length === 0,
+        getInvalid: els => els,
+        prio: "MUST",
+        category: "cardinality 0",
+        spec: "https://www.iirds.org/fileadmin/iiRDS_specification/20251103-1.3-release/index.html#restrictions-regarding-the-use-of-classes-and-instances",
+        version: ["V1.3"],
+        iirdsVariant: [IdConst.IIRDS_VARIANT_H],
+        rule: {
+            "de": "Ein iiRDS/H-Paket darf KEINE Instanzen von iirds:Selector enthalten.",
+            "en": "An iiRDS/H package MUST NOT contain instances of iirds:Selector."
+        },
+        testFiles: {
+            "true": ["./tests/files/util/iirds-validation/metadata_iirds-H_pass.rdf", "./tests/files/util/iirds-validation/metadata_iirds-H_M15.7_pass.rdf"],
+            "false": ["./tests/files/util/iirds-validation/metadata_iirds-H_M15.7d_false.rdf"]
+        }
+    },
     {
         id: "M16.1",
         path: "Event",
