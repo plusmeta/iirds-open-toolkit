@@ -279,7 +279,7 @@ export default {
             root.com(`*** iiRDS Open Toolkit (v${version}) ***`);
             root.com(`*** generated on ${now.toLocaleString()} ***`);
 
-            let pid = `${rdf.urn(this.getCurrentProjectUuid)}/package`;
+            let pid = `${rdf.urn(this.getCurrentProjectUuid)}`;
             let pack = root.ele("iirds:Package", {"rdf:about": pid});
 
             if (!!this.packageTitle) {
@@ -464,7 +464,7 @@ export default {
                     let filename = object.externalId || object.source.name || object.source.data.name;
                     let encoded = encodeURIComponent(filename);
                     IU.ele("iirds:has-rendition")
-                        .ele("iirds:Rendition", {"rdf:about": `${URI}/rendition/${encoded}`})
+                        .ele("iirds:Rendition", {"rdf:about": rdf.newURN()})
                         .ele("iirds:format", object.source.type).up()
                         .ele("iirds:source", `CONTENT/${filename}`);
                     htmlTableRow[this.$t("Common.file")] = `CONTENT/${filename}`;
