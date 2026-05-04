@@ -16,7 +16,6 @@
         :src="getLogoForTheme('dark')"
         alt="Open Toolkit"
         title="Open Toolkit"
-        width="75px"
         height="25px"
         class="ml-6 mr-4 mt-2"
       >
