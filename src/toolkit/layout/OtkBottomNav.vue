@@ -46,7 +46,7 @@
     </div>
 
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
-      © 2020 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
+      © 2020 - {{ new Date().getFullYear() }} <a href="https://quanos.com/produkte/plusmeta-plattform/" target="_blank">Quanos Solutions GmbH</a>
       &bull;
       {{ $t("Otk.licenseInfo") }} <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>
       &bull;
